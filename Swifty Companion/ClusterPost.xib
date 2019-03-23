@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ClusterPost" customModule="Intra42" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="yiw-og-5l6"/>
+                <outlet property="imageView" destination="i5W-dD-lwV" id="zFE-RY-KaX"/>
+                <outlet property="numberLabel" destination="3K2-yD-qsq" id="7pk-Hj-cKL"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="40" height="60"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="monitor" translatesAutoresizingMaskIntoConstraints="NO" id="i5W-dD-lwV">
+                    <rect key="frame" x="5" y="5" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="ZTq-vw-1H2"/>
+                        <constraint firstAttribute="height" constant="30" id="uWa-md-Hca"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3K2-yD-qsq">
+                    <rect key="frame" x="20" y="37.5" width="0.0" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="3K2-yD-qsq" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="1Bt-X0-Mhx"/>
+                <constraint firstItem="i5W-dD-lwV" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="6AC-De-MYU"/>
+                <constraint firstItem="3K2-yD-qsq" firstAttribute="top" secondItem="i5W-dD-lwV" secondAttribute="bottom" constant="2.5" id="Gbh-l5-mi2"/>
+                <constraint firstItem="i5W-dD-lwV" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="5" id="jyk-6Z-3eH"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-129.59999999999999" y="-119.64017991004499"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="monitor" width="30" height="30"/>
+    </resources>
+</document>

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		57C59F236D19DC9927C4603D /* Pods_Intra42.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48725963EC9F9A653537E021 /* Pods_Intra42.framework */; };
-		7259BB17B4144312C756268F /* Pods_Swifty_Companion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 917A90B6D439C0D11C718DD0 /* Pods_Swifty_Companion.framework */; };
 		DC0D7B2A2230466A00A30B9F /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DC0D7B282230466A00A30B9F /* CoreData.xcdatamodeld */; };
 		DC0D7B2E223059B300A30B9F /* FriendDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0D7B2D223059B300A30B9F /* FriendDataManager.swift */; };
 		DC0D7B3022305DDC00A30B9F /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0D7B2F22305DDC00A30B9F /* CoreDataManager.swift */; };
@@ -34,6 +33,7 @@
 		DC89993C22453E9A00F47EEF /* SearchResultsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89993B22453E9A00F47EEF /* SearchResultsDataSource.swift */; };
 		DC89993E2245559200F47EEF /* UIImageViewRoundFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89993D2245559200F47EEF /* UIImageViewRoundFrame.swift */; };
 		DC8999412245731000F47EEF /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8999402245731000F47EEF /* NotificationViewController.swift */; };
+		DC8999452247C23E00F47EEF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC8999442247C23D00F47EEF /* Default-568h@2x.png */; };
 		DC955DEA222BE9EE003B70BC /* UIViewRoundCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC955DE9222BE9EE003B70BC /* UIViewRoundCorners.swift */; };
 		DC955DEC222C12AC003B70BC /* SegmentHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC955DEB222C12AC003B70BC /* SegmentHeaderCell.swift */; };
 		DC955DEE222C4E88003B70BC /* ProjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC955DED222C4E88003B70BC /* ProjectCell.swift */; };
@@ -93,6 +93,7 @@
 		DC89993B22453E9A00F47EEF /* SearchResultsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsDataSource.swift; sourceTree = "<group>"; };
 		DC89993D2245559200F47EEF /* UIImageViewRoundFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewRoundFrame.swift; sourceTree = "<group>"; };
 		DC8999402245731000F47EEF /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		DC8999442247C23D00F47EEF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		DC8A6FA7577F9B3254D7A271 /* Pods-Swifty Companion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swifty Companion.release.xcconfig"; path = "Target Support Files/Pods-Swifty Companion/Pods-Swifty Companion.release.xcconfig"; sourceTree = "<group>"; };
 		DC955DE9222BE9EE003B70BC /* UIViewRoundCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewRoundCorners.swift; sourceTree = "<group>"; };
 		DC955DEB222C12AC003B70BC /* SegmentHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentHeaderCell.swift; sourceTree = "<group>"; };
@@ -131,7 +132,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7259BB17B4144312C756268F /* Pods_Swifty_Companion.framework in Frameworks */,
 				57C59F236D19DC9927C4603D /* Pods_Intra42.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,7 +279,7 @@
 		DCCE056D222591F400906ECD = {
 			isa = PBXGroup;
 			children = (
-				DCCE0578222591F400906ECD /* Swifty Companion */,
+				DCCE0578222591F400906ECD /* Intra42 */,
 				DCCE0577222591F400906ECD /* Products */,
 				8A1DDBFD4AB87F959C94426B /* Pods */,
 				A59C67771254EEBDBEE44794 /* Frameworks */,
@@ -294,7 +294,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DCCE0578222591F400906ECD /* Swifty Companion */ = {
+		DCCE0578222591F400906ECD /* Intra42 */ = {
 			isa = PBXGroup;
 			children = (
 				DCCE0579222591F400906ECD /* AppDelegate.swift */,
@@ -305,7 +305,7 @@
 				DCCE059E222873AB00906ECD /* Visual */,
 				DCCE0585222591F500906ECD /* Info.plist */,
 			);
-			path = "Swifty Companion";
+			path = Intra42;
 			sourceTree = "<group>";
 		};
 		DCCE059D2228739F00906ECD /* Controllers */ = {
@@ -333,6 +333,7 @@
 				DC1988CB22395588009E3A55 /* ClusterPost.xib */,
 				DCCE0580222591F500906ECD /* Assets.xcassets */,
 				DCCE0582222591F500906ECD /* LaunchScreen.storyboard */,
+				DC8999442247C23D00F47EEF /* Default-568h@2x.png */,
 			);
 			name = Visual;
 			sourceTree = "<group>";
@@ -430,6 +431,7 @@
 				DCCE0584222591F500906ECD /* LaunchScreen.storyboard in Resources */,
 				DCCE0581222591F500906ECD /* Assets.xcassets in Resources */,
 				DC1988CC22395588009E3A55 /* ClusterPost.xib in Resources */,
+				DC8999452247C23E00F47EEF /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -686,13 +688,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J2YFW87U3N;
-				INFOPLIST_FILE = "Swifty Companion/Info.plist";
+				INFOPLIST_FILE = Intra42/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.femaury.Swifty-Companion";
+				PRODUCT_BUNDLE_IDENTIFIER = com.femaury.Intra42;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -706,13 +708,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J2YFW87U3N;
-				INFOPLIST_FILE = "Swifty Companion/Info.plist";
+				INFOPLIST_FILE = Intra42/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.femaury.Swifty-Companion";
+				PRODUCT_BUNDLE_IDENTIFIER = com.femaury.Intra42;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;

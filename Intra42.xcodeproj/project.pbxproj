@@ -86,7 +86,7 @@
 		DC1988CF2239680D009E3A55 /* ClusterPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusterPost.swift; sourceTree = "<group>"; };
 		DC89992C22414F9000F47EEF /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
 		DC89992F22427A1500F47EEF /* AchievementsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsController.swift; sourceTree = "<group>"; };
-		DC89993122427A8000F47EEF /* AchievementsHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsHeaderCell.swift; sourceTree = "<group>"; };
+		DC89993122427A8000F47EEF /* AchievementsHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AchievementsHeaderCell.swift; path = Intra42/TableViewCells/Achievements/AchievementsHeaderCell.swift; sourceTree = SOURCE_ROOT; };
 		DC89993522451EB200F47EEF /* UserProfileDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileDataSource.swift; sourceTree = "<group>"; };
 		DC89993722452F4E00F47EEF /* ProfileTableCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableCells.swift; sourceTree = "<group>"; };
 		DC8999392245338300F47EEF /* UserActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActions.swift; sourceTree = "<group>"; };
@@ -159,44 +159,46 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DC0D7B272230464A00A30B9F /* Data */ = {
+		DC0D7B272230464A00A30B9F /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
 				DC0D7B2F22305DDC00A30B9F /* CoreDataManager.swift */,
 				DC0D7B2D223059B300A30B9F /* FriendDataManager.swift */,
 				DC0D7B282230466A00A30B9F /* CoreData.xcdatamodeld */,
 			);
-			name = Data;
+			path = CoreData;
 			sourceTree = "<group>";
 		};
-		DC0D7B31223064E800A30B9F /* Table Cells */ = {
+		DC0D7B31223064E800A30B9F /* UserProfile */ = {
 			isa = PBXGroup;
 			children = (
+				DC955E06222DDE8B003B70BC /* UserHeaderCell.swift */,
+				DC89993722452F4E00F47EEF /* ProfileTableCells.swift */,
 				DCCE05A92229A5A000906ECD /* ProfileHeaderCell.swift */,
 				DC955DEB222C12AC003B70BC /* SegmentHeaderCell.swift */,
 				DC955DED222C4E88003B70BC /* ProjectCell.swift */,
 				DC0D7B38223321CF00A30B9F /* LogsTableCell.swift */,
-				DC955E0A222F1242003B70BC /* AchievementCell.swift */,
 			);
-			name = "Table Cells";
+			path = UserProfile;
 			sourceTree = "<group>";
 		};
 		DC1988BE22357565009E3A55 /* Side Menu */ = {
 			isa = PBXGroup;
 			children = (
-				DC89992E224279E400F47EEF /* Achievements */,
 				DC955E0C222FF623003B70BC /* SideMenuController.swift */,
+				DC89992E224279E400F47EEF /* Achievements */,
 			);
 			name = "Side Menu";
+			path = SideMenu;
 			sourceTree = "<group>";
 		};
 		DC89992E224279E400F47EEF /* Achievements */ = {
 			isa = PBXGroup;
 			children = (
+				DC89992C22414F9000F47EEF /* Achievement.swift */,
 				DC89992F22427A1500F47EEF /* AchievementsController.swift */,
-				DC89993122427A8000F47EEF /* AchievementsHeaderCell.swift */,
 			);
-			name = Achievements;
+			path = Achievements;
 			sourceTree = "<group>";
 		};
 		DC89993F224572EE00F47EEF /* Notifications */ = {
@@ -205,33 +207,123 @@
 				DC8999402245731000F47EEF /* NotificationViewController.swift */,
 			);
 			name = Notifications;
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		DC8999462247C8C100F47EEF /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				DCCE059922284B0000906ECD /* UIColorHex.swift */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
+		DC8999472247C8DE00F47EEF /* String */ = {
+			isa = PBXGroup;
+			children = (
+				DC0D7B362232D0C800A30B9F /* StringIsPhoneNumber.swift */,
+				DC1988BF2236970F009E3A55 /* StringHTMLToAttributedString.swift */,
+				DC0D7B342231768900A30B9F /* StringShortMonth.swift */,
+			);
+			path = String;
+			sourceTree = "<group>";
+		};
+		DC8999482247C92B00F47EEF /* UIImageView */ = {
+			isa = PBXGroup;
+			children = (
+				DCCE05A52229822500906ECD /* UIImageViewFromURL.swift */,
+				DC89993D2245559200F47EEF /* UIImageViewRoundFrame.swift */,
+			);
+			path = UIImageView;
+			sourceTree = "<group>";
+		};
+		DC8999492247C93900F47EEF /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				DC955DE9222BE9EE003B70BC /* UIViewRoundCorners.swift */,
+				DC1988C32236BCFE009E3A55 /* UIViewPinBackground.swift */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		DC89994A2247C94000F47EEF /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				DC955DEF222C5192003B70BC /* DateTimeInterval.swift */,
+			);
+			path = Date;
+			sourceTree = "<group>";
+		};
+		DC89994B2247CB5B00F47EEF /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				DC8999502247CCA600F47EEF /* Friends */,
+				DC89994E2247CC2900F47EEF /* Events */,
+				DC89994D2247CC2000F47EEF /* Achievements */,
+				DC89994C2247CBDD00F47EEF /* Search */,
+				DC0D7B31223064E800A30B9F /* UserProfile */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		DC89994C2247CBDD00F47EEF /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				DC955E01222CBC7F003B70BC /* UserResultCell.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		DC89994D2247CC2000F47EEF /* Achievements */ = {
+			isa = PBXGroup;
+			children = (
+				DC89993122427A8000F47EEF /* AchievementsHeaderCell.swift */,
+				DC955E0A222F1242003B70BC /* AchievementCell.swift */,
+			);
+			path = Achievements;
+			sourceTree = "<group>";
+		};
+		DC89994E2247CC2900F47EEF /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				DC0D7B3A223408BE00A30B9F /* EventCell.swift */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		DC8999502247CCA600F47EEF /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				DC0D7B32223076DE00A30B9F /* FriendCell.swift */,
+			);
+			path = Friends;
 			sourceTree = "<group>";
 		};
 		DC955DF1222C9851003B70BC /* Profile Page */ = {
 			isa = PBXGroup;
 			children = (
 				DCCE058F2227010E00906ECD /* HomeViewController.swift */,
-				DC89993722452F4E00F47EEF /* ProfileTableCells.swift */,
-				DC0D7B31223064E800A30B9F /* Table Cells */,
 			);
 			name = "Profile Page";
+			path = ProfilePage;
 			sourceTree = "<group>";
 		};
-		DC955DF2222C986D003B70BC /* Correction Page */ = {
+		DC955DF2222C986D003B70BC /* Corrections Page */ = {
 			isa = PBXGroup;
 			children = (
 				DCCE05932228450A00906ECD /* CorrectionsViewController.swift */,
 			);
-			name = "Correction Page";
+			name = "Corrections Page";
+			path = CorrectionsPage;
 			sourceTree = "<group>";
 		};
 		DC955DF3222C9874003B70BC /* Friends Page */ = {
 			isa = PBXGroup;
 			children = (
 				DCCE05952228451500906ECD /* FriendsViewController.swift */,
-				DC0D7B32223076DE00A30B9F /* FriendCell.swift */,
 			);
 			name = "Friends Page";
+			path = FriendsPage;
 			sourceTree = "<group>";
 		};
 		DC955DF4222C988E003B70BC /* Clusters Page */ = {
@@ -242,6 +334,7 @@
 				DC1988CF2239680D009E3A55 /* ClusterPost.swift */,
 			);
 			name = "Clusters Page";
+			path = ClustersPage;
 			sourceTree = "<group>";
 		};
 		DC955DF5222C9898003B70BC /* Events Page */ = {
@@ -249,10 +342,10 @@
 			children = (
 				DCCE05A3222971AB00906ECD /* EventsViewController.swift */,
 				DC1988C122369846009E3A55 /* EventDetailController.swift */,
-				DC0D7B3A223408BE00A30B9F /* EventCell.swift */,
 				DC0D7B3C22340AFD00A30B9F /* Event.swift */,
 			);
 			name = "Events Page";
+			path = EventsPage;
 			sourceTree = "<group>";
 		};
 		DC955DFE222CBBBE003B70BC /* Search Page */ = {
@@ -260,9 +353,9 @@
 			children = (
 				DC955DFF222CBBD6003B70BC /* SearchResultsController.swift */,
 				DC89993B22453E9A00F47EEF /* SearchResultsDataSource.swift */,
-				DC955E01222CBC7F003B70BC /* UserResultCell.swift */,
 			);
 			name = "Search Page";
+			path = SearchPage;
 			sourceTree = "<group>";
 		};
 		DC955E03222DDDC3003B70BC /* User Page */ = {
@@ -271,9 +364,10 @@
 				DC955E04222DDDEB003B70BC /* UserProfileController.swift */,
 				DC89993522451EB200F47EEF /* UserProfileDataSource.swift */,
 				DC8999392245338300F47EEF /* UserActions.swift */,
-				DC955E06222DDE8B003B70BC /* UserHeaderCell.swift */,
+				DCCE0597222847CC00906ECD /* UserProfile.swift */,
 			);
 			name = "User Page";
+			path = UserPage;
 			sourceTree = "<group>";
 		};
 		DCCE056D222591F400906ECD = {
@@ -300,9 +394,10 @@
 				DCCE0579222591F400906ECD /* AppDelegate.swift */,
 				DCCE05A0222873DE00906ECD /* API Manager */,
 				DCCE059D2228739F00906ECD /* Controllers */,
-				DC0D7B272230464A00A30B9F /* Data */,
+				DC89994B2247CB5B00F47EEF /* TableViewCells */,
+				DC0D7B272230464A00A30B9F /* CoreData */,
 				DCCE059F222873C600906ECD /* Utils */,
-				DCCE059E222873AB00906ECD /* Visual */,
+				DCCE059E222873AB00906ECD /* Visuals */,
 				DCCE0585222591F500906ECD /* Info.plist */,
 			);
 			path = Intra42;
@@ -312,20 +407,20 @@
 			isa = PBXGroup;
 			children = (
 				DCCE0591222701F000906ECD /* LoginViewController.swift */,
+				DC955DF1222C9851003B70BC /* Profile Page */,
 				DC1988BE22357565009E3A55 /* Side Menu */,
 				DC955DFE222CBBBE003B70BC /* Search Page */,
 				DC955E03222DDDC3003B70BC /* User Page */,
-				DC955DF1222C9851003B70BC /* Profile Page */,
 				DC955DF3222C9874003B70BC /* Friends Page */,
-				DC955DF2222C986D003B70BC /* Correction Page */,
+				DC955DF2222C986D003B70BC /* Corrections Page */,
 				DC955DF4222C988E003B70BC /* Clusters Page */,
 				DC955DF5222C9898003B70BC /* Events Page */,
 				DC89993F224572EE00F47EEF /* Notifications */,
 			);
-			name = Controllers;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
-		DCCE059E222873AB00906ECD /* Visual */ = {
+		DCCE059E222873AB00906ECD /* Visuals */ = {
 			isa = PBXGroup;
 			children = (
 				DCCE05A7222994EB00906ECD /* Main.storyboard */,
@@ -335,35 +430,30 @@
 				DCCE0582222591F500906ECD /* LaunchScreen.storyboard */,
 				DC8999442247C23D00F47EEF /* Default-568h@2x.png */,
 			);
-			name = Visual;
+			path = Visuals;
 			sourceTree = "<group>";
 		};
 		DCCE059F222873C600906ECD /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				DCCE059922284B0000906ECD /* UIColorHex.swift */,
-				DC0D7B362232D0C800A30B9F /* StringIsPhoneNumber.swift */,
-				DC1988BF2236970F009E3A55 /* StringHTMLToAttributedString.swift */,
-				DCCE05A52229822500906ECD /* UIImageViewFromURL.swift */,
-				DC89993D2245559200F47EEF /* UIImageViewRoundFrame.swift */,
-				DC955DE9222BE9EE003B70BC /* UIViewRoundCorners.swift */,
-				DC1988C32236BCFE009E3A55 /* UIViewPinBackground.swift */,
-				DC955DEF222C5192003B70BC /* DateTimeInterval.swift */,
-				DC0D7B342231768900A30B9F /* StringShortMonth.swift */,
 				DCCE059B22286EC800906ECD /* Colors.swift */,
+				DC8999462247C8C100F47EEF /* UIColor */,
+				DC8999472247C8DE00F47EEF /* String */,
+				DC8999482247C92B00F47EEF /* UIImageView */,
+				DC8999492247C93900F47EEF /* UIView */,
+				DC89994A2247C94000F47EEF /* Date */,
 			);
-			name = Utils;
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		DCCE05A0222873DE00906ECD /* API Manager */ = {
 			isa = PBXGroup;
 			children = (
 				DCCE058D2226F0FF00906ECD /* CustomError.swift */,
-				DCCE0597222847CC00906ECD /* UserProfile.swift */,
-				DC89992C22414F9000F47EEF /* Achievement.swift */,
 				DCCE058B2225BBDB00906ECD /* API42Manager.swift */,
 			);
 			name = "API Manager";
+			path = APIManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

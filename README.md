@@ -1,7 +1,11 @@
 # Intra 42
+
+<img src="https://github.com/femaury/intra_42/raw/master/Screenshots/profile_page.png"
+     title="Intra 42 by Felix Maury" width="250">
+     
 ### Swift app for 42's intranet
 
-<br/>:warning: WORK IN PROGRESS :warning: <br/><br/>
+<br/>:warning: WORK IN PROGRESS :warning: <br/>
 This is a swift learning project for myself. <br/>
 I plan on making the project open source and publishing it for free on the App Store.
 

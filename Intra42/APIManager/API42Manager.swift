@@ -369,6 +369,18 @@ class API42Manager {
         self.allAchievements = achievements
     }
     
+    func getScales(completionHandler: @escaping ([JSON]) -> Void) {
+        let scalesURL = "https://api.intra.42.fr/v2/me/scale_teams?page[size]=100"
+        
+        request(url: scalesURL) { (data) in
+            guard let data = data?.array else {
+                completionHandler([])
+                return
+            }
+            completionHandler(data)
+        }
+    }
+    
     func getProfilePicture(forLogin login: String, completionHandler: @escaping (UIImage?) -> Void) {
         let urlString = "https://cdn.intra.42.fr/users/medium_\(login).jpg"
         let defaultImage = UIImage(named: "42_default")

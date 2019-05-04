@@ -18,6 +18,7 @@ class SideMenuController: UIViewController {
         ("Forums", UIImage(named: "collaboration")),
         ("Achievements", UIImage(named: "trophy")),
         ("About", UIImage(named: "info")),
+        ("Settings", UIImage(named: "settings")),
         ("Logout", UIImage(named: "shutdown"))
     ]
 
@@ -51,6 +52,8 @@ extension SideMenuController: UITableViewDelegate, UITableViewDataSource {
         case 4:
             performSegue(withIdentifier: "AboutSegue", sender: self)
         case 5:
+            performSegue(withIdentifier: "SettingsSegue", sender: self)
+        case 6:
             API42Manager.shared.logoutUser()
         default:
             return

@@ -59,7 +59,7 @@ class ClustersViewController: UIViewController {
         tapGesture.cancelsTouchesInView = false
         view.addGestureRecognizer(tapGesture)
         
-        minZoomScale = scrollView.frame.width / clustersView.frame.width
+        minZoomScale = UIScreen.main.bounds.width / clustersView.frame.width
         scrollView.addSubview(clustersView)
         scrollView.contentSize = clustersView.frame.size
         scrollView.minimumZoomScale = minZoomScale
@@ -112,7 +112,7 @@ class ClustersViewController: UIViewController {
             self.clusters = clusters
             self.clustersView.setupCluster(floor: floor, cluster: clusters)
             self.setupClusterInfo()
-            self.navigationItem.rightBarButtonItems![1].isEnabled = true
+            self.navigationItem.rightBarButtonItems![0].isEnabled = true
             self.activityIndicator.stopAnimating()
         }
     }
@@ -164,7 +164,7 @@ class ClustersViewController: UIViewController {
     
     @IBAction func refreshClusters(_ sender: UIBarButtonItem) {
         activityIndicator.startAnimating()
-        navigationItem.rightBarButtonItems![1].isEnabled = false
+        navigationItem.rightBarButtonItems![0].isEnabled = false
         clustersView.clearUserImages()
         loadClusterLocations(floor: segmentedControl.selectedSegmentIndex + 1)
     }

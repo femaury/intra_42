@@ -96,11 +96,6 @@
                                 <segue destination="We3-YM-0WP" kind="presentation" id="tHZ-Qu-oYN"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Settings" image="settings" id="atp-tZ-G9C">
-                            <connections>
-                                <segue destination="GFM-iM-aHh" kind="show" id="5Dy-4R-DkO"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="RQZ-CX-Uyw" id="FFa-gb-gre"/>
@@ -456,11 +451,6 @@
                                 <segue destination="We3-YM-0WP" kind="presentation" id="FNY-8Y-LFG"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Settings" image="settings" id="Lfr-r6-nSr">
-                            <connections>
-                                <segue destination="GFM-iM-aHh" kind="show" id="yWq-yc-xk6"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="IwD-ZL-kVr" id="UFF-U8-zph"/>
@@ -506,6 +496,7 @@
                         <segue destination="DtE-OF-cN7" kind="show" identifier="ForumsSegue" id="5aI-ed-zlQ"/>
                         <segue destination="Jps-j7-HHf" kind="show" identifier="VideosSegue" id="aV2-hV-m1d"/>
                         <segue destination="r3D-PV-sdF" kind="show" identifier="ProjectsSegue" id="Z3t-R4-VFB"/>
+                        <segue destination="GFM-iM-aHh" kind="show" identifier="SettingsSegue" id="4yv-fT-w2W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3VT-Pk-bbC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -540,18 +531,18 @@
             <objects>
                 <viewController title="Settings" id="GFM-iM-aHh" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="P8e-W6-SYy">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="error" translatesAutoresizingMaskIntoConstraints="NO" id="mGq-CR-x9i">
-                                <rect key="frame" x="157" y="312.5" width="100" height="100"/>
+                                <rect key="frame" x="157" y="398" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="EMz-Ix-dTD"/>
                                     <constraint firstAttribute="width" constant="100" id="iHw-rJ-wf2"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Work in Progress" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y14-pQ-1Cm">
-                                <rect key="frame" x="121" y="422.5" width="172" height="24"/>
+                                <rect key="frame" x="121" y="508" width="172" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -569,7 +560,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ebI-cy-eYb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4509" y="-681"/>
+            <point key="canvasLocation" x="3620" y="2792"/>
         </scene>
         <!--Search-->
         <scene sceneID="la3-YB-B1W">
@@ -1081,18 +1072,18 @@
             <objects>
                 <viewController title="Holy Graph" id="ODo-5C-KVo" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fe6-3l-ABs">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="error" translatesAutoresizingMaskIntoConstraints="NO" id="Hpp-Av-A3V">
-                                <rect key="frame" x="157" y="312.5" width="100" height="100"/>
+                                <rect key="frame" x="157" y="398" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="C9a-RY-qqN"/>
                                     <constraint firstAttribute="height" constant="100" id="YQC-iy-8jr"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Work in Progress" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a7H-2i-Uhr">
-                                <rect key="frame" x="121" y="422.5" width="172" height="24"/>
+                                <rect key="frame" x="121" y="508" width="172" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1298,11 +1289,6 @@
                                 <segue destination="We3-YM-0WP" kind="presentation" id="IaD-z1-mRA"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Settings" image="settings" id="YQk-4y-4ig">
-                            <connections>
-                                <segue destination="GFM-iM-aHh" kind="show" id="hgj-fa-yIR"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="VE4-Lm-vTY" id="eCD-Fg-DlR"/>
@@ -1363,23 +1349,23 @@
                                     <constraint firstItem="pU3-ey-w3e" firstAttribute="leading" secondItem="T6k-US-sp2" secondAttribute="leading" id="mag-h8-z0t"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Nv1-mL-5eu">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Nv1-mL-5eu">
                                 <rect key="frame" x="0.0" y="48" width="414" height="677"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qj3-86-xKk">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="377"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="338.5"/>
                                         <connections>
                                             <outlet property="delegate" destination="Qj5-P4-iDR" id="P9v-Xc-gxm"/>
                                         </connections>
                                     </scrollView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c0s-h7-mpy">
-                                        <rect key="frame" x="0.0" y="377" width="414" height="300"/>
+                                        <rect key="frame" x="0.0" y="338.5" width="414" height="338.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="Svb-ef-LDv">
-                                                <rect key="frame" x="0.0" y="37.5" width="414" height="225"/>
+                                                <rect key="frame" x="0.0" y="72" width="414" height="195"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EIZ-Z2-3ET">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Metropolis" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNR-U8-9bY">
                                                                 <rect key="frame" x="20" y="10" width="98" height="24"/>
@@ -1394,7 +1380,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="znp-hr-AmD">
-                                                                <rect key="frame" x="20" y="45" width="374" height="20"/>
+                                                                <rect key="frame" x="20" y="35" width="374" height="20"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zDD-pb-TLh">
                                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="20"/>
@@ -1425,14 +1411,14 @@
                                                             <constraint firstAttribute="bottom" secondItem="znp-hr-AmD" secondAttribute="bottom" constant="10" id="QHj-1k-6z7"/>
                                                             <constraint firstItem="fDy-1A-3TK" firstAttribute="leading" secondItem="mNR-U8-9bY" secondAttribute="trailing" constant="5" id="bxf-kW-EVc"/>
                                                             <constraint firstItem="fDy-1A-3TK" firstAttribute="firstBaseline" secondItem="mNR-U8-9bY" secondAttribute="firstBaseline" id="lVP-7s-gPK"/>
-                                                            <constraint firstAttribute="height" constant="75" id="sQg-aF-2gP"/>
+                                                            <constraint firstAttribute="height" constant="65" id="sQg-aF-2gP"/>
                                                             <constraint firstAttribute="trailing" secondItem="znp-hr-AmD" secondAttribute="trailing" constant="20" id="uma-qz-MKn"/>
                                                             <constraint firstItem="znp-hr-AmD" firstAttribute="leading" secondItem="EIZ-Z2-3ET" secondAttribute="leading" constant="20" id="wlz-Mn-dA4"/>
                                                             <constraint firstItem="mNR-U8-9bY" firstAttribute="leading" secondItem="EIZ-Z2-3ET" secondAttribute="leading" constant="20" id="y09-aF-fkT"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Jk-eB-3Yv">
-                                                        <rect key="frame" x="0.0" y="75" width="414" height="75"/>
+                                                        <rect key="frame" x="0.0" y="65" width="414" height="65"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Westeros" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ArF-n1-3ex">
                                                                 <rect key="frame" x="20" y="10" width="86.5" height="24"/>
@@ -1447,7 +1433,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ScD-1d-HNf">
-                                                                <rect key="frame" x="20" y="45" width="374" height="20"/>
+                                                                <rect key="frame" x="20" y="35" width="374" height="20"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5lm-6W-NKQ">
                                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="20"/>
@@ -1474,7 +1460,7 @@
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="75" id="AFJ-x4-V6l"/>
+                                                            <constraint firstAttribute="height" constant="65" id="AFJ-x4-V6l"/>
                                                             <constraint firstItem="ScD-1d-HNf" firstAttribute="leading" secondItem="4Jk-eB-3Yv" secondAttribute="leading" constant="20" id="XNX-W1-Vb6"/>
                                                             <constraint firstItem="Job-e3-Zzw" firstAttribute="leading" secondItem="ArF-n1-3ex" secondAttribute="trailing" constant="5" id="ZY0-cF-k5E"/>
                                                             <constraint firstItem="ArF-n1-3ex" firstAttribute="leading" secondItem="4Jk-eB-3Yv" secondAttribute="leading" constant="20" id="eZH-Yn-7Kf"/>
@@ -1485,7 +1471,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xGy-xk-C6n">
-                                                        <rect key="frame" x="0.0" y="150" width="414" height="75"/>
+                                                        <rect key="frame" x="0.0" y="130" width="414" height="65"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tatooine" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ob3-zn-y8L">
                                                                 <rect key="frame" x="20" y="10" width="78.5" height="24"/>
@@ -1500,7 +1486,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r4P-aW-pqR">
-                                                                <rect key="frame" x="20" y="45" width="374" height="20"/>
+                                                                <rect key="frame" x="20" y="35" width="374" height="20"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XGG-mB-Eo9">
                                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="20"/>
@@ -1534,7 +1520,7 @@
                                                             <constraint firstItem="ob3-zn-y8L" firstAttribute="leading" secondItem="xGy-xk-C6n" secondAttribute="leading" constant="20" id="iRN-Q1-RRj"/>
                                                             <constraint firstAttribute="trailing" secondItem="r4P-aW-pqR" secondAttribute="trailing" constant="20" id="jln-mV-BbA"/>
                                                             <constraint firstItem="r4P-aW-pqR" firstAttribute="leading" secondItem="xGy-xk-C6n" secondAttribute="leading" constant="20" id="kfZ-Eq-DeV"/>
-                                                            <constraint firstAttribute="height" constant="75" id="yLB-4u-3uK"/>
+                                                            <constraint firstAttribute="height" constant="65" id="yLB-4u-3uK"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
@@ -1544,7 +1530,6 @@
                                         <constraints>
                                             <constraint firstItem="Svb-ef-LDv" firstAttribute="centerY" secondItem="c0s-h7-mpy" secondAttribute="centerY" id="3mv-X6-vea"/>
                                             <constraint firstItem="4Jk-eB-3Yv" firstAttribute="width" secondItem="c0s-h7-mpy" secondAttribute="width" id="EBI-Dm-0e0"/>
-                                            <constraint firstAttribute="height" constant="300" id="O8S-2v-k8c"/>
                                             <constraint firstItem="Svb-ef-LDv" firstAttribute="centerX" secondItem="c0s-h7-mpy" secondAttribute="centerX" id="W9X-WM-A88"/>
                                             <constraint firstItem="EIZ-Z2-3ET" firstAttribute="width" secondItem="c0s-h7-mpy" secondAttribute="width" id="iEn-Pb-4qY"/>
                                             <constraint firstItem="xGy-xk-C6n" firstAttribute="width" secondItem="c0s-h7-mpy" secondAttribute="width" id="zD2-ef-rP9"/>
@@ -1571,18 +1556,11 @@
                                 <segue destination="We3-YM-0WP" kind="presentation" id="31j-gL-uvP"/>
                             </connections>
                         </barButtonItem>
-                        <rightBarButtonItems>
-                            <barButtonItem title="Settings" image="settings" id="SJ2-vk-xGL">
-                                <connections>
-                                    <segue destination="GFM-iM-aHh" kind="show" id="Bi2-eh-8Yd"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="Refresh" image="refresh" id="mkw-Qw-7xS">
-                                <connections>
-                                    <action selector="refreshClusters:" destination="Qj5-P4-iDR" id="04E-a9-0N0"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" title="Refresh" image="refresh" id="mkw-Qw-7xS">
+                            <connections>
+                                <action selector="refreshClusters:" destination="Qj5-P4-iDR" id="04E-a9-0N0"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="bottomStackView" destination="Nv1-mL-5eu" id="Tqz-sJ-zxy"/>
@@ -1794,11 +1772,6 @@
                         <barButtonItem key="leftBarButtonItem" title="Side Menu" image="menu" id="keO-qo-bnx">
                             <connections>
                                 <segue destination="We3-YM-0WP" kind="presentation" id="wE8-d0-0Rm"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Settings" image="settings" id="Fmx-Vd-fWv">
-                            <connections>
-                                <segue destination="GFM-iM-aHh" kind="show" id="1yR-mw-n6D"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -2441,14 +2414,12 @@
         <image name="phone" width="30" height="30"/>
         <image name="phone_white" width="30" height="30"/>
         <image name="refresh" width="30" height="30"/>
-        <image name="settings" width="30" height="30"/>
         <image name="user_male" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="FNY-8Y-LFG"/>
-        <segue reference="IC3-E2-qiD"/>
-        <segue reference="9Kb-eh-UKx"/>
-        <segue reference="s4V-tz-R5t"/>
-        <segue reference="yWq-yc-xk6"/>
+        <segue reference="wE8-d0-0Rm"/>
+        <segue reference="WDk-Vj-WG6"/>
+        <segue reference="ujx-ft-g6P"/>
+        <segue reference="0QS-t1-7Go"/>
     </inferredMetricsTieBreakers>
 </document>

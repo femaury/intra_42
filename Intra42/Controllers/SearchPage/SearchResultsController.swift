@@ -83,7 +83,7 @@ class SearchResultsController: UITableViewController, SearchResultsDataSource {
     }
     
     func getProfilePictureOfUser(withId id: Int, login: String) {
-        API42Manager.shared.getProfilePicture(forLogin: login) { (image) in
+        API42Manager.shared.getProfilePicture(withLogin: login) { (image) in
             self.userProfilePictures[id] = image
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -121,7 +121,7 @@ extension SearchResultsController: UISearchControllerDelegate, UISearchBarDelega
             self.loginSearchResults = []
             self.firstNameSearchResults = []
             self.lastNameSearchResults = []
-            API42Manager.shared.searchUsersWith(string: text, completionHander: populateSearchTable)
+            API42Manager.shared.searchUsers(withString: text, completionHander: populateSearchTable)
         }
     }
 }

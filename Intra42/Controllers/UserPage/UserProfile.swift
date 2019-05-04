@@ -39,11 +39,11 @@ class UserProfile {
     var piscineMonth: String
     var piscineYear: String
     
-    var mainCursusID: Int = 1
+    var mainCursusId: Int = 1
     var mainCursusName: String = ""
     var cursusList: [(id: Int, name: String)] = []
     
-    var mainCampusID: Int = 1
+    var mainCampusId: Int = 1
     var mainCampusName: String = ""
     var campusList: [(id: Int, name: String)] = []
     
@@ -75,26 +75,26 @@ class UserProfile {
         projectsUsers = projects
         let cursuses = data["cursus_users"].arrayValue
         cursusUsers = cursuses
-        var cursusID: Int = 1
+        var cursusId: Int = 1
         if cursuses.count > 0 {
             for cursus in cursuses {
                 let info = cursus["cursus"]
                 let name = info["name"].stringValue
                 let id = info["id"].intValue
                 if cursus["grade"].string != nil || cursuses.count == 1 {
-                    mainCursusID = id
+                    mainCursusId = id
                     mainCursusName = name
-                    cursusID = id
+                    cursusId = id
                 }
                 cursusList.append((id, name))
             }
         }
         
         let campusUsers = data["campus_users"].arrayValue
-        var primaryID = 1
+        var primaryId = 1
         for campus in campusUsers {
             if campus["is_primary"].boolValue == true {
-                primaryID = campus["campus_id"].intValue
+                primaryId = campus["campus_id"].intValue
                 break
             }
         }
@@ -103,8 +103,8 @@ class UserProfile {
         for campus in campuses {
             let id = campus["id"].intValue
             let name = campus["name"].stringValue
-            if id == primaryID {
-                mainCampusID = id
+            if id == primaryId {
+                mainCampusId = id
                 mainCampusName = name
             }
             campusList.append((id, name))
@@ -133,18 +133,18 @@ class UserProfile {
                 }
             }
         }
-        getLevelAndSkills(cursusID: cursusID)
-        getProjects(cursusID: cursusID)
-        API42Manager.shared.getLogsForUserWith(id: self.userId) { [weak self] (locationLogs) in
+        getLevelAndSkills(cursusId: cursusId)
+        getProjects(cursusId: cursusId)
+        API42Manager.shared.getLogsForUser(withId: self.userId) { [weak self] (locationLogs) in
             guard let self = self else { return }
             self.locationLogs = locationLogs
         }
     }
     
-    func getLevelAndSkills(cursusID: Int) {
+    func getLevelAndSkills(cursusId: Int) {
         skills = []
         for cursus in cursusUsers {
-            if cursus["cursus_id"].int == cursusID {
+            if cursus["cursus_id"].int == cursusId {
                 self.level = cursus["level"].doubleValue
                 self.userId = cursus["user"]["id"].intValue
                 for skill in cursus["skills"].arrayValue {
@@ -157,15 +157,15 @@ class UserProfile {
         }
     }
     
-    func getProjects(cursusID: Int) {
+    func getProjects(cursusId: Int) {
         projects = []
         for project in projectsUsers {
-            if project["cursus_ids"].arrayValue.map({$0.int}).contains(cursusID) {
+            if project["cursus_ids"].arrayValue.map({$0.int}).contains(cursusId) {
                 let info = project["project"]
                 if info["parent_id"] != JSON.null { continue }
                 
-                let piscineID = info["id"].intValue
-                let piscineDays = getPiscineDays(projectsArray: projectsUsers, cursusID: cursusID, piscineID: piscineID)
+                let piscineId = info["id"].intValue
+                let piscineDays = getPiscineDays(projectsArray: projectsUsers, cursusId: cursusId, piscineId: piscineId)
                 
                 if let dateString = project["marked_at"].string {
                     let dateFormatter = DateFormatter()
@@ -186,13 +186,13 @@ class UserProfile {
         }
     }
     
-    func getPiscineDays(projectsArray: [JSON], cursusID: Int, piscineID: Int) -> [Project] {
+    func getPiscineDays(projectsArray: [JSON], cursusId: Int, piscineId: Int) -> [Project] {
         var piscineDays: [Project] = []
 
         for subProject in projectsArray {
-            if subProject["cursus_ids"].arrayValue.map({$0.int}).contains(cursusID) {
+            if subProject["cursus_ids"].arrayValue.map({$0.int}).contains(cursusId) {
                 let info = subProject["project"]
-                if info["parent_id"].intValue == piscineID {
+                if info["parent_id"].intValue == piscineId {
                     let dateString = subProject["marked_at"].stringValue
                     let dateFormatter = DateFormatter()
                     let date = dateFormatter.date(from: dateString)

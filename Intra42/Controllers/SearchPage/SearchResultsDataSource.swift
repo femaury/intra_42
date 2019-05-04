@@ -22,7 +22,7 @@ extension SearchResultsDataSource {
         guard let text = searchBar.text else { return }
         destination.searchBar.text = text
         destination.isLoadingSearchData = true
-        API42Manager.shared.searchUsersWith(string: text, completionHander: destination.populateSearchTable)
+        API42Manager.shared.searchUsers(withString: text, completionHander: destination.populateSearchTable)
         searchBar.text = ""
     }
     

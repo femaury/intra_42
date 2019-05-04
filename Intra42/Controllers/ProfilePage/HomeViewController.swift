@@ -139,8 +139,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 else { return }
                 for cursus in userProfile.cursusList {
                     if cursus.name == name {
-                        userProfile.getLevelAndSkills(cursusID: cursus.id)
-                        userProfile.getProjects(cursusID: cursus.id)
+                        userProfile.getLevelAndSkills(cursusId: cursus.id)
+                        userProfile.getProjects(cursusId: cursus.id)
                         tableView.reloadData()
                         break
                     }

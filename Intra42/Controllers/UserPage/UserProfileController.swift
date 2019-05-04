@@ -70,7 +70,7 @@ class UserProfileController: UITableViewController {
             guard let self = self, let data = data else { return }
             self.userProfile = UserProfile(data: data)
             if let userId = self.userProfile?.userId {
-                API42Manager.shared.getCoalitionInfoFor(userId: userId) { [weak self] (name, color, logo) in
+                API42Manager.shared.getCoalitionInfo(withUserId: userId) { [weak self] (name, color, logo) in
                     guard let self = self else { return }
                     self.coalitionName = name
                     self.coalitionColor = color
@@ -118,8 +118,8 @@ extension UserProfileController {
                     else { return }
                 for cursus in userProfile.cursusList {
                     if cursus.name == name {
-                        userProfile.getLevelAndSkills(cursusID: cursus.id)
-                        userProfile.getProjects(cursusID: cursus.id)
+                        userProfile.getLevelAndSkills(cursusId: cursus.id)
+                        userProfile.getProjects(cursusId: cursus.id)
                         tableView.reloadData()
                         break
                     }

@@ -120,7 +120,7 @@ class FriendsViewController: UIViewController {
             let login = friend.username
             
             if friendPictures[id] != nil { continue }
-            API42Manager.shared.getProfilePicture(forLogin: login) { (image) in
+            API42Manager.shared.getProfilePicture(withLogin: login) { (image) in
                 self.friendPictures[id] = image
                 DispatchQueue.main.async {
                     self.tableView.reloadData()

@@ -70,15 +70,15 @@ class EventsViewController: UIViewController {
     
     func populateAllEventsTable() {
         guard
-            let campusId = API42Manager.shared.userProfile?.mainCampusID,
-            let cursusId = API42Manager.shared.userProfile?.mainCursusID
+            let campusId = API42Manager.shared.userProfile?.mainCampusId,
+            let cursusId = API42Manager.shared.userProfile?.mainCursusId
         else {
             tableView.refreshControl?.endRefreshing()
             self.isLoadingEvents = false
             return
         }
         events = []
-        API42Manager.shared.getFutureEventsFor(campusId: campusId, cursusId: cursusId) { (events) in
+        API42Manager.shared.getFutureEvents(withCampusId: campusId, cursusId: cursusId) { (events) in
             for event in events.reversed() {
                 let newEvent = Event(event: event)
                 self.events.append(newEvent)
@@ -96,7 +96,7 @@ class EventsViewController: UIViewController {
             return
         }
         myEvents = []
-        API42Manager.shared.getFutureEventsFor(userId: userId) { (events) in
+        API42Manager.shared.getFutureEvents(withUserId: userId) { (events) in
             for event in events.reversed() {
                 let newEvent = Event(event: event)
                 self.myEvents.append(newEvent)

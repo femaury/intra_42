@@ -15,7 +15,7 @@ import KeychainSwift
 class API42Manager {
     
     static let shared = API42Manager()
-    private let clientID = "YOUR_42_API_APP_UID"
+    private let clientId = "YOUR_42_API_APP_UID"
     private let clientSecret = "YOUR_42_API_APP_SECRET"
     private let redirectURI = "com.femaury.swifty://oauth2callback"
     private let state = "super_long_secret_state"
@@ -54,7 +54,7 @@ class API42Manager {
             self.userProfile = UserProfile(data: data)
             
             let userId = data["id"].intValue
-            self.getCoalitionInfoFor(userId: userId, completionHandler: { (name, color, logo) in
+            self.getCoalitionInfo(withUserId: userId, completionHandler: { (name, color, logo) in
                 self.coalitionName = name
                 self.coalitionColor = color
                 self.coalitionLogo = logo
@@ -161,8 +161,8 @@ class API42Manager {
         }
     }
     
-    func getCoalitionInfoFor(userId: Int, completionHandler: @escaping (String, UIColor?, String) -> Void) {
-        request(url: "https://api.intra.42.fr/v2/users/\(userId)/coalitions") { (responseJSON) in
+    func getCoalitionInfo(withUserId id: Int, completionHandler: @escaping (String, UIColor?, String) -> Void) {
+        request(url: "https://api.intra.42.fr/v2/users/\(id)/coalitions") { (responseJSON) in
             guard let data = responseJSON, data.isEmpty == false else {
                 completionHandler("default", IntraTeal, "")
                 return
@@ -189,7 +189,7 @@ class API42Manager {
     }
     
     // TODO: Get application API token officialized to make more than 2 requests per second.
-    func searchUsersWith(string: String, completionHander: @escaping (JSON?, SearchSection) -> Void) {
+    func searchUsers(withString string: String, completionHander: @escaping (JSON?, SearchSection) -> Void) {
         let loginURL = "https://api.intra.42.fr/v2/users?search[login]=\(string)&sort=login&page[size]=100"
         let firstNameURL = "https://api.intra.42.fr/v2/users?search[first_name]=\(string)&sort=login&page[size]=100"
         let lastNameURL = "https://api.intra.42.fr/v2/users?search[last_name]=\(string)&sort=login&page[size]=100"
@@ -206,7 +206,7 @@ class API42Manager {
         }
     }
     
-    func getLogsForUserWith(id: Int, completionHandler: @escaping ([LocationLog]) -> Void) {
+    func getLogsForUser(withId id: Int, completionHandler: @escaping ([LocationLog]) -> Void) {
         API42Manager.shared.request(url: "https://api.intra.42.fr/v2/locations?filter[user_id]=\(id)&page[size]=100") { (data) in
             guard let logs = data?.arrayValue else {
                 completionHandler([])
@@ -273,7 +273,7 @@ class API42Manager {
     }
     
     // TODO: Find access to exam events (Currently unauthorized)
-    func getFutureEventsFor(campusId: Int, cursusId: Int, completionHandler: @escaping ([JSON]) -> Void) {
+    func getFutureEvents(withCampusId campusId: Int, cursusId: Int, completionHandler: @escaping ([JSON]) -> Void) {
         let eventsURL = "https://api.intra.42.fr/v2/campus/\(campusId)/cursus/\(cursusId)/events?filter[future]=true&page[size]=100"
         
         request(url: eventsURL) { (eventsData) in
@@ -286,8 +286,8 @@ class API42Manager {
         }
     }
     
-    func getFutureEventsFor(userId: Int, completionHandler: @escaping ([JSON]) -> Void) {
-        let eventsURL = "https://api.intra.42.fr/v2/users/\(userId)/events?filter[future]=true"
+    func getFutureEvents(withUserId id: Int, completionHandler: @escaping ([JSON]) -> Void) {
+        let eventsURL = "https://api.intra.42.fr/v2/users/\(id)/events?filter[future]=true"
         
         request(url: eventsURL) { (eventsData) in
             guard let eventsData = eventsData else {
@@ -298,11 +298,11 @@ class API42Manager {
         }
     }
     
-    func getLocationsFor(campusId: Int, page: Int, completionHandler: @escaping ([JSON]) -> Void) {
+    func getLocations(withCampusId id: Int, page: Int, completionHandler: @escaping ([JSON]) -> Void) {
         if page == 1 {
             locationData = [] // Reset array for each first call to getLocationsFor()
         }
-        let locationURL = "https://api.intra.42.fr/v2/campus/\(campusId)/locations?filter[active]=true&page[number]=\(page)&page[size]=100"
+        let locationURL = "https://api.intra.42.fr/v2/campus/\(id)/locations?filter[active]=true&page[number]=\(page)&page[size]=100"
         
         request(url: locationURL) { (data) in
             guard let data = data  else {
@@ -312,7 +312,7 @@ class API42Manager {
             self.locationData += data.arrayValue
             if data.arrayValue.count == 100 {
                 print("Location Page \(page)")
-                self.getLocationsFor(campusId: campusId, page: page + 1, completionHandler: completionHandler)
+                self.getLocations(withCampusId: id, page: page + 1, completionHandler: completionHandler)
             } else {
                 completionHandler(self.locationData)
             }
@@ -381,7 +381,7 @@ class API42Manager {
         }
     }
     
-    func getProfilePicture(forLogin login: String, completionHandler: @escaping (UIImage?) -> Void) {
+    func getProfilePicture(withLogin login: String, completionHandler: @escaping (UIImage?) -> Void) {
         let urlString = "https://cdn.intra.42.fr/users/medium_\(login).jpg"
         let defaultImage = UIImage(named: "42_default")
         if let url = URL(string: urlString) {
@@ -405,7 +405,7 @@ class API42Manager {
     // MARK: - OAuth Flow
     
     func startOAuth2Login() {
-        let authPath = "https://api.intra.42.fr/oauth/authorize?client_id=\(clientID)&redirect_uri=\(redirectURI)&scope=public&state=\(state)&response_type=code"
+        let authPath = "https://api.intra.42.fr/oauth/authorize?client_id=\(clientId)&redirect_uri=\(redirectURI)&scope=public&state=\(state)&response_type=code"
         
         if hasOAuthToken() {
             if let completionHandler = OAuthTokenCompletionHandler {
@@ -439,7 +439,7 @@ class API42Manager {
         let tokenURL = "https://api.intra.42.fr/oauth/token"
         let tokenParams = [
             "grant_type": "authorization_code",
-            "client_id": clientID,
+            "client_id": clientId,
             "client_secret": clientSecret,
             "code": code,
             "redirect_uri": redirectURI,
@@ -494,7 +494,7 @@ class API42Manager {
         let tokenURL = "https://api.intra.42.fr/oauth/token"
         let tokenParams = [
             "grant_type": "refresh_token",
-            "client_id": clientID,
+            "client_id": clientId,
             "client_secret": clientSecret,
             "refresh_token": refreshToken,
             "redirect_uri": redirectURI,

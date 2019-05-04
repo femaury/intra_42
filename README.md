@@ -1,7 +1,7 @@
 # Intra 42
 
-<img src="https://github.com/femaury/intra_42/raw/master/Screenshots/profile_page.png"
-     title="Intra 42 by Felix Maury" width="250">
+<img src="https://github.com/femaury/intra_42/raw/master/Screenshots/intra_42_main_screens.jpg"
+     title="Intra 42 by Felix Maury" width="800">
      
 ### Swift app for 42's intranet
 

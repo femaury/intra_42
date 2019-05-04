@@ -51,6 +51,7 @@ class SearchResultsController: UITableViewController, SearchResultsDataSource {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        
         navigationController?.view.setNeedsLayout() // force update layout
         navigationController?.view.layoutIfNeeded() // to fix height of the navigation bar
     }

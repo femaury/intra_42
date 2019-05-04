@@ -144,7 +144,7 @@ class API42Manager {
                                     self.handleAPIErrors(error: error)
                                 }
                             })
-                        } else if message.contains("not authorized") {
+                        } else if message.contains("not authorized") || message.contains("was revoked") {
                             let error = CustomError(title: "Authorization Error", description: "Token was unauthorized by API...", code: -1)
                             self.clearTokenKeys()
                             self.handleAPIErrors(error: error)

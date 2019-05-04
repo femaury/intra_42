@@ -15,6 +15,8 @@ class SegmentHeaderCell: UITableViewCell {
     var segmentCallback: ((Int) -> Void)?
     
     override func layoutSubviews() {
+        super.layoutSubviews()
+        
         let borderBottom = UIView(frame: CGRect(x: 0, y: 34, width: self.frame.width, height: 1))
         borderBottom.backgroundColor = UIColor.black
         self.addSubview(borderBottom)

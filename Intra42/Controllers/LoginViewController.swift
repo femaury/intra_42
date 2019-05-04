@@ -28,6 +28,8 @@ class LoginViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         guard let error = errorMessage else { return }
         errorLabel.text = error
         errorLabel.isHidden = false

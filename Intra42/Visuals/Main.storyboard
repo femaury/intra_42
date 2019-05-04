@@ -275,14 +275,14 @@
                                     <outlet property="walletStackview" destination="LZp-7q-F2v" id="svp-Ro-jjB"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="SegmentHeaderCell" rowHeight="35" id="P7H-ZE-76d" customClass="SegmentHeaderCell" customModule="Intra42" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" indentationWidth="10" reuseIdentifier="SegmentHeaderCell" rowHeight="35" id="pXO-yD-gGP" userLabel="SegmentHeaderCell" customClass="SegmentHeaderCell" customModule="Intra42" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="378" width="414" height="35"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="P7H-ZE-76d" id="f8l-9j-j7N">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pXO-yD-gGP" id="xtd-Y9-NuC">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="35"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="dNp-mF-vWm">
+                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xUg-dW-ES7">
                                             <rect key="frame" x="-2" y="-2" width="418" height="40"/>
                                             <segments>
                                                 <segment title="Cursus"/>
@@ -291,21 +291,18 @@
                                                 <segment title="Achievements"/>
                                             </segments>
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <connections>
-                                                <action selector="changeSections:" destination="P7H-ZE-76d" eventType="valueChanged" id="OXD-Va-4ZU"/>
-                                            </connections>
                                         </segmentedControl>
                                     </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstItem="dNp-mF-vWm" firstAttribute="leading" secondItem="f8l-9j-j7N" secondAttribute="leading" constant="-2" id="4aT-66-cB5"/>
-                                        <constraint firstAttribute="trailing" secondItem="dNp-mF-vWm" secondAttribute="trailing" constant="-2" id="Ajv-JM-cXo"/>
-                                        <constraint firstItem="dNp-mF-vWm" firstAttribute="top" secondItem="f8l-9j-j7N" secondAttribute="top" constant="-2" id="bna-mc-COy"/>
-                                        <constraint firstAttribute="bottom" secondItem="dNp-mF-vWm" secondAttribute="bottom" constant="-2" id="qQV-Kp-0q0"/>
+                                        <constraint firstItem="xUg-dW-ES7" firstAttribute="top" secondItem="xtd-Y9-NuC" secondAttribute="top" constant="-2" id="KZP-9l-FNt"/>
+                                        <constraint firstAttribute="trailing" secondItem="xUg-dW-ES7" secondAttribute="trailing" constant="-2" id="Mbp-bu-JaH"/>
+                                        <constraint firstItem="xUg-dW-ES7" firstAttribute="leading" secondItem="xtd-Y9-NuC" secondAttribute="leading" constant="-2" id="Qbl-A1-Ezn"/>
+                                        <constraint firstAttribute="bottom" secondItem="xUg-dW-ES7" secondAttribute="bottom" constant="-2" id="SPi-Og-lPB"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
-                                    <outlet property="segmentControl" destination="dNp-mF-vWm" id="l2Z-eX-yXk"/>
+                                    <outlet property="segmentControl" destination="xUg-dW-ES7" id="HXh-66-5hG"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="ProjectCell" rowHeight="40" id="8Xq-mq-Cks" customClass="ProjectCell" customModule="Intra42" customModuleProvider="target">
@@ -329,7 +326,7 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some Time Ago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Drd-aZ-CHc">
-                                            <rect key="frame" x="112" y="13" width="89" height="14.5"/>
+                                            <rect key="frame" x="112" y="12.5" width="89" height="15"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -668,7 +665,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No results found" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3YY-MQ-Tdf">
-                                            <rect key="frame" x="129.5" y="24" width="155.5" height="26.5"/>
+                                            <rect key="frame" x="129.5" y="24" width="155" height="26.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -933,7 +930,7 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some Time Ago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DR6-pY-sDx">
-                                            <rect key="frame" x="112" y="18" width="89" height="14.5"/>
+                                            <rect key="frame" x="112" y="17.5" width="89" height="15"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -2448,10 +2445,10 @@
         <image name="user_male" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="tHZ-Qu-oYN"/>
+        <segue reference="FNY-8Y-LFG"/>
         <segue reference="IC3-E2-qiD"/>
         <segue reference="9Kb-eh-UKx"/>
-        <segue reference="FNR-te-koC"/>
-        <segue reference="5Dy-4R-DkO"/>
+        <segue reference="s4V-tz-R5t"/>
+        <segue reference="yWq-yc-xk6"/>
     </inferredMetricsTieBreakers>
 </document>

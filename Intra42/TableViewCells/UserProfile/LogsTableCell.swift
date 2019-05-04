@@ -39,6 +39,7 @@ class LogsTableCell: UITableViewCell, UITableViewDelegate, UITableViewDataSource
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        
         subMenuTable?.frame = CGRect(x: 0, y: 0, width: self.bounds.size.width, height: self.bounds.size.height)
     }
     

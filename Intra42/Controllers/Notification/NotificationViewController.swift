@@ -27,6 +27,8 @@ class NotificationViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             self.dismiss(animated: true)
         }

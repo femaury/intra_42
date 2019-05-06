@@ -1,21 +1,19 @@
 PODS:
-  - Alamofire (4.8.1)
-  - CocoaLumberjack (3.5.1):
-    - CocoaLumberjack/Core (= 3.5.1)
-  - CocoaLumberjack/Core (3.5.1)
-  - KeychainSwift (13.0.0)
+  - Alamofire (4.8.2)
+  - CocoaLumberjack (3.5.3):
+    - CocoaLumberjack/Core (= 3.5.3)
+  - CocoaLumberjack/Core (3.5.3)
+  - KeychainSwift (15.0.0)
   - SideMenu (5.0.3)
   - SVGKit (2.1.0):
     - CocoaLumberjack (~> 3.0)
-  - SwiftSVG (2.2.0)
-  - SwiftyJSON (4.2.0)
+  - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
   - Alamofire
   - KeychainSwift
   - SideMenu
   - SVGKit
-  - SwiftSVG
   - SwiftyJSON
 
 SPEC REPOS:
@@ -25,18 +23,16 @@ SPEC REPOS:
     - KeychainSwift
     - SideMenu
     - SVGKit
-    - SwiftSVG
     - SwiftyJSON
 
 SPEC CHECKSUMS:
-  Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
-  CocoaLumberjack: 2101f8a5508197a305e737d16c5c2e9e2157628c
-  KeychainSwift: 23d6c16cbc33f20fafa30c3d783241b4b87d998c
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  CocoaLumberjack: 2f44e60eb91c176d471fdba43b9e3eae6a721947
+  KeychainSwift: c6fc018d287804faf1ce3f258a1e51a7178c8382
   SideMenu: 1dcaabce84538c53325c287f7fe62999379a641c
   SVGKit: 8a2fc74258bdb2abb54d3b65f3dd68b0277a9c4d
-  SwiftSVG: 19bc4e434dcf236ece45ddf75f5ee1d3ef8061e6
-  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 4585ff9a32506ab55d40af954ad70d9468b92164
+PODFILE CHECKSUM: bdddb3eee711e36f419b02f981207f955fc33e22
 
-COCOAPODS: 1.6.0
+COCOAPODS: 1.6.1

@@ -1,6 +1,6 @@
 // Software License Agreement (BSD License)
 //
-// Copyright (c) 2010-2018, Deusty, LLC
+// Copyright (c) 2010-2019, Deusty, LLC
 // All rights reserved.
 //
 // Redistribution and use of this software in source and binary forms,
@@ -70,7 +70,7 @@ static DDLogLevel _captureLevel = DDLogLevelVerbose;
 #if !TARGET_OS_IPHONE || (defined(TARGET_SIMULATOR) && TARGET_SIMULATOR)
     int processId = [[NSProcessInfo processInfo] processIdentifier];
     char pid[16];
-    sprintf(pid, "%d", processId);
+    snprintf(pid, sizeof(pid), "%d", processId);
     asl_set_query(query, ASL_KEY_PID, pid, ASL_QUERY_OP_EQUAL | ASL_QUERY_OP_NUMERIC);
 #endif
 }

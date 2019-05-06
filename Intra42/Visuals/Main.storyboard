@@ -270,15 +270,15 @@
                                     <outlet property="walletStackview" destination="LZp-7q-F2v" id="svp-Ro-jjB"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" indentationWidth="10" reuseIdentifier="SegmentHeaderCell" rowHeight="35" id="pXO-yD-gGP" userLabel="SegmentHeaderCell" customClass="SegmentHeaderCell" customModule="Intra42" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="SegmentHeaderCell" rowHeight="35" id="yeE-SG-5Gs" customClass="SegmentHeaderCell" customModule="Intra42" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="378" width="414" height="35"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pXO-yD-gGP" id="xtd-Y9-NuC">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yeE-SG-5Gs" id="zR6-If-eiK">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="35"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xUg-dW-ES7">
-                                            <rect key="frame" x="-2" y="-2" width="418" height="40"/>
+                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="aXD-mX-06m">
+                                            <rect key="frame" x="-2" y="-2" width="418" height="38"/>
                                             <segments>
                                                 <segment title="Cursus"/>
                                                 <segment title="Projects"/>
@@ -286,18 +286,21 @@
                                                 <segment title="Achievements"/>
                                             </segments>
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="changeSections:" destination="yeE-SG-5Gs" eventType="valueChanged" id="af1-F8-8kJ"/>
+                                            </connections>
                                         </segmentedControl>
                                     </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstItem="xUg-dW-ES7" firstAttribute="top" secondItem="xtd-Y9-NuC" secondAttribute="top" constant="-2" id="KZP-9l-FNt"/>
-                                        <constraint firstAttribute="trailing" secondItem="xUg-dW-ES7" secondAttribute="trailing" constant="-2" id="Mbp-bu-JaH"/>
-                                        <constraint firstItem="xUg-dW-ES7" firstAttribute="leading" secondItem="xtd-Y9-NuC" secondAttribute="leading" constant="-2" id="Qbl-A1-Ezn"/>
-                                        <constraint firstAttribute="bottom" secondItem="xUg-dW-ES7" secondAttribute="bottom" constant="-2" id="SPi-Og-lPB"/>
+                                        <constraint firstAttribute="trailing" secondItem="aXD-mX-06m" secondAttribute="trailing" constant="-2" id="5YX-MZ-RNF"/>
+                                        <constraint firstAttribute="bottom" secondItem="aXD-mX-06m" secondAttribute="bottom" id="l9x-DX-QOr"/>
+                                        <constraint firstItem="aXD-mX-06m" firstAttribute="leading" secondItem="zR6-If-eiK" secondAttribute="leading" constant="-2" id="uxo-0P-vec"/>
+                                        <constraint firstItem="aXD-mX-06m" firstAttribute="top" secondItem="zR6-If-eiK" secondAttribute="top" constant="-2" id="zBG-bF-imx"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
-                                    <outlet property="segmentControl" destination="xUg-dW-ES7" id="HXh-66-5hG"/>
+                                    <outlet property="segmentControl" destination="aXD-mX-06m" id="mHy-HW-gNO"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="ProjectCell" rowHeight="40" id="8Xq-mq-Cks" customClass="ProjectCell" customModule="Intra42" customModuleProvider="target">
@@ -1072,18 +1075,18 @@
             <objects>
                 <viewController title="Holy Graph" id="ODo-5C-KVo" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fe6-3l-ABs">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="error" translatesAutoresizingMaskIntoConstraints="NO" id="Hpp-Av-A3V">
-                                <rect key="frame" x="157" y="398" width="100" height="100"/>
+                                <rect key="frame" x="157" y="312.5" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="C9a-RY-qqN"/>
                                     <constraint firstAttribute="height" constant="100" id="YQC-iy-8jr"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Work in Progress" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a7H-2i-Uhr">
-                                <rect key="frame" x="121" y="508" width="172" height="24"/>
+                                <rect key="frame" x="121" y="422.5" width="172" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -2417,9 +2420,9 @@
         <image name="user_male" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wE8-d0-0Rm"/>
-        <segue reference="WDk-Vj-WG6"/>
+        <segue reference="FNY-8Y-LFG"/>
+        <segue reference="IC3-E2-qiD"/>
         <segue reference="ujx-ft-g6P"/>
-        <segue reference="0QS-t1-7Go"/>
+        <segue reference="s4V-tz-R5t"/>
     </inferredMetricsTieBreakers>
 </document>

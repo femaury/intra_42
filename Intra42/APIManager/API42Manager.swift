@@ -357,12 +357,12 @@ class API42Manager {
                     newAchievement.subs += parent.subs
                     parent.subs = []
                     newAchievement.subs.append(parent)
-                    achievements[name] = newAchievement
+                    achievements.updateValue(newAchievement, forKey: name)
                 } else {
                     parent.subs.append(newAchievement)
                 }
             } else {
-                achievements[name] = newAchievement
+                achievements.updateValue(newAchievement, forKey: name)
             }
         }
         completionHandler(achievements)

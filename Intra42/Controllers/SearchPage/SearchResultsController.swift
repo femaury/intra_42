@@ -49,6 +49,12 @@ class SearchResultsController: UITableViewController, SearchResultsDataSource {
         navigationItem.titleView = searchBar
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.reloadData()
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
@@ -85,7 +91,8 @@ class SearchResultsController: UITableViewController, SearchResultsDataSource {
     
     func getProfilePictureOfUser(withId id: Int, login: String) {
         API42Manager.shared.getProfilePicture(withLogin: login) { (image) in
-            self.userProfilePictures[id] = image
+            guard let image = image else { return }
+            self.userProfilePictures.updateValue(image, forKey: id)
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -94,6 +101,7 @@ class SearchResultsController: UITableViewController, SearchResultsDataSource {
     
     func addUser(friend: Friend) {
         FriendDataManager.shared.saveNewFriend(friend)
+        tableView.reloadData()
     }
 }
 

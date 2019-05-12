@@ -93,7 +93,7 @@ class FriendsViewController: UIViewController {
                 let id = connection["user"]["id"].intValue
                 let location = connection["host"].stringValue
 //                let campus = connection["campus_id"].intValue // TODO
-                self.friendLocations[id] = location
+                self.friendLocations.updateValue(location, forKey: id)
             }
             self.orderFriendsByLocation()
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
@@ -124,7 +124,8 @@ class FriendsViewController: UIViewController {
             
             if friendPictures[id] != nil { continue }
             API42Manager.shared.getProfilePicture(withLogin: login) { (image) in
-                self.friendPictures[id] = image
+                guard let image = image else { return }
+                self.friendPictures.updateValue(image, forKey: id)
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }

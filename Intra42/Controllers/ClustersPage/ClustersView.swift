@@ -204,16 +204,17 @@ class ClustersView: UIView {
                 if error == nil, let imgData = data, let image = UIImage(data: imgData) {
                     DispatchQueue.main.async {
                         view.image = image
-                        self.userImages[id] = image
+                        self.userImages.updateValue(image, forKey: id)
                     }
                 } else if response != nil {
                     if let err = error {
                         print("Image Error: \(err)")
                     }
                     DispatchQueue.main.async {
-                        let image = UIImage(named: "42_default")!
-                        view.image = image
-                        self.userImages[id] = image
+                        if let image = UIImage(named: "42_default") {
+                            view.image = image
+                            self.userImages.updateValue(image, forKey: id)
+                        }
                     }
                 }
             }

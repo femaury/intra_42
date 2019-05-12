@@ -107,7 +107,7 @@ class ClustersViewController: UIViewController {
                     continue
                 }
                 
-                clusters[host] = ClusterPerson(id: id, name: name)
+                clusters.updateValue(ClusterPerson(id: id, name: name), forKey: host)
             }
             self.clusters = clusters
             self.clustersView.setupCluster(floor: floor, cluster: clusters)

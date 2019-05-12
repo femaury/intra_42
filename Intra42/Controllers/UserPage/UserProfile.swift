@@ -123,12 +123,12 @@ class UserProfile {
                         newAchievement.subs += parent.subs
                         parent.subs = []
                         newAchievement.subs.append(parent)
-                        self.achievements[name] = newAchievement
+                        self.achievements.updateValue(newAchievement, forKey: name)
                     } else {
                         parent.subs.append(newAchievement)
                     }
                 } else {
-                    self.achievements[name] = newAchievement // TODO: Fix small leak???
+                    self.achievements.updateValue(newAchievement, forKey: name)
                     self.achievementsIndices.append(name)
                 }
             }

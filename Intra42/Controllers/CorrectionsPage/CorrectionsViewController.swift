@@ -43,6 +43,7 @@ class CorrectionsViewController: UIViewController {
 //            })
 //        }
         API42Manager.shared.getScales { (scales) in
+            print(scales)
             for scale in scales.reversed() {
                 let name = scale["scale"]["name"].stringValue
                 var isCorrector = true

@@ -24,6 +24,10 @@
 		DC1988CC22395588009E3A55 /* ClusterPost.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC1988CB22395588009E3A55 /* ClusterPost.xib */; };
 		DC1988CE2239567B009E3A55 /* Cluster.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC1988CD2239567B009E3A55 /* Cluster.xib */; };
 		DC1988D02239680D009E3A55 /* ClusterPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1988CF2239680D009E3A55 /* ClusterPost.swift */; };
+		DC3797912288710200406488 /* ScaleOneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3797902288710200406488 /* ScaleOneCell.swift */; };
+		DC3797932288711500406488 /* ScaleTwoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3797922288711500406488 /* ScaleTwoCell.swift */; };
+		DC3797952288714100406488 /* ScaleThreeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3797942288714100406488 /* ScaleThreeCell.swift */; };
+		DC3797972288714C00406488 /* ScaleFourCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3797962288714C00406488 /* ScaleFourCell.swift */; };
 		DC89992D22414F9000F47EEF /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89992C22414F9000F47EEF /* Achievement.swift */; };
 		DC89993022427A1500F47EEF /* AchievementsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89992F22427A1500F47EEF /* AchievementsController.swift */; };
 		DC89993222427A8000F47EEF /* AchievementsHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89993122427A8000F47EEF /* AchievementsHeaderCell.swift */; };
@@ -84,6 +88,10 @@
 		DC1988CB22395588009E3A55 /* ClusterPost.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClusterPost.xib; sourceTree = "<group>"; };
 		DC1988CD2239567B009E3A55 /* Cluster.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Cluster.xib; sourceTree = "<group>"; };
 		DC1988CF2239680D009E3A55 /* ClusterPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusterPost.swift; sourceTree = "<group>"; };
+		DC3797902288710200406488 /* ScaleOneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleOneCell.swift; sourceTree = "<group>"; };
+		DC3797922288711500406488 /* ScaleTwoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleTwoCell.swift; sourceTree = "<group>"; };
+		DC3797942288714100406488 /* ScaleThreeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleThreeCell.swift; sourceTree = "<group>"; };
+		DC3797962288714C00406488 /* ScaleFourCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleFourCell.swift; sourceTree = "<group>"; };
 		DC89992C22414F9000F47EEF /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
 		DC89992F22427A1500F47EEF /* AchievementsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsController.swift; sourceTree = "<group>"; };
 		DC89993122427A8000F47EEF /* AchievementsHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AchievementsHeaderCell.swift; path = Intra42/TableViewCells/Achievements/AchievementsHeaderCell.swift; sourceTree = SOURCE_ROOT; };
@@ -192,6 +200,17 @@
 			path = SideMenu;
 			sourceTree = "<group>";
 		};
+		DC37978F228870D800406488 /* Scales */ = {
+			isa = PBXGroup;
+			children = (
+				DC3797902288710200406488 /* ScaleOneCell.swift */,
+				DC3797922288711500406488 /* ScaleTwoCell.swift */,
+				DC3797942288714100406488 /* ScaleThreeCell.swift */,
+				DC3797962288714C00406488 /* ScaleFourCell.swift */,
+			);
+			path = Scales;
+			sourceTree = "<group>";
+		};
 		DC89992E224279E400F47EEF /* Achievements */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,6 +276,7 @@
 		DC89994B2247CB5B00F47EEF /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				DC37978F228870D800406488 /* Scales */,
 				DC8999502247CCA600F47EEF /* Friends */,
 				DC89994E2247CC2900F47EEF /* Events */,
 				DC89994D2247CC2000F47EEF /* Achievements */,
@@ -603,6 +623,7 @@
 				DCCE05902227010E00906ECD /* HomeViewController.swift in Sources */,
 				DCCE05A222296DC100906ECD /* ClustersViewController.swift in Sources */,
 				DC955DF0222C5192003B70BC /* DateTimeInterval.swift in Sources */,
+				DC3797932288711500406488 /* ScaleTwoCell.swift in Sources */,
 				DCCE058E2226F0FF00906ECD /* CustomError.swift in Sources */,
 				DC955E0D222FF623003B70BC /* SideMenuController.swift in Sources */,
 				DC1988C02236970F009E3A55 /* StringHTMLToAttributedString.swift in Sources */,
@@ -613,7 +634,9 @@
 				DC89993822452F4E00F47EEF /* ProfileTableCells.swift in Sources */,
 				DC955E02222CBC7F003B70BC /* UserResultCell.swift in Sources */,
 				DC955DEA222BE9EE003B70BC /* UIViewRoundCorners.swift in Sources */,
+				DC3797912288710200406488 /* ScaleOneCell.swift in Sources */,
 				DC955E05222DDDEB003B70BC /* UserProfileController.swift in Sources */,
+				DC3797972288714C00406488 /* ScaleFourCell.swift in Sources */,
 				DC89992D22414F9000F47EEF /* Achievement.swift in Sources */,
 				DC1988C42236BCFE009E3A55 /* UIViewPinBackground.swift in Sources */,
 				DC1988C222369846009E3A55 /* EventDetailController.swift in Sources */,
@@ -635,6 +658,7 @@
 				DC955DEC222C12AC003B70BC /* SegmentHeaderCell.swift in Sources */,
 				DC0D7B2E223059B300A30B9F /* FriendDataManager.swift in Sources */,
 				DC1988D02239680D009E3A55 /* ClusterPost.swift in Sources */,
+				DC3797952288714100406488 /* ScaleThreeCell.swift in Sources */,
 				DCCE057A222591F400906ECD /* AppDelegate.swift in Sources */,
 				DC89993022427A1500F47EEF /* AchievementsController.swift in Sources */,
 			);

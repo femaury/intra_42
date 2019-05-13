@@ -10,9 +10,12 @@ import UIKit
 
 struct Correction {
     let name: String
+    let teamName: String
+    let projectId: Int
+    let repoURL: String
     let isCorrector: Bool
-    let corrector: String
-    let correctee: String
+    let corrector: (id: Int, login: String)
+    let correctees: [(id: Int, login: String)]
     let startDate: Date
 }
 
@@ -34,33 +37,60 @@ class CorrectionsViewController: UIViewController {
         tapGesture.cancelsTouchesInView = false
         view.addGestureRecognizer(tapGesture)
         
-//        API42Manager.shared.request(url: "https://api.intra.42.fr/v2/achievements?page[size]=100") { (data) in
-//            print(data ?? "No data")
-//            print(data?.arrayValue.count ?? "nil")
-//            API42Manager.shared.request(url: "https://api.intra.42.fr/v2/achievements?page[number]=2&page[size]=100", completionHandler: { (data) in
-//                print(data ?? "No data")
-//                print(data?.arrayValue.count ?? "nil")
-//            })
-//        }
         API42Manager.shared.getScales { (scales) in
             print(scales)
             for scale in scales.reversed() {
-                let name = scale["scale"]["name"].stringValue
+                let team = scale["team"]
+                let members = team["users"].arrayValue
+                let projectId = team["project_id"].intValue
+                let repoURL = team["repo_url"].stringValue
+                let teamName = team["name"].stringValue
+                
+                var correctees: [(id: Int, login: String)] = []
                 var isCorrector = true
-                let corrector = scale["corrector"].stringValue
-                let correctee = scale["correcteds"].arrayValue[0]
-                if correctee["id"].intValue == API42Manager.shared.userProfile?.userId {
-                    isCorrector = false
+                for member in members {
+                    let correcteeLogin = member["login"].stringValue
+                    let correcteeId = member["id"].intValue
+                    if correcteeId == API42Manager.shared.userProfile?.userId {
+                        isCorrector = false
+                    }
+                    if member["leader"].boolValue {
+                        correctees.insert((correcteeId, correcteeLogin), at: 0)
+                    } else {
+                        correctees.append((correcteeId, correcteeLogin))
+                    }
                 }
+                
+                var corrector: (id: Int, login: String) = (0, "unknown")
+                if scale["corrector"].string == nil {
+                    let corr = scale["corrector"]
+                    corrector = (corr["id"].intValue, corr["login"].stringValue)
+                }
+                
                 let dateString = scale["begin_at"].stringValue
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
                 let date = dateFormatter.date(from: dateString) ?? Date()
                 
-                let correction = Correction(name: name, isCorrector: isCorrector, corrector: corrector, correctee: correctee["login"].stringValue, startDate: date)
-                self.corrections.append(correction)
+                API42Manager.shared.getProject(withId: projectId, completionHandler: { (data) in
+                    var name = "Unknown Project"
+                    if let data = data {
+                        name = data["name"].stringValue
+                    }
+
+                    let correction = Correction(
+                        name: name,
+                        teamName: teamName,
+                        projectId: projectId,
+                        repoURL: repoURL,
+                        isCorrector: isCorrector,
+                        corrector: corrector,
+                        correctees: correctees,
+                        startDate: date)
+                    self.corrections.append(correction)
+                    self.tableView.reloadData()
+                })
             }
-            self.tableView.reloadData()
         }
     }
 
@@ -98,9 +128,9 @@ extension CorrectionsViewController: UISearchBarDelegate {
 
 extension CorrectionsViewController: UITableViewDelegate, UITableViewDataSource {
     
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 100
-//    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 175
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return corrections.count
@@ -108,28 +138,8 @@ extension CorrectionsViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let correction = corrections[indexPath.row]
-        var cell: UITableViewCell!
-        cell = tableView.dequeueReusableCell(withIdentifier: "ScaleCell")
-        if cell == nil {
-            cell = UITableViewCell(style: .value1, reuseIdentifier: "ScaleCell")
-        }
-        
-        var text: String
-        if correction.isCorrector {
-            text = "You will be evaluating \(correction.correctee) on \(correction.name)"
-        } else {
-            text = "You will be evaluated by \(correction.corrector) on \(correction.name)"
-        }
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MMM dd yyyy HH:mm"
-        let dateString = formatter.string(from: correction.startDate)
-        
-        cell.textLabel?.text = text + " on \(dateString)"
-        cell.textLabel?.numberOfLines = 0
-        cell.textLabel?.lineBreakMode = .byWordWrapping
-//        cell.detailTextLabel?.text = dateString
-//        cell.detailTextLabel?.numberOfLines = 0
-//        cell.detailTextLabel?.lineBreakMode = .byWordWrapping
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ScaleOneCell") as! ScaleOneCell
+        cell.setupCell(correction: correction)
         return cell
     }
 }

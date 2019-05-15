@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let homeController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "HomeTabBarController")
         for child in homeController.children {
             guard let navController = child as? UINavigationController else { continue }
-            navController.navigationBar.barTintColor = IntraTeal
+            navController.navigationBar.barTintColor = Colors.intraTeal
             navController.navigationBar.tintColor = UIColor.black
         }
         

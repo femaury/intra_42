@@ -23,15 +23,15 @@ enum AchievementTier: String {
     var color: UIColor? {
         switch self {
         case .none:
-            return AchievementColor.none
+            return Colors.Achievement.none
         case .easy:
-            return AchievementColor.bronze
+            return Colors.Achievement.bronze
         case .medium:
-            return AchievementColor.silver
+            return Colors.Achievement.silver
         case .hard:
-            return AchievementColor.gold
+            return Colors.Achievement.gold
         case .challenge:
-            return AchievementColor.platinum
+            return Colors.Achievement.platinum
         }
     }
 }

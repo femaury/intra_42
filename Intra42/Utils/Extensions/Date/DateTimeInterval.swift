@@ -70,7 +70,7 @@ extension Date {
         
         let m = months(from: date)
         if m > 0 {
-            return m == 1 ? "In \(months(from: date)) month" : "In\(months(from: date)) months"
+            return m == 1 ? "In \(months(from: date)) month" : "In \(months(from: date)) months"
         }
         
         let w = weeks(from: date)

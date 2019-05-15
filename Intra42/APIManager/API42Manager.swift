@@ -114,8 +114,11 @@ class API42Manager {
         if hasOAuthToken() {
             let headers = ["authorization": "Bearer \(OAuthAccessToken!)"]
             let encodedURL = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+
             Alamofire.request(encodedURL, headers: headers).responseJSON { (response) in
                 if let error = response.error {
+                    // Unable to parse "429 Too Many Requests (Spam Rate Limit Exceeded)" as JSON
+                    // Will be fixed when app gets approved by 42 API team
                     print("Request Error:", error)
                     self.showErrorAlert(message: "There was a problem with 42's API...")
                     completionHandler(nil)
@@ -129,7 +132,7 @@ class API42Manager {
 
                 guard let value = response.result.value else { return }
                 let valueJSON = JSON(value)
-                
+
                 if valueJSON["error"].string != nil {
                     print("Error returned:", valueJSON)
                     print("After calling:", encodedURL)
@@ -153,7 +156,7 @@ class API42Manager {
                     }
                     return
                 }
-                
+
                 completionHandler(valueJSON)
             }
         } else {
@@ -164,7 +167,7 @@ class API42Manager {
     func getCoalitionInfo(withUserId id: Int, completionHandler: @escaping (String, UIColor?, String) -> Void) {
         request(url: "https://api.intra.42.fr/v2/users/\(id)/coalitions") { (responseJSON) in
             guard let data = responseJSON, data.isEmpty == false else {
-                completionHandler("default", IntraTeal, "")
+                completionHandler("default", Colors.intraTeal, "")
                 return
             }
             print(data)

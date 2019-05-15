@@ -61,7 +61,7 @@ class CorrectionsViewController: UIViewController {
                     }
                 }
                 
-                var corrector: (id: Int, login: String) = (0, "unknown")
+                var corrector: (id: Int, login: String) = (-1, "Someone")
                 if scale["corrector"].string == nil {
                     let corr = scale["corrector"]
                     corrector = (corr["id"].intValue, corr["login"].stringValue)
@@ -129,7 +129,7 @@ extension CorrectionsViewController: UISearchBarDelegate {
 extension CorrectionsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 175
+        return 100
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -138,7 +138,7 @@ extension CorrectionsViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let correction = corrections[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ScaleOneCell") as! ScaleOneCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ScalesCell") as! ScalesCell
         cell.setupCell(correction: correction)
         return cell
     }

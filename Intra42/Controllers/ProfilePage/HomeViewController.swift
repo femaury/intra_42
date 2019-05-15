@@ -66,11 +66,11 @@ class HomeViewController: UIViewController {
         tableView.keyboardDismissMode = .onDrag
         tableView.register(LogsTableCell.self, forCellReuseIdentifier: "LogsTableCell")
         
-        tabBarController?.tabBar.barTintColor = IntraTeal
+        tabBarController?.tabBar.barTintColor = Colors.intraTeal
         tabBarController?.tabBar.tintColor = UIColor.black
         tabBarController?.tabBar.unselectedItemTintColor = UIColor.white
         
-        navigationController?.navigationBar.barTintColor = IntraTeal
+        navigationController?.navigationBar.barTintColor = Colors.intraTeal
         navigationController?.navigationBar.tintColor = UIColor.black
     }
     

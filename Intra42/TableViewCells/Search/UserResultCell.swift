@@ -30,11 +30,11 @@ class UserResultCell: UITableViewCell, UserProfileCell {
         if isFriend {
             addUserButton.setImage(UIImage(named: "ok"), for: .normal)
             addUserButton.isUserInteractionEnabled = false
-            addUserButton.tintColor = ValidGrade
+            addUserButton.tintColor = Colors.validGrade
         } else {
             addUserButton.setImage(UIImage(named: "add_user_male"), for: .normal)
             addUserButton.isUserInteractionEnabled = true
-            addUserButton.tintColor = IntraTeal
+            addUserButton.tintColor = Colors.intraTeal
         }
     }
     
@@ -55,7 +55,7 @@ class UserResultCell: UITableViewCell, UserProfileCell {
             delegate.addUser(friend: friend)
             self.addUserIndicator.stopAnimating()
             self.addUserButton.setImage(UIImage(named: "ok"), for: .normal)
-            self.addUserButton.tintColor = ValidGrade
+            self.addUserButton.tintColor = Colors.validGrade
         }
     }
 }

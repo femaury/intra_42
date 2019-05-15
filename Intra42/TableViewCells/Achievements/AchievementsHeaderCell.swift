@@ -21,7 +21,7 @@ class AchievementsHeaderCell: UITableViewCell {
                 let progressWidth = percentage * Double(progressBackground.frame.width)
                 progress.frame = CGRect(x: 0, y: 0, width: progressWidth, height: Double(progressBackground.frame.height))
                 progress.roundCorners(corners: [.topLeft, .bottomLeft], radius: 5.0)
-                progress.backgroundColor = IntraTeal
+                progress.backgroundColor = Colors.intraTeal
                 progressBackground.layer.cornerRadius = 5.0
                 progressLabel.text = "\(count)/108"
             }

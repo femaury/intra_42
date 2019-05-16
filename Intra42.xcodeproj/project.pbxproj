@@ -25,6 +25,7 @@
 		DC1988CE2239567B009E3A55 /* Cluster.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC1988CD2239567B009E3A55 /* Cluster.xib */; };
 		DC1988D02239680D009E3A55 /* ClusterPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1988CF2239680D009E3A55 /* ClusterPost.swift */; };
 		DC3797912288710200406488 /* ScalesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3797902288710200406488 /* ScalesCell.swift */; };
+		DC37979A228DB53500406488 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC379799228DB53400406488 /* Triangle.swift */; };
 		DC89992D22414F9000F47EEF /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89992C22414F9000F47EEF /* Achievement.swift */; };
 		DC89993022427A1500F47EEF /* AchievementsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89992F22427A1500F47EEF /* AchievementsController.swift */; };
 		DC89993222427A8000F47EEF /* AchievementsHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89993122427A8000F47EEF /* AchievementsHeaderCell.swift */; };
@@ -86,6 +87,7 @@
 		DC1988CD2239567B009E3A55 /* Cluster.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Cluster.xib; sourceTree = "<group>"; };
 		DC1988CF2239680D009E3A55 /* ClusterPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusterPost.swift; sourceTree = "<group>"; };
 		DC3797902288710200406488 /* ScalesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScalesCell.swift; sourceTree = "<group>"; };
+		DC379799228DB53400406488 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		DC89992C22414F9000F47EEF /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
 		DC89992F22427A1500F47EEF /* AchievementsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsController.swift; sourceTree = "<group>"; };
 		DC89993122427A8000F47EEF /* AchievementsHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AchievementsHeaderCell.swift; path = Intra42/TableViewCells/Achievements/AchievementsHeaderCell.swift; sourceTree = SOURCE_ROOT; };
@@ -452,6 +454,7 @@
 				DCCE0580222591F500906ECD /* Assets.xcassets */,
 				DCCE0582222591F500906ECD /* LaunchScreen.storyboard */,
 				DC8999442247C23D00F47EEF /* Default-568h@2x.png */,
+				DC379799228DB53400406488 /* Triangle.swift */,
 			);
 			path = Visuals;
 			sourceTree = "<group>";
@@ -632,6 +635,7 @@
 				DC89993822452F4E00F47EEF /* ProfileTableCells.swift in Sources */,
 				DC955E02222CBC7F003B70BC /* UserResultCell.swift in Sources */,
 				DC955DEA222BE9EE003B70BC /* UIViewRoundCorners.swift in Sources */,
+				DC37979A228DB53500406488 /* Triangle.swift in Sources */,
 				DC3797912288710200406488 /* ScalesCell.swift in Sources */,
 				DC955E05222DDDEB003B70BC /* UserProfileController.swift in Sources */,
 				DC89992D22414F9000F47EEF /* Achievement.swift in Sources */,

@@ -10,36 +10,71 @@ import UIKit
 
 class EventCell: UITableViewCell {
 
-    @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var dateView: UIView!
-    @IBOutlet weak var dateStack: UIStackView!
-    @IBOutlet weak var dateDayLabel: UILabel!
-    @IBOutlet weak var dateMonthLabel: UILabel!
-    @IBOutlet weak var eventKindLabel: UILabel!
+//    @IBOutlet weak var containerView: UIView!
+//    @IBOutlet weak var dateView: UIView!
+//    @IBOutlet weak var dateStack: UIStackView!
+//    @IBOutlet weak var dateDayLabel: UILabel!
+//    @IBOutlet weak var dateMonthLabel: UILabel!
+//    @IBOutlet weak var eventKindLabel: UILabel!
+//    @IBOutlet weak var eventNameLabel: UILabel!
+//    @IBOutlet weak var eventTimeButton: UIButton!
+//    @IBOutlet weak var eventTimeLabel: UILabel!
+//    @IBOutlet weak var eventLocationButton: UIButton!
+//    @IBOutlet weak var eventLocationLabel: UILabel!
+//
+//    var event: Event! {
+//        didSet {
+//            containerView.layer.borderWidth = 1
+//            containerView.layer.borderColor = event.color.reg?.cgColor
+//
+//            dateView.backgroundColor = event.color.reg
+//            dateStack.setCustomSpacing(5.0, after: dateMonthLabel)
+//
+//            let dateFormatter = DateFormatter()
+//            dateFormatter.timeZone = TimeZone.current
+//
+//            dateFormatter.dateFormat = "d"
+//            dateDayLabel.text = dateFormatter.string(from: event.begin)
+//
+//            dateFormatter.dateFormat = "MMMM"
+//            dateMonthLabel.text = dateFormatter.string(from: event.begin)
+//
+//            eventKindLabel.text = event.kind.rawValue.capitalized
+//            eventNameLabel.text = event.name
+//            eventTimeButton.tintColor = event.color.reg
+//            eventTimeLabel.text = event.duration
+//            eventTimeLabel.textColor = event.color.reg
+//            eventLocationButton.tintColor = event.color.reg
+//            eventLocationLabel.text = event.location
+//            eventLocationLabel.textColor = event.color.reg
+//        }
+//    }
+    
+    @IBOutlet weak var lineView: UIView!
+    @IBOutlet weak var rectangleView: UIView!
+    @IBOutlet weak var triangleView: Triangle!
+    @IBOutlet weak var kindLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var eventNameLabel: UILabel!
     @IBOutlet weak var eventTimeButton: UIButton!
     @IBOutlet weak var eventTimeLabel: UILabel!
     @IBOutlet weak var eventLocationButton: UIButton!
     @IBOutlet weak var eventLocationLabel: UILabel!
     
+    
     var event: Event! {
         didSet {
-            containerView.layer.borderWidth = 1
-            containerView.layer.borderColor = event.color.reg?.cgColor
-            
-            dateView.backgroundColor = event.color.reg
-            dateStack.setCustomSpacing(5.0, after: dateMonthLabel)
+            lineView.backgroundColor = event.color.reg
+            rectangleView.backgroundColor = event.color.reg
+            triangleView.color = event.color.reg ?? UIColor.black
             
             let dateFormatter = DateFormatter()
             dateFormatter.timeZone = TimeZone.current
+            dateFormatter.dateFormat = "d MMMM, YYYY"
             
-            dateFormatter.dateFormat = "d"
-            dateDayLabel.text = dateFormatter.string(from: event.begin)
-            
-            dateFormatter.dateFormat = "MMMM"
-            dateMonthLabel.text = dateFormatter.string(from: event.begin)
-            
-            eventKindLabel.text = event.kind.rawValue.capitalized
+            dateLabel.text = dateFormatter.string(from: event.begin)            
+            kindLabel.text = event.kind.rawValue.capitalized
+            kindLabel.textColor = event.color.reg
             eventNameLabel.text = event.name
             eventTimeButton.tintColor = event.color.reg
             eventTimeLabel.text = event.duration
@@ -49,5 +84,4 @@ class EventCell: UITableViewCell {
             eventLocationLabel.textColor = event.color.reg
         }
     }
-    
 }

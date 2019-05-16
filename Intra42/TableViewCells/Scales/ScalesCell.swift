@@ -18,6 +18,7 @@ class ScalesCell: UITableViewCell {
     @IBOutlet weak var correctorButton: UIButton!
     @IBOutlet weak var correcteeButton: UIButton!
     
+    private var correcteeLeaderId: Int? // TODO: Remove
     private var correcteeTeamId: Int?
     private var correctorId: Int?
     
@@ -25,6 +26,7 @@ class ScalesCell: UITableViewCell {
     
     func setupCell(correction: Correction, delegate del: CorrectionsViewController) {
         delegate = del
+        correcteeLeaderId = correction.correctees.first?.id // TODO: Remove
         correcteeTeamId = correction.team.id
         correctorId = correction.corrector.id
         
@@ -48,10 +50,10 @@ class ScalesCell: UITableViewCell {
         }
         
         if correcteeName == "someone" {
-            correcteeButton.setTitleColor(Colors.intraTeal, for: .normal)
+            correcteeButton.setTitleColor(.lightGray, for: .normal)
             correcteeButton.isEnabled = false
         } else {
-            correcteeButton.setTitleColor(.lightGray, for: .normal)
+            correcteeButton.setTitleColor(Colors.intraTeal, for: .normal)
             correcteeButton.isEnabled = true
         }
         
@@ -71,7 +73,14 @@ class ScalesCell: UITableViewCell {
         delegate?.showCorrectorProfile(withId: id)
     }
     
+    // TODO: Show correctee team page instead of leader's profile page
     @IBAction func onPressCorrectee(_ sender: UIButton) {
-        // TODO: Implement
+//        guard let id = correcteeTeamId else { return }
+//        API42Manager.shared.getTeam(withId: id) { (data) in
+//            print("TEAM DATA: \(data ?? "NULL")")
+//        }
+        
+        guard let id = correcteeLeaderId else { return }
+        delegate?.showCorrectorProfile(withId: id)
     }
 }

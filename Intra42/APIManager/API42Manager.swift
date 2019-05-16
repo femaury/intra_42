@@ -393,7 +393,7 @@ class API42Manager {
     }
     
     func getTeam(withId id: Int, completionHandler: @escaping (JSON?) -> Void) {
-        let projectURL = "https://api.intra.42.fr/v2/teams/\(id)"
+        let projectURL = "https://api.intra.42.fr/v2/teams?filter[id]=\(id)"
         
         request(url: projectURL) { (data) in
             completionHandler(data)
@@ -422,9 +422,9 @@ class API42Manager {
     }
     
     // MARK: - OAuth Flow
-    
+    // TODO: Figure out application scopes
     func startOAuth2Login() {
-        let authPath = "https://api.intra.42.fr/oauth/authorize?client_id=\(clientId)&redirect_uri=\(redirectURI)&scope=public&state=\(state)&response_type=code"
+        let authPath = "https://api.intra.42.fr/oauth/authorize?client_id=\(clientId)&redirect_uri=\(redirectURI)&state=\(state)&response_type=code"
         
         if hasOAuthToken() {
             if let completionHandler = OAuthTokenCompletionHandler {

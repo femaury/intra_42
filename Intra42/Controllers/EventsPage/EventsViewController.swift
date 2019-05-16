@@ -242,7 +242,7 @@ extension EventsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let selectedSection = segmentedControl.selectedSegmentIndex
         if (events.count > 0 && selectedSection == 0) || (myEvents.count > 0 && selectedSection == 1) {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "EventCell") as! EventCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "EventCell2") as! EventCell
             if selectedSection == 0 {
                 if isFiltering() {
                     cell.event = filteredEvents[indexPath.row]

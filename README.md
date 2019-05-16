@@ -27,6 +27,11 @@ I plan on making the project open source and publishing it for free on the App S
       <li>Achievements</li>
     </ul>
   </details>
+  <details><summary>Corrections</summary>
+    <ul>
+        <li>Your upcoming corrections</li>
+    </ul>
+  </details>
   <details><summary>Events</summary>
     <ul>
       <li>All Future Events</li>

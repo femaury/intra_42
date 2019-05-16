@@ -392,6 +392,14 @@ class API42Manager {
         }
     }
     
+    func getTeam(withId id: Int, completionHandler: @escaping (JSON?) -> Void) {
+        let projectURL = "https://api.intra.42.fr/v2/teams/\(id)"
+        
+        request(url: projectURL) { (data) in
+            completionHandler(data)
+        }
+    }
+    
     func getProfilePicture(withLogin login: String, completionHandler: @escaping (UIImage?) -> Void) {
         let urlString = "https://cdn.intra.42.fr/users/medium_\(login).jpg"
         let defaultImage = UIImage(named: "42_default")

@@ -10,7 +10,7 @@ import UIKit
 
 struct Correction {
     let name: String
-    let teamName: String
+    let team: (id: Int, name: String)
     let projectId: Int
     let repoURL: String
     let isCorrector: Bool
@@ -45,6 +45,7 @@ class CorrectionsViewController: UIViewController {
                 let projectId = team["project_id"].intValue
                 let repoURL = team["repo_url"].stringValue
                 let teamName = team["name"].stringValue
+                let teamId = team["id"].intValue
                 
                 var correctees: [(id: Int, login: String)] = []
                 var isCorrector = true
@@ -80,7 +81,7 @@ class CorrectionsViewController: UIViewController {
 
                     let correction = Correction(
                         name: name,
-                        teamName: teamName,
+                        team: (teamId, teamName),
                         projectId: projectId,
                         repoURL: repoURL,
                         isCorrector: isCorrector,

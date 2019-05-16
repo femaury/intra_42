@@ -18,17 +18,17 @@ class ScalesCell: UITableViewCell {
     @IBOutlet weak var correctorButton: UIButton!
     @IBOutlet weak var correcteeButton: UIButton!
     
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-    }
+    private var correcteeTeamId: Int?
+    private var correctorId: Int?
     
     func setupCell(correction: Correction) {
+        correcteeTeamId = correction.team.id
+        correctorId = correction.corrector.id
+        
         projectLabel.text = correction.name
         
         var correctorName = correction.corrector.login
-        var correcteeName = correction.correctees.count > 1 ? correction.teamName : correction.correctees.first?.login ?? "someone"
+        var correcteeName = correction.correctees.count > 1 ? correction.team.name : correction.correctees.first?.login ?? "someone"
         
         if let me = API42Manager.shared.userProfile?.username {
             correctorName = correctorName.replacingOccurrences(of: me, with: "You")
@@ -36,24 +36,24 @@ class ScalesCell: UITableViewCell {
             correcteeName = correcteeName.replacingOccurrences(of: me, with: "you")
         }
         
-        if correctorName != "Someone" {
-            correctorButton.titleLabel?.textColor = Colors.intraTeal
-            correctorButton.isEnabled = true
-        } else {
+        if correctorName == "Someone" {
             correctorButton.titleLabel?.textColor = .lightGray
             correctorButton.isEnabled = false
+        } else {
+            correctorButton.titleLabel?.textColor = Colors.intraTeal
+            correctorButton.isEnabled = true
         }
         
-        if correcteeName != "someone" {
-            correcteeButton.titleLabel?.textColor = Colors.intraTeal
-            correcteeButton.isEnabled = true
-        } else {
+        if correcteeName == "someone" {
             correcteeButton.titleLabel?.textColor = .lightGray
             correcteeButton.isEnabled = false
+        } else {
+            correcteeButton.titleLabel?.textColor = Colors.intraTeal
+            correcteeButton.isEnabled = true
         }
         
-        correctorButton.titleLabel?.text = correctorName
-        correcteeButton.titleLabel?.text = correcteeName
+        correctorButton.setTitle(correctorName, for: .normal)
+        correcteeButton.setTitle(correcteeName, for: .normal)
                 
         let formatter = DateFormatter()
         formatter.dateFormat = "MMMM dd, YYYY 'at' HH:mm"
@@ -64,10 +64,15 @@ class ScalesCell: UITableViewCell {
     }
     
     @IBAction func onPressCorrector(_ sender: UIButton) {
-        
+        guard let id = correctorId else { return }
+        if id == API42Manager.shared.userProfile?.userId, let tbc = self.window?.rootViewController as? UITabBarController {
+            tbc.selectedIndex = 1
+        } else {
+            // TODO: Use UserProfileDataSource to segue to user profile
+        }
     }
     
     @IBAction func onPressCorrectee(_ sender: UIButton) {
-        
+        // TODO: Implement
     }
 }

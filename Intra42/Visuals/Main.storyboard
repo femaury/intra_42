@@ -401,6 +401,7 @@
                     <connections>
                         <outlet property="tableView" destination="RQZ-CX-Uyw" id="FFa-gb-gre"/>
                         <segue destination="SDZ-cI-YE5" kind="show" identifier="SearchResultsSegue" id="FNR-te-koC"/>
+                        <segue destination="sWC-1A-sDE" kind="show" identifier="UserProfileSegue" id="atr-x9-EV6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YFL-eZ-qc7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2726,7 +2727,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="tHZ-Qu-oYN"/>
         <segue reference="IC3-E2-qiD"/>
-        <segue reference="ujx-ft-g6P"/>
+        <segue reference="atr-x9-EV6"/>
         <segue reference="FNR-te-koC"/>
     </inferredMetricsTieBreakers>
 </document>

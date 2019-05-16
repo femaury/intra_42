@@ -21,7 +21,10 @@ class ScalesCell: UITableViewCell {
     private var correcteeTeamId: Int?
     private var correctorId: Int?
     
-    func setupCell(correction: Correction) {
+    weak var delegate: CorrectionsViewController?
+    
+    func setupCell(correction: Correction, delegate del: CorrectionsViewController) {
+        delegate = del
         correcteeTeamId = correction.team.id
         correctorId = correction.corrector.id
         
@@ -37,18 +40,18 @@ class ScalesCell: UITableViewCell {
         }
         
         if correctorName == "Someone" {
-            correctorButton.titleLabel?.textColor = .lightGray
+            correctorButton.setTitleColor(.lightGray, for: .normal)
             correctorButton.isEnabled = false
         } else {
-            correctorButton.titleLabel?.textColor = Colors.intraTeal
+            correctorButton.setTitleColor(Colors.intraTeal, for: .normal)
             correctorButton.isEnabled = true
         }
         
         if correcteeName == "someone" {
-            correcteeButton.titleLabel?.textColor = .lightGray
+            correcteeButton.setTitleColor(Colors.intraTeal, for: .normal)
             correcteeButton.isEnabled = false
         } else {
-            correcteeButton.titleLabel?.textColor = Colors.intraTeal
+            correcteeButton.setTitleColor(.lightGray, for: .normal)
             correcteeButton.isEnabled = true
         }
         
@@ -65,11 +68,7 @@ class ScalesCell: UITableViewCell {
     
     @IBAction func onPressCorrector(_ sender: UIButton) {
         guard let id = correctorId else { return }
-        if id == API42Manager.shared.userProfile?.userId, let tbc = self.window?.rootViewController as? UITabBarController {
-            tbc.selectedIndex = 1
-        } else {
-            // TODO: Use UserProfileDataSource to segue to user profile
-        }
+        delegate?.showCorrectorProfile(withId: id)
     }
     
     @IBAction func onPressCorrectee(_ sender: UIButton) {

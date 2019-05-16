@@ -25,6 +25,7 @@ class CorrectionsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var corrections: [Correction] = []
+    var correctorId: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,6 +95,22 @@ class CorrectionsViewController: UIViewController {
             }
         }
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        navigationController?.view.setNeedsLayout() // force update layout
+        navigationController?.view.layoutIfNeeded() // to fix height of the navigation bar
+    }
+    
+    func showCorrectorProfile(withId id: Int) {
+        if id == API42Manager.shared.userProfile?.userId, let tbc = tabBarController {
+            tbc.selectedIndex = 0
+        } else {
+            correctorId = id
+            performSegue(withIdentifier: "UserProfileSegue", sender: self)
+        }
+    }
 
     @objc func tapHandler(gesture: UIGestureRecognizer) {
         self.searchBar.resignFirstResponder()
@@ -108,6 +125,22 @@ extension CorrectionsViewController: SearchResultsDataSource {
         if segue.identifier == "SearchResultsSegue" {
             if let destination = segue.destination as? SearchResultsController {
                 showSearchResultsController(atDestination: destination)
+            }
+        } else if segue.identifier == "UserProfileSegue" {
+            if let id = correctorId, let destination = segue.destination as? UserProfileController {
+                API42Manager.shared.request(url: "https://api.intra.42.fr/v2/users/\(id)") { (data) in
+                    guard let data = data else { return }
+                    destination.userProfile = UserProfile(data: data)
+                    if let userId = destination.userProfile?.userId {
+                        API42Manager.shared.getCoalitionInfo(withUserId: userId, completionHandler: { (name, color, logo) in
+                            destination.coalitionName = name
+                            destination.coalitionColor = color
+                            destination.coalitionLogo = logo
+                            destination.isLoadingData = false
+                            destination.tableView.reloadData()
+                        })
+                    }
+                }
             }
         }
     }
@@ -140,7 +173,7 @@ extension CorrectionsViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let correction = corrections[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "ScalesCell") as! ScalesCell
-        cell.setupCell(correction: correction)
+        cell.setupCell(correction: correction, delegate: self)
         return cell
     }
 }

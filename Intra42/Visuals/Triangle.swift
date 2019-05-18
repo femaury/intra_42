@@ -10,7 +10,7 @@ import UIKit
 
 @IBDesignable class Triangle: UIView {
     
-    @IBInspectable var color: UIColor = .black
+    @IBInspectable var color: UIColor = .clear
     @IBInspectable var pointOneX: CGFloat = 0
     @IBInspectable var pointOneY: CGFloat = 0
     @IBInspectable var pointTwoX: CGFloat = 0.5
@@ -26,7 +26,7 @@ import UIKit
         aPath.close()
 
         self.color.set()
-        self.backgroundColor = .clear
+        self.backgroundColor = .white
         aPath.fill()
     }
 }

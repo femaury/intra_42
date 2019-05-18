@@ -66,7 +66,7 @@ class EventCell: UITableViewCell {
         didSet {
             lineView.backgroundColor = event.color.reg
             rectangleView.backgroundColor = event.color.reg
-            triangleView.color = event.color.reg ?? UIColor.black
+            triangleView.backgroundColor = event.color.reg
             
             let dateFormatter = DateFormatter()
             dateFormatter.timeZone = TimeZone.current

@@ -76,8 +76,29 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="LoadingIndicatorCell" rowHeight="75" id="427-gs-iF4" customClass="UserResultCell" customModule="Intra42" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="75"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="427-gs-iF4" id="vFM-C8-dy0">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="LNg-vT-dgg">
+                                                    <rect key="frame" x="182" y="12.5" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="7El-SM-sSR"/>
+                                                        <constraint firstAttribute="height" constant="50" id="nTe-jC-ID0"/>
+                                                    </constraints>
+                                                </activityIndicatorView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="LNg-vT-dgg" firstAttribute="centerX" secondItem="vFM-C8-dy0" secondAttribute="centerX" id="hYc-7R-BJU"/>
+                                                <constraint firstItem="LNg-vT-dgg" firstAttribute="centerY" secondItem="vFM-C8-dy0" secondAttribute="centerY" id="sbn-es-bdX"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ScalesCell" rowHeight="100" id="Co8-YU-jn9" customClass="ScalesCell" customModule="Intra42" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="100"/>
+                                        <rect key="frame" x="0.0" y="103" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Co8-YU-jn9" id="bps-nS-Wx7">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
@@ -251,7 +272,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ScaleTwoCell" rowHeight="200" id="B3O-DQ-l1N">
-                                        <rect key="frame" x="0.0" y="128" width="414" height="200"/>
+                                        <rect key="frame" x="0.0" y="203" width="414" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="B3O-DQ-l1N" id="vx9-Hm-PGv">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
@@ -2939,9 +2960,9 @@
         <image name="user_male" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wE8-d0-0Rm"/>
+        <segue reference="tHZ-Qu-oYN"/>
         <segue reference="IC3-E2-qiD"/>
         <segue reference="atr-x9-EV6"/>
-        <segue reference="0QS-t1-7Go"/>
+        <segue reference="FNR-te-koC"/>
     </inferredMetricsTieBreakers>
 </document>

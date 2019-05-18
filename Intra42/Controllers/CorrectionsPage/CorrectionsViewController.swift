@@ -24,6 +24,7 @@ class CorrectionsViewController: UIViewController {
     lazy var searchBar = UISearchBar()
     @IBOutlet weak var tableView: UITableView!
     
+    var isLoadingCorrections = true
     var corrections: [Correction] = []
     var correctorId: Int?
     
@@ -77,7 +78,7 @@ class CorrectionsViewController: UIViewController {
                 API42Manager.shared.getProject(withId: projectId, completionHandler: { (data) in
                     var name = "Unknown Project"
                     if let data = data {
-                        name = data["name"].stringValue
+                        name = data["name"].stringValue.capitalized
                     }
 
                     let correction = Correction(
@@ -93,6 +94,7 @@ class CorrectionsViewController: UIViewController {
                     self.tableView.reloadData()
                 })
             }
+            self.isLoadingCorrections = false
         }
     }
     
@@ -163,14 +165,23 @@ extension CorrectionsViewController: UISearchBarDelegate {
 extension CorrectionsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if isLoadingCorrections {
+            return tableView.frame.height
+        }
         return 100
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isLoadingCorrections {
+            return 1
+        }
         return corrections.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if isLoadingCorrections, let cell = tableView.dequeueReusableCell(withIdentifier: "LoadingIndicatorCell") {
+            return cell
+        }
         let correction = corrections[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "ScalesCell") as! ScalesCell
         cell.setupCell(correction: correction, delegate: self)

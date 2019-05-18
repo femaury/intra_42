@@ -109,7 +109,6 @@
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PROJECT NAME" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="58E-LQ-HgF">
                                                             <rect key="frame" x="8" y="7" width="116.5" height="18"/>
-                                                            <color key="backgroundColor" red="0.21176470589999999" green="0.21176470589999999" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -268,7 +267,11 @@
                                             <outlet property="correctorButton" destination="u4V-Pv-WZx" id="oWP-rV-bbd"/>
                                             <outlet property="countdownLabel" destination="mUB-1F-w6L" id="RQc-dL-jeJ"/>
                                             <outlet property="dateLabel" destination="waC-KC-Yhb" id="kwu-Hx-Szk"/>
+                                            <outlet property="dateView" destination="QKZ-Dm-cs5" id="pEf-hh-kRy"/>
+                                            <outlet property="lineView" destination="g9l-XL-5uV" id="xgU-Ip-jNI"/>
                                             <outlet property="projectLabel" destination="58E-LQ-HgF" id="0Wo-4Y-Ubw"/>
+                                            <outlet property="rectangleView" destination="8Er-DQ-aAO" id="5ra-3l-ils"/>
+                                            <outlet property="triangleView" destination="1Hv-d3-t35" id="v9Y-Zb-tcJ"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ScaleTwoCell" rowHeight="200" id="B3O-DQ-l1N">
@@ -3003,9 +3006,9 @@
         <image name="user_male" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="FNY-8Y-LFG"/>
+        <segue reference="tHZ-Qu-oYN"/>
         <segue reference="IC3-E2-qiD"/>
-        <segue reference="ujx-ft-g6P"/>
-        <segue reference="s4V-tz-R5t"/>
+        <segue reference="atr-x9-EV6"/>
+        <segue reference="FNR-te-koC"/>
     </inferredMetricsTieBreakers>
 </document>

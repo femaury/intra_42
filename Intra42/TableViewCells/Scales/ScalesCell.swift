@@ -10,6 +10,11 @@ import UIKit
 
 class ScalesCell: UITableViewCell {
 
+    @IBOutlet weak var lineView: UIView!
+    @IBOutlet weak var rectangleView: UIView!
+    @IBOutlet weak var triangleView: Triangle!
+    @IBOutlet weak var dateView: UIView!
+    
     @IBOutlet weak var projectLabel: UILabel!
     
     @IBOutlet weak var dateLabel: UILabel!
@@ -29,6 +34,12 @@ class ScalesCell: UITableViewCell {
         correcteeLeaderId = correction.correctees.first?.id // TODO: Remove
         correcteeTeamId = correction.team.id
         correctorId = correction.corrector.id
+        
+        let color = API42Manager.shared.coalitionColor
+        lineView.backgroundColor = color
+        rectangleView.backgroundColor = color
+        triangleView.backgroundColor = color
+        dateView.backgroundColor = color
         
         projectLabel.text = correction.name
         

@@ -39,63 +39,12 @@ class CorrectionsViewController: UIViewController {
         tapGesture.cancelsTouchesInView = false
         view.addGestureRecognizer(tapGesture)
         
-        API42Manager.shared.getScales { (scales) in
-            print(scales)
-            for scale in scales.reversed() {
-                let team = scale["team"]
-                let members = team["users"].arrayValue
-                let projectId = team["project_id"].intValue
-                let repoURL = team["repo_url"].stringValue
-                let teamName = team["name"].stringValue
-                let teamId = team["id"].intValue
-                
-                var correctees: [(id: Int, login: String)] = []
-                var isCorrector = true
-                for member in members {
-                    let correcteeLogin = member["login"].stringValue
-                    let correcteeId = member["id"].intValue
-                    if correcteeId == API42Manager.shared.userProfile?.userId {
-                        isCorrector = false
-                    }
-                    if member["leader"].boolValue {
-                        correctees.insert((correcteeId, correcteeLogin), at: 0)
-                    } else {
-                        correctees.append((correcteeId, correcteeLogin))
-                    }
-                }
-                
-                var corrector: (id: Int, login: String) = (-1, "Someone")
-                if scale["corrector"].string == nil {
-                    let corr = scale["corrector"]
-                    corrector = (corr["id"].intValue, corr["login"].stringValue)
-                }
-                
-                let dateString = scale["begin_at"].stringValue
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
-                let date = dateFormatter.date(from: dateString) ?? Date()
-                
-                API42Manager.shared.getProject(withId: projectId, completionHandler: { (data) in
-                    var name = "Unknown Project"
-                    if let data = data {
-                        name = data["name"].stringValue.capitalized
-                    }
-
-                    let correction = Correction(
-                        name: name,
-                        team: (teamId, teamName),
-                        projectId: projectId,
-                        repoURL: repoURL,
-                        isCorrector: isCorrector,
-                        corrector: corrector,
-                        correctees: correctees,
-                        startDate: date)
-                    self.corrections.append(correction)              
-                    self.tableView.reloadData()
-                })
-            }
-            self.isLoadingCorrections = false
-        }
+        let refreshControl = UIRefreshControl()
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(refreshTable), for: .valueChanged)
+        tableView.refreshControl = refreshControl
+        
+        getCorrections()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -103,6 +52,15 @@ class CorrectionsViewController: UIViewController {
         
         navigationController?.view.setNeedsLayout() // force update layout
         navigationController?.view.layoutIfNeeded() // to fix height of the navigation bar
+    }
+    
+    func getCorrections() {
+        API42Manager.shared.getScales { (scales) in
+            self.corrections = scales
+            self.tableView.reloadData()
+            self.tableView.refreshControl?.endRefreshing()
+            self.isLoadingCorrections = false
+        }
     }
     
     func showCorrectorProfile(withId id: Int) {
@@ -116,6 +74,10 @@ class CorrectionsViewController: UIViewController {
 
     @objc func tapHandler(gesture: UIGestureRecognizer) {
         self.searchBar.resignFirstResponder()
+    }
+    
+    @objc func refreshTable(_ sender: Any) {
+        getCorrections()
     }
 }
 

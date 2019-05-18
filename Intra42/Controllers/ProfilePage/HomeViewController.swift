@@ -40,19 +40,24 @@ class HomeViewController: UIViewController {
             self.tableView.reloadData()
         }
         API42Manager.shared.coalitionColorCompletionHandler = { color in
-            self.tabBarController?.tabBar.barTintColor = color
+//            self.tabBarController?.tabBar.barTintColor = color
+            
+            self.tabBarController?.tabBar.tintColor = color
 
             if let children = self.tabBarController?.children {
                 for child in children {
                     guard let navController = child as? UINavigationController else { continue }
-                    navController.navigationBar.barTintColor = color
-                    navController.navigationBar.tintColor = UIColor.black
+//                    navController.navigationBar.barTintColor = color
+//                    navController.navigationBar.tintColor = UIColor.black
+                    
+                    navController.navigationBar.tintColor = color
                 }
             }
         }
         
         setupSearchBar()
         searchBar.delegate = self
+        searchBar.barTintColor = .lightGray
         navigationItem.titleView = searchBar
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapHandler))
@@ -66,12 +71,17 @@ class HomeViewController: UIViewController {
         tableView.keyboardDismissMode = .onDrag
         tableView.register(LogsTableCell.self, forCellReuseIdentifier: "LogsTableCell")
         
-        tabBarController?.tabBar.barTintColor = Colors.intraTeal
-        tabBarController?.tabBar.tintColor = UIColor.black
-        tabBarController?.tabBar.unselectedItemTintColor = UIColor.white
+//        tabBarController?.tabBar.barTintColor = Colors.intraTeal
+//        tabBarController?.tabBar.tintColor = UIColor.black
+//        tabBarController?.tabBar.unselectedItemTintColor = UIColor.white
+
+        tabBarController?.tabBar.tintColor = Colors.intraTeal
+
         
-        navigationController?.navigationBar.barTintColor = Colors.intraTeal
-        navigationController?.navigationBar.tintColor = UIColor.black
+//        navigationController?.navigationBar.barTintColor = Colors.intraTeal
+//        navigationController?.navigationBar.tintColor = UIColor.black
+
+        navigationController?.navigationBar.tintColor = Colors.intraTeal
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -183,6 +193,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             let view = tableView.dequeueReusableCell(withIdentifier: "SegmentHeaderCell") as! SegmentHeaderCell
             view.segmentControl.selectedSegmentIndex = sectionToDisplay.rawValue
+            view.segmentControl.tintColor = API42Manager.shared.coalitionColor
+            view.topLine.backgroundColor = API42Manager.shared.coalitionColor
+            view.bottomLine.backgroundColor = API42Manager.shared.coalitionColor
             view.segmentCallback = { section in
                 guard let section = ProfileSection(rawValue: section) else { return }
                 self.sectionToDisplay = section
@@ -215,7 +228,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return tableView.frame.height
         }
         if sectionToDisplay == .achievements {
-            return 100
+            return 75
         } else if sectionToDisplay == .logs {
             return tableView.frame.height
         }

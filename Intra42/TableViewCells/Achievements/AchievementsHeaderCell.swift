@@ -23,6 +23,8 @@ class AchievementsHeaderCell: UITableViewCell {
                 progress.roundCorners(corners: [.topLeft, .bottomLeft], radius: 5.0)
                 progress.backgroundColor = Colors.intraTeal
                 progressBackground.layer.cornerRadius = 5.0
+                progressBackground.layer.borderWidth = 1.0
+                progressBackground.layer.borderColor = Colors.intraTeal?.cgColor
                 progressLabel.text = "\(count)/108"
             }
         }

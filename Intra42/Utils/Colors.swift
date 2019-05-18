@@ -21,7 +21,7 @@ struct Colors {
     }
     
     struct Achievement {
-        static let none = UIColor(hexRGB: "#E5E5E5")
+        static let none = UIColor(hexRGB: "#FFFFFF")
         static let bronze = UIColor(hexRGB: "#CD7F32")
         static let silver = UIColor(hexRGB: "#C0C0C0")
         static let gold = UIColor(hexRGB: "#E5BF27")

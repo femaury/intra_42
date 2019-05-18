@@ -163,7 +163,7 @@ extension AchievementsController: UITableViewDelegate, UITableViewDataSource {
         if isLoading {
             return tableView.frame.height
         }
-        return 100
+        return 75
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

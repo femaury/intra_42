@@ -20,7 +20,7 @@ extension UITableViewDataSource {
             }
             cell.textLabel?.text = cursus.name
             let borderBottom = UIView(frame: CGRect(x: 0, y: 39, width: tableView.frame.width, height: 1))
-            borderBottom.backgroundColor = UIColor.black
+            borderBottom.backgroundColor = UIColor(hexRGB: "#E5E5E5")
             cell.addSubview(borderBottom)
             return cell
         case .projects:

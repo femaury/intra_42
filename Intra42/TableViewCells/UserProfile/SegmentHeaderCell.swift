@@ -11,16 +11,18 @@ import UIKit
 class SegmentHeaderCell: UITableViewCell {
 
     @IBOutlet weak var segmentControl: UISegmentedControl!
+    @IBOutlet weak var topLine: UIView!
+    @IBOutlet weak var bottomLine: UIView!
     
     var segmentCallback: ((Int) -> Void)?
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        let borderBottom = UIView(frame: CGRect(x: 0, y: 34, width: self.frame.width, height: 1))
-        borderBottom.backgroundColor = UIColor.black
-        self.addSubview(borderBottom)
-    }
+//    override func layoutSubviews() {
+//        super.layoutSubviews()
+//
+//        let borderBottom = UIView(frame: CGRect(x: 0, y: 34, width: self.frame.width, height: 1))
+//        borderBottom.backgroundColor = .lightGray
+//        self.addSubview(borderBottom)
+//    }
     
     @IBAction func changeSections(_ sender: UISegmentedControl) {
         guard let callback = segmentCallback else { return }

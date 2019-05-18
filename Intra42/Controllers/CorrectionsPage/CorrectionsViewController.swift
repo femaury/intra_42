@@ -90,7 +90,7 @@ class CorrectionsViewController: UIViewController {
                         corrector: corrector,
                         correctees: correctees,
                         startDate: date)
-                    self.corrections.append(correction)
+                    self.corrections.append(correction)              
                     self.tableView.reloadData()
                 })
             }

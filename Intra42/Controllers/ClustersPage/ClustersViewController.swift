@@ -70,6 +70,8 @@ class ClustersViewController: UIViewController {
         activityIndicator.startAnimating()
         topStackView.addArrangedSubview(activityIndicator)
         loadClusterLocations(floor: 1)
+        
+        segmentedControl.tintColor = API42Manager.shared.coalitionColor
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -142,15 +144,18 @@ class ClustersViewController: UIViewController {
         let progress = percentage * Double(backBar.frame.width)
         progressBar.frame = CGRect(x: 0, y: 0, width: progress, height: Double(backBar.frame.height))
         progressBar.roundCorners(corners: [.topLeft, .bottomLeft], radius: 5.0)
-        progressBar.backgroundColor = Colors.Warning.green
-        if percentage >= 0.25 && percentage < 0.50 {
-            progressBar.backgroundColor = Colors.Warning.yellow
-        } else if percentage >= 0.50 && percentage < 0.75 {
-            progressBar.backgroundColor = Colors.Warning.orange
-        } else if percentage >= 0.75 {
-            progressBar.backgroundColor = Colors.Warning.red
-        }
+        progressBar.backgroundColor = API42Manager.shared.coalitionColor
+//        progressBar.backgroundColor = Colors.Warning.green
+//        if percentage >= 0.25 && percentage < 0.50 {
+//            progressBar.backgroundColor = Colors.Warning.yellow
+//        } else if percentage >= 0.50 && percentage < 0.75 {
+//            progressBar.backgroundColor = Colors.Warning.orange
+//        } else if percentage >= 0.75 {
+//            progressBar.backgroundColor = Colors.Warning.red
+//        }
         backBar.layer.cornerRadius = 5.0
+        backBar.layer.borderWidth = 1.0
+        backBar.layer.borderColor = API42Manager.shared.coalitionColor?.cgColor
     }
     
     @objc func tapHandler(gesture: UIGestureRecognizer) {

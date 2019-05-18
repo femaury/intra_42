@@ -38,6 +38,8 @@ class ProfileHeaderCell: UITableViewCell {
                 background.contentMode = .scaleAspectFill
             }
             if let data = userProfile {
+                backgroundColor = API42Manager.shared.coalitionColor
+                
                 profilePicture.imageFrom(urlString: data.imageURL)
                 profilePicture.contentMode = .scaleAspectFill
                 profilePicture.roundFrame()

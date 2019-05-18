@@ -167,6 +167,9 @@ extension UserProfileController {
         } else {
             let view = tableView.dequeueReusableCell(withIdentifier: "SegmentHeaderCell") as! SegmentHeaderCell
             view.segmentControl.selectedSegmentIndex = sectionToDisplay.rawValue
+            view.segmentControl.tintColor = coalitionColor
+            view.topLine.backgroundColor = coalitionColor
+            view.bottomLine.backgroundColor = coalitionColor
             view.segmentCallback = { [weak self] (section) in
                 guard let self = self, let section = ProfileSection(rawValue: section) else { return }
                 self.sectionToDisplay = section
@@ -199,7 +202,7 @@ extension UserProfileController {
             return tableView.frame.height
         }
         if sectionToDisplay == .achievements {
-            return 100
+            return 75
         } else if sectionToDisplay == .logs {
             return tableView.frame.height
         }

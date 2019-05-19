@@ -5,14 +5,14 @@ PODS:
   - CocoaLumberjack/Core (3.5.3)
   - KeychainSwift (15.0.0)
   - SideMenu (5.0.3)
-  - SVGKit (2.1.0):
+  - SVGKit (2.1.1):
     - CocoaLumberjack (~> 3.0)
   - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
   - Alamofire
   - KeychainSwift
-  - SideMenu
+  - SideMenu (from `https://github.com/stelabouras/SideMenu.git`, branch `upgrade/xcode-10.2`)
   - SVGKit
   - SwiftyJSON
 
@@ -21,18 +21,27 @@ SPEC REPOS:
     - Alamofire
     - CocoaLumberjack
     - KeychainSwift
-    - SideMenu
     - SVGKit
     - SwiftyJSON
+
+EXTERNAL SOURCES:
+  SideMenu:
+    :branch: upgrade/xcode-10.2
+    :git: https://github.com/stelabouras/SideMenu.git
+
+CHECKOUT OPTIONS:
+  SideMenu:
+    :commit: ccd4b640063a721180b77a59d2a45039672ec95d
+    :git: https://github.com/stelabouras/SideMenu.git
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   CocoaLumberjack: 2f44e60eb91c176d471fdba43b9e3eae6a721947
   KeychainSwift: c6fc018d287804faf1ce3f258a1e51a7178c8382
-  SideMenu: 1dcaabce84538c53325c287f7fe62999379a641c
-  SVGKit: 8a2fc74258bdb2abb54d3b65f3dd68b0277a9c4d
+  SideMenu: 92417cef5aa12b2784e82854406a0d3831ef7df3
+  SVGKit: 652cdf7bef8bec8564d04a8511d3ab50c7595fac
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: bdddb3eee711e36f419b02f981207f955fc33e22
+PODFILE CHECKSUM: 515553188d46290cedc2bb06e2f2f77533ed4a01
 
 COCOAPODS: 1.6.1

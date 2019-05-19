@@ -9,6 +9,6 @@ target 'Intra42' do
   pod 'KeychainSwift'
   pod 'Alamofire'
   pod 'SwiftyJSON'
-  pod 'SideMenu'
+  pod 'SideMenu', :git => 'https://github.com/stelabouras/SideMenu.git', :branch => 'upgrade/xcode-10.2'
   pod 'SVGKit'
 end

@@ -1655,6 +1655,8 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
+                                            <outlet property="callButton" destination="da6-Tb-POa" id="tga-bU-eLb"/>
+                                            <outlet property="emailButton" destination="EHM-Cv-6uJ" id="GL1-xr-v2X"/>
                                             <outlet property="isOnline" destination="eek-Yq-bDd" id="jkM-5w-zmy"/>
                                             <outlet property="locationLabel" destination="tUh-hb-3Y1" id="ijb-ar-OhM"/>
                                             <outlet property="profilePicture" destination="1Mh-sK-Wrn" id="K9W-AQ-HBh"/>
@@ -2888,13 +2890,13 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aHI-Xx-buY">
-                                <rect key="frame" x="144.5" y="385.5" width="125" height="125"/>
+                                <rect key="frame" x="139.5" y="380.5" width="135" height="135"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sh0-XP-kuY">
-                                        <rect key="frame" x="0.0" y="10" width="125" height="105.5"/>
+                                        <rect key="frame" x="15.5" y="15" width="104" height="105.5"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="dcG-PI-AVy">
-                                                <rect key="frame" x="25" y="0.0" width="75" height="75"/>
+                                                <rect key="frame" x="14.5" y="0.0" width="75" height="75"/>
                                                 <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="75" id="DmQ-9B-4Uo"/>
@@ -2902,7 +2904,10 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Added friend!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9tf-7f-ZG7">
-                                                <rect key="frame" x="0.0" y="85" width="125" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="85" width="104" height="20.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="7JD-iR-gK5"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                                 <nil key="highlightedColor"/>
@@ -2912,11 +2917,10 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="125" id="8B1-UJ-XDg"/>
-                                    <constraint firstItem="9tf-7f-ZG7" firstAttribute="width" secondItem="aHI-Xx-buY" secondAttribute="width" id="8gz-3q-g8U"/>
+                                    <constraint firstAttribute="width" constant="135" id="8YG-Fw-Szv"/>
                                     <constraint firstItem="sh0-XP-kuY" firstAttribute="centerX" secondItem="aHI-Xx-buY" secondAttribute="centerX" id="8hn-Ej-AjS"/>
                                     <constraint firstItem="sh0-XP-kuY" firstAttribute="centerY" secondItem="aHI-Xx-buY" secondAttribute="centerY" id="Qmz-Kl-jsQ"/>
-                                    <constraint firstAttribute="width" constant="125" id="vWz-Vf-wHJ"/>
+                                    <constraint firstAttribute="height" constant="135" id="ffu-59-EOv"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -3006,9 +3010,9 @@
         <image name="user_male" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="tHZ-Qu-oYN"/>
+        <segue reference="IaD-z1-mRA"/>
         <segue reference="IC3-E2-qiD"/>
-        <segue reference="atr-x9-EV6"/>
-        <segue reference="FNR-te-koC"/>
+        <segue reference="9Kb-eh-UKx"/>
+        <segue reference="WXI-Yj-ohg"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -19,6 +19,8 @@ class FriendCell: UITableViewCell, UserProfileCell {
             isOnline.clipsToBounds = true
         }
     }
+    @IBOutlet weak var callButton: UIButton!
+    @IBOutlet weak var emailButton: UIButton!
     
     var delegate: FriendsViewController!
     var userId: Int = 0
@@ -33,7 +35,11 @@ class FriendCell: UITableViewCell, UserProfileCell {
     }
     var friend: Friend! {
         didSet {
+            let color = API42Manager.shared.coalitionColor
             usernameLabel.text = friend.username
+            usernameLabel.textColor = color
+            callButton.tintColor = color
+            emailButton.tintColor = color
             userId = friend.id
         }
     }

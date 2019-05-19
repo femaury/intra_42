@@ -2485,7 +2485,7 @@
                                         <directionalEdgeInsets key="directionalLayoutMargins" top="15" leading="20" bottom="15" trailing="20"/>
                                     </stackView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Upn-Qd-XhI">
-                                        <rect key="frame" x="20" y="184.5" width="374" height="540.5"/>
+                                        <rect key="frame" x="0.0" y="164.5" width="414" height="560.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -2495,14 +2495,14 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="Upn-Qd-XhI" secondAttribute="trailing" constant="20" id="6zk-EP-pCP"/>
+                                    <constraint firstAttribute="trailing" secondItem="Upn-Qd-XhI" secondAttribute="trailing" id="6zk-EP-pCP"/>
                                     <constraint firstItem="3gf-z6-95C" firstAttribute="top" secondItem="Dj4-ce-XaG" secondAttribute="bottom" id="9rT-z0-aC1"/>
                                     <constraint firstAttribute="bottom" secondItem="Upn-Qd-XhI" secondAttribute="bottom" id="CMX-rl-bq3"/>
-                                    <constraint firstItem="Upn-Qd-XhI" firstAttribute="leading" secondItem="Fb3-V5-asQ" secondAttribute="leading" constant="20" id="OoQ-9i-Bxf"/>
+                                    <constraint firstItem="Upn-Qd-XhI" firstAttribute="leading" secondItem="Fb3-V5-asQ" secondAttribute="leading" id="OoQ-9i-Bxf"/>
                                     <constraint firstAttribute="trailing" secondItem="Dj4-ce-XaG" secondAttribute="trailing" id="PXP-gn-N2e"/>
                                     <constraint firstItem="Dj4-ce-XaG" firstAttribute="top" secondItem="Fb3-V5-asQ" secondAttribute="top" id="kWP-VS-3Xk"/>
                                     <constraint firstItem="Dj4-ce-XaG" firstAttribute="leading" secondItem="Fb3-V5-asQ" secondAttribute="leading" id="lfs-LH-O0s"/>
-                                    <constraint firstItem="Upn-Qd-XhI" firstAttribute="top" secondItem="3gf-z6-95C" secondAttribute="bottom" constant="20" id="oME-RP-tpB"/>
+                                    <constraint firstItem="Upn-Qd-XhI" firstAttribute="top" secondItem="3gf-z6-95C" secondAttribute="bottom" id="oME-RP-tpB"/>
                                     <constraint firstItem="3gf-z6-95C" firstAttribute="leading" secondItem="Fb3-V5-asQ" secondAttribute="leading" id="xga-lc-zeE"/>
                                     <constraint firstAttribute="trailing" secondItem="3gf-z6-95C" secondAttribute="trailing" id="xpY-tO-PsW"/>
                                 </constraints>

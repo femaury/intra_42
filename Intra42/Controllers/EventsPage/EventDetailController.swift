@@ -50,6 +50,7 @@ class EventDetailController: UIViewController {
         capacityLabel.text = "\(event.currentUsers)/\(event.maxUsers)"
         
         descriptionText.text = event.description
+        descriptionText.textContainerInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
     
     @IBAction func syncCalendar(_ sender: UIBarButtonItem) {

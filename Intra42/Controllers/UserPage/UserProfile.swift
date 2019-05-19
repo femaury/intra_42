@@ -13,6 +13,7 @@ import SVGKit
 
 struct Project {
     var name: String
+    var id: Int
     var finished: Date?
     var grade: Int
     var validated: Bool
@@ -174,6 +175,7 @@ class UserProfile {
                     
                     let newProject = Project(
                         name: info["name"].stringValue,
+                        id: piscineId,
                         finished: date,
                         grade: project["final_mark"].intValue,
                         validated: project["validated?"].boolValue,
@@ -199,6 +201,7 @@ class UserProfile {
                     
                     let newProject = Project(
                         name: info["name"].stringValue,
+                        id: info["id"].intValue,
                         finished: date,
                         grade: subProject["final_mark"].intValue,
                         validated: subProject["validated?"].boolValue,

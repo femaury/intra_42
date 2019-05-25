@@ -352,7 +352,7 @@ class API42Manager {
         var achievements: [String : Achievement] = [:]
 
         for achievement in data {
-            if MoscowAchievementIds.contains(achievement["id"].intValue) { continue }
+            if Achievement.MoscowAchievementIds.contains(achievement["id"].intValue) { continue }
             let newAchievement = Achievement(achievement: achievement)
             let name = newAchievement.name
             if let parent = achievements[name] {

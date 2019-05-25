@@ -50,14 +50,14 @@ extension SideMenuController: UITableViewDelegate, UITableViewDataSource {
         case 3:
             performSegue(withIdentifier: "AchievementsSegue", sender: self)
         case 4:
-            API42Manager.shared.request(url: "https://api.intra.42.fr/oauth/token/info") { (data) in
-                print("TOKEN: \(data ?? "NULL")")
-            }
+//            API42Manager.shared.request(url: "https://api.intra.42.fr/oauth/token/info") { (data) in
+//                print("TOKEN: \(data ?? "NULL")")
+//            }
             performSegue(withIdentifier: "AboutSegue", sender: self)
         case 5:
-            API42Manager.shared.request(url: "https://api.intra.42.fr/v2/topics/4242/messages") { (data) in
-                print("ACCESS: \(data ?? "NULL")")
-            }
+//            API42Manager.shared.request(url: "https://api.intra.42.fr/v2/topics/4242/messages") { (data) in
+//                print("ACCESS: \(data ?? "NULL")")
+//            }
             performSegue(withIdentifier: "SettingsSegue", sender: self)
         case 6:
             API42Manager.shared.logoutUser()

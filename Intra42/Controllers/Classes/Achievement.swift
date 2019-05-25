@@ -11,39 +11,9 @@ import UIKit
 import SwiftyJSON
 import SVGKit
 
-let MoscowAchievementIds = [129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 165, 166, 167, 190]
-
-enum AchievementTier: String {
-    case none = "none"
-    case easy = "easy"
-    case medium = "medium"
-    case hard = "hard"
-    case challenge = "challenge"
-    
-    var color: UIColor? {
-        switch self {
-        case .none:
-            return Colors.Achievement.none
-        case .easy:
-            return Colors.Achievement.bronze
-        case .medium:
-            return Colors.Achievement.silver
-        case .hard:
-            return Colors.Achievement.gold
-        case .challenge:
-            return Colors.Achievement.platinum
-        }
-    }
-}
-
-enum AchievementKind: String {
-    case project = "project"
-    case pedagogy = "pedagogy"
-    case social = "social"
-    case scolarity = "scolarity"
-}
-
 class Achievement {
+    static let MoscowAchievementIds = [129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 165, 166, 167, 190]
+    
     var id: Int
     var name: String
     var description: String

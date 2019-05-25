@@ -11,16 +11,6 @@ import UIKit
 import SwiftyJSON
 import SVGKit
 
-struct Project {
-    var name: String
-    var id: Int
-    var finished: Date?
-    var grade: Int
-    var validated: Bool
-    var retries: Int
-    var piscineDays: [Project]?
-}
-
 class UserProfile {
     
     var cursusUsers: [JSON]

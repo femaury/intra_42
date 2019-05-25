@@ -63,6 +63,11 @@
 		DCCE05A62229822500906ECD /* UIImageViewFromURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCE05A52229822500906ECD /* UIImageViewFromURL.swift */; };
 		DCCE05A8222994EB00906ECD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCCE05A7222994EB00906ECD /* Main.storyboard */; };
 		DCCE05AA2229A5A000906ECD /* ProfileHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCE05A92229A5A000906ECD /* ProfileHeaderCell.swift */; };
+		DCF1A4D8229976A500AA2653 /* AchievementData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1A4D7229976A500AA2653 /* AchievementData.swift */; };
+		DCF1A4DA2299777100AA2653 /* UIViewFixInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1A4D92299777100AA2653 /* UIViewFixInView.swift */; };
+		DCF1A4DC229977C400AA2653 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1A4DB229977C400AA2653 /* Project.swift */; };
+		DCF1A4DE229977ED00AA2653 /* Correction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1A4DD229977ED00AA2653 /* Correction.swift */; };
+		DCF1A4E02299781900AA2653 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1A4DF2299781900AA2653 /* Friend.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -128,6 +133,11 @@
 		DCCE05A52229822500906ECD /* UIImageViewFromURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewFromURL.swift; sourceTree = "<group>"; };
 		DCCE05A7222994EB00906ECD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		DCCE05A92229A5A000906ECD /* ProfileHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCell.swift; sourceTree = "<group>"; };
+		DCF1A4D7229976A500AA2653 /* AchievementData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementData.swift; sourceTree = "<group>"; };
+		DCF1A4D92299777100AA2653 /* UIViewFixInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewFixInView.swift; sourceTree = "<group>"; };
+		DCF1A4DB229977C400AA2653 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		DCF1A4DD229977ED00AA2653 /* Correction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Correction.swift; sourceTree = "<group>"; };
+		DCF1A4DF2299781900AA2653 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		F422FD8B1CF774E3F050397F /* Pods-Intra42.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Intra42.release.xcconfig"; path = "Target Support Files/Pods-Intra42/Pods-Intra42.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -186,16 +196,6 @@
 			path = UserProfile;
 			sourceTree = "<group>";
 		};
-		DC1988BE22357565009E3A55 /* Side Menu */ = {
-			isa = PBXGroup;
-			children = (
-				DC955E0C222FF623003B70BC /* SideMenuController.swift */,
-				DC89992E224279E400F47EEF /* Achievements */,
-			);
-			name = "Side Menu";
-			path = SideMenu;
-			sourceTree = "<group>";
-		};
 		DC37978F228870D800406488 /* Scales */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,24 +214,6 @@
 				DC89994A2247C94000F47EEF /* Date */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		DC89992E224279E400F47EEF /* Achievements */ = {
-			isa = PBXGroup;
-			children = (
-				DC89992C22414F9000F47EEF /* Achievement.swift */,
-				DC89992F22427A1500F47EEF /* AchievementsController.swift */,
-			);
-			path = Achievements;
-			sourceTree = "<group>";
-		};
-		DC89993F224572EE00F47EEF /* Notifications */ = {
-			isa = PBXGroup;
-			children = (
-				DC8999402245731000F47EEF /* NotificationViewController.swift */,
-			);
-			name = Notifications;
-			path = Notification;
 			sourceTree = "<group>";
 		};
 		DC8999462247C8C100F47EEF /* UIColor */ = {
@@ -266,6 +248,7 @@
 			children = (
 				DC955DE9222BE9EE003B70BC /* UIViewRoundCorners.swift */,
 				DC1988C32236BCFE009E3A55 /* UIViewPinBackground.swift */,
+				DCF1A4D92299777100AA2653 /* UIViewFixInView.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -324,77 +307,6 @@
 			path = Friends;
 			sourceTree = "<group>";
 		};
-		DC955DF1222C9851003B70BC /* Profile Page */ = {
-			isa = PBXGroup;
-			children = (
-				DCCE058F2227010E00906ECD /* HomeViewController.swift */,
-			);
-			name = "Profile Page";
-			path = ProfilePage;
-			sourceTree = "<group>";
-		};
-		DC955DF2222C986D003B70BC /* Corrections Page */ = {
-			isa = PBXGroup;
-			children = (
-				DCCE05932228450A00906ECD /* CorrectionsViewController.swift */,
-			);
-			name = "Corrections Page";
-			path = CorrectionsPage;
-			sourceTree = "<group>";
-		};
-		DC955DF3222C9874003B70BC /* Friends Page */ = {
-			isa = PBXGroup;
-			children = (
-				DCCE05952228451500906ECD /* FriendsViewController.swift */,
-			);
-			name = "Friends Page";
-			path = FriendsPage;
-			sourceTree = "<group>";
-		};
-		DC955DF4222C988E003B70BC /* Clusters Page */ = {
-			isa = PBXGroup;
-			children = (
-				DCCE05A122296DC100906ECD /* ClustersViewController.swift */,
-				DC1988C72236FA53009E3A55 /* ClustersView.swift */,
-				DC1988CF2239680D009E3A55 /* ClusterPost.swift */,
-			);
-			name = "Clusters Page";
-			path = ClustersPage;
-			sourceTree = "<group>";
-		};
-		DC955DF5222C9898003B70BC /* Events Page */ = {
-			isa = PBXGroup;
-			children = (
-				DCCE05A3222971AB00906ECD /* EventsViewController.swift */,
-				DC1988C122369846009E3A55 /* EventDetailController.swift */,
-				DC0D7B3C22340AFD00A30B9F /* Event.swift */,
-			);
-			name = "Events Page";
-			path = EventsPage;
-			sourceTree = "<group>";
-		};
-		DC955DFE222CBBBE003B70BC /* Search Page */ = {
-			isa = PBXGroup;
-			children = (
-				DC955DFF222CBBD6003B70BC /* SearchResultsController.swift */,
-				DC89993B22453E9A00F47EEF /* SearchResultsDataSource.swift */,
-			);
-			name = "Search Page";
-			path = SearchPage;
-			sourceTree = "<group>";
-		};
-		DC955E03222DDDC3003B70BC /* User Page */ = {
-			isa = PBXGroup;
-			children = (
-				DC955E04222DDDEB003B70BC /* UserProfileController.swift */,
-				DC89993522451EB200F47EEF /* UserProfileDataSource.swift */,
-				DC8999392245338300F47EEF /* UserActions.swift */,
-				DCCE0597222847CC00906ECD /* UserProfile.swift */,
-			);
-			name = "User Page";
-			path = UserPage;
-			sourceTree = "<group>";
-		};
 		DCCE056D222591F400906ECD = {
 			isa = PBXGroup;
 			children = (
@@ -420,6 +332,7 @@
 				DCCE05A0222873DE00906ECD /* API Manager */,
 				DCCE059D2228739F00906ECD /* Controllers */,
 				DC89994B2247CB5B00F47EEF /* TableViewCells */,
+				DCF17D41229973FB00075A4F /* Models */,
 				DC0D7B272230464A00A30B9F /* CoreData */,
 				DCCE059F222873C600906ECD /* Utils */,
 				DCCE059E222873AB00906ECD /* Visuals */,
@@ -431,16 +344,9 @@
 		DCCE059D2228739F00906ECD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				DCCE0591222701F000906ECD /* LoginViewController.swift */,
-				DC955DF1222C9851003B70BC /* Profile Page */,
-				DC1988BE22357565009E3A55 /* Side Menu */,
-				DC955DFE222CBBBE003B70BC /* Search Page */,
-				DC955E03222DDDC3003B70BC /* User Page */,
-				DC955DF3222C9874003B70BC /* Friends Page */,
-				DC955DF2222C986D003B70BC /* Corrections Page */,
-				DC955DF4222C988E003B70BC /* Clusters Page */,
-				DC955DF5222C9898003B70BC /* Events Page */,
-				DC89993F224572EE00F47EEF /* Notifications */,
+				DCF1A4D6229975CD00AA2653 /* Classes */,
+				DCF1A4D5229975C700AA2653 /* Views */,
+				DCF1A4D4229975BC00AA2653 /* ViewControllers */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -471,11 +377,63 @@
 		DCCE05A0222873DE00906ECD /* API Manager */ = {
 			isa = PBXGroup;
 			children = (
-				DCCE058D2226F0FF00906ECD /* CustomError.swift */,
 				DCCE058B2225BBDB00906ECD /* API42Manager.swift */,
 			);
 			name = "API Manager";
 			path = APIManager;
+			sourceTree = "<group>";
+		};
+		DCF17D41229973FB00075A4F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DCF1A4D7229976A500AA2653 /* AchievementData.swift */,
+				DC89993522451EB200F47EEF /* UserProfileDataSource.swift */,
+				DC89993B22453E9A00F47EEF /* SearchResultsDataSource.swift */,
+				DCCE058D2226F0FF00906ECD /* CustomError.swift */,
+				DC0D7B3C22340AFD00A30B9F /* Event.swift */,
+				DCF1A4DB229977C400AA2653 /* Project.swift */,
+				DCF1A4DD229977ED00AA2653 /* Correction.swift */,
+				DCF1A4DF2299781900AA2653 /* Friend.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DCF1A4D4229975BC00AA2653 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DCCE0591222701F000906ECD /* LoginViewController.swift */,
+				DC955E0C222FF623003B70BC /* SideMenuController.swift */,
+				DCCE058F2227010E00906ECD /* HomeViewController.swift */,
+				DC955E04222DDDEB003B70BC /* UserProfileController.swift */,
+				DC955DFF222CBBD6003B70BC /* SearchResultsController.swift */,
+				DCCE05932228450A00906ECD /* CorrectionsViewController.swift */,
+				DCCE05A3222971AB00906ECD /* EventsViewController.swift */,
+				DCCE05A122296DC100906ECD /* ClustersViewController.swift */,
+				DCCE05952228451500906ECD /* FriendsViewController.swift */,
+				DC1988C122369846009E3A55 /* EventDetailController.swift */,
+				DC8999402245731000F47EEF /* NotificationViewController.swift */,
+				DC89992F22427A1500F47EEF /* AchievementsController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		DCF1A4D5229975C700AA2653 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DC1988C72236FA53009E3A55 /* ClustersView.swift */,
+				DC1988CF2239680D009E3A55 /* ClusterPost.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DCF1A4D6229975CD00AA2653 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				DCCE0597222847CC00906ECD /* UserProfile.swift */,
+				DC8999392245338300F47EEF /* UserActions.swift */,
+				DC89992C22414F9000F47EEF /* Achievement.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -621,10 +579,13 @@
 				DCCE0592222701F000906ECD /* LoginViewController.swift in Sources */,
 				DC89993A2245338300F47EEF /* UserActions.swift in Sources */,
 				DC0D7B33223076DE00A30B9F /* FriendCell.swift in Sources */,
+				DCF1A4DE229977ED00AA2653 /* Correction.swift in Sources */,
 				DCCE05A62229822500906ECD /* UIImageViewFromURL.swift in Sources */,
 				DCCE05902227010E00906ECD /* HomeViewController.swift in Sources */,
+				DCF1A4D8229976A500AA2653 /* AchievementData.swift in Sources */,
 				DCCE05A222296DC100906ECD /* ClustersViewController.swift in Sources */,
 				DC955DF0222C5192003B70BC /* DateTimeInterval.swift in Sources */,
+				DCF1A4E02299781900AA2653 /* Friend.swift in Sources */,
 				DCCE058E2226F0FF00906ECD /* CustomError.swift in Sources */,
 				DC955E0D222FF623003B70BC /* SideMenuController.swift in Sources */,
 				DC1988C02236970F009E3A55 /* StringHTMLToAttributedString.swift in Sources */,
@@ -639,8 +600,10 @@
 				DC3797912288710200406488 /* ScalesCell.swift in Sources */,
 				DC955E05222DDDEB003B70BC /* UserProfileController.swift in Sources */,
 				DC89992D22414F9000F47EEF /* Achievement.swift in Sources */,
+				DCF1A4DA2299777100AA2653 /* UIViewFixInView.swift in Sources */,
 				DC1988C42236BCFE009E3A55 /* UIViewPinBackground.swift in Sources */,
 				DC1988C222369846009E3A55 /* EventDetailController.swift in Sources */,
+				DCF1A4DC229977C400AA2653 /* Project.swift in Sources */,
 				DC955E00222CBBD6003B70BC /* SearchResultsController.swift in Sources */,
 				DC89993222427A8000F47EEF /* AchievementsHeaderCell.swift in Sources */,
 				DC955E07222DDE8B003B70BC /* UserHeaderCell.swift in Sources */,

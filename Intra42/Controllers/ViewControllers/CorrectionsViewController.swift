@@ -8,17 +8,6 @@
 
 import UIKit
 
-struct Correction {
-    let name: String
-    let team: (id: Int, name: String)
-    let projectId: Int
-    let repoURL: String
-    let isCorrector: Bool
-    let corrector: (id: Int, login: String)
-    let correctees: [(id: Int, login: String)]
-    let startDate: Date
-}
-
 class CorrectionsViewController: UIViewController {
 
     lazy var searchBar = UISearchBar()
@@ -54,6 +43,7 @@ class CorrectionsViewController: UIViewController {
         navigationController?.view.layoutIfNeeded() // to fix height of the navigation bar
     }
     
+    // TODO: Fix infinite loading when no corrections?
     func getCorrections() {
         API42Manager.shared.getScales { (scales) in
             self.corrections = scales

@@ -9,21 +9,6 @@
 import CoreData
 import UIKit
 
-struct Friend: Equatable {
-
-    let id: Int
-    let username: String
-    let phone: String
-    let email: String
-    var imageURL: String {
-        return "https://cdn.intra.42.fr/users/medium_\(username).jpg"
-    }
-    
-    static func == (lhs: Friend, rhs: Friend) -> Bool {
-        return lhs.id == rhs.id
-    }
-}
-
 class FriendDataManager {
     
     static let shared = FriendDataManager()

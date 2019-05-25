@@ -77,7 +77,6 @@ class HomeViewController: UIViewController {
 
         tabBarController?.tabBar.tintColor = Colors.intraTeal
 
-        
 //        navigationController?.navigationBar.barTintColor = Colors.intraTeal
 //        navigationController?.navigationBar.tintColor = UIColor.black
 
@@ -150,13 +149,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                     let cell = tableView.cellForRow(at: indexPath),
                     let name = cell.textLabel?.text
                 else { return }
-                for cursus in userProfile.cursusList {
-                    if cursus.name == name {
-                        userProfile.getLevelAndSkills(cursusId: cursus.id)
-                        userProfile.getProjects(cursusId: cursus.id)
-                        tableView.reloadData()
-                        break
-                    }
+                for cursus in userProfile.cursusList where cursus.name == name {
+                    userProfile.getLevelAndSkills(cursusId: cursus.id)
+                    userProfile.getProjects(cursusId: cursus.id)
+                    tableView.reloadData()
+                    break
                 }
             case .projects:
                 let project = userProfile.projects.reversed()[indexPath.row]

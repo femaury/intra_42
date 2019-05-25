@@ -14,11 +14,13 @@ extension UIColor {
             let rgba = hexRGBA,
             let val = Int(rgba.replacingOccurrences(of: "#", with: ""), radix: 16)
         else { return nil }
-        
+
+        // swiftlint:disable identifier_name
         let r = CGFloat((val >> 24) & 0xff) / 255.0
         let g = CGFloat((val >> 16) & 0xff) / 255.0
         let b = CGFloat((val >> 8) & 0xFF) / 255.0
         let a = CGFloat(val & 0xff) / 255.0
+        // swiftlint:enable identifier_name
         
         self.init(red: r, green: g, blue: b, alpha: a)
     }

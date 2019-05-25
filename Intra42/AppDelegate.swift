@@ -15,36 +15,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
+
         SideMenuManager.default.menuPresentMode = .menuSlideIn
         SideMenuManager.default.menuFadeStatusBar = false
         SideMenuManager.default.menuAnimationFadeStrength = 0.2
-        
+
         self.window?.backgroundColor = UIColor.white
-        
+
         let homeController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "HomeTabBarController")
         for child in homeController.children {
             guard let navController = child as? UINavigationController else { continue }
-//            navController.navigationBar.barTintColor = Colors.intraTeal
-//            navController.navigationBar.tintColor = UIColor.black
-            
-//            navController.navigationBar.barTintColor = .white
             navController.navigationBar.tintColor = Colors.intraTeal
         }
-        
+
         if API42Manager.shared.hasOAuthToken() == true {
             self.window?.rootViewController = homeController
         }
         return true
     }
-    
+
     func application(_ application: UIApplication, handleOpen url: URL) -> Bool {
         API42Manager.shared.processOAuthResponse(url)
         return true
     }
-    
+
     func applicationWillTerminate(_ application: UIApplication) {
         FriendDataManager.shared.coreData.saveContext()
     }
 }
-

@@ -16,7 +16,7 @@ extension UIImageView {
         activityIndicator.startAnimating()
         self.addSubview(activityIndicator)
         if let url = URL(string: urlString) {
-            URLSession.shared.dataTask(with: url) { (data, response, error) in
+            URLSession.shared.dataTask(with: url) { (data, _, error) in
                 if let err = error {
                     print("Error downloading image: \(err)")
                     return

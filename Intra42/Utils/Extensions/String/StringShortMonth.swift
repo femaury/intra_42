@@ -11,29 +11,29 @@ import Foundation
 extension String {
     func getPiscineShortMonth() -> String? {
         switch self {
-        case "january","January":
+        case "january", "January":
             return "Jan."
-        case "february","February":
+        case "february", "February":
             return "Feb."
-        case "march","March":
+        case "march", "March":
             return "March"
-        case "april","April":
+        case "april", "April":
             return "April"
-        case "may","May":
+        case "may", "May":
             return "May"
-        case "june","June":
+        case "june", "June":
             return "June"
         case "july", "July":
             return "July"
-        case "august","August":
+        case "august", "August":
             return "Aug."
-        case "september","September":
+        case "september", "September":
             return "Sept."
-        case "october","October":
+        case "october", "October":
             return "Oct."
-        case "november","November":
+        case "november", "November":
             return "Nov."
-        case "december","December":
+        case "december", "December":
             return "Dec."
         default :
             return nil

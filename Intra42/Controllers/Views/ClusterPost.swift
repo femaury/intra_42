@@ -16,7 +16,7 @@ class ClusterPost: UIView, UserProfileCell {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var numberLabel: UILabel!
     
-    var delegate: ClustersViewController!
+    weak var delegate: ClustersViewController?
     var userId: Int = 0
     var userName: String?
     
@@ -32,8 +32,20 @@ class ClusterPost: UIView, UserProfileCell {
     
     private func commonInit() {
         Bundle.main.loadNibNamed("ClusterPost", owner: self, options: nil)
-        NSLayoutConstraint(item: self, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1.0, constant: 35).isActive = true
-        NSLayoutConstraint(item: self, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1.0, constant: 55).isActive = true
+        NSLayoutConstraint(item: self,
+                           attribute: .width,
+                           relatedBy: .equal,
+                           toItem: nil,
+                           attribute: .width,
+                           multiplier: 1.0,
+                           constant: 35).isActive = true
+        NSLayoutConstraint(item: self,
+                           attribute: .height,
+                           relatedBy: .equal,
+                           toItem: nil,
+                           attribute: .height,
+                           multiplier: 1.0,
+                           constant: 55).isActive = true
         contentView.fixInView(self)
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showUser))
@@ -44,14 +56,14 @@ class ClusterPost: UIView, UserProfileCell {
         guard let name = userName else { return }
         
         let showUserAction = UIAlertController(title: name, message: nil, preferredStyle: .actionSheet)
-        let showProfile = UIAlertAction(title: "Show Profile", style: .default) { (action) in
-            self.delegate.selectedCell = self
-            self.delegate.performSegue(withIdentifier: "UserProfileSegue", sender: self.delegate)
+        let showProfile = UIAlertAction(title: "Show Profile", style: .default) { [weak self] (_) in
+            self?.delegate?.selectedCell = self
+            self?.delegate?.performSegue(withIdentifier: "UserProfileSegue", sender: self?.delegate)
         }
         let cancel = UIAlertAction(title: "Cancel", style: .cancel)
         showUserAction.addAction(showProfile)
         showUserAction.addAction(cancel)
         
-        delegate.present(showUserAction, animated: true, completion: nil)
+        delegate?.present(showUserAction, animated: true, completion: nil)
     }
 }

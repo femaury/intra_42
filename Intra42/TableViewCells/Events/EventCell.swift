@@ -61,7 +61,6 @@ class EventCell: UITableViewCell {
     @IBOutlet weak var eventLocationButton: UIButton!
     @IBOutlet weak var eventLocationLabel: UILabel!
     
-    
     var event: Event! {
         didSet {
             lineView.backgroundColor = event.color.reg

@@ -13,7 +13,7 @@ class AchievementsController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     let searchController = UISearchController(searchResultsController: nil)
 
-    var achievements: [String : Achievement] = [:]
+    var achievements: [String: Achievement] = [:]
     var achievementsIndices: [String] = []
     var filteredIndices: [String] = []
     var isLoading = true
@@ -129,7 +129,6 @@ extension AchievementsController: UISearchResultsUpdating, UISearchBarDelegate {
         return searchController.searchBar.text?.isEmpty ?? true
     }
 }
-
 
 // MARK: - Table View Delegate
 

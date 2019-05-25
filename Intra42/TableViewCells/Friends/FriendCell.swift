@@ -22,7 +22,7 @@ class FriendCell: UITableViewCell, UserProfileCell {
     @IBOutlet weak var callButton: UIButton!
     @IBOutlet weak var emailButton: UIButton!
     
-    var delegate: FriendsViewController!
+    weak var delegate: FriendsViewController?
     var userId: Int = 0
     var indexPath: IndexPath!
     var picture: UIImage? {
@@ -53,10 +53,10 @@ class FriendCell: UITableViewCell, UserProfileCell {
     }
     
     @IBAction func callUser(_ sender: UIButton) {
-        delegate.callFriend(withId: userId, phone: friend.phone)
+        delegate?.callFriend(withId: userId, phone: friend.phone)
     }
     
     @IBAction func emailUser(_ sender: UIButton) {
-        delegate.emailFriend(withId: userId, email: friend.email)
+        delegate?.emailFriend(withId: userId, email: friend.email)
     }
 }

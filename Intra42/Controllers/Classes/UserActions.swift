@@ -28,7 +28,7 @@ class UserActions {
         
         // Calling actions
         
-        let callAction = UIAlertAction(title: "Call", style: .default) { (action) in
+        let callAction = UIAlertAction(title: "Call", style: .default) { (_) in
             guard let phoneNumber = self.call.title else { return }
             if phoneNumber.isPhoneNumber, let phoneURL = URL(string: "tel://\(phoneNumber)") {
                 if UIApplication.shared.canOpenURL(phoneURL) {
@@ -38,7 +38,7 @@ class UserActions {
         }
         callAction.setValue(UIImage(named: "phone"), forKey: "image")
         
-        let textAction = UIAlertAction(title: "Send message", style: .default) { (action) in
+        let textAction = UIAlertAction(title: "Send message", style: .default) { (_) in
             guard let phoneNumber = self.call.title else { return }
             if phoneNumber.isPhoneNumber, let smsURL = URL(string: "sms:\(phoneNumber)") {
                 if UIApplication.shared.canOpenURL(smsURL) {
@@ -48,7 +48,7 @@ class UserActions {
         }
         textAction.setValue(UIImage(named: "speech_bubble"), forKey: "image")
         
-        let copyNumberAction = UIAlertAction(title: "Copy", style: .default) { (action) in
+        let copyNumberAction = UIAlertAction(title: "Copy", style: .default) { (_) in
             UIPasteboard.general.string = self.call.title
         }
         copyNumberAction.setValue(UIImage(named: "copy"), forKey: "image")
@@ -60,7 +60,7 @@ class UserActions {
         
         // Email Actions
         
-        let emailAction = UIAlertAction(title: "Send email", style: .default) { (action) in
+        let emailAction = UIAlertAction(title: "Send email", style: .default) { (_) in
             guard let phoneNumber = self.email.title else { return }
             if phoneNumber.isPhoneNumber, let mailURL = URL(string: "mailto:\(phoneNumber)") {
                 if UIApplication.shared.canOpenURL(mailURL) {
@@ -70,7 +70,7 @@ class UserActions {
         }
         emailAction.setValue(UIImage(named: "message"), forKey: "image")
         
-        let copyEmailAction = UIAlertAction(title: "Copy", style: .default) { (action) in
+        let copyEmailAction = UIAlertAction(title: "Copy", style: .default) { (_) in
             UIPasteboard.general.string = self.email.title
         }
         copyEmailAction.setValue(UIImage(named: "copy"), forKey: "image")

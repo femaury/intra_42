@@ -20,6 +20,7 @@ class CoreDataManager {
          */
         let container = NSPersistentContainer(name: "CoreData")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+            print(storeDescription)
             if let error = error as NSError? {
                 // TODO: Replace this implementation with code to handle the error appropriately.
                 

@@ -26,7 +26,7 @@ class SearchResultsController: UITableViewController, SearchResultsDataSource {
     
     var selectedCell: UserProfileCell?
     
-    var userProfilePictures: [Int : UIImage] = [:]
+    var userProfilePictures: [Int: UIImage] = [:]
     
     var isLoadingSearchData = true {
         didSet {
@@ -117,7 +117,6 @@ extension SearchResultsController: UserProfileDataSource {
         }
     }
 }
-
 
 // MARK: - Search Bar Delegate
 

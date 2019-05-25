@@ -10,39 +10,15 @@ import Foundation
 import UIKit
 import SwiftyJSON
 
-let EventColor = UIColor(hexRGB: "#01BABC")
-let EventColorPale = UIColor(hexRGB: "#77BBBC")
-
-let ExamColor = UIColor(hexRGB: "#ED8179")
-let ExamColorPale = UIColor(hexRGB: "#ED9E99")
-
-let HackathonColor = UIColor(hexRGB: "#19B76F")
-let HackathonColorPale = UIColor(hexRGB: "#48B785")
-
-let AssociationColor = UIColor(hexRGB: "#6A85D5")
-let AssociationColorPale = UIColor(hexRGB: "#8C9FD5")
-
-let ConferenceColor = UIColor(hexRGB: "#3583B4")
-let ConferenceColorPale = UIColor(hexRGB: "#6194B4")
-
-let WorkshopColor = UIColor(hexRGB: "#87B021")
-let WorkshopColorPale = UIColor(hexRGB: "#96B055")
-
-let MeetupColor = UIColor(hexRGB: "#F64060")
-let MeetupColorPale = UIColor(hexRGB: "F6788F")
-
-let ExternColor = UIColor(hexRGB: "#6B6B6B")
-let ExternColorPale = UIColor(hexRGB: "#979797")
-
 enum EventKind: String {
-    case event = "event"
-    case exam = "exam"
-    case hackathon = "hackathon"
-    case association = "association"
-    case conference = "conference"
-    case workshop = "workshop"
-    case meetup = "meetup"
-    case extern = "extern"
+    case event
+    case exam
+    case hackathon
+    case association
+    case conference
+    case workshop
+    case meetup
+    case extern
 }
 
 struct Event {
@@ -70,21 +46,21 @@ struct Event {
         kind = EventKind(rawValue: event["kind"].stringValue) ?? .event
         switch kind {
         case .event:
-            color = (EventColor, EventColorPale)
+            color = (Colors.EventType.event, Colors.EventType.eventPale)
         case .exam:
-            color = (ExamColor, ExamColorPale)
+            color = (Colors.EventType.exam, Colors.EventType.examPale)
         case .association:
-            color = (AssociationColor, AssociationColorPale)
+            color = (Colors.EventType.association, Colors.EventType.associationPale)
         case .conference:
-            color = (ConferenceColor, ConferenceColorPale)
+            color = (Colors.EventType.conference, Colors.EventType.conferencePale)
         case .extern:
-            color = (ExternColor, ExternColorPale)
+            color = (Colors.EventType.extern, Colors.EventType.externPale)
         case .hackathon:
-            color = (HackathonColor, HackathonColorPale)
+            color = (Colors.EventType.hackathon, Colors.EventType.hackathonPale)
         case .meetup:
-            color = (MeetupColor, MeetupColorPale)
+            color = (Colors.EventType.meetup, Colors.EventType.meetupPale)
         case .workshop:
-            color = (WorkshopColor, WorkshopColorPale)
+            color = (Colors.EventType.workshop, Colors.EventType.workshopPale)
         }
         
         let dateFormatter = DateFormatter()

@@ -108,10 +108,8 @@ class FriendDataManager {
     }
     
     func hasFriend(withId id: Int) -> Bool {
-        for friend in friends {
-            if friend.id == id {
-                return true
-            }
+        for friend in friends where friend.id == id {
+            return true
         }
         return false
     }

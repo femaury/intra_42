@@ -46,10 +46,10 @@ class ScalesCell: UITableViewCell {
         var correctorName = correction.corrector.login
         var correcteeName = correction.correctees.count > 1 ? correction.team.name : correction.correctees.first?.login ?? "someone"
         
-        if let me = API42Manager.shared.userProfile?.username {
-            correctorName = correctorName.replacingOccurrences(of: me, with: "You")
-            correcteeName = correcteeName.replacingOccurrences(of: me + "'s", with: "your")
-            correcteeName = correcteeName.replacingOccurrences(of: me, with: "you")
+        if let myLogin = API42Manager.shared.userProfile?.username {
+            correctorName = correctorName.replacingOccurrences(of: myLogin, with: "You")
+            correcteeName = correcteeName.replacingOccurrences(of: myLogin + "'s", with: "your")
+            correcteeName = correcteeName.replacingOccurrences(of: myLogin, with: "you")
         }
         
         if correctorName == "Someone" {

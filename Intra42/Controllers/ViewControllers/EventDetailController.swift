@@ -20,7 +20,6 @@ class EventDetailController: UIViewController {
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var capacityLabel: UILabel!
     
-
     @IBOutlet weak var descriptionText: UITextView!
     @IBOutlet weak var contentView: UIView!
     
@@ -54,8 +53,10 @@ class EventDetailController: UIViewController {
     }
     
     @IBAction func syncCalendar(_ sender: UIBarButtonItem) {
-        let syncCalendarAction = UIAlertController(title: "Add this event to your default calendar", message: "You will be notified 24 hours prior", preferredStyle: .actionSheet)
-        let syncAction = UIAlertAction(title: "Add", style: .default) { (action) in
+        let syncCalendarAction = UIAlertController(title: "Add this event to your default calendar",
+                                                   message: "You will be notified 24 hours prior",
+                                                   preferredStyle: .actionSheet)
+        let syncAction = UIAlertAction(title: "Add", style: .default) { (_) in
             let eventStore = EKEventStore()
             eventStore.requestAccess(to: .event) { (granted, error) in
                 
@@ -76,8 +77,7 @@ class EventDetailController: UIViewController {
                     } catch let error as NSError {
                         print("Failed to save event: \(error)")
                     }
-                }
-                else{
+                } else {
                     if let err = error {
                         print("Error: \(err)")
                     } else {

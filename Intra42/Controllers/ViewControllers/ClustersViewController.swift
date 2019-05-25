@@ -83,7 +83,7 @@ class ClustersViewController: UIViewController {
     
     func loadClusterLocations(floor: Int) {
         API42Manager.shared.getLocations(withCampusId: 1, page: 1) { (data) in
-            var clusters: [String : ClusterPerson] = [:]
+            var clusters: [String: ClusterPerson] = [:]
             self.floorOneCount = 0
             self.floorOneFriends = 0
             self.floorTwoCount = 0

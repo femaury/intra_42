@@ -20,7 +20,7 @@ class FriendsViewController: UIViewController {
     var friendLocations: [Int: String] = [:] {
         didSet { tableView.reloadData() }
     }
-    var friendPictures: [Int : UIImage] = [:]
+    var friendPictures: [Int: UIImage] = [:]
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -204,7 +204,7 @@ extension FriendsViewController: UITableViewDelegate, UITableViewDataSource {
 //    }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let delete = UITableViewRowAction(style: .destructive, title: "Remove") { (action, indexPath) in
+        let delete = UITableViewRowAction(style: .destructive, title: "Remove") { (_, indexPath) in
             let cell = tableView.cellForRow(at: indexPath) as! FriendCell
             let id = cell.userId
             self.friends.remove(at: self.friends.firstIndex(where: {$0.id == id})!)

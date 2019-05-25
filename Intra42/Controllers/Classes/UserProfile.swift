@@ -42,7 +42,7 @@ class UserProfile {
     var skills: [(name: String, level: Double)] = []
     var locationLogs: [LocationLog] = []
     
-    var achievements: [String : Achievement] = [:]
+    var achievements: [String: Achievement] = [:]
     var achievementsCount: Int = 0
     var achievementsIndices: [String] = []
     
@@ -83,11 +83,9 @@ class UserProfile {
         
         let campusUsers = data["campus_users"].arrayValue
         var primaryId = 1
-        for campus in campusUsers {
-            if campus["is_primary"].boolValue == true {
-                primaryId = campus["campus_id"].intValue
-                break
-            }
+        for campus in campusUsers where campus["is_primary"].boolValue == true {
+            primaryId = campus["campus_id"].intValue
+            break
         }
         
         let campuses = data["campus"].arrayValue
@@ -134,17 +132,15 @@ class UserProfile {
     
     func getLevelAndSkills(cursusId: Int) {
         skills = []
-        for cursus in cursusUsers {
-            if cursus["cursus_id"].int == cursusId {
-                self.level = cursus["level"].doubleValue
-                self.userId = cursus["user"]["id"].intValue
-                for skill in cursus["skills"].arrayValue {
-                    if let name = skill["name"].string, let level = skill["level"].double {
-                        self.skills.append((name, level))
-                    }
+        for cursus in cursusUsers where cursus["cursus_id"].int == cursusId {
+            self.level = cursus["level"].doubleValue
+            self.userId = cursus["user"]["id"].intValue
+            for skill in cursus["skills"].arrayValue {
+                if let name = skill["name"].string, let level = skill["level"].double {
+                    self.skills.append((name, level))
                 }
-                break
             }
+            break
         }
     }
     

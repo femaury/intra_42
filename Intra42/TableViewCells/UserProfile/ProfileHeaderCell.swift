@@ -29,7 +29,6 @@ class ProfileHeaderCell: UITableViewCell {
     @IBOutlet weak var walletLabel: UILabel!
     @IBOutlet weak var walletNumberLabel: UILabel!
     
-    
     var userProfile: UserProfile? {
         didSet {
             if let coalitionName = API42Manager.shared.coalitionName {
@@ -46,7 +45,6 @@ class ProfileHeaderCell: UITableViewCell {
                 profilePicture.layer.borderWidth = 1
                 profilePicture.layer.borderColor = UIColor.black.cgColor
 
-                
                 let levelRounded = data.level.rounded(.down)
                 let levelPercentage = (data.level - levelRounded) * 100
                 let levelText = "Level \(Int(levelRounded)) - \(Int(levelPercentage))%"

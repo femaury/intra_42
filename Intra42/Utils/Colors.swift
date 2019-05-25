@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 struct Colors {
     static let intraTeal = UIColor(hexRGB: "#00BABC")
     static let validGrade = UIColor(hexRGB: "#00CE00")
@@ -26,5 +25,24 @@ struct Colors {
         static let silver = UIColor(hexRGB: "#C0C0C0")
         static let gold = UIColor(hexRGB: "#E5BF27")
         static let platinum = UIColor(hexRGB: "#14E2D8")
+    }
+    
+    struct EventType {
+        static let event = UIColor(hexRGB: "#01BABC")
+        static let eventPale = UIColor(hexRGB: "#77BBBC")
+        static let exam = UIColor(hexRGB: "#ED8179")
+        static let examPale = UIColor(hexRGB: "#ED9E99")
+        static let hackathon = UIColor(hexRGB: "#19B76F")
+        static let hackathonPale = UIColor(hexRGB: "#48B785")
+        static let association = UIColor(hexRGB: "#6A85D5")
+        static let associationPale = UIColor(hexRGB: "#8C9FD5")
+        static let conference = UIColor(hexRGB: "#3583B4")
+        static let conferencePale = UIColor(hexRGB: "#6194B4")
+        static let workshop = UIColor(hexRGB: "#87B021")
+        static let workshopPale = UIColor(hexRGB: "#96B055")
+        static let meetup = UIColor(hexRGB: "#F64060")
+        static let meetupPale = UIColor(hexRGB: "F6788F")
+        static let extern = UIColor(hexRGB: "#6B6B6B")
+        static let externPale = UIColor(hexRGB: "#979797")
     }
 }

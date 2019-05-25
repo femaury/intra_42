@@ -28,8 +28,6 @@ extension Date {
             return "Less than a minute ago"
         }
     }
-    
-    
 }
 
 extension Date {
@@ -63,6 +61,7 @@ extension Date {
     }
     /// Returns the a custom time interval description from another date
     func offset(from date: Date) -> String {
+        // swiftlint:disable identifier_name
         let y = years(from: date)
         if y > 0 {
             return y == 1 ? "In \(years(from: date)) year" : "In \(years(from: date)) years"
@@ -97,7 +96,7 @@ extension Date {
         if sec > 0 {
             return sec == 1 ? "In \(seconds(from: date)) second" : "In \(seconds(from: date)) seconds"
         }
-        
+        // swiftlint:enable identifier_name
         return getElapsedInterval()
     }
 }

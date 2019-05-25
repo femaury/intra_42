@@ -116,13 +116,11 @@ extension UserProfileController {
                     let cell = tableView.cellForRow(at: indexPath),
                     let name = cell.textLabel?.text
                     else { return }
-                for cursus in userProfile.cursusList {
-                    if cursus.name == name {
-                        userProfile.getLevelAndSkills(cursusId: cursus.id)
-                        userProfile.getProjects(cursusId: cursus.id)
-                        tableView.reloadData()
-                        break
-                    }
+                for cursus in userProfile.cursusList where cursus.name == name {
+                    userProfile.getLevelAndSkills(cursusId: cursus.id)
+                    userProfile.getProjects(cursusId: cursus.id)
+                    tableView.reloadData()
+                    break
                 }
             case .projects:
                 return

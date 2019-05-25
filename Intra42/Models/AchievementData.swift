@@ -9,13 +9,12 @@
 import Foundation
 import UIKit
 
-
 enum AchievementTier: String {
-    case none = "none"
-    case easy = "easy"
-    case medium = "medium"
-    case hard = "hard"
-    case challenge = "challenge"
+    case none
+    case easy
+    case medium
+    case hard
+    case challenge
     
     var color: UIColor? {
         switch self {
@@ -34,8 +33,8 @@ enum AchievementTier: String {
 }
 
 enum AchievementKind: String {
-    case project = "project"
-    case pedagogy = "pedagogy"
-    case social = "social"
-    case scolarity = "scolarity"
+    case project
+    case pedagogy
+    case social
+    case scolarity
 }

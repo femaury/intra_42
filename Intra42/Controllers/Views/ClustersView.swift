@@ -40,17 +40,16 @@ struct ClusterPerson {
 
 class ClustersView: UIView {
 
-    var delegate: ClustersViewController!
+    weak var delegate: ClustersViewController?
     
     let defaultImage = UIImage(named: "monitor")
-    var userImages: [Int : UIImage] = [:]
+    var userImages: [Int: UIImage] = [:]
     var imageTasks: [URLSessionDataTask] = []
     
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var leftRows: UIStackView!
     @IBOutlet weak var centerRows: UIStackView!
     @IBOutlet weak var rightRows: UIStackView!
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -67,21 +66,7 @@ class ClustersView: UIView {
         contentView.fixInView(self)
     }
     
-    func setupCluster(floor: Int, cluster: [String: ClusterPerson]) {
-        if userImages.count > 1000 { userImages = [:] } // Cleanup dictionary in case app has been running for multiple days?
-        for task in imageTasks { // Cancels all image downloads
-            if task.state == .running {
-                task.cancel()
-            }
-        }
-        imageTasks = []
-//        print("BEFORE")
-//        for case let row as UIStackView in leftRows.arrangedSubviews {
-//            print("ROW")
-//            for case let post as ClusterPost in row.arrangedSubviews {
-//                print(post.numberLabel.text ?? "NONE", terminator: ", ")
-//            }
-//        }
+    func setupStackViews(floor: Int) {
         let leftRow7 = leftRows.arrangedSubviews[6] as! UIStackView
         let rightRow6 = rightRows.arrangedSubviews[7] as! UIStackView
         let rightRow5 = rightRows.arrangedSubviews[8] as! UIStackView
@@ -106,16 +91,18 @@ class ClustersView: UIView {
                 rightRow5.removeArrangedSubview(remove2)
             }
         }
-//        print("MIDDLE")
-//        for case let row as UIStackView in leftRows.arrangedSubviews {
-//            print("ROW")
-//            for case let post as ClusterPost in row.arrangedSubviews {
-//                print(post.numberLabel.text ?? "NONE", terminator: ", ")
-//            }
-//        }
+    }
+    
+    // swiftlint:disable cyclomatic_complexity
+    func setupCluster(floor: Int, cluster: [String: ClusterPerson]) {
+        setupStackViews(floor: floor)
+        if userImages.count > 1000 { userImages = [:] } // Cleanup dictionary
+        for task in imageTasks where task.state == .running { // Cancel all image downloads
+            task.cancel()
+        }
+        imageTasks = []
         
-        var rowIndex = 13
-        var postIndex = 1
+        var rowIndex = 13, postIndex = 1
         for case let row as UIStackView in leftRows.arrangedSubviews {
             postIndex = 1
             for case let post as ClusterPost in row.arrangedSubviews {
@@ -151,10 +138,15 @@ class ClustersView: UIView {
         for case let row as UIStackView in rightRows.arrangedSubviews {
             postIndex = 17
             
-            if rowIndex == 9 { postIndex = 14}
-            else if rowIndex == 8 || rowIndex == 6 || rowIndex == 3 { postIndex = 15 }
-            else if rowIndex == 7 && floor == 1 { postIndex = 16 }
-            else if rowIndex == 13 || rowIndex == 1 { postIndex = 8 }
+            if rowIndex == 9 {
+                postIndex = 14
+            } else if rowIndex == 8 || rowIndex == 6 || rowIndex == 3 {
+                postIndex = 15
+            } else if rowIndex == 7 && floor == 1 {
+                postIndex = 16
+            } else if rowIndex == 13 || rowIndex == 1 {
+                postIndex = 8
+            }
             
             for case let post as ClusterPost in row.arrangedSubviews {
                 let location = "e\(floor)r\(rowIndex)p\(postIndex)"
@@ -166,14 +158,8 @@ class ClustersView: UIView {
             }
             rowIndex -= 1
         }
-//        print("AFTER")
-//        for case let row as UIStackView in leftRows.arrangedSubviews {
-//            print("ROW")
-//            for case let post as ClusterPost in row.arrangedSubviews {
-//                print(post.numberLabel.text ?? "NONE", terminator: ", ")
-//            }
-//        }
     }
+    // swiftlint:enable cyclomatic_complexity
     
     func setClusterPostOn(post: ClusterPost, withPerson person: ClusterPerson) {
         let id = person.id
@@ -247,4 +233,3 @@ class ClustersView: UIView {
         }
     }
 }
-

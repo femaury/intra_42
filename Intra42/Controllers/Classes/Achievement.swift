@@ -40,7 +40,7 @@ class Achievement {
         if let path = achievement["image"].string {
             self.imageURL = "https://api.intra.42.fr\(path)"
             if let url: URL = URL(string: imageURL) {
-                URLSession.shared.dataTask(with: url) { (data, response, error) in
+                URLSession.shared.dataTask(with: url) { (data, _, error) in
                     guard error == nil, let imgData = data else { return }
                     self.image = SVGKImage(data: imgData)?.uiImage
                 }.resume()

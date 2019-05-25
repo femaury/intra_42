@@ -68,6 +68,15 @@
 		DCF1A4DC229977C400AA2653 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1A4DB229977C400AA2653 /* Project.swift */; };
 		DCF1A4DE229977ED00AA2653 /* Correction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1A4DD229977ED00AA2653 /* Correction.swift */; };
 		DCF1A4E02299781900AA2653 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1A4DF2299781900AA2653 /* Friend.swift */; };
+		DCF1A4E42299929900AA2653 /* OAuthFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1A4E32299929900AA2653 /* OAuthFlow.swift */; };
+		DCF1A4E62299949900AA2653 /* GetAchievements.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1A4E52299949900AA2653 /* GetAchievements.swift */; };
+		DCF1A4E8229994D700AA2653 /* GetScales.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1A4E7229994D700AA2653 /* GetScales.swift */; };
+		DCF1A4EA2299951900AA2653 /* GetEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1A4E92299951900AA2653 /* GetEvents.swift */; };
+		DCF1A4EC2299954000AA2653 /* GetLogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1A4EB2299954000AA2653 /* GetLogs.swift */; };
+		DCF1A4EE2299957800AA2653 /* GetCoalitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1A4ED2299957800AA2653 /* GetCoalitions.swift */; };
+		DCF1A4F0229995B700AA2653 /* GetLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1A4EF229995B700AA2653 /* GetLocations.swift */; };
+		DCF1A4F2229995DA00AA2653 /* GetUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1A4F1229995DA00AA2653 /* GetUsers.swift */; };
+		DCF1A4F42299960500AA2653 /* GetProfilePicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1A4F32299960500AA2653 /* GetProfilePicture.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -138,6 +147,15 @@
 		DCF1A4DB229977C400AA2653 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		DCF1A4DD229977ED00AA2653 /* Correction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Correction.swift; sourceTree = "<group>"; };
 		DCF1A4DF2299781900AA2653 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		DCF1A4E32299929900AA2653 /* OAuthFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthFlow.swift; sourceTree = "<group>"; };
+		DCF1A4E52299949900AA2653 /* GetAchievements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAchievements.swift; sourceTree = "<group>"; };
+		DCF1A4E7229994D700AA2653 /* GetScales.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetScales.swift; sourceTree = "<group>"; };
+		DCF1A4E92299951900AA2653 /* GetEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEvents.swift; sourceTree = "<group>"; };
+		DCF1A4EB2299954000AA2653 /* GetLogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLogs.swift; sourceTree = "<group>"; };
+		DCF1A4ED2299957800AA2653 /* GetCoalitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCoalitions.swift; sourceTree = "<group>"; };
+		DCF1A4EF229995B700AA2653 /* GetLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLocations.swift; sourceTree = "<group>"; };
+		DCF1A4F1229995DA00AA2653 /* GetUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUsers.swift; sourceTree = "<group>"; };
+		DCF1A4F32299960500AA2653 /* GetProfilePicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProfilePicture.swift; sourceTree = "<group>"; };
 		F422FD8B1CF774E3F050397F /* Pods-Intra42.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Intra42.release.xcconfig"; path = "Target Support Files/Pods-Intra42/Pods-Intra42.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -378,6 +396,7 @@
 			isa = PBXGroup;
 			children = (
 				DCCE058B2225BBDB00906ECD /* API42Manager.swift */,
+				DCF1A4E22299926700AA2653 /* Extensions */,
 			);
 			name = "API Manager";
 			path = APIManager;
@@ -436,6 +455,22 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		DCF1A4E22299926700AA2653 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DCF1A4E32299929900AA2653 /* OAuthFlow.swift */,
+				DCF1A4E52299949900AA2653 /* GetAchievements.swift */,
+				DCF1A4E7229994D700AA2653 /* GetScales.swift */,
+				DCF1A4E92299951900AA2653 /* GetEvents.swift */,
+				DCF1A4EB2299954000AA2653 /* GetLogs.swift */,
+				DCF1A4ED2299957800AA2653 /* GetCoalitions.swift */,
+				DCF1A4EF229995B700AA2653 /* GetLocations.swift */,
+				DCF1A4F1229995DA00AA2653 /* GetUsers.swift */,
+				DCF1A4F32299960500AA2653 /* GetProfilePicture.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -448,6 +483,7 @@
 				DCCE0573222591F400906ECD /* Frameworks */,
 				DCCE0574222591F400906ECD /* Resources */,
 				E895706BA2B3871B2BCE68B0 /* [CP] Embed Pods Frameworks */,
+				DCF1A4E122997AB300AA2653 /* Swift Lint */,
 			);
 			buildRules = (
 			);
@@ -531,6 +567,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		DCF1A4E122997AB300AA2653 /* Swift Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Lint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		E895706BA2B3871B2BCE68B0 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -573,11 +627,15 @@
 				DC8999412245731000F47EEF /* NotificationViewController.swift in Sources */,
 				DCCE05A4222971AB00906ECD /* EventsViewController.swift in Sources */,
 				DC0D7B3D22340AFD00A30B9F /* Event.swift in Sources */,
+				DCF1A4F42299960500AA2653 /* GetProfilePicture.swift in Sources */,
+				DCF1A4EE2299957800AA2653 /* GetCoalitions.swift in Sources */,
 				DC955E0B222F1242003B70BC /* AchievementCell.swift in Sources */,
 				DCCE059A22284B0000906ECD /* UIColorHex.swift in Sources */,
+				DCF1A4EC2299954000AA2653 /* GetLogs.swift in Sources */,
 				DCCE05AA2229A5A000906ECD /* ProfileHeaderCell.swift in Sources */,
 				DCCE0592222701F000906ECD /* LoginViewController.swift in Sources */,
 				DC89993A2245338300F47EEF /* UserActions.swift in Sources */,
+				DCF1A4E8229994D700AA2653 /* GetScales.swift in Sources */,
 				DC0D7B33223076DE00A30B9F /* FriendCell.swift in Sources */,
 				DCF1A4DE229977ED00AA2653 /* Correction.swift in Sources */,
 				DCCE05A62229822500906ECD /* UIImageViewFromURL.swift in Sources */,
@@ -590,6 +648,7 @@
 				DC955E0D222FF623003B70BC /* SideMenuController.swift in Sources */,
 				DC1988C02236970F009E3A55 /* StringHTMLToAttributedString.swift in Sources */,
 				DC89993E2245559200F47EEF /* UIImageViewRoundFrame.swift in Sources */,
+				DCF1A4E62299949900AA2653 /* GetAchievements.swift in Sources */,
 				DC0D7B3B223408BE00A30B9F /* EventCell.swift in Sources */,
 				DC0D7B39223321CF00A30B9F /* LogsTableCell.swift in Sources */,
 				DC0D7B352231768A00A30B9F /* StringShortMonth.swift in Sources */,
@@ -602,8 +661,10 @@
 				DC89992D22414F9000F47EEF /* Achievement.swift in Sources */,
 				DCF1A4DA2299777100AA2653 /* UIViewFixInView.swift in Sources */,
 				DC1988C42236BCFE009E3A55 /* UIViewPinBackground.swift in Sources */,
+				DCF1A4F0229995B700AA2653 /* GetLocations.swift in Sources */,
 				DC1988C222369846009E3A55 /* EventDetailController.swift in Sources */,
 				DCF1A4DC229977C400AA2653 /* Project.swift in Sources */,
+				DCF1A4F2229995DA00AA2653 /* GetUsers.swift in Sources */,
 				DC955E00222CBBD6003B70BC /* SearchResultsController.swift in Sources */,
 				DC89993222427A8000F47EEF /* AchievementsHeaderCell.swift in Sources */,
 				DC955E07222DDE8B003B70BC /* UserHeaderCell.swift in Sources */,
@@ -619,8 +680,10 @@
 				DC1988C82236FA53009E3A55 /* ClustersView.swift in Sources */,
 				DCCE05942228450B00906ECD /* CorrectionsViewController.swift in Sources */,
 				DC0D7B2A2230466A00A30B9F /* CoreData.xcdatamodeld in Sources */,
+				DCF1A4EA2299951900AA2653 /* GetEvents.swift in Sources */,
 				DC955DEC222C12AC003B70BC /* SegmentHeaderCell.swift in Sources */,
 				DC0D7B2E223059B300A30B9F /* FriendDataManager.swift in Sources */,
+				DCF1A4E42299929900AA2653 /* OAuthFlow.swift in Sources */,
 				DC1988D02239680D009E3A55 /* ClusterPost.swift in Sources */,
 				DCCE057A222591F400906ECD /* AppDelegate.swift in Sources */,
 				DC89993022427A1500F47EEF /* AchievementsController.swift in Sources */,

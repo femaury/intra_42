@@ -14,7 +14,6 @@ class ProjectCell: UITableViewCell {
     @IBOutlet weak var timeAgoLabel: UILabel!
     @IBOutlet weak var gradeLabel: UILabel!
     
-
     @IBAction func clickOnProjectName(_ sender: UIButton) {
     }
 }

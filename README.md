@@ -1,4 +1,8 @@
 # Intra 42
+![Release](https://img.shields.io/github/release/femaury/intra_42.svg)
+![License](https://img.shields.io/github/license/femaury/intra_42.svg)
+![Top Language](https://img.shields.io/github/languages/top/femaury/intra_42.svg)
+![Platform](https://img.shields.io/badge/platform-iOS%2010.0%2B-green.svg)
 
 <img src="https://github.com/femaury/intra_42/raw/master/Screenshots/intra_42_main_screens_white.jpg"
      title="Intra 42 by Felix Maury" width="800">
@@ -7,9 +11,31 @@
 
 <br/>:warning: WORK IN PROGRESS :warning: <br/>
 This is a swift learning project for myself. <br/>
-I plan on making the project open source and publishing it for free on the App Store.
+I plan on making the project open source and publishing it for free on the App Store. <br/>
+Feel free to create issues or pull requests to contribute!
 
-### Current Features
+## Contributing
+To run the app, you will first need to [create an app for 42's api](https://profile.intra.42.fr/oauth/applications/new). Then use the keys your are given inside `Intra42/APIManager/API42Manager.swift`:
+```
+    let clientId = "YOUR_42_API_APP_UID"
+    let clientSecret = "YOUR_42_API_APP_SECRET"
+```
+You will also need to install [SwiftLint](https://github.com/realm/SwiftLint).
+
+## TODO
+<ul>
+  <li>Get official API key</li>
+  <li>About Page</li>
+  <li>Settings Page</li>
+  <li>Projects Info</li>
+  <li>Holy Graph</li>
+  <li>Forums</li>
+  <li>Videos</li>
+  <li>Dark mode</li>
+  <li>Feel free to pitch in!</li>
+</ul>
+
+## Current Features
   <details><summary>Your Profile</summary>
     <ul>
       <li>Full Name</li>
@@ -29,7 +55,9 @@ I plan on making the project open source and publishing it for free on the App S
   </details>
   <details><summary>Corrections</summary>
     <ul>
-        <li>Your upcoming corrections</li>
+      <li>Your upcoming corrections</li>
+      <li>Corrector</li>
+      <li>Correctee</li>
     </ul>
   </details>
   <details><summary>Events</summary>
@@ -68,3 +96,6 @@ I plan on making the project open source and publishing it for free on the App S
     </ul>
   </details>
   
+  ## Contact Me
+  
+ You can send me a mail at femaury@student.42.fr or find me on 42's slack as 'femaury' 😉

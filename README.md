@@ -25,6 +25,7 @@ You will also need to install [SwiftLint](https://github.com/realm/SwiftLint).
 ## TODO
 <ul>
   <li>Get official API key</li>
+  <li>Comment/Document source code</li>
   <li>About Page</li>
   <li>Settings Page</li>
   <li>Projects Info</li>

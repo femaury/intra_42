@@ -11,7 +11,7 @@
 
 <br/>:warning: WORK IN PROGRESS :warning: <br/>
 This is a swift learning project for myself. <br/>
-I plan on making the project open source and publishing it for free on the App Store. <br/>
+I plan on publishing it for free on the App Store. <br/>
 Feel free to create issues or pull requests to contribute!
 
 ## Contributing

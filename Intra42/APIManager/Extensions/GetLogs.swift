@@ -10,7 +10,7 @@ import Foundation
 import SwiftyJSON
 
 extension API42Manager {
-    func getLogsForUser(withId id: Int, completionHandler: @escaping ([LocationLog]) -> Void) {
+    func getLogs(forUserId id: Int, completionHandler: @escaping ([LocationLog]) -> Void) {
         API42Manager.shared.request(url: "https://api.intra.42.fr/v2/locations?filter[user_id]=\(id)&page[size]=100") { (data) in
             guard let logs = data?.arrayValue else {
                 completionHandler([])

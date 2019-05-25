@@ -70,7 +70,7 @@ class UserProfileController: UITableViewController {
             guard let self = self, let data = data else { return }
             self.userProfile = UserProfile(data: data)
             if let userId = self.userProfile?.userId {
-                API42Manager.shared.getCoalitionInfo(withUserId: userId) { [weak self] (name, color, logo) in
+                API42Manager.shared.getCoalitionInfo(forUserId: userId) { [weak self] (name, color, logo) in
                     guard let self = self else { return }
                     self.coalitionName = name
                     self.coalitionColor = color

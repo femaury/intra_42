@@ -124,7 +124,7 @@ class UserProfile {
         }
         getLevelAndSkills(cursusId: cursusId)
         getProjects(cursusId: cursusId)
-        API42Manager.shared.getLogsForUser(withId: self.userId) { [weak self] (locationLogs) in
+        API42Manager.shared.getLogs(forUserId: self.userId) { [weak self] (locationLogs) in
             guard let self = self else { return }
             self.locationLogs = locationLogs
         }

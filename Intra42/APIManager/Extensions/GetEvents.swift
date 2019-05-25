@@ -10,7 +10,7 @@ import Foundation
 import SwiftyJSON
 
 extension API42Manager {
-    func getFutureEvents(withCampusId campusId: Int, cursusId: Int, completionHandler: @escaping ([JSON]) -> Void) {
+    func getFutureEvents(forCampusId campusId: Int, cursusId: Int, completionHandler: @escaping ([JSON]) -> Void) {
         let eventsURL = "https://api.intra.42.fr/v2/campus/\(campusId)/cursus/\(cursusId)/events?filter[future]=true&page[size]=100"
         
         request(url: eventsURL) { (eventsData) in
@@ -23,7 +23,7 @@ extension API42Manager {
         }
     }
     
-    func getFutureEvents(withUserId id: Int, completionHandler: @escaping ([JSON]) -> Void) {
+    func getFutureEvents(forUserId id: Int, completionHandler: @escaping ([JSON]) -> Void) {
         let eventsURL = "https://api.intra.42.fr/v2/users/\(id)/events?filter[future]=true"
         
         request(url: eventsURL) { (eventsData) in

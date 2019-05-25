@@ -80,7 +80,7 @@ class EventsViewController: UIViewController {
             return
         }
         events = []
-        API42Manager.shared.getFutureEvents(withCampusId: campusId, cursusId: cursusId) { (events) in
+        API42Manager.shared.getFutureEvents(forCampusId: campusId, cursusId: cursusId) { (events) in
             for event in events.reversed() {
                 let newEvent = Event(event: event)
                 self.events.append(newEvent)
@@ -98,7 +98,7 @@ class EventsViewController: UIViewController {
             return
         }
         myEvents = []
-        API42Manager.shared.getFutureEvents(withUserId: userId) { (events) in
+        API42Manager.shared.getFutureEvents(forUserId: userId) { (events) in
             for event in events.reversed() {
                 let newEvent = Event(event: event)
                 self.myEvents.append(newEvent)

@@ -279,17 +279,14 @@
 			path = Date;
 			sourceTree = "<group>";
 		};
-		DC89994B2247CB5B00F47EEF /* TableViewCells */ = {
+		DC89994B2247CB5B00F47EEF /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DC37978F228870D800406488 /* Scales */,
-				DC8999502247CCA600F47EEF /* Friends */,
-				DC89994E2247CC2900F47EEF /* Events */,
-				DC89994D2247CC2000F47EEF /* Achievements */,
-				DC89994C2247CBDD00F47EEF /* Search */,
-				DC0D7B31223064E800A30B9F /* UserProfile */,
+				DC1988C72236FA53009E3A55 /* ClustersView.swift */,
+				DC1988CF2239680D009E3A55 /* ClusterPost.swift */,
+				DC8C39DF229999F100DD1924 /* Cells */,
 			);
-			path = TableViewCells;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		DC89994C2247CBDD00F47EEF /* Search */ = {
@@ -325,6 +322,19 @@
 			path = Friends;
 			sourceTree = "<group>";
 		};
+		DC8C39DF229999F100DD1924 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DC37978F228870D800406488 /* Scales */,
+				DC8999502247CCA600F47EEF /* Friends */,
+				DC89994E2247CC2900F47EEF /* Events */,
+				DC89994D2247CC2000F47EEF /* Achievements */,
+				DC89994C2247CBDD00F47EEF /* Search */,
+				DC0D7B31223064E800A30B9F /* UserProfile */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		DCCE056D222591F400906ECD = {
 			isa = PBXGroup;
 			children = (
@@ -349,7 +359,7 @@
 				DCCE0579222591F400906ECD /* AppDelegate.swift */,
 				DCCE05A0222873DE00906ECD /* API Manager */,
 				DCCE059D2228739F00906ECD /* Controllers */,
-				DC89994B2247CB5B00F47EEF /* TableViewCells */,
+				DC89994B2247CB5B00F47EEF /* Views */,
 				DCF17D41229973FB00075A4F /* Models */,
 				DC0D7B272230464A00A30B9F /* CoreData */,
 				DCCE059F222873C600906ECD /* Utils */,
@@ -363,7 +373,6 @@
 			isa = PBXGroup;
 			children = (
 				DCF1A4D6229975CD00AA2653 /* Classes */,
-				DCF1A4D5229975C700AA2653 /* Views */,
 				DCF1A4D4229975BC00AA2653 /* ViewControllers */,
 			);
 			path = Controllers;
@@ -434,15 +443,6 @@
 				DC89992F22427A1500F47EEF /* AchievementsController.swift */,
 			);
 			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		DCF1A4D5229975C700AA2653 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				DC1988C72236FA53009E3A55 /* ClustersView.swift */,
-				DC1988CF2239680D009E3A55 /* ClusterPost.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		DCF1A4D6229975CD00AA2653 /* Classes */ = {

@@ -86,7 +86,7 @@ extension CorrectionsViewController: SearchResultsDataSource {
                     guard let data = data else { return }
                     destination.userProfile = UserProfile(data: data)
                     if let userId = destination.userProfile?.userId {
-                        API42Manager.shared.getCoalitionInfo(withUserId: userId, completionHandler: { (name, color, logo) in
+                        API42Manager.shared.getCoalitionInfo(forUserId: userId, completionHandler: { (name, color, logo) in
                             destination.coalitionName = name
                             destination.coalitionColor = color
                             destination.coalitionLogo = logo

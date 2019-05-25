@@ -10,7 +10,7 @@ import Foundation
 import SwiftyJSON
 
 extension API42Manager {
-    func getLocations(withCampusId id: Int, page: Int, completionHandler: @escaping ([JSON]) -> Void) {
+    func getLocations(forCampusId id: Int, page: Int, completionHandler: @escaping ([JSON]) -> Void) {
         if page == 1 {
             locationData = [] // Reset array for each first call to getLocationsFor()
         }
@@ -24,7 +24,7 @@ extension API42Manager {
             self.locationData += data.arrayValue
             if data.arrayValue.count == 100 {
                 print("Location Page \(page)")
-                self.getLocations(withCampusId: id, page: page + 1, completionHandler: completionHandler)
+                self.getLocations(forCampusId: id, page: page + 1, completionHandler: completionHandler)
             } else {
                 completionHandler(self.locationData)
             }

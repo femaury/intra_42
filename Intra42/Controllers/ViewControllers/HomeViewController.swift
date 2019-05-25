@@ -159,7 +159,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 let project = userProfile.projects.reversed()[indexPath.row]
                 let projectId = project.id
                 let id = userProfile.userId
-                API42Manager.shared.getTeam(withUserId: id, projectId: projectId) { (data) in
+                API42Manager.shared.getTeam(forUserId: id, projectId: projectId) { (data) in
                     print("PROJECT \(id): \(data ?? "NULL")")
                 }
                 return

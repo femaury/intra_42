@@ -54,7 +54,7 @@ class API42Manager {
             self.userProfile = UserProfile(data: data)
             
             let userId = data["id"].intValue
-            self.getCoalitionInfo(withUserId: userId, completionHandler: { (name, color, logo) in
+            self.getCoalitionInfo(forUserId: userId, completionHandler: { (name, color, logo) in
                 self.coalitionName = name
                 self.coalitionColor = color
                 self.coalitionLogo = logo
@@ -182,7 +182,7 @@ class API42Manager {
         }
     }
     
-    func getTeam(withUserId id: Int, projectId: Int, completionHandler: @escaping (JSON?) -> Void) {
+    func getTeam(forUserId id: Int, projectId: Int, completionHandler: @escaping (JSON?) -> Void) {
         let projectURL = "https://api.intra.42.fr/v2/users/\(id)/teams?filter[project_id]=\(projectId)"
         
         request(url: projectURL) { (data) in

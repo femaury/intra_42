@@ -10,6 +10,15 @@ import Foundation
 import SwiftyJSON
 
 extension API42Manager {
+    /**
+     Gets all possible achievements.
+     
+     Parses the returned JSON data into a dictionary of [String: Achievement].
+     Keeps count of children/parent relations between achievements and always
+     keeps the parents at top level.
+     
+     - Parameter completionHandler: Closure called with all achievements. Empty on errors.
+     */
     func getAllAchievements(completionHandler: @escaping ([String: Achievement]) -> Void) {
         let achievementsURL = "https://api.intra.42.fr/v2/achievements?page[size]=100"
         
@@ -36,7 +45,7 @@ extension API42Manager {
         }
     }
     
-    func parseAchievementsData(_ data: [JSON], _ completionHandler: ([String: Achievement]) -> Void) {
+    fileprivate func parseAchievementsData(_ data: [JSON], _ completionHandler: ([String: Achievement]) -> Void) {
         var achievements: [String: Achievement] = [:]
         
         for achievement in data {

@@ -10,6 +10,16 @@ import Foundation
 import SwiftyJSON
 
 extension API42Manager {
+    /**
+     Gets coalition information about the specified user.
+     
+     Retrieves UIColor, slug name and image url.
+     
+     - Parameters:
+        - id: ID for user to check
+        - completionHandler: Called with retrieved data.
+        `"default"`, `Colors.intraTeal`, `""` on error.
+     */
     func getCoalitionInfo(forUserId id: Int, completionHandler: @escaping (String, UIColor?, String) -> Void) {
         request(url: "https://api.intra.42.fr/v2/users/\(id)/coalitions") { (responseJSON) in
             guard let data = responseJSON, data.isEmpty == false else {

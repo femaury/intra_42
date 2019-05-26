@@ -2,7 +2,7 @@
 ![Release](https://img.shields.io/github/release/femaury/Intra_42.svg)
 ![License](https://img.shields.io/github/license/femaury/Intra_42.svg?color=green)
 ![Top Language](https://img.shields.io/github/languages/top/femaury/Intra_42.svg)
-![Platform](https://img.shields.io/badge/platform-iOS%2010.0%2B-green.svg)
+![Platform](https://img.shields.io/badge/platform-iOS%2011.0%2B-green.svg)
 
 <img src="https://github.com/femaury/intra_42/raw/master/Screenshots/intra_42_main_screens_white.jpg"
      title="Intra 42 by Felix Maury" width="800">

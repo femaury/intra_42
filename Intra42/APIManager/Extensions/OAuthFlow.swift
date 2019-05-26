@@ -12,6 +12,12 @@ import Alamofire
 import SwiftyJSON
 
 extension API42Manager {
+    /**
+     Starts OAuth login flow
+     
+     If user already has a token, calls `OAuthTokenCompletionHandler` with `nil`.
+     Otherwise opens 42's API OAuth page in safari to prompt user to login.
+     */
     func startOAuth2Login() {
         let authPath = "https://api.intra.42.fr/oauth/authorize?client_id=\(clientId)&redirect_uri=\(redirectURI)&state=\(state)&response_type=code"
         
@@ -27,6 +33,19 @@ extension API42Manager {
         }
     }
     
+    /**
+     Processes OAuth's login response.
+     
+     Called by `AppDelegate` when `redirectURI` is called by 42's API.
+     Verifies that the response is valid then calls the API to received the user's token.
+     Stores the access and refresh tokens in the KeyChain, then gets all data about logged
+     in user.
+     
+     If error, calls `OAuthTokenCompletionHandler` with `CustomError`.
+     Otherwise calls the handler with `nil`.
+     
+     - Parameter url: URL used to open the app. Should be `redirectURI`
+     */
     func processOAuthResponse(_ url: URL) {
         guard
             let components = URLComponents(url: url, resolvingAgainstBaseURL: false),
@@ -89,6 +108,15 @@ extension API42Manager {
         }
     }
     
+    /**
+     Attempts to refresh the user's tokens with `OAuthRefreshToken`
+     
+     Removes current access token from keychain and if there is no refresh token,
+     retries the OAuth login. Otherwise calls the API to received a new
+     access token and store it in the keychain.
+     
+     - Parameter completionHandler: Called with `true` on success or `false` on failure.
+     */
     func refreshOAuthToken(completionHandler: @escaping ((Bool) -> Void)) {
         keychain.delete(keychainAccessKey)
         

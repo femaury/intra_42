@@ -10,6 +10,14 @@ import Foundation
 import SwiftyJSON
 
 extension API42Manager {
+    /**
+     Gets all current scales (corrections) for the logged in user
+     
+     Parses the received JSON data into `Correction` objects.
+     
+     - Parameter completionHandler: Called with array of `Correction`.
+        Empty on error.
+     */
     func getScales(completionHandler: @escaping ([Correction]) -> Void) {
         let scalesURL = "https://api.intra.42.fr/v2/me/scale_teams?page[size]=100"
         var corrections: [Correction] = []

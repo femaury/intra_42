@@ -11,6 +11,9 @@ import SwiftyJSON
 
 extension API42Manager {
     // TODO: Get application API token officialized to make more than 2 requests per second.
+    /**
+     Gets all users (up to 3 x 100) whose login, first name or last name matches the string.
+     */
     func searchUsers(withString string: String, completionHander: @escaping (JSON?, SearchSection) -> Void) {
         let loginURL = "https://api.intra.42.fr/v2/users?search[login]=\(string)&sort=login&page[size]=100"
         let firstNameURL = "https://api.intra.42.fr/v2/users?search[first_name]=\(string)&sort=login&page[size]=100"

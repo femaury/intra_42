@@ -10,6 +10,15 @@ import Foundation
 import SwiftyJSON
 
 extension API42Manager {
+    /**
+     Gets the profile picture of specified user as medium sized
+     
+     Creates UIImage out of data.
+     
+     - Parameters:
+        - login: Login of user
+        - completionHandler: Called with the UIImage. "42_default" from assets on error.
+     */
     func getProfilePicture(withLogin login: String, completionHandler: @escaping (UIImage?) -> Void) {
         let urlString = "https://cdn.intra.42.fr/users/medium_\(login).jpg"
         let defaultImage = UIImage(named: "42_default")

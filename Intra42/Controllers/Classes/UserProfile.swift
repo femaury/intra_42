@@ -174,7 +174,7 @@ class UserProfile {
         }
     }
     
-    func getPiscineDays(projectsArray: [JSON], cursusId: Int, piscineId: Int) -> [Project] {
+    fileprivate func getPiscineDays(projectsArray: [JSON], cursusId: Int, piscineId: Int) -> [Project] {
         var piscineDays: [Project] = []
 
         for subProject in projectsArray {

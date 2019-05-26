@@ -10,6 +10,17 @@ import Foundation
 import SwiftyJSON
 
 extension API42Manager {
+    
+    /**
+     Gets all location logs (up to 100) for specified user.
+     
+     Parses the JSON data to retrieve each day and all of its locations
+     with timestamps and durations.
+     
+     - Parameters:
+     - userId: ID for user to check for logs
+     - completionHandler: Called with array of `LocationLog`. Empty on error.
+     */
     func getLogs(forUserId id: Int, completionHandler: @escaping ([LocationLog]) -> Void) {
         API42Manager.shared.request(url: "https://api.intra.42.fr/v2/locations?filter[user_id]=\(id)&page[size]=100") { (data) in
             guard let logs = data?.arrayValue else {

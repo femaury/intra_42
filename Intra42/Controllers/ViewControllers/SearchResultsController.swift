@@ -85,16 +85,18 @@ class SearchResultsController: UITableViewController, SearchResultsDataSource {
         }
         if section == .firstName {
             self.isLoadingSearchData = false
-            self.tableView.reloadData()
         }
+        self.tableView.reloadData()
     }
     
     func getProfilePictureOfUser(withId id: Int, login: String) {
         API42Manager.shared.getProfilePicture(withLogin: login) { (image) in
             guard let image = image else { return }
             self.userProfilePictures.updateValue(image, forKey: id)
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
+            if self.loginSearchResults.count > 10 { // Little hack to make sure the first results' images show up right away?
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
             }
         }
     }

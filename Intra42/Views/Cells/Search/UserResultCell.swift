@@ -46,7 +46,13 @@ class UserResultCell: UITableViewCell, UserProfileCell {
         addUserIndicator.isHidden = false
         addUserIndicator.startAnimating()
         API42Manager.shared.request(url: "https://api.intra.42.fr/v2/users/\(idString)") { [weak self] (data) in
-            guard let self = self, let data = data else { return }
+            guard let self = self else { return }
+            guard let data = data else {
+                self.addUserIndicator.stopAnimating()
+                self.addUserButton.isUserInteractionEnabled = true
+                self.addUserButton.setImage(UIImage(named: "add_user_male"), for: .normal)
+                return
+            }
             let username = data["login"].stringValue
             let id = data["id"].intValue
             let phone = data["phone"].stringValue

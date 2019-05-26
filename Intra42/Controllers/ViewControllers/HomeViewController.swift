@@ -162,6 +162,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 API42Manager.shared.getTeam(forUserId: id, projectId: projectId) { (data) in
                     print("PROJECT \(id): \(data ?? "NULL")")
                 }
+                performSegue(withIdentifier: "UserProjectSegue", sender: self)
                 return
             case .logs:
                 return

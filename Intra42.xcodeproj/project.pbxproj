@@ -28,7 +28,6 @@
 		DC37979A228DB53500406488 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC379799228DB53400406488 /* Triangle.swift */; };
 		DC89992D22414F9000F47EEF /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89992C22414F9000F47EEF /* Achievement.swift */; };
 		DC89993022427A1500F47EEF /* AchievementsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89992F22427A1500F47EEF /* AchievementsController.swift */; };
-		DC89993222427A8000F47EEF /* AchievementsHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89993122427A8000F47EEF /* AchievementsHeaderCell.swift */; };
 		DC89993622451EB200F47EEF /* UserProfileDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89993522451EB200F47EEF /* UserProfileDataSource.swift */; };
 		DC89993822452F4E00F47EEF /* ProfileTableCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89993722452F4E00F47EEF /* ProfileTableCells.swift */; };
 		DC89993A2245338300F47EEF /* UserActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8999392245338300F47EEF /* UserActions.swift */; };
@@ -77,6 +76,7 @@
 		DCF1A4F0229995B700AA2653 /* GetLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1A4EF229995B700AA2653 /* GetLocations.swift */; };
 		DCF1A4F2229995DA00AA2653 /* GetUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1A4F1229995DA00AA2653 /* GetUsers.swift */; };
 		DCF1A4F42299960500AA2653 /* GetProfilePicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1A4F32299960500AA2653 /* GetProfilePicture.swift */; };
+		DCF70AFA229ABAD000B29DCC /* AchievementsHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF70AF9229ABAD000B29DCC /* AchievementsHeaderCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,7 +104,6 @@
 		DC379799228DB53400406488 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		DC89992C22414F9000F47EEF /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
 		DC89992F22427A1500F47EEF /* AchievementsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsController.swift; sourceTree = "<group>"; };
-		DC89993122427A8000F47EEF /* AchievementsHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AchievementsHeaderCell.swift; path = Intra42/TableViewCells/Achievements/AchievementsHeaderCell.swift; sourceTree = SOURCE_ROOT; };
 		DC89993522451EB200F47EEF /* UserProfileDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileDataSource.swift; sourceTree = "<group>"; };
 		DC89993722452F4E00F47EEF /* ProfileTableCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableCells.swift; sourceTree = "<group>"; };
 		DC8999392245338300F47EEF /* UserActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActions.swift; sourceTree = "<group>"; };
@@ -156,6 +155,7 @@
 		DCF1A4EF229995B700AA2653 /* GetLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLocations.swift; sourceTree = "<group>"; };
 		DCF1A4F1229995DA00AA2653 /* GetUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUsers.swift; sourceTree = "<group>"; };
 		DCF1A4F32299960500AA2653 /* GetProfilePicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProfilePicture.swift; sourceTree = "<group>"; };
+		DCF70AF9229ABAD000B29DCC /* AchievementsHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementsHeaderCell.swift; sourceTree = "<group>"; };
 		F422FD8B1CF774E3F050397F /* Pods-Intra42.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Intra42.release.xcconfig"; path = "Target Support Files/Pods-Intra42/Pods-Intra42.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -300,7 +300,7 @@
 		DC89994D2247CC2000F47EEF /* Achievements */ = {
 			isa = PBXGroup;
 			children = (
-				DC89993122427A8000F47EEF /* AchievementsHeaderCell.swift */,
+				DCF70AF9229ABAD000B29DCC /* AchievementsHeaderCell.swift */,
 				DC955E0A222F1242003B70BC /* AchievementCell.swift */,
 			);
 			path = Achievements;
@@ -658,6 +658,7 @@
 				DC37979A228DB53500406488 /* Triangle.swift in Sources */,
 				DC3797912288710200406488 /* ScalesCell.swift in Sources */,
 				DC955E05222DDDEB003B70BC /* UserProfileController.swift in Sources */,
+				DCF70AFA229ABAD000B29DCC /* AchievementsHeaderCell.swift in Sources */,
 				DC89992D22414F9000F47EEF /* Achievement.swift in Sources */,
 				DCF1A4DA2299777100AA2653 /* UIViewFixInView.swift in Sources */,
 				DC1988C42236BCFE009E3A55 /* UIViewPinBackground.swift in Sources */,
@@ -666,7 +667,6 @@
 				DCF1A4DC229977C400AA2653 /* Project.swift in Sources */,
 				DCF1A4F2229995DA00AA2653 /* GetUsers.swift in Sources */,
 				DC955E00222CBBD6003B70BC /* SearchResultsController.swift in Sources */,
-				DC89993222427A8000F47EEF /* AchievementsHeaderCell.swift in Sources */,
 				DC955E07222DDE8B003B70BC /* UserHeaderCell.swift in Sources */,
 				DC89993C22453E9A00F47EEF /* SearchResultsDataSource.swift in Sources */,
 				DCCE058C2225BBDB00906ECD /* API42Manager.swift in Sources */,
@@ -755,7 +755,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -810,7 +810,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

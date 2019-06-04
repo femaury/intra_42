@@ -1,25 +1,14 @@
 //
-//  ProjectEvaluation.swift
+//  ProjectTeamEvaluationCell.swift
 //  Intra42
 //
-//  Created by Felix Maury on 2019-05-26.
+//  Created by Felix Maury on 2019-06-04.
 //  Copyright © 2019 Felix Maury. All rights reserved.
 //
 
 import UIKit
 
-struct Evaluation {
-    let correctorName: String
-    let timeAgo: String
-    let grade: String
-    let isValid: Bool
-    let comment: String
-    let feedback: String
-}
-
-class ProjectEvaluation: UIView {
-    
-    @IBOutlet var contentView: UIView!
+class ProjectTeamEvaluationCell: UITableViewCell {
     
     @IBOutlet weak var correctorPicture: UIImageView! {
         didSet {
@@ -33,24 +22,7 @@ class ProjectEvaluation: UIView {
     @IBOutlet weak var commentLabel: UILabel!
     @IBOutlet weak var feedbackLabel: UILabel!
     
-//    weak var delegate: ProjectsViewController?
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        commonInit()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        commonInit()
-    }
-    
-    private func commonInit() {
-        Bundle.main.loadNibNamed("ProjectEvaluation", owner: self, options: nil)
-        contentView.fixInView(self)
-    }
-    
-    func setup(evaluation: Evaluation) {
+    func setupView(with evaluation: Evaluation) {
         correctorName.setTitle(evaluation.correctorName.uppercased(), for: .normal)
         API42Manager.shared.getProfilePicture(withLogin: evaluation.correctorName) { (image) in
             DispatchQueue.main.async {
@@ -67,8 +39,4 @@ class ProjectEvaluation: UIView {
         commentLabel.text = evaluation.comment
         feedbackLabel.text = evaluation.feedback
     }
-
-    @IBAction func showCorrectorPage(_ sender: UIButton) {
-    }
-    
 }

@@ -12,7 +12,7 @@ class ProjectTeamGitCell: UITableViewCell {
 
     @IBOutlet weak var repoLinkLabel: UILabel!
     @IBOutlet weak var copyLinkButton: UIButton!
-
+    
     @IBAction func copyLink(_ sender: UIButton) {
     }
 }

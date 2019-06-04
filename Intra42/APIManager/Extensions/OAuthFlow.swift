@@ -147,11 +147,17 @@ extension API42Manager {
             guard let value = response.result.value else { return }
             let valueJSON = JSON(value)
             
-            guard valueJSON["token_type"].string == "bearer" else { return } // Is not bearer
+            guard valueJSON["token_type"].string == "bearer" else {
+                print("ERROR: token is not bearer")
+                return
+            } // Is not bearer
             guard
                 let accessToken = valueJSON["access_token"].string,
                 let refreshToken = valueJSON["refresh_token"].string
-                else { return }
+                else {
+                    print("ERROR: couldn't find token")
+                    return
+            }
             
             self.OAuthAccessToken = accessToken
             self.OAuthRefreshToken = refreshToken

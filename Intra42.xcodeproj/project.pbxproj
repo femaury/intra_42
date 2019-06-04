@@ -24,6 +24,7 @@
 		DC1988CC22395588009E3A55 /* ClusterPost.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC1988CB22395588009E3A55 /* ClusterPost.xib */; };
 		DC1988CE2239567B009E3A55 /* Cluster.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC1988CD2239567B009E3A55 /* Cluster.xib */; };
 		DC1988D02239680D009E3A55 /* ClusterPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1988CF2239680D009E3A55 /* ClusterPost.swift */; };
+		DC27FD8F22A6E44400E3E560 /* ProjectTeamEvaluationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC27FD8E22A6E44400E3E560 /* ProjectTeamEvaluationCell.swift */; };
 		DC3797912288710200406488 /* ScalesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3797902288710200406488 /* ScalesCell.swift */; };
 		DC37979A228DB53500406488 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC379799228DB53400406488 /* Triangle.swift */; };
 		DC89992D22414F9000F47EEF /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89992C22414F9000F47EEF /* Achievement.swift */; };
@@ -82,7 +83,7 @@
 		DCF70B01229AF11500B29DCC /* ProjectTeamHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF70B00229AF11500B29DCC /* ProjectTeamHeaderCell.swift */; };
 		DCF70B03229AF12A00B29DCC /* ProjectTeamGitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF70B02229AF12A00B29DCC /* ProjectTeamGitCell.swift */; };
 		DCF70B05229AF13700B29DCC /* ProjectTeamUsersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF70B04229AF13700B29DCC /* ProjectTeamUsersCell.swift */; };
-		DCF70B07229AF14A00B29DCC /* ProjectTeamEvaluationsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF70B06229AF14A00B29DCC /* ProjectTeamEvaluationsCell.swift */; };
+		DCF70B07229AF14A00B29DCC /* ProjectTeamEvaluationHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF70B06229AF14A00B29DCC /* ProjectTeamEvaluationHeaderCell.swift */; };
 		DCF70B09229AF30900B29DCC /* UserProjectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF70B08229AF30900B29DCC /* UserProjectController.swift */; };
 /* End PBXBuildFile section */
 
@@ -107,6 +108,7 @@
 		DC1988CB22395588009E3A55 /* ClusterPost.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClusterPost.xib; sourceTree = "<group>"; };
 		DC1988CD2239567B009E3A55 /* Cluster.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Cluster.xib; sourceTree = "<group>"; };
 		DC1988CF2239680D009E3A55 /* ClusterPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusterPost.swift; sourceTree = "<group>"; };
+		DC27FD8E22A6E44400E3E560 /* ProjectTeamEvaluationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTeamEvaluationCell.swift; sourceTree = "<group>"; };
 		DC3797902288710200406488 /* ScalesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScalesCell.swift; sourceTree = "<group>"; };
 		DC379799228DB53400406488 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		DC89992C22414F9000F47EEF /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
@@ -168,7 +170,7 @@
 		DCF70B00229AF11500B29DCC /* ProjectTeamHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTeamHeaderCell.swift; sourceTree = "<group>"; };
 		DCF70B02229AF12A00B29DCC /* ProjectTeamGitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTeamGitCell.swift; sourceTree = "<group>"; };
 		DCF70B04229AF13700B29DCC /* ProjectTeamUsersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTeamUsersCell.swift; sourceTree = "<group>"; };
-		DCF70B06229AF14A00B29DCC /* ProjectTeamEvaluationsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTeamEvaluationsCell.swift; sourceTree = "<group>"; };
+		DCF70B06229AF14A00B29DCC /* ProjectTeamEvaluationHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTeamEvaluationHeaderCell.swift; sourceTree = "<group>"; };
 		DCF70B08229AF30900B29DCC /* UserProjectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProjectController.swift; sourceTree = "<group>"; };
 		F422FD8B1CF774E3F050397F /* Pods-Intra42.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Intra42.release.xcconfig"; path = "Target Support Files/Pods-Intra42/Pods-Intra42.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -495,7 +497,8 @@
 				DCF70B00229AF11500B29DCC /* ProjectTeamHeaderCell.swift */,
 				DCF70B02229AF12A00B29DCC /* ProjectTeamGitCell.swift */,
 				DCF70B04229AF13700B29DCC /* ProjectTeamUsersCell.swift */,
-				DCF70B06229AF14A00B29DCC /* ProjectTeamEvaluationsCell.swift */,
+				DCF70B06229AF14A00B29DCC /* ProjectTeamEvaluationHeaderCell.swift */,
+				DC27FD8E22A6E44400E3E560 /* ProjectTeamEvaluationCell.swift */,
 			);
 			path = Projects;
 			sourceTree = "<group>";
@@ -660,6 +663,7 @@
 				DCF1A4F42299960500AA2653 /* GetProfilePicture.swift in Sources */,
 				DCF1A4EE2299957800AA2653 /* GetCoalitions.swift in Sources */,
 				DC955E0B222F1242003B70BC /* AchievementCell.swift in Sources */,
+				DC27FD8F22A6E44400E3E560 /* ProjectTeamEvaluationCell.swift in Sources */,
 				DCCE059A22284B0000906ECD /* UIColorHex.swift in Sources */,
 				DCF1A4EC2299954000AA2653 /* GetLogs.swift in Sources */,
 				DCCE05AA2229A5A000906ECD /* ProfileHeaderCell.swift in Sources */,
@@ -699,7 +703,7 @@
 				DC1988C222369846009E3A55 /* EventDetailController.swift in Sources */,
 				DCF1A4DC229977C400AA2653 /* Project.swift in Sources */,
 				DCF1A4F2229995DA00AA2653 /* GetUsers.swift in Sources */,
-				DCF70B07229AF14A00B29DCC /* ProjectTeamEvaluationsCell.swift in Sources */,
+				DCF70B07229AF14A00B29DCC /* ProjectTeamEvaluationHeaderCell.swift in Sources */,
 				DC955E00222CBBD6003B70BC /* SearchResultsController.swift in Sources */,
 				DC955E07222DDE8B003B70BC /* UserHeaderCell.swift in Sources */,
 				DC89993C22453E9A00F47EEF /* SearchResultsDataSource.swift in Sources */,

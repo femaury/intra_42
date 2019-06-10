@@ -63,6 +63,7 @@ extension UserProjectController {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProjectTeamGitCell") as! ProjectTeamGitCell
             cell.repoLinkLabel.text = team.repoURL
+            cell.delegate = self
             return cell
         } else if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProjectTeamUsersCell") as! ProjectTeamUsersCell

@@ -25,6 +25,8 @@
 		DC1988CE2239567B009E3A55 /* Cluster.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC1988CD2239567B009E3A55 /* Cluster.xib */; };
 		DC1988D02239680D009E3A55 /* ClusterPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1988CF2239680D009E3A55 /* ClusterPost.swift */; };
 		DC27FD8F22A6E44400E3E560 /* ProjectTeamEvaluationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC27FD8E22A6E44400E3E560 /* ProjectTeamEvaluationCell.swift */; };
+		DC27FD9722AE66EE00E3E560 /* ProjectTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC27FD9622AE66EE00E3E560 /* ProjectTeam.swift */; };
+		DC27FD9922AE773D00E3E560 /* GetTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC27FD9822AE773D00E3E560 /* GetTeam.swift */; };
 		DC3797912288710200406488 /* ScalesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3797902288710200406488 /* ScalesCell.swift */; };
 		DC37979A228DB53500406488 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC379799228DB53400406488 /* Triangle.swift */; };
 		DC89992D22414F9000F47EEF /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89992C22414F9000F47EEF /* Achievement.swift */; };
@@ -109,6 +111,8 @@
 		DC1988CD2239567B009E3A55 /* Cluster.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Cluster.xib; sourceTree = "<group>"; };
 		DC1988CF2239680D009E3A55 /* ClusterPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusterPost.swift; sourceTree = "<group>"; };
 		DC27FD8E22A6E44400E3E560 /* ProjectTeamEvaluationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTeamEvaluationCell.swift; sourceTree = "<group>"; };
+		DC27FD9622AE66EE00E3E560 /* ProjectTeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTeam.swift; sourceTree = "<group>"; };
+		DC27FD9822AE773D00E3E560 /* GetTeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTeam.swift; sourceTree = "<group>"; };
 		DC3797902288710200406488 /* ScalesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScalesCell.swift; sourceTree = "<group>"; };
 		DC379799228DB53400406488 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		DC89992C22414F9000F47EEF /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
@@ -441,6 +445,7 @@
 				DCF1A4DB229977C400AA2653 /* Project.swift */,
 				DCF1A4DD229977ED00AA2653 /* Correction.swift */,
 				DCF1A4DF2299781900AA2653 /* Friend.swift */,
+				DC27FD9622AE66EE00E3E560 /* ProjectTeam.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -487,6 +492,7 @@
 				DCF1A4EF229995B700AA2653 /* GetLocations.swift */,
 				DCF1A4F1229995DA00AA2653 /* GetUsers.swift */,
 				DCF1A4F32299960500AA2653 /* GetProfilePicture.swift */,
+				DC27FD9822AE773D00E3E560 /* GetTeam.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -688,6 +694,7 @@
 				DC0D7B3B223408BE00A30B9F /* EventCell.swift in Sources */,
 				DC0D7B39223321CF00A30B9F /* LogsTableCell.swift in Sources */,
 				DC0D7B352231768A00A30B9F /* StringShortMonth.swift in Sources */,
+				DC27FD9922AE773D00E3E560 /* GetTeam.swift in Sources */,
 				DC89993822452F4E00F47EEF /* ProfileTableCells.swift in Sources */,
 				DC955E02222CBC7F003B70BC /* UserResultCell.swift in Sources */,
 				DC955DEA222BE9EE003B70BC /* UIViewRoundCorners.swift in Sources */,
@@ -708,6 +715,7 @@
 				DC955E07222DDE8B003B70BC /* UserHeaderCell.swift in Sources */,
 				DC89993C22453E9A00F47EEF /* SearchResultsDataSource.swift in Sources */,
 				DCCE058C2225BBDB00906ECD /* API42Manager.swift in Sources */,
+				DC27FD9722AE66EE00E3E560 /* ProjectTeam.swift in Sources */,
 				DC0D7B3022305DDC00A30B9F /* CoreDataManager.swift in Sources */,
 				DC0D7B372232D0C800A30B9F /* StringIsPhoneNumber.swift in Sources */,
 				DCCE059C22286EC800906ECD /* Colors.swift in Sources */,

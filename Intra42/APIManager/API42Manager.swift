@@ -234,20 +234,4 @@ class API42Manager {
             completionHandler(data)
         }
     }
-    
-    func getTeam(withId id: Int, completionHandler: @escaping (JSON?) -> Void) {
-        let projectURL = "https://api.intra.42.fr/v2/teams?filter[id]=\(id)"
-        
-        request(url: projectURL) { (data) in
-            completionHandler(data)
-        }
-    }
-    
-    func getTeam(forUserId id: Int, projectId: Int, completionHandler: @escaping (JSON?) -> Void) {
-        let projectURL = "https://api.intra.42.fr/v2/users/\(id)/teams?filter[project_id]=\(projectId)"
-        
-        request(url: projectURL) { (data) in
-            completionHandler(data)
-        }
-    }
 }

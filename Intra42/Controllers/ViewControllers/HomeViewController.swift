@@ -28,6 +28,7 @@ class HomeViewController: UIViewController {
     }
     var isLoadingData = true
     var userProfile: UserProfile?
+    var selectedProjectTeams: [ProjectTeam]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -116,6 +117,10 @@ extension HomeViewController: SearchResultsDataSource {
             if let destination = segue.destination as? SearchResultsController {
                 showSearchResultsController(atDestination: destination)
             }
+        } else if segue.identifier == "UserProjectSegue" {
+            if let destination = segue.destination as? UserProjectController {
+                destination.projectTeams = selectedProjectTeams
+            }
         }
     }
 }
@@ -159,10 +164,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 let project = userProfile.projects.reversed()[indexPath.row]
                 let projectId = project.id
                 let id = userProfile.userId
-                API42Manager.shared.getTeam(forUserId: id, projectId: projectId) { (data) in
-                    print("PROJECT \(id): \(data ?? "NULL")")
+                API42Manager.shared.getTeam(forUserId: id, projectId: projectId) { [weak self] (projectTeams) in
+                    print("PROJECT \(id): \(projectTeams)")
+                    self?.selectedProjectTeams = projectTeams
+                    self?.performSegue(withIdentifier: "UserProjectSegue", sender: self)
                 }
-                performSegue(withIdentifier: "UserProjectSegue", sender: self)
                 return
             case .logs:
                 return

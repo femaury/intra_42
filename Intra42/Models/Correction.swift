@@ -14,7 +14,7 @@ struct Correction {
     let projectId: Int
     let repoURL: String
     let isCorrector: Bool
-    let corrector: (id: Int, login: String)
-    let correctees: [(id: Int, login: String)]
+    let corrector: User
+    let correctees: [User]
     let startDate: Date
 }

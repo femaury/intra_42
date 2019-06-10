@@ -23,15 +23,15 @@ class ProjectTeamEvaluationCell: UITableViewCell {
     @IBOutlet weak var feedbackLabel: UILabel!
     
     func setupView(with evaluation: Evaluation) {
-        correctorName.setTitle(evaluation.correctorName.uppercased(), for: .normal)
-        API42Manager.shared.getProfilePicture(withLogin: evaluation.correctorName) { (image) in
+        correctorName.setTitle(evaluation.corrector.login.uppercased(), for: .normal)
+        API42Manager.shared.getProfilePicture(withLogin: evaluation.corrector.login) { (image) in
             DispatchQueue.main.async {
                 self.correctorPicture.image = image
             }
         }
         timeAgoLabel.text = evaluation.timeAgo.uppercased()
-        gradeLabel.text = evaluation.grade
-        if evaluation.isValid {
+        gradeLabel.text = "\(evaluation.grade)%"
+        if evaluation.isValidated {
             gradeLabel.textColor = Colors.validGrade
         } else {
             gradeLabel.textColor = UIColor.red

@@ -35,7 +35,7 @@ extension API42Manager {
                 let teamName = team["name"].stringValue
                 let teamId = team["id"].intValue
                 
-                var correctees: [(id: Int, login: String)] = []
+                var correctees: [User] = []
                 var isCorrector = true
                 for member in members {
                     let correcteeLogin = member["login"].stringValue
@@ -50,7 +50,7 @@ extension API42Manager {
                     }
                 }
                 
-                var corrector: (id: Int, login: String) = (-1, "Someone")
+                var corrector: User = (-1, "Someone")
                 if scale["corrector"].string == nil {
                     let corr = scale["corrector"]
                     corrector = (corr["id"].intValue, corr["login"].stringValue)

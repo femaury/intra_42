@@ -25,7 +25,7 @@ extension Date {
         } else if let minute = interval.minute, minute > 0 {
             return minute == 1 ? "\(minute) minute ago" : "\(minute) minutes ago"
         } else {
-            return "Less than a minute ago"
+            return "less than a minute ago"
         }
     }
 }

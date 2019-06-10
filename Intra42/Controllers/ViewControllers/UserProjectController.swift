@@ -9,6 +9,8 @@
 import UIKit
 
 class UserProjectController: UITableViewController {
+    
+    var projectTeams: [ProjectTeam]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,41 +27,65 @@ class UserProjectController: UITableViewController {
 extension UserProjectController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        guard let count = projectTeams?.count else {
+            return 1
+        }
+        return count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        guard let teams = projectTeams else {
+            return 1
+        }
+        let team = teams[section]
+        if team.evaluations.count == 0 {
+            return 4
+        }
+        return 3 + team.evaluations.count
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let teams = projectTeams else {
+            return nil
+        }
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProjectTeamHeaderCell") as! ProjectTeamHeaderCell
-        cell.setupView("femaury's team", "123%", "6 months ago", "6 months ago")
+        let team = teams[section]
+        cell.setupView(team.name, "\(team.finalGrade)%", team.isValidated, team.closedAt ?? "Not closed yet", team.lockedAt ?? "Not locked yet")
         return cell
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let teams = projectTeams else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "LoadingIndicatorCell")!
+            return cell
+        }
+        let team = teams[indexPath.section]
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProjectTeamGitCell") as! ProjectTeamGitCell
-            cell.repoLinkLabel.text = "vogsphere@vogsphere.42.fr:intra/2018/activities/camagru/femaury"
+            cell.repoLinkLabel.text = team.repoURL
             return cell
         } else if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProjectTeamUsersCell") as! ProjectTeamUsersCell
-            
+            cell.setupView(with: team.users)
             return cell
         } else if indexPath.row == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProjectTeamEvaluationHeaderCell") as! ProjectTeamEvaluationHeaderCell
-            cell.evaluationCountLabel.text = "(2/5)"
+            cell.evaluationCountLabel.text = ""
             return cell
         } else {
+            if team.evaluations.count == 0 {
+                var cell: UITableViewCell!
+                cell = tableView.dequeueReusableCell(withIdentifier: "NoEvaluationsCell")
+                if cell == nil {
+                    cell = UITableViewCell(style: .default, reuseIdentifier: "NoEvaluationsCell")
+                }
+                cell.textLabel?.text = "None"
+                cell.textLabel?.textColor = .gray
+                return cell
+            }
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProjectTeamEvaluationCell") as! ProjectTeamEvaluationCell
-            // swiftlint:disable line_length
-            cell.setupView(with: Evaluation(correctorName: "femaury",
-                                            timeAgo: "6 months ago",
-                                            grade: "120%",
-                                            isValid: true,
-                                            comment: "Good shit ma boi Good shit ma boi Good shit ma boi Good shit ma boi Good shit ma boi Good shit ma boi v Good shit ma boi Good shit ma boi v Good shit ma boi Good shit ma boi Good shit ma boi toto",
-                                            feedback: "Thanks homie"))
+            let evaluation = team.evaluations[indexPath.row - 3]
+            cell.setupView(with: evaluation)
             return cell
         }
     }

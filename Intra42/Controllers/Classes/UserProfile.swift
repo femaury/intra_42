@@ -11,6 +11,8 @@ import UIKit
 import SwiftyJSON
 import SVGKit
 
+typealias User = (id: Int, login: String)
+
 class UserProfile {
     
     var cursusUsers: [JSON]

@@ -22,6 +22,8 @@ class UserProfileController: UITableViewController {
             tableView.scrollToNearestSelectedRow(at: .top, animated: true)
         }
     }
+    var selectedProjectTeams: [ProjectTeam]?
+    var selectedProjectName: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +41,23 @@ class UserProfileController: UITableViewController {
             self.navigationController?.popViewController(animated: true)
         }
         userActions = UserActions(removeFriendClosure: removeClosure, cancelClosure: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "UserProjectSegue" {
+            if let destination = segue.destination as? UserProjectController {
+                destination.projectTeams = selectedProjectTeams
+                var title = ""
+                if let projectName = selectedProjectName {
+                    if projectName.count > 20 {
+                        title = String(projectName.prefix(20)) + "..."
+                    } else {
+                        title = projectName
+                    }
+                }
+                destination.title = title
+            }
+        }
     }
     
     @IBAction func changeFriendStatus(_ sender: UIBarButtonItem) {
@@ -123,6 +142,15 @@ extension UserProfileController {
                     break
                 }
             case .projects:
+                let project = userProfile.projects.reversed()[indexPath.row]
+                let projectId = project.id
+                let id = userProfile.userId
+                selectedProjectName = project.name
+                API42Manager.shared.getTeam(forUserId: id, projectId: projectId) { [weak self] (projectTeams) in
+                    print("PROJECT \(id): \(projectTeams)")
+                    self?.selectedProjectTeams = projectTeams
+                    self?.performSegue(withIdentifier: "UserProjectSegue", sender: self)
+                }
                 return
             case .logs:
                 return

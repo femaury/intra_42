@@ -120,12 +120,11 @@ extension API42Manager {
     func refreshOAuthToken(completionHandler: @escaping ((Bool) -> Void)) {
         keychain.delete(keychainAccessKey)
         
-        print("Refreshing token...")
-        
         guard let refreshToken = OAuthRefreshToken else {
             startOAuth2Login()
             return
         }
+        print("Refreshing token with: \(refreshToken)")
         
         let tokenURL = "https://api.intra.42.fr/oauth/token"
         let tokenParams = [

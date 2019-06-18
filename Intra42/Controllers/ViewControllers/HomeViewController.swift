@@ -29,6 +29,7 @@ class HomeViewController: UIViewController {
     var isLoadingData = true
     var userProfile: UserProfile?
     var selectedProjectTeams: [ProjectTeam]?
+    var selectedProjectName: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -120,6 +121,15 @@ extension HomeViewController: SearchResultsDataSource {
         } else if segue.identifier == "UserProjectSegue" {
             if let destination = segue.destination as? UserProjectController {
                 destination.projectTeams = selectedProjectTeams
+                var title = ""
+                if let projectName = selectedProjectName {
+                    if projectName.count > 20 {
+                        title = String(projectName.prefix(20)) + "..."
+                    } else {
+                        title = projectName
+                    }
+                }
+                destination.title = title
             }
         }
     }
@@ -164,6 +174,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 let project = userProfile.projects.reversed()[indexPath.row]
                 let projectId = project.id
                 let id = userProfile.userId
+                selectedProjectName = project.name
                 API42Manager.shared.getTeam(forUserId: id, projectId: projectId) { [weak self] (projectTeams) in
                     print("PROJECT \(id): \(projectTeams)")
                     self?.selectedProjectTeams = projectTeams

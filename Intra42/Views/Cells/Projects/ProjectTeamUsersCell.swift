@@ -28,6 +28,7 @@ class ProjectTeamUsersCell: UITableViewCell {
 //            })
 //        }
         var index = 0
+        var isLeader = true
         for case let picture as UIImageView in userPicturesStack.arrangedSubviews {
             if index < users.count {
                 let user = users[index]
@@ -36,9 +37,10 @@ class ProjectTeamUsersCell: UITableViewCell {
                         picture.isHidden = false
                         picture.image = image
                         picture.roundFrame()
-                        if index == 0 {
-                            picture.layer.borderWidth = 1
+                        if isLeader {
+                            picture.layer.borderWidth = 2
                             picture.layer.borderColor = UIColor.orange.cgColor
+                            isLeader = false
                         }
                     }
                 }

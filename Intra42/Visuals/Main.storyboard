@@ -867,7 +867,7 @@
             <objects>
                 <tableViewController title="User's Project" id="f6i-oQ-OVe" customClass="UserProjectController" customModule="Intra42" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="CS4-WX-cFD">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -1155,6 +1155,9 @@
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                             <state key="normal" title="LOGIN"/>
+                                            <connections>
+                                                <action selector="showCorrectorProfile:" destination="mpk-h2-iP5" eventType="touchUpInside" id="abO-H6-bTD"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZl-e7-Kfn">
                                             <rect key="frame" x="360" y="0.0" width="34" height="14.5"/>
@@ -1216,6 +1219,9 @@
                             <outlet property="delegate" destination="f6i-oQ-OVe" id="L7M-rY-aPS"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="sWC-1A-sDE" kind="show" identifier="UserProfileSegue" id="v9O-8o-9HE"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q89-1G-yw4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1448,7 +1454,7 @@
             <objects>
                 <tableViewController title="User Profile" id="sWC-1A-sDE" customClass="UserProfileController" customModule="Intra42" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="itd-YT-SCN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.90000000000000002" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -1856,18 +1862,18 @@
             <objects>
                 <viewController title="Holy Graph" id="ODo-5C-KVo" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fe6-3l-ABs">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="error" translatesAutoresizingMaskIntoConstraints="NO" id="Hpp-Av-A3V">
-                                <rect key="frame" x="157" y="312.5" width="100" height="100"/>
+                                <rect key="frame" x="157" y="398" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="C9a-RY-qqN"/>
                                     <constraint firstAttribute="height" constant="100" id="YQC-iy-8jr"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Work in Progress" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a7H-2i-Uhr">
-                                <rect key="frame" x="121" y="422.5" width="172" height="24"/>
+                                <rect key="frame" x="121" y="508" width="172" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -3374,7 +3380,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="IaD-z1-mRA"/>
         <segue reference="IC3-E2-qiD"/>
-        <segue reference="9Kb-eh-UKx"/>
+        <segue reference="v9O-8o-9HE"/>
         <segue reference="WXI-Yj-ohg"/>
         <segue reference="qfm-KR-H0N"/>
     </inferredMetricsTieBreakers>

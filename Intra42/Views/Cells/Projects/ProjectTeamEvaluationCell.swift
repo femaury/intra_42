@@ -22,7 +22,11 @@ class ProjectTeamEvaluationCell: UITableViewCell {
     @IBOutlet weak var commentLabel: UILabel!
     @IBOutlet weak var feedbackLabel: UILabel!
     
+    weak var delegate: UserProjectController?
+    var correctorId: Int?
+    
     func setupView(with evaluation: Evaluation) {
+        correctorId = evaluation.corrector.id
         correctorName.setTitle(evaluation.corrector.login.uppercased(), for: .normal)
         API42Manager.shared.getProfilePicture(withLogin: evaluation.corrector.login) { (image) in
             DispatchQueue.main.async {
@@ -38,5 +42,10 @@ class ProjectTeamEvaluationCell: UITableViewCell {
         }
         commentLabel.text = evaluation.comment
         feedbackLabel.text = evaluation.feedback
+    }
+    
+    @IBAction func showCorrectorProfile(_ sender: UIButton) {
+        guard let id = correctorId else { return }
+        delegate?.showCorrectorProfile(withId: id)
     }
 }

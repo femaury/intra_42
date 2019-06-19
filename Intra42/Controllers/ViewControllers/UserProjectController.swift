@@ -11,6 +11,7 @@ import UIKit
 class UserProjectController: UITableViewController {
     
     var projectTeams: [ProjectTeam]?
+    var correctorId: Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +20,31 @@ class UserProjectController: UITableViewController {
         tableView.sectionHeaderHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 400
         tableView.estimatedSectionHeaderHeight = 60
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "UserProfileSegue" {
+            if let id = correctorId, let destination = segue.destination as? UserProfileController {
+                API42Manager.shared.request(url: "https://api.intra.42.fr/v2/users/\(id)") { (data) in
+                    guard let data = data else { return }
+                    destination.userProfile = UserProfile(data: data)
+                    if let userId = destination.userProfile?.userId {
+                        API42Manager.shared.getCoalitionInfo(forUserId: userId, completionHandler: { (name, color, logo) in
+                            destination.coalitionName = name
+                            destination.coalitionColor = color
+                            destination.coalitionLogo = logo
+                            destination.isLoadingData = false
+                            destination.tableView.reloadData()
+                        })
+                    }
+                }
+            }
+        }
+    }
+    
+    func showCorrectorProfile(withId id: Int) {
+        correctorId = id
+        performSegue(withIdentifier: "UserProfileSegue", sender: self)
     }
 }
 
@@ -87,6 +113,7 @@ extension UserProjectController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProjectTeamEvaluationCell") as! ProjectTeamEvaluationCell
             let evaluation = team.evaluations[indexPath.row - 3]
             cell.setupView(with: evaluation)
+            cell.delegate = self
             return cell
         }
     }

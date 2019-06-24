@@ -380,7 +380,7 @@
 			children = (
 				DCCE0579222591F400906ECD /* AppDelegate.swift */,
 				DCCE05A0222873DE00906ECD /* API Manager */,
-				DCCE059D2228739F00906ECD /* Controllers */,
+				DCCE059D2228739F00906ECD /* ViewControllers */,
 				DC89994B2247CB5B00F47EEF /* Views */,
 				DCF17D41229973FB00075A4F /* Models */,
 				DC0D7B272230464A00A30B9F /* CoreData */,
@@ -391,13 +391,24 @@
 			path = Intra42;
 			sourceTree = "<group>";
 		};
-		DCCE059D2228739F00906ECD /* Controllers */ = {
+		DCCE059D2228739F00906ECD /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				DCF1A4D6229975CD00AA2653 /* Classes */,
-				DCF1A4D4229975BC00AA2653 /* ViewControllers */,
+				DCCE0591222701F000906ECD /* LoginViewController.swift */,
+				DC955E0C222FF623003B70BC /* SideMenuController.swift */,
+				DCCE058F2227010E00906ECD /* HomeViewController.swift */,
+				DC955E04222DDDEB003B70BC /* UserProfileController.swift */,
+				DC955DFF222CBBD6003B70BC /* SearchResultsController.swift */,
+				DCCE05932228450A00906ECD /* CorrectionsViewController.swift */,
+				DCCE05A3222971AB00906ECD /* EventsViewController.swift */,
+				DCCE05A122296DC100906ECD /* ClustersViewController.swift */,
+				DCCE05952228451500906ECD /* FriendsViewController.swift */,
+				DC1988C122369846009E3A55 /* EventDetailController.swift */,
+				DC8999402245731000F47EEF /* NotificationViewController.swift */,
+				DC89992F22427A1500F47EEF /* AchievementsController.swift */,
+				DCF70B08229AF30900B29DCC /* UserProjectController.swift */,
 			);
-			path = Controllers;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		DCCE059E222873AB00906ECD /* Visuals */ = {
@@ -437,6 +448,9 @@
 		DCF17D41229973FB00075A4F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DCCE0597222847CC00906ECD /* UserProfile.swift */,
+				DC8999392245338300F47EEF /* UserActions.swift */,
+				DC89992C22414F9000F47EEF /* Achievement.swift */,
 				DCF1A4D7229976A500AA2653 /* AchievementData.swift */,
 				DC89993522451EB200F47EEF /* UserProfileDataSource.swift */,
 				DC89993B22453E9A00F47EEF /* SearchResultsDataSource.swift */,
@@ -448,36 +462,6 @@
 				DC27FD9622AE66EE00E3E560 /* ProjectTeam.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		DCF1A4D4229975BC00AA2653 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				DCCE0591222701F000906ECD /* LoginViewController.swift */,
-				DC955E0C222FF623003B70BC /* SideMenuController.swift */,
-				DCCE058F2227010E00906ECD /* HomeViewController.swift */,
-				DC955E04222DDDEB003B70BC /* UserProfileController.swift */,
-				DC955DFF222CBBD6003B70BC /* SearchResultsController.swift */,
-				DCCE05932228450A00906ECD /* CorrectionsViewController.swift */,
-				DCCE05A3222971AB00906ECD /* EventsViewController.swift */,
-				DCCE05A122296DC100906ECD /* ClustersViewController.swift */,
-				DCCE05952228451500906ECD /* FriendsViewController.swift */,
-				DC1988C122369846009E3A55 /* EventDetailController.swift */,
-				DC8999402245731000F47EEF /* NotificationViewController.swift */,
-				DC89992F22427A1500F47EEF /* AchievementsController.swift */,
-				DCF70B08229AF30900B29DCC /* UserProjectController.swift */,
-			);
-			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		DCF1A4D6229975CD00AA2653 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				DCCE0597222847CC00906ECD /* UserProfile.swift */,
-				DC8999392245338300F47EEF /* UserActions.swift */,
-				DC89992C22414F9000F47EEF /* Achievement.swift */,
-			);
-			path = Classes;
 			sourceTree = "<group>";
 		};
 		DCF1A4E22299926700AA2653 /* Extensions */ = {
@@ -522,6 +506,7 @@
 				DCCE0574222591F400906ECD /* Resources */,
 				E895706BA2B3871B2BCE68B0 /* [CP] Embed Pods Frameworks */,
 				DCF1A4E122997AB300AA2653 /* Swift Lint */,
+				DCABB86922BD3C3200711C4A /* Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -605,6 +590,25 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		DCABB86922BD3C3200711C4A /* Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			name = Crashlytics;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 828d3e5cc0969c29e5f01efb1352841cc9eac839 9dbd7ccfc93022c0b6a6285e46a35f35ba9348e0ada5ac2f64dbc73d0f88e783\n";
 		};
 		DCF1A4E122997AB300AA2653 /* Swift Lint */ = {
 			isa = PBXShellScriptBuildPhase;

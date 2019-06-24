@@ -11,4 +11,6 @@ target 'Intra42' do
   pod 'SwiftyJSON'
   pod 'SideMenu', :git => 'https://github.com/stelabouras/SideMenu.git', :branch => 'upgrade/xcode-10.2'
   pod 'SVGKit'
+  pod 'Fabric'
+  pod 'Crashlytics'
 end

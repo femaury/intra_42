@@ -49,17 +49,10 @@ extension SideMenuController: UITableViewDelegate, UITableViewDataSource {
         case 2:
             performSegue(withIdentifier: "ForumsSegue", sender: self)
         case 3:
-            guard let cursusId = API42Manager.shared.userProfile?.mainCursusId, let campusId = API42Manager.shared.userProfile?.mainCampusId else { return }
-            API42Manager.shared.request(url: "https://api.intra.42.fr/v2/blocs?filter[cursus_id]=\(cursusId)&filter[campus_id]=\(campusId)") { [weak self] (data) in
-                print("COALITIONS: \(data ?? "NULL")")
-                self?.performSegue(withIdentifier: "CoalitionsSegue", sender: self)
-            }
+            self.performSegue(withIdentifier: "CoalitionsSegue", sender: self)
         case 4:
             performSegue(withIdentifier: "AchievementsSegue", sender: self)
         case 5:
-//            API42Manager.shared.request(url: "https://api.intra.42.fr/oauth/token/info") { (data) in
-//                print("TOKEN: \(data ?? "NULL")")
-//            }
             performSegue(withIdentifier: "AboutSegue", sender: self)
         case 6:
 //            API42Manager.shared.request(url: "https://api.intra.42.fr/v2/topics/4242/messages") { (data) in

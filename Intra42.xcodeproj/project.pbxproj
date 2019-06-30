@@ -24,6 +24,11 @@
 		DC1988CC22395588009E3A55 /* ClusterPost.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC1988CB22395588009E3A55 /* ClusterPost.xib */; };
 		DC1988CE2239567B009E3A55 /* Cluster.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC1988CD2239567B009E3A55 /* Cluster.xib */; };
 		DC1988D02239680D009E3A55 /* ClusterPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1988CF2239680D009E3A55 /* ClusterPost.swift */; };
+		DC21EB9022C90DAD00E1288B /* Pentagone.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC21EB8F22C90DAD00E1288B /* Pentagone.swift */; };
+		DC21EB9322C917C700E1288B /* AnimatedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC21EB9222C917C700E1288B /* AnimatedLabel.swift */; };
+		DC21EB9522C9184900E1288B /* CoalitionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC21EB9422C9184900E1288B /* CoalitionsViewController.swift */; };
+		DC21EB9722C92EE200E1288B /* Coalition.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC21EB9622C92EE200E1288B /* Coalition.xib */; };
+		DC21EB9922C92FAA00E1288B /* CoalitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC21EB9822C92FAA00E1288B /* CoalitionView.swift */; };
 		DC27FD8F22A6E44400E3E560 /* ProjectTeamEvaluationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC27FD8E22A6E44400E3E560 /* ProjectTeamEvaluationCell.swift */; };
 		DC27FD9722AE66EE00E3E560 /* ProjectTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC27FD9622AE66EE00E3E560 /* ProjectTeam.swift */; };
 		DC27FD9922AE773D00E3E560 /* GetTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC27FD9822AE773D00E3E560 /* GetTeam.swift */; };
@@ -48,6 +53,7 @@
 		DC955E07222DDE8B003B70BC /* UserHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC955E06222DDE8B003B70BC /* UserHeaderCell.swift */; };
 		DC955E0B222F1242003B70BC /* AchievementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC955E0A222F1242003B70BC /* AchievementCell.swift */; };
 		DC955E0D222FF623003B70BC /* SideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC955E0C222FF623003B70BC /* SideMenuController.swift */; };
+		DCABB86B22C12C1F00711C4A /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCABB86A22C12C1F00711C4A /* AboutViewController.swift */; };
 		DCCE057A222591F400906ECD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCE0579222591F400906ECD /* AppDelegate.swift */; };
 		DCCE0581222591F500906ECD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCCE0580222591F500906ECD /* Assets.xcassets */; };
 		DCCE0584222591F500906ECD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCCE0582222591F500906ECD /* LaunchScreen.storyboard */; };
@@ -110,6 +116,11 @@
 		DC1988CB22395588009E3A55 /* ClusterPost.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClusterPost.xib; sourceTree = "<group>"; };
 		DC1988CD2239567B009E3A55 /* Cluster.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Cluster.xib; sourceTree = "<group>"; };
 		DC1988CF2239680D009E3A55 /* ClusterPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusterPost.swift; sourceTree = "<group>"; };
+		DC21EB8F22C90DAD00E1288B /* Pentagone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pentagone.swift; sourceTree = "<group>"; };
+		DC21EB9222C917C700E1288B /* AnimatedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedLabel.swift; sourceTree = "<group>"; };
+		DC21EB9422C9184900E1288B /* CoalitionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoalitionsViewController.swift; sourceTree = "<group>"; };
+		DC21EB9622C92EE200E1288B /* Coalition.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Coalition.xib; sourceTree = "<group>"; };
+		DC21EB9822C92FAA00E1288B /* CoalitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoalitionView.swift; sourceTree = "<group>"; };
 		DC27FD8E22A6E44400E3E560 /* ProjectTeamEvaluationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTeamEvaluationCell.swift; sourceTree = "<group>"; };
 		DC27FD9622AE66EE00E3E560 /* ProjectTeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTeam.swift; sourceTree = "<group>"; };
 		DC27FD9822AE773D00E3E560 /* GetTeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTeam.swift; sourceTree = "<group>"; };
@@ -135,6 +146,7 @@
 		DC955E06222DDE8B003B70BC /* UserHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHeaderCell.swift; sourceTree = "<group>"; };
 		DC955E0A222F1242003B70BC /* AchievementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementCell.swift; sourceTree = "<group>"; };
 		DC955E0C222FF623003B70BC /* SideMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuController.swift; sourceTree = "<group>"; };
+		DCABB86A22C12C1F00711C4A /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		DCCE0576222591F400906ECD /* Intra42.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Intra42.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCCE0579222591F400906ECD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCCE0580222591F500906ECD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -302,6 +314,7 @@
 		DC89994B2247CB5B00F47EEF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DC21EB9822C92FAA00E1288B /* CoalitionView.swift */,
 				DC1988C72236FA53009E3A55 /* ClustersView.swift */,
 				DC1988CF2239680D009E3A55 /* ClusterPost.swift */,
 				DCF70AFD229AEBF700B29DCC /* ProjectEvaluation.swift */,
@@ -407,6 +420,8 @@
 				DC8999402245731000F47EEF /* NotificationViewController.swift */,
 				DC89992F22427A1500F47EEF /* AchievementsController.swift */,
 				DCF70B08229AF30900B29DCC /* UserProjectController.swift */,
+				DCABB86A22C12C1F00711C4A /* AboutViewController.swift */,
+				DC21EB9422C9184900E1288B /* CoalitionsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -418,10 +433,12 @@
 				DCF70AFB229AE7B200B29DCC /* ProjectEvaluation.xib */,
 				DC1988CD2239567B009E3A55 /* Cluster.xib */,
 				DC1988CB22395588009E3A55 /* ClusterPost.xib */,
+				DC21EB9622C92EE200E1288B /* Coalition.xib */,
 				DCCE0580222591F500906ECD /* Assets.xcassets */,
 				DCCE0582222591F500906ECD /* LaunchScreen.storyboard */,
 				DC8999442247C23D00F47EEF /* Default-568h@2x.png */,
 				DC379799228DB53400406488 /* Triangle.swift */,
+				DC21EB8F22C90DAD00E1288B /* Pentagone.swift */,
 			);
 			path = Visuals;
 			sourceTree = "<group>";
@@ -431,6 +448,7 @@
 			children = (
 				DCCE059B22286EC800906ECD /* Colors.swift */,
 				DC379798228C85C700406488 /* Extensions */,
+				DC21EB9222C917C700E1288B /* AnimatedLabel.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -556,6 +574,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC21EB9722C92EE200E1288B /* Coalition.xib in Resources */,
 				DC1988CE2239567B009E3A55 /* Cluster.xib in Resources */,
 				DCCE05A8222994EB00906ECD /* Main.storyboard in Resources */,
 				DCF70AFC229AE7B200B29DCC /* ProjectEvaluation.xib in Resources */,
@@ -676,12 +695,16 @@
 				DC27FD8F22A6E44400E3E560 /* ProjectTeamEvaluationCell.swift in Sources */,
 				DCCE059A22284B0000906ECD /* UIColorHex.swift in Sources */,
 				DCF1A4EC2299954000AA2653 /* GetLogs.swift in Sources */,
+				DC21EB9522C9184900E1288B /* CoalitionsViewController.swift in Sources */,
 				DCCE05AA2229A5A000906ECD /* ProfileHeaderCell.swift in Sources */,
 				DCCE0592222701F000906ECD /* LoginViewController.swift in Sources */,
 				DCF70B09229AF30900B29DCC /* UserProjectController.swift in Sources */,
 				DC89993A2245338300F47EEF /* UserActions.swift in Sources */,
 				DCF1A4E8229994D700AA2653 /* GetScales.swift in Sources */,
+				DC21EB9922C92FAA00E1288B /* CoalitionView.swift in Sources */,
 				DC0D7B33223076DE00A30B9F /* FriendCell.swift in Sources */,
+				DC21EB9322C917C700E1288B /* AnimatedLabel.swift in Sources */,
+				DC21EB9022C90DAD00E1288B /* Pentagone.swift in Sources */,
 				DCF1A4DE229977ED00AA2653 /* Correction.swift in Sources */,
 				DCCE05A62229822500906ECD /* UIImageViewFromURL.swift in Sources */,
 				DCCE05902227010E00906ECD /* HomeViewController.swift in Sources */,
@@ -727,6 +750,7 @@
 				DC955DEE222C4E88003B70BC /* ProjectCell.swift in Sources */,
 				DCCE0598222847CC00906ECD /* UserProfile.swift in Sources */,
 				DCCE05962228451500906ECD /* FriendsViewController.swift in Sources */,
+				DCABB86B22C12C1F00711C4A /* AboutViewController.swift in Sources */,
 				DC89993622451EB200F47EEF /* UserProfileDataSource.swift in Sources */,
 				DC1988C82236FA53009E3A55 /* ClustersView.swift in Sources */,
 				DCCE05942228450B00906ECD /* CorrectionsViewController.swift in Sources */,
@@ -878,6 +902,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J2YFW87U3N;
 				INFOPLIST_FILE = Intra42/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;

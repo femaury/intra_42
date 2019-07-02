@@ -14,7 +14,6 @@ class CoalitionsViewController: UIViewController {
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    // TODO: Save coalitionViews for future loadings
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,7 +22,11 @@ class CoalitionsViewController: UIViewController {
             let url = "https://api.intra.42.fr/v2/blocs?filter[cursus_id]=\(cursusId)&filter[campus_id]=\(campusId)"
             API42Manager.shared.request(url: url) { [weak self] (data) in
                 guard let bloc = data?.array?.first else {
-                    // TODO: Error... no coalitions found
+                    let errorLabel = UILabel()
+                    errorLabel.text = "There was an error fetching coalitions data..."
+                    errorLabel.numberOfLines = 0
+                    self?.activityIndicator.isHidden = true
+                    self?.stackView.addArrangedSubview(errorLabel)
                     return
                 }
                 

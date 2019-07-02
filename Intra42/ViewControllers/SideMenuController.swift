@@ -49,7 +49,7 @@ extension SideMenuController: UITableViewDelegate, UITableViewDataSource {
         case 2:
             performSegue(withIdentifier: "ForumsSegue", sender: self)
         case 3:
-            self.performSegue(withIdentifier: "CoalitionsSegue", sender: self)
+            performSegue(withIdentifier: "CoalitionsSegue", sender: self)
         case 4:
             performSegue(withIdentifier: "AchievementsSegue", sender: self)
         case 5:

@@ -2984,11 +2984,11 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DgE-va-Gio">
                                                 <rect key="frame" x="20" y="444.66666666666663" width="374" height="394.33333333333337"/>
-                                                <mutableString key="text">Hey! I am a Canadian student, who moved to Paris to come study at 42. I validated my piscine in July 2017 and then started my cursus in April 2018. I had never really coded before, but I always kind of knew it was something that interested me. So when I heard about the piscine, I knew I had to give it a shot. Ever since that day, coding has been one of my passions.
+                                                <string key="text">Hey! I am a Canadian student, who moved to Paris to come study at 42. I validated my piscine in July 2017 and then started my cursus in April 2018. I had never really coded before, but I always kind of knew it was something that interested me. So when I heard about the piscine, I knew I had to give it a shot. Ever since that day, coding has been one of my passions.
 
 My name is Felix, you can find me under the login 'femaury'. Other than coding, I'm a big fan of jumping out of planes (hit me up if you skydive!), exploring the world, reading books and partying. Feel free to shoot me a message if you have questions about the app or just want to talk!
 
-Cheers 😉</mutableString>
+Cheers 😉</string>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -3532,12 +3532,11 @@ Cheers 😉</mutableString>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="sTK-TQ-yni">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sTK-TQ-yni">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="3mb-hJ-pe7">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="3mb-hJ-pe7">
+                                        <rect key="frame" x="197" y="0.0" width="20" height="774"/>
                                     </activityIndicatorView>
                                 </subviews>
                             </stackView>

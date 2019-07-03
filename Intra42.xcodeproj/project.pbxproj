@@ -34,6 +34,7 @@
 		DC27FD9922AE773D00E3E560 /* GetTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC27FD9822AE773D00E3E560 /* GetTeam.swift */; };
 		DC3797912288710200406488 /* ScalesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3797902288710200406488 /* ScalesCell.swift */; };
 		DC37979A228DB53500406488 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC379799228DB53400406488 /* Triangle.swift */; };
+		DC6FA15B22CD1A4300080A90 /* DictionaryPercentEscaped.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6FA15A22CD1A4300080A90 /* DictionaryPercentEscaped.swift */; };
 		DC89992D22414F9000F47EEF /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89992C22414F9000F47EEF /* Achievement.swift */; };
 		DC89993022427A1500F47EEF /* AchievementsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89992F22427A1500F47EEF /* AchievementsController.swift */; };
 		DC89993622451EB200F47EEF /* UserProfileDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89993522451EB200F47EEF /* UserProfileDataSource.swift */; };
@@ -126,6 +127,7 @@
 		DC27FD9822AE773D00E3E560 /* GetTeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTeam.swift; sourceTree = "<group>"; };
 		DC3797902288710200406488 /* ScalesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScalesCell.swift; sourceTree = "<group>"; };
 		DC379799228DB53400406488 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
+		DC6FA15A22CD1A4300080A90 /* DictionaryPercentEscaped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryPercentEscaped.swift; sourceTree = "<group>"; };
 		DC89992C22414F9000F47EEF /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
 		DC89992F22427A1500F47EEF /* AchievementsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsController.swift; sourceTree = "<group>"; };
 		DC89993522451EB200F47EEF /* UserProfileDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileDataSource.swift; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 		DC379798228C85C700406488 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				DC6FA15922CD1A2700080A90 /* Dictionary */,
 				DC8999462247C8C100F47EEF /* UIColor */,
 				DC8999472247C8DE00F47EEF /* String */,
 				DC8999482247C92B00F47EEF /* UIImageView */,
@@ -264,6 +267,14 @@
 				DC89994A2247C94000F47EEF /* Date */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DC6FA15922CD1A2700080A90 /* Dictionary */ = {
+			isa = PBXGroup;
+			children = (
+				DC6FA15A22CD1A4300080A90 /* DictionaryPercentEscaped.swift */,
+			);
+			path = Dictionary;
 			sourceTree = "<group>";
 		};
 		DC8999462247C8C100F47EEF /* UIColor */ = {
@@ -446,9 +457,9 @@
 		DCCE059F222873C600906ECD /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				DC21EB9222C917C700E1288B /* AnimatedLabel.swift */,
 				DCCE059B22286EC800906ECD /* Colors.swift */,
 				DC379798228C85C700406488 /* Extensions */,
-				DC21EB9222C917C700E1288B /* AnimatedLabel.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -693,6 +704,7 @@
 				DCF1A4EE2299957800AA2653 /* GetCoalitions.swift in Sources */,
 				DC955E0B222F1242003B70BC /* AchievementCell.swift in Sources */,
 				DC27FD8F22A6E44400E3E560 /* ProjectTeamEvaluationCell.swift in Sources */,
+				DC6FA15B22CD1A4300080A90 /* DictionaryPercentEscaped.swift in Sources */,
 				DCCE059A22284B0000906ECD /* UIColorHex.swift in Sources */,
 				DCF1A4EC2299954000AA2653 /* GetLogs.swift in Sources */,
 				DC21EB9522C9184900E1288B /* CoalitionsViewController.swift in Sources */,

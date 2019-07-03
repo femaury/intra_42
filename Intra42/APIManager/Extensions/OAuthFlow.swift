@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import Alamofire
 import SwiftyJSON
 
 extension API42Manager {
@@ -63,7 +62,7 @@ extension API42Manager {
         }
         guard let code = codeValue else { return }
         
-        let tokenURL = "https://api.intra.42.fr/oauth/token"
+        let url = URL(string: "https://api.intra.42.fr/oauth/token")!
         let tokenParams = [
             "grant_type": "authorization_code",
             "client_id": clientId,
@@ -72,40 +71,43 @@ extension API42Manager {
             "redirect_uri": redirectURI,
             "state": state
         ]
-        Alamofire.request(tokenURL, method: .post, parameters: tokenParams).responseJSON { (response) in
-            if let error = response.error {
-                print(error)
-                if let completionHandler = self.OAuthTokenCompletionHandler {
-                    let customError = CustomError(title: "Get Token Error", description: "Couldn't get access token from 42's API", code: -1)
-                    completionHandler(customError)
+        
+        var request = URLRequest(url: url)
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "POST"
+        request.httpBody = tokenParams.percentEscaped().data(using: .utf8)
+        
+        URLSession.shared.dataTask(with: request) { data, _, error in
+            DispatchQueue.main.async {
+                guard error == nil, let data = data, let valueJSON = try? JSON(data: data) else {
+                    if let error = error {
+                        print("OAuth Response Error: \(error)")
+                    }
+                    if let completionHandler = self.OAuthTokenCompletionHandler {
+                        let customError = CustomError(title: "Get Token Error", description: "Couldn't get access token from 42's API", code: -1)
+                        completionHandler(customError)
+                    }
+                    return
                 }
-                return
+            
+                guard valueJSON["token_type"].string == "bearer" else { return } // Is not bearer
+                guard
+                    let accessToken = valueJSON["access_token"].string,
+                    let refreshToken = valueJSON["refresh_token"].string
+                    else { return }
+            
+                self.OAuthAccessToken = accessToken
+                self.OAuthRefreshToken = refreshToken
+            
+                self.keychain.set(accessToken, forKey: self.keychainAccessKey)
+                self.keychain.set(refreshToken, forKey: self.keychainRefreshKey)
+            
+                if let completionHandler = self.OAuthTokenCompletionHandler {
+                    self.setupAPIData()
+                    completionHandler(nil)
+                }
             }
-            
-            print("Getting new token...")
-            
-            guard let value = response.result.value else { return }
-            let valueJSON = JSON(value)
-            
-            print(valueJSON)
-            
-            guard valueJSON["token_type"].string == "bearer" else { return } // Is not bearer
-            guard
-                let accessToken = valueJSON["access_token"].string,
-                let refreshToken = valueJSON["refresh_token"].string
-                else { return }
-            
-            self.OAuthAccessToken = accessToken
-            self.OAuthRefreshToken = refreshToken
-            
-            self.keychain.set(accessToken, forKey: self.keychainAccessKey)
-            self.keychain.set(refreshToken, forKey: self.keychainRefreshKey)
-            
-            if let completionHandler = self.OAuthTokenCompletionHandler {
-                self.setupAPIData()
-                completionHandler(nil)
-            }
-        }
+        }.resume()
     }
     
     /**
@@ -126,7 +128,7 @@ extension API42Manager {
         }
         print("Refreshing token with: \(refreshToken)")
         
-        let tokenURL = "https://api.intra.42.fr/oauth/token"
+        let url = URL(string: "https://api.intra.42.fr/oauth/token")!
         let tokenParams = [
             "grant_type": "refresh_token",
             "client_id": clientId,
@@ -136,35 +138,43 @@ extension API42Manager {
             "state": state
         ]
         
-        Alamofire.request(tokenURL, method: .post, parameters: tokenParams).responseJSON { (response) in
-            if let error = response.error {
-                print(error)
-                completionHandler(false)
-                return
-            }
-            
-            guard let value = response.result.value else { return }
-            let valueJSON = JSON(value)
-            
-            guard valueJSON["token_type"].string == "bearer" else {
-                print("ERROR: token is not bearer")
-                return
-            } // Is not bearer
-            guard
-                let accessToken = valueJSON["access_token"].string,
-                let refreshToken = valueJSON["refresh_token"].string
-                else {
-                    print("ERROR: couldn't find token")
+        var request = URLRequest(url: url)
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "POST"
+        request.httpBody = tokenParams.percentEscaped().data(using: .utf8)
+        URLSession.shared.dataTask(with: request) { data, _, error in
+            DispatchQueue.main.async {
+                guard error == nil, let data = data, let valueJSON = try? JSON(data: data) else {
+                    if let error = error {
+                        print("Token Refresh Response Error: \(error)")
+                    }
+                    completionHandler(false)
                     return
+                }
+                
+                guard valueJSON["token_type"].string == "bearer" else {
+                    print("ERROR: token is not bearer")
+                    completionHandler(false)
+                    return
+                }
+                
+                guard
+                    let accessToken = valueJSON["access_token"].string,
+                    let refreshToken = valueJSON["refresh_token"].string
+                    else {
+                        print("ERROR: couldn't find token")
+                        completionHandler(false)
+                        return
+                }
+                
+                self.OAuthAccessToken = accessToken
+                self.OAuthRefreshToken = refreshToken
+                
+                self.keychain.set(accessToken, forKey: self.keychainAccessKey)
+                self.keychain.set(refreshToken, forKey: self.keychainRefreshKey)
+                
+                completionHandler(true)
             }
-            
-            self.OAuthAccessToken = accessToken
-            self.OAuthRefreshToken = refreshToken
-            
-            self.keychain.set(accessToken, forKey: self.keychainAccessKey)
-            self.keychain.set(refreshToken, forKey: self.keychainRefreshKey)
-            
-            completionHandler(true)
-        }
+        }.resume()
     }
 }

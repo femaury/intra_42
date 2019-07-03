@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import Alamofire
 import SwiftyJSON
 import KeychainSwift
 
@@ -172,54 +171,58 @@ class API42Manager {
      - Parameter completionHandler: Closure returning `JSON` on success, or `nil` on error
      */
     func request(url: String, completionHandler: @escaping ((JSON?) -> Void)) {
-        if hasOAuthToken() {
-            let headers = ["authorization": "Bearer \(OAuthAccessToken!)"]
-            let encodedURL = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-
-            Alamofire.request(encodedURL, headers: headers).responseJSON { (response) in
-                if let error = response.error {
-                    // Unable to parse "429 Too Many Requests (Spam Rate Limit Exceeded)" as JSON
-                    // Will be fixed when app gets approved by 42 API team
-                    print("Request Error:", error)
-                    self.showErrorAlert(message: "There was a problem with 42's API...")
-                    completionHandler(nil)
-                    return
-                }
-                response.result.ifFailure {
-                    print("Response is a failure")
-                    completionHandler(nil)
-                    return
-                }
-
-                guard let value = response.result.value else { return }
-                let valueJSON = JSON(value)
-
-                if valueJSON["error"].string != nil {
-                    print("Error returned:", valueJSON)
-                    print("After calling:", encodedURL)
-                    if let message = valueJSON["message"].string {
-                        if message.contains("token expired") {
-                            self.refreshOAuthToken(completionHandler: { (success) in
-                                if success == true {
-                                    self.request(url: url, completionHandler: completionHandler)
-                                } else {
-                                    let error = CustomError(title: "Refresh Token Error", description: "Couldn't refresh OAuth Token...", code: -1)
-                                    self.clearTokenKeys()
-                                    self.handleAPIErrors(error: error)
-                                }
-                            })
-                        } else if message.contains("not authorized") || message.contains("was revoked") {
-                            let error = CustomError(title: "Authorization Error", description: "Token was unauthorized by API...", code: -1)
-                            self.clearTokenKeys()
-                            self.handleAPIErrors(error: error)
-                        }
-//                                                TODO: Handle other error messages
+        if hasOAuthToken(),
+            let token = OAuthAccessToken,
+            let encodedURL = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+            let realURL = URL(string: encodedURL) {
+            
+            var request = URLRequest(url: realURL)
+            request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+            URLSession.shared.dataTask(with: request) { (data, _, error) in
+                DispatchQueue.main.async {
+                    if let error = error {
+                        print("Request Error:", error)
+                        self.showErrorAlert(message: "There was a problem with 42's API...")
+                        completionHandler(nil)
+                        return
                     }
-                    return
+                    guard let data = data, let valueJSON = try? JSON(data: data) else {
+                        print("Request Error: Couldn't get data after request...")
+                        self.showErrorAlert(message: "There was a problem with 42's API...")
+                        completionHandler(nil)
+                        return
+                    }
+                
+                    if valueJSON["error"].string != nil {
+                        print("Error returned:", valueJSON)
+                        print("After calling:", encodedURL)
+                        if let message = valueJSON["message"].string {
+                            if message.contains("token expired") {
+                                self.refreshOAuthToken(completionHandler: { (success) in
+                                    if success == true {
+                                        self.request(url: url, completionHandler: completionHandler)
+                                    } else {
+                                        let error = CustomError(title: "Refresh Token Error",
+                                                                description: "Couldn't refresh OAuth Token...",
+                                                                code: -1)
+                                        self.clearTokenKeys()
+                                        self.handleAPIErrors(error: error)
+                                    }
+                                })
+                            } else if message.contains("not authorized") || message.contains("was revoked") {
+                                let error = CustomError(title: "Authorization Error",
+                                                        description: "Token was unauthorized by API...",
+                                                        code: -1)
+                                self.clearTokenKeys()
+                                self.handleAPIErrors(error: error)
+                            }
+                            // TODO: Handle possible other error messages
+                        }
+                        return
+                    }
+                    completionHandler(valueJSON)
                 }
-
-                completionHandler(valueJSON)
-            }
+            }.resume()
         } else {
             completionHandler(nil)
         }

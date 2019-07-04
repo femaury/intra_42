@@ -12,7 +12,7 @@ extension Date {
     
     func getElapsedInterval() -> String {
         
-        let interval = Calendar.current.dateComponents([.year, .month, .day], from: self, to: Date())
+        let interval = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: self, to: Date())
         
         if let year = interval.year, year > 0 {
             return year == 1 ? "\(year) year ago" : "\(year) years ago"

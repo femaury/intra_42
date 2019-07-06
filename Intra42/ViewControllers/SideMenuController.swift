@@ -19,7 +19,7 @@ class SideMenuController: UIViewController {
         ("Coalitions", UIImage(named: "bookmark_ribbon")),
         ("Achievements", UIImage(named: "trophy")),
         ("About", UIImage(named: "info")),
-//        ("Settings", UIImage(named: "settings")),
+        ("Settings", UIImage(named: "settings")),
         ("Logout", UIImage(named: "shutdown"))
     ]
 
@@ -61,9 +61,9 @@ extension SideMenuController: UITableViewDelegate, UITableViewDataSource {
             performSegue(withIdentifier: "AchievementsSegue", sender: self)
         case 5:
             performSegue(withIdentifier: "AboutSegue", sender: self)
-//        case 6:
-//            performSegue(withIdentifier: "SettingsSegue", sender: self)
         case 6:
+            performSegue(withIdentifier: "SettingsSegue", sender: self)
+        case 7:
             API42Manager.shared.logoutUser()
         default:
             return

@@ -34,6 +34,17 @@
 		DC27FD9922AE773D00E3E560 /* GetTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC27FD9822AE773D00E3E560 /* GetTeam.swift */; };
 		DC3797912288710200406488 /* ScalesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3797902288710200406488 /* ScalesCell.swift */; };
 		DC37979A228DB53500406488 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC379799228DB53400406488 /* Triangle.swift */; };
+		DC41485322D0B50A0005FCB1 /* icon_all@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC41484B22D0B5090005FCB1 /* icon_all@2x.png */; };
+		DC41485422D0B50A0005FCB1 /* icon_ass@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC41484C22D0B50A0005FCB1 /* icon_ass@2x.png */; };
+		DC41485522D0B50A0005FCB1 /* icon_ord@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC41484D22D0B50A0005FCB1 /* icon_ord@3x.png */; };
+		DC41485622D0B50A0005FCB1 /* icon_all@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC41484E22D0B50A0005FCB1 /* icon_all@3x.png */; };
+		DC41485722D0B50A0005FCB1 /* icon_ord@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC41484F22D0B50A0005FCB1 /* icon_ord@2x.png */; };
+		DC41485822D0B50A0005FCB1 /* icon_ass@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC41485022D0B50A0005FCB1 /* icon_ass@3x.png */; };
+		DC41485922D0B50A0005FCB1 /* icon_fed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC41485122D0B50A0005FCB1 /* icon_fed@2x.png */; };
+		DC41485A22D0B50A0005FCB1 /* icon_fed@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC41485222D0B50A0005FCB1 /* icon_fed@3x.png */; };
+		DC41485C22D0BED70005FCB1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC41485B22D0BED70005FCB1 /* SettingsViewController.swift */; };
+		DC41485F22D0CD610005FCB1 /* icon_default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC41485D22D0CD610005FCB1 /* icon_default@2x.png */; };
+		DC41486022D0CD610005FCB1 /* icon_default@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC41485E22D0CD610005FCB1 /* icon_default@3x.png */; };
 		DC6FA15B22CD1A4300080A90 /* DictionaryPercentEscaped.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6FA15A22CD1A4300080A90 /* DictionaryPercentEscaped.swift */; };
 		DC89992D22414F9000F47EEF /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89992C22414F9000F47EEF /* Achievement.swift */; };
 		DC89993022427A1500F47EEF /* AchievementsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89992F22427A1500F47EEF /* AchievementsController.swift */; };
@@ -127,6 +138,17 @@
 		DC27FD9822AE773D00E3E560 /* GetTeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTeam.swift; sourceTree = "<group>"; };
 		DC3797902288710200406488 /* ScalesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScalesCell.swift; sourceTree = "<group>"; };
 		DC379799228DB53400406488 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
+		DC41484B22D0B5090005FCB1 /* icon_all@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_all@2x.png"; sourceTree = "<group>"; };
+		DC41484C22D0B50A0005FCB1 /* icon_ass@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_ass@2x.png"; sourceTree = "<group>"; };
+		DC41484D22D0B50A0005FCB1 /* icon_ord@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_ord@3x.png"; sourceTree = "<group>"; };
+		DC41484E22D0B50A0005FCB1 /* icon_all@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_all@3x.png"; sourceTree = "<group>"; };
+		DC41484F22D0B50A0005FCB1 /* icon_ord@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_ord@2x.png"; sourceTree = "<group>"; };
+		DC41485022D0B50A0005FCB1 /* icon_ass@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_ass@3x.png"; sourceTree = "<group>"; };
+		DC41485122D0B50A0005FCB1 /* icon_fed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_fed@2x.png"; sourceTree = "<group>"; };
+		DC41485222D0B50A0005FCB1 /* icon_fed@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_fed@3x.png"; sourceTree = "<group>"; };
+		DC41485B22D0BED70005FCB1 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		DC41485D22D0CD610005FCB1 /* icon_default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_default@2x.png"; sourceTree = "<group>"; };
+		DC41485E22D0CD610005FCB1 /* icon_default@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_default@3x.png"; sourceTree = "<group>"; };
 		DC6FA15A22CD1A4300080A90 /* DictionaryPercentEscaped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryPercentEscaped.swift; sourceTree = "<group>"; };
 		DC89992C22414F9000F47EEF /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
 		DC89992F22427A1500F47EEF /* AchievementsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsController.swift; sourceTree = "<group>"; };
@@ -381,6 +403,23 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		DC92AB8022D0B45E00A34B88 /* AltAppIcons */ = {
+			isa = PBXGroup;
+			children = (
+				DC41485D22D0CD610005FCB1 /* icon_default@2x.png */,
+				DC41485E22D0CD610005FCB1 /* icon_default@3x.png */,
+				DC41484B22D0B5090005FCB1 /* icon_all@2x.png */,
+				DC41484E22D0B50A0005FCB1 /* icon_all@3x.png */,
+				DC41484C22D0B50A0005FCB1 /* icon_ass@2x.png */,
+				DC41485022D0B50A0005FCB1 /* icon_ass@3x.png */,
+				DC41485122D0B50A0005FCB1 /* icon_fed@2x.png */,
+				DC41485222D0B50A0005FCB1 /* icon_fed@3x.png */,
+				DC41484F22D0B50A0005FCB1 /* icon_ord@2x.png */,
+				DC41484D22D0B50A0005FCB1 /* icon_ord@3x.png */,
+			);
+			path = AltAppIcons;
+			sourceTree = "<group>";
+		};
 		DCCE056D222591F400906ECD = {
 			isa = PBXGroup;
 			children = (
@@ -433,6 +472,7 @@
 				DCF70B08229AF30900B29DCC /* UserProjectController.swift */,
 				DCABB86A22C12C1F00711C4A /* AboutViewController.swift */,
 				DC21EB9422C9184900E1288B /* CoalitionsViewController.swift */,
+				DC41485B22D0BED70005FCB1 /* SettingsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -440,6 +480,7 @@
 		DCCE059E222873AB00906ECD /* Visuals */ = {
 			isa = PBXGroup;
 			children = (
+				DC92AB8022D0B45E00A34B88 /* AltAppIcons */,
 				DCCE05A7222994EB00906ECD /* Main.storyboard */,
 				DCF70AFB229AE7B200B29DCC /* ProjectEvaluation.xib */,
 				DC1988CD2239567B009E3A55 /* Cluster.xib */,
@@ -586,12 +627,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC21EB9722C92EE200E1288B /* Coalition.xib in Resources */,
+				DC41485422D0B50A0005FCB1 /* icon_ass@2x.png in Resources */,
 				DC1988CE2239567B009E3A55 /* Cluster.xib in Resources */,
 				DCCE05A8222994EB00906ECD /* Main.storyboard in Resources */,
+				DC41485A22D0B50A0005FCB1 /* icon_fed@3x.png in Resources */,
+				DC41485922D0B50A0005FCB1 /* icon_fed@2x.png in Resources */,
+				DC41485322D0B50A0005FCB1 /* icon_all@2x.png in Resources */,
 				DCF70AFC229AE7B200B29DCC /* ProjectEvaluation.xib in Resources */,
+				DC41485622D0B50A0005FCB1 /* icon_all@3x.png in Resources */,
+				DC41485F22D0CD610005FCB1 /* icon_default@2x.png in Resources */,
 				DCCE0584222591F500906ECD /* LaunchScreen.storyboard in Resources */,
 				DCCE0581222591F500906ECD /* Assets.xcassets in Resources */,
+				DC41485722D0B50A0005FCB1 /* icon_ord@2x.png in Resources */,
+				DC41485522D0B50A0005FCB1 /* icon_ord@3x.png in Resources */,
 				DC1988CC22395588009E3A55 /* ClusterPost.xib in Resources */,
+				DC41485822D0B50A0005FCB1 /* icon_ass@3x.png in Resources */,
+				DC41486022D0CD610005FCB1 /* icon_default@3x.png in Resources */,
 				DC8999452247C23E00F47EEF /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -761,6 +812,7 @@
 				DCCE0598222847CC00906ECD /* UserProfile.swift in Sources */,
 				DCCE05962228451500906ECD /* FriendsViewController.swift in Sources */,
 				DCABB86B22C12C1F00711C4A /* AboutViewController.swift in Sources */,
+				DC41485C22D0BED70005FCB1 /* SettingsViewController.swift in Sources */,
 				DC89993622451EB200F47EEF /* UserProfileDataSource.swift in Sources */,
 				DC1988C82236FA53009E3A55 /* ClustersView.swift in Sources */,
 				DCCE05942228450B00906ECD /* CorrectionsViewController.swift in Sources */,

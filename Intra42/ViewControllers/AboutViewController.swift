@@ -36,10 +36,6 @@ class AboutViewController: UIViewController {
         openSafariController(withURL: "https://github.com/femaury/intra_42")
     }
 
-    @IBAction func openAlamofireLink(_ sender: UIButton) {
-        openSafariController(withURL: "https://github.com/Alamofire/Alamofire")
-    }
-
     @IBAction func openSwiftyJSONLink(_ sender: UIButton) {
         openSafariController(withURL: "https://github.com/SwiftyJSON/SwiftyJSON")
     }

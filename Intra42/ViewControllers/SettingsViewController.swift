@@ -47,18 +47,31 @@ class SettingsViewController: UIViewController {
         }
     }
     
+    func setColorTo(_ color: UIColor?) {
+        
+        self.tabBarController?.tabBar.tintColor = color
+        
+        if let children = self.tabBarController?.children {
+            for child in children {
+                guard let navController = child as? UINavigationController else { continue }
+                navController.navigationBar.tintColor = color
+            }
+        }
+    }
+    
     @IBAction func changeColor(sender: UIButton) {
+        // TODO: Save color choice to user defaults and apply color change throughout whole app
         switch sender.tag {
         case 1:
-            print("1")
+            setColorTo(Colors.Coalitions.all)
         case 2:
-            print("2")
+            setColorTo(Colors.Coalitions.ass)
         case 3:
-            print("3")
+            setColorTo(Colors.Coalitions.fed)
         case 4:
-            print("4")
+            setColorTo(Colors.Coalitions.ord)
         default:
-            print("default")
+            setColorTo(Colors.intraTeal)
         }
     }
 }

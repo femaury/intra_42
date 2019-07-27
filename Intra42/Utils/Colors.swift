@@ -12,6 +12,13 @@ struct Colors {
     static let intraTeal = UIColor(hexRGB: "#00BABC")
     static let validGrade = UIColor(hexRGB: "#00CE00")
     
+    struct Coalitions {
+        static let fed = UIColor(hexRGB: "4180DB")
+        static let all = UIColor(hexRGB: "33C47F")
+        static let ass = UIColor(hexRGB: "A061D1")
+        static let ord = UIColor(hexRGB: "FF6950")
+    }
+    
     struct Warning {
         static let green = UIColor(hexRGB: "#33BB00")
         static let yellow = UIColor(hexRGB: "#ffcc00")

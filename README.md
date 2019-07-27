@@ -15,7 +15,7 @@ I plan on publishing it for free on the App Store. <br/>
 Feel free to create issues or pull requests to contribute!
 
 ## Contributing
-To run the app, you will first need to [create an app for 42's api](https://profile.intra.42.fr/oauth/applications/new). Then use the keys your are given inside `Intra42/APIManager/API42Manager.swift`:
+To run the app, you will first need to [create an app for 42's api](https://profile.intra.42.fr/oauth/applications/new) with the following redirection URI: `com.femaury.swifty://oauth2callback`. Then use the keys your are given inside `Intra42/APIManager/API42Manager.swift`:
 ```
     let clientId = "YOUR_42_API_APP_UID"
     let clientSecret = "YOUR_42_API_APP_SECRET"
@@ -24,15 +24,15 @@ You will also need to install [SwiftLint](https://github.com/realm/SwiftLint).
 
 ## TODO
 <ul>
-  <li>Get official API key</li>
+  <li>Get Apple Developer Account and put app on Test Flight</li>
+  <li>Get unlimited official API key</li>
   <li>Comment/Document source code</li>
-  <li>About Page</li>
-  <li>Settings Page</li>
-  <li>Projects Info</li>
+  <li>Projects Info / List</li>
   <li>Holy Graph</li>
   <li>Forums</li>
   <li>Videos</li>
   <li>Dark mode</li>
+  <li>Better looking achievement cells</li>
   <li>Feel free to pitch in!</li>
 </ul>
 
@@ -95,6 +95,23 @@ You will also need to install [SwiftLint](https://github.com/realm/SwiftLint).
       <li>Searchable by tier and name</li>
       <li>Your achievements are highlighted</li>
     </ul>
+  </details>
+  <details><summary>About</summary>
+  <ul>
+  <li>Little description of the project and myself</li>
+  <li>Links for third party libraries used</li>
+  </ul>
+  </details>
+  <details><summary>Settings</summary>
+  <ul>
+  <li>Possibility to change app icon</li>
+  <li>Possibility to change primary color</li>
+  </ul>
+  </details>
+  <details><summary>Coalition Rankings</summary>
+  <ul>
+  <li>All coalitions ranked by score</li>
+  </ul>
   </details>
   
   ## Contact Me

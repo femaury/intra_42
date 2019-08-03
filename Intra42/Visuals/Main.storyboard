@@ -3057,7 +3057,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HMc-BP-dSQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1098"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1187.6666666666667"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Project" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3L6-sO-aeh">
                                                 <rect key="frame" x="20" y="20" width="99" height="24"/>
@@ -3106,14 +3106,22 @@
                                                     <action selector="openGithubLink:" destination="4Md-Jk-E2R" eventType="touchUpInside" id="wyO-R5-rr7"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T7R-GR-MUR">
+                                                <rect key="frame" x="20" y="459.33333333333337" width="202" height="33"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <state key="normal" title="Donate through Paypal ❤️"/>
+                                                <connections>
+                                                    <action selector="openPaypalLink:" destination="4Md-Jk-E2R" eventType="touchUpInside" id="3TO-jC-yVd"/>
+                                                </connections>
+                                            </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i0v-sT-Edg">
-                                                <rect key="frame" x="20" y="412.66666666666669" width="85" height="24"/>
+                                                <rect key="frame" x="20" y="502.33333333333337" width="85" height="24"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DgE-va-Gio">
-                                                <rect key="frame" x="20" y="444.66666666666663" width="374" height="394.33333333333337"/>
+                                                <rect key="frame" x="20" y="534.33333333333337" width="374" height="394.33333333333337"/>
                                                 <string key="text">Hey! I am a Canadian student, who moved to Paris to come study at 42. I validated my piscine in July 2017 and then started my cursus in April 2018. I had never really coded before, but I always kind of knew it was something that interested me. So when I heard about the piscine, I knew I had to give it a shot. Ever since that day, coding has been one of my passions.
 
 My name is Felix, you can find me under the login 'femaury'. Other than coding, I'm a big fan of jumping out of planes (hit me up if you skydive!), exploring the world, reading books and partying. Feel free to shoot me a message if you have questions about the app or just want to talk!
@@ -3124,13 +3132,13 @@ Cheers 😉</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Third Party Libraries" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U7v-cX-MqU">
-                                                <rect key="frame" x="20" y="849" width="173.66666666666666" height="24"/>
+                                                <rect key="frame" x="20" y="938.66666666666674" width="173.66666666666666" height="24"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPi-sy-xUK">
-                                                <rect key="frame" x="20" y="881" width="91" height="33"/>
+                                                <rect key="frame" x="20" y="970.66666666666674" width="91" height="33"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <state key="normal" title="SwiftyJSON"/>
                                                 <connections>
@@ -3138,7 +3146,7 @@ Cheers 😉</string>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B80-O8-fxK">
-                                                <rect key="frame" x="20" y="922" width="77" height="33"/>
+                                                <rect key="frame" x="20" y="1011.6666666666667" width="77" height="33"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <state key="normal" title="SideMenu"/>
                                                 <connections>
@@ -3146,7 +3154,7 @@ Cheers 😉</string>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tay-gB-tkA">
-                                                <rect key="frame" x="20" y="963" width="54" height="33"/>
+                                                <rect key="frame" x="20" y="1052.6666666666667" width="54" height="33"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <state key="normal" title="SVGKit"/>
                                                 <connections>
@@ -3154,7 +3162,7 @@ Cheers 😉</string>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNf-z6-daI">
-                                                <rect key="frame" x="20" y="1004" width="108" height="33"/>
+                                                <rect key="frame" x="20" y="1093.6666666666667" width="108" height="33"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <state key="normal" title="KeychainSwift"/>
                                                 <connections>
@@ -3162,18 +3170,25 @@ Cheers 😉</string>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUq-IE-bBL">
-                                                <rect key="frame" x="20" y="1045" width="137" height="33"/>
+                                                <rect key="frame" x="20" y="1134.6666666666667" width="137" height="33"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <state key="normal" title="Fabric Crashlytics"/>
                                                 <connections>
                                                     <action selector="openCrashlyticsLink:" destination="4Md-Jk-E2R" eventType="touchUpInside" id="lG2-jO-gd0"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or if you feel like it, you can help me pay for the apple developer account, or just buy me a beer." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fSR-e9-1xR">
+                                                <rect key="frame" x="20" y="410.66666666666669" width="374" height="40.666666666666686"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="hl6-D2-ehq" firstAttribute="centerY" secondItem="ug6-hn-3FU" secondAttribute="centerY" id="208-k6-uvP"/>
                                             <constraint firstItem="3L6-sO-aeh" firstAttribute="leading" secondItem="HMc-BP-dSQ" secondAttribute="leading" constant="20" id="2P1-Bt-P9V"/>
+                                            <constraint firstItem="fSR-e9-1xR" firstAttribute="top" secondItem="d4X-fj-tuR" secondAttribute="bottom" constant="8" id="3cb-ee-Qjq"/>
                                             <constraint firstItem="hl6-D2-ehq" firstAttribute="leading" secondItem="ug6-hn-3FU" secondAttribute="trailing" constant="5" id="3ec-gu-CrV"/>
                                             <constraint firstAttribute="trailing" secondItem="DgE-va-Gio" secondAttribute="trailing" constant="20" id="4xh-3L-AwX"/>
                                             <constraint firstItem="SKi-93-1sy" firstAttribute="top" secondItem="3L6-sO-aeh" secondAttribute="bottom" constant="8" id="5Ve-Xo-g7R"/>
@@ -3189,17 +3204,21 @@ Cheers 😉</string>
                                             <constraint firstItem="xNf-z6-daI" firstAttribute="leading" secondItem="HMc-BP-dSQ" secondAttribute="leading" constant="20" id="Opn-pb-6Gk"/>
                                             <constraint firstItem="d4X-fj-tuR" firstAttribute="leading" secondItem="HMc-BP-dSQ" secondAttribute="leading" constant="20" id="P2b-cE-CWf"/>
                                             <constraint firstItem="Tay-gB-tkA" firstAttribute="leading" secondItem="HMc-BP-dSQ" secondAttribute="leading" constant="20" id="QWh-Ht-qOd"/>
+                                            <constraint firstItem="i0v-sT-Edg" firstAttribute="top" secondItem="T7R-GR-MUR" secondAttribute="bottom" constant="10" id="TDb-qF-riY"/>
+                                            <constraint firstItem="T7R-GR-MUR" firstAttribute="leading" secondItem="d4X-fj-tuR" secondAttribute="leading" id="TYs-d2-ag0"/>
                                             <constraint firstItem="DgE-va-Gio" firstAttribute="top" secondItem="i0v-sT-Edg" secondAttribute="bottom" constant="8" id="Vq9-yG-BTB"/>
                                             <constraint firstItem="dUq-IE-bBL" firstAttribute="top" secondItem="xNf-z6-daI" secondAttribute="bottom" constant="8" id="W9r-qi-X6l"/>
                                             <constraint firstAttribute="trailing" secondItem="eEr-7e-fLU" secondAttribute="trailing" constant="20" id="aNZ-Jm-Jud"/>
                                             <constraint firstItem="ug6-hn-3FU" firstAttribute="leading" secondItem="HMc-BP-dSQ" secondAttribute="leading" constant="20" id="auL-Ne-egO"/>
-                                            <constraint firstItem="i0v-sT-Edg" firstAttribute="top" secondItem="d4X-fj-tuR" secondAttribute="bottom" constant="10" id="c5k-2Z-dRV"/>
                                             <constraint firstItem="U7v-cX-MqU" firstAttribute="leading" secondItem="HMc-BP-dSQ" secondAttribute="leading" constant="20" id="cIF-MP-8x6"/>
+                                            <constraint firstItem="fSR-e9-1xR" firstAttribute="leading" secondItem="HMc-BP-dSQ" secondAttribute="leading" constant="20" id="cXB-PW-waT"/>
+                                            <constraint firstAttribute="trailing" secondItem="fSR-e9-1xR" secondAttribute="trailing" constant="20" id="d1I-gH-BJk"/>
                                             <constraint firstItem="B80-O8-fxK" firstAttribute="leading" secondItem="HMc-BP-dSQ" secondAttribute="leading" constant="20" id="dwn-Wg-vSo"/>
                                             <constraint firstItem="3L6-sO-aeh" firstAttribute="top" secondItem="HMc-BP-dSQ" secondAttribute="top" constant="20" id="eOL-qv-6t2"/>
                                             <constraint firstItem="dUq-IE-bBL" firstAttribute="leading" secondItem="HMc-BP-dSQ" secondAttribute="leading" constant="20" id="ekY-RN-yFX"/>
                                             <constraint firstItem="xNf-z6-daI" firstAttribute="top" secondItem="Tay-gB-tkA" secondAttribute="bottom" constant="8" id="g8m-Hz-0Ef"/>
                                             <constraint firstAttribute="bottom" secondItem="dUq-IE-bBL" secondAttribute="bottom" constant="20" id="hLO-dO-dnJ"/>
+                                            <constraint firstItem="T7R-GR-MUR" firstAttribute="top" secondItem="fSR-e9-1xR" secondAttribute="bottom" constant="8" id="idq-Cg-VFE"/>
                                             <constraint firstItem="bPi-sy-xUK" firstAttribute="leading" secondItem="HMc-BP-dSQ" secondAttribute="leading" constant="20" id="lHy-IW-p0X"/>
                                             <constraint firstItem="ug6-hn-3FU" firstAttribute="top" secondItem="SKi-93-1sy" secondAttribute="bottom" constant="8" id="np9-l0-xbi"/>
                                             <constraint firstItem="eEr-7e-fLU" firstAttribute="top" secondItem="lq8-GR-g8b" secondAttribute="bottom" constant="8" id="tVU-9Q-1bd"/>

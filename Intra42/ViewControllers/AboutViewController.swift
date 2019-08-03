@@ -35,6 +35,10 @@ class AboutViewController: UIViewController {
     @IBAction func openGithubLink(_ sender: UIButton) {
         openSafariController(withURL: "https://github.com/femaury/intra_42")
     }
+    
+    @IBAction func openPaypalLink(_ sender: UIButton) {
+        openSafariController(withURL: "https://paypal.me/femaurydev")
+    }
 
     @IBAction func openSwiftyJSONLink(_ sender: UIButton) {
         openSafariController(withURL: "https://github.com/SwiftyJSON/SwiftyJSON")

@@ -35,7 +35,7 @@ class ScalesCell: UITableViewCell {
         correcteeTeamId = correction.team.id
         correctorId = correction.corrector.id
         
-        let color = API42Manager.shared.coalitionColor
+        let color = API42Manager.shared.preferedPrimaryColor
         lineView.backgroundColor = color
         rectangleView.backgroundColor = color
         triangleView.backgroundColor = color

@@ -91,6 +91,7 @@ class HomeViewController: UIViewController {
         if let indexPath = tableView.indexPathForSelectedRow {
             tableView.deselectRow(at: indexPath, animated: true)
         }
+        tableView.reloadData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -214,9 +215,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             let view = tableView.dequeueReusableCell(withIdentifier: "SegmentHeaderCell") as! SegmentHeaderCell
             view.segmentControl.selectedSegmentIndex = sectionToDisplay.rawValue
-            view.segmentControl.tintColor = API42Manager.shared.coalitionColor
-            view.topLine.backgroundColor = API42Manager.shared.coalitionColor
-            view.bottomLine.backgroundColor = API42Manager.shared.coalitionColor
+            view.segmentControl.tintColor = API42Manager.shared.preferedPrimaryColor
+            view.topLine.backgroundColor = API42Manager.shared.preferedPrimaryColor
+            view.bottomLine.backgroundColor = API42Manager.shared.preferedPrimaryColor
             view.segmentCallback = { section in
                 guard let section = ProfileSection(rawValue: section) else { return }
                 self.sectionToDisplay = section

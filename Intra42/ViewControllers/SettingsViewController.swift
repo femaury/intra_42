@@ -60,18 +60,27 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func changeColor(sender: UIButton) {
-        // TODO: Save color choice to user defaults and apply color change throughout whole app
         switch sender.tag {
         case 1:
-            setColorTo(Colors.Coalitions.all)
+            let color = Colors.Coalitions.all
+            API42Manager.shared.preferedPrimaryColor = color
+            setColorTo(color)
         case 2:
-            setColorTo(Colors.Coalitions.ass)
+            let color = Colors.Coalitions.ass
+            API42Manager.shared.preferedPrimaryColor = color
+            setColorTo(color)
         case 3:
-            setColorTo(Colors.Coalitions.fed)
+            let color = Colors.Coalitions.fed
+            API42Manager.shared.preferedPrimaryColor = color
+            setColorTo(color)
         case 4:
-            setColorTo(Colors.Coalitions.ord)
+            let color = Colors.Coalitions.ord
+            API42Manager.shared.preferedPrimaryColor = color
+            setColorTo(color)
         default:
-            setColorTo(Colors.intraTeal)
+            let color = Colors.intraTeal
+            API42Manager.shared.preferedPrimaryColor = color
+            setColorTo(color)
         }
     }
 }

@@ -37,7 +37,7 @@ class ProfileHeaderCell: UITableViewCell {
                 background.contentMode = .scaleAspectFill
             }
             if let data = userProfile {
-                backgroundColor = API42Manager.shared.coalitionColor
+                backgroundColor = API42Manager.shared.preferedPrimaryColor
                 
                 profilePicture.imageFrom(urlString: data.imageURL)
                 profilePicture.contentMode = .scaleAspectFill
@@ -55,7 +55,7 @@ class ProfileHeaderCell: UITableViewCell {
                 let progress = (levelPercentage / 100) * Double(levelView.frame.width)
                 progressView.frame = CGRect(x: 0, y: 0, width: progress, height: Double(levelView.frame.height))
                 progressView.roundCorners(corners: [.topLeft, .bottomLeft], radius: 5.0)
-                progressView.backgroundColor = API42Manager.shared.coalitionColor
+                progressView.backgroundColor = API42Manager.shared.preferedPrimaryColor
                 
                 fullNameLabel.text = data.fullName
                 usernameLabel.text = data.username
@@ -64,9 +64,9 @@ class ProfileHeaderCell: UITableViewCell {
                     locationLabel.text = location
                 }
                 
-                walletLabel.textColor = API42Manager.shared.coalitionColor
+                walletLabel.textColor = API42Manager.shared.preferedPrimaryColor
                 walletNumberLabel.text = "\(data.wallets)₳"
-                correctionLabel.textColor = API42Manager.shared.coalitionColor
+                correctionLabel.textColor = API42Manager.shared.preferedPrimaryColor
                 correctionNumberLabel.text = String(data.correctionPoints)
                 
                 campusLabel.text = userProfile?.mainCampusName

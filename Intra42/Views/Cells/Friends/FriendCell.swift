@@ -35,7 +35,7 @@ class FriendCell: UITableViewCell, UserProfileCell {
     }
     var friend: Friend! {
         didSet {
-            let color = API42Manager.shared.coalitionColor
+            let color = API42Manager.shared.preferedPrimaryColor
             usernameLabel.text = friend.username
             usernameLabel.textColor = color
             callButton.tintColor = color

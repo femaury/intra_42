@@ -71,7 +71,19 @@ class ClustersViewController: UIViewController {
         topStackView.addArrangedSubview(activityIndicator)
         loadClusterLocations(floor: 1)
         
-        segmentedControl.tintColor = API42Manager.shared.coalitionColor
+        segmentedControl.tintColor = API42Manager.shared.preferedPrimaryColor
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        segmentedControl.tintColor = API42Manager.shared.preferedPrimaryColor
+        floorOneUsers.layer.borderColor = API42Manager.shared.preferedPrimaryColor?.cgColor
+        floorTwoUsers.layer.borderColor = API42Manager.shared.preferedPrimaryColor?.cgColor
+        floorThreeUsers.layer.borderColor = API42Manager.shared.preferedPrimaryColor?.cgColor
+        floorOneUsersProgress.backgroundColor = API42Manager.shared.preferedPrimaryColor
+        floorTwoUsersProgress.backgroundColor = API42Manager.shared.preferedPrimaryColor
+        floorThreeUsersProgress.backgroundColor = API42Manager.shared.preferedPrimaryColor
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -142,13 +154,12 @@ class ClustersViewController: UIViewController {
     func setClusterOccupancy(backBar: UIView, progressBar: UIView, users: Int) {
         let percentage = Double(users) / 271.0
         let progress = percentage * Double(backBar.frame.width)
-        print("USERS: \(users) PERCENTAGE: \(percentage) PROGRESS WIDTH: \(progress) TOTAL WIDTH: \(backBar.frame.width)")
         progressBar.frame = CGRect(x: 0, y: 0, width: progress, height: Double(backBar.frame.height))
         progressBar.roundCorners(corners: [.topLeft, .bottomLeft], radius: 5.0)
-        progressBar.backgroundColor = API42Manager.shared.coalitionColor
+        progressBar.backgroundColor = API42Manager.shared.preferedPrimaryColor
         backBar.layer.cornerRadius = 5.0
         backBar.layer.borderWidth = 1.0
-        backBar.layer.borderColor = API42Manager.shared.coalitionColor?.cgColor
+        backBar.layer.borderColor = API42Manager.shared.preferedPrimaryColor?.cgColor
     }
     
     @objc func tapHandler(gesture: UIGestureRecognizer) {

@@ -55,6 +55,8 @@ class FriendsViewController: UIViewController {
         if let indexPath = tableView.indexPathForSelectedRow {
             tableView.deselectRow(at: indexPath, animated: true)
         }
+        
+        tableView.reloadData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {

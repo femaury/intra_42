@@ -25,7 +25,7 @@ class API42Manager {
     /// Redirect URL called by api after OAuth
     let redirectURI = "com.femaury.swifty://oauth2callback"
     /// Secret state used to verify API calls
-    let state = "super_long_secret_state"
+    var state = "super_long_secret_state"
     
     /// Keychain store instance
     let keychain = KeychainSwift()
@@ -53,6 +53,20 @@ class API42Manager {
     var coalitionLogo: String?
     /// Coalition name of logged in user
     var coalitionName: String?
+
+    /// Computed from UserDefaults and set by user in settings
+    var preferedPrimaryColor: UIColor? {
+        get {
+            guard let hex = UserDefaults.standard.string(forKey: "I42PrimaryColorHex") else {
+                return coalitionColor
+            }
+            return UIColor(hexRGB: hex)
+        }
+        set {
+            let hex = newValue?.toHex
+            UserDefaults.standard.set(hex, forKey: "I42PrimaryColorHex")
+        }
+    }
     
     /// Holds all locations for multiple API calls
     var locationData: [JSON] = []
@@ -90,7 +104,7 @@ class API42Manager {
                     finishHandler(self.userProfile)
                 }
                 if let colorFinishHandler = self.coalitionColorCompletionHandler {
-                    colorFinishHandler(color)
+                    colorFinishHandler(self.preferedPrimaryColor)
                 }
             })
         }

@@ -18,6 +18,7 @@ extension API42Manager {
      Otherwise opens 42's API OAuth page in safari to prompt user to login.
      */
     func startOAuth2Login() {
+        state = UUID().uuidString
         let authPath = "https://api.intra.42.fr/oauth/authorize?client_id=\(clientId)&redirect_uri=\(redirectURI)&state=\(state)&response_type=code"
         
         if hasOAuthToken() {

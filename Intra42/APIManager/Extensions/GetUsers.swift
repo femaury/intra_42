@@ -18,13 +18,13 @@ extension API42Manager {
         let loginURL = "https://api.intra.42.fr/v2/users?search[login]=\(string)&sort=login&page[size]=100"
         let firstNameURL = "https://api.intra.42.fr/v2/users?search[first_name]=\(string)&sort=login&page[size]=100"
         let lastNameURL = "https://api.intra.42.fr/v2/users?search[last_name]=\(string)&sort=login&page[size]=100"
-        
+
         request(url: loginURL) { (responseJSON) in
             completionHander(responseJSON, .username)
         }
         request(url: firstNameURL) { (responseJSON) in
             completionHander(responseJSON, .firstName)
-            
+
             self.request(url: lastNameURL) { (responseJSON) in
                 completionHander(responseJSON, .lastName)
             }

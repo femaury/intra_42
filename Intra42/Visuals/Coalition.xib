@@ -54,17 +54,11 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Order" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dV0-12-675">
-                            <rect key="frame" x="47.5" y="147" width="81" height="20.5"/>
-                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                            <color key="textColor" red="1" green="0.41176470590000003" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EHP-3H-9Me">
-                            <rect key="frame" x="128.5" y="0.0" width="358.5" height="187"/>
+                            <rect key="frame" x="126" y="0.0" width="361" height="187"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1243" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n2D-Ae-oRp" customClass="AnimatedLabel" customModule="Intra42" customModuleProvider="target">
-                                    <rect key="frame" x="146" y="75.5" width="67" height="36"/>
+                                    <rect key="frame" x="147" y="75.5" width="67" height="36"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                     <color key="textColor" red="1" green="0.41176470590000003" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -75,6 +69,12 @@
                                 <constraint firstItem="n2D-Ae-oRp" firstAttribute="centerY" secondItem="EHP-3H-9Me" secondAttribute="centerY" id="paN-FE-aZ1"/>
                             </constraints>
                         </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Order" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dV0-12-675">
+                            <rect key="frame" x="47.5" y="147" width="81" height="20.5"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                            <color key="textColor" red="1" green="0.41176470590000003" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -82,7 +82,6 @@
                         <constraint firstItem="8Zh-Gf-ROH" firstAttribute="top" secondItem="Tgl-D5-BT1" secondAttribute="top" id="DcF-x2-uhA"/>
                         <constraint firstItem="dV0-12-675" firstAttribute="centerX" secondItem="NFl-sg-LGf" secondAttribute="centerX" id="GCD-4T-KhN"/>
                         <constraint firstItem="NFl-sg-LGf" firstAttribute="top" secondItem="Tgl-D5-BT1" secondAttribute="top" id="I71-8R-CWO"/>
-                        <constraint firstItem="EHP-3H-9Me" firstAttribute="leading" secondItem="dV0-12-675" secondAttribute="trailing" id="IjH-Ym-jAa"/>
                         <constraint firstAttribute="trailing" secondItem="8Zh-Gf-ROH" secondAttribute="trailing" id="Jno-wa-xnQ"/>
                         <constraint firstItem="8Zh-Gf-ROH" firstAttribute="leading" secondItem="Tgl-D5-BT1" secondAttribute="leading" id="S8z-8X-GOA"/>
                         <constraint firstItem="EHP-3H-9Me" firstAttribute="top" secondItem="Tgl-D5-BT1" secondAttribute="top" id="ScW-rS-vXo"/>
@@ -91,6 +90,7 @@
                         <constraint firstAttribute="trailing" secondItem="EHP-3H-9Me" secondAttribute="trailing" id="kFR-oB-ms2"/>
                         <constraint firstItem="dV0-12-675" firstAttribute="top" secondItem="NFl-sg-LGf" secondAttribute="bottom" constant="10" id="ncI-mD-aMi"/>
                         <constraint firstItem="NFl-sg-LGf" firstAttribute="leading" secondItem="Tgl-D5-BT1" secondAttribute="leading" constant="50" id="o5T-du-5kc"/>
+                        <constraint firstItem="EHP-3H-9Me" firstAttribute="leading" secondItem="NFl-sg-LGf" secondAttribute="trailing" id="pst-La-KVQ"/>
                     </constraints>
                 </view>
             </subviews>

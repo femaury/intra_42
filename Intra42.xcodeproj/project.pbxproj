@@ -43,6 +43,7 @@
 		DC41485922D0B50A0005FCB1 /* icon_fed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC41485122D0B50A0005FCB1 /* icon_fed@2x.png */; };
 		DC41485A22D0B50A0005FCB1 /* icon_fed@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC41485222D0B50A0005FCB1 /* icon_fed@3x.png */; };
 		DC41485C22D0BED70005FCB1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC41485B22D0BED70005FCB1 /* SettingsViewController.swift */; };
+		DC49298022F724CB004024C3 /* SideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC49297F22F724CB004024C3 /* SideMenu.storyboard */; };
 		DC4E38AC22F7179600D4A339 /* icon_default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC4E38AB22F7179600D4A339 /* icon_default@2x.png */; };
 		DC4E38AE22F7179E00D4A339 /* icon_default@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC4E38AD22F7179E00D4A339 /* icon_default@3x.png */; };
 		DC6FA15B22CD1A4300080A90 /* DictionaryPercentEscaped.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6FA15A22CD1A4300080A90 /* DictionaryPercentEscaped.swift */; };
@@ -147,6 +148,7 @@
 		DC41485122D0B50A0005FCB1 /* icon_fed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_fed@2x.png"; sourceTree = "<group>"; };
 		DC41485222D0B50A0005FCB1 /* icon_fed@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_fed@3x.png"; sourceTree = "<group>"; };
 		DC41485B22D0BED70005FCB1 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		DC49297F22F724CB004024C3 /* SideMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SideMenu.storyboard; sourceTree = "<group>"; };
 		DC4E38AB22F7179600D4A339 /* icon_default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_default@2x.png"; sourceTree = "<group>"; };
 		DC4E38AD22F7179E00D4A339 /* icon_default@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_default@3x.png"; sourceTree = "<group>"; };
 		DC6FA15A22CD1A4300080A90 /* DictionaryPercentEscaped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryPercentEscaped.swift; sourceTree = "<group>"; };
@@ -482,6 +484,7 @@
 			children = (
 				DC92AB8022D0B45E00A34B88 /* AltAppIcons */,
 				DCCE05A7222994EB00906ECD /* Main.storyboard */,
+				DC49297F22F724CB004024C3 /* SideMenu.storyboard */,
 				DCF70AFB229AE7B200B29DCC /* ProjectEvaluation.xib */,
 				DC1988CD2239567B009E3A55 /* Cluster.xib */,
 				DC1988CB22395588009E3A55 /* ClusterPost.xib */,
@@ -640,6 +643,7 @@
 				DC41485722D0B50A0005FCB1 /* icon_ord@2x.png in Resources */,
 				DC41485522D0B50A0005FCB1 /* icon_ord@3x.png in Resources */,
 				DC1988CC22395588009E3A55 /* ClusterPost.xib in Resources */,
+				DC49298022F724CB004024C3 /* SideMenu.storyboard in Resources */,
 				DC4E38AE22F7179E00D4A339 /* icon_default@3x.png in Resources */,
 				DC41485822D0B50A0005FCB1 /* icon_ass@3x.png in Resources */,
 				DC8999452247C23E00F47EEF /* Default-568h@2x.png in Resources */,

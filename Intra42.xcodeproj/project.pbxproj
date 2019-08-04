@@ -44,8 +44,8 @@
 		DC41485A22D0B50A0005FCB1 /* icon_fed@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC41485222D0B50A0005FCB1 /* icon_fed@3x.png */; };
 		DC41485C22D0BED70005FCB1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC41485B22D0BED70005FCB1 /* SettingsViewController.swift */; };
 		DC49298022F724CB004024C3 /* SideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC49297F22F724CB004024C3 /* SideMenu.storyboard */; };
-		DC4E38AC22F7179600D4A339 /* icon_default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC4E38AB22F7179600D4A339 /* icon_default@2x.png */; };
-		DC4E38AE22F7179E00D4A339 /* icon_default@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC4E38AD22F7179E00D4A339 /* icon_default@3x.png */; };
+		DC49298222F7315E004024C3 /* icon_default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC49298122F7315E004024C3 /* icon_default@2x.png */; };
+		DC49298422F73166004024C3 /* icon_default@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC49298322F73165004024C3 /* icon_default@3x.png */; };
 		DC6FA15B22CD1A4300080A90 /* DictionaryPercentEscaped.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6FA15A22CD1A4300080A90 /* DictionaryPercentEscaped.swift */; };
 		DC89992D22414F9000F47EEF /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89992C22414F9000F47EEF /* Achievement.swift */; };
 		DC89993022427A1500F47EEF /* AchievementsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89992F22427A1500F47EEF /* AchievementsController.swift */; };
@@ -149,8 +149,8 @@
 		DC41485222D0B50A0005FCB1 /* icon_fed@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_fed@3x.png"; sourceTree = "<group>"; };
 		DC41485B22D0BED70005FCB1 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		DC49297F22F724CB004024C3 /* SideMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SideMenu.storyboard; sourceTree = "<group>"; };
-		DC4E38AB22F7179600D4A339 /* icon_default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_default@2x.png"; sourceTree = "<group>"; };
-		DC4E38AD22F7179E00D4A339 /* icon_default@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_default@3x.png"; sourceTree = "<group>"; };
+		DC49298122F7315E004024C3 /* icon_default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_default@2x.png"; sourceTree = "<group>"; };
+		DC49298322F73165004024C3 /* icon_default@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_default@3x.png"; sourceTree = "<group>"; };
 		DC6FA15A22CD1A4300080A90 /* DictionaryPercentEscaped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryPercentEscaped.swift; sourceTree = "<group>"; };
 		DC89992C22414F9000F47EEF /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
 		DC89992F22427A1500F47EEF /* AchievementsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsController.swift; sourceTree = "<group>"; };
@@ -408,8 +408,8 @@
 		DC92AB8022D0B45E00A34B88 /* AltAppIcons */ = {
 			isa = PBXGroup;
 			children = (
-				DC4E38AB22F7179600D4A339 /* icon_default@2x.png */,
-				DC4E38AD22F7179E00D4A339 /* icon_default@3x.png */,
+				DC49298122F7315E004024C3 /* icon_default@2x.png */,
+				DC49298322F73165004024C3 /* icon_default@3x.png */,
 				DC41484B22D0B5090005FCB1 /* icon_all@2x.png */,
 				DC41484E22D0B50A0005FCB1 /* icon_all@3x.png */,
 				DC41484C22D0B50A0005FCB1 /* icon_ass@2x.png */,
@@ -638,16 +638,16 @@
 				DC41485322D0B50A0005FCB1 /* icon_all@2x.png in Resources */,
 				DCF70AFC229AE7B200B29DCC /* ProjectEvaluation.xib in Resources */,
 				DC41485622D0B50A0005FCB1 /* icon_all@3x.png in Resources */,
+				DC49298422F73166004024C3 /* icon_default@3x.png in Resources */,
 				DCCE0584222591F500906ECD /* LaunchScreen.storyboard in Resources */,
 				DCCE0581222591F500906ECD /* Assets.xcassets in Resources */,
 				DC41485722D0B50A0005FCB1 /* icon_ord@2x.png in Resources */,
 				DC41485522D0B50A0005FCB1 /* icon_ord@3x.png in Resources */,
 				DC1988CC22395588009E3A55 /* ClusterPost.xib in Resources */,
 				DC49298022F724CB004024C3 /* SideMenu.storyboard in Resources */,
-				DC4E38AE22F7179E00D4A339 /* icon_default@3x.png in Resources */,
 				DC41485822D0B50A0005FCB1 /* icon_ass@3x.png in Resources */,
+				DC49298222F7315E004024C3 /* icon_default@2x.png in Resources */,
 				DC8999452247C23E00F47EEF /* Default-568h@2x.png in Resources */,
-				DC4E38AC22F7179600D4A339 /* icon_default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

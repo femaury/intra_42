@@ -22,6 +22,7 @@ class SideMenuController: UIViewController {
         ("Settings", UIImage(named: "settings")),
         ("Logout", UIImage(named: "shutdown"))
     ]
+    let disabledItems = [0, 1, 2] // Unfinished pages
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +40,13 @@ class SideMenuController: UIViewController {
 }
 
 extension SideMenuController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        if disabledItems.contains(indexPath.row) {
+            return nil
+        }
+        return indexPath
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
@@ -89,6 +97,16 @@ extension SideMenuController: UITableViewDelegate, UITableViewDataSource {
             let borderBottom = UIView(frame: CGRect(x: 0, y: 49, width: tableView.frame.width, height: 1))
             borderBottom.backgroundColor = UIColor.black
             cell?.addSubview(borderBottom)
+        } else if indexPath.row == items.endIndex - 1 {
+            cell?.imageView?.image = cell?.imageView?.image?.withRenderingMode(.alwaysTemplate)
+            cell?.imageView?.tintColor = .red
+            cell?.textLabel?.textColor = .red
+        }
+        if disabledItems.contains(indexPath.row) {
+            cell?.selectionStyle = .none
+            cell?.textLabel?.isEnabled = false
+            cell?.imageView?.image = cell?.imageView?.image?.withRenderingMode(.alwaysTemplate)
+            cell?.imageView?.tintColor = .gray
         }
         return cell!
     }

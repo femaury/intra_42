@@ -57,14 +57,14 @@ class API42Manager {
     /// Computed from UserDefaults and set by user in settings
     var preferedPrimaryColor: UIColor? {
         get {
-            guard let hex = UserDefaults.standard.string(forKey: "I42PrimaryColorHex") else {
+            guard let hex = UserDefaults.standard.string(forKey: "SwiftyPrimaryColorHex") else {
                 return coalitionColor
             }
             return UIColor(hexRGB: hex)
         }
         set {
             let hex = newValue?.toHex
-            UserDefaults.standard.set(hex, forKey: "I42PrimaryColorHex")
+            UserDefaults.standard.set(hex, forKey: "SwiftyPrimaryColorHex")
         }
     }
     

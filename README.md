@@ -24,7 +24,6 @@ You will also need to install [SwiftLint](https://github.com/realm/SwiftLint).
 
 ## TODO
 <ul>
-  <li>Get Apple Developer Account and put app on Test Flight</li>
   <li>Get unlimited official API key</li>
   <li>Comment/Document source code</li>
   <li>Projects Info / List</li>

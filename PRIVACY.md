@@ -22,7 +22,7 @@ These services, in a case of an error in the app, collect data and information o
 
 ### Third Party Services I use:
 
-[**Fabric**](https://docs.fabric.io/apple/fabric/data-privacy.html) — for the capture and collection of crash logs to help me identify bugs in my Service.
+[**Fabric**](https://docs.fabric.io/apple/fabric/data-privacy.html) — for the capture and collection of crash logs to help me identify bugs in my Service.\
 [**Apple Analytics**](https://support.apple.com/en-us/HT202100) — (if enabled by user) for the collection of anonymous analytical data to help me better understand how users use my Service.
 
 ### Third Party API's (Application Programming Interface):

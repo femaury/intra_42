@@ -213,6 +213,7 @@ extension EventsViewController: UITableViewDelegate, UITableViewDataSource {
             guard let eventCell = selectedEventCell else { return }
             let destination = segue.destination as! EventDetailController
             destination.event = eventCell.event
+            destination.delegate = self
         }
     }
     

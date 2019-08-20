@@ -19,7 +19,7 @@ extension API42Manager {
      */
     func startOAuth2Login() {
         state = UUID().uuidString
-        let authPath = "https://api.intra.42.fr/oauth/authorize?client_id=\(clientId)&redirect_uri=\(redirectURI)&state=\(state)&response_type=code"
+        let authPath = "https://api.intra.42.fr/oauth/authorize?client_id=\(clientId)&redirect_uri=\(redirectURI)&state=\(state)&response_type=code&scope=public+profile"
         
         if hasOAuthToken() {
             if let completionHandler = OAuthTokenCompletionHandler {

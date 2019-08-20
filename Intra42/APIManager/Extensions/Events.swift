@@ -26,7 +26,6 @@ extension API42Manager {
                 completionHandler([])
                 return
             }
-            print(eventsData)
             completionHandler(eventsData.arrayValue)
         }
     }

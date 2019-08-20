@@ -11,6 +11,14 @@ import UIKit
 import SwiftyJSON
 import KeychainSwift
 
+public enum HTTPMethod: String {
+
+    case get = "GET"
+    case put = "PUT"
+    case post = "POST"
+    case delete = "DELETE"
+}
+
 /**
  `API42Manager.shared` is used for all calls to 42's API
  */

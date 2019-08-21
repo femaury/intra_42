@@ -51,13 +51,7 @@ extension SideMenuController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-//            if let cursusId = API42Manager.shared.userProfile?.mainCursusId {
-//                let url = "https://api.intra.42.fr/v2/cursus/\(cursusId)/projects?page[size]=100"
-//                API42Manager.shared.request(url: url) { [weak self] (data) in
-//                    print("ACCESS: \(data ?? "NULL")")
-//                    self?.performSegue(withIdentifier: "ProjectsSegue", sender: self)
-//                }
-//            }
+//            API42Manager.shared.getAllProjects(page: 0)
             performSegue(withIdentifier: "ProjectsSegue", sender: self)
         case 1:
             performSegue(withIdentifier: "VideosSegue", sender: self)

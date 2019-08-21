@@ -275,6 +275,7 @@ extension EventsViewController: UITableViewDelegate, UITableViewDataSource {
             }
             cell?.textLabel?.text = messageText
             cell?.textLabel?.textAlignment = .center
+            cell?.textLabel?.numberOfLines = 0
             return cell!
         }
     }

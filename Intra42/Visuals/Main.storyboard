@@ -1972,8 +1972,8 @@
                                                         <constraint firstAttribute="width" constant="50" id="rDq-kB-P1d"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use the search bar to find your friends!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Lm-jr-Zwv">
-                                                    <rect key="frame" x="57.666666666666657" y="105" width="299" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use the search bar to find your friends!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Lm-jr-Zwv">
+                                                    <rect key="frame" x="40" y="105" width="334" height="20.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1983,6 +1983,8 @@
                                                 <constraint firstItem="0Lm-jr-Zwv" firstAttribute="centerX" secondItem="bT3-qt-Lgs" secondAttribute="centerX" id="4qi-k3-QmA"/>
                                                 <constraint firstItem="4rz-nX-AfP" firstAttribute="centerY" secondItem="bT3-qt-Lgs" secondAttribute="centerY" id="ETH-29-j5p"/>
                                                 <constraint firstItem="4rz-nX-AfP" firstAttribute="centerX" secondItem="bT3-qt-Lgs" secondAttribute="centerX" id="LgF-A7-Uu2"/>
+                                                <constraint firstItem="0Lm-jr-Zwv" firstAttribute="leading" secondItem="bT3-qt-Lgs" secondAttribute="leadingMargin" constant="20" id="NG9-hM-X3u"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="0Lm-jr-Zwv" secondAttribute="trailing" constant="20" id="gdU-ij-Tqr"/>
                                                 <constraint firstItem="0Lm-jr-Zwv" firstAttribute="top" secondItem="4rz-nX-AfP" secondAttribute="bottom" constant="5" id="xjq-h8-4wR"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -2977,9 +2979,9 @@
         <image name="user_male" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hch-cR-doW"/>
-        <segue reference="ujx-ft-g6P"/>
-        <segue reference="0QS-t1-7Go"/>
+        <segue reference="Og1-Wg-B0Q"/>
+        <segue reference="9Kb-eh-UKx"/>
+        <segue reference="WXI-Yj-ohg"/>
         <segue reference="IZG-qr-rub"/>
     </inferredMetricsTieBreakers>
 </document>

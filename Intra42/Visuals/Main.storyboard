@@ -64,10 +64,10 @@
             </objects>
             <point key="canvasLocation" x="-975" y="355"/>
         </scene>
-        <!--Corrections-->
+        <!--Evaluations-->
         <scene sceneID="sZy-OW-eNa">
             <objects>
-                <viewController title="Corrections" id="eHO-dy-Bdf" customClass="CorrectionsViewController" customModule="Intra42" sceneMemberID="viewController">
+                <viewController title="Evaluations" id="eHO-dy-Bdf" customClass="CorrectionsViewController" customModule="Intra42" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Zd-6P-0sE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -463,7 +463,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dkB-0u-6s3"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Corrections" id="Mky-st-uHi">
+                    <navigationItem key="navigationItem" title="Evaluations" id="Mky-st-uHi">
                         <barButtonItem key="leftBarButtonItem" title="Side Menu" image="menu" id="e0q-pZ-XlA">
                             <connections>
                                 <segue destination="i3U-We-se7" kind="presentation" id="PL9-98-KTQ"/>
@@ -1851,7 +1851,7 @@
         <scene sceneID="Hmy-8s-DyA">
             <objects>
                 <navigationController title="CorrectionsNav" automaticallyAdjustsScrollViewInsets="NO" id="4cr-el-u2w" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Corrections" image="clock" selectedImage="clock" id="8O5-vq-gjl"/>
+                    <tabBarItem key="tabBarItem" title="Evaluations" image="clock" selectedImage="clock" id="8O5-vq-gjl"/>
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="xeW-2N-1on">
@@ -2979,9 +2979,9 @@
         <image name="user_male" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Og1-Wg-B0Q"/>
-        <segue reference="9Kb-eh-UKx"/>
-        <segue reference="WXI-Yj-ohg"/>
+        <segue reference="PL9-98-KTQ"/>
+        <segue reference="atr-x9-EV6"/>
+        <segue reference="FNR-te-koC"/>
         <segue reference="IZG-qr-rub"/>
     </inferredMetricsTieBreakers>
 </document>

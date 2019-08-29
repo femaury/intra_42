@@ -26,6 +26,7 @@ class EventDetailController: UIViewController {
     @IBOutlet weak var addToCalendarButton: UIBarButtonItem!
     
     var event: Event!
+    weak var delegate: EventsViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,11 +53,52 @@ class EventDetailController: UIViewController {
         descriptionText.textContainerInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
     
+    func notifySubscription(with message: String) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "NotificationView") as! NotificationViewController
+        _ = controller.view // Force controller to load outlets
+        controller.messageLabel.text = message
+        controller.imageView.image = controller.imageView.image?.withRenderingMode(.alwaysTemplate)
+        controller.providesPresentationContextTransitionStyle = true
+        controller.definesPresentationContext = true
+        controller.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        controller.modalTransitionStyle = .crossDissolve
+        present(controller, animated: true, completion: nil)
+    }
+    
     @IBAction func syncCalendar(_ sender: UIBarButtonItem) {
-        let syncCalendarAction = UIAlertController(title: "Add this event to your default calendar",
-                                                   message: "You will be notified 24 hours prior",
-                                                   preferredStyle: .actionSheet)
-        let syncAction = UIAlertAction(title: "Add", style: .default) { (_) in
+        guard let myEvents = delegate?.myEvents else { return }
+        
+        let calendarAction = UIAlertController(title: event.name, message: nil, preferredStyle: .actionSheet)
+        let subAction = UIAlertAction(title: "Subscribe", style: .default) { [weak self] (_) in
+            guard let id = self?.event.id else { return }
+            API42Manager.shared.modifyEvent(withId: id, method: .post) { [weak self] success in
+                if success, let event = self?.event {
+                    guard let delegate = self?.delegate else { return }
+                    
+                    delegate.myEvents.append(event)
+                    self?.notifySubscription(with: "Subscribed!")
+                } else {
+                    API42Manager.shared.showErrorAlert(message: "There was an error subscribing to the event...")
+                }
+            }
+        }
+        let unsubAction = UIAlertAction(title: "Unsubscribe", style: .destructive) { [weak self] (_) in
+            guard let id = self?.event.id else { return }
+            API42Manager.shared.modifyEvent(withId: id, method: .delete) { [weak self] success in
+                if success, let event = self?.event {
+                    guard let delegate = self?.delegate else { return }
+
+                    if let index = delegate.myEvents.firstIndex(of: event) {
+                        delegate.myEvents.remove(at: index)
+                    }
+                    self?.notifySubscription(with: "Unsubscribed.")
+                } else {
+                    API42Manager.shared.showErrorAlert(message: "There was an error unsubscribing from the event...")
+                }
+            }
+        }
+        let syncAction = UIAlertAction(title: "Add to calendar", style: .default) { (_) in
             let eventStore = EKEventStore()
             eventStore.requestAccess(to: .event) { (granted, error) in
                 
@@ -87,8 +129,13 @@ class EventDetailController: UIViewController {
             }
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-        syncCalendarAction.addAction(syncAction)
-        syncCalendarAction.addAction(cancelAction)
-        present(syncCalendarAction, animated: true)
+        if myEvents.contains(event) {
+            calendarAction.addAction(unsubAction)
+        } else {
+            calendarAction.addAction(subAction)
+        }
+        calendarAction.addAction(syncAction)
+        calendarAction.addAction(cancelAction)
+        present(calendarAction, animated: true)
     }
 }

@@ -21,7 +21,7 @@ enum EventKind: String {
     case extern
 }
 
-struct Event {
+struct Event: Equatable {
     var id: Int
     var name: String
     var description: String
@@ -100,5 +100,9 @@ struct Event {
             }
         }
         duration = timeDuration
+    }
+    
+    static func == (lhs: Event, rhs: Event) -> Bool {
+        return lhs.id == rhs.id
     }
 }

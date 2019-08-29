@@ -213,6 +213,7 @@ extension EventsViewController: UITableViewDelegate, UITableViewDataSource {
             guard let eventCell = selectedEventCell else { return }
             let destination = segue.destination as! EventDetailController
             destination.event = eventCell.event
+            destination.delegate = self
         }
     }
     
@@ -274,6 +275,7 @@ extension EventsViewController: UITableViewDelegate, UITableViewDataSource {
             }
             cell?.textLabel?.text = messageText
             cell?.textLabel?.textAlignment = .center
+            cell?.textLabel?.numberOfLines = 0
             return cell!
         }
     }

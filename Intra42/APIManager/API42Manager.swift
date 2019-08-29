@@ -11,6 +11,14 @@ import UIKit
 import SwiftyJSON
 import KeychainSwift
 
+public enum HTTPMethod: String {
+
+    case get = "GET"
+    case put = "PUT"
+    case post = "POST"
+    case delete = "DELETE"
+}
+
 /**
  `API42Manager.shared` is used for all calls to 42's API
  */
@@ -192,7 +200,7 @@ class API42Manager {
             
             var request = URLRequest(url: realURL)
             request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-            URLSession.shared.dataTask(with: request) { (data, _, error) in
+            URLSession.shared.dataTask(with: request) { (data, response, error) in
                 DispatchQueue.main.async {
                     if let error = error {
                         print("Request Error:", error)
@@ -202,6 +210,7 @@ class API42Manager {
                     }
                     guard let data = data, let valueJSON = try? JSON(data: data) else {
                         print("Request Error: Couldn't get data after request...")
+                        print(response ?? "NO RESPONSE")
                         self.showErrorAlert(message: "There was a problem with 42's API...")
                         completionHandler(nil)
                         return
@@ -251,4 +260,27 @@ class API42Manager {
             completionHandler(data)
         }
     }
+    
+// This takes way too long and returns ALL the projects... To fix.
+//    func getAllProjects(page: Int) {
+//        guard let cursusId = userProfile?.mainCursusId else { return }
+//        let locationURL = "https://api.intra.42.fr/v2/cursus/\(cursusId)/projects?sort=name&filter[visible]=true&page[number]=\(page)&page[size]=100"
+//
+//        request(url: locationURL) { (data) in
+//            guard let data = data  else {
+//                print("EMPTY DATA")
+//                print(self.allProjects)
+//                return
+//            }
+//            self.allProjects += data.arrayValue
+//            if data.arrayValue.count == 100 && data.arrayValue.last?["parent"] != nil {
+//                print("Projects Page \(page)")
+//                self.getAllProjects(page: page + 1)
+//            } else {
+//                print("FOUND ALL PROJECTS")
+//                print(self.allProjects)
+//                self.allProjects = []
+//            }
+//        }
+//    }
 }

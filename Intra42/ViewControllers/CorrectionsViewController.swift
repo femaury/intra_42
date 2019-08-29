@@ -49,13 +49,12 @@ class CorrectionsViewController: UIViewController {
         navigationController?.view.layoutIfNeeded() // to fix height of the navigation bar
     }
     
-    // TODO: Fix infinite loading when no corrections?
     func getCorrections() {
         API42Manager.shared.getScales { (scales) in
             self.corrections = scales
+            self.isLoadingCorrections = false
             self.tableView.reloadData()
             self.tableView.refreshControl?.endRefreshing()
-            self.isLoadingCorrections = false
         }
     }
     
@@ -123,14 +122,14 @@ extension CorrectionsViewController: UISearchBarDelegate {
 extension CorrectionsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if isLoadingCorrections {
+        if isLoadingCorrections || corrections.count == 0 {
             return tableView.frame.height
         }
         return 100
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if isLoadingCorrections {
+        if isLoadingCorrections || corrections.count == 0 {
             return 1
         }
         return corrections.count
@@ -140,6 +139,18 @@ extension CorrectionsViewController: UITableViewDelegate, UITableViewDataSource 
         if isLoadingCorrections, let cell = tableView.dequeueReusableCell(withIdentifier: "LoadingIndicatorCell") {
             return cell
         }
+        if corrections.count == 0 {
+            var cell: UITableViewCell!
+            cell = tableView.dequeueReusableCell(withIdentifier: "NoCorrectionsCell")
+            if cell == nil {
+                cell = UITableViewCell(style: .default, reuseIdentifier: "NoCorrectionsCell")
+            }
+            cell.textLabel?.text = "You do not have any upcoming corrections..."
+            cell.textLabel?.numberOfLines = 0
+            cell.textLabel?.textAlignment = .center
+            return cell
+        }
+        
         let correction = corrections[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "ScalesCell") as! ScalesCell
         cell.setupCell(correction: correction, delegate: self)

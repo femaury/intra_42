@@ -23,7 +23,7 @@ extension API42Manager {
         var corrections: [Correction] = []
         
         request(url: scalesURL) { (data) in
-            guard let data = data?.array else {
+            guard let data = data?.arrayValue, data.count > 0 else {
                 completionHandler([])
                 return
             }
@@ -61,10 +61,10 @@ extension API42Manager {
                 dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
                 let date = dateFormatter.date(from: dateString) ?? Date()
                 
-                self.getProject(withId: projectId, completionHandler: { (data) in
+                self.getProject(withId: projectId, completionHandler: { (projData) in
                     var name = "Unknown Project"
-                    if let data = data {
-                        name = data["name"].stringValue.capitalized
+                    if let projData = projData {
+                        name = projData["name"].stringValue.capitalized
                     }
                     
                     let correction = Correction(
@@ -77,9 +77,8 @@ extension API42Manager {
                         correctees: correctees,
                         startDate: date)
                     corrections.append(correction)
-                    //                    if corrections.count == data?.count {
+                    
                     completionHandler(corrections)
-                    //                    }
                 })
             }
         }

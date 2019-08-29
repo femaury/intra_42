@@ -83,9 +83,9 @@ class SearchResultsController: UITableViewController, SearchResultsDataSource {
             if self.userProfilePictures.keys.contains(id) { continue }
             self.getProfilePictureOfUser(withId: id, login: login)
         }
-        if section == .firstName {
+//        if section == .firstName {
             self.isLoadingSearchData = false
-        }
+//        }
         self.tableView.reloadData()
     }
     

@@ -14,10 +14,19 @@ class AboutViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var contentView: UIView!
     
+    @IBOutlet weak var versionLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         scrollView.contentSize = contentView.frame.size
+        
+        if let versionNumber = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String,
+            let buildNumber = Bundle.main.infoDictionary?["CFBundleVersion"] as? String {
+            versionLabel.text = "v\(versionNumber) (\(buildNumber))"
+        } else {
+            versionLabel.isHidden = true
+        }
     }
     
     func openSafariController(withURL url: String) {

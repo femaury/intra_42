@@ -576,6 +576,7 @@
 				06728159E6CDA138A3F754F2 /* [CP] Check Pods Manifest.lock */,
 				DCCE0572222591F400906ECD /* Sources */,
 				DCCE0573222591F400906ECD /* Frameworks */,
+				DCEC411623181B7C00FEE0EC /* App Version on Splash */,
 				DCCE0574222591F400906ECD /* Resources */,
 				E895706BA2B3871B2BCE68B0 /* [CP] Embed Pods Frameworks */,
 				DCF1A4E122997AB300AA2653 /* Swift Lint */,
@@ -694,6 +695,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 828d3e5cc0969c29e5f01efb1352841cc9eac839 9dbd7ccfc93022c0b6a6285e46a35f35ba9348e0ada5ac2f64dbc73d0f88e783\n";
+		};
+		DCEC411623181B7C00FEE0EC /* App Version on Splash */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "App Version on Splash";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#   Output version & build numbers into a label on LaunchScreen.storyboard\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nversionNumber=$(/usr/libexec/PlistBuddy -c \"Print :CFBundleShortVersionString\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nsed -i bak -e \"/userLabel=\\\"APP_VERSION\\\"/s/text=\\\"[^\\\"]*\\\"/text=\\\"v$versionNumber ($buildNumber)\\\"/\" $PROJECT_DIR/$PROJECT_NAME/Visuals/Base.lproj/LaunchScreen.storyboard\n";
 		};
 		DCF1A4E122997AB300AA2653 /* Swift Lint */ = {
 			isa = PBXShellScriptBuildPhase;

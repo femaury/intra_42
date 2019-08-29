@@ -22,7 +22,14 @@ extension API42Manager {
 
         request(url: loginURL) { (responseJSON) in
             completionHander(responseJSON, .username)
+
         }
+//  Could be used to at least get full name matches?
+//        let testURL = "https://api.intra.42.fr/v2/users?filter[first_name]=\(string)&sort=login&page[size]=100"
+//        request(url: testURL) { (responseJSON) in
+//            print(responseJSON)
+//        }
+//
 //        request(url: firstNameURL) { (responseJSON) in
 //            completionHander(responseJSON, .firstName)
 //

@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import SwiftyJSON
+import SafariServices
 
 extension API42Manager {
     /**
@@ -28,8 +29,18 @@ extension API42Manager {
             return
         }
         
-        if let authURL = URL(string: authPath) {
-            UIApplication.shared.open(authURL, options: [:])
+        if let url = URL(string: authPath) {
+            let safariVC = SFSafariViewController(url: url)
+            safariVC.modalPresentationStyle = .overFullScreen
+            
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            var topViewController = appDelegate.window?.rootViewController
+            
+            while topViewController?.presentedViewController != nil {
+                topViewController = topViewController?.presentedViewController
+            }
+            
+            topViewController?.present(safariVC, animated: true, completion: nil)
         }
     }
     

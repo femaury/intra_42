@@ -8,9 +8,10 @@
 
 import UIKit
 import SafariServices
+import SideMenu
 
 class SideMenuController: UIViewController {
-    
+        
     @IBOutlet weak var tableView: UITableView!
     
     let items: [(title: String, image: UIImage?)] = [
@@ -23,17 +24,19 @@ class SideMenuController: UIViewController {
         ("Settings", UIImage(named: "settings")),
         ("Logout", UIImage(named: "shutdown"))
     ]
-    let disabledItems = [1, 2] // Unfinished pages
+    let disabledItems = [0, 1] // Unfinished pages
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        SideMenuManager.default.leftMenuNavigationController?.settings.presentationStyle = .menuSlideIn
 
-        let logoView = UIImageView(image: UIImage(named: "42_logo"))
-        logoView.contentMode = .scaleAspectFit
-        navigationItem.titleView = logoView
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.isTranslucent = true
+//        let logoView = UIImageView(image: UIImage(named: "42_logo"))
+//        logoView.contentMode = .scaleAspectFit
+//        navigationItem.titleView = logoView
+//        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+//        navigationController?.navigationBar.shadowImage = UIImage()
+//        navigationController?.navigationBar.isTranslucent = true
         
         tableView.contentInset = UIEdgeInsets(top: 25, left: 0, bottom: 0, right: 0)
         UIApplication.shared.keyWindow?.endEditing(true)
@@ -97,7 +100,10 @@ extension SideMenuController: UITableViewDelegate, UITableViewDataSource {
         cell?.textLabel?.text = items[indexPath.row].title
         if indexPath.row == 4 {
             let borderBottom = UIView(frame: CGRect(x: 0, y: 49, width: tableView.frame.width, height: 1))
-            borderBottom.backgroundColor = UIColor.black
+            borderBottom.backgroundColor = .black
+            if #available(iOS 13.0, *) {
+                borderBottom.backgroundColor = .label
+            }
             cell?.addSubview(borderBottom)
         } else if indexPath.row == items.endIndex - 1 {
             cell?.imageView?.image = cell?.imageView?.image?.withRenderingMode(.alwaysTemplate)

@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,7 +26,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="gr3-Nr-eZr" firstAttribute="top" secondItem="ew4-bH-dau" secondAttribute="top" id="19d-Zc-Dre"/>
                             <constraint firstItem="ew4-bH-dau" firstAttribute="bottom" secondItem="gr3-Nr-eZr" secondAttribute="bottom" id="B6U-rj-Ujf"/>
@@ -34,7 +35,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ew4-bH-dau"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Intra" id="oCM-JE-7pe"/>
+                    <navigationItem key="navigationItem" title="Intra 42" id="oCM-JE-7pe"/>
                     <connections>
                         <outlet property="tableView" destination="gr3-Nr-eZr" id="aW3-6q-6qw"/>
                         <segue destination="a1X-4g-9QV" kind="show" identifier="AboutSegue" id="6Sw-zJ-zXK"/>
@@ -64,7 +65,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k4V-lm-rn4">
-                                <rect key="frame" x="-1" y="149.5" width="416" height="192"/>
+                                <rect key="frame" x="-1" y="149.5" width="416" height="202"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App Icon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBP-zg-ECW">
                                         <rect key="frame" x="20" y="8" width="77.5" height="24"/>
@@ -179,6 +180,7 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
+                                <color key="backgroundColor" name="lightTextBackground"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="ldX-vH-Qkq" secondAttribute="trailing" constant="20" id="5xZ-Um-4dL"/>
                                     <constraint firstItem="ldX-vH-Qkq" firstAttribute="top" secondItem="WBP-zg-ECW" secondAttribute="bottom" constant="8" id="AbZ-6j-mN5"/>
@@ -189,7 +191,7 @@
                                     <constraint firstItem="UKf-wr-4KX" firstAttribute="top" secondItem="ldX-vH-Qkq" secondAttribute="bottom" constant="10" id="PJ4-Kg-DoZ"/>
                                     <constraint firstItem="ldX-vH-Qkq" firstAttribute="leading" secondItem="k4V-lm-rn4" secondAttribute="leading" constant="20" id="Uj1-5p-CUH"/>
                                     <constraint firstItem="6Hh-77-f72" firstAttribute="top" secondItem="UKf-wr-4KX" secondAttribute="bottom" constant="8" id="oXL-fS-3Cc"/>
-                                    <constraint firstAttribute="bottom" secondItem="6Hh-77-f72" secondAttribute="bottom" constant="10" id="qsb-Mh-F4g"/>
+                                    <constraint firstAttribute="bottom" secondItem="6Hh-77-f72" secondAttribute="bottom" constant="20" id="qsb-Mh-F4g"/>
                                     <constraint firstItem="WBP-zg-ECW" firstAttribute="top" secondItem="k4V-lm-rn4" secondAttribute="top" constant="8" id="rdy-6m-JuC"/>
                                 </constraints>
                             </view>
@@ -675,7 +677,7 @@ Cheers 😉</string>
         <!--Side Menu Navigation Controller-->
         <scene sceneID="Oeu-T3-St5">
             <objects>
-                <navigationController storyboardIdentifier="SideMenu" automaticallyAdjustsScrollViewInsets="NO" id="FSK-eQ-VeX" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SideMenu" automaticallyAdjustsScrollViewInsets="NO" id="FSK-eQ-VeX" customClass="SideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gty-QG-uKx">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -710,7 +712,7 @@ Cheers 😉</string>
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="PYP-U8-kTA" firstAttribute="leading" secondItem="zhN-hx-xfZ" secondAttribute="leading" id="J9E-IQ-33M"/>
                             <constraint firstItem="zhN-hx-xfZ" firstAttribute="bottom" secondItem="PYP-U8-kTA" secondAttribute="bottom" id="OcU-Tc-i7X"/>
@@ -736,5 +738,8 @@ Cheers 😉</string>
         <image name="icon_default" width="180" height="180"/>
         <image name="icon_fed" width="60" height="60"/>
         <image name="icon_ord" width="60" height="60"/>
+        <namedColor name="lightTextBackground">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

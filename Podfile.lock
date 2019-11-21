@@ -1,12 +1,12 @@
 PODS:
-  - CocoaLumberjack (3.5.3):
-    - CocoaLumberjack/Core (= 3.5.3)
-  - CocoaLumberjack/Core (3.5.3)
-  - Crashlytics (3.13.2):
+  - CocoaLumberjack (3.6.0):
+    - CocoaLumberjack/Core (= 3.6.0)
+  - CocoaLumberjack/Core (3.6.0)
+  - Crashlytics (3.14.0):
     - Fabric (~> 1.10.2)
   - Fabric (1.10.2)
-  - KeychainSwift (16.0.1)
-  - SideMenu (5.0.3)
+  - KeychainSwift (18.0.0)
+  - SideMenu (6.4.7)
   - SVGKit (2.1.1):
     - CocoaLumberjack (~> 3.0)
   - SwiftyJSON (5.0.0)
@@ -15,7 +15,7 @@ DEPENDENCIES:
   - Crashlytics
   - Fabric
   - KeychainSwift
-  - SideMenu (from `https://github.com/stelabouras/SideMenu.git`, branch `upgrade/xcode-10.2`)
+  - SideMenu (~> 6.0)
   - SVGKit
   - SwiftyJSON
 
@@ -25,28 +25,19 @@ SPEC REPOS:
     - Crashlytics
     - Fabric
     - KeychainSwift
+    - SideMenu
     - SVGKit
     - SwiftyJSON
 
-EXTERNAL SOURCES:
-  SideMenu:
-    :branch: upgrade/xcode-10.2
-    :git: https://github.com/stelabouras/SideMenu.git
-
-CHECKOUT OPTIONS:
-  SideMenu:
-    :commit: ccd4b640063a721180b77a59d2a45039672ec95d
-    :git: https://github.com/stelabouras/SideMenu.git
-
 SPEC CHECKSUMS:
-  CocoaLumberjack: 2f44e60eb91c176d471fdba43b9e3eae6a721947
-  Crashlytics: 611738c7847f8291a1a51084e35987b86ba6b3ee
+  CocoaLumberjack: 78b0c238666f4f58db069738ec176f4519557516
+  Crashlytics: 540b7e5f5da5a042647227a5e3ac51d85eed06df
   Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
-  KeychainSwift: 4209611373ca4a098e09b1e547eebd87c544dcc4
-  SideMenu: 92417cef5aa12b2784e82854406a0d3831ef7df3
+  KeychainSwift: c46e1438d121e47459fb304ac88c5e058a2a91ed
+  SideMenu: 928a015669c3afc201e1fe3a87f1b0bc8993a664
   SVGKit: 652cdf7bef8bec8564d04a8511d3ab50c7595fac
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: a492d4c37e0b4b3e6c5412ef583f7a6875101055
+PODFILE CHECKSUM: 28e06682543ca1646884191bb5f9601dd8cc160e
 
 COCOAPODS: 1.6.1

@@ -216,6 +216,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             let view = tableView.dequeueReusableCell(withIdentifier: "SegmentHeaderCell") as! SegmentHeaderCell
             view.segmentControl.selectedSegmentIndex = sectionToDisplay.rawValue
             view.segmentControl.tintColor = API42Manager.shared.preferedPrimaryColor
+            if #available(iOS 13.0, *) {
+                view.segmentControl.selectedSegmentTintColor = API42Manager.shared.preferedPrimaryColor
+            }
             view.topLine.backgroundColor = API42Manager.shared.preferedPrimaryColor
             view.bottomLine.backgroundColor = API42Manager.shared.preferedPrimaryColor
             view.segmentCallback = { section in

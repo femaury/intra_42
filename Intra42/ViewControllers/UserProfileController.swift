@@ -194,6 +194,9 @@ extension UserProfileController {
             let view = tableView.dequeueReusableCell(withIdentifier: "SegmentHeaderCell") as! SegmentHeaderCell
             view.segmentControl.selectedSegmentIndex = sectionToDisplay.rawValue
             view.segmentControl.tintColor = coalitionColor
+            if #available(iOS 13.0, *) {
+                view.segmentControl.selectedSegmentTintColor = coalitionColor
+            }
             view.topLine.backgroundColor = coalitionColor
             view.bottomLine.backgroundColor = coalitionColor
             view.segmentCallback = { [weak self] (section) in

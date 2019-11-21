@@ -19,9 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         Fabric.with([Crashlytics.self])
 
-        SideMenuManager.default.menuPresentMode = .menuSlideIn
-        SideMenuManager.default.menuFadeStatusBar = false
-        SideMenuManager.default.menuAnimationFadeStrength = 0.2
+//        SideMenuManager.default.menuPresentMode = .menuSlideIn
+//        SideMenuManager.default.menuFadeStatusBar = false
+//        SideMenuManager.default.menuAnimationFadeStrength = 0.2
 
 //        self.window?.backgroundColor = UIColor.white
 

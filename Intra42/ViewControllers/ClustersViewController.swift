@@ -54,6 +54,7 @@ class ClustersViewController: UIViewController {
         navigationItem.titleView = searchBar
         
         clustersView.delegate = self
+        clustersView.clearUserImages()
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapHandler))
         tapGesture.cancelsTouchesInView = false
@@ -71,7 +72,11 @@ class ClustersViewController: UIViewController {
         topStackView.addArrangedSubview(activityIndicator)
         loadClusterLocations(floor: 1)
         
-        segmentedControl.tintColor = API42Manager.shared.preferedPrimaryColor
+        if #available(iOS 13.0, *) {
+            segmentedControl.selectedSegmentTintColor = API42Manager.shared.preferedPrimaryColor
+        } else {
+            segmentedControl.tintColor = API42Manager.shared.preferedPrimaryColor
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

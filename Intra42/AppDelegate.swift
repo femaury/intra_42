@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SideMenuManager.default.menuFadeStatusBar = false
         SideMenuManager.default.menuAnimationFadeStrength = 0.2
 
-        self.window?.backgroundColor = UIColor.white
+//        self.window?.backgroundColor = UIColor.white
 
         let homeController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "HomeTabBarController")
         for child in homeController.children {

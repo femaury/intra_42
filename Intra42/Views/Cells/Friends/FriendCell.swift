@@ -38,7 +38,12 @@ class FriendCell: UITableViewCell, UserProfileCell {
             let color = API42Manager.shared.preferedPrimaryColor
             usernameLabel.text = friend.username
             usernameLabel.textColor = color
-            callButton.tintColor = color
+            if friend.phone == "hidden" {
+                callButton.isEnabled = false
+            } else {
+                callButton.isEnabled = true
+                callButton.tintColor = color
+            }
             emailButton.tintColor = color
             userId = friend.id
         }

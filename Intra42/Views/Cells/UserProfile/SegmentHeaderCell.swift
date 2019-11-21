@@ -16,13 +16,15 @@ class SegmentHeaderCell: UITableViewCell {
     
     var segmentCallback: ((Int) -> Void)?
     
-//    override func layoutSubviews() {
-//        super.layoutSubviews()
-//
-//        let borderBottom = UIView(frame: CGRect(x: 0, y: 34, width: self.frame.width, height: 1))
-//        borderBottom.backgroundColor = .lightGray
-//        self.addSubview(borderBottom)
-//    }
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        if #available(iOS 13.0, *) {
+            segmentControl.selectedSegmentTintColor = API42Manager.shared.preferedPrimaryColor
+        } else {
+            segmentControl.tintColor = API42Manager.shared.preferedPrimaryColor
+        }
+    }
     
     @IBAction func changeSections(_ sender: UISegmentedControl) {
         guard let callback = segmentCallback else { return }

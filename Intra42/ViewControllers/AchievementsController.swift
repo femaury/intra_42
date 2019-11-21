@@ -31,7 +31,7 @@ class AchievementsController: UIViewController {
                                                         "Gold",
                                                         "Platinum"]
         searchController.searchBar.delegate = self
-        searchController.searchBar.tintColor = .black
+//        searchController.searchBar.tintColor = .black
         navigationItem.searchController = searchController
         definesPresentationContext = true
         

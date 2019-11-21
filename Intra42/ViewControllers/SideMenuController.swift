@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class SideMenuController: UIViewController {
     
@@ -22,7 +23,7 @@ class SideMenuController: UIViewController {
         ("Settings", UIImage(named: "settings")),
         ("Logout", UIImage(named: "shutdown"))
     ]
-    let disabledItems = [0, 1, 2] // Unfinished pages
+    let disabledItems = [1, 2] // Unfinished pages
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +57,14 @@ extension SideMenuController: UITableViewDelegate, UITableViewDataSource {
         case 1:
             performSegue(withIdentifier: "VideosSegue", sender: self)
         case 2:
-            performSegue(withIdentifier: "ForumsSegue", sender: self)
+            let urlString = "https://stackoverflow.com/c/42network"
+            if let url = URL(string: urlString) {
+                let safariVC = SFSafariViewController(url: url)
+                safariVC.modalPresentationStyle = .overFullScreen
+                
+                self.present(safariVC, animated: true, completion: nil)
+            }
+//            performSegue(withIdentifier: "ForumsSegue", sender: self)
         case 3:
             performSegue(withIdentifier: "CoalitionsSegue", sender: self)
         case 4:

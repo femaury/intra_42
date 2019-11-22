@@ -26,6 +26,8 @@ class API42Manager {
     
     /// Shared instance of API42Manager
     static let shared = API42Manager()
+    /// Base URL for API
+    let baseURL = "https://api.intra.42.fr/v2/"
     /// API app ID key
     let clientId = "YOUR_42_API_APP_UID"
     /// API app secret key
@@ -96,9 +98,9 @@ class API42Manager {
      Calls `/v2/me` to create instance of `UserProfile` and get coalition info
      */
     func setupAPIData() {
-        
+
         // Get info about current token user
-        request(url: "https://api.intra.42.fr/v2/me") { (responseJSON) in
+        request(url: baseURL + "me") { (responseJSON) in
             guard let data = responseJSON else { return }
             self.userProfile = UserProfile(data: data)
             
@@ -254,7 +256,7 @@ class API42Manager {
     // TEMPORARY: - Simple data return calls 
     
     func getProject(withId id: Int, completionHandler: @escaping (JSON?) -> Void) {
-        let projectURL = "https://api.intra.42.fr/v2/projects/\(id)"
+        let projectURL = baseURL + "projects/\(id)"
         
         request(url: projectURL) { (data) in
             completionHandler(data)
@@ -264,7 +266,7 @@ class API42Manager {
 // This takes way too long and returns ALL the projects... To fix.
 //    func getAllProjects(page: Int) {
 //        guard let cursusId = userProfile?.mainCursusId else { return }
-//        let locationURL = "https://api.intra.42.fr/v2/cursus/\(cursusId)/projects?sort=name&filter[visible]=true&page[number]=\(page)&page[size]=100"
+//        let locationURL = baseURL + "cursus/\(cursusId)/projects?sort=name&filter[visible]=true&page[number]=\(page)&page[size]=100"
 //
 //        request(url: locationURL) { (data) in
 //            guard let data = data  else {

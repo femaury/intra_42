@@ -18,7 +18,7 @@ extension API42Manager {
      - completionHandler: Called with received JSON data.
      */
     func getTeam(withId id: Int, completionHandler: @escaping (JSON?) -> Void) {
-        let projectURL = "https://api.intra.42.fr/v2/teams?filter[id]=\(id)"
+        let projectURL = baseURL + "teams?filter[id]=\(id)"
         
         request(url: projectURL) { (data) in
             completionHandler(data)
@@ -34,7 +34,7 @@ extension API42Manager {
      - completionHandler: Called with array of 'ProjectTeam'. Empty if error.
      */
     func getTeam(forUserId id: Int, projectId: Int, completionHandler: @escaping ([ProjectTeam]) -> Void) {
-        let projectURL = "https://api.intra.42.fr/v2/users/\(id)/teams?filter[project_id]=\(projectId)"
+        let projectURL = baseURL + "users/\(id)/teams?filter[project_id]=\(projectId)"
         
         request(url: projectURL) { (data) in
             guard let teams = data?.array?.reversed() else {

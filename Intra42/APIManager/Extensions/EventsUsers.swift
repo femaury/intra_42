@@ -11,7 +11,7 @@ import Foundation
 extension API42Manager {
     
     func getEventUserId(forEventId id: Int, userId: Int, completionHandler: @escaping (Int?) -> Void) {
-        let url = "https://api.intra.42.fr/v2/users/\(userId)/events_users?filter[event_id]=\(id)"
+        let url = baseURL + "users/\(userId)/events_users?filter[event_id]=\(id)"
         
         request(url: url) { (eventUser) in
             guard let eventUser = eventUser?.array else {
@@ -30,16 +30,16 @@ extension API42Manager {
         }
         switch method {
         case .post:
-            let url = "https://api.intra.42.fr/v2/events_users?events_user[event_id]=\(id)&events_user[user_id]=\(userId)"
+            let url = baseURL + "events_users?events_user[event_id]=\(id)&events_user[user_id]=\(userId)"
             _modifyEvent(url: url, method: method, completiondHandler: completionHandler)
         case .delete:
             getEventUserId(forEventId: id, userId: userId) { [weak self] (eventUserId) in
-                guard let eventUserId = eventUserId else {
+                guard let eventUserId = eventUserId, let self = self else {
                     completionHandler(false)
                     return
                 }
-                let url = "https://api.intra.42.fr/v2/events_users/\(eventUserId)"
-                self?._modifyEvent(url: url, method: method, completiondHandler: completionHandler)
+                let url = self.baseURL + "events_users/\(eventUserId)"
+                self._modifyEvent(url: url, method: method, completiondHandler: completionHandler)
             }
         default:
             completionHandler(false)

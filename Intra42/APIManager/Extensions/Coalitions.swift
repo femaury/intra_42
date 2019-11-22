@@ -21,7 +21,7 @@ extension API42Manager {
         `"default"`, `Colors.intraTeal`, `""` on error.
      */
     func getCoalitionInfo(forUserId id: Int, completionHandler: @escaping (String, UIColor?, String) -> Void) {
-        request(url: "https://api.intra.42.fr/v2/users/\(id)/coalitions") { (responseJSON) in
+        request(url: baseURL + "users/\(id)/coalitions") { (responseJSON) in
             guard let data = responseJSON, data.isEmpty == false else {
                 completionHandler("default", Colors.intraTeal, "")
                 return

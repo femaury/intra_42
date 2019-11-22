@@ -19,7 +19,7 @@ extension API42Manager {
         Empty on error.
      */
     func getScales(completionHandler: @escaping ([Correction]) -> Void) {
-        let scalesURL = "https://api.intra.42.fr/v2/me/scale_teams?page[size]=100"
+        let scalesURL = baseURL + "me/scale_teams?page[size]=100"
         var corrections: [Correction] = []
         
         request(url: scalesURL) { (data) in

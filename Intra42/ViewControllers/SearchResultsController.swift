@@ -91,10 +91,10 @@ class SearchResultsController: UITableViewController, SearchResultsDataSource {
             if self.userProfilePictures.keys.contains(id) { continue }
             self.getProfilePictureOfUser(withId: id, login: login)
         }
-//        if section == .firstName {
+        if section == .lastName || !self.loginSearchResults.isEmpty || !self.firstNameSearchResults.isEmpty {
             self.isLoadingSearchData = false
-//        }
-        self.tableView.reloadData()
+            self.tableView.reloadData()
+        }
     }
     
     func getProfilePictureOfUser(withId id: Int, login: String) {

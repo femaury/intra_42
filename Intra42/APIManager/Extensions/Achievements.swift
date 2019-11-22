@@ -20,7 +20,7 @@ extension API42Manager {
      - Parameter completionHandler: Closure called with all achievements. Empty on errors.
      */
     func getAllAchievements(completionHandler: @escaping ([String: Achievement]) -> Void) {
-        let achievementsURL = "https://api.intra.42.fr/v2/achievements?page[size]=100"
+        let achievementsURL = baseURL + "achievements?page[size]=100"
         
         request(url: achievementsURL) { (data) in
             guard let data = data else {

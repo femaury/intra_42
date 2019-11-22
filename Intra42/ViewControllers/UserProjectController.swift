@@ -40,7 +40,8 @@ class UserProjectController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "UserProfileSegue" {
             if let id = correctorId, let destination = segue.destination as? UserProfileController {
-                API42Manager.shared.request(url: "https://api.intra.42.fr/v2/users/\(id)") { (data) in
+                let url = API42Manager.shared.baseURL + "users/\(id)"
+                API42Manager.shared.request(url: url) { (data) in
                     guard let data = data else { return }
                     destination.userProfile = UserProfile(data: data)
                     if let userId = destination.userProfile?.userId {

@@ -19,7 +19,7 @@ extension API42Manager {
         - completionHandler: Called with array of returned JSON value. Empty on error.
      */
     func getFutureEvents(forCampusId campusId: Int, cursusId: Int, completionHandler: @escaping ([JSON]) -> Void) {
-        let eventsURL = "https://api.intra.42.fr/v2/campus/\(campusId)/cursus/\(cursusId)/events?filter[future]=true&page[size]=100"
+        let eventsURL = baseURL + "campus/\(campusId)/cursus/\(cursusId)/events?filter[future]=true&page[size]=100"
         
         request(url: eventsURL) { (eventsData) in
             guard let eventsData = eventsData else {
@@ -38,7 +38,7 @@ extension API42Manager {
      - completionHandler: Called with array of returned JSON value. Empty on error.
      */
     func getFutureEvents(forUserId id: Int, completionHandler: @escaping ([JSON]) -> Void) {
-        let eventsURL = "https://api.intra.42.fr/v2/users/\(id)/events?filter[future]=true&page[size]=100"
+        let eventsURL = baseURL + "users/\(id)/events?filter[future]=true&page[size]=100"
         
         request(url: eventsURL) { (eventsData) in
             guard let eventsData = eventsData else {

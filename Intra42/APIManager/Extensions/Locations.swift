@@ -22,7 +22,7 @@ extension API42Manager {
         - completionHandler: Called with array of received JSON data.
      */
     func getLocations(forCampusId id: Int, page: Int, completionHandler: @escaping ([JSON]) -> Void) {
-        let locationURL = "https://api.intra.42.fr/v2/campus/\(id)/locations?filter[active]=true&page[number]=\(page)&page[size]=100"
+        let locationURL = baseURL + "campus/\(id)/locations?filter[active]=true&page[number]=\(page)&page[size]=100"
         
         request(url: locationURL) { (data) in
             guard let data = data  else {
@@ -51,7 +51,7 @@ extension API42Manager {
      - completionHandler: Called with array of `LocationLog`. Empty on error.
      */
     func getLogs(forUserId id: Int, completionHandler: @escaping ([LocationLog]) -> Void) {
-        API42Manager.shared.request(url: "https://api.intra.42.fr/v2/locations?filter[user_id]=\(id)&page[size]=100") { (data) in
+        API42Manager.shared.request(url: baseURL + "locations?filter[user_id]=\(id)&page[size]=100") { (data) in
             guard let logs = data?.arrayValue else {
                 completionHandler([])
                 return

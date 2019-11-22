@@ -23,7 +23,8 @@ extension UserProfileDataSource {
     
     func showUserProfileController(atDestination destination: UserProfileController) {
         if let cell = self.selectedCell {
-            API42Manager.shared.request(url: "https://api.intra.42.fr/v2/users/\(cell.userId)") { (data) in
+            let url = API42Manager.shared.baseURL + "users/\(cell.userId)"
+            API42Manager.shared.request(url: url) { (data) in
                 guard let data = data else { return }
                 destination.userProfile = UserProfile(data: data)
                 if let userId = destination.userProfile?.userId {

@@ -29,7 +29,7 @@ class CoalitionsViewController: UIViewController {
 
         if let cursusId = API42Manager.shared.userProfile?.mainCursusId,
             let campusId = API42Manager.shared.userProfile?.mainCampusId {
-            let url = "https://api.intra.42.fr/v2/blocs?filter[cursus_id]=\(cursusId)&filter[campus_id]=\(campusId)"
+            let url = API42Manager.shared.baseURL + "blocs?filter[cursus_id]=\(cursusId)&filter[campus_id]=\(campusId)"
             API42Manager.shared.request(url: url) { [weak self] (data) in
                 guard let bloc = data?.array?.first else {
                     let errorLabel = UILabel()

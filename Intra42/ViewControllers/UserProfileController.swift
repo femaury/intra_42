@@ -100,7 +100,8 @@ class UserProfileController: UITableViewController {
             tableView.refreshControl?.endRefreshing()
             return
         }
-        API42Manager.shared.request(url: "https://api.intra.42.fr/v2/users/\(id)") { [weak self] (data) in
+        let url = API42Manager.shared.baseURL + "users/\(id)"
+        API42Manager.shared.request(url: url) { [weak self] (data) in
             guard let self = self, let data = data else { return }
             self.userProfile = UserProfile(data: data)
             if let userId = self.userProfile?.userId {

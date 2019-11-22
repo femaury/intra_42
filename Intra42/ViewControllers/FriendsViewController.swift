@@ -96,7 +96,8 @@ class FriendsViewController: UIViewController {
             friendIds.append(String(friend.id))
         }
         let idString = friendIds.joined(separator: ",")
-        API42Manager.shared.request(url: "https://api.intra.42.fr/v2/locations?filter[user_id]=\(idString)&filter[active]=true") { (data) in
+        let url = API42Manager.shared.baseURL + "locations?filter[user_id]=\(idString)&filter[active]=true"
+        API42Manager.shared.request(url: url) { (data) in
             guard let data = data else { return }
             print(data)
             for connection in data.arrayValue {

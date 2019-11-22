@@ -122,6 +122,7 @@ class ClustersView: UIView {
             for case let post as ClusterPost in row.arrangedSubviews {
                 if post.tag == ClusterPost.NoPostTag {
                     post.imageView.backgroundColor = UIColor.black
+                    post.imageView.image = nil
                     continue
                 }
                 
@@ -212,21 +213,39 @@ class ClustersView: UIView {
     func clearUserImages() {
         for case let row as UIStackView in leftRows.arrangedSubviews {
             for case let post as ClusterPost in row.arrangedSubviews {
-                post.contentView.backgroundColor = UIColor.white
+                if #available(iOS 13.0, *) {
+                    post.contentView.backgroundColor = .systemBackground
+                } else {
+                    post.contentView.backgroundColor = .white
+                }
+                post.userId = -1
+                post.userName = nil
                 post.imageView.layer.cornerRadius = 0
                 post.imageView.image = defaultImage
             }
         }
         for case let row as UIStackView in centerRows.arrangedSubviews {
             for case let post as ClusterPost in row.arrangedSubviews {
-                post.contentView.backgroundColor = UIColor.white
+                if #available(iOS 13.0, *) {
+                    post.contentView.backgroundColor = .systemBackground
+                } else {
+                    post.contentView.backgroundColor = .white
+                }
+                post.userId = -1
+                post.userName = nil
                 post.imageView.layer.cornerRadius = 0
                 post.imageView.image = defaultImage
             }
         }
         for case let row as UIStackView in rightRows.arrangedSubviews {
             for case let post as ClusterPost in row.arrangedSubviews {
-                post.contentView.backgroundColor = UIColor.white
+                if #available(iOS 13.0, *) {
+                    post.contentView.backgroundColor = .systemBackground
+                } else {
+                    post.contentView.backgroundColor = .white
+                }
+                post.userId = -1
+                post.userName = nil
                 post.imageView.layer.cornerRadius = 0
                 post.imageView.image = defaultImage
             }

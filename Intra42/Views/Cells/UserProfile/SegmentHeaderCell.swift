@@ -19,9 +19,11 @@ class SegmentHeaderCell: UITableViewCell {
 //    override func layoutSubviews() {
 //        super.layoutSubviews()
 //
-//        let borderBottom = UIView(frame: CGRect(x: 0, y: 34, width: self.frame.width, height: 1))
-//        borderBottom.backgroundColor = .lightGray
-//        self.addSubview(borderBottom)
+//        if #available(iOS 13.0, *) {
+//            segmentControl.selectedSegmentTintColor = segmentColor
+//        } else {
+//            segmentControl.tintColor = segmentColor
+//        }
 //    }
     
     @IBAction func changeSections(_ sender: UISegmentedControl) {

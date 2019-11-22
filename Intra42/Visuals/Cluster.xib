@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="ab9-Df-syF" userLabel="Left Stack View">
-                    <rect key="frame" x="20" y="20" width="245" height="715"/>
+                    <rect key="frame" x="20" y="0.0" width="245" height="715"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="frO-iC-4w4">
                             <rect key="frame" x="0.0" y="0.0" width="245" height="55"/>
@@ -46,7 +44,6 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstItem="2v6-sY-NNS" firstAttribute="centerX" secondItem="bxX-BA-yKj" secondAttribute="centerX" id="49Z-o3-Cu9"/>
                                         <constraint firstAttribute="width" constant="35" id="Irc-Vs-0hy"/>
@@ -73,7 +70,6 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="35" id="J3y-du-QaN"/>
                                         <constraint firstItem="ihu-mc-dC2" firstAttribute="top" secondItem="vtZ-82-zt4" secondAttribute="top" constant="3" id="NcT-1M-VEp"/>
@@ -100,7 +96,6 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="N6V-MS-tdK" secondAttribute="bottom" constant="3" id="67R-sc-KbN"/>
                                         <constraint firstAttribute="width" constant="35" id="F4f-Ry-c4i"/>
@@ -127,7 +122,6 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="35" id="7kJ-4v-KxE"/>
                                         <constraint firstAttribute="bottom" secondItem="D8f-U6-3bP" secondAttribute="bottom" constant="3" id="KEM-Rq-hQS"/>
@@ -154,7 +148,6 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="35" id="HR4-Cd-op4"/>
                                         <constraint firstItem="Kox-hX-arc" firstAttribute="top" secondItem="jmc-yK-tBD" secondAttribute="top" constant="3" id="VGd-Rd-Jub"/>
@@ -181,7 +174,6 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstItem="vNI-Pz-vV5" firstAttribute="top" secondItem="dk8-Ft-Y2d" secondAttribute="top" constant="3" id="IcX-9q-img"/>
                                         <constraint firstAttribute="width" constant="35" id="LIl-Ry-UcM"/>
@@ -208,7 +200,6 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstItem="UJ5-fT-Uam" firstAttribute="top" secondItem="q27-Wc-NCq" secondAttribute="top" constant="3" id="EH6-3U-Nks"/>
                                         <constraint firstItem="UJ5-fT-Uam" firstAttribute="centerX" secondItem="q27-Wc-NCq" secondAttribute="centerX" id="H5N-oX-mgJ"/>
@@ -2470,7 +2461,7 @@
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="93V-U7-hcf" userLabel="Left Numbers Stack">
-                    <rect key="frame" x="280" y="32.5" width="37.5" height="690"/>
+                    <rect key="frame" x="280" y="12.5" width="37.5" height="690"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R13" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKQ-g6-MzB">
                             <rect key="frame" x="0.0" y="0.0" width="37.5" height="30"/>
@@ -2556,7 +2547,7 @@
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="8pe-Qi-wFa" userLabel="Center Stack View">
-                    <rect key="frame" x="332.5" y="75" width="315" height="605"/>
+                    <rect key="frame" x="332.5" y="55" width="315" height="605"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NGA-1y-SB9">
                             <rect key="frame" x="0.0" y="0.0" width="315" height="55"/>
@@ -5240,7 +5231,7 @@
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="mBB-w5-xAU" userLabel="Left Numbers Stack">
-                    <rect key="frame" x="662.5" y="32.5" width="37.5" height="690"/>
+                    <rect key="frame" x="662.5" y="12.5" width="37.5" height="690"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R13" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Icw-Bi-SVe">
                             <rect key="frame" x="0.0" y="0.0" width="37.5" height="30"/>
@@ -5326,7 +5317,7 @@
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="6EH-9V-wCk" userLabel="Right Stack View">
-                    <rect key="frame" x="715" y="20" width="245" height="715"/>
+                    <rect key="frame" x="715" y="0.0" width="245" height="715"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mfP-9u-Ylo">
                             <rect key="frame" x="0.0" y="0.0" width="245" height="55"/>
@@ -7853,7 +7844,6 @@
                     </subviews>
                 </stackView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="6EH-9V-wCk" firstAttribute="centerY" secondItem="mBB-w5-xAU" secondAttribute="centerY" id="HB2-P9-dmT"/>
                 <constraint firstItem="mBB-w5-xAU" firstAttribute="centerY" secondItem="8pe-Qi-wFa" secondAttribute="centerY" id="Jct-mt-URl"/>

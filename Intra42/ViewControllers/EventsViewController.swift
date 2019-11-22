@@ -8,7 +8,7 @@
 
 import UIKit
 
-// TODO: Fix buggly refresh control...
+// TODO: Fix buggy refresh control...
 class EventsViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
@@ -25,9 +25,22 @@ class EventsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Fixes navbar color bug when extended for search controller
+        if #available(iOS 13.0, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.backgroundColor = .systemBackground
+            navigationItem.standardAppearance = appearance
+            navigationItem.scrollEdgeAppearance = appearance
+        }
 
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.addTarget(self, action: #selector(segmentValueChanged), for: .valueChanged)
+        if #available(iOS 13.0, *) {
+            segmentedControl.selectedSegmentTintColor = API42Manager.shared.preferedPrimaryColor
+        } else {
+            segmentedControl.tintColor = API42Manager.shared.preferedPrimaryColor
+        }
         navigationItem.titleView = segmentedControl
         
         searchController.searchResultsUpdater = self
@@ -41,7 +54,7 @@ class EventsViewController: UIViewController {
                                                         "Conf",
                                                         "Others"]
         searchController.searchBar.delegate = self
-        searchController.searchBar.tintColor = .black
+//        searchController.searchBar.tintColor = .black
         navigationItem.searchController = searchController
         definesPresentationContext = true
         

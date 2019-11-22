@@ -17,6 +17,8 @@ class UserHeaderCell: UITableViewCell {
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var campusLabel: UILabel!
     @IBOutlet weak var piscineLabel: UILabel!
+    @IBOutlet weak var phoneButton: UIButton!
+    @IBOutlet weak var mailButton: UIButton!
     
     @IBOutlet weak var levelView: UIView!
     @IBOutlet weak var progressView: UIView!
@@ -74,6 +76,13 @@ class UserHeaderCell: UITableViewCell {
                 
                 userId = userProfile?.userId
                 phoneNumber = userProfile?.phoneNumber
+                
+                if phoneNumber == "hidden" {
+                    phoneButton.isEnabled = false
+                } else {
+                    phoneButton.isEnabled = true
+                }
+                
                 emailAddress = userProfile?.email
                 
                 if let location = userProfile?.location {

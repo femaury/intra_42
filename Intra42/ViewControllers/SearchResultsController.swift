@@ -39,6 +39,14 @@ class SearchResultsController: UITableViewController, SearchResultsDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Fixes navbar background color bug in iOS 13
+        if #available(iOS 13.0, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.backgroundColor = .systemBackground
+            navigationItem.standardAppearance = appearance
+            navigationItem.scrollEdgeAppearance = appearance
+        }
 
         tableView.separatorStyle = .none
         tableView.sectionHeaderHeight = 50

@@ -18,17 +18,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         Fabric.with([Crashlytics.self])
-
-        SideMenuManager.default.menuPresentMode = .menuSlideIn
-        SideMenuManager.default.menuFadeStatusBar = false
-        SideMenuManager.default.menuAnimationFadeStrength = 0.2
-
-        self.window?.backgroundColor = UIColor.white
+        
+        let color = API42Manager.shared.preferedPrimaryColor
 
         let homeController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "HomeTabBarController")
         for child in homeController.children {
             guard let navController = child as? UINavigationController else { continue }
-            navController.navigationBar.tintColor = Colors.intraTeal
+            navController.navigationBar.tintColor = color ?? Colors.intraTeal
+            if #available(iOS 13.0, *) {
+                let appearance = UINavigationBarAppearance()
+                appearance.backgroundColor = .systemBackground
+                navController.navigationItem.standardAppearance = appearance
+                navController.navigationItem.scrollEdgeAppearance = appearance
+            }
         }
 
         if API42Manager.shared.hasOAuthToken() == true {

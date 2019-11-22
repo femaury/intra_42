@@ -20,6 +20,14 @@ class AchievementsController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Fixes navbar color bug when extended for search controller
+        if #available(iOS 13.0, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.backgroundColor = .systemBackground
+            navigationItem.standardAppearance = appearance
+            navigationItem.scrollEdgeAppearance = appearance
+        }
         
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
@@ -31,7 +39,6 @@ class AchievementsController: UIViewController {
                                                         "Gold",
                                                         "Platinum"]
         searchController.searchBar.delegate = self
-        searchController.searchBar.tintColor = .black
         navigationItem.searchController = searchController
         definesPresentationContext = true
         
@@ -62,6 +69,13 @@ class AchievementsController: UIViewController {
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.addTarget(self, action: #selector(refreshTable), for: .valueChanged)
         tableView.refreshControl = refreshControl
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        navigationController?.view.setNeedsLayout() // force update layout
+        navigationController?.view.layoutIfNeeded() // to fix height of the navigation bar
     }
     
     @objc func refreshTable() {

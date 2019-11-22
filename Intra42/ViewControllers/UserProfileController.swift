@@ -28,6 +28,14 @@ class UserProfileController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Fixes navbar background color bug in iOS 13
+        if #available(iOS 13.0, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.backgroundColor = .systemBackground
+            navigationItem.standardAppearance = appearance
+            navigationItem.scrollEdgeAppearance = appearance
+        }
+        
         let refreshControl = UIRefreshControl()
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.addTarget(self, action: #selector(refreshTable), for: .valueChanged)
@@ -43,6 +51,13 @@ class UserProfileController: UITableViewController {
         userActions = UserActions(removeFriendClosure: removeClosure, cancelClosure: nil)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        navigationController?.view.setNeedsLayout() // force update layout
+        navigationController?.view.layoutIfNeeded() // to fix height of the navigation bar
+    }
+        
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "UserProjectSegue" {
             if let destination = segue.destination as? UserProjectController {
@@ -194,6 +209,9 @@ extension UserProfileController {
             let view = tableView.dequeueReusableCell(withIdentifier: "SegmentHeaderCell") as! SegmentHeaderCell
             view.segmentControl.selectedSegmentIndex = sectionToDisplay.rawValue
             view.segmentControl.tintColor = coalitionColor
+            if #available(iOS 13.0, *) {
+                view.segmentControl.selectedSegmentTintColor = coalitionColor
+            }
             view.topLine.backgroundColor = coalitionColor
             view.bottomLine.backgroundColor = coalitionColor
             view.segmentCallback = { [weak self] (section) in

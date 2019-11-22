@@ -49,11 +49,20 @@ class ClustersViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Fixes navbar background color bug in iOS 13
+        if #available(iOS 13.0, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.backgroundColor = .systemBackground
+            navigationItem.standardAppearance = appearance
+            navigationItem.scrollEdgeAppearance = appearance
+        }
+        
         setupSearchBar()
         searchBar.delegate = self
         navigationItem.titleView = searchBar
         
         clustersView.delegate = self
+        clustersView.clearUserImages()
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapHandler))
         tapGesture.cancelsTouchesInView = false
@@ -68,10 +77,17 @@ class ClustersViewController: UIViewController {
         
         activityIndicator.hidesWhenStopped = true
         activityIndicator.startAnimating()
+        if #available(iOS 13.0, *) {
+            activityIndicator.style = .medium
+        }
         topStackView.addArrangedSubview(activityIndicator)
         loadClusterLocations(floor: 1)
         
-        segmentedControl.tintColor = API42Manager.shared.preferedPrimaryColor
+        if #available(iOS 13.0, *) {
+            segmentedControl.selectedSegmentTintColor = API42Manager.shared.preferedPrimaryColor
+        } else {
+            segmentedControl.tintColor = API42Manager.shared.preferedPrimaryColor
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

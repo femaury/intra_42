@@ -12,7 +12,11 @@ extension UIImageView {
     public func imageFrom(urlString: String) {
         let activityIndicator = UIActivityIndicatorView()
         activityIndicator.hidesWhenStopped = true
-        activityIndicator.style = .white
+        if #available(iOS 13.0, *) {
+            activityIndicator.style = .medium
+        } else {
+            activityIndicator.style = .white
+        }
         activityIndicator.startAnimating()
         self.addSubview(activityIndicator)
         if let url = URL(string: urlString) {

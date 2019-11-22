@@ -33,6 +33,14 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Fixes navbar background color bug in iOS 13
+        if #available(iOS 13.0, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.backgroundColor = .systemBackground
+            navigationItem.standardAppearance = appearance
+            navigationItem.scrollEdgeAppearance = appearance
+        }
 
         API42Manager.shared.userProfileCompletionHandler = { userProfile in
             if userProfile == nil { return }
@@ -42,16 +50,12 @@ class HomeViewController: UIViewController {
             self.tableView.reloadData()
         }
         API42Manager.shared.coalitionColorCompletionHandler = { color in
-//            self.tabBarController?.tabBar.barTintColor = color
             
             self.tabBarController?.tabBar.tintColor = color
 
             if let children = self.tabBarController?.children {
                 for child in children {
                     guard let navController = child as? UINavigationController else { continue }
-//                    navController.navigationBar.barTintColor = color
-//                    navController.navigationBar.tintColor = UIColor.black
-                    
                     navController.navigationBar.tintColor = color
                 }
             }
@@ -72,17 +76,6 @@ class HomeViewController: UIViewController {
         tableView.refreshControl = refreshControl
         tableView.keyboardDismissMode = .onDrag
         tableView.register(LogsTableCell.self, forCellReuseIdentifier: "LogsTableCell")
-        
-//        tabBarController?.tabBar.barTintColor = Colors.intraTeal
-//        tabBarController?.tabBar.tintColor = UIColor.black
-//        tabBarController?.tabBar.unselectedItemTintColor = UIColor.white
-
-        tabBarController?.tabBar.tintColor = Colors.intraTeal
-
-//        navigationController?.navigationBar.barTintColor = Colors.intraTeal
-//        navigationController?.navigationBar.tintColor = UIColor.black
-
-        navigationController?.navigationBar.tintColor = Colors.intraTeal
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -216,6 +209,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             let view = tableView.dequeueReusableCell(withIdentifier: "SegmentHeaderCell") as! SegmentHeaderCell
             view.segmentControl.selectedSegmentIndex = sectionToDisplay.rawValue
             view.segmentControl.tintColor = API42Manager.shared.preferedPrimaryColor
+            if #available(iOS 13.0, *) {
+                view.segmentControl.selectedSegmentTintColor = API42Manager.shared.preferedPrimaryColor
+            }
             view.topLine.backgroundColor = API42Manager.shared.preferedPrimaryColor
             view.bottomLine.backgroundColor = API42Manager.shared.preferedPrimaryColor
             view.segmentCallback = { section in

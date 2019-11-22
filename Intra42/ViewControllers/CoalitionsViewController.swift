@@ -16,6 +16,16 @@ class CoalitionsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Fixes navbar background color bug in iOS 13
+        if #available(iOS 13.0, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.backgroundColor = .systemBackground
+            navigationItem.standardAppearance = appearance
+            navigationItem.scrollEdgeAppearance = appearance
+            
+            activityIndicator.style = .large
+        }
 
         if let cursusId = API42Manager.shared.userProfile?.mainCursusId,
             let campusId = API42Manager.shared.userProfile?.mainCampusId {
@@ -62,5 +72,12 @@ class CoalitionsViewController: UIViewController {
                 self?.activityIndicator.isHidden = true
             }
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        navigationController?.view.setNeedsLayout() // force update layout
+        navigationController?.view.layoutIfNeeded() // to fix height of the navigation bar
     }
 }

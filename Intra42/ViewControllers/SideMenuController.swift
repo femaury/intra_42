@@ -29,17 +29,23 @@ class SideMenuController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        SideMenuManager.default.leftMenuNavigationController?.settings.presentationStyle = .menuSlideIn
-
-//        let logoView = UIImageView(image: UIImage(named: "42_logo"))
-//        logoView.contentMode = .scaleAspectFit
-//        navigationItem.titleView = logoView
-//        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-//        navigationController?.navigationBar.shadowImage = UIImage()
-//        navigationController?.navigationBar.isTranslucent = true
+        // Fixes navbar background color bug in iOS 13
+        if #available(iOS 13.0, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.backgroundColor = .systemBackground
+            navigationItem.standardAppearance = appearance
+            navigationItem.scrollEdgeAppearance = appearance
+        }
         
         tableView.contentInset = UIEdgeInsets(top: 25, left: 0, bottom: 0, right: 0)
         UIApplication.shared.keyWindow?.endEditing(true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        navigationController?.view.setNeedsLayout() // force update layout
+        navigationController?.view.layoutIfNeeded() // to fix height of the navigation bar
     }
 }
 

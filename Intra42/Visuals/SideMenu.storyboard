@@ -12,7 +12,7 @@
         <!--Side Menu-->
         <scene sceneID="WWQ-nh-ebv">
             <objects>
-                <viewController title="Side Menu" id="0J7-5Z-z7y" customClass="SideMenuController" customModule="Intra42" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Side Menu" modalPresentationStyle="fullScreen" id="0J7-5Z-z7y" customClass="SideMenuController" customModule="Intra42" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fnX-q6-0BK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -53,7 +53,7 @@
         <!--Settings-->
         <scene sceneID="FFB-cN-pvs">
             <objects>
-                <viewController title="Settings" id="EXR-kY-yaD" customClass="SettingsViewController" customModule="Intra42" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Settings" modalPresentationStyle="fullScreen" id="EXR-kY-yaD" customClass="SettingsViewController" customModule="Intra42" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SIt-rw-20n">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -219,7 +219,7 @@
         <!--About-->
         <scene sceneID="9Jt-1S-CM7">
             <objects>
-                <viewController title="About" id="a1X-4g-9QV" customClass="AboutViewController" customModule="Intra42" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="About" modalPresentationStyle="fullScreen" id="a1X-4g-9QV" customClass="AboutViewController" customModule="Intra42" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uB4-ca-Qv9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1400"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -438,7 +438,7 @@ Cheers 😉</string>
         <!--Achievements-->
         <scene sceneID="x1I-bh-g2a">
             <objects>
-                <viewController title="Achievements" id="cAB-jJ-CN9" customClass="AchievementsController" customModule="Intra42" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Achievements" modalPresentationStyle="fullScreen" id="cAB-jJ-CN9" customClass="AchievementsController" customModule="Intra42" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="leB-DB-AR1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -557,7 +557,7 @@ Cheers 😉</string>
                                             <outlet property="titleLabel" destination="cid-6C-cKk" id="hw7-bk-fUH"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="LoadingIndicatorCell" rowHeight="75" id="I2r-rv-gkc" customClass="UserResultCell" customModule="Intra42" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="LoadingIndicatorCell" rowHeight="75" id="I2r-rv-gkc" customClass="LoadingCell" customModule="Intra42" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="178" width="414" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="I2r-rv-gkc" id="eKP-2Z-x3y">
@@ -577,6 +577,9 @@ Cheers 😉</string>
                                                 <constraint firstItem="foL-Ga-ecY" firstAttribute="centerY" secondItem="eKP-2Z-x3y" secondAttribute="centerY" id="JCi-h5-BWO"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="activityIndicator" destination="foL-Ga-ecY" id="50g-qa-jwK"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -605,7 +608,7 @@ Cheers 😉</string>
         <!--Videos-->
         <scene sceneID="H3g-L6-2fN">
             <objects>
-                <viewController title="Videos" id="eZl-gn-UGo" sceneMemberID="viewController">
+                <viewController title="Videos" modalPresentationStyle="fullScreen" id="eZl-gn-UGo" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mML-wZ-dKH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -641,7 +644,7 @@ Cheers 😉</string>
         <!--Projects-->
         <scene sceneID="n8r-6A-qlO">
             <objects>
-                <viewController title="Projects" id="UqP-KI-dUr" sceneMemberID="viewController">
+                <viewController title="Projects" modalPresentationStyle="fullScreen" id="UqP-KI-dUr" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VPT-jR-oxn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -686,6 +689,9 @@ Cheers 😉</string>
                     <nil name="viewControllers"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="leftSide" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="statusBarEndAlpha">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="0J7-5Z-z7y" kind="relationship" relationship="rootViewController" id="dPE-sg-Ts2"/>
@@ -698,7 +704,7 @@ Cheers 😉</string>
         <!--Coalitions-->
         <scene sceneID="6Iw-ga-pXa">
             <objects>
-                <viewController title="Coalitions" id="LHb-1I-22f" customClass="CoalitionsViewController" customModule="Intra42" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Coalitions" modalPresentationStyle="fullScreen" id="LHb-1I-22f" customClass="CoalitionsViewController" customModule="Intra42" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TbW-fG-LtK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

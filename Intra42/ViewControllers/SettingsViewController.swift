@@ -17,6 +17,14 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Fixes navbar background color bug in iOS 13
+        if #available(iOS 13.0, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.backgroundColor = .systemBackground
+            navigationItem.standardAppearance = appearance
+            navigationItem.scrollEdgeAppearance = appearance
+        }
 
         appearanceView.layer.borderWidth = 1
         appearanceView.layer.borderColor = UIColor.lightGray.cgColor
@@ -29,6 +37,13 @@ class SettingsViewController: UIViewController {
             icon.isUserInteractionEnabled = true
             icon.addGestureRecognizer(tapGestureRecognizer)
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        navigationController?.view.setNeedsLayout() // force update layout
+        navigationController?.view.layoutIfNeeded() // to fix height of the navigation bar
     }
     
     @objc func selectIcon(gesture: UITapGestureRecognizer) {

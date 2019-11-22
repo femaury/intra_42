@@ -19,9 +19,21 @@ class UserResultCell: UITableViewCell, UserProfileCell {
         }
     }
     @IBOutlet weak var usernameLabel: UILabel!
-    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView! {
+           didSet {
+               if #available(iOS 13.0, *) {
+                   addUserIndicator.style = .medium
+               }
+           }
+       }
     @IBOutlet weak var addUserButton: UIButton!
-    @IBOutlet weak var addUserIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var addUserIndicator: UIActivityIndicatorView! {
+        didSet {
+            if #available(iOS 13.0, *) {
+                addUserIndicator.style = .medium
+            }
+        }
+    }
     
     var userId: Int = 0
     weak var delegate: SearchResultsController?

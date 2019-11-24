@@ -82,6 +82,8 @@ class API42Manager {
     var locationData: [JSON] = []
     /// Holds all achievements for multiple API calls
     var allAchievements: [String: Achievement] = [:]
+    /// Holds all projects for multiple API calls
+    var allProjects: [JSON] = []
     
     /// Default initialization checks if user is logged in to get all required data for the API
     init() {
@@ -264,25 +266,25 @@ class API42Manager {
     }
     
 // This takes way too long and returns ALL the projects... To fix.
-//    func getAllProjects(page: Int) {
-//        guard let cursusId = userProfile?.mainCursusId else { return }
-//        let locationURL = baseURL + "cursus/\(cursusId)/projects?sort=name&filter[visible]=true&page[number]=\(page)&page[size]=100"
-//
-//        request(url: locationURL) { (data) in
-//            guard let data = data  else {
-//                print("EMPTY DATA")
-//                print(self.allProjects)
-//                return
-//            }
-//            self.allProjects += data.arrayValue
-//            if data.arrayValue.count == 100 && data.arrayValue.last?["parent"] != nil {
-//                print("Projects Page \(page)")
-//                self.getAllProjects(page: page + 1)
-//            } else {
-//                print("FOUND ALL PROJECTS")
-//                print(self.allProjects)
-//                self.allProjects = []
-//            }
-//        }
-//    }
+    func getAllProjects(page: Int) {
+        guard let cursusId = userProfile?.mainCursusId else { return }
+        let locationURL = baseURL + "cursus/\(cursusId)/projects?sort=name&filter[visible]=true&filter[parent]=null&page[number]=\(page)&page[size]=100"
+
+        request(url: locationURL) { (data) in
+            guard let data = data  else {
+                print("EMPTY DATA")
+                print(self.allProjects)
+                return
+            }
+            self.allProjects += data.arrayValue
+            if data.arrayValue.count == 100 && data.arrayValue.last?["parent"] != nil {
+                print("Projects Page \(page)")
+                self.getAllProjects(page: page + 1)
+            } else {
+                print("FOUND ALL PROJECTS")
+                print(self.allProjects)
+                self.allProjects = []
+            }
+        }
+    }
 }

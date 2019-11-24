@@ -24,7 +24,7 @@ class SideMenuController: UIViewController {
         ("Settings", UIImage(named: "settings")),
         ("Logout", UIImage(named: "shutdown"))
     ]
-    let disabledItems = [0, 1] // Unfinished pages
+    let disabledItems: [Int] = [0, 1] // Unfinished pages
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,6 +64,10 @@ extension SideMenuController: UITableViewDelegate, UITableViewDataSource {
 //            API42Manager.shared.getAllProjects(page: 0)
             performSegue(withIdentifier: "ProjectsSegue", sender: self)
         case 1:
+//            let url = API42Manager.shared.baseURL + "attachments?page[size]=100"
+//            API42Manager.shared.request(url: url) { (data) in
+//                print(data)
+//            }
             performSegue(withIdentifier: "VideosSegue", sender: self)
         case 2:
             let urlString = "https://stackoverflow.com/c/42network"

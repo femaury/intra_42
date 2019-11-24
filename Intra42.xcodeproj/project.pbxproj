@@ -715,7 +715,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#   Output version & build numbers into a label on LaunchScreen.storyboard\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nversionNumber=$(/usr/libexec/PlistBuddy -c \"Print :CFBundleShortVersionString\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nsed -i bak -e \"/userLabel=\\\"APP_VERSION\\\"/s/text=\\\"[^\\\"]*\\\"/text=\\\"v$versionNumber ($buildNumber)\\\"/\" $PROJECT_DIR/$PROJECT_NAME/Visuals/Base.lproj/LaunchScreen.storyboard\n";
+			shellScript = "#   Output version & build numbers into a label on LaunchScreen.storyboard\nsourceFilePath=\"$PROJECT_DIR/$PROJECT_NAME/App/Base.lproj/LaunchScreen.storyboard\"\nversionNumber=\"$MARKETING_VERSION\"\nbuildNumber=\"$CURRENT_PROJECT_VERSION\"\n\nsed -i bak -e \"/userLabel=\\\"APP_VERSION\\\"/s/text=\\\"[^\\\"]*\\\"/text=\\\"v$versionNumber ($buildNumber)\\\"/\" $PROJECT_DIR/$PROJECT_NAME/Visuals/Base.lproj/LaunchScreen.storyboard\n";
 		};
 		DCF1A4E122997AB300AA2653 /* Swift Lint */ = {
 			isa = PBXShellScriptBuildPhase;

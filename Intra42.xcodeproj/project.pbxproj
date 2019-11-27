@@ -49,6 +49,7 @@
 		DC49298422F73166004024C3 /* icon_default@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC49298322F73165004024C3 /* icon_default@3x.png */; };
 		DC6FA15B22CD1A4300080A90 /* DictionaryPercentEscaped.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6FA15A22CD1A4300080A90 /* DictionaryPercentEscaped.swift */; };
 		DC77CE10238832A00017BF4F /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC77CE0F238832A00017BF4F /* LoadingCell.swift */; };
+		DC77CE5A238F030B0017BF4F /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC77CE59238F030B0017BF4F /* WebViewController.swift */; };
 		DC89992D22414F9000F47EEF /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89992C22414F9000F47EEF /* Achievement.swift */; };
 		DC89993022427A1500F47EEF /* AchievementsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89992F22427A1500F47EEF /* AchievementsController.swift */; };
 		DC89993622451EB200F47EEF /* UserProfileDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89993522451EB200F47EEF /* UserProfileDataSource.swift */; };
@@ -155,6 +156,7 @@
 		DC49298322F73165004024C3 /* icon_default@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_default@3x.png"; sourceTree = "<group>"; };
 		DC6FA15A22CD1A4300080A90 /* DictionaryPercentEscaped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryPercentEscaped.swift; sourceTree = "<group>"; };
 		DC77CE0F238832A00017BF4F /* LoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
+		DC77CE59238F030B0017BF4F /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		DC89992C22414F9000F47EEF /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
 		DC89992F22427A1500F47EEF /* AchievementsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsController.swift; sourceTree = "<group>"; };
 		DC89993522451EB200F47EEF /* UserProfileDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileDataSource.swift; sourceTree = "<group>"; };
@@ -463,6 +465,7 @@
 			isa = PBXGroup;
 			children = (
 				DCCE0591222701F000906ECD /* LoginViewController.swift */,
+				DC77CE59238F030B0017BF4F /* WebViewController.swift */,
 				DC955E0C222FF623003B70BC /* SideMenuController.swift */,
 				DCCE058F2227010E00906ECD /* HomeViewController.swift */,
 				DC955E04222DDDEB003B70BC /* UserProfileController.swift */,
@@ -715,7 +718,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#   Output version & build numbers into a label on LaunchScreen.storyboard\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nversionNumber=$(/usr/libexec/PlistBuddy -c \"Print :CFBundleShortVersionString\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nsed -i bak -e \"/userLabel=\\\"APP_VERSION\\\"/s/text=\\\"[^\\\"]*\\\"/text=\\\"v$versionNumber ($buildNumber)\\\"/\" $PROJECT_DIR/$PROJECT_NAME/Visuals/Base.lproj/LaunchScreen.storyboard\n";
+			shellScript = "#   Output version & build numbers into a label on LaunchScreen.storyboard\nbuildNumber=\"$(CURRENT_PROJECT_VERSION)\"\nversionNumber=\"$(MARKETING_VERSION)\"\n\nsed -i bak -e \"/userLabel=\\\"APP_VERSION\\\"/s/text=\\\"[^\\\"]*\\\"/text=\\\"v$versionNumber ($buildNumber)\\\"/\" $PROJECT_DIR/$PROJECT_NAME/Visuals/Base.lproj/LaunchScreen.storyboard\n";
 		};
 		DCF1A4E122997AB300AA2653 /* Swift Lint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -800,6 +803,7 @@
 				DC955DF0222C5192003B70BC /* DateTimeInterval.swift in Sources */,
 				DCF1A4E02299781900AA2653 /* Friend.swift in Sources */,
 				DCCE058E2226F0FF00906ECD /* CustomError.swift in Sources */,
+				DC77CE5A238F030B0017BF4F /* WebViewController.swift in Sources */,
 				DC955E0D222FF623003B70BC /* SideMenuController.swift in Sources */,
 				DC1988C02236970F009E3A55 /* StringHTMLToAttributedString.swift in Sources */,
 				DCF70B01229AF11500B29DCC /* ProjectTeamHeaderCell.swift in Sources */,
@@ -991,7 +995,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J2YFW87U3N;
 				INFOPLIST_FILE = Intra42/Info.plist;
@@ -1014,7 +1018,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = J2YFW87U3N;
 				INFOPLIST_FILE = Intra42/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;

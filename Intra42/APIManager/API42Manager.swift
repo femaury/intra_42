@@ -43,7 +43,9 @@ class API42Manager {
     let keychainAccessKey = "SwiftyAccessToken"
     /// Keychain key for storing refresh token
     let keychainRefreshKey = "SwiftyRefreshToken"
-    
+
+    /// Controller handling OAuth
+    var webViewController: WebViewController?
     /// Access token received by API after OAuth
     var OAuthAccessToken: String?
     /// Refresh token received by API after OAuth

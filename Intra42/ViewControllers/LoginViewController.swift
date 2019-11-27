@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import WebKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, WKNavigationDelegate {
 
     @IBOutlet weak var errorLabel: UILabel!
     var errorMessage: String?

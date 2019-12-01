@@ -72,6 +72,14 @@ class UserProfileController: UITableViewController {
                 }
                 destination.title = title
             }
+        } else if segue.identifier == "HolyGraphSegue" {
+            if let destination = segue.destination as? HolyGraphViewController {
+                if let user = userProfile?.username,
+                    let campusId = userProfile?.mainCampusId,
+                    let cursusId = userProfile?.mainCursusId {
+                    destination.drawHolyGraph(forUser: user, campusId: campusId, cursusId: cursusId)
+                }
+            }
         }
     }
     

@@ -91,6 +91,7 @@ class API42Manager {
     init() {
         OAuthAccessToken = keychain.get(keychainAccessKey)
         OAuthRefreshToken = keychain.get(keychainRefreshKey)
+        
         if hasOAuthToken() {
             setupAPIData()
         }
@@ -270,9 +271,9 @@ class API42Manager {
 // This takes way too long and returns ALL the projects... To fix.
     func getAllProjects(page: Int) {
         guard let cursusId = userProfile?.mainCursusId else { return }
-        let locationURL = baseURL + "cursus/\(cursusId)/projects?sort=name&filter[visible]=true&filter[parent]=null&page[number]=\(page)&page[size]=100"
+        let locURL = baseURL + "cursus/\(cursusId)/projects?sort=name&filter[visible]=true&filter[parent]=null&page[number]=\(page)&page[size]=100"
 
-        request(url: locationURL) { (data) in
+        request(url: locURL) { (data) in
             guard let data = data  else {
                 print("EMPTY DATA")
                 print(self.allProjects)

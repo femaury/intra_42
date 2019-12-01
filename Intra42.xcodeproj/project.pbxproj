@@ -47,6 +47,9 @@
 		DC49298022F724CB004024C3 /* SideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC49297F22F724CB004024C3 /* SideMenu.storyboard */; };
 		DC49298222F7315E004024C3 /* icon_default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC49298122F7315E004024C3 /* icon_default@2x.png */; };
 		DC49298422F73166004024C3 /* icon_default@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC49298322F73165004024C3 /* icon_default@3x.png */; };
+		DC4F1DF323918D89000F4BF9 /* HolyGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4F1DF223918D89000F4BF9 /* HolyGraphViewController.swift */; };
+		DC4F1DF523944108000F4BF9 /* HolyGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4F1DF423944108000F4BF9 /* HolyGraph.swift */; };
+		DC4F1DF723944B66000F4BF9 /* HolyGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4F1DF623944B66000F4BF9 /* HolyGraphView.swift */; };
 		DC6FA15B22CD1A4300080A90 /* DictionaryPercentEscaped.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6FA15A22CD1A4300080A90 /* DictionaryPercentEscaped.swift */; };
 		DC77CE10238832A00017BF4F /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC77CE0F238832A00017BF4F /* LoadingCell.swift */; };
 		DC77CE5A238F030B0017BF4F /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC77CE59238F030B0017BF4F /* WebViewController.swift */; };
@@ -154,6 +157,9 @@
 		DC49297F22F724CB004024C3 /* SideMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SideMenu.storyboard; sourceTree = "<group>"; };
 		DC49298122F7315E004024C3 /* icon_default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_default@2x.png"; sourceTree = "<group>"; };
 		DC49298322F73165004024C3 /* icon_default@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_default@3x.png"; sourceTree = "<group>"; };
+		DC4F1DF223918D89000F4BF9 /* HolyGraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolyGraphViewController.swift; sourceTree = "<group>"; };
+		DC4F1DF423944108000F4BF9 /* HolyGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolyGraph.swift; sourceTree = "<group>"; };
+		DC4F1DF623944B66000F4BF9 /* HolyGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolyGraphView.swift; sourceTree = "<group>"; };
 		DC6FA15A22CD1A4300080A90 /* DictionaryPercentEscaped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryPercentEscaped.swift; sourceTree = "<group>"; };
 		DC77CE0F238832A00017BF4F /* LoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
 		DC77CE59238F030B0017BF4F /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
@@ -357,6 +363,7 @@
 				DC1988C72236FA53009E3A55 /* ClustersView.swift */,
 				DC1988CF2239680D009E3A55 /* ClusterPost.swift */,
 				DCF70AFD229AEBF700B29DCC /* ProjectEvaluation.swift */,
+				DC4F1DF623944B66000F4BF9 /* HolyGraphView.swift */,
 				DC8C39DF229999F100DD1924 /* Cells */,
 			);
 			path = Views;
@@ -481,6 +488,7 @@
 				DCABB86A22C12C1F00711C4A /* AboutViewController.swift */,
 				DC21EB9422C9184900E1288B /* CoalitionsViewController.swift */,
 				DC41485B22D0BED70005FCB1 /* SettingsViewController.swift */,
+				DC4F1DF223918D89000F4BF9 /* HolyGraphViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -556,6 +564,7 @@
 				DCF1A4F32299960500AA2653 /* ProfilePicture.swift */,
 				DC27FD9822AE773D00E3E560 /* Teams.swift */,
 				DC4834FC230C3453007D0F8D /* EventsUsers.swift */,
+				DC4F1DF423944108000F4BF9 /* HolyGraph.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -718,7 +727,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#   Output version & build numbers into a label on LaunchScreen.storyboard\nbuildNumber=\"$(CURRENT_PROJECT_VERSION)\"\nversionNumber=\"$(MARKETING_VERSION)\"\n\nsed -i bak -e \"/userLabel=\\\"APP_VERSION\\\"/s/text=\\\"[^\\\"]*\\\"/text=\\\"v$versionNumber ($buildNumber)\\\"/\" $PROJECT_DIR/$PROJECT_NAME/Visuals/Base.lproj/LaunchScreen.storyboard\n";
+			shellScript = "#   Output version & build numbers into a label on LaunchScreen.storyboard\nbuildNumber=\"$CURRENT_PROJECT_VERSION\"\nversionNumber=\"$MARKETING_VERSION\"\n\nsed -i bak -e \"/userLabel=\\\"APP_VERSION\\\"/s/text=\\\"[^\\\"]*\\\"/text=\\\"v$versionNumber ($buildNumber)\\\"/\" $PROJECT_DIR/$PROJECT_NAME/Visuals/Base.lproj/LaunchScreen.storyboard\n";
 		};
 		DCF1A4E122997AB300AA2653 /* Swift Lint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -797,6 +806,7 @@
 				DC21EB9022C90DAD00E1288B /* Pentagone.swift in Sources */,
 				DCF1A4DE229977ED00AA2653 /* Correction.swift in Sources */,
 				DCCE05A62229822500906ECD /* UIImageViewFromURL.swift in Sources */,
+				DC4F1DF523944108000F4BF9 /* HolyGraph.swift in Sources */,
 				DCCE05902227010E00906ECD /* HomeViewController.swift in Sources */,
 				DCF1A4D8229976A500AA2653 /* AchievementData.swift in Sources */,
 				DCCE05A222296DC100906ECD /* ClustersViewController.swift in Sources */,
@@ -813,6 +823,7 @@
 				DC0D7B39223321CF00A30B9F /* LogsTableCell.swift in Sources */,
 				DC0D7B352231768A00A30B9F /* StringShortMonth.swift in Sources */,
 				DC27FD9922AE773D00E3E560 /* Teams.swift in Sources */,
+				DC4F1DF723944B66000F4BF9 /* HolyGraphView.swift in Sources */,
 				DC89993822452F4E00F47EEF /* ProfileTableCells.swift in Sources */,
 				DC955E02222CBC7F003B70BC /* UserResultCell.swift in Sources */,
 				DC955DEA222BE9EE003B70BC /* UIViewRoundCorners.swift in Sources */,
@@ -836,6 +847,7 @@
 				DC27FD9722AE66EE00E3E560 /* ProjectTeam.swift in Sources */,
 				DC0D7B3022305DDC00A30B9F /* CoreDataManager.swift in Sources */,
 				DC0D7B372232D0C800A30B9F /* StringIsPhoneNumber.swift in Sources */,
+				DC4F1DF323918D89000F4BF9 /* HolyGraphViewController.swift in Sources */,
 				DCCE059C22286EC800906ECD /* Colors.swift in Sources */,
 				DCF70B03229AF12A00B29DCC /* ProjectTeamGitCell.swift in Sources */,
 				DC955DEE222C4E88003B70BC /* ProjectCell.swift in Sources */,

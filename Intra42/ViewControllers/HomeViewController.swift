@@ -34,6 +34,14 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    API42Manager.shared.webViewController?.webView.configuration.websiteDataStore.httpCookieStore.getAllCookies { cookies in
+            for cookie in cookies where cookie.name == "_intra_42_session_production" {
+                print("FOUND COOKIE")
+                print(cookie)
+                HTTPCookieStorage.shared.setCookie(cookie)
+            }
+        }
+        
         // Fixes navbar background color bug in iOS 13
         if #available(iOS 13.0, *) {
             let appearance = UINavigationBarAppearance()

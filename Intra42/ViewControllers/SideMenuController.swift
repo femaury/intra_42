@@ -24,7 +24,7 @@ class SideMenuController: UIViewController {
         ("Settings", UIImage(named: "settings")),
         ("Logout", UIImage(named: "shutdown"))
     ]
-    let disabledItems: [Int] = [0, 1] // Unfinished pages
+    let disabledItems: [Int] = [1] // Unfinished pages
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +47,18 @@ class SideMenuController: UIViewController {
         navigationController?.view.setNeedsLayout() // force update layout
         navigationController?.view.layoutIfNeeded() // to fix height of the navigation bar
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ProjectsSegue" {
+            if let destination = segue.destination as? HolyGraphViewController {
+                if let user = API42Manager.shared.userProfile?.username,
+                    let campusId = API42Manager.shared.userProfile?.mainCampusId,
+                    let cursusId = API42Manager.shared.userProfile?.mainCursusId {
+                    destination.drawHolyGraph(forUser: user, campusId: campusId, cursusId: cursusId)
+                }
+            }
+        }
+    }
 }
 
 extension SideMenuController: UITableViewDelegate, UITableViewDataSource {
@@ -61,7 +73,6 @@ extension SideMenuController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-//            API42Manager.shared.getAllProjects(page: 0)
             performSegue(withIdentifier: "ProjectsSegue", sender: self)
         case 1:
 //            let url = API42Manager.shared.baseURL + "attachments?page[size]=100"
@@ -77,7 +88,6 @@ extension SideMenuController: UITableViewDelegate, UITableViewDataSource {
                 
                 self.present(safariVC, animated: true, completion: nil)
             }
-//            performSegue(withIdentifier: "ForumsSegue", sender: self)
         case 3:
             performSegue(withIdentifier: "CoalitionsSegue", sender: self)
         case 4:

@@ -117,8 +117,7 @@ extension API42Manager {
                     return
                 }
             
-                guard valueJSON["token_type"].string == "bearer" else { return } // Is not bearer
-                guard
+                guard valueJSON["token_type"].string == "bearer",
                     let accessToken = valueJSON["access_token"].string,
                     let refreshToken = valueJSON["refresh_token"].string
                 else {
@@ -135,7 +134,6 @@ extension API42Manager {
                 self.setupAPIData()
                 self.webViewController?.navigationController?.navigationBar.isHidden = true
                 self.webViewController?.performSegue(withIdentifier: "loginSegue", sender: nil)
-                self.webViewController?.dismiss(animated: false, completion: nil)
             }
         }.resume()
     }

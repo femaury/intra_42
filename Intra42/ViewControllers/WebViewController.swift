@@ -29,6 +29,7 @@ class WebViewController: UIViewController, WKNavigationDelegate {
         if let url = URL(string: urlString) {
             let request = URLRequest(url: url)
             webView.load(request)
+            self.title = webView.url?.host
         }
     }
     
@@ -43,6 +44,8 @@ class WebViewController: UIViewController, WKNavigationDelegate {
             if let url = navigationAction.request.url {
                 if url.host == "oauth2callback" {
                     UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                    decisionHandler(.cancel)
+                    return
                 }
                 decisionHandler(.allow)
                 return

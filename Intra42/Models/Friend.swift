@@ -8,6 +8,12 @@
 
 import Foundation
 
+struct FriendInfo {
+    let id: Int
+    let online: Date
+    var campus: String
+}
+
 struct Friend: Equatable {
     
     let id: Int

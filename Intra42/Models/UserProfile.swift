@@ -158,7 +158,7 @@ class UserProfile {
                 
                 if let dateString = project["marked_at"].string {
                     let dateFormatter = DateFormatter()
-                    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+                    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
                     let date = dateFormatter.date(from: dateString)
                     
                     let newProject = Project(

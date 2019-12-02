@@ -63,7 +63,7 @@ extension API42Manager {
                 if team["closed?"].boolValue {
                     let dateString = team["closed_at"].stringValue
                     let dateFormatter = DateFormatter()
-                    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+                    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
                     if let date = dateFormatter.date(from: dateString) {
                         let time = date.getElapsedInterval()
                         closedAt = "Closed \(time)"
@@ -73,7 +73,7 @@ extension API42Manager {
                 if team["locked?"].boolValue {
                     let dateString = team["locked_at"].stringValue
                     let dateFormatter = DateFormatter()
-                    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+                    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
                     if let date = dateFormatter.date(from: dateString) {
                         let time = date.getElapsedInterval()
                         lockedAt = "Locked \(time)"
@@ -87,7 +87,7 @@ extension API42Manager {
                     let correctorId = evaluation["corrector"]["id"].intValue
                     let dateString = evaluation["filled_at"].stringValue
                     let dateFormatter = DateFormatter()
-                    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+                    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
                     let date = dateFormatter.date(from: dateString) ?? Date()
                     let timeAgo = date.getElapsedInterval()
                     let comment = evaluation["comment"].stringValue

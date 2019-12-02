@@ -17,6 +17,7 @@ class FriendsViewController: UIViewController {
     var cellToDelete: FriendCell?
     var selectedCell: UserProfileCell?
     var friends: [Friend] = []
+    var friendsInfo: [Int: FriendInfo] = [:]
     var friendLocations: [Int: String] = [:] {
         didSet { tableView.reloadData() }
     }
@@ -96,19 +97,35 @@ class FriendsViewController: UIViewController {
             friendIds.append(String(friend.id))
         }
         let idString = friendIds.joined(separator: ",")
-        let url = API42Manager.shared.baseURL + "locations?filter[user_id]=\(idString)&filter[active]=true"
+        let url = API42Manager.shared.baseURL + "locations?filter[user_id]=\(idString)&filter[active]=true&page[size]=100"
         API42Manager.shared.request(url: url) { (data) in
             guard let data = data else { return }
-            print(data)
+            var campusIds: [String] = []
             for connection in data.arrayValue {
                 let id = connection["user"]["id"].intValue
                 let location = connection["host"].stringValue
-//                let campus = connection["campus_id"].intValue // TODO
+                let campus = connection["campus_id"].intValue
+                campusIds.append(String(campus))
+                let online = connection["begin_at"].stringValue
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+                let date = dateFormatter.date(from: online) ?? Date()
+                let campusIdString = campusIds.joined(separator: ",")
+                let url = API42Manager.shared.baseURL + "campus?filter[id]=\(campusIdString)&page[size]=100"
+                API42Manager.shared.request(url: url) { (data) in
+                    guard let data = data else { return }
+                    for campus in data.arrayValue {
+                        let name = campus["name"].stringValue
+                        let info = FriendInfo(id: id, online: date, campus: name)
+                        self.friendsInfo.updateValue(info, forKey: id)
+                    }
+                }
                 self.friendLocations.updateValue(location, forKey: id)
             }
-            self.orderFriendsByLocation()
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self.orderFriendsByLocation()
                 self.tableView.refreshControl?.endRefreshing()
+                self.tableView.reloadData()
             }
         }
     }
@@ -204,15 +221,6 @@ extension FriendsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
-//
-//    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-//        let delete = UIContextualAction(style: .destructive, title: "Remove") { (action, sourceView, completionHandler) in
-//            completionHandler(true)
-//        }
-//        let swipeAction = UISwipeActionsConfiguration(actions: [delete])
-//        swipeAction.performsFirstActionWithFullSwipe = false
-//        return swipeAction
-//    }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let delete = UITableViewRowAction(style: .destructive, title: "Remove") { (_, indexPath) in
@@ -225,17 +233,6 @@ extension FriendsViewController: UITableViewDelegate, UITableViewDataSource {
         
         return [delete]
     }
-//
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        if (editingStyle == .delete) {
-//            let cell = tableView.cellForRow(at: indexPath) as! FriendCell
-//            let id = cell.userId
-//            print(id)
-//            self.friends.remove(at: self.friends.firstIndex(where: {$0.id == id})!)
-//            self.tableView.deleteRows(at: [cell.indexPath], with: .left)
-//            FriendDataManager.shared.deleteFriend(withId: id)
-//        }
-//    }
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         if searchBar.isFirstResponder {
@@ -271,11 +268,18 @@ extension FriendsViewController: UITableViewDelegate, UITableViewDataSource {
             cell.picture = friendPictures[id] // Crash??
             cell.indexPath = indexPath
             cell.delegate = self
-            if let location = friendLocations[id], !location.isEmpty {
+            if let location = friendLocations[id], !location.isEmpty, let info = friendsInfo[id] {
                 cell.location = location
+                cell.campusLabel.text = info.campus
+                cell.campusLabel.isHidden = false
+                let time = info.online.getElapsedInterval().replacingOccurrences(of: " ago", with: "")
+                cell.onlineForLabel.text = "For \(time)"
+                cell.onlineForLabel.isHidden = false
             } else {
                 cell.locationLabel.text = "Unavailable"
                 cell.isOnline.isHidden = true
+                cell.campusLabel.isHidden = true
+                cell.onlineForLabel.isHidden = true
             }
             return cell
         }

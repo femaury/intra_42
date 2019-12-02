@@ -14,7 +14,6 @@ class HolyGraphView: UIView {
     let borderView = UIView()
     
     weak var delegate: HolyGraphViewController?
-    var showProjectAction: UIAlertController?
     var shouldPassTouchesToNextView = false
     
     var id: Int = 0
@@ -22,7 +21,7 @@ class HolyGraphView: UIView {
     var state: String = String()
     var name: String = String()
     var cornerRadius: CGFloat {
-        return kind == "piscine" ? 0 : self.frame.width / 2
+        return kind == "piscine" ? 0 : self.frame.height / 2
     }
     
     override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
@@ -72,7 +71,6 @@ class HolyGraphView: UIView {
         
         addSubview(borderView)
         addSubview(label)
-        setupAlertController()
     }
     
     required init?(coder: NSCoder) {
@@ -211,24 +209,10 @@ class HolyGraphView: UIView {
     }
     // swiftlint:enable cyclomatic_complexity
     
-    func setupAlertController() {
-        let name = label.text
-        showProjectAction = UIAlertController(title: name, message: nil, preferredStyle: .actionSheet)
-        let showProfile = UIAlertAction(title: "Show Project", style: .default) { [weak self] (_) in
-            guard let self = self else { return }
-            let url = API42Manager.shared.baseURL + "projects/\(self.id)"
-            API42Manager.shared.request(url: url) { (data) in
-                print(data ?? "NO DATA")
-            }
-            //            self?.delegate?.performSegue(withIdentifier: "UserProfileSegue", sender: self?.delegate)
-        }
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
-        showProjectAction?.addAction(showProfile)
-        showProjectAction?.addAction(cancel)
-    }
-    
     func getViewSize(_ cursus: Int) -> CGSize {
         switch cursus {
+        case 6, 12:
+            return _getViewSizeCursus6()
         case 21:
             return _getViewSizeCursus21()
         default:
@@ -252,6 +236,17 @@ class HolyGraphView: UIView {
             return CGSize(width: 300, height: 300)
         default:
             return CGSize(width: 150, height: 150)
+        }
+    }
+    
+    private func _getViewSizeCursus6() -> CGSize {
+        switch kind {
+        case "piscine":
+            return CGSize(width: 170, height: 60)
+        case "rush":
+            return CGSize(width: 120, height: 60)
+        default:
+            return _getViewSizeCursus1()
         }
     }
     
@@ -286,6 +281,8 @@ class HolyGraphView: UIView {
 
     func getBorderColor() -> CGColor? {
         switch state {
+        case "fail":
+            return UIColor(hexRGB: "#CC6256")?.cgColor
         case "done":
             return Colors.intraTeal?.cgColor
         case "in_progress":
@@ -298,12 +295,25 @@ class HolyGraphView: UIView {
     }
     
     func getBackgroundColor() -> UIColor? {
+        if state == "fail" { return UIColor(hexRGB: "#CC6256") }
         return state == "done" ? Colors.intraTeal : .darkGray
     }
     
     @objc func tapHandler(gesture: UIGestureRecognizer) {
-        if let action = showProjectAction {
-            delegate?.present(action, animated: true, completion: nil)
+        let name = label.text
+        let showProjectAction = UIAlertController(title: name, message: nil, preferredStyle: .actionSheet)
+        let showProfile = UIAlertAction(title: "Show Project", style: .default) { [weak self] (_) in
+            guard let self = self else { return }
+            let url = API42Manager.shared.baseURL + "projects/\(self.id)"
+            API42Manager.shared.request(url: url) { (data) in
+                print(data ?? "NO DATA")
+            }
+            //            self?.delegate?.performSegue(withIdentifier: "ProjectInfoSegue", sender: self?.delegate)
         }
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+        showProjectAction.addAction(showProfile)
+        showProjectAction.addAction(cancel)
+        
+        delegate?.present(showProjectAction, animated: true, completion: nil)
     }
 }

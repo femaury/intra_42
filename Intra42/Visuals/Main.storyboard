@@ -1674,6 +1674,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ESb-vw-hFk">
+                                <rect key="frame" x="20" y="0.0" width="374" height="725"/>
+                            </activityIndicatorView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yq8-3o-uTX">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                             </scrollView>
@@ -1682,12 +1685,23 @@
                         <constraints>
                             <constraint firstItem="Yq8-3o-uTX" firstAttribute="top" secondItem="Fe6-3l-ABs" secondAttribute="topMargin" id="2yE-GC-xy9"/>
                             <constraint firstAttribute="bottomMargin" secondItem="Yq8-3o-uTX" secondAttribute="bottom" id="3vu-jb-6Ga"/>
+                            <constraint firstItem="ESb-vw-hFk" firstAttribute="top" secondItem="Fe6-3l-ABs" secondAttribute="topMargin" id="FsZ-oQ-Cku"/>
                             <constraint firstItem="Yq8-3o-uTX" firstAttribute="leading" secondItem="Fe6-3l-ABs" secondAttribute="leading" id="Jqb-nS-oFq"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="ESb-vw-hFk" secondAttribute="bottom" id="jBR-bl-jUy"/>
                             <constraint firstAttribute="trailing" secondItem="Yq8-3o-uTX" secondAttribute="trailing" id="lkv-l1-qXu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ESb-vw-hFk" secondAttribute="trailing" id="pqy-qA-TF8"/>
+                            <constraint firstItem="ESb-vw-hFk" firstAttribute="leading" secondItem="Fe6-3l-ABs" secondAttribute="leadingMargin" id="wjb-tQ-UTp"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="o8x-3k-3dF"/>
+                    <navigationItem key="navigationItem" id="o8x-3k-3dF">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="ellipsis" catalog="system" id="wYA-ef-o3D">
+                            <connections>
+                                <action selector="changeCursus:" destination="ODo-5C-KVo" id="eei-Gb-VM7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="ESb-vw-hFk" id="m69-08-tOu"/>
                         <outlet property="scrollView" destination="Yq8-3o-uTX" id="pGg-DT-nx9"/>
                     </connections>
                 </viewController>
@@ -2845,6 +2859,7 @@
         <image name="compass" width="30" height="30"/>
         <image name="copy" width="30" height="30"/>
         <image name="create_new" width="30" height="30"/>
+        <image name="ellipsis" catalog="system" width="64" height="18"/>
         <image name="geo_fence" width="30" height="30"/>
         <image name="globe_stand" width="30" height="30"/>
         <image name="happy" width="30" height="30"/>
@@ -2861,9 +2876,9 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mDc-hD-TjO"/>
+        <segue reference="CZ3-PM-lFF"/>
         <segue reference="atr-x9-EV6"/>
-        <segue reference="0QS-t1-7Go"/>
+        <segue reference="s4V-tz-R5t"/>
         <segue reference="oJI-up-e6L"/>
         <segue reference="IZG-qr-rub"/>
     </inferredMetricsTieBreakers>

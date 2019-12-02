@@ -76,7 +76,9 @@ class UserProfileController: UITableViewController {
             if let destination = segue.destination as? HolyGraphViewController {
                 if let user = userProfile?.username,
                     let campusId = userProfile?.mainCampusId,
-                    let cursusId = userProfile?.mainCursusId {
+                    let cursusId = userProfile?.mainCursusId,
+                    let cursus = userProfile?.cursusList {
+                    destination.cursus = cursus
                     destination.drawHolyGraph(forUser: user, campusId: campusId, cursusId: cursusId)
                 }
             }

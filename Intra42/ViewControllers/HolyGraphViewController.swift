@@ -12,12 +12,13 @@ import SwiftyJSON
 class HolyGraphViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
-    let contentView = UIView()
-    let activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
+    var contentView = UIView()
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    @objc func tapHandler(gesture: UIGestureRecognizer) {
-        print("toto")
-    }
+    var user: String = String()
+    var cursus: [(id: Int, name: String)] = []
+    var campusId: Int = Int()
+    var cursusId: Int = Int()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +31,6 @@ class HolyGraphViewController: UIViewController, UIScrollViewDelegate {
             navigationItem.scrollEdgeAppearance = appearance
         }
 
-        activityIndicator.frame = scrollView.frame
         activityIndicator.hidesWhenStopped = true
         activityIndicator.startAnimating()
         view.addSubview(activityIndicator)
@@ -40,17 +40,36 @@ class HolyGraphViewController: UIViewController, UIScrollViewDelegate {
         scrollView.backgroundColor = UIColor(hexRGB: "#041923")
     }
     
-    func checkgestures() {
-        var count = 0
-        for view in contentView.subviews {
-            count += 1
-            print("GESTURES OF VIEW \(count)")
-            print(view.gestureRecognizers ?? "none")
+    @IBAction func changeCursus(_ sender: Any) {
+        guard cursus.count > 0 else { return }
+        let showCursusAction = UIAlertController(title: "Cursus", message: nil, preferredStyle: .actionSheet)
+        for item in cursus {
+            let actionItem = UIAlertAction(title: item.name, style: .default) { [weak self] (_) in
+                guard let self = self else { return }
+                self.activityIndicator.isHidden = false
+                self.activityIndicator.startAnimating()
+                self.contentView.subviews.forEach({ $0.removeFromSuperview() })
+                self.contentView.layer.sublayers?.forEach { $0.removeFromSuperlayer() }
+                self.contentView.removeFromSuperview()
+                self.contentView = UIView()
+                self.drawHolyGraph(forUser: self.user, campusId: self.campusId, cursusId: item.id)
+            }
+            if item.id == cursusId {
+                actionItem.isEnabled = false
+            }
+            showCursusAction.addAction(actionItem)
         }
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+        showCursusAction.addAction(cancel)
+        present(showCursusAction, animated: true, completion: nil)
     }
     
     func drawHolyGraph(forUser user: String, campusId: Int, cursusId: Int) {
-        self.title = user
+        title = user
+        self.user = user
+        self.campusId = campusId
+        self.cursusId = cursusId
+        
         API42Manager.shared.getProjectCoordinates(forUser: user, campusId: campusId, cursusId: cursusId) { projects in
             DispatchQueue.main.async {
                 var maxX = self.view.frame.maxX

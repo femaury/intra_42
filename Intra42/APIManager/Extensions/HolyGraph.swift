@@ -30,8 +30,98 @@ extension API42Manager {
                     API42Manager.shared.showErrorAlert(message: "There was a problem with 42's API...")
                     return
                 }
-                completionHandler(valueJSON.arrayValue)
+                var projects = valueJSON.arrayValue
+                print("PROJECTS FOR CURSUS ID \(cursusId)")
+                print(projects)
+                switch cursusId {
+                case 1:
+                    self._sortCursus1(&projects)
+                case 21:
+                    self._sortCursus21(&projects)
+                default:
+                    break
+                }
+                completionHandler(projects)
             }.resume()
         }
+    }
+    
+    fileprivate func _sortCursus1(_ projects: inout [JSON]) {
+        guard projects.count > 1 else { return }
+        var first: JSON = projects[1]
+        var second: JSON = projects[0]
+        for project in projects {
+            let kind = project["kind"].stringValue
+            if kind == "first_internship" {
+                first = project
+                projects.remove(at: projects.firstIndex(of: project)!)
+            } else if kind == "second_internship" {
+                second = project
+                projects.remove(at: projects.firstIndex(of: project)!)
+            }
+        }
+        projects.insert(first, at: 0)
+        projects.insert(second, at: 0)
+    }
+    
+    fileprivate func _sortCursus21(_ projects: inout [JSON]) {
+        var first: [JSON] = []
+        var second: [JSON] = []
+        var third: [JSON] = []
+        var fourth: [JSON] = []
+        var fifth: [JSON] = []
+        var sixth: [JSON] = []
+        var zero: [JSON] = []
+        for project in projects {
+            let slug = project["slug"].stringValue
+            switch slug {
+            case "ft_transcendance", "exam-rank-06":
+                sixth.append(project)
+                projects.remove(at: projects.firstIndex(of: project)!)
+            case "ft_containers", "exam-rank-05", "webserv", "ft_irc":
+                fifth.append(project)
+                projects.remove(at: projects.firstIndex(of: project)!)
+            case "42cursus-philosophers",
+                 "exam-rank-04",
+                 "cpp-module-00",
+                 "cpp-module-01",
+                 "cpp-module-02",
+                 "cpp-module-03",
+                 "cpp-module-04",
+                 "cpp-module-05",
+                 "cpp-module-06",
+                 "cpp-module-07",
+                 "cpp-module-08":
+                fourth.append(project)
+                projects.remove(at: projects.firstIndex(of: project)!)
+            case "libasm", "exam-rank-03", "42cursus-minishell", "ft_services":
+                third.append(project)
+                projects.remove(at: projects.firstIndex(of: project)!)
+            case "ft_server", "exam-rank-02", "cub3d", "minirt":
+                second.append(project)
+                projects.remove(at: projects.firstIndex(of: project)!)
+            case "netwhat", "42cursus-ft_printf", "42cursus-get_next_line":
+                first.append(project)
+                projects.remove(at: projects.firstIndex(of: project)!)
+            case "42cursus-libft":
+                zero.append(project)
+                projects.remove(at: projects.firstIndex(of: project)!)
+            default:
+                continue
+            }
+        }
+        sixth.sort { $0["name"].stringValue.contains("Exam") && !$1["name"].stringValue.contains("Exam") }
+        fifth.sort { $0["name"].stringValue.contains("Exam") && !$1["name"].stringValue.contains("Exam") }
+        fourth.sort { $0["name"].stringValue.contains("Exam") && !$1["name"].stringValue.contains("Exam") }
+        third.sort { $0["name"].stringValue.contains("Exam") && !$1["name"].stringValue.contains("Exam") }
+        second.sort { $0["name"].stringValue.contains("Exam") && !$1["name"].stringValue.contains("Exam") }
+        first.sort { $0["name"].stringValue.contains("printf") && !$1["name"].stringValue.contains("printf") }
+        projects.append(contentsOf: sixth)
+        projects.append(contentsOf: fifth)
+        projects.append(contentsOf: fourth)
+        projects.append(contentsOf: third)
+        projects.append(contentsOf: second)
+        projects.append(contentsOf: first)
+        projects.append(contentsOf: zero)
     }
 }

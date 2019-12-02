@@ -15,6 +15,10 @@ class HolyGraphViewController: UIViewController, UIScrollViewDelegate {
     let contentView = UIView()
     let activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
     
+    @objc func tapHandler(gesture: UIGestureRecognizer) {
+        print("toto")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,6 +38,15 @@ class HolyGraphViewController: UIViewController, UIScrollViewDelegate {
         scrollView.isUserInteractionEnabled = false
         scrollView.delegate = self
         scrollView.backgroundColor = UIColor(hexRGB: "#041923")
+    }
+    
+    func checkgestures() {
+        var count = 0
+        for view in contentView.subviews {
+            count += 1
+            print("GESTURES OF VIEW \(count)")
+            print(view.gestureRecognizers ?? "none")
+        }
     }
     
     func drawHolyGraph(forUser user: String, campusId: Int, cursusId: Int) {
@@ -65,9 +78,11 @@ class HolyGraphViewController: UIViewController, UIScrollViewDelegate {
                     maxY = posY > maxY ? posY : maxY
                     minY = posY < minY ? posY : minY
                     
+                    let id = project["project_id"].intValue
                     let kind = project["kind"].stringValue
                     let title = project["name"].stringValue
-                    let view = HolyGraphView(kind: kind, state: state, position: pos, title: title)
+                    let view = HolyGraphView(cursus: cursusId, id: id, kind: kind, state: state, position: pos, title: title)
+                    view.delegate = self
                     view.center = self.contentView.convert(self.contentView.center, from: view)
                     self.contentView.addSubview(view)
                 }
@@ -83,7 +98,7 @@ class HolyGraphViewController: UIViewController, UIScrollViewDelegate {
                 self.scrollView.setZoomScale(minZoomScale * 1.3, animated: true)
                 self.scrollView.isUserInteractionEnabled = true
                 let newContentOffset = (self.contentView.frame.size.width / 2) - (self.scrollView.bounds.size.width / 2)
-                self.scrollView.contentOffset = CGPoint(x: newContentOffset, y: 0)
+                self.scrollView.contentOffset = CGPoint(x: newContentOffset - 10, y: 0)
                 self.activityIndicator.stopAnimating()
             }
         }
@@ -97,7 +112,7 @@ class HolyGraphViewController: UIViewController, UIScrollViewDelegate {
         case "available", "in_progress":
             color = UIColor.white.cgColor
         default:
-            color = UIColor.darkGray.cgColor
+            color = UIColor.gray.cgColor
         }
 
         let path = UIBezierPath()

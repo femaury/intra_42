@@ -268,7 +268,7 @@ extension FriendsViewController: UITableViewDelegate, UITableViewDataSource {
             let id = friend.id
             let cell = tableView.dequeueReusableCell(withIdentifier: "FriendCell") as! FriendCell
             cell.friend = friend
-            cell.picture = friendPictures[id]
+            cell.picture = friendPictures[id] // Crash??
             cell.indexPath = indexPath
             cell.delegate = self
             if let location = friendLocations[id], !location.isEmpty {

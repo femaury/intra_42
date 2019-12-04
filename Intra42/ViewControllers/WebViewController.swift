@@ -12,7 +12,8 @@ import WebKit
 class WebViewController: UIViewController, WKNavigationDelegate {
     
     @IBOutlet weak var webView: WKWebView!
-
+    @IBOutlet weak var navBarTitle: UINavigationItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,14 +23,13 @@ class WebViewController: UIViewController, WKNavigationDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.navigationBar.isHidden = false
     }
     
     func load(_ urlString: String) {
         if let url = URL(string: urlString) {
             let request = URLRequest(url: url)
             webView.load(request)
-            self.title = webView.url?.host
+            navBarTitle.title = webView.url?.host
         }
     }
     

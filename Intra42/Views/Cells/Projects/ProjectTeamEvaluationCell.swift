@@ -36,7 +36,7 @@ class ProjectTeamEvaluationCell: UITableViewCell {
         timeAgoLabel.text = evaluation.timeAgo.uppercased()
         gradeLabel.text = "\(evaluation.grade)%"
         if evaluation.isValidated {
-            gradeLabel.textColor = Colors.validGrade
+            gradeLabel.textColor = Colors.Grades.valid
         } else {
             gradeLabel.textColor = UIColor.red
         }

@@ -21,7 +21,7 @@ extension API42Manager {
      */
     func startOAuth2Login() {
         state = UUID().uuidString
-        let authPath = "https://api.intra.42.fr/oauth/authorize?client_id=\(clientId)&redirect_uri=\(redirectURI)&state=\(state)&response_type=code&scope=public+profile"
+        let authPath = "https://api.intra.42.fr/oauth/authorize?client_id=\(clientId)&redirect_uri=\(redirectURI)&state=\(state)&response_type=code&scope=public+profile+projects"
         
         if hasOAuthToken() {
             if let completionHandler = OAuthTokenCompletionHandler {
@@ -38,13 +38,11 @@ extension API42Manager {
         }
                     
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if let controller = storyboard.instantiateViewController(withIdentifier: "WebViewNavController") as? UINavigationController {
-            if let webVC = controller.children.first as? WebViewController {
-                self.webViewController = webVC
-                _ = webVC.view
-                webVC.load(authPath)
-                topViewController?.present(controller, animated: true, completion: nil)
-            }
+        if let controller = storyboard.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController {
+            self.webViewController = controller
+            _ = controller.view
+            controller.load(authPath)
+            topViewController?.present(controller, animated: true, completion: nil)
         }
     }
     
@@ -132,7 +130,6 @@ extension API42Manager {
                 self.keychain.set(refreshToken, forKey: self.keychainRefreshKey)
             
                 self.setupAPIData()
-                self.webViewController?.navigationController?.navigationBar.isHidden = true
                 self.webViewController?.performSegue(withIdentifier: "loginSegue", sender: nil)
             }
         }.resume()

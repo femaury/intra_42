@@ -16,9 +16,14 @@ class HolyGraphViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var user: String = String()
+    var userId: Int = Int()
     var cursus: [(id: Int, name: String)] = []
     var campusId: Int = Int()
     var cursusId: Int = Int()
+    
+    var selectedProjectId: Int = Int()
+    var selectedProjectState: String = String()
+    var selectedProjectDuration: String = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +43,24 @@ class HolyGraphViewController: UIViewController, UIScrollViewDelegate {
         scrollView.isUserInteractionEnabled = false
         scrollView.delegate = self
         scrollView.backgroundColor = UIColor(hexRGB: "#041923")
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ProjectInfoSegue" {
+            if let destination = segue.destination as? ProjectInfoViewController {
+                API42Manager.shared.getProjectInfo(withId: selectedProjectId, forUser: userId, campusId: campusId) { (info) in
+                    guard var info = info else {
+                        return
+                    }
+                    let duration = self.selectedProjectDuration
+                    info.duration = duration.prefix(1).capitalized + duration.dropFirst()
+                    info.state = ProjectState(rawValue: self.selectedProjectState) ?? .unavailable
+                    destination.info = info
+                    destination.setupController()
+                }
+                
+            }
+        }
     }
     
     @IBAction func changeCursus(_ sender: Any) {
@@ -100,8 +123,10 @@ class HolyGraphViewController: UIViewController, UIScrollViewDelegate {
                     let id = project["project_id"].intValue
                     let kind = project["kind"].stringValue
                     let title = project["name"].stringValue
+                    let duration = project["duration"].stringValue
                     let view = HolyGraphView(cursus: cursusId, id: id, kind: kind, state: state, position: pos, title: title)
                     view.delegate = self
+                    view.duration = duration
                     view.center = self.contentView.convert(self.contentView.center, from: view)
                     self.contentView.addSubview(view)
                 }

@@ -40,7 +40,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, handleOpen url: URL) -> Bool {
-        print("DELEGATE: " + url.absoluteString)
         API42Manager.shared.processOAuthResponse(url)
         return true
     }

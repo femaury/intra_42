@@ -52,10 +52,12 @@ class SideMenuController: UIViewController {
         if segue.identifier == "ProjectsSegue" {
             if let destination = segue.destination as? HolyGraphViewController {
                 if let user = API42Manager.shared.userProfile?.username,
+                    let userId = API42Manager.shared.userProfile?.userId,
                     let campusId = API42Manager.shared.userProfile?.mainCampusId,
                     let cursusId = API42Manager.shared.userProfile?.mainCursusId,
                     let cursus = API42Manager.shared.userProfile?.cursusList {
                     destination.cursus = cursus
+                    destination.userId = userId
                     destination.drawHolyGraph(forUser: user, campusId: campusId, cursusId: cursusId)
                 }
             }

@@ -20,6 +20,7 @@ class HolyGraphView: UIView {
     var kind: String = String()
     var state: String = String()
     var name: String = String()
+    var duration: String = String()
     var cornerRadius: CGFloat {
         return kind == "piscine" ? 0 : self.frame.height / 2
     }
@@ -304,11 +305,10 @@ class HolyGraphView: UIView {
         let showProjectAction = UIAlertController(title: name, message: nil, preferredStyle: .actionSheet)
         let showProfile = UIAlertAction(title: "Show Project", style: .default) { [weak self] (_) in
             guard let self = self else { return }
-            let url = API42Manager.shared.baseURL + "projects/\(self.id)"
-            API42Manager.shared.request(url: url) { (data) in
-                print(data ?? "NO DATA")
-            }
-            //            self?.delegate?.performSegue(withIdentifier: "ProjectInfoSegue", sender: self?.delegate)
+            self.delegate?.selectedProjectId = self.id
+            self.delegate?.selectedProjectState = self.state
+            self.delegate?.selectedProjectDuration = self.duration
+            self.delegate?.performSegue(withIdentifier: "ProjectInfoSegue", sender: self.delegate)
         }
         let cancel = UIAlertAction(title: "Cancel", style: .cancel)
         showProjectAction.addAction(showProfile)

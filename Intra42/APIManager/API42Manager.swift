@@ -258,17 +258,7 @@ class API42Manager {
         }
     }
     
-    // TEMPORARY: - Simple data return calls 
-    
-    func getProject(withId id: Int, completionHandler: @escaping (JSON?) -> Void) {
-        let projectURL = baseURL + "projects/\(id)"
-        
-        request(url: projectURL) { (data) in
-            completionHandler(data)
-        }
-    }
-    
-// This takes way too long and returns ALL the projects... To fix.
+    // This takes way too long and returns ALL the projects... To fix.
     func getAllProjects(page: Int) {
         guard let cursusId = userProfile?.mainCursusId else { return }
         let locURL = baseURL + "cursus/\(cursusId)/projects?sort=name&filter[visible]=true&filter[parent]=null&page[number]=\(page)&page[size]=100"

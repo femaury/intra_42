@@ -103,6 +103,8 @@
 		DCF1A4F0229995B700AA2653 /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1A4EF229995B700AA2653 /* Locations.swift */; };
 		DCF1A4F2229995DA00AA2653 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1A4F1229995DA00AA2653 /* Users.swift */; };
 		DCF1A4F42299960500AA2653 /* ProfilePicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1A4F32299960500AA2653 /* ProfilePicture.swift */; };
+		DCF30D572396BE660000EC7C /* ProjectInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF30D562396BE660000EC7C /* ProjectInfoViewController.swift */; };
+		DCF30D592396C6EA0000EC7C /* Projects.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF30D582396C6EA0000EC7C /* Projects.swift */; };
 		DCF70AFA229ABAD000B29DCC /* AchievementsHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF70AF9229ABAD000B29DCC /* AchievementsHeaderCell.swift */; };
 		DCF70AFC229AE7B200B29DCC /* ProjectEvaluation.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCF70AFB229AE7B200B29DCC /* ProjectEvaluation.xib */; };
 		DCF70AFE229AEBF700B29DCC /* ProjectEvaluation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF70AFD229AEBF700B29DCC /* ProjectEvaluation.swift */; };
@@ -216,6 +218,8 @@
 		DCF1A4EF229995B700AA2653 /* Locations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
 		DCF1A4F1229995DA00AA2653 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		DCF1A4F32299960500AA2653 /* ProfilePicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePicture.swift; sourceTree = "<group>"; };
+		DCF30D562396BE660000EC7C /* ProjectInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectInfoViewController.swift; sourceTree = "<group>"; };
+		DCF30D582396C6EA0000EC7C /* Projects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Projects.swift; sourceTree = "<group>"; };
 		DCF70AF9229ABAD000B29DCC /* AchievementsHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementsHeaderCell.swift; sourceTree = "<group>"; };
 		DCF70AFB229AE7B200B29DCC /* ProjectEvaluation.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectEvaluation.xib; sourceTree = "<group>"; };
 		DCF70AFD229AEBF700B29DCC /* ProjectEvaluation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectEvaluation.swift; sourceTree = "<group>"; };
@@ -489,6 +493,7 @@
 				DC21EB9422C9184900E1288B /* CoalitionsViewController.swift */,
 				DC41485B22D0BED70005FCB1 /* SettingsViewController.swift */,
 				DC4F1DF223918D89000F4BF9 /* HolyGraphViewController.swift */,
+				DCF30D562396BE660000EC7C /* ProjectInfoViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -565,6 +570,7 @@
 				DC27FD9822AE773D00E3E560 /* Teams.swift */,
 				DC4834FC230C3453007D0F8D /* EventsUsers.swift */,
 				DC4F1DF423944108000F4BF9 /* HolyGraph.swift */,
+				DCF30D582396C6EA0000EC7C /* Projects.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -795,6 +801,7 @@
 				DCCE059A22284B0000906ECD /* UIColorHex.swift in Sources */,
 				DC21EB9522C9184900E1288B /* CoalitionsViewController.swift in Sources */,
 				DCCE05AA2229A5A000906ECD /* ProfileHeaderCell.swift in Sources */,
+				DCF30D572396BE660000EC7C /* ProjectInfoViewController.swift in Sources */,
 				DCCE0592222701F000906ECD /* LoginViewController.swift in Sources */,
 				DCF70B09229AF30900B29DCC /* UserProjectController.swift in Sources */,
 				DC89993A2245338300F47EEF /* UserActions.swift in Sources */,
@@ -866,6 +873,7 @@
 				DCF70B05229AF13700B29DCC /* ProjectTeamUsersCell.swift in Sources */,
 				DCF1A4E42299929900AA2653 /* OAuthFlow.swift in Sources */,
 				DC1988D02239680D009E3A55 /* ClusterPost.swift in Sources */,
+				DCF30D592396C6EA0000EC7C /* Projects.swift in Sources */,
 				DCCE057A222591F400906ECD /* AppDelegate.swift in Sources */,
 				DC89993022427A1500F47EEF /* AchievementsController.swift in Sources */,
 			);

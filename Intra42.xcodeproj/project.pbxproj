@@ -108,7 +108,6 @@
 		DCF30D592396C6EA0000EC7C /* Projects.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF30D582396C6EA0000EC7C /* Projects.swift */; };
 		DCF70AFA229ABAD000B29DCC /* AchievementsHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF70AF9229ABAD000B29DCC /* AchievementsHeaderCell.swift */; };
 		DCF70AFC229AE7B200B29DCC /* ProjectEvaluation.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCF70AFB229AE7B200B29DCC /* ProjectEvaluation.xib */; };
-		DCF70AFE229AEBF700B29DCC /* ProjectEvaluation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF70AFD229AEBF700B29DCC /* ProjectEvaluation.swift */; };
 		DCF70B01229AF11500B29DCC /* ProjectTeamHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF70B00229AF11500B29DCC /* ProjectTeamHeaderCell.swift */; };
 		DCF70B03229AF12A00B29DCC /* ProjectTeamGitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF70B02229AF12A00B29DCC /* ProjectTeamGitCell.swift */; };
 		DCF70B05229AF13700B29DCC /* ProjectTeamUsersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF70B04229AF13700B29DCC /* ProjectTeamUsersCell.swift */; };
@@ -224,7 +223,6 @@
 		DCF30D582396C6EA0000EC7C /* Projects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Projects.swift; sourceTree = "<group>"; };
 		DCF70AF9229ABAD000B29DCC /* AchievementsHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementsHeaderCell.swift; sourceTree = "<group>"; };
 		DCF70AFB229AE7B200B29DCC /* ProjectEvaluation.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectEvaluation.xib; sourceTree = "<group>"; };
-		DCF70AFD229AEBF700B29DCC /* ProjectEvaluation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectEvaluation.swift; sourceTree = "<group>"; };
 		DCF70B00229AF11500B29DCC /* ProjectTeamHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTeamHeaderCell.swift; sourceTree = "<group>"; };
 		DCF70B02229AF12A00B29DCC /* ProjectTeamGitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTeamGitCell.swift; sourceTree = "<group>"; };
 		DCF70B04229AF13700B29DCC /* ProjectTeamUsersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTeamUsersCell.swift; sourceTree = "<group>"; };
@@ -368,7 +366,6 @@
 				DC21EB9822C92FAA00E1288B /* CoalitionView.swift */,
 				DC1988C72236FA53009E3A55 /* ClustersView.swift */,
 				DC1988CF2239680D009E3A55 /* ClusterPost.swift */,
-				DCF70AFD229AEBF700B29DCC /* ProjectEvaluation.swift */,
 				DC4F1DF623944B66000F4BF9 /* HolyGraphView.swift */,
 				DC8C39DF229999F100DD1924 /* Cells */,
 			);
@@ -840,7 +837,6 @@
 				DC955DEA222BE9EE003B70BC /* UIViewRoundCorners.swift in Sources */,
 				DC37979A228DB53500406488 /* Triangle.swift in Sources */,
 				DC3797912288710200406488 /* ScalesCell.swift in Sources */,
-				DCF70AFE229AEBF700B29DCC /* ProjectEvaluation.swift in Sources */,
 				DC955E05222DDDEB003B70BC /* UserProfileController.swift in Sources */,
 				DCF70AFA229ABAD000B29DCC /* AchievementsHeaderCell.swift in Sources */,
 				DC89992D22414F9000F47EEF /* Achievement.swift in Sources */,

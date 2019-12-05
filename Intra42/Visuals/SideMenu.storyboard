@@ -252,7 +252,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2DA-gk-fBm">
                                                 <rect key="frame" x="156" y="231" width="162" height="33"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                <state key="normal" title="pvarry's android app!"/>
+                                                <state key="normal" title="pvarry's android app!">
+                                                    <color key="titleColor" name="intraTeal"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="openAndroidLink:" destination="a1X-4g-9QV" eventType="touchUpInside" id="9YV-mb-cfI"/>
                                                 </connections>
@@ -272,7 +274,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bwk-vi-K7U">
                                                 <rect key="frame" x="20" y="372.5" width="139" height="33"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                <state key="normal" title="Intra 42 on Github"/>
+                                                <state key="normal" title="Intra 42 on Github">
+                                                    <color key="titleColor" name="intraTeal"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="openGithubLink:" destination="a1X-4g-9QV" eventType="touchUpInside" id="2CF-Yy-rQo"/>
                                                 </connections>
@@ -280,7 +284,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mCU-cb-zKf">
                                                 <rect key="frame" x="20" y="462.5" width="202" height="33"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                <state key="normal" title="Donate through Paypal ❤️"/>
+                                                <state key="normal" title="Donate through Paypal ❤️">
+                                                    <color key="titleColor" name="intraTeal"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="openPaypalLink:" destination="a1X-4g-9QV" eventType="touchUpInside" id="jAN-zB-XRs"/>
                                                 </connections>
@@ -309,7 +315,9 @@ Cheers 😉</mutableString>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ywg-wd-o7L">
                                                 <rect key="frame" x="20" y="803" width="91" height="33"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                <state key="normal" title="SwiftyJSON"/>
+                                                <state key="normal" title="SwiftyJSON">
+                                                    <color key="titleColor" name="intraTeal"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="openSwiftyJSONLink:" destination="a1X-4g-9QV" eventType="touchUpInside" id="UJ8-ml-cax"/>
                                                 </connections>
@@ -317,7 +325,9 @@ Cheers 😉</mutableString>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q32-aM-wtg">
                                                 <rect key="frame" x="20" y="844" width="77" height="33"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                <state key="normal" title="SideMenu"/>
+                                                <state key="normal" title="SideMenu">
+                                                    <color key="titleColor" name="intraTeal"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="openSideMenuLink:" destination="a1X-4g-9QV" eventType="touchUpInside" id="bLS-1P-gqj"/>
                                                 </connections>
@@ -325,7 +335,9 @@ Cheers 😉</mutableString>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N1N-E3-Cy6">
                                                 <rect key="frame" x="20" y="885" width="54" height="33"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                <state key="normal" title="SVGKit"/>
+                                                <state key="normal" title="SVGKit">
+                                                    <color key="titleColor" name="intraTeal"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="openSVGKitLink:" destination="a1X-4g-9QV" eventType="touchUpInside" id="Oz2-fA-m7f"/>
                                                 </connections>
@@ -333,7 +345,9 @@ Cheers 😉</mutableString>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFM-7x-zY8">
                                                 <rect key="frame" x="20" y="926" width="108" height="33"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                <state key="normal" title="KeychainSwift"/>
+                                                <state key="normal" title="KeychainSwift">
+                                                    <color key="titleColor" name="intraTeal"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="openKeychainSwiftLink:" destination="a1X-4g-9QV" eventType="touchUpInside" id="YGE-G2-7b8"/>
                                                 </connections>
@@ -341,7 +355,9 @@ Cheers 😉</mutableString>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OHS-he-7pN">
                                                 <rect key="frame" x="20" y="967" width="137" height="33"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                <state key="normal" title="Fabric Crashlytics"/>
+                                                <state key="normal" title="Fabric Crashlytics">
+                                                    <color key="titleColor" name="intraTeal"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="openCrashlyticsLink:" destination="a1X-4g-9QV" eventType="touchUpInside" id="ura-lO-Nrb"/>
                                                 </connections>
@@ -716,6 +732,9 @@ Cheers 😉</mutableString>
         <image name="icon_default" width="180" height="180"/>
         <image name="icon_fed" width="60" height="60"/>
         <image name="icon_ord" width="60" height="60"/>
+        <namedColor name="intraTeal">
+            <color red="0.0" green="0.72941176470588232" blue="0.73725490196078436" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="lightTextBackground">
             <color red="0.89800000190734863" green="0.89800000190734863" blue="0.89800000190734863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

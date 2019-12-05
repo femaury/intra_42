@@ -17,6 +17,10 @@ class CorrectionsViewController: UIViewController {
     var corrections: [Correction] = []
     var correctorId: Int?
     
+    var selectedTeamUserId: Int = Int()
+    var selectedTeamProjectId: Int = Int()
+    var selectedTeamProjectName: String = String()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -110,7 +114,30 @@ extension CorrectionsViewController: SearchResultsDataSource {
                     }
                 }
             }
+        } else if segue.identifier == "UserProjectSegue" {
+            if let destination = segue.destination as? UserProjectController {
+                let projectId = selectedTeamProjectId
+                let id = selectedTeamUserId
+                let name = selectedTeamProjectName
+                
+                API42Manager.shared.getTeam(forUserId: id, projectId: projectId) { projectTeams in
+                    if name.count > 20 {
+                        destination.title = String(name.prefix(20)) + "..."
+                    } else {
+                        destination.title = name
+                    }
+                    destination.projectTeams = projectTeams
+                    destination.tableView.reloadData()
+                }
+            }
         }
+    }
+    
+    func showCorecteeTeamPage(projectId: Int, userId: Int, projectName: String) {
+        selectedTeamUserId = userId
+        selectedTeamProjectId = projectId
+        selectedTeamProjectName = projectName
+        performSegue(withIdentifier: "UserProjectSegue", sender: self)
     }
 }
 

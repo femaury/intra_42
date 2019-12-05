@@ -10,8 +10,8 @@ import Foundation
 import SwiftyJSON
 
 extension API42Manager {
-    // TODO: Get application API token officialized to make more than 2 requests per second.
     // first_name and last_name have been removed from search parameter (27/08/19)
+    // now searching for full names instead...
     /**
      Gets all users (up to 3 x 100) whose login, first name or last name matches the string.
      */

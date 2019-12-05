@@ -2320,13 +2320,13 @@
         <!--Events-->
         <scene sceneID="7FO-7K-D1D">
             <objects>
-                <viewController title="Events" id="bAz-Fy-y2k" customClass="EventsViewController" customModule="Intra42" sceneMemberID="viewController">
+                <viewController title="Events" extendedLayoutIncludesOpaqueBars="YES" id="bAz-Fy-y2k" customClass="EventsViewController" customModule="Intra42" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cFe-HK-xyd">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xf7-dz-VXj">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="LoadingIndicatorCell" rowHeight="75" id="h1D-DG-9JS" customClass="LoadingCell" customModule="Intra42" customModuleProvider="target">
@@ -2526,10 +2526,10 @@
                             </tableView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="Xf7-dz-VXj" firstAttribute="leading" secondItem="bbw-HK-2pA" secondAttribute="leading" id="8b7-1N-12a"/>
-                            <constraint firstItem="Xf7-dz-VXj" firstAttribute="top" secondItem="bbw-HK-2pA" secondAttribute="top" id="KUy-hG-02C"/>
-                            <constraint firstItem="bbw-HK-2pA" firstAttribute="bottom" secondItem="Xf7-dz-VXj" secondAttribute="bottom" id="TJQ-Wl-kl3"/>
-                            <constraint firstItem="bbw-HK-2pA" firstAttribute="trailing" secondItem="Xf7-dz-VXj" secondAttribute="trailing" id="rE9-0a-QTv"/>
+                            <constraint firstAttribute="trailing" secondItem="Xf7-dz-VXj" secondAttribute="trailing" id="3aM-8Y-ezw"/>
+                            <constraint firstAttribute="bottom" secondItem="Xf7-dz-VXj" secondAttribute="bottom" id="EeR-HQ-XY9"/>
+                            <constraint firstItem="Xf7-dz-VXj" firstAttribute="leading" secondItem="cFe-HK-xyd" secondAttribute="leading" id="KB6-La-z9k"/>
+                            <constraint firstItem="Xf7-dz-VXj" firstAttribute="top" secondItem="cFe-HK-xyd" secondAttribute="top" id="pbZ-8A-az3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bbw-HK-2pA"/>
                     </view>

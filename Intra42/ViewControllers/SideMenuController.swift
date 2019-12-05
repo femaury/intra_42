@@ -16,7 +16,6 @@ class SideMenuController: UIViewController {
     
     let items: [(title: String, image: UIImage?)] = [
         ("Projects", UIImage(named: "briefcase")),
-        ("Videos", UIImage(named: "movie")),
         ("Forums", UIImage(named: "collaboration")),
         ("Coalitions", UIImage(named: "bookmark_ribbon")),
         ("Achievements", UIImage(named: "trophy")),
@@ -24,7 +23,6 @@ class SideMenuController: UIViewController {
         ("Settings", UIImage(named: "settings")),
         ("Logout", UIImage(named: "shutdown"))
     ]
-    let disabledItems: [Int] = [1] // Unfinished pages
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,25 +64,12 @@ class SideMenuController: UIViewController {
 }
 
 extension SideMenuController: UITableViewDelegate, UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        if disabledItems.contains(indexPath.row) {
-            return nil
-        }
-        return indexPath
-    }
-    
+        
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
             performSegue(withIdentifier: "ProjectsSegue", sender: self)
         case 1:
-//            let url = API42Manager.shared.baseURL + "attachments?page[size]=100"
-//            API42Manager.shared.request(url: url) { (data) in
-//                print(data)
-//            }
-            performSegue(withIdentifier: "VideosSegue", sender: self)
-        case 2:
             let urlString = "https://stackoverflow.com/c/42network"
             if let url = URL(string: urlString) {
                 let safariVC = SFSafariViewController(url: url)
@@ -92,19 +77,15 @@ extension SideMenuController: UITableViewDelegate, UITableViewDataSource {
                 
                 self.present(safariVC, animated: true, completion: nil)
             }
-        case 3:
-//            let url = API42Manager.shared.baseURL + "campus?page[size]=100"
-//            API42Manager.shared.request(url: url) { (data) in
-//                print(data)
-//            }
+        case 2:
             performSegue(withIdentifier: "CoalitionsSegue", sender: self)
-        case 4:
+        case 3:
             performSegue(withIdentifier: "AchievementsSegue", sender: self)
-        case 5:
+        case 4:
             performSegue(withIdentifier: "AboutSegue", sender: self)
-        case 6:
+        case 5:
             performSegue(withIdentifier: "SettingsSegue", sender: self)
-        case 7:
+        case 6:
             API42Manager.shared.logoutUser()
         default:
             return
@@ -126,7 +107,7 @@ extension SideMenuController: UITableViewDelegate, UITableViewDataSource {
         }
         cell?.imageView?.image = items[indexPath.row].image
         cell?.textLabel?.text = items[indexPath.row].title
-        if indexPath.row == 4 {
+        if indexPath.row == 3 {
             let borderBottom = UIView(frame: CGRect(x: 0, y: 49, width: tableView.frame.width, height: 1))
             borderBottom.backgroundColor = .black
             if #available(iOS 13.0, *) {
@@ -137,12 +118,6 @@ extension SideMenuController: UITableViewDelegate, UITableViewDataSource {
             cell?.imageView?.image = cell?.imageView?.image?.withRenderingMode(.alwaysTemplate)
             cell?.imageView?.tintColor = .red
             cell?.textLabel?.textColor = .red
-        }
-        if disabledItems.contains(indexPath.row) {
-            cell?.selectionStyle = .none
-            cell?.textLabel?.isEnabled = false
-            cell?.imageView?.image = cell?.imageView?.image?.withRenderingMode(.alwaysTemplate)
-            cell?.imageView?.tintColor = .gray
         }
         return cell!
     }

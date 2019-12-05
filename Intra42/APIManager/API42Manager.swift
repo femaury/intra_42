@@ -67,7 +67,7 @@ class API42Manager {
     /// Coalition color of logged in user
     var coalitionColor: UIColor?
     /// Coalition logo of logged in user
-    var coalitionLogo: String?
+    var coalitionBgURL: String?
     /// Coalition name of logged in user
     var coalitionName: String?
 
@@ -115,10 +115,10 @@ class API42Manager {
             self.userProfile = UserProfile(data: data)
             
             let userId = data["id"].intValue
-            self.getCoalitionInfo(forUserId: userId, completionHandler: { (name, color, logo) in
+            self.getCoalitionInfo(forUserId: userId, completionHandler: { (name, color, bgURL) in
                 self.coalitionName = name
                 self.coalitionColor = color
-                self.coalitionLogo = logo
+                self.coalitionBgURL = bgURL
                 
                 if let finishHandler = self.userProfileCompletionHandler {
                     finishHandler(self.userProfile)

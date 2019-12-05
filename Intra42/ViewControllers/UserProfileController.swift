@@ -13,7 +13,7 @@ class UserProfileController: UITableViewController {
     var userProfile: UserProfile?
     var userActions: UserActions?
     var coalitionColor: UIColor?
-    var coalitionLogo: String?
+    var coalitionBgURL: String?
     var coalitionName: String?
     var isLoadingData = true
     var sectionToDisplay: ProfileSection = .projects {
@@ -121,11 +121,11 @@ class UserProfileController: UITableViewController {
             guard let self = self, let data = data else { return }
             self.userProfile = UserProfile(data: data)
             if let userId = self.userProfile?.userId {
-                API42Manager.shared.getCoalitionInfo(forUserId: userId) { [weak self] (name, color, logo) in
+                API42Manager.shared.getCoalitionInfo(forUserId: userId) { [weak self] (name, color, bgURL) in
                     guard let self = self else { return }
                     self.coalitionName = name
                     self.coalitionColor = color
-                    self.coalitionLogo = logo
+                    self.coalitionBgURL = bgURL
                     self.isLoadingData = false
                     self.tableView.refreshControl?.endRefreshing()
                     self.tableView.reloadData()
@@ -209,7 +209,7 @@ extension UserProfileController {
         
         if section == 0 {
             let view = tableView.dequeueReusableCell(withIdentifier: "UserHeaderCell") as! UserHeaderCell
-            view.coalitionLogo = coalitionLogo
+            view.coalitionBgURL = coalitionBgURL
             view.coalitionColor = coalitionColor
             view.coalitionName = coalitionName
             view.userProfile = userProfile

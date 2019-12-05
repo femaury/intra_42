@@ -1711,6 +1711,7 @@
                         <outlet property="activityIndicator" destination="ESb-vw-hFk" id="m69-08-tOu"/>
                         <outlet property="scrollView" destination="Yq8-3o-uTX" id="pGg-DT-nx9"/>
                         <segue destination="nA9-54-nSd" kind="show" identifier="ProjectInfoSegue" id="YTe-KT-BHs"/>
+                        <segue destination="f6i-oQ-OVe" kind="show" identifier="UserProjectSegue" id="MnY-6L-7ps"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gEO-8r-qKT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2853,6 +2854,6 @@
         <segue reference="atr-x9-EV6"/>
         <segue reference="0QS-t1-7Go"/>
         <segue reference="oJI-up-e6L"/>
-        <segue reference="IZG-qr-rub"/>
+        <segue reference="MnY-6L-7ps"/>
     </inferredMetricsTieBreakers>
 </document>

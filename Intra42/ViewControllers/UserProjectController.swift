@@ -74,6 +74,20 @@ extension UserProjectController {
         }
         return count
     }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if projectTeams == nil {
+            return 0
+        }
+        return 60
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if projectTeams == nil {
+            return tableView.frame.height
+        }
+        return UITableView.automaticDimension
+    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let teams = projectTeams else {

@@ -308,7 +308,11 @@ class HolyGraphView: UIView {
             self.delegate?.selectedProjectId = self.id
             self.delegate?.selectedProjectState = self.state
             self.delegate?.selectedProjectDuration = self.duration
-            self.delegate?.performSegue(withIdentifier: "ProjectInfoSegue", sender: self.delegate)
+            if self.delegate?.userId == API42Manager.shared.userProfile?.userId {
+                self.delegate?.performSegue(withIdentifier: "ProjectInfoSegue", sender: self.delegate)
+            } else {
+                self.delegate?.performSegue(withIdentifier: "UserProjectSegue", sender: self.delegate)
+            }
         }
         let cancel = UIAlertAction(title: "Cancel", style: .cancel)
         showProjectAction.addAction(showProfile)

@@ -61,6 +61,13 @@ class HolyGraphViewController: UIViewController, UIScrollViewDelegate {
                 }
                 
             }
+        } else if segue.identifier == "UserProjectSegue" {
+            if let destination = segue.destination as? UserProjectController {
+                API42Manager.shared.getTeam(forUserId: userId, projectId: selectedProjectId) { projectTeams in
+                    destination.projectTeams = projectTeams
+                    destination.tableView.reloadData()
+                }
+            }
         }
     }
     

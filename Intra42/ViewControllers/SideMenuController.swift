@@ -93,11 +93,11 @@ extension SideMenuController: UITableViewDelegate, UITableViewDataSource {
                 self.present(safariVC, animated: true, completion: nil)
             }
         case 3:
-            let url = API42Manager.shared.baseURL + "campus?page[size]=100"
-            API42Manager.shared.request(url: url) { (data) in
-                print(data)
-            }
-//            performSegue(withIdentifier: "CoalitionsSegue", sender: self)
+//            let url = API42Manager.shared.baseURL + "campus?page[size]=100"
+//            API42Manager.shared.request(url: url) { (data) in
+//                print(data)
+//            }
+            performSegue(withIdentifier: "CoalitionsSegue", sender: self)
         case 4:
             performSegue(withIdentifier: "AchievementsSegue", sender: self)
         case 5:

@@ -153,8 +153,8 @@ class FriendsViewController: UIViewController {
             if friendPictures[id] != nil { continue }
             API42Manager.shared.getProfilePicture(withLogin: login) { (image) in
                 guard let image = image else { return }
-                self.friendPictures.updateValue(image, forKey: id)
                 DispatchQueue.main.async {
+                    self.friendPictures.updateValue(image, forKey: id)
                     self.tableView.reloadData()
                 }
             }
@@ -265,7 +265,7 @@ extension FriendsViewController: UITableViewDelegate, UITableViewDataSource {
             let id = friend.id
             let cell = tableView.dequeueReusableCell(withIdentifier: "FriendCell") as! FriendCell
             cell.friend = friend
-            cell.picture = friendPictures[id] // Crash??
+            cell.picture = friendPictures[id] // Concurrency issue crash with read/write access to dictionary
             cell.indexPath = indexPath
             cell.delegate = self
             if let location = friendLocations[id], !location.isEmpty, let info = friendsInfo[id] {

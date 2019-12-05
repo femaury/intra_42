@@ -56,6 +56,7 @@ class HolyGraphViewController: UIViewController, UIScrollViewDelegate {
                     info.duration = duration.prefix(1).capitalized + duration.dropFirst()
                     info.state = ProjectState(rawValue: self.selectedProjectState) ?? .unavailable
                     destination.info = info
+                    destination.delegate = self
                     destination.setupController()
                 }
                 
@@ -85,6 +86,10 @@ class HolyGraphViewController: UIViewController, UIScrollViewDelegate {
         let cancel = UIAlertAction(title: "Cancel", style: .cancel)
         showCursusAction.addAction(cancel)
         present(showCursusAction, animated: true, completion: nil)
+    }
+    
+    func reloadHolyGraph() {
+        drawHolyGraph(forUser: user, campusId: campusId, cursusId: cursusId)
     }
     
     func drawHolyGraph(forUser user: String, campusId: Int, cursusId: Int) {

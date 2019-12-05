@@ -8,6 +8,26 @@
 
 import Foundation
 
+enum ProjectState: String {
+    case success = "done"
+    case fail = "fail"
+    case inProgress = "in_progress"
+    case available = "available"
+    case unavailable = "unavailable"
+}
+
+struct ProjectInfo {
+    var id: Int
+    var name: String
+    var exp: Int
+    var groupSize: String
+    var duration: String
+    var state: ProjectState
+    var grade: String
+    var description: String
+    var objectives: [String]
+}
+
 struct Project {
     var name: String
     var id: Int

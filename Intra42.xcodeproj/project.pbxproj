@@ -53,6 +53,7 @@
 		DC6FA15B22CD1A4300080A90 /* DictionaryPercentEscaped.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6FA15A22CD1A4300080A90 /* DictionaryPercentEscaped.swift */; };
 		DC77CE10238832A00017BF4F /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC77CE0F238832A00017BF4F /* LoadingCell.swift */; };
 		DC77CE5A238F030B0017BF4F /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC77CE59238F030B0017BF4F /* WebViewController.swift */; };
+		DC77F0232399338B00957887 /* ProjectsUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC77F0222399338B00957887 /* ProjectsUsers.swift */; };
 		DC89992D22414F9000F47EEF /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89992C22414F9000F47EEF /* Achievement.swift */; };
 		DC89993022427A1500F47EEF /* AchievementsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89992F22427A1500F47EEF /* AchievementsController.swift */; };
 		DC89993622451EB200F47EEF /* UserProfileDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89993522451EB200F47EEF /* UserProfileDataSource.swift */; };
@@ -165,6 +166,7 @@
 		DC6FA15A22CD1A4300080A90 /* DictionaryPercentEscaped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryPercentEscaped.swift; sourceTree = "<group>"; };
 		DC77CE0F238832A00017BF4F /* LoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
 		DC77CE59238F030B0017BF4F /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		DC77F0222399338B00957887 /* ProjectsUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsUsers.swift; sourceTree = "<group>"; };
 		DC89992C22414F9000F47EEF /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
 		DC89992F22427A1500F47EEF /* AchievementsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsController.swift; sourceTree = "<group>"; };
 		DC89993522451EB200F47EEF /* UserProfileDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileDataSource.swift; sourceTree = "<group>"; };
@@ -571,6 +573,7 @@
 				DC4834FC230C3453007D0F8D /* EventsUsers.swift */,
 				DC4F1DF423944108000F4BF9 /* HolyGraph.swift */,
 				DCF30D582396C6EA0000EC7C /* Projects.swift */,
+				DC77F0222399338B00957887 /* ProjectsUsers.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -798,6 +801,7 @@
 				DC955E0B222F1242003B70BC /* AchievementCell.swift in Sources */,
 				DC27FD8F22A6E44400E3E560 /* ProjectTeamEvaluationCell.swift in Sources */,
 				DC6FA15B22CD1A4300080A90 /* DictionaryPercentEscaped.swift in Sources */,
+				DC77F0232399338B00957887 /* ProjectsUsers.swift in Sources */,
 				DCCE059A22284B0000906ECD /* UIColorHex.swift in Sources */,
 				DC21EB9522C9184900E1288B /* CoalitionsViewController.swift in Sources */,
 				DCCE05AA2229A5A000906ECD /* ProfileHeaderCell.swift in Sources */,

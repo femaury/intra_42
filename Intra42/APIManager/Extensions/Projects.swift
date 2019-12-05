@@ -34,11 +34,12 @@ extension API42Manager {
             print("DESCRIPTION: \(description)")
             let exp = session["difficulty"].intValue
             let objectives = session["objectives"].arrayValue.map { $0.stringValue}
+            let group = session["solo"].boolValue ? "Solo" : "In a group"
             var info = ProjectInfo(
                 id: id,
                 name: name,
                 exp: exp,
-                groupSize: "Fuck this API",
+                groupSize: group,
                 duration: "",
                 state: .unavailable,
                 grade: "",

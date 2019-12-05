@@ -10,7 +10,11 @@ import UIKit
 
 struct Colors {
     static let intraTeal = UIColor(hexRGB: "#00BABC")
-    static let validGrade = UIColor(hexRGB: "#00CE00")
+    
+    struct Grades {
+        static let valid = UIColor(hexRGB: "#5CB85B")
+        static let fail = UIColor(hexRGB: "#CC6256")
+    }
     
     struct Coalitions {
         static let fed = UIColor(hexRGB: "4180DB")

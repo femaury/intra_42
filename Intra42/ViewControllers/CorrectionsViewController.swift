@@ -17,6 +17,10 @@ class CorrectionsViewController: UIViewController {
     var corrections: [Correction] = []
     var correctorId: Int?
     
+    var selectedTeamUserId: Int = Int()
+    var selectedTeamProjectId: Int = Int()
+    var selectedTeamProjectName: String = String()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -100,17 +104,40 @@ extension CorrectionsViewController: SearchResultsDataSource {
                     guard let data = data else { return }
                     destination.userProfile = UserProfile(data: data)
                     if let userId = destination.userProfile?.userId {
-                        API42Manager.shared.getCoalitionInfo(forUserId: userId, completionHandler: { (name, color, logo) in
+                        API42Manager.shared.getCoalitionInfo(forUserId: userId, completionHandler: { (name, color, bgURL) in
                             destination.coalitionName = name
                             destination.coalitionColor = color
-                            destination.coalitionLogo = logo
+                            destination.coalitionBgURL = bgURL
                             destination.isLoadingData = false
                             destination.tableView.reloadData()
                         })
                     }
                 }
             }
+        } else if segue.identifier == "UserProjectSegue" {
+            if let destination = segue.destination as? UserProjectController {
+                let projectId = selectedTeamProjectId
+                let id = selectedTeamUserId
+                let name = selectedTeamProjectName
+                
+                API42Manager.shared.getTeam(forUserId: id, projectId: projectId) { projectTeams in
+                    if name.count > 20 {
+                        destination.title = String(name.prefix(20)) + "..."
+                    } else {
+                        destination.title = name
+                    }
+                    destination.projectTeams = projectTeams
+                    destination.tableView.reloadData()
+                }
+            }
         }
+    }
+    
+    func showCorecteeTeamPage(projectId: Int, userId: Int, projectName: String) {
+        selectedTeamUserId = userId
+        selectedTeamProjectId = projectId
+        selectedTeamProjectName = projectName
+        performSegue(withIdentifier: "UserProjectSegue", sender: self)
     }
 }
 

@@ -20,30 +20,30 @@ extension API42Manager {
         - completionHandler: Called with retrieved data.
         `"default"`, `Colors.intraTeal`, `""` on error.
      */
-    func getCoalitionInfo(forUserId id: Int, completionHandler: @escaping (String, UIColor?, String) -> Void) {
+    func getCoalitionInfo(forUserId id: Int, completionHandler: @escaping (String, UIColor?, String?) -> Void) {
         request(url: baseURL + "users/\(id)/coalitions") { (responseJSON) in
             guard let data = responseJSON, data.isEmpty == false else {
-                completionHandler("default", Colors.intraTeal, "")
+                completionHandler("Unknown", Colors.intraTeal, nil)
                 return
             }
             print(data)
             var lowestId = data.arrayValue[0]["id"].intValue
-            var hexColor = ""
-            var coaLogo = ""
-            var coaSlug = ""
+            var hexColor = data.arrayValue[0]["color"].stringValue
+            var coaBgURL = data.arrayValue[0]["cover_url"].stringValue
+            var coaName = data.arrayValue[0]["name"].stringValue
             
+            let piscineCoas = [9, 10, 11, 12]
             for coalition in data.arrayValue {
                 let id = coalition["id"].intValue
-                if id <= lowestId {
+                if id <= lowestId && !piscineCoas.contains(id) {
                     lowestId = id
                     hexColor = coalition["color"].stringValue
-                    coaLogo = coalition["image_url"].stringValue
-                    coaSlug = coalition["slug"].stringValue.replacingOccurrences(of: "-", with: "_")
-                    coaSlug = coaSlug.replacingOccurrences(of: "piscine_c_lyon_", with: "")
+                    coaBgURL = coalition["cover_url"].stringValue
+                    coaName = coalition["name"].stringValue
                 }
             }
             
-            completionHandler(coaSlug, UIColor(hexRGB: hexColor), coaLogo)
+            completionHandler(coaName, UIColor(hexRGB: hexColor), coaBgURL)
         }
     }
     

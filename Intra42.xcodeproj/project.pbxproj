@@ -47,8 +47,13 @@
 		DC49298022F724CB004024C3 /* SideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC49297F22F724CB004024C3 /* SideMenu.storyboard */; };
 		DC49298222F7315E004024C3 /* icon_default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC49298122F7315E004024C3 /* icon_default@2x.png */; };
 		DC49298422F73166004024C3 /* icon_default@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC49298322F73165004024C3 /* icon_default@3x.png */; };
+		DC4F1DF323918D89000F4BF9 /* HolyGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4F1DF223918D89000F4BF9 /* HolyGraphViewController.swift */; };
+		DC4F1DF523944108000F4BF9 /* HolyGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4F1DF423944108000F4BF9 /* HolyGraph.swift */; };
+		DC4F1DF723944B66000F4BF9 /* HolyGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4F1DF623944B66000F4BF9 /* HolyGraphView.swift */; };
 		DC6FA15B22CD1A4300080A90 /* DictionaryPercentEscaped.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6FA15A22CD1A4300080A90 /* DictionaryPercentEscaped.swift */; };
 		DC77CE10238832A00017BF4F /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC77CE0F238832A00017BF4F /* LoadingCell.swift */; };
+		DC77CE5A238F030B0017BF4F /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC77CE59238F030B0017BF4F /* WebViewController.swift */; };
+		DC77F0232399338B00957887 /* ProjectsUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC77F0222399338B00957887 /* ProjectsUsers.swift */; };
 		DC89992D22414F9000F47EEF /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89992C22414F9000F47EEF /* Achievement.swift */; };
 		DC89993022427A1500F47EEF /* AchievementsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89992F22427A1500F47EEF /* AchievementsController.swift */; };
 		DC89993622451EB200F47EEF /* UserProfileDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89993522451EB200F47EEF /* UserProfileDataSource.swift */; };
@@ -99,9 +104,10 @@
 		DCF1A4F0229995B700AA2653 /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1A4EF229995B700AA2653 /* Locations.swift */; };
 		DCF1A4F2229995DA00AA2653 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1A4F1229995DA00AA2653 /* Users.swift */; };
 		DCF1A4F42299960500AA2653 /* ProfilePicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1A4F32299960500AA2653 /* ProfilePicture.swift */; };
+		DCF30D572396BE660000EC7C /* ProjectInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF30D562396BE660000EC7C /* ProjectInfoViewController.swift */; };
+		DCF30D592396C6EA0000EC7C /* Projects.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF30D582396C6EA0000EC7C /* Projects.swift */; };
 		DCF70AFA229ABAD000B29DCC /* AchievementsHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF70AF9229ABAD000B29DCC /* AchievementsHeaderCell.swift */; };
 		DCF70AFC229AE7B200B29DCC /* ProjectEvaluation.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCF70AFB229AE7B200B29DCC /* ProjectEvaluation.xib */; };
-		DCF70AFE229AEBF700B29DCC /* ProjectEvaluation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF70AFD229AEBF700B29DCC /* ProjectEvaluation.swift */; };
 		DCF70B01229AF11500B29DCC /* ProjectTeamHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF70B00229AF11500B29DCC /* ProjectTeamHeaderCell.swift */; };
 		DCF70B03229AF12A00B29DCC /* ProjectTeamGitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF70B02229AF12A00B29DCC /* ProjectTeamGitCell.swift */; };
 		DCF70B05229AF13700B29DCC /* ProjectTeamUsersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF70B04229AF13700B29DCC /* ProjectTeamUsersCell.swift */; };
@@ -153,8 +159,13 @@
 		DC49297F22F724CB004024C3 /* SideMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SideMenu.storyboard; sourceTree = "<group>"; };
 		DC49298122F7315E004024C3 /* icon_default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_default@2x.png"; sourceTree = "<group>"; };
 		DC49298322F73165004024C3 /* icon_default@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_default@3x.png"; sourceTree = "<group>"; };
+		DC4F1DF223918D89000F4BF9 /* HolyGraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolyGraphViewController.swift; sourceTree = "<group>"; };
+		DC4F1DF423944108000F4BF9 /* HolyGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolyGraph.swift; sourceTree = "<group>"; };
+		DC4F1DF623944B66000F4BF9 /* HolyGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolyGraphView.swift; sourceTree = "<group>"; };
 		DC6FA15A22CD1A4300080A90 /* DictionaryPercentEscaped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryPercentEscaped.swift; sourceTree = "<group>"; };
 		DC77CE0F238832A00017BF4F /* LoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
+		DC77CE59238F030B0017BF4F /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		DC77F0222399338B00957887 /* ProjectsUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsUsers.swift; sourceTree = "<group>"; };
 		DC89992C22414F9000F47EEF /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
 		DC89992F22427A1500F47EEF /* AchievementsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsController.swift; sourceTree = "<group>"; };
 		DC89993522451EB200F47EEF /* UserProfileDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileDataSource.swift; sourceTree = "<group>"; };
@@ -208,9 +219,10 @@
 		DCF1A4EF229995B700AA2653 /* Locations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
 		DCF1A4F1229995DA00AA2653 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		DCF1A4F32299960500AA2653 /* ProfilePicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePicture.swift; sourceTree = "<group>"; };
+		DCF30D562396BE660000EC7C /* ProjectInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectInfoViewController.swift; sourceTree = "<group>"; };
+		DCF30D582396C6EA0000EC7C /* Projects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Projects.swift; sourceTree = "<group>"; };
 		DCF70AF9229ABAD000B29DCC /* AchievementsHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementsHeaderCell.swift; sourceTree = "<group>"; };
 		DCF70AFB229AE7B200B29DCC /* ProjectEvaluation.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectEvaluation.xib; sourceTree = "<group>"; };
-		DCF70AFD229AEBF700B29DCC /* ProjectEvaluation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectEvaluation.swift; sourceTree = "<group>"; };
 		DCF70B00229AF11500B29DCC /* ProjectTeamHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTeamHeaderCell.swift; sourceTree = "<group>"; };
 		DCF70B02229AF12A00B29DCC /* ProjectTeamGitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTeamGitCell.swift; sourceTree = "<group>"; };
 		DCF70B04229AF13700B29DCC /* ProjectTeamUsersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTeamUsersCell.swift; sourceTree = "<group>"; };
@@ -354,7 +366,7 @@
 				DC21EB9822C92FAA00E1288B /* CoalitionView.swift */,
 				DC1988C72236FA53009E3A55 /* ClustersView.swift */,
 				DC1988CF2239680D009E3A55 /* ClusterPost.swift */,
-				DCF70AFD229AEBF700B29DCC /* ProjectEvaluation.swift */,
+				DC4F1DF623944B66000F4BF9 /* HolyGraphView.swift */,
 				DC8C39DF229999F100DD1924 /* Cells */,
 			);
 			path = Views;
@@ -463,6 +475,7 @@
 			isa = PBXGroup;
 			children = (
 				DCCE0591222701F000906ECD /* LoginViewController.swift */,
+				DC77CE59238F030B0017BF4F /* WebViewController.swift */,
 				DC955E0C222FF623003B70BC /* SideMenuController.swift */,
 				DCCE058F2227010E00906ECD /* HomeViewController.swift */,
 				DC955E04222DDDEB003B70BC /* UserProfileController.swift */,
@@ -478,6 +491,8 @@
 				DCABB86A22C12C1F00711C4A /* AboutViewController.swift */,
 				DC21EB9422C9184900E1288B /* CoalitionsViewController.swift */,
 				DC41485B22D0BED70005FCB1 /* SettingsViewController.swift */,
+				DC4F1DF223918D89000F4BF9 /* HolyGraphViewController.swift */,
+				DCF30D562396BE660000EC7C /* ProjectInfoViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -553,6 +568,9 @@
 				DCF1A4F32299960500AA2653 /* ProfilePicture.swift */,
 				DC27FD9822AE773D00E3E560 /* Teams.swift */,
 				DC4834FC230C3453007D0F8D /* EventsUsers.swift */,
+				DC4F1DF423944108000F4BF9 /* HolyGraph.swift */,
+				DCF30D582396C6EA0000EC7C /* Projects.swift */,
+				DC77F0222399338B00957887 /* ProjectsUsers.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -715,7 +733,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#   Output version & build numbers into a label on LaunchScreen.storyboard\nsourceFilePath=\"$PROJECT_DIR/$PROJECT_NAME/App/Base.lproj/LaunchScreen.storyboard\"\nversionNumber=\"$MARKETING_VERSION\"\nbuildNumber=\"$CURRENT_PROJECT_VERSION\"\n\nsed -i bak -e \"/userLabel=\\\"APP_VERSION\\\"/s/text=\\\"[^\\\"]*\\\"/text=\\\"v$versionNumber ($buildNumber)\\\"/\" $PROJECT_DIR/$PROJECT_NAME/Visuals/Base.lproj/LaunchScreen.storyboard\n";
+			shellScript = "#   Output version & build numbers into a label on LaunchScreen.storyboard\nbuildNumber=\"$CURRENT_PROJECT_VERSION\"\nversionNumber=\"$MARKETING_VERSION\"\n\nsed -i bak -e \"/userLabel=\\\"APP_VERSION\\\"/s/text=\\\"[^\\\"]*\\\"/text=\\\"v$versionNumber ($buildNumber)\\\"/\" $PROJECT_DIR/$PROJECT_NAME/Visuals/Base.lproj/LaunchScreen.storyboard\n";
 		};
 		DCF1A4E122997AB300AA2653 /* Swift Lint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -780,9 +798,11 @@
 				DC955E0B222F1242003B70BC /* AchievementCell.swift in Sources */,
 				DC27FD8F22A6E44400E3E560 /* ProjectTeamEvaluationCell.swift in Sources */,
 				DC6FA15B22CD1A4300080A90 /* DictionaryPercentEscaped.swift in Sources */,
+				DC77F0232399338B00957887 /* ProjectsUsers.swift in Sources */,
 				DCCE059A22284B0000906ECD /* UIColorHex.swift in Sources */,
 				DC21EB9522C9184900E1288B /* CoalitionsViewController.swift in Sources */,
 				DCCE05AA2229A5A000906ECD /* ProfileHeaderCell.swift in Sources */,
+				DCF30D572396BE660000EC7C /* ProjectInfoViewController.swift in Sources */,
 				DCCE0592222701F000906ECD /* LoginViewController.swift in Sources */,
 				DCF70B09229AF30900B29DCC /* UserProjectController.swift in Sources */,
 				DC89993A2245338300F47EEF /* UserActions.swift in Sources */,
@@ -794,12 +814,14 @@
 				DC21EB9022C90DAD00E1288B /* Pentagone.swift in Sources */,
 				DCF1A4DE229977ED00AA2653 /* Correction.swift in Sources */,
 				DCCE05A62229822500906ECD /* UIImageViewFromURL.swift in Sources */,
+				DC4F1DF523944108000F4BF9 /* HolyGraph.swift in Sources */,
 				DCCE05902227010E00906ECD /* HomeViewController.swift in Sources */,
 				DCF1A4D8229976A500AA2653 /* AchievementData.swift in Sources */,
 				DCCE05A222296DC100906ECD /* ClustersViewController.swift in Sources */,
 				DC955DF0222C5192003B70BC /* DateTimeInterval.swift in Sources */,
 				DCF1A4E02299781900AA2653 /* Friend.swift in Sources */,
 				DCCE058E2226F0FF00906ECD /* CustomError.swift in Sources */,
+				DC77CE5A238F030B0017BF4F /* WebViewController.swift in Sources */,
 				DC955E0D222FF623003B70BC /* SideMenuController.swift in Sources */,
 				DC1988C02236970F009E3A55 /* StringHTMLToAttributedString.swift in Sources */,
 				DCF70B01229AF11500B29DCC /* ProjectTeamHeaderCell.swift in Sources */,
@@ -809,12 +831,12 @@
 				DC0D7B39223321CF00A30B9F /* LogsTableCell.swift in Sources */,
 				DC0D7B352231768A00A30B9F /* StringShortMonth.swift in Sources */,
 				DC27FD9922AE773D00E3E560 /* Teams.swift in Sources */,
+				DC4F1DF723944B66000F4BF9 /* HolyGraphView.swift in Sources */,
 				DC89993822452F4E00F47EEF /* ProfileTableCells.swift in Sources */,
 				DC955E02222CBC7F003B70BC /* UserResultCell.swift in Sources */,
 				DC955DEA222BE9EE003B70BC /* UIViewRoundCorners.swift in Sources */,
 				DC37979A228DB53500406488 /* Triangle.swift in Sources */,
 				DC3797912288710200406488 /* ScalesCell.swift in Sources */,
-				DCF70AFE229AEBF700B29DCC /* ProjectEvaluation.swift in Sources */,
 				DC955E05222DDDEB003B70BC /* UserProfileController.swift in Sources */,
 				DCF70AFA229ABAD000B29DCC /* AchievementsHeaderCell.swift in Sources */,
 				DC89992D22414F9000F47EEF /* Achievement.swift in Sources */,
@@ -832,6 +854,7 @@
 				DC27FD9722AE66EE00E3E560 /* ProjectTeam.swift in Sources */,
 				DC0D7B3022305DDC00A30B9F /* CoreDataManager.swift in Sources */,
 				DC0D7B372232D0C800A30B9F /* StringIsPhoneNumber.swift in Sources */,
+				DC4F1DF323918D89000F4BF9 /* HolyGraphViewController.swift in Sources */,
 				DCCE059C22286EC800906ECD /* Colors.swift in Sources */,
 				DCF70B03229AF12A00B29DCC /* ProjectTeamGitCell.swift in Sources */,
 				DC955DEE222C4E88003B70BC /* ProjectCell.swift in Sources */,
@@ -850,6 +873,7 @@
 				DCF70B05229AF13700B29DCC /* ProjectTeamUsersCell.swift in Sources */,
 				DCF1A4E42299929900AA2653 /* OAuthFlow.swift in Sources */,
 				DC1988D02239680D009E3A55 /* ClusterPost.swift in Sources */,
+				DCF30D592396C6EA0000EC7C /* Projects.swift in Sources */,
 				DCCE057A222591F400906ECD /* AppDelegate.swift in Sources */,
 				DC89993022427A1500F47EEF /* AchievementsController.swift in Sources */,
 			);
@@ -991,7 +1015,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J2YFW87U3N;
 				INFOPLIST_FILE = Intra42/Info.plist;
@@ -1000,7 +1024,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.3.2;
+				MARKETING_VERSION = 0.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.femaury.Intra42;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1014,7 +1038,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = J2YFW87U3N;
 				INFOPLIST_FILE = Intra42/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1022,7 +1046,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.3.2;
+				MARKETING_VERSION = 0.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.femaury.Intra42;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

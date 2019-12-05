@@ -64,7 +64,7 @@ struct Event: Equatable {
         }
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         if let beginDate = dateFormatter.date(from: event["begin_at"].stringValue) {
             begin = beginDate
         } else {

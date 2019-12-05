@@ -41,9 +41,9 @@
                         <segue destination="a1X-4g-9QV" kind="show" identifier="AboutSegue" id="6Sw-zJ-zXK"/>
                         <segue destination="cAB-jJ-CN9" kind="show" identifier="AchievementsSegue" id="XQ6-m9-odJ"/>
                         <segue destination="eZl-gn-UGo" kind="show" identifier="VideosSegue" id="DtX-Bg-gk3"/>
-                        <segue destination="UqP-KI-dUr" kind="show" identifier="ProjectsSegue" id="iXa-FM-hg5"/>
                         <segue destination="EXR-kY-yaD" kind="show" identifier="SettingsSegue" id="gzr-iD-LVe"/>
                         <segue destination="LHb-1I-22f" kind="show" identifier="CoalitionsSegue" id="mQL-hj-lR7"/>
+                        <segue destination="bCE-GP-nGX" kind="show" identifier="ProjectsSegue" id="Qt6-hG-ioe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QyE-HB-quV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -228,7 +228,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="1312"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EO6-7o-3uD">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1234"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1058"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Project" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1z-JJ-zn5">
                                                 <rect key="frame" x="20" y="20" width="108.5" height="26.5"/>
@@ -252,7 +252,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2DA-gk-fBm">
                                                 <rect key="frame" x="156" y="231" width="162" height="33"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                <state key="normal" title="pvarry's android app!"/>
+                                                <state key="normal" title="pvarry's android app!">
+                                                    <color key="titleColor" name="intraTeal"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="openAndroidLink:" destination="a1X-4g-9QV" eventType="touchUpInside" id="9YV-mb-cfI"/>
                                                 </connections>
@@ -272,7 +274,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bwk-vi-K7U">
                                                 <rect key="frame" x="20" y="372.5" width="139" height="33"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                <state key="normal" title="Intra 42 on Github"/>
+                                                <state key="normal" title="Intra 42 on Github">
+                                                    <color key="titleColor" name="intraTeal"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="openGithubLink:" destination="a1X-4g-9QV" eventType="touchUpInside" id="2CF-Yy-rQo"/>
                                                 </connections>
@@ -280,7 +284,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mCU-cb-zKf">
                                                 <rect key="frame" x="20" y="462.5" width="202" height="33"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                <state key="normal" title="Donate through Paypal ❤️"/>
+                                                <state key="normal" title="Donate through Paypal ❤️">
+                                                    <color key="titleColor" name="intraTeal"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="openPaypalLink:" destination="a1X-4g-9QV" eventType="touchUpInside" id="jAN-zB-XRs"/>
                                                 </connections>
@@ -292,58 +298,66 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wN3-JY-1HQ">
-                                                <rect key="frame" x="20" y="540" width="374" height="394.5"/>
-                                                <string key="text">Hey! I am a Canadian student, who moved to Paris to come study at 42. I validated my piscine in July 2017 and then started my cursus in April 2018. I had never really coded before, but I always kind of knew it was something that interested me. So when I heard about the piscine, I knew I had to give it a shot. Ever since that day, coding has been one of my passions.
+                                                <rect key="frame" x="20" y="540" width="374" height="218.5"/>
+                                                <mutableString key="text">Hey! My name is Felix and I'm from Canada. I moved to Paris to join 42 back in April 2018. You can find me under the login 'femaury'. Other than coding, I'm a big fan of jumping out of planes (hit me up if you skydive!), exploring the world, reading books and partying. Feel free to shoot me a message if you have questions about the app or just want to talk!
 
-My name is Felix, you can find me under the login 'femaury'. Other than coding, I'm a big fan of jumping out of planes (hit me up if you skydive!), exploring the world, reading books and partying. Feel free to shoot me a message if you have questions about the app or just want to talk!
-
-Cheers 😉</string>
+Cheers 😉</mutableString>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Third Party Libraries" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4IR-BH-1hd">
-                                                <rect key="frame" x="20" y="944.5" width="190" height="26.5"/>
+                                                <rect key="frame" x="20" y="768.5" width="190" height="26.5"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ywg-wd-o7L">
-                                                <rect key="frame" x="20" y="979" width="91" height="33"/>
+                                                <rect key="frame" x="20" y="803" width="91" height="33"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                <state key="normal" title="SwiftyJSON"/>
+                                                <state key="normal" title="SwiftyJSON">
+                                                    <color key="titleColor" name="intraTeal"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="openSwiftyJSONLink:" destination="a1X-4g-9QV" eventType="touchUpInside" id="UJ8-ml-cax"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q32-aM-wtg">
-                                                <rect key="frame" x="20" y="1020" width="77" height="33"/>
+                                                <rect key="frame" x="20" y="844" width="77" height="33"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                <state key="normal" title="SideMenu"/>
+                                                <state key="normal" title="SideMenu">
+                                                    <color key="titleColor" name="intraTeal"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="openSideMenuLink:" destination="a1X-4g-9QV" eventType="touchUpInside" id="bLS-1P-gqj"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N1N-E3-Cy6">
-                                                <rect key="frame" x="20" y="1061" width="54" height="33"/>
+                                                <rect key="frame" x="20" y="885" width="54" height="33"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                <state key="normal" title="SVGKit"/>
+                                                <state key="normal" title="SVGKit">
+                                                    <color key="titleColor" name="intraTeal"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="openSVGKitLink:" destination="a1X-4g-9QV" eventType="touchUpInside" id="Oz2-fA-m7f"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFM-7x-zY8">
-                                                <rect key="frame" x="20" y="1102" width="108" height="33"/>
+                                                <rect key="frame" x="20" y="926" width="108" height="33"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                <state key="normal" title="KeychainSwift"/>
+                                                <state key="normal" title="KeychainSwift">
+                                                    <color key="titleColor" name="intraTeal"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="openKeychainSwiftLink:" destination="a1X-4g-9QV" eventType="touchUpInside" id="YGE-G2-7b8"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OHS-he-7pN">
-                                                <rect key="frame" x="20" y="1143" width="137" height="33"/>
+                                                <rect key="frame" x="20" y="967" width="137" height="33"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                <state key="normal" title="Fabric Crashlytics"/>
+                                                <state key="normal" title="Fabric Crashlytics">
+                                                    <color key="titleColor" name="intraTeal"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="openCrashlyticsLink:" destination="a1X-4g-9QV" eventType="touchUpInside" id="ura-lO-Nrb"/>
                                                 </connections>
@@ -355,7 +369,7 @@ Cheers 😉</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v0.0.0 (0)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADc-Rh-a1t">
-                                                <rect key="frame" x="174" y="1196" width="66" height="18"/>
+                                                <rect key="frame" x="174" y="1020" width="66" height="18"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -438,13 +452,13 @@ Cheers 😉</string>
         <!--Achievements-->
         <scene sceneID="x1I-bh-g2a">
             <objects>
-                <viewController title="Achievements" modalPresentationStyle="fullScreen" id="cAB-jJ-CN9" customClass="AchievementsController" customModule="Intra42" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Achievements" extendedLayoutIncludesOpaqueBars="YES" modalPresentationStyle="fullScreen" id="cAB-jJ-CN9" customClass="AchievementsController" customModule="Intra42" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="leB-DB-AR1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="L9T-6Y-Sio">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AchievementsHeaderCell" rowHeight="50" id="O4a-pZ-Fvy" customClass="AchievementsHeaderCell" customModule="Intra42" customModuleProvider="target">
@@ -590,10 +604,10 @@ Cheers 😉</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="L9T-6Y-Sio" firstAttribute="top" secondItem="QI4-9a-dUx" secondAttribute="top" id="D78-j2-mmP"/>
-                            <constraint firstItem="QI4-9a-dUx" firstAttribute="bottom" secondItem="L9T-6Y-Sio" secondAttribute="bottom" id="QvC-qy-Vs2"/>
-                            <constraint firstItem="QI4-9a-dUx" firstAttribute="trailing" secondItem="L9T-6Y-Sio" secondAttribute="trailing" id="Sa8-s0-QcN"/>
-                            <constraint firstItem="L9T-6Y-Sio" firstAttribute="leading" secondItem="QI4-9a-dUx" secondAttribute="leading" id="yOC-4E-vmO"/>
+                            <constraint firstItem="L9T-6Y-Sio" firstAttribute="leading" secondItem="leB-DB-AR1" secondAttribute="leading" id="5kh-WZ-giA"/>
+                            <constraint firstItem="L9T-6Y-Sio" firstAttribute="top" secondItem="leB-DB-AR1" secondAttribute="top" id="6cQ-3G-dDk"/>
+                            <constraint firstAttribute="bottom" secondItem="L9T-6Y-Sio" secondAttribute="bottom" id="TeS-gj-ed3"/>
+                            <constraint firstAttribute="trailing" secondItem="L9T-6Y-Sio" secondAttribute="trailing" id="ZAD-VI-tMI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QI4-9a-dUx"/>
                     </view>
@@ -641,42 +655,6 @@ Cheers 😉</string>
             </objects>
             <point key="canvasLocation" x="7047" y="2792"/>
         </scene>
-        <!--Projects-->
-        <scene sceneID="n8r-6A-qlO">
-            <objects>
-                <viewController title="Projects" modalPresentationStyle="fullScreen" id="UqP-KI-dUr" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="VPT-jR-oxn">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="error" translatesAutoresizingMaskIntoConstraints="NO" id="dFx-VU-IOV">
-                                <rect key="frame" x="157" y="398" width="100" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="TcV-3Q-Wyg"/>
-                                    <constraint firstAttribute="height" constant="100" id="nCi-Ab-bUo"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Work in Progress" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fci-Wl-ijK">
-                                <rect key="frame" x="121" y="508" width="172" height="24"/>
-                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="fci-Wl-ijK" firstAttribute="top" secondItem="dFx-VU-IOV" secondAttribute="bottom" constant="10" id="6sP-Ui-XXS"/>
-                            <constraint firstItem="dFx-VU-IOV" firstAttribute="centerY" secondItem="VPT-jR-oxn" secondAttribute="centerY" id="hen-Ou-T5i"/>
-                            <constraint firstItem="fci-Wl-ijK" firstAttribute="centerX" secondItem="VPT-jR-oxn" secondAttribute="centerX" id="kP9-8H-qfn"/>
-                            <constraint firstItem="dFx-VU-IOV" firstAttribute="centerX" secondItem="VPT-jR-oxn" secondAttribute="centerX" id="yhF-6D-4ui"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="xRj-FM-L3s"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QGN-LE-Xbq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="7910" y="2792"/>
-        </scene>
         <!--Side Menu Navigation Controller-->
         <scene sceneID="Oeu-T3-St5">
             <objects>
@@ -700,6 +678,16 @@ Cheers 😉</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sun-Ri-6Hw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4510" y="998"/>
+        </scene>
+        <!--HolyGraphViewController-->
+        <scene sceneID="HTd-PL-V8d">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="HolyGraphViewController" id="bCE-GP-nGX" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Q0G-zv-feB"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oPL-eZ-eDY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7946" y="2477"/>
         </scene>
         <!--Coalitions-->
         <scene sceneID="6Iw-ga-pXa">
@@ -744,6 +732,9 @@ Cheers 😉</string>
         <image name="icon_default" width="180" height="180"/>
         <image name="icon_fed" width="60" height="60"/>
         <image name="icon_ord" width="60" height="60"/>
+        <namedColor name="intraTeal">
+            <color red="0.0" green="0.72941176470588232" blue="0.73725490196078436" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="lightTextBackground">
             <color red="0.89800000190734863" green="0.89800000190734863" blue="0.89800000190734863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -58,7 +58,7 @@ extension API42Manager {
                 
                 let dateString = scale["begin_at"].stringValue
                 let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+                dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
                 let date = dateFormatter.date(from: dateString) ?? Date()
                 
                 self.getProject(withId: projectId, completionHandler: { (projData) in

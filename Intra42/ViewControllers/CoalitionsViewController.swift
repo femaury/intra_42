@@ -31,7 +31,7 @@ class CoalitionsViewController: UIViewController {
             let campusId = API42Manager.shared.userProfile?.mainCampusId {
             let url = API42Manager.shared.baseURL + "blocs?filter[cursus_id]=\(cursusId)&filter[campus_id]=\(campusId)"
             API42Manager.shared.request(url: url) { [weak self] (data) in
-                guard let bloc = data?.array?.first else {
+                guard let safeSelf = self, let bloc = data?.array?.first else {
                     let errorLabel = UILabel()
                     errorLabel.text = "There was an error fetching coalitions data..."
                     errorLabel.numberOfLines = 0
@@ -43,12 +43,10 @@ class CoalitionsViewController: UIViewController {
                 let coalitions = bloc["coalitions"].arrayValue
                 var coalitionViews: [CoalitionView] = []
                 for coa in coalitions {
+                    let coverURL = coa["cover_url"].stringValue
                     let colorHex = coa["color"].stringValue
-                    let coalitionView = CoalitionView()
-                    let slug = coa["slug"].stringValue.replacingOccurrences(of: "-", with: "_")
-                        .replacingOccurrences(of: "piscine_c_lyon_", with: "")
-                    let image = UIImage(named: "\(slug)_background") ?? UIImage(named: "default_background")
-                    coalitionView.backgroundImage.image = image
+                    let coalitionView = CoalitionView(frame: CGRect(x: 0, y: 0, width: safeSelf.view.frame.width, height: 200.0))
+                    coalitionView.backgroundImage.imageFrom(urlString: coverURL, withIndicator: false)
                     coalitionView.name.text = coa["name"].stringValue
                     coalitionView.scoreLabel.countFromZero(to: coa["score"].floatValue, duration: .brisk)
                     coalitionView.name.textColor = UIColor(hexRGB: colorHex)
@@ -67,9 +65,9 @@ class CoalitionsViewController: UIViewController {
                 }
                 coalitionViews.sort(by: { $0.score > $1.score })
                 for view in coalitionViews {
-                    self?.stackView.addArrangedSubview(view)
+                    safeSelf.stackView.addArrangedSubview(view)
                 }
-                self?.activityIndicator.isHidden = true
+                safeSelf.activityIndicator.isHidden = true
             }
         }
     }

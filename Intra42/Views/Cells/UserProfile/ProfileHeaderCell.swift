@@ -31,11 +31,12 @@ class ProfileHeaderCell: UITableViewCell {
     
     var userProfile: UserProfile? {
         didSet {
-            if let coalitionName = API42Manager.shared.coalitionName {
-                let image = UIImage(named: "\(coalitionName)_background") ?? UIImage(named: "default_background")
-                background.image = image
-                background.contentMode = .scaleAspectFill
+            if let url = API42Manager.shared.coalitionBgURL {
+                background.imageFrom(urlString: url)
+            } else {
+                background.image = UIImage(named: "default_background")
             }
+            background.contentMode = .scaleAspectFill
             if let data = userProfile {
                 backgroundColor = API42Manager.shared.preferedPrimaryColor
                 

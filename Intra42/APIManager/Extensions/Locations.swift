@@ -63,7 +63,7 @@ extension API42Manager {
                 let location = log["host"].stringValue
                 let dateString = log["begin_at"].stringValue
                 let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+                dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
                 if let dateUTC = dateFormatter.date(from: dateString) {
                     let endDateUTC = dateFormatter.date(from: log["end_at"].stringValue) ?? Date()
                     dateFormatter.dateFormat = "MMMM d, yyyy"

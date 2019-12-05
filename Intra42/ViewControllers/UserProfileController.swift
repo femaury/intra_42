@@ -13,7 +13,7 @@ class UserProfileController: UITableViewController {
     var userProfile: UserProfile?
     var userActions: UserActions?
     var coalitionColor: UIColor?
-    var coalitionLogo: String?
+    var coalitionBgURL: String?
     var coalitionName: String?
     var isLoadingData = true
     var sectionToDisplay: ProfileSection = .projects {
@@ -22,8 +22,7 @@ class UserProfileController: UITableViewController {
             tableView.scrollToNearestSelectedRow(at: .top, animated: true)
         }
     }
-    var selectedProjectTeams: [ProjectTeam]?
-    var selectedProjectName: String?
+    var selectedProjectCell: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,17 +59,34 @@ class UserProfileController: UITableViewController {
         
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "UserProjectSegue" {
-            if let destination = segue.destination as? UserProjectController {
-                destination.projectTeams = selectedProjectTeams
-                var title = ""
-                if let projectName = selectedProjectName {
-                    if projectName.count > 20 {
-                        title = String(projectName.prefix(20)) + "..."
+            if let destination = segue.destination as? UserProjectController, let profile = userProfile {
+                let index = selectedProjectCell
+                let project = profile.projects.reversed()[index]
+                let projectId = project.id
+                let id = profile.userId
+                let name = project.name
+                
+                API42Manager.shared.getTeam(forUserId: id, projectId: projectId) { projectTeams in
+                    if name.count > 20 {
+                        destination.title = String(name.prefix(20)) + "..."
                     } else {
-                        title = projectName
+                        destination.title = name
                     }
+                    destination.projectTeams = projectTeams
+                    destination.tableView.reloadData()
                 }
-                destination.title = title
+            }
+        } else if segue.identifier == "HolyGraphSegue" {
+            if let destination = segue.destination as? HolyGraphViewController {
+                if let user = userProfile?.username,
+                    let userId = userProfile?.userId,
+                    let campusId = userProfile?.mainCampusId,
+                    let cursusId = userProfile?.mainCursusId,
+                    let cursus = userProfile?.cursusList {
+                    destination.cursus = cursus
+                    destination.userId = userId
+                    destination.drawHolyGraph(forUser: user, campusId: campusId, cursusId: cursusId)
+                }
             }
         }
     }
@@ -105,11 +121,11 @@ class UserProfileController: UITableViewController {
             guard let self = self, let data = data else { return }
             self.userProfile = UserProfile(data: data)
             if let userId = self.userProfile?.userId {
-                API42Manager.shared.getCoalitionInfo(forUserId: userId) { [weak self] (name, color, logo) in
+                API42Manager.shared.getCoalitionInfo(forUserId: userId) { [weak self] (name, color, bgURL) in
                     guard let self = self else { return }
                     self.coalitionName = name
                     self.coalitionColor = color
-                    self.coalitionLogo = logo
+                    self.coalitionBgURL = bgURL
                     self.isLoadingData = false
                     self.tableView.refreshControl?.endRefreshing()
                     self.tableView.reloadData()
@@ -158,15 +174,8 @@ extension UserProfileController {
                     break
                 }
             case .projects:
-                let project = userProfile.projects.reversed()[indexPath.row]
-                let projectId = project.id
-                let id = userProfile.userId
-                selectedProjectName = project.name
-                API42Manager.shared.getTeam(forUserId: id, projectId: projectId) { [weak self] (projectTeams) in
-                    print("PROJECT \(id): \(projectTeams)")
-                    self?.selectedProjectTeams = projectTeams
-                    self?.performSegue(withIdentifier: "UserProjectSegue", sender: self)
-                }
+                selectedProjectCell = indexPath.row
+                performSegue(withIdentifier: "UserProjectSegue", sender: self)
                 return
             case .logs:
                 return
@@ -200,7 +209,7 @@ extension UserProfileController {
         
         if section == 0 {
             let view = tableView.dequeueReusableCell(withIdentifier: "UserHeaderCell") as! UserHeaderCell
-            view.coalitionLogo = coalitionLogo
+            view.coalitionBgURL = coalitionBgURL
             view.coalitionColor = coalitionColor
             view.coalitionName = coalitionName
             view.userProfile = userProfile

@@ -19,7 +19,7 @@ class ProjectTeamHeaderCell: UITableViewCell {
         teamNameLabel.text = teamName
         projectGradeLabel.text = grade
         if isValidated {
-            projectGradeLabel.textColor = Colors.validGrade
+            projectGradeLabel.textColor = Colors.Grades.valid
         } else {
             projectGradeLabel.textColor = .red
         }

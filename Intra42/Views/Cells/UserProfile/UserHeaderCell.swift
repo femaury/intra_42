@@ -34,17 +34,18 @@ class UserHeaderCell: UITableViewCell {
     var emailAddress: String?
     
     var coalitionColor: UIColor?
-    var coalitionLogo: String?
+    var coalitionBgURL: String?
     var coalitionName: String?
     
     weak var delegate: UserProfileController?
     weak var userProfile: UserProfile? {
         didSet {
-            if let coalitionName = self.coalitionName {
-                let image = UIImage(named: "\(coalitionName)_background") ?? UIImage(named: "default_background")
-                background.image = image
-                background.contentMode = .scaleAspectFill
+            if let url = self.coalitionBgURL {
+                background.imageFrom(urlString: url)
+            } else {
+                background.image = UIImage(named: "default_background")
             }
+            background.contentMode = .scaleAspectFill
             if let data = userProfile {
                 profilePicture.imageFrom(urlString: data.imageURL)
                 profilePicture.contentMode = .scaleAspectFill

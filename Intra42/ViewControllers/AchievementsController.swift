@@ -12,6 +12,14 @@ class AchievementsController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     let searchController = UISearchController(searchResultsController: nil)
+    let ownedSortingClosure = { (this: String, that: String) -> Bool in
+        if let userAchievements = API42Manager.shared.userProfile?.achievements {
+            if userAchievements[this] != nil {
+                return true
+            }
+        }
+        return false
+    }
 
     var achievements: [String: Achievement] = [:]
     var achievementsIndices: [String] = []
@@ -42,30 +50,15 @@ class AchievementsController: UIViewController {
         navigationItem.searchController = searchController
         definesPresentationContext = true
         
-        let ownedSortingClosure = { (this: String, that: String) -> Bool in
-            if let userAchievements = API42Manager.shared.userProfile?.achievements {
-                if userAchievements[this] != nil {
-                    return true
-                }
-            }
-            return false
-        }
-        
         if API42Manager.shared.allAchievements.count > 0 {
-            self.achievements = API42Manager.shared.allAchievements
-            self.achievementsIndices = self.achievements.keys.sorted(by: ownedSortingClosure)
-            self.isLoading = false
+            achievements = API42Manager.shared.allAchievements
+            achievementsIndices = achievements.keys.sorted(by: ownedSortingClosure)
+            isLoading = false
         } else {
-            API42Manager.shared.getAllAchievements { (achievements) in
-                self.achievements = achievements
-                self.achievementsIndices = achievements.keys.sorted(by: ownedSortingClosure)
-                self.isLoading = false
-                self.tableView.reloadData()
-            }
+            loadAchievements()
         }
         
         let refreshControl = UIRefreshControl()
-        refreshControl.tintColor = .black
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.addTarget(self, action: #selector(refreshTable), for: .valueChanged)
         tableView.refreshControl = refreshControl
@@ -78,9 +71,19 @@ class AchievementsController: UIViewController {
         navigationController?.view.layoutIfNeeded() // to fix height of the navigation bar
     }
     
+    func loadAchievements() {
+        API42Manager.shared.getAllAchievements { [weak self] (achievements) in
+            guard let self = self else { return }
+            self.achievements = achievements
+            self.achievementsIndices = achievements.keys.sorted(by: self.ownedSortingClosure)
+            self.isLoading = false
+            self.tableView.refreshControl?.endRefreshing()
+            self.tableView.reloadData()
+        }
+    }
+    
     @objc func refreshTable() {
-        tableView.reloadData()
-        tableView.refreshControl?.endRefreshing()
+        loadAchievements()
     }
 }
 

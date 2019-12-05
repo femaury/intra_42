@@ -28,11 +28,18 @@ class HomeViewController: UIViewController {
     }
     var isLoadingData = true
     var userProfile: UserProfile?
-    var selectedProjectTeams: [ProjectTeam]?
-    var selectedProjectName: String?
+    var selectedProjectCell: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    API42Manager.shared.webViewController?.webView.configuration.websiteDataStore.httpCookieStore.getAllCookies { cookies in
+            for cookie in cookies where cookie.name == "_intra_42_session_production" {
+                print("FOUND COOKIE")
+                print(cookie)
+                HTTPCookieStorage.shared.setCookie(cookie)
+            }
+        }
         
         // Fixes navbar background color bug in iOS 13
         if #available(iOS 13.0, *) {
@@ -113,17 +120,22 @@ extension HomeViewController: SearchResultsDataSource {
                 showSearchResultsController(atDestination: destination)
             }
         } else if segue.identifier == "UserProjectSegue" {
-            if let destination = segue.destination as? UserProjectController {
-                destination.projectTeams = selectedProjectTeams
-                var title = ""
-                if let projectName = selectedProjectName {
-                    if projectName.count > 20 {
-                        title = String(projectName.prefix(20)) + "..."
+            if let destination = segue.destination as? UserProjectController, let profile = userProfile {
+                let index = selectedProjectCell
+                let project = profile.projects.reversed()[index]
+                let projectId = project.id
+                let id = profile.userId
+                let name = project.name
+                
+                API42Manager.shared.getTeam(forUserId: id, projectId: projectId) { projectTeams in
+                    if name.count > 20 {
+                        destination.title = String(name.prefix(20)) + "..."
                     } else {
-                        title = projectName
+                        destination.title = name
                     }
+                    destination.projectTeams = projectTeams
+                    destination.tableView.reloadData()
                 }
-                destination.title = title
             }
         }
     }
@@ -165,15 +177,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                     break
                 }
             case .projects:
-                let project = userProfile.projects.reversed()[indexPath.row]
-                let projectId = project.id
-                let id = userProfile.userId
-                selectedProjectName = project.name
-                API42Manager.shared.getTeam(forUserId: id, projectId: projectId) { [weak self] (projectTeams) in
-                    print("PROJECT \(id): \(projectTeams)")
-                    self?.selectedProjectTeams = projectTeams
-                    self?.performSegue(withIdentifier: "UserProjectSegue", sender: self)
-                }
+                selectedProjectCell = indexPath.row
+                performSegue(withIdentifier: "UserProjectSegue", sender: self)
                 return
             case .logs:
                 return

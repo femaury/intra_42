@@ -31,7 +31,7 @@ extension UITableViewDataSource {
             if project.validated == false {
                 cell.gradeLabel.textColor = UIColor.red
             } else {
-                cell.gradeLabel.textColor = Colors.validGrade
+                cell.gradeLabel.textColor = Colors.Grades.valid
             }
             cell.timeAgoLabel.text = project.finished?.getElapsedInterval()
             return cell

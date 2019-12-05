@@ -45,10 +45,10 @@ class UserProjectController: UITableViewController {
                     guard let data = data else { return }
                     destination.userProfile = UserProfile(data: data)
                     if let userId = destination.userProfile?.userId {
-                        API42Manager.shared.getCoalitionInfo(forUserId: userId, completionHandler: { (name, color, logo) in
+                        API42Manager.shared.getCoalitionInfo(forUserId: userId, completionHandler: { (name, color, bgURL) in
                             destination.coalitionName = name
                             destination.coalitionColor = color
-                            destination.coalitionLogo = logo
+                            destination.coalitionBgURL = bgURL
                             destination.isLoadingData = false
                             destination.tableView.reloadData()
                         })
@@ -58,6 +58,7 @@ class UserProjectController: UITableViewController {
         }
     }
     
+    // Potentially change self profile click
     func showCorrectorProfile(withId id: Int) {
         correctorId = id
         performSegue(withIdentifier: "UserProfileSegue", sender: self)
@@ -73,6 +74,20 @@ extension UserProjectController {
             return 1
         }
         return count
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if projectTeams == nil {
+            return 0
+        }
+        return 60
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if projectTeams == nil {
+            return tableView.frame.height
+        }
+        return UITableView.automaticDimension
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -109,6 +124,7 @@ extension UserProjectController {
             return cell
         } else if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProjectTeamUsersCell") as! ProjectTeamUsersCell
+            cell.delegate = self
             cell.setupView(with: team.users)
             return cell
         } else if indexPath.row == 2 {

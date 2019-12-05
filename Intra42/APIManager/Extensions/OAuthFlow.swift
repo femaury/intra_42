@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import SwiftyJSON
 import SafariServices
+import WebKit
 
 extension API42Manager {
     /**
@@ -20,7 +21,7 @@ extension API42Manager {
      */
     func startOAuth2Login() {
         state = UUID().uuidString
-        let authPath = "https://api.intra.42.fr/oauth/authorize?client_id=\(clientId)&redirect_uri=\(redirectURI)&state=\(state)&response_type=code&scope=public+profile"
+        let authPath = "https://api.intra.42.fr/oauth/authorize?client_id=\(clientId)&redirect_uri=\(redirectURI)&state=\(state)&response_type=code&scope=public+profile+projects"
         
         if hasOAuthToken() {
             if let completionHandler = OAuthTokenCompletionHandler {
@@ -29,18 +30,19 @@ extension API42Manager {
             return
         }
         
-        if let url = URL(string: authPath) {
-            let safariVC = SFSafariViewController(url: url)
-            safariVC.modalPresentationStyle = .overFullScreen
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        var topViewController = appDelegate.window?.rootViewController
             
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            var topViewController = appDelegate.window?.rootViewController
-            
-            while topViewController?.presentedViewController != nil {
-                topViewController = topViewController?.presentedViewController
-            }
-            
-            topViewController?.present(safariVC, animated: true, completion: nil)
+        while topViewController?.presentedViewController != nil {
+            topViewController = topViewController?.presentedViewController
+        }
+                    
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let controller = storyboard.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController {
+            self.webViewController = controller
+            _ = controller.view
+            controller.load(authPath)
+            topViewController?.present(controller, animated: true, completion: nil)
         }
     }
     
@@ -70,9 +72,19 @@ extension API42Manager {
                 codeValue = item.value
             } else if item.name.lowercased() == "state" {
                 if item.value != state { return }
+            } else if item.name.lowercased() == "error" {
+                if let completionHandler = self.OAuthTokenCompletionHandler {
+                    let customError = CustomError(title: "API Authorization", description: "You did not authorize this app.", code: -1)
+                    completionHandler(customError)
+                }
+                self.webViewController?.dismiss(animated: true, completion: nil)
+                return
             }
         }
-        guard let code = codeValue else { return }
+        guard let code = codeValue else {
+            self.webViewController?.dismiss(animated: true, completion: nil)
+            return
+        }
         
         let url = URL(string: "https://api.intra.42.fr/oauth/token")!
         let tokenParams = [
@@ -99,14 +111,17 @@ extension API42Manager {
                         let customError = CustomError(title: "Get Token Error", description: "Couldn't get access token from 42's API", code: -1)
                         completionHandler(customError)
                     }
+                    self.webViewController?.dismiss(animated: true, completion: nil)
                     return
                 }
             
-                guard valueJSON["token_type"].string == "bearer" else { return } // Is not bearer
-                guard
+                guard valueJSON["token_type"].string == "bearer",
                     let accessToken = valueJSON["access_token"].string,
                     let refreshToken = valueJSON["refresh_token"].string
-                    else { return }
+                else {
+                    self.webViewController?.dismiss(animated: true, completion: nil)
+                    return
+                }
             
                 self.OAuthAccessToken = accessToken
                 self.OAuthRefreshToken = refreshToken
@@ -114,10 +129,8 @@ extension API42Manager {
                 self.keychain.set(accessToken, forKey: self.keychainAccessKey)
                 self.keychain.set(refreshToken, forKey: self.keychainRefreshKey)
             
-                if let completionHandler = self.OAuthTokenCompletionHandler {
-                    self.setupAPIData()
-                    completionHandler(nil)
-                }
+                self.setupAPIData()
+                self.webViewController?.performSegue(withIdentifier: "loginSegue", sender: nil)
             }
         }.resume()
     }

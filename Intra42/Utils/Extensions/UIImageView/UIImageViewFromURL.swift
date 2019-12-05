@@ -9,16 +9,14 @@
 import UIKit
 
 extension UIImageView {
-    public func imageFrom(urlString: String) {
+    public func imageFrom(urlString: String, withIndicator: Bool = true) {
         let activityIndicator = UIActivityIndicatorView()
         activityIndicator.hidesWhenStopped = true
-        if #available(iOS 13.0, *) {
-            activityIndicator.style = .medium
-        } else {
+        if withIndicator {
             activityIndicator.style = .white
+            activityIndicator.startAnimating()
+            self.addSubview(activityIndicator)
         }
-        activityIndicator.startAnimating()
-        self.addSubview(activityIndicator)
         if let url = URL(string: urlString) {
             URLSession.shared.dataTask(with: url) { (data, _, error) in
                 if let err = error {

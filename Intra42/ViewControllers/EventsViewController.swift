@@ -8,7 +8,7 @@
 
 import UIKit
 
-// TODO: Fix buggy refresh control...
+// TODO: Fix buggy refresh control / content inset after refresh...
 class EventsViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
@@ -54,12 +54,10 @@ class EventsViewController: UIViewController {
                                                         "Conf",
                                                         "Others"]
         searchController.searchBar.delegate = self
-//        searchController.searchBar.tintColor = .black
         navigationItem.searchController = searchController
         definesPresentationContext = true
         
         let refreshControl = UIRefreshControl()
-        refreshControl.tintColor = .black
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.addTarget(self, action: #selector(refreshTable), for: .valueChanged)
         tableView.refreshControl = refreshControl
@@ -77,7 +75,7 @@ class EventsViewController: UIViewController {
             tableView.deselectRow(at: indexPath, animated: true)
         }
         if searchController.isActive {
-            // TODO: Fix Hack: Keeps cells from going underneath search controller when
+            // Fix Hack: Keeps cells from going underneath search controller when
             // coming back from detail controller
             tableView.contentInset = UIEdgeInsets(top: 150, left: 0, bottom: 0, right: 0)
         }
@@ -92,14 +90,14 @@ class EventsViewController: UIViewController {
             self.isLoadingEvents = false
             return
         }
-        events = []
         API42Manager.shared.getFutureEvents(forCampusId: campusId, cursusId: cursusId) { (events) in
+            self.events = []
             for event in events.reversed() {
                 let newEvent = Event(event: event)
                 self.events.append(newEvent)
             }
-            self.isLoadingEvents = false
             self.tableView.refreshControl?.endRefreshing()
+            self.isLoadingEvents = false
             self.tableView.reloadData()
         }
     }
@@ -110,8 +108,8 @@ class EventsViewController: UIViewController {
             self.isLoadingMyEvents = false
             return
         }
-        myEvents = []
         API42Manager.shared.getFutureEvents(forUserId: userId) { (events) in
+            self.myEvents = []
             for event in events.reversed() {
                 let newEvent = Event(event: event)
                 self.myEvents.append(newEvent)

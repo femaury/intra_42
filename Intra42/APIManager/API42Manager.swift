@@ -45,6 +45,13 @@ class API42Manager {
     /// Keychain key for storing refresh token
     let keychainRefreshKey = "SwiftyRefreshToken"
 
+    /// Reference to alert controller to update title in real time (timer)
+    let requestsAlertController = UIAlertController(
+        title: "Error: Too many requests to server",
+        message: "Retrying automatically in 5...",
+        preferredStyle: .alert)
+    /// Timer for requests alert controller
+    var requestsTimer: Timer?
     /// Controller handling OAuth
     var webViewController: WebViewController?
     /// Access token received by API after OAuth
@@ -208,6 +215,8 @@ class API42Manager {
             
             var request = URLRequest(url: realURL)
             request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+            URLSession.shared.dataTask(with: request).resume()
+            URLSession.shared.dataTask(with: request).resume()
             URLSession.shared.dataTask(with: request) { (data, response, error) in
                 DispatchQueue.main.async {
                     if let error = error {
@@ -219,9 +228,14 @@ class API42Manager {
                     guard let data = data, let valueJSON = try? JSON(data: data) else {
                         print("Request Error: Couldn't get data after request...")
                         print(response ?? "NO RESPONSE")
-                        self.showErrorAlert(message: "There was a problem with 42's API...")
-                        completionHandler(nil)
-                        return
+                        if let res = response as? HTTPURLResponse, res.statusCode == 429 {
+                            self.handleTooManyRequests(url: url, completionHandler: completionHandler)
+                            return
+                        } else {
+                            self.showErrorAlert(message: "There was a problem with 42's API...")
+                            completionHandler(nil)
+                            return
+                        }
                     }
                 
                     if valueJSON["error"].string != nil {
@@ -242,7 +256,7 @@ class API42Manager {
                                 })
                             } else if message.contains("not authorized") || message.contains("was revoked") {
                                 let error = CustomError(title: "Authorization Error",
-                                                        description: "Token was unauthorized by API...",
+                                                        description: "Session was unauthorized by API...",
                                                         code: -1)
                                 self.clearTokenKeys()
                                 self.handleAPIErrors(error: error)
@@ -257,6 +271,57 @@ class API42Manager {
         } else {
             completionHandler(nil)
         }
+    }
+    
+    fileprivate func handleTooManyRequests(url: String, completionHandler: @escaping (JSON?) -> Void) {
+        print("HANDLE")
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        var topViewController = appDelegate.window?.rootViewController
+        
+        while topViewController?.presentedViewController != nil {
+            topViewController = topViewController?.presentedViewController
+        }
+        
+        let task = DispatchWorkItem {
+            self.requestsAlertController.dismiss(animated: true)
+            self.request(url: url, completionHandler: completionHandler)
+        }
+
+        let action = UIAlertAction(title: "Retry now", style: .default) { _ in
+            task.cancel()
+            self.requestsTimer?.invalidate()
+            self.request(url: url, completionHandler: completionHandler)
+        }
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { _ in
+            task.cancel()
+            self.requestsTimer?.invalidate()
+            completionHandler(nil)
+        }
+        requestsAlertController.addAction(action)
+        requestsAlertController.addAction(cancel)
+        topViewController?.present(requestsAlertController, animated: true) {
+            let timer = Timer.scheduledTimer(
+                timeInterval: 1,
+                target: self,
+                selector: #selector(self._requestsAlertCountdown),
+                userInfo: nil,
+                repeats: true)
+            self.requestsTimer = timer
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: task)
+    }
+    
+    @objc fileprivate func _requestsAlertCountdown() {
+        if let string = requestsAlertController.message {
+            if let counter = Int(string.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()) {
+                if counter > 0 {
+                    requestsAlertController.message = "Retrying automatically in \(counter - 1)..."
+                    return
+                }
+            }
+        }
+        requestsTimer?.invalidate()
     }
     
     // This takes way too long and returns ALL the projects... To fix.

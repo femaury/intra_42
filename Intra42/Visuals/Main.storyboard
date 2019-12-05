@@ -1701,7 +1701,7 @@
                         <viewLayoutGuide key="safeArea" id="01m-7I-Y8c"/>
                     </view>
                     <navigationItem key="navigationItem" id="o8x-3k-3dF">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="ellipsis" catalog="system" id="wYA-ef-o3D">
+                        <barButtonItem key="rightBarButtonItem" image="dots" id="wYA-ef-o3D">
                             <connections>
                                 <action selector="changeCursus:" destination="ODo-5C-KVo" id="eei-Gb-VM7"/>
                             </connections>
@@ -2835,7 +2835,7 @@
         <image name="compass" width="30" height="30"/>
         <image name="copy" width="30" height="30"/>
         <image name="create_new" width="30" height="30"/>
-        <image name="ellipsis" catalog="system" width="64" height="18"/>
+        <image name="dots" width="16.666666030883789" height="16.666666030883789"/>
         <image name="geo_fence" width="30" height="30"/>
         <image name="globe_stand" width="30" height="30"/>
         <image name="happy" width="30" height="30"/>

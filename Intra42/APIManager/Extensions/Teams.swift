@@ -35,7 +35,7 @@ extension API42Manager {
      */
     func getTeam(forUserId id: Int, projectId: Int, completionHandler: @escaping ([ProjectTeam]) -> Void) {
         let projectURL = baseURL + "users/\(id)/teams?filter[project_id]=\(projectId)"
-        
+
         request(url: projectURL) { (data) in
             guard let teams = data?.array?.reversed() else {
                 completionHandler([])

@@ -46,10 +46,7 @@ class API42Manager {
     let keychainRefreshKey = "SwiftyRefreshToken"
 
     /// Reference to alert controller to update title in real time (timer)
-    let requestsAlertController = UIAlertController(
-        title: "Error: Too many requests to server",
-        message: "Retrying automatically in 5...",
-        preferredStyle: .alert)
+    var requestsAlertController = UIAlertController()
     /// Timer for requests alert controller
     var requestsTimer: Timer?
     /// Controller handling OAuth
@@ -215,8 +212,6 @@ class API42Manager {
             
             var request = URLRequest(url: realURL)
             request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-            URLSession.shared.dataTask(with: request).resume()
-            URLSession.shared.dataTask(with: request).resume()
             URLSession.shared.dataTask(with: request) { (data, response, error) in
                 DispatchQueue.main.async {
                     if let error = error {
@@ -281,6 +276,10 @@ class API42Manager {
         while topViewController?.presentedViewController != nil {
             topViewController = topViewController?.presentedViewController
         }
+        requestsAlertController = UIAlertController(
+        title: "Error: Too many requests to server",
+        message: "Retrying automatically in 5...",
+        preferredStyle: .alert)
         
         let task = DispatchWorkItem {
             self.requestsAlertController.dismiss(animated: true)

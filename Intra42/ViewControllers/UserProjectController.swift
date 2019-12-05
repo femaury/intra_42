@@ -58,6 +58,7 @@ class UserProjectController: UITableViewController {
         }
     }
     
+    // Potentially change self profile click
     func showCorrectorProfile(withId id: Int) {
         correctorId = id
         performSegue(withIdentifier: "UserProfileSegue", sender: self)
@@ -123,6 +124,7 @@ extension UserProjectController {
             return cell
         } else if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProjectTeamUsersCell") as! ProjectTeamUsersCell
+            cell.delegate = self
             cell.setupView(with: team.users)
             return cell
         } else if indexPath.row == 2 {

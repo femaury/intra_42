@@ -11,6 +11,7 @@ import UIKit
 class ProjectTeamUsersCell: UITableViewCell {
 
     @IBOutlet weak var userPicturesStack: UIStackView!
+    weak var delegate: UserProjectController?
     
     func setupView(with users: [User]) {
         var index = 0
@@ -22,7 +23,11 @@ class ProjectTeamUsersCell: UITableViewCell {
                     DispatchQueue.main.async {
                         picture.isHidden = false
                         picture.image = image
+                        picture.tag = user.id
                         picture.roundFrame()
+                        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.imageTapped))
+                        picture.addGestureRecognizer(tapGesture)
+                        picture.isUserInteractionEnabled = true
                         if isLeader {
                             picture.layer.borderWidth = 2
                             picture.layer.borderColor = UIColor.orange.cgColor
@@ -37,4 +42,9 @@ class ProjectTeamUsersCell: UITableViewCell {
         }
     }
     
+    @objc func imageTapped(gesture: UIGestureRecognizer) {
+        if let imageView = gesture.view as? UIImageView {
+            delegate?.showCorrectorProfile(withId: imageView.tag)
+        }
+    }
 }

@@ -31,6 +31,9 @@ class ProjectTeamEvaluationCell: UITableViewCell {
         API42Manager.shared.getProfilePicture(withLogin: evaluation.corrector.login) { (image) in
             DispatchQueue.main.async {
                 self.correctorPicture.image = image
+                let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.imageTapped))
+                self.correctorPicture.addGestureRecognizer(tapGesture)
+                self.correctorPicture.isUserInteractionEnabled = true
             }
         }
         timeAgoLabel.text = evaluation.timeAgo.uppercased()
@@ -45,6 +48,11 @@ class ProjectTeamEvaluationCell: UITableViewCell {
     }
     
     @IBAction func showCorrectorProfile(_ sender: UIButton) {
+        guard let id = correctorId else { return }
+        delegate?.showCorrectorProfile(withId: id)
+    }
+    
+    @objc func imageTapped(gesture: UIGestureRecognizer?) {
         guard let id = correctorId else { return }
         delegate?.showCorrectorProfile(withId: id)
     }

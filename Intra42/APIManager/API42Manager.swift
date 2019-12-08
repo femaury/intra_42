@@ -144,6 +144,21 @@ class API42Manager {
         keychain.delete(keychainRefreshKey)
     }
     
+    func clearIntraSessionCookies() {
+        if let cookies = HTTPCookieStorage.shared.cookies {
+            for cookie in cookies where cookie.name == "_intra_42_session_production" {
+                HTTPCookieStorage.shared.deleteCookie(cookie)
+            }
+        }
+        if let cookieStore = webViewController?.webView.configuration.websiteDataStore.httpCookieStore {
+            cookieStore.getAllCookies { cookies in
+                for cookie in cookies where cookie.name == "_intra_42_session_production" {
+                    cookieStore.delete(cookie)
+                }
+            }
+        }
+    }
+    
     /**
      Sends user back to login page with error message
      
@@ -185,6 +200,7 @@ class API42Manager {
     /// Logs out user by clearing the token keys and presenting the login page
     func logoutUser() {
         clearTokenKeys()
+        clearIntraSessionCookies()
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         UIApplication.shared.keyWindow?.rootViewController = viewController

@@ -21,8 +21,26 @@ extension API42Manager {
         
         if let url = URL(string: urlString) {
             URLSession.shared.dataTask(with: url) { data, _, error in
+                if let cookies = HTTPCookieStorage.shared.cookies {
+                    for cookie in cookies where cookie.name == "_intra_42_session_production" {
+                        let properties: [HTTPCookiePropertyKey: Any] = [
+                            HTTPCookiePropertyKey.domain: cookie.domain,
+                            HTTPCookiePropertyKey.secure: cookie.isSecure,
+                            HTTPCookiePropertyKey.expires: Date(timeIntervalSinceNow: 60 * 60 * 24 * 365),
+                            HTTPCookiePropertyKey.name: cookie.name,
+                            HTTPCookiePropertyKey.path: cookie.path,
+                            HTTPCookiePropertyKey.value: cookie.value,
+                            HTTPCookiePropertyKey.version: cookie.version
+                        ]
+                        if let newCookie = HTTPCookie(properties: properties) {
+                            HTTPCookieStorage.shared.deleteCookie(cookie)
+                            HTTPCookieStorage.shared.setCookie(newCookie)
+                        }
+                    }
+                }
                 guard error == nil, let data = data else {
                     print("ERROR")
+                    API42Manager.shared.showErrorAlert(message: "There was a problem with 42's API...")
                     return
                 }
                 guard let valueJSON = try? JSON(data: data) else {
@@ -31,8 +49,8 @@ extension API42Manager {
                     return
                 }
                 var projects = valueJSON.arrayValue
-                print("PROJECTS FOR CURSUS ID \(cursusId)")
-                print(projects)
+//                print("PROJECTS FOR CURSUS ID \(cursusId)")
+//                print(projects)
                 switch cursusId {
                 case 1:
                     self._sortCursus1(&projects)

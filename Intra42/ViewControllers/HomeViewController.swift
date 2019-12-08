@@ -37,7 +37,20 @@ class HomeViewController: UIViewController {
             for cookie in cookies where cookie.name == "_intra_42_session_production" {
                 print("FOUND COOKIE")
                 print(cookie)
-                HTTPCookieStorage.shared.setCookie(cookie)
+                let properties: [HTTPCookiePropertyKey: Any] = [
+                    HTTPCookiePropertyKey.domain: cookie.domain,
+                    HTTPCookiePropertyKey.secure: cookie.isSecure,
+                    HTTPCookiePropertyKey.expires: Date(timeIntervalSinceNow: 60 * 60 * 24 * 365),
+                    HTTPCookiePropertyKey.name: cookie.name,
+                    HTTPCookiePropertyKey.path: cookie.path,
+                    HTTPCookiePropertyKey.value: cookie.value,
+                    HTTPCookiePropertyKey.version: cookie.version
+                ]
+                if let newCookie = HTTPCookie(properties: properties) {
+                    HTTPCookieStorage.shared.setCookie(newCookie)
+                } else {
+                    HTTPCookieStorage.shared.setCookie(cookie)
+                }
             }
         }
         

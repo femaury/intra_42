@@ -26,12 +26,8 @@ You will also need to install [SwiftLint](https://github.com/realm/SwiftLint).
 <ul>
   <li>Get unlimited official API key</li>
   <li>Comment/Document source code</li>
-  <li>Projects Info / List</li>
-  <li>Holy Graph</li>
-  <li>Forums</li>
-  <li>Videos</li>
-  <li>Dark mode</li>
   <li>Better looking achievement cells</li>
+  <li>Create cluster maps for other campuses</li>
   <li>Feel free to pitch in!</li>
 </ul>
 
@@ -47,7 +43,7 @@ You will also need to install [SwiftLint](https://github.com/realm/SwiftLint).
       <li>Wallets</li>
       <li>Correction Points</li>
       <li>Level</li>
-      <li>Cursuses</li>
+      <li>Cursus</li>
       <li>Graded Projects</li>
       <li>Previous log locations and dates (with duration)</li>
       <li>Achievements</li>
@@ -79,7 +75,7 @@ You will also need to install [SwiftLint](https://github.com/realm/SwiftLint).
   <details><summary>Friends List</summary>
     <ul>
       <li>List of all your friends with current locations</li>
-      <li>Possibility for direct call/text/email to all your friends</li>
+      <li>Current campus and login time</li>
     </ul>
   </details>
   <details><summary>Student Search</summary>
@@ -110,6 +106,17 @@ You will also need to install [SwiftLint](https://github.com/realm/SwiftLint).
   <details><summary>Coalition Rankings</summary>
   <ul>
   <li>All coalitions ranked by score</li>
+  </ul>
+  </details>
+  <details><summary>Projects (Holy Graph)</summary>
+  <ul>
+  <li>Holy Graph with clickable projects.</li>
+  <li>List of user cursus to display</li>
+  </ul>
+  </details>
+  <details><summary>Forums</summary>
+  <ul>
+  <li>Link to Stackoverflow 42 forums</li>
   </ul>
   </details>
   

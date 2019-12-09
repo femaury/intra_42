@@ -16,11 +16,17 @@ extension API42Manager {
     
     Uses 42's private API with the cookie obtained from user login for OAuth.
     */
-    func getProjectCoordinates(forUser user: String, campusId: Int, cursusId: Int, completionHandler: @escaping ([JSON]) -> Void) {
+    func getProjectCoordinates(forUser user: String, campusId: Int, cursusId: Int, completionHandler: @escaping ([JSON]?) -> Void) {
         let urlString = "https://projects.intra.42.fr/project_data.json?cursus_id=\(cursusId)&campus_id=\(campusId)&login=\(user)"
         
         if let url = URL(string: urlString) {
-            URLSession.shared.dataTask(with: url) { data, _, error in
+            URLSession.shared.dataTask(with: url) { data, response, error in
+                if let response = response as? HTTPURLResponse {
+                    if response.statusCode == 401 {
+                        completionHandler(nil)
+                        return
+                    }
+                }
                 if let cookies = HTTPCookieStorage.shared.cookies {
                     for cookie in cookies where cookie.name == "_intra_42_session_production" {
                         let properties: [HTTPCookiePropertyKey: Any] = [
@@ -49,8 +55,6 @@ extension API42Manager {
                     return
                 }
                 var projects = valueJSON.arrayValue
-//                print("PROJECTS FOR CURSUS ID \(cursusId)")
-//                print(projects)
                 switch cursusId {
                 case 1:
                     self._sortCursus1(&projects)

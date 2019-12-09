@@ -32,14 +32,12 @@ class ProfileHeaderCell: UITableViewCell {
     var userProfile: UserProfile? {
         didSet {
             if let url = API42Manager.shared.coalitionBgURL {
-                background.imageFrom(urlString: url)
+                background.imageFrom(urlString: url, withIndicator: false)
             } else {
                 background.image = UIImage(named: "default_background")
             }
             background.contentMode = .scaleAspectFill
             if let data = userProfile {
-                backgroundColor = API42Manager.shared.preferedPrimaryColor
-                
                 profilePicture.imageFrom(urlString: data.imageURL)
                 profilePicture.contentMode = .scaleAspectFill
                 profilePicture.roundFrame()

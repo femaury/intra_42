@@ -1170,7 +1170,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvh-lv-N1P">
-                                            <rect key="frame" x="334" y="7.6666666666666643" width="60" height="59.999999999999993"/>
+                                            <rect key="frame" x="364" y="22.666666666666671" width="30" height="30"/>
                                             <color key="tintColor" red="0.0" green="0.72941176470000002" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" image="add_user_male"/>
                                             <connections>
@@ -1178,7 +1178,7 @@
                                             </connections>
                                         </button>
                                         <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="uTZ-dk-0wd">
-                                            <rect key="frame" x="354" y="27.666666666666671" width="20" height="20"/>
+                                            <rect key="frame" x="369" y="27.666666666666671" width="20" height="20"/>
                                         </activityIndicatorView>
                                     </subviews>
                                     <constraints>
@@ -2849,10 +2849,10 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mDc-hD-TjO"/>
+        <segue reference="PL9-98-KTQ"/>
         <segue reference="atr-x9-EV6"/>
-        <segue reference="0QS-t1-7Go"/>
+        <segue reference="FNR-te-koC"/>
         <segue reference="oJI-up-e6L"/>
-        <segue reference="MnY-6L-7ps"/>
+        <segue reference="IZG-qr-rub"/>
     </inferredMetricsTieBreakers>
 </document>

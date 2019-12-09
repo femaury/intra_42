@@ -107,6 +107,28 @@ class HolyGraphViewController: UIViewController, UIScrollViewDelegate {
         
         API42Manager.shared.getProjectCoordinates(forUser: user, campusId: campusId, cursusId: cursusId) { projects in
             DispatchQueue.main.async {
+                guard let projects = projects else {
+                    print("Cookie unauthorized...")
+                    let alertController = UIAlertController(
+                        title: "Invalid Session Cookie",
+                        message: "You need to relog to see the holy graph...",
+                        preferredStyle: .alert)
+                    
+                    let action = UIAlertAction(title: "Log out", style: .destructive) { _ in
+                        API42Manager.shared.logoutUser()
+                    }
+                    let cancel = UIAlertAction(title: "Cancel", style: .cancel) { _ in
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                    alertController.addAction(action)
+                    alertController.addAction(cancel)
+                    self.present(alertController, animated: true)
+                    return
+                }
+                guard !projects.isEmpty else {
+                    self.navigationController?.popViewController(animated: true)
+                    return
+                }
                 var maxX = self.view.frame.maxX
                 var maxY = self.view.frame.maxY
                 var minX: CGFloat = 50000

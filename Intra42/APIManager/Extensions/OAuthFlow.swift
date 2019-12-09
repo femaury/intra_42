@@ -29,20 +29,13 @@ extension API42Manager {
             }
             return
         }
-        
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        var topViewController = appDelegate.window?.rootViewController
-            
-        while topViewController?.presentedViewController != nil {
-            topViewController = topViewController?.presentedViewController
-        }
-                    
+                
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let controller = storyboard.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController {
             self.webViewController = controller
             _ = controller.view
             controller.load(authPath)
-            topViewController?.present(controller, animated: true, completion: nil)
+            getTopViewController()?.present(controller, animated: true, completion: nil)
         }
     }
     

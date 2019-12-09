@@ -22,12 +22,6 @@ class FriendDataManager {
     }
     
     func notifyUser(withMessage message: String) {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        var topViewController = appDelegate.window?.rootViewController
-        
-        while topViewController?.presentedViewController != nil {
-            topViewController = topViewController?.presentedViewController
-        }
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "NotificationView") as! NotificationViewController
         _ = controller.view // Force controller to load outlets
@@ -37,6 +31,7 @@ class FriendDataManager {
         controller.definesPresentationContext = true
         controller.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
         controller.modalTransitionStyle = .crossDissolve
+        let topViewController = API42Manager.shared.getTopViewController()
         topViewController?.present(controller, animated: true, completion: nil)
     }
     

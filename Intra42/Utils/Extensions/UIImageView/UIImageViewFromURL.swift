@@ -10,7 +10,7 @@ import UIKit
 
 extension UIImageView {
     public func imageFrom(urlString: String, withIndicator: Bool = true) {
-        let activityIndicator = UIActivityIndicatorView()
+        let activityIndicator = UIActivityIndicatorView(frame: frame)
         activityIndicator.hidesWhenStopped = true
         if withIndicator {
             activityIndicator.style = .white

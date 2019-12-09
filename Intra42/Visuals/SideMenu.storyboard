@@ -299,9 +299,9 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wN3-JY-1HQ">
                                                 <rect key="frame" x="20" y="540" width="374" height="218.5"/>
-                                                <mutableString key="text">Hey! My name is Felix and I'm from Canada. I moved to Paris to join 42 back in April 2018. You can find me under the login 'femaury'. Other than coding, I'm a big fan of jumping out of planes (hit me up if you skydive!), exploring the world, reading books and partying. Feel free to shoot me a message if you have questions about the app or just want to talk!
+                                                <string key="text">Hey! My name is Felix and I'm from Canada. I moved to Paris to join 42 back in April 2018. You can find me under the login 'femaury'. Other than coding, I'm a big fan of jumping out of planes (hit me up if you skydive!), exploring the world, reading books and partying. Feel free to shoot me a message if you have questions about the app or just want to talk!
 
-Cheers 😉</mutableString>
+Cheers 😉</string>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -697,11 +697,11 @@ Cheers 😉</mutableString>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="PYP-U8-kTA">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="PYP-U8-kTA">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Qoa-yx-ZYC">
-                                        <rect key="frame" x="197" y="0.0" width="20" height="774"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
                                     </activityIndicatorView>
                                 </subviews>
                             </stackView>
@@ -733,7 +733,7 @@ Cheers 😉</mutableString>
         <image name="icon_fed" width="60" height="60"/>
         <image name="icon_ord" width="60" height="60"/>
         <namedColor name="intraTeal">
-            <color red="0.0" green="0.72941176470588232" blue="0.73725490196078436" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.72899997234344482" blue="0.7369999885559082" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="lightTextBackground">
             <color red="0.89800000190734863" green="0.89800000190734863" blue="0.89800000190734863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

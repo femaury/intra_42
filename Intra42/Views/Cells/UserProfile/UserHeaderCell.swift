@@ -41,7 +41,7 @@ class UserHeaderCell: UITableViewCell {
     weak var userProfile: UserProfile? {
         didSet {
             if let url = self.coalitionBgURL {
-                background.imageFrom(urlString: url)
+                background.imageFrom(urlString: url, withIndicator: false)
             } else {
                 background.image = UIImage(named: "default_background")
             }

@@ -186,15 +186,9 @@ class API42Manager {
      to the API (i.e. more than 2/seconds)
      */
     func showErrorAlert(message: String) {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        var topViewController = appDelegate.window?.rootViewController
-        
-        while topViewController?.presentedViewController != nil {
-            topViewController = topViewController?.presentedViewController
-        }
         let alert = UIAlertController(title: "Oops...", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default))
-        topViewController?.present(alert, animated: true, completion: nil)
+        getTopViewController()?.present(alert, animated: true, completion: nil)
     }
     
     /// Logs out user by clearing the token keys and presenting the login page
@@ -285,13 +279,6 @@ class API42Manager {
     }
     
     fileprivate func handleTooManyRequests(url: String, completionHandler: @escaping (JSON?) -> Void) {
-        print("HANDLE")
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        var topViewController = appDelegate.window?.rootViewController
-        
-        while topViewController?.presentedViewController != nil {
-            topViewController = topViewController?.presentedViewController
-        }
         requestsAlertController = UIAlertController(
         title: "Error: Too many requests to server",
         message: "Retrying automatically in 5...",
@@ -314,7 +301,7 @@ class API42Manager {
         }
         requestsAlertController.addAction(action)
         requestsAlertController.addAction(cancel)
-        topViewController?.present(requestsAlertController, animated: true) {
+        getTopViewController()?.present(requestsAlertController, animated: true) {
             let timer = Timer.scheduledTimer(
                 timeInterval: 1,
                 target: self,
@@ -339,26 +326,13 @@ class API42Manager {
         requestsTimer?.invalidate()
     }
     
-    // This takes way too long and returns ALL the projects... To fix.
-    func getAllProjects(page: Int) {
-        guard let cursusId = userProfile?.mainCursusId else { return }
-        let locURL = baseURL + "cursus/\(cursusId)/projects?sort=name&filter[visible]=true&filter[parent]=null&page[number]=\(page)&page[size]=100"
-
-        request(url: locURL) { (data) in
-            guard let data = data  else {
-                print("EMPTY DATA")
-                print(self.allProjects)
-                return
-            }
-            self.allProjects += data.arrayValue
-            if data.arrayValue.count == 100 && data.arrayValue.last?["parent"] != nil {
-                print("Projects Page \(page)")
-                self.getAllProjects(page: page + 1)
-            } else {
-                print("FOUND ALL PROJECTS")
-                print(self.allProjects)
-                self.allProjects = []
-            }
+    func getTopViewController() -> UIViewController? {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        var topViewController = appDelegate.window?.rootViewController
+        
+        while topViewController?.presentedViewController != nil {
+            topViewController = topViewController?.presentedViewController
         }
+        return topViewController
     }
 }

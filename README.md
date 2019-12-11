@@ -14,8 +14,8 @@ Feel free to create issues or pull requests to contribute!
 
 #### Known issues v0.4.2 (10)
 
-- Navigation bar doesn't go all the way up on non bezel-less screens.
 - The number label for E1R7P1 says 7 instead of 1 after changing clusters.
+- Negative content inset when refreshing a tableview with a search controller imbeded in the navbar.
 
 ## Contributing
 To run the app, you will first need to [create an app for 42's api](https://profile.intra.42.fr/oauth/applications/new) with the following redirection URI: `com.femaury.swifty://oauth2callback`. Then use the keys your are given inside `Intra42/APIManager/API42Manager.swift`:

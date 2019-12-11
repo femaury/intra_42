@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class WebViewController: UIViewController, WKNavigationDelegate {
+class WebViewController: UIViewController, WKNavigationDelegate, UINavigationBarDelegate {
     
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var navBarTitle: UINavigationItem!
@@ -52,5 +52,9 @@ class WebViewController: UIViewController, WKNavigationDelegate {
             }
         }
         decisionHandler(.cancel)
+    }
+    
+    func position(for bar: UIBarPositioning) -> UIBarPosition {
+        return UIBarPosition.top
     }
 }

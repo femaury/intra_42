@@ -72,16 +72,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Fi-WK-mJx">
-                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OTk-ry-qzU">
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OTk-ry-qzU">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem id="ExZ-19-Ck6">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="vei-TQ-ImG">
@@ -91,14 +90,20 @@
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
+                                <connections>
+                                    <outlet property="delegate" destination="1gg-Cu-Uvp" id="iLa-xa-Kwd"/>
+                                </connections>
                             </navigationBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="QRv-mG-Rv2" firstAttribute="trailing" secondItem="4Fi-WK-mJx" secondAttribute="trailing" id="KYf-Qh-XLc"/>
+                            <constraint firstItem="OTk-ry-qzU" firstAttribute="top" secondItem="QRv-mG-Rv2" secondAttribute="top" id="Qp9-zN-OCZ"/>
+                            <constraint firstItem="OTk-ry-qzU" firstAttribute="leading" secondItem="QRv-mG-Rv2" secondAttribute="leading" id="TmP-lK-OWT"/>
                             <constraint firstAttribute="bottom" secondItem="4Fi-WK-mJx" secondAttribute="bottom" id="gtB-q6-zTz"/>
                             <constraint firstItem="4Fi-WK-mJx" firstAttribute="leading" secondItem="QRv-mG-Rv2" secondAttribute="leading" id="lFc-r4-w1z"/>
-                            <constraint firstItem="4Fi-WK-mJx" firstAttribute="top" secondItem="QRv-mG-Rv2" secondAttribute="top" id="tkX-wu-rgU"/>
+                            <constraint firstItem="OTk-ry-qzU" firstAttribute="trailing" secondItem="QRv-mG-Rv2" secondAttribute="trailing" id="lSi-Br-iyh"/>
+                            <constraint firstItem="4Fi-WK-mJx" firstAttribute="top" secondItem="OTk-ry-qzU" secondAttribute="bottom" id="lzO-lY-qZU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QRv-mG-Rv2"/>
                     </view>
@@ -110,7 +115,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iyi-rK-3Ic" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-65" y="-399"/>
+            <point key="canvasLocation" x="-65.217391304347828" y="-399.10714285714283"/>
         </scene>
         <!--Evaluations-->
         <scene sceneID="sZy-OW-eNa">

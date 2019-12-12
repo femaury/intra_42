@@ -10,10 +10,10 @@ import UIKit
 
 extension UIImageView {
     public func imageFrom(urlString: String, withIndicator: Bool = true) {
-        let activityIndicator = UIActivityIndicatorView(frame: frame)
+        let activityIndicator = UIActivityIndicatorView()
+        activityIndicator.center = convert(center, from: superview)
         activityIndicator.hidesWhenStopped = true
         if withIndicator {
-            activityIndicator.style = .white
             activityIndicator.startAnimating()
             self.addSubview(activityIndicator)
         }
@@ -21,9 +21,13 @@ extension UIImageView {
             URLSession.shared.dataTask(with: url) { (data, _, error) in
                 if let err = error {
                     print("Error downloading image: \(err)")
+                    activityIndicator.stopAnimating()
                     return
                 }
-                guard let imgData = data else { return }
+                guard let imgData = data else {
+                    activityIndicator.stopAnimating()
+                    return
+                }
                 DispatchQueue.main.async {
                     activityIndicator.stopAnimating()
                     self.image = UIImage(data: imgData)

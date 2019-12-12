@@ -303,19 +303,25 @@ class HolyGraphView: UIView {
     @objc func tapHandler(gesture: UIGestureRecognizer) {
         let name = label.text
         let showProjectAction = UIAlertController(title: name, message: nil, preferredStyle: .actionSheet)
-        let showProfile = UIAlertAction(title: "Show Project", style: .default) { [weak self] (_) in
+        let showProject = UIAlertAction(title: "Show project", style: .default) { [weak self] (_) in
             guard let self = self else { return }
             self.delegate?.selectedProjectId = self.id
             self.delegate?.selectedProjectState = self.state
             self.delegate?.selectedProjectDuration = self.duration
-            if self.delegate?.userId == API42Manager.shared.userProfile?.userId {
-                self.delegate?.performSegue(withIdentifier: "ProjectInfoSegue", sender: self.delegate)
-            } else {
+            self.delegate?.performSegue(withIdentifier: "ProjectInfoSegue", sender: self.delegate)
+        }
+        if self.state == "fail" || self.state == "done" || self.state == "in_progress" {
+            let showTeam = UIAlertAction(title: "Show user's team", style: .default) { [weak self] (_) in
+                guard let self = self else { return }
+                self.delegate?.selectedProjectId = self.id
+                self.delegate?.selectedProjectState = self.state
+                self.delegate?.selectedProjectDuration = self.duration
                 self.delegate?.performSegue(withIdentifier: "UserProjectSegue", sender: self.delegate)
             }
+            showProjectAction.addAction(showTeam)
         }
         let cancel = UIAlertAction(title: "Cancel", style: .cancel)
-        showProjectAction.addAction(showProfile)
+        showProjectAction.addAction(showProject)
         showProjectAction.addAction(cancel)
         
         delegate?.present(showProjectAction, animated: true, completion: nil)

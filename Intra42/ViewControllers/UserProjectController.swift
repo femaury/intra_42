@@ -12,7 +12,7 @@ class UserProjectController: UITableViewController {
     
     var projectTeams: [ProjectTeam]?
     var correctorId: Int?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

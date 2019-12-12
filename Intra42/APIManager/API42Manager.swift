@@ -258,16 +258,16 @@ class API42Manager {
                                         self.clearTokenKeys()
                                         self.handleAPIErrors(error: error)
                                     }
+                                    return
                                 })
                             } else if message.contains("not authorized") || message.contains("was revoked") {
-                                let error = CustomError(title: "Authorization Error",
-                                                        description: "Session was unauthorized by API...",
-                                                        code: -1)
-                                self.clearTokenKeys()
-                                self.handleAPIErrors(error: error)
+                                self.showErrorAlert(message: "You are not authorized to access this.")
+                                completionHandler(nil)
+                                return
                             }
-                            // TODO: Handle possible other error messages
                         }
+                        self.showErrorAlert(message: "There was a problem with 42's API...")
+                        completionHandler(nil)
                         return
                     }
                     completionHandler(valueJSON)

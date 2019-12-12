@@ -16,16 +16,12 @@ class UserResultCell: UITableViewCell, UserProfileCell {
             userPicture.roundFrame()
             userPicture.layer.borderWidth = 1
             userPicture.layer.borderColor = UIColor.black.cgColor
+            if userPicture.image != nil {
+                activityIndicator.stopAnimating()
+            }
         }
     }
     @IBOutlet weak var usernameLabel: UILabel!
-    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView! {
-           didSet {
-               if #available(iOS 13.0, *) {
-                   addUserIndicator.style = .medium
-               }
-           }
-       }
     @IBOutlet weak var addUserButton: UIButton!
     @IBOutlet weak var addUserIndicator: UIActivityIndicatorView! {
         didSet {
@@ -37,6 +33,7 @@ class UserResultCell: UITableViewCell, UserProfileCell {
     
     var userId: Int = 0
     weak var delegate: SearchResultsController?
+    let activityIndicator = UIActivityIndicatorView()
     
     func setupAddUserButton(isFriend: Bool) {
         if isFriend {

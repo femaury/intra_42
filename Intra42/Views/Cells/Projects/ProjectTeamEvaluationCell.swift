@@ -28,8 +28,14 @@ class ProjectTeamEvaluationCell: UITableViewCell {
     func setupView(with evaluation: Evaluation) {
         correctorId = evaluation.corrector.id
         correctorName.setTitle(evaluation.corrector.login.uppercased(), for: .normal)
+        let activityIndicator = UIActivityIndicatorView()
+        activityIndicator.center = correctorPicture.convert(correctorPicture.center, from: correctorPicture.superview)
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.startAnimating()
+        correctorPicture.addSubview(activityIndicator)
         API42Manager.shared.getProfilePicture(withLogin: evaluation.corrector.login) { (image) in
             DispatchQueue.main.async {
+                activityIndicator.stopAnimating()
                 self.correctorPicture.image = image
                 let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.imageTapped))
                 self.correctorPicture.addGestureRecognizer(tapGesture)

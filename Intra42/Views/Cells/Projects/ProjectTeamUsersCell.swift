@@ -19,9 +19,15 @@ class ProjectTeamUsersCell: UITableViewCell {
         for case let picture as UIImageView in userPicturesStack.arrangedSubviews {
             if index < users.count {
                 let user = users[index]
+                let activityIndicator = UIActivityIndicatorView()
+                activityIndicator.center = picture.convert(picture.center, from: picture.superview)
+                activityIndicator.hidesWhenStopped = true
+                activityIndicator.startAnimating()
+                picture.image = nil
+                picture.addSubview(activityIndicator)
                 API42Manager.shared.getProfilePicture(withLogin: user.login) { (image) in
                     DispatchQueue.main.async {
-                        picture.isHidden = false
+                        activityIndicator.stopAnimating()
                         picture.image = image
                         picture.tag = user.id
                         picture.roundFrame()

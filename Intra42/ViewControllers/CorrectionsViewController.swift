@@ -79,6 +79,13 @@ class CorrectionsViewController: UIViewController {
         }
     }
 
+    func showCorecteeTeamPage(projectId: Int, userId: Int, projectName: String) {
+        selectedTeamUserId = userId
+        selectedTeamProjectId = projectId
+        selectedTeamProjectName = projectName
+        performSegue(withIdentifier: "UserProjectSegue", sender: self)
+    }
+
     @objc func tapHandler(gesture: UIGestureRecognizer) {
         self.searchBar.resignFirstResponder()
     }
@@ -131,13 +138,6 @@ extension CorrectionsViewController: SearchResultsDataSource {
                 }
             }
         }
-    }
-    
-    func showCorecteeTeamPage(projectId: Int, userId: Int, projectName: String) {
-        selectedTeamUserId = userId
-        selectedTeamProjectId = projectId
-        selectedTeamProjectName = projectName
-        performSegue(withIdentifier: "UserProjectSegue", sender: self)
     }
 }
 

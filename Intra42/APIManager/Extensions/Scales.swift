@@ -27,6 +27,8 @@ extension API42Manager {
                 completionHandler([])
                 return
             }
+            print("SCALES")
+            print(data)
             for scale in data.reversed() {
                 let team = scale["team"]
                 let members = team["users"].arrayValue
@@ -63,8 +65,8 @@ extension API42Manager {
                 
                 self.getProject(withId: projectId, completionHandler: { (projData) in
                     var name = "Unknown Project"
-                    if let projData = projData {
-                        name = projData["name"].stringValue.capitalized
+                    if let projData = projData, let projName = projData["name"].string {
+                        name = projName.capitalized
                     }
                     
                     let correction = Correction(

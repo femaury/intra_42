@@ -24,6 +24,7 @@ class FriendsViewController: UIViewController {
     var friendPictures: [Int: UIImage] = [:]
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +35,10 @@ class FriendsViewController: UIViewController {
             appearance.backgroundColor = .systemBackground
             navigationItem.standardAppearance = appearance
             navigationItem.scrollEdgeAppearance = appearance
+            
+            activityIndicator.style = .large
         }
+        view.bringSubviewToFront(activityIndicator)
         
         setupSearchBar()
         searchBar.delegate = self
@@ -90,6 +94,7 @@ class FriendsViewController: UIViewController {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                 self.tableView.refreshControl?.endRefreshing()
             }
+            activityIndicator.stopAnimating()
             return
         }
         var friendIds: [String] = []
@@ -99,8 +104,12 @@ class FriendsViewController: UIViewController {
         let idString = friendIds.joined(separator: ",")
         let url = API42Manager.shared.baseURL + "locations?filter[user_id]=\(idString)&filter[active]=true&page[size]=100"
         API42Manager.shared.request(url: url) { (data) in
-            guard let data = data else { return }
+            guard let data = data else {
+                self.activityIndicator.stopAnimating()
+                return
+            }
             var campusIds: [String] = []
+            var infoArray: [FriendInfo] = []
             for connection in data.arrayValue {
                 let id = connection["user"]["id"].intValue
                 let location = connection["host"].stringValue
@@ -110,24 +119,39 @@ class FriendsViewController: UIViewController {
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
                 let date = dateFormatter.date(from: online) ?? Date()
-                let campusIdString = campusIds.joined(separator: ",")
-                let url = API42Manager.shared.baseURL + "campus?filter[id]=\(campusIdString)&page[size]=100"
-                API42Manager.shared.request(url: url) { (data) in
-                    guard let data = data else { return }
-                    for campus in data.arrayValue {
-                        let name = campus["name"].stringValue
-                        let info = FriendInfo(id: id, online: date, campus: name)
-                        self.friendsInfo.updateValue(info, forKey: id)
-                    }
-                }
                 self.friendLocations.updateValue(location, forKey: id)
+                let info = FriendInfo(id: id, online: date, campus: String(campus))
+                infoArray.append(info)
             }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                self.orderFriendsByLocation()
-                self.tableView.refreshControl?.endRefreshing()
-                self.tableView.reloadData()
+            let campusIdString = campusIds.joined(separator: ",")
+            let url = API42Manager.shared.baseURL + "campus?filter[id]=\(campusIdString)&page[size]=100"
+            API42Manager.shared.request(url: url) { (data) in
+                guard let data = data else {
+                    self._finishLocations(friends: [], campus: [:])
+                    return
+                }
+                var campusList: [Int: String] = [:]
+                for campus in data.arrayValue {
+                    let id = campus["id"].intValue
+                    let name = campus["name"].stringValue
+                    campusList.updateValue(name, forKey: id)
+                }
+                self._finishLocations(friends: infoArray, campus: campusList)
             }
         }
+    }
+    
+    private func _finishLocations(friends: [FriendInfo], campus: [Int: String]) {
+        for info in friends {
+            if let campId = Int(info.campus), let name = campus[campId] {
+                let info = FriendInfo(id: info.id, online: info.online, campus: name)
+                friendsInfo.updateValue(info, forKey: info.id)
+            }
+        }
+        orderFriendsByLocation()
+        tableView.refreshControl?.endRefreshing()
+        activityIndicator.stopAnimating()
+        tableView.reloadData()
     }
 
     func orderFriendsByLocation() {
@@ -265,7 +289,15 @@ extension FriendsViewController: UITableViewDelegate, UITableViewDataSource {
             let id = friend.id
             let cell = tableView.dequeueReusableCell(withIdentifier: "FriendCell") as! FriendCell
             cell.friend = friend
-            cell.picture = friendPictures[id] // Concurrency issue crash with read/write access to dictionary
+            if let image = friendPictures[id] {
+                cell.activityIndicator.stopAnimating()
+                cell.picture = image
+            } else {
+                cell.activityIndicator.center = cell.profilePicture.convert(cell.profilePicture.center, from: cell.contentView)
+                cell.activityIndicator.hidesWhenStopped = true
+                cell.activityIndicator.startAnimating()
+                cell.profilePicture.addSubview(cell.activityIndicator)
+            }
             cell.indexPath = indexPath
             cell.delegate = self
             if let location = friendLocations[id], !location.isEmpty, let info = friendsInfo[id] {

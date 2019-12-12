@@ -74,11 +74,6 @@ class EventsViewController: UIViewController {
         if let indexPath = tableView.indexPathForSelectedRow {
             tableView.deselectRow(at: indexPath, animated: true)
         }
-        if searchController.isActive {
-            // Fix Hack: Keeps cells from going underneath search controller when
-            // coming back from detail controller
-            tableView.contentInset = UIEdgeInsets(top: 150, left: 0, bottom: 0, right: 0)
-        }
     }
     
     func populateAllEventsTable() {

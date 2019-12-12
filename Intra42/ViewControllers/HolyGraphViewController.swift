@@ -50,6 +50,9 @@ class HolyGraphViewController: UIViewController, UIScrollViewDelegate {
             if let destination = segue.destination as? ProjectInfoViewController {
                 API42Manager.shared.getProjectInfo(withId: selectedProjectId, forUser: userId, campusId: campusId) { (info) in
                     guard var info = info else {
+                        destination.activityIndicator.hidesWhenStopped = false
+                        destination.activityIndicator.stopAnimating()
+                        destination.registerButton.isEnabled = false
                         return
                     }
                     let duration = self.selectedProjectDuration

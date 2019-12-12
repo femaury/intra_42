@@ -231,8 +231,13 @@ extension SearchResultsController {
             cell.usernameLabel.text = userInfo[indexPath.row].Login
             cell.userPicture.image = nil
             if let picture = userProfilePictures[id] {
-                cell.loadingIndicator.stopAnimating()
+                cell.activityIndicator.stopAnimating()
                 cell.userPicture.image = picture
+            } else {
+                cell.activityIndicator.center = cell.userPicture.convert(cell.userPicture.center, from: cell.contentView)
+                cell.activityIndicator.hidesWhenStopped = true
+                cell.activityIndicator.startAnimating()
+                cell.userPicture.addSubview(cell.activityIndicator)
             }
             cell.setupAddUserButton(isFriend: FriendDataManager.shared.hasFriend(withId: id))
             cell.delegate = self

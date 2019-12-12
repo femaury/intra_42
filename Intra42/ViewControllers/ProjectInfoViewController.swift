@@ -10,6 +10,7 @@ import UIKit
 
 class ProjectInfoViewController: UIViewController {
 
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var expLabel: UILabel!
     @IBOutlet weak var groupSizeLabel: UILabel!
     @IBOutlet weak var durationLabel: UILabel!
@@ -20,25 +21,29 @@ class ProjectInfoViewController: UIViewController {
     @IBOutlet weak var registerButton: UIBarButtonItem!
     
     var info: ProjectInfo?
-    let activityIndicator = UIActivityIndicatorView()
     weak var delegate: HolyGraphViewController?
     
     override func viewDidLoad() {
-        activityIndicator.frame = view.frame
         activityIndicator.hidesWhenStopped = true
         if #available(iOS 13.0, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.backgroundColor = .systemBackground
+            navigationItem.standardAppearance = appearance
+            navigationItem.scrollEdgeAppearance = appearance
+            
             activityIndicator.style = .large
             activityIndicator.backgroundColor = .systemBackground
         } else {
             activityIndicator.backgroundColor = .white
         }
         activityIndicator.startAnimating()
-        view.addSubview(activityIndicator)
+        view.bringSubviewToFront(activityIndicator)
     }
     
     func setupController() {
         guard let info = self.info else {
-            self.dismiss(animated: true, completion: nil)
+            activityIndicator.stopAnimating()
+            registerButton.isEnabled = false
             return
         }
         if info.name.count > 20 {

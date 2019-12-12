@@ -34,7 +34,7 @@ extension API42Manager {
                     return
                 }
                 completionHandler(image)
-                }.resume()
+            }.resume()
         } else {
             completionHandler(defaultImage)
         }

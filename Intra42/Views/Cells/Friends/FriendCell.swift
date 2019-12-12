@@ -45,7 +45,7 @@ class FriendCell: UITableViewCell, UserProfileCell {
     var location: String! {
         didSet {
             locationLabel.text = location
-            profilePicture.layer.borderColor = Colors.Grades.valid?.cgColor
+            profilePicture.layer.borderColor = UIColor.green.cgColor
             profilePicture.layer.borderWidth = 2
             isOnline.isHidden = false
         }

@@ -21,11 +21,15 @@ extension UIImageView {
             URLSession.shared.dataTask(with: url) { (data, _, error) in
                 if let err = error {
                     print("Error downloading image: \(err)")
-                    activityIndicator.stopAnimating()
+                    DispatchQueue.main.async {
+                        activityIndicator.stopAnimating()
+                    }
                     return
                 }
                 guard let imgData = data else {
-                    activityIndicator.stopAnimating()
+                    DispatchQueue.main.async {
+                        activityIndicator.stopAnimating()
+                    }
                     return
                 }
                 DispatchQueue.main.async {

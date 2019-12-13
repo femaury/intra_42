@@ -291,7 +291,7 @@ extension FriendsViewController: UITableViewDelegate, UITableViewDataSource {
             cell.friend = friend
             if let image = friendPictures[id] {
                 cell.activityIndicator.stopAnimating()
-                cell.picture = image
+                cell.profilePicture.image = image
             } else {
                 cell.activityIndicator.center = cell.profilePicture.convert(cell.profilePicture.center, from: cell.contentView)
                 cell.activityIndicator.hidesWhenStopped = true
@@ -300,18 +300,11 @@ extension FriendsViewController: UITableViewDelegate, UITableViewDataSource {
             }
             cell.indexPath = indexPath
             cell.delegate = self
-            if let location = friendLocations[id], !location.isEmpty, let info = friendsInfo[id] {
-                cell.location = location
-                cell.campusLabel.text = info.campus
-                cell.campusLabel.isHidden = false
-                let time = info.online.getElapsedInterval().replacingOccurrences(of: " ago", with: "")
-                cell.onlineForLabel.text = "For \(time)"
-                cell.onlineForLabel.isHidden = false
+            if let location = friendLocations[id], !location.isEmpty {
+                cell.info = friendsInfo[id]
+                cell.setupCell(location: location)
             } else {
-                cell.locationLabel.text = "Unavailable"
-                cell.isOnline.isHidden = true
-                cell.campusLabel.isHidden = true
-                cell.onlineForLabel.isHidden = true
+                cell.setupCell(location: "Unavailable")
             }
             return cell
         }

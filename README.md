@@ -12,10 +12,10 @@
 This is a swift learning project for myself. I started it to give native access to the intranet to 42's iOS users, as there were no such apps on the App Store. I plan on publishing it for free.  
 Feel free to create issues or pull requests to contribute!  
 
-#### Known issues v0.4.2 (10)
+#### Known issues v0.4.5 (14)
 
-- The number label for E1R7P1 says 7 instead of 1 after changing clusters.
-- Negative content inset when refreshing a tableview with a search controller imbeded in the navbar.
+- [The number label for E1R7P1 says 7 instead of 1 after changing clusters.](https://github.com/femaury/intra_42/issues/2)
+- [Negative content inset when refreshing a tableview with a search controller imbeded in the navbar.](https://github.com/femaury/intra_42/issues/3)
 
 ## Contributing
 To run the app, you will first need to [create an app for 42's api](https://profile.intra.42.fr/oauth/applications/new) with the following redirection URI: `com.femaury.swifty://oauth2callback`. Then use the keys your are given inside `Intra42/APIManager/API42Manager.swift`:

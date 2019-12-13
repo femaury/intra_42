@@ -146,13 +146,13 @@ class API42Manager {
     
     func clearIntraSessionCookies() {
         if let cookies = HTTPCookieStorage.shared.cookies {
-            for cookie in cookies where cookie.name == "_intra_42_session_production" {
+            for cookie in cookies { // where cookie.name == "_intra_42_session_production" {
                 HTTPCookieStorage.shared.deleteCookie(cookie)
             }
         }
         if let cookieStore = webViewController?.webView.configuration.websiteDataStore.httpCookieStore {
             cookieStore.getAllCookies { cookies in
-                for cookie in cookies where cookie.name == "_intra_42_session_production" {
+                for cookie in cookies { // where cookie.name == "_intra_42_session_production" {
                     cookieStore.delete(cookie)
                 }
             }
@@ -266,7 +266,7 @@ class API42Manager {
                                 return
                             }
                         }
-                        self.showErrorAlert(message: "There was a problem with 42's API...")
+//                        self.showErrorAlert(message: "There was a problem with 42's API...")
                         completionHandler(nil)
                         return
                     }

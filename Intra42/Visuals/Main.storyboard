@@ -355,6 +355,7 @@
                         <outlet property="tableView" destination="RQZ-CX-Uyw" id="FFa-gb-gre"/>
                         <segue destination="SDZ-cI-YE5" kind="show" identifier="SearchResultsSegue" id="FNR-te-koC"/>
                         <segue destination="sWC-1A-sDE" kind="show" identifier="UserProfileSegue" id="atr-x9-EV6"/>
+                        <segue destination="f6i-oQ-OVe" kind="show" identifier="UserProjectSegue" id="8g0-iF-zM1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YFL-eZ-qc7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1171,7 +1172,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvh-lv-N1P">
-                                            <rect key="frame" x="334" y="7.6666666666666643" width="60" height="59.999999999999993"/>
+                                            <rect key="frame" x="364" y="22.666666666666671" width="30" height="30"/>
                                             <color key="tintColor" red="0.0" green="0.72941176470000002" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" image="add_user_male"/>
                                             <connections>
@@ -1179,7 +1180,7 @@
                                             </connections>
                                         </button>
                                         <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="uTZ-dk-0wd">
-                                            <rect key="frame" x="354" y="27.666666666666671" width="20" height="20"/>
+                                            <rect key="frame" x="369" y="27.666666666666671" width="20" height="20"/>
                                         </activityIndicatorView>
                                     </subviews>
                                     <constraints>
@@ -1292,13 +1293,13 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unavailable" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7D8-cz-oD9">
-                                            <rect key="frame" x="136.66666666666669" y="313" width="140.66666666666669" height="36"/>
+                                            <rect key="frame" x="136.66666666666669" y="283" width="140.66666666666669" height="36"/>
                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E92-uL-Mph">
-                                            <rect key="frame" x="57" y="393.33333333333331" width="300" height="20"/>
+                                            <rect key="frame" x="57" y="363.33333333333331" width="300" height="20"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NHd-Qk-yCf">
                                                     <rect key="frame" x="0.0" y="0.0" width="300" height="20"/>
@@ -1324,7 +1325,7 @@
                                             </constraints>
                                         </view>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7w7-cg-fpr">
-                                            <rect key="frame" x="99.333333333333329" y="364" width="215.33333333333337" height="19.333333333333314"/>
+                                            <rect key="frame" x="99.333333333333329" y="334" width="215.33333333333337" height="19.333333333333314"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="eX5-Nd-WUi">
                                                     <rect key="frame" x="0.0" y="0.0" width="61" height="19.333333333333332"/>
@@ -1369,17 +1370,17 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4RV-Ju-ebq">
-                                            <rect key="frame" x="137" y="238" width="140" height="60"/>
+                                            <rect key="frame" x="167" y="238" width="80" height="30"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ReB-sR-ruF">
-                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                                     <state key="normal" image="phone_white"/>
                                                     <connections>
                                                         <action selector="callUser:" destination="gs9-qM-kx2" eventType="touchUpInside" id="E7b-Qk-QBv"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ukX-nO-4gq">
-                                                    <rect key="frame" x="80" y="0.0" width="60" height="60"/>
+                                                    <rect key="frame" x="50" y="0.0" width="30" height="30"/>
                                                     <state key="normal" image="message_white"/>
                                                     <connections>
                                                         <action selector="emailUser:" destination="gs9-qM-kx2" eventType="touchUpInside" id="v7x-0W-48e"/>
@@ -2864,10 +2865,10 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="CZ3-PM-lFF"/>
-        <segue reference="1OO-Zj-sx5"/>
-        <segue reference="s4V-tz-R5t"/>
+        <segue reference="mDc-hD-TjO"/>
+        <segue reference="atr-x9-EV6"/>
+        <segue reference="0QS-t1-7Go"/>
         <segue reference="oJI-up-e6L"/>
-        <segue reference="IZG-qr-rub"/>
+        <segue reference="8g0-iF-zM1"/>
     </inferredMetricsTieBreakers>
 </document>

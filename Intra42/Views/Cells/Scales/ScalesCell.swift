@@ -84,10 +84,8 @@ class ScalesCell: UITableViewCell {
         delegate?.showCorrectorProfile(withId: id)
     }
     
-    // TODO: test
     @IBAction func onPressCorrectee(_ sender: UIButton) {
-        guard let id = correcteeTeamId, let projectId = projectId, let name = projectLabel.text
-            else { return }
-        delegate?.showCorecteeTeamPage(projectId: projectId, userId: id, projectName: name)
+        guard let id = correcteeTeamId, let name = projectLabel.text else { return }
+        delegate?.showCorecteeTeamPage(teamId: id, projectName: name)
     }
 }

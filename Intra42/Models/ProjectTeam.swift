@@ -22,6 +22,7 @@ struct ProjectTeam {
     let name: String
     let finalGrade: Int
     let isValidated: Bool
+    let status: String
     let closedAt: String?
     let lockedAt: String?
     let repoURL: String

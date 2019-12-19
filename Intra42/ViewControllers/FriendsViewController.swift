@@ -289,6 +289,7 @@ extension FriendsViewController: UITableViewDelegate, UITableViewDataSource {
             let id = friend.id
             let cell = tableView.dequeueReusableCell(withIdentifier: "FriendCell") as! FriendCell
             cell.friend = friend
+            cell.profilePicture.image = nil
             if let image = friendPictures[id] {
                 cell.activityIndicator.stopAnimating()
                 cell.profilePicture.image = image

@@ -178,7 +178,7 @@ extension CorrectionsViewController: UITableViewDelegate, UITableViewDataSource 
             if cell == nil {
                 cell = UITableViewCell(style: .default, reuseIdentifier: "NoCorrectionsCell")
             }
-            cell.textLabel?.text = "You do not have any upcoming corrections..."
+            cell.textLabel?.text = "You do not have any upcoming evaluations..."
             cell.textLabel?.numberOfLines = 0
             cell.textLabel?.textAlignment = .center
             return cell

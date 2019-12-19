@@ -28,6 +28,7 @@ class ProjectTeamUsersCell: UITableViewCell {
                 if index == 0 {
                     picture.layer.borderWidth = 2
                     picture.layer.borderColor = UIColor.orange.cgColor
+                    picture.roundFrame()
                 }
                 API42Manager.shared.getProfilePicture(withLogin: user.login) { (image) in
                     DispatchQueue.main.async {

@@ -17,8 +17,7 @@ class CorrectionsViewController: UIViewController {
     var corrections: [Correction] = []
     var correctorId: Int?
     
-    var selectedTeamUserId: Int = Int()
-    var selectedTeamProjectId: Int = Int()
+    var selectedTeamId: Int = Int()
     var selectedTeamProjectName: String = String()
     
     override func viewDidLoad() {
@@ -79,9 +78,8 @@ class CorrectionsViewController: UIViewController {
         }
     }
 
-    func showCorecteeTeamPage(projectId: Int, userId: Int, projectName: String) {
-        selectedTeamUserId = userId
-        selectedTeamProjectId = projectId
+    func showCorecteeTeamPage(teamId id: Int, projectName: String) {
+        selectedTeamId = id
         selectedTeamProjectName = projectName
         performSegue(withIdentifier: "UserProjectSegue", sender: self)
     }
@@ -123,11 +121,10 @@ extension CorrectionsViewController: SearchResultsDataSource {
             }
         } else if segue.identifier == "UserProjectSegue" {
             if let destination = segue.destination as? UserProjectController {
-                let projectId = selectedTeamProjectId
-                let id = selectedTeamUserId
+                let id = selectedTeamId
                 let name = selectedTeamProjectName
                 
-                API42Manager.shared.getTeam(forUserId: id, projectId: projectId) { projectTeams in
+                API42Manager.shared.getTeam(withId: id) { projectTeams in
                     if name.count > 20 {
                         destination.title = String(name.prefix(20)) + "..."
                     } else {
@@ -181,7 +178,7 @@ extension CorrectionsViewController: UITableViewDelegate, UITableViewDataSource 
             if cell == nil {
                 cell = UITableViewCell(style: .default, reuseIdentifier: "NoCorrectionsCell")
             }
-            cell.textLabel?.text = "You do not have any upcoming corrections..."
+            cell.textLabel?.text = "You do not have any upcoming evaluations..."
             cell.textLabel?.numberOfLines = 0
             cell.textLabel?.textAlignment = .center
             return cell

@@ -27,8 +27,6 @@ extension API42Manager {
                 completionHandler([])
                 return
             }
-            print("SCALES")
-            print(data)
             for scale in data.reversed() {
                 let team = scale["team"]
                 let members = team["users"].arrayValue

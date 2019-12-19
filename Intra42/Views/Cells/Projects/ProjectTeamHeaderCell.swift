@@ -15,9 +15,13 @@ class ProjectTeamHeaderCell: UITableViewCell {
     @IBOutlet weak var createdAgoLabel: UILabel!
     @IBOutlet weak var closedAgoLabel: UILabel!
     
-    func setupView(_ teamName: String, _ grade: String, _ isValidated: Bool, _ createdAgo: String, _ closedAgo: String) {
+    func setupView(_ teamName: String, _ grade: String, _ isValidated: Bool, _ status: String, _ createdAgo: String, _ closedAgo: String) {
         teamNameLabel.text = teamName
         projectGradeLabel.text = grade
+        projectGradeLabel.isHidden = false
+        if status != "finished" {
+            projectGradeLabel.isHidden = true
+        }
         if isValidated {
             projectGradeLabel.textColor = Colors.Grades.valid
         } else {

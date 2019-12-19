@@ -15,7 +15,6 @@ class ProjectTeamUsersCell: UITableViewCell {
     
     func setupView(with users: [User]) {
         var index = 0
-        var isLeader = true
         for case let picture as UIImageView in userPicturesStack.arrangedSubviews {
             if index < users.count {
                 let user = users[index]
@@ -25,6 +24,12 @@ class ProjectTeamUsersCell: UITableViewCell {
                 activityIndicator.startAnimating()
                 picture.image = nil
                 picture.addSubview(activityIndicator)
+                picture.layer.borderWidth = 0
+                if index == 0 {
+                    picture.layer.borderWidth = 2
+                    picture.layer.borderColor = UIColor.orange.cgColor
+                    picture.roundFrame()
+                }
                 API42Manager.shared.getProfilePicture(withLogin: user.login) { (image) in
                     DispatchQueue.main.async {
                         activityIndicator.stopAnimating()
@@ -34,11 +39,6 @@ class ProjectTeamUsersCell: UITableViewCell {
                         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.imageTapped))
                         picture.addGestureRecognizer(tapGesture)
                         picture.isUserInteractionEnabled = true
-                        if isLeader {
-                            picture.layer.borderWidth = 2
-                            picture.layer.borderColor = UIColor.orange.cgColor
-                            isLeader = false
-                        }
                     }
                 }
             } else {

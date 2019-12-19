@@ -107,7 +107,13 @@ extension UserProjectController {
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProjectTeamHeaderCell") as! ProjectTeamHeaderCell
         let team = teams[section]
-        cell.setupView(team.name, "\(team.finalGrade)%", team.isValidated, team.closedAt ?? "Not closed yet", team.lockedAt ?? "Not locked yet")
+        cell.setupView(
+            team.name,
+            "\(team.finalGrade)%",
+            team.isValidated,
+            team.status,
+            team.closedAt ?? "Not closed yet",
+            team.lockedAt ?? "Not locked yet")
         return cell
     }
 

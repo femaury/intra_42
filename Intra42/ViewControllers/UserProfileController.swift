@@ -10,7 +10,13 @@ import UIKit
 
 class UserProfileController: UITableViewController {
 
-    var userProfile: UserProfile?
+    var userProfile: UserProfile? {
+        didSet {
+            if let id  = userProfile?.mainCursusId {
+                currentCursusId = id
+            }
+        }
+    }
     var userActions: UserActions?
     var coalitionColor: UIColor?
     var coalitionBgURL: String?
@@ -23,6 +29,7 @@ class UserProfileController: UITableViewController {
         }
     }
     var selectedProjectCell: Int = 0
+    var currentCursusId: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -170,6 +177,7 @@ extension UserProfileController {
                 for cursus in userProfile.cursusList where cursus.name == name {
                     userProfile.getLevelAndSkills(cursusId: cursus.id)
                     userProfile.getProjects(cursusId: cursus.id)
+                    currentCursusId = cursus.id
                     tableView.reloadData()
                     break
                 }
@@ -269,7 +277,7 @@ extension UserProfileController {
             return cell
         }
         if indexPath.section == 1 {
-            return setupProfileCells(tableView, indexPath, sectionToDisplay, userProfile)
+            return setupProfileCells(tableView, indexPath, sectionToDisplay, currentCursusId, userProfile)
         } else {
             return UITableViewCell()
         }

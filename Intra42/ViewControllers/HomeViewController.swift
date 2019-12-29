@@ -29,6 +29,7 @@ class HomeViewController: UIViewController {
     var isLoadingData = true
     var userProfile: UserProfile?
     var selectedProjectCell: Int = 0
+    var currentCursusId: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,9 +64,10 @@ class HomeViewController: UIViewController {
         }
 
         API42Manager.shared.userProfileCompletionHandler = { userProfile in
-            if userProfile == nil { return }
+            guard let userProfile = userProfile else { return }
             self.isLoadingData = false
             self.userProfile = userProfile
+            self.currentCursusId = userProfile.mainCursusId
             self.tableView.refreshControl?.endRefreshing()
             self.tableView.reloadData()
         }
@@ -187,6 +189,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 for cursus in userProfile.cursusList where cursus.name == name {
                     userProfile.getLevelAndSkills(cursusId: cursus.id)
                     userProfile.getProjects(cursusId: cursus.id)
+                    currentCursusId = cursus.id
                     tableView.reloadData()
                     break
                 }
@@ -278,7 +281,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
         if indexPath.section == 1 {
-            return setupProfileCells(tableView, indexPath, sectionToDisplay, userProfile)
+            return setupProfileCells(tableView, indexPath, sectionToDisplay, currentCursusId, userProfile)
         }
         return UITableViewCell()
     }

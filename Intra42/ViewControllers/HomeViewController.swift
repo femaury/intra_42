@@ -33,7 +33,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    API42Manager.shared.webViewController?.webView.configuration.websiteDataStore.httpCookieStore.getAllCookies { cookies in
+        API42Manager.shared.webViewController?.webView.configuration.websiteDataStore.httpCookieStore.getAllCookies { cookies in
             for cookie in cookies where cookie.name == "_intra_42_session_production" {
                 print("FOUND COOKIE")
                 print(cookie)
@@ -69,6 +69,7 @@ class HomeViewController: UIViewController {
             self.tableView.refreshControl?.endRefreshing()
             self.tableView.reloadData()
         }
+        
         API42Manager.shared.coalitionColorCompletionHandler = { color in
             
             self.tabBarController?.tabBar.tintColor = color

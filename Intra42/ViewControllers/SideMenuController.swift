@@ -10,9 +10,13 @@ import UIKit
 import SafariServices
 import SideMenu
 
+import SwiftyJSON
+
 class SideMenuController: UIViewController {
         
     @IBOutlet weak var tableView: UITableView!
+    
+//    var totalData: [JSON] = []
     
     let items: [(title: String, image: UIImage?)] = [
         ("Projects", UIImage(named: "briefcase")),
@@ -83,6 +87,7 @@ extension SideMenuController: UITableViewDelegate, UITableViewDataSource {
             performSegue(withIdentifier: "AchievementsSegue", sender: self)
         case 4:
             performSegue(withIdentifier: "AboutSegue", sender: self)
+//            getProjUsers(page: 0)
         case 5:
             performSegue(withIdentifier: "SettingsSegue", sender: self)
         case 6:
@@ -91,6 +96,21 @@ extension SideMenuController: UITableViewDelegate, UITableViewDataSource {
             return
         }
     }
+    
+//    func getProjUsers(page: Int) {
+//        let url = API42Manager.shared.baseURL + "projects/597/projects_users?filter[campus]=1&page[size]=100&page[number]=\(page)"
+//        API42Manager.shared.request(url: url) { (data) in
+//            guard let data = data?.array else {
+//                return
+//            }
+//            self.totalData.append(contentsOf: data)
+//            if data.count == 100 {
+//                self.getProjUsers(page: page + 1)
+//            } else {
+//                print(self.totalData)
+//            }
+//        }
+//    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50

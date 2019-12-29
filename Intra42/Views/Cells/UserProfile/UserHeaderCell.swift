@@ -75,8 +75,8 @@ class UserHeaderCell: UITableViewCell {
                 correctionLabel.textColor = coalitionColor
                 correctionNumberLabel.text = String(data.correctionPoints)
                 
-                userId = userProfile?.userId
-                phoneNumber = userProfile?.phoneNumber
+                userId = data.userId
+                phoneNumber = data.phoneNumber
                 
                 if phoneNumber == "hidden" {
                     phoneButton.isEnabled = false
@@ -84,16 +84,24 @@ class UserHeaderCell: UITableViewCell {
                     phoneButton.isEnabled = true
                 }
                 
-                emailAddress = userProfile?.email
+                emailAddress = data.email
                 
-                if let location = userProfile?.location {
+                if let location = data.location {
                     locationLabel.text = location
                 }
-                campusLabel.text = userProfile?.mainCampusName
-                if let piscineMonth = userProfile?.piscineMonth.getPiscineShortMonth(), let piscineYear = userProfile?.piscineYear {
-                    piscineLabel.text = "\(piscineMonth) \(piscineYear.suffix(2))"
+                campusLabel.text = data.mainCampusName
+                if data.isStaff {
+                    piscineLabel.text = "STAFF"
+                    piscineLabel.backgroundColor = .black
+                    piscineLabel.roundCorners(corners: .allCorners, radius: 5.0)
+                    piscineLabel.textAlignment = .center
                 } else {
-                    piscineLabel.text = nil
+                    if let piscineMonth = data.piscineMonth.getPiscineShortMonth() {
+                        let piscineYear = data.piscineYear
+                        piscineLabel.text = "\(piscineMonth) \(piscineYear.suffix(2))"
+                    } else {
+                        piscineLabel.text = nil
+                    }
                 }
             }
         }

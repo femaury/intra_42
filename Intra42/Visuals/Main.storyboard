@@ -464,6 +464,9 @@
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="LZp-7q-F2v" firstAttribute="centerY" secondItem="nWl-yz-HQ2" secondAttribute="centerY" id="a2t-4M-lVb"/>
+                                            </constraints>
                                         </stackView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xc1-ck-e9H">
                                             <rect key="frame" x="170" y="203.66666666666666" width="74.333333333333314" height="19.333333333333343"/>
@@ -477,8 +480,12 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Month '00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5OH-OF-3av">
-                                            <rect key="frame" x="317.33333333333331" y="26" width="76.666666666666686" height="20.333333333333329"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Month '00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5OH-OF-3av">
+                                            <rect key="frame" x="317.33333333333331" y="18.666666666666671" width="76.666666666666686" height="35"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="TP4-cM-dgK"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="rRW-0t-ZSa"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -488,13 +495,13 @@
                                         <constraint firstItem="snC-Th-j18" firstAttribute="centerY" secondItem="DMt-nn-II9" secondAttribute="centerY" id="4w9-94-fIu"/>
                                         <constraint firstItem="ncU-sb-5Qd" firstAttribute="top" secondItem="nWl-yz-HQ2" secondAttribute="bottom" constant="10" id="5DY-j4-Y5U"/>
                                         <constraint firstItem="9bq-KP-6cS" firstAttribute="centerX" secondItem="snC-Th-j18" secondAttribute="centerX" id="96G-Gt-axo"/>
+                                        <constraint firstItem="5OH-OF-3av" firstAttribute="centerY" secondItem="WLA-qD-m7a" secondAttribute="centerY" id="97l-gK-VgW"/>
                                         <constraint firstItem="9bq-KP-6cS" firstAttribute="top" secondItem="Xc1-ck-e9H" secondAttribute="bottom" constant="10" id="AyL-0d-O4u"/>
                                         <constraint firstItem="snC-Th-j18" firstAttribute="width" secondItem="DMt-nn-II9" secondAttribute="width" id="CYu-gy-2iz"/>
                                         <constraint firstItem="Xc1-ck-e9H" firstAttribute="top" secondItem="EQI-3o-hQS" secondAttribute="bottom" id="D30-9E-MyE"/>
                                         <constraint firstItem="5OH-OF-3av" firstAttribute="trailing" secondItem="DMt-nn-II9" secondAttribute="trailingMargin" id="IPY-cr-isb"/>
                                         <constraint firstItem="Xc1-ck-e9H" firstAttribute="centerX" secondItem="snC-Th-j18" secondAttribute="centerX" id="Ld9-xx-E86"/>
                                         <constraint firstItem="ncU-sb-5Qd" firstAttribute="centerX" secondItem="snC-Th-j18" secondAttribute="centerX" id="N0f-Dl-Hal"/>
-                                        <constraint firstItem="5OH-OF-3av" firstAttribute="top" secondItem="DMt-nn-II9" secondAttribute="topMargin" constant="15" id="PUJ-Lg-B2h"/>
                                         <constraint firstItem="snC-Th-j18" firstAttribute="height" secondItem="DMt-nn-II9" secondAttribute="height" id="QWj-zn-og6"/>
                                         <constraint firstItem="ac1-VL-Zuu" firstAttribute="top" secondItem="DMt-nn-II9" secondAttribute="topMargin" constant="5" id="SPa-dv-njG"/>
                                         <constraint firstItem="nWl-yz-HQ2" firstAttribute="centerX" secondItem="snC-Th-j18" secondAttribute="centerX" id="SiS-rO-mDd"/>
@@ -1324,7 +1331,7 @@
                                                 <constraint firstItem="NHd-Qk-yCf" firstAttribute="width" secondItem="E92-uL-Mph" secondAttribute="width" id="w3s-fq-NNX"/>
                                             </constraints>
                                         </view>
-                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7w7-cg-fpr">
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7w7-cg-fpr">
                                             <rect key="frame" x="100.66666666666669" y="334" width="213" height="19.333333333333314"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="eX5-Nd-WUi">
@@ -1362,6 +1369,9 @@
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="eX5-Nd-WUi" firstAttribute="centerY" secondItem="7w7-cg-fpr" secondAttribute="centerY" id="FDQ-mc-6N5"/>
+                                            </constraints>
                                         </stackView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gm5-YW-lxr">
                                             <rect key="frame" x="170" y="203.66666666666666" width="74.333333333333314" height="19.333333333333343"/>
@@ -1394,8 +1404,12 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Month '00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SoM-Gz-Ows">
-                                            <rect key="frame" x="317.33333333333331" y="26" width="76.666666666666686" height="20.333333333333329"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STAFF" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SoM-Gz-Ows">
+                                            <rect key="frame" x="319" y="18.666666666666671" width="75" height="35"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="LMb-ey-JIt"/>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="RJ8-2P-jJ3"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -1409,7 +1423,6 @@
                                         <constraint firstItem="7D8-cz-oD9" firstAttribute="top" secondItem="4RV-Ju-ebq" secondAttribute="bottom" constant="15" id="DXo-JM-H7Y"/>
                                         <constraint firstItem="3ha-35-Ius" firstAttribute="centerX" secondItem="X94-iT-jP0" secondAttribute="centerX" id="FNV-ps-TCw"/>
                                         <constraint firstItem="PWE-Yk-Xgb" firstAttribute="width" secondItem="X94-iT-jP0" secondAttribute="width" id="JKI-rI-bUU"/>
-                                        <constraint firstItem="SoM-Gz-Ows" firstAttribute="top" secondItem="X94-iT-jP0" secondAttribute="topMargin" constant="15" id="Kxo-Vo-iz3"/>
                                         <constraint firstItem="Gm5-YW-lxr" firstAttribute="centerX" secondItem="PWE-Yk-Xgb" secondAttribute="centerX" id="Qe1-Oa-t1d"/>
                                         <constraint firstItem="PWE-Yk-Xgb" firstAttribute="height" secondItem="X94-iT-jP0" secondAttribute="height" id="ZPy-tI-Dzg"/>
                                         <constraint firstItem="Q2p-i3-cgC" firstAttribute="top" secondItem="3ha-35-Ius" secondAttribute="bottom" constant="10" id="asM-OE-JOn"/>
@@ -1420,6 +1433,7 @@
                                         <constraint firstItem="PWE-Yk-Xgb" firstAttribute="centerX" secondItem="X94-iT-jP0" secondAttribute="centerX" id="hFc-dz-HyS"/>
                                         <constraint firstItem="Yvu-hX-126" firstAttribute="leading" secondItem="X94-iT-jP0" secondAttribute="leadingMargin" id="l0M-Pg-qgx"/>
                                         <constraint firstItem="SoM-Gz-Ows" firstAttribute="trailing" secondItem="X94-iT-jP0" secondAttribute="trailingMargin" id="qpF-WV-OMG"/>
+                                        <constraint firstItem="SoM-Gz-Ows" firstAttribute="centerY" secondItem="Yvu-hX-126" secondAttribute="centerY" id="rWj-xr-lDr"/>
                                         <constraint firstItem="4RV-Ju-ebq" firstAttribute="top" secondItem="Gm5-YW-lxr" secondAttribute="bottom" constant="15" id="rhl-4k-npb"/>
                                         <constraint firstItem="3ha-35-Ius" firstAttribute="top" secondItem="X94-iT-jP0" secondAttribute="topMargin" constant="5" id="t3D-IB-iPw"/>
                                         <constraint firstItem="4RV-Ju-ebq" firstAttribute="centerX" secondItem="X94-iT-jP0" secondAttribute="centerX" id="we1-YK-yGg"/>
@@ -2866,10 +2880,10 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mDc-hD-TjO"/>
+        <segue reference="PL9-98-KTQ"/>
         <segue reference="atr-x9-EV6"/>
-        <segue reference="0QS-t1-7Go"/>
+        <segue reference="FNR-te-koC"/>
         <segue reference="oJI-up-e6L"/>
-        <segue reference="IZG-qr-rub"/>
+        <segue reference="qfm-KR-H0N"/>
     </inferredMetricsTieBreakers>
 </document>

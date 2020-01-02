@@ -9,7 +9,7 @@
 import UIKit
 
 extension UITableViewDataSource {
-    func setupProfileCells(_ tableView: UITableView, _ indexPath: IndexPath, _ section: ProfileSection, _ userProfile: UserProfile) -> UITableViewCell {
+    func setupProfileCells(_ tableView: UITableView, _ indexPath: IndexPath, _ section: ProfileSection, _ cursusId: Int, _ userProfile: UserProfile) -> UITableViewCell {
         switch section {
         case .cursus:
             let cursus = userProfile.cursusList[indexPath.row]
@@ -22,6 +22,13 @@ extension UITableViewDataSource {
             let borderBottom = UIView(frame: CGRect(x: 0, y: 39, width: tableView.frame.width, height: 1))
             borderBottom.backgroundColor = UIColor(hexRGB: "#E5E5E5")
             cell.addSubview(borderBottom)
+            if cursus.id == cursusId {
+                cell.backgroundColor = UIColor(named: "SelectedCellBackground")
+                cell.isUserInteractionEnabled = false
+            } else {
+                cell.backgroundColor = nil
+                cell.isUserInteractionEnabled = true
+            }
             return cell
         case .projects:
             let project = userProfile.projects.reversed()[indexPath.row]

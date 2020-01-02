@@ -68,11 +68,19 @@ class ProfileHeaderCell: UITableViewCell {
                 correctionLabel.textColor = API42Manager.shared.preferedPrimaryColor
                 correctionNumberLabel.text = String(data.correctionPoints)
                 
-                campusLabel.text = userProfile?.mainCampusName
-                if let piscineMonth = userProfile?.piscineMonth.getPiscineShortMonth(), let piscineYear = userProfile?.piscineYear {
-                    piscineLabel.text = "\(piscineMonth) \(piscineYear.suffix(2))"
+                campusLabel.text = data.mainCampusName
+                if data.isStaff {
+                    piscineLabel.text = "STAFF"
+                    piscineLabel.backgroundColor = .black
+                    piscineLabel.roundCorners(corners: .allCorners, radius: 5.0)
+                    piscineLabel.textAlignment = .center
                 } else {
-                    piscineLabel.text = nil
+                    if let piscineMonth = data.piscineMonth.getPiscineShortMonth() {
+                        let piscineYear = data.piscineYear
+                        piscineLabel.text = "\(piscineMonth) \(piscineYear.suffix(2))"
+                    } else {
+                        piscineLabel.text = nil
+                    }
                 }
             }
         }

@@ -10,6 +10,8 @@ import UIKit
 import SafariServices
 import SideMenu
 
+import SwiftyJSON
+
 class SideMenuController: UIViewController {
         
     @IBOutlet weak var tableView: UITableView!

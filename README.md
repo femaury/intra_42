@@ -12,7 +12,7 @@
 This is a swift learning project for myself. I started it to give native access to the intranet to 42's iOS users, as there were no such apps on the App Store. I plan on publishing it for free.  
 Feel free to create issues or pull requests to contribute!  
 
-#### Known issues v0.4.5 (14)
+#### Known issues [Live Build]
 
 - [The number label for E1R7P1 says 7 instead of 1 after changing clusters.](https://github.com/femaury/intra_42/issues/2)
 - [Negative content inset when refreshing a tableview with a search controller imbeded in the navbar.](https://github.com/femaury/intra_42/issues/3)

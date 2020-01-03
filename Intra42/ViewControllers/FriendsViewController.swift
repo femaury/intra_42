@@ -21,7 +21,6 @@ class FriendsViewController: UIViewController {
     var friendLocations: [Int: String] = [:] {
         didSet { tableView.reloadData() }
     }
-    var friendPictures: [Int: UIImage] = [:]
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -58,7 +57,6 @@ class FriendsViewController: UIViewController {
         
         // Populate Table
         friends = FriendDataManager.shared.friends
-        getFriendPictures()
         getFriendLocations()
     }
 
@@ -68,7 +66,6 @@ class FriendsViewController: UIViewController {
         if let indexPath = tableView.indexPathForSelectedRow {
             tableView.deselectRow(at: indexPath, animated: true)
         }
-        
         tableView.reloadData()
     }
     
@@ -84,7 +81,6 @@ class FriendsViewController: UIViewController {
         if newFriends.count != self.friends.count {
             friends = newFriends
         }
-        getFriendPictures()
         getFriendLocations()
         tableView.reloadData()
     }
@@ -167,22 +163,6 @@ class FriendsViewController: UIViewController {
         }
         newFriendList += friends
         friends = newFriendList
-    }
-    
-    func getFriendPictures() {
-        for friend in friends {
-            let id = friend.id
-            let login = friend.username
-            
-            if friendPictures[id] != nil { continue }
-            API42Manager.shared.getProfilePicture(withLogin: login) { (image) in
-                guard let image = image else { return }
-                DispatchQueue.main.async {
-                    self.friendPictures.updateValue(image, forKey: id)
-                    self.tableView.reloadData()
-                }
-            }
-        }
     }
 }
 
@@ -290,15 +270,8 @@ extension FriendsViewController: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "FriendCell") as! FriendCell
             cell.friend = friend
             cell.profilePicture.image = nil
-            if let image = friendPictures[id] {
-                cell.activityIndicator.stopAnimating()
-                cell.profilePicture.image = image
-            } else {
-                cell.activityIndicator.center = cell.profilePicture.convert(cell.profilePicture.center, from: cell.contentView)
-                cell.activityIndicator.hidesWhenStopped = true
-                cell.activityIndicator.startAnimating()
-                cell.profilePicture.addSubview(cell.activityIndicator)
-            }
+            let url = "https://cdn.intra.42.fr/users/small_\(friend.username).jpg"
+            cell.profilePicture.imageFrom(urlString: url, defaultImg: UIImage(named: "42_default"))
             cell.indexPath = indexPath
             cell.delegate = self
             if let location = friendLocations[id], !location.isEmpty {

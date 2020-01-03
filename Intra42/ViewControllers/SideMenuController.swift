@@ -21,6 +21,7 @@ class SideMenuController: UIViewController {
         ("Forums", UIImage(named: "collaboration")),
         ("Coalitions", UIImage(named: "bookmark_ribbon")),
         ("Achievements", UIImage(named: "trophy")),
+        ("Peer Finder", UIImage(named: "meeting")),
         ("About", UIImage(named: "info")),
         ("Settings", UIImage(named: "settings")),
         ("Logout", UIImage(named: "shutdown"))
@@ -84,10 +85,32 @@ extension SideMenuController: UITableViewDelegate, UITableViewDataSource {
         case 3:
             performSegue(withIdentifier: "AchievementsSegue", sender: self)
         case 4:
-            performSegue(withIdentifier: "AboutSegue", sender: self)
+            var projectNames: [String] = []
+            
+            func getProjectNames(page: Int) {
+                let url = API42Manager.shared.baseURL + "cursus/21/projects?page[size]=100&page[number]=\(page)&filter[exam]=false"
+                
+                API42Manager.shared.request(url: url) { (data) in
+                    guard let projects = data?.array else {
+                        return
+                    }
+                    projectNames.append(contentsOf: projects.map { $0["name"].stringValue })
+                    if projects.count == 100 {
+                        getProjectNames(page: page + 1)
+                    } else {
+                        print(projectNames)
+                        print(projectNames.count)
+                    }
+                }
+            }
+            
+            getProjectNames(page: 0)
+//            performSegue(withIdentifier: "PeerSegue", sender: self)
         case 5:
-            performSegue(withIdentifier: "SettingsSegue", sender: self)
+            performSegue(withIdentifier: "AboutSegue", sender: self)
         case 6:
+            performSegue(withIdentifier: "SettingsSegue", sender: self)
+        case 7:
             API42Manager.shared.logoutUser()
         default:
             return
@@ -109,7 +132,7 @@ extension SideMenuController: UITableViewDelegate, UITableViewDataSource {
         }
         cell?.imageView?.image = items[indexPath.row].image
         cell?.textLabel?.text = items[indexPath.row].title
-        if indexPath.row == 3 {
+        if indexPath.row == 4 {
             let borderBottom = UIView(frame: CGRect(x: 0, y: 49, width: tableView.frame.width, height: 1))
             borderBottom.backgroundColor = .black
             if #available(iOS 13.0, *) {

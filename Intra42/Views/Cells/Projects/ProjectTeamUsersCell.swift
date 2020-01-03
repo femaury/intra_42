@@ -18,29 +18,20 @@ class ProjectTeamUsersCell: UITableViewCell {
         for case let picture as UIImageView in userPicturesStack.arrangedSubviews {
             if index < users.count {
                 let user = users[index]
-                let activityIndicator = UIActivityIndicatorView()
-                activityIndicator.center = picture.convert(picture.center, from: picture.superview)
-                activityIndicator.hidesWhenStopped = true
-                activityIndicator.startAnimating()
-                picture.image = nil
-                picture.addSubview(activityIndicator)
                 picture.layer.borderWidth = 0
                 if index == 0 {
                     picture.layer.borderWidth = 2
                     picture.layer.borderColor = UIColor.orange.cgColor
                     picture.roundFrame()
                 }
-                API42Manager.shared.getProfilePicture(withLogin: user.login) { (image) in
-                    DispatchQueue.main.async {
-                        activityIndicator.stopAnimating()
-                        picture.image = image
-                        picture.tag = user.id
-                        picture.roundFrame()
-                        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.imageTapped))
-                        picture.addGestureRecognizer(tapGesture)
-                        picture.isUserInteractionEnabled = true
-                    }
-                }
+                let url = "https://cdn.intra.42.fr/users/small_\(user.login).jpg"
+                picture.imageFrom(urlString: url, defaultImg: UIImage(named: "42_default"))
+                picture.roundFrame()
+                picture.tag = user.id
+                
+                let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
+                picture.addGestureRecognizer(tapGesture)
+                picture.isUserInteractionEnabled = true
             } else {
                 picture.isHidden = true
             }

@@ -28,20 +28,13 @@ class ProjectTeamEvaluationCell: UITableViewCell {
     func setupView(with evaluation: Evaluation) {
         correctorId = evaluation.corrector.id
         correctorName.setTitle(evaluation.corrector.login.uppercased(), for: .normal)
-        let activityIndicator = UIActivityIndicatorView()
-        activityIndicator.center = correctorPicture.convert(correctorPicture.center, from: correctorPicture.superview)
-        activityIndicator.hidesWhenStopped = true
-        activityIndicator.startAnimating()
-        correctorPicture.addSubview(activityIndicator)
-        API42Manager.shared.getProfilePicture(withLogin: evaluation.corrector.login) { (image) in
-            DispatchQueue.main.async {
-                activityIndicator.stopAnimating()
-                self.correctorPicture.image = image
-                let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.imageTapped))
-                self.correctorPicture.addGestureRecognizer(tapGesture)
-                self.correctorPicture.isUserInteractionEnabled = true
-            }
-        }
+
+        let url = "https://cdn.intra.42.fr/users/small_\(evaluation.corrector.login).jpg"
+        correctorPicture.imageFrom(urlString: url, defaultImg: UIImage(named: "42_default"))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
+        correctorPicture.addGestureRecognizer(tapGesture)
+        correctorPicture.isUserInteractionEnabled = true
+        
         timeAgoLabel.text = evaluation.timeAgo.uppercased()
         gradeLabel.text = "\(evaluation.grade)%"
         if evaluation.isValidated {

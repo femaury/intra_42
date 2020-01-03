@@ -16,7 +16,6 @@ class FriendCell: UITableViewCell, UserProfileCell {
     @IBOutlet weak var onlineForLabel: UILabel!
     @IBOutlet weak var campusLabel: UILabel!
     @IBOutlet weak var isOnline: UIView!
-    let activityIndicator = UIActivityIndicatorView()
     
     weak var delegate: FriendsViewController?
     var userId: Int = 0

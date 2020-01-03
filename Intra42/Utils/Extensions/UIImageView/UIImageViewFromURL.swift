@@ -9,32 +9,42 @@
 import UIKit
 
 extension UIImageView {
-    public func imageFrom(urlString: String, withIndicator: Bool = true) {
-        let activityIndicator = UIActivityIndicatorView()
-        activityIndicator.center = convert(center, from: superview)
-        activityIndicator.hidesWhenStopped = true
-        if withIndicator {
-            activityIndicator.startAnimating()
-            self.addSubview(activityIndicator)
+    public func imageFrom(urlString: String, withIndicator: Bool = true, defaultImg: UIImage? = nil) {
+        guard let url = URL(string: urlString) else {
+            image = defaultImg
+            return
         }
-        if let url = URL(string: urlString) {
-            URLSession.shared.dataTask(with: url) { (data, _, error) in
-                if let err = error {
-                    print("Error downloading image: \(err)")
+        let urlCache = URLCache.shared
+        let request = URLRequest(url: url)
+        
+        image = nil
+        if let data = urlCache.cachedResponse(for: request)?.data {
+            self.image = UIImage(data: data) ?? defaultImg
+        } else {
+            let activityIndicator = UIActivityIndicatorView()
+            if withIndicator {
+                activityIndicator.center = convert(center, from: superview)
+                activityIndicator.hidesWhenStopped = true
+                activityIndicator.startAnimating()
+                addSubview(activityIndicator)
+            }
+            
+            URLSession.shared.dataTask(with: request) { (data, response, error) in
+                guard error == nil, let imgData = data else {
+                    print("Error downloading image.")
                     DispatchQueue.main.async {
                         activityIndicator.stopAnimating()
+                        self.image = defaultImg
                     }
                     return
                 }
-                guard let imgData = data else {
-                    DispatchQueue.main.async {
-                        activityIndicator.stopAnimating()
-                    }
-                    return
+                if let response = response {
+                    let cachedData = CachedURLResponse(response: response, data: imgData)
+                    urlCache.storeCachedResponse(cachedData, for: request)
                 }
                 DispatchQueue.main.async {
                     activityIndicator.stopAnimating()
-                    self.image = UIImage(data: imgData)
+                    self.image = UIImage(data: imgData) ?? defaultImg
                 }
             }.resume()
         }

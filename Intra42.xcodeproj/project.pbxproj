@@ -103,7 +103,6 @@
 		DCF1A4EE2299957800AA2653 /* Coalitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1A4ED2299957800AA2653 /* Coalitions.swift */; };
 		DCF1A4F0229995B700AA2653 /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1A4EF229995B700AA2653 /* Locations.swift */; };
 		DCF1A4F2229995DA00AA2653 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1A4F1229995DA00AA2653 /* Users.swift */; };
-		DCF1A4F42299960500AA2653 /* ProfilePicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1A4F32299960500AA2653 /* ProfilePicture.swift */; };
 		DCF30D572396BE660000EC7C /* ProjectInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF30D562396BE660000EC7C /* ProjectInfoViewController.swift */; };
 		DCF30D592396C6EA0000EC7C /* Projects.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF30D582396C6EA0000EC7C /* Projects.swift */; };
 		DCF70AFA229ABAD000B29DCC /* AchievementsHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF70AF9229ABAD000B29DCC /* AchievementsHeaderCell.swift */; };
@@ -218,7 +217,6 @@
 		DCF1A4ED2299957800AA2653 /* Coalitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coalitions.swift; sourceTree = "<group>"; };
 		DCF1A4EF229995B700AA2653 /* Locations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
 		DCF1A4F1229995DA00AA2653 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
-		DCF1A4F32299960500AA2653 /* ProfilePicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePicture.swift; sourceTree = "<group>"; };
 		DCF30D562396BE660000EC7C /* ProjectInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectInfoViewController.swift; sourceTree = "<group>"; };
 		DCF30D582396C6EA0000EC7C /* Projects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Projects.swift; sourceTree = "<group>"; };
 		DCF70AF9229ABAD000B29DCC /* AchievementsHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementsHeaderCell.swift; sourceTree = "<group>"; };
@@ -565,7 +563,6 @@
 				DCF1A4ED2299957800AA2653 /* Coalitions.swift */,
 				DCF1A4EF229995B700AA2653 /* Locations.swift */,
 				DCF1A4F1229995DA00AA2653 /* Users.swift */,
-				DCF1A4F32299960500AA2653 /* ProfilePicture.swift */,
 				DC27FD9822AE773D00E3E560 /* Teams.swift */,
 				DC4834FC230C3453007D0F8D /* EventsUsers.swift */,
 				DC4F1DF423944108000F4BF9 /* HolyGraph.swift */,
@@ -793,7 +790,6 @@
 				DC8999412245731000F47EEF /* NotificationViewController.swift in Sources */,
 				DCCE05A4222971AB00906ECD /* EventsViewController.swift in Sources */,
 				DC0D7B3D22340AFD00A30B9F /* Event.swift in Sources */,
-				DCF1A4F42299960500AA2653 /* ProfilePicture.swift in Sources */,
 				DCF1A4EE2299957800AA2653 /* Coalitions.swift in Sources */,
 				DC955E0B222F1242003B70BC /* AchievementCell.swift in Sources */,
 				DC27FD8F22A6E44400E3E560 /* ProjectTeamEvaluationCell.swift in Sources */,

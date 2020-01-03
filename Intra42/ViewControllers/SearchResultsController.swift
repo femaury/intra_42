@@ -20,13 +20,11 @@ class SearchResultsController: UITableViewController, SearchResultsDataSource {
 
     lazy var searchBar = UISearchBar()
     
-    var loginSearchResults: [(id: Int, Login: String)] = []
-    var firstNameSearchResults: [(id: Int, Login: String)] = []
-    var lastNameSearchResults: [(id: Int, Login: String)] = []
+    var loginSearchResults: [(id: Int, login: String)] = []
+    var firstNameSearchResults: [(id: Int, login: String)] = []
+    var lastNameSearchResults: [(id: Int, login: String)] = []
     
     var selectedCell: UserProfileCell?
-    
-    var userProfilePictures: [Int: UIImage] = [:]
     
     var isLoadingSearchData = true {
         didSet {
@@ -87,25 +85,10 @@ class SearchResultsController: UITableViewController, SearchResultsDataSource {
             case .lastName:
                 self.lastNameSearchResults.append((id, login))
             }
-            
-            if self.userProfilePictures.keys.contains(id) { continue }
-            self.getProfilePictureOfUser(withId: id, login: login)
         }
         if section == .lastName || !self.loginSearchResults.isEmpty || !self.firstNameSearchResults.isEmpty {
             self.isLoadingSearchData = false
             self.tableView.reloadData()
-        }
-    }
-    
-    func getProfilePictureOfUser(withId id: Int, login: String) {
-        API42Manager.shared.getProfilePicture(withLogin: login) { (image) in
-            guard let image = image else { return }
-            DispatchQueue.main.async {
-                self.userProfilePictures.updateValue(image, forKey: id)
-                if self.loginSearchResults.count > 10 { // Little hack to make sure the first results' images show up right away?
-                    self.tableView.reloadData()
-                }
-            }
         }
     }
     
@@ -227,21 +210,13 @@ extension SearchResultsController {
             }
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "UserResultCell") as! UserResultCell
-            let id = userInfo[indexPath.row].id
-            cell.usernameLabel.text = userInfo[indexPath.row].Login
-            cell.userPicture.image = nil
-            if let picture = userProfilePictures[id] {
-                cell.activityIndicator.stopAnimating()
-                cell.userPicture.image = picture
-            } else {
-                cell.activityIndicator.center = cell.userPicture.convert(cell.userPicture.center, from: cell.contentView)
-                cell.activityIndicator.hidesWhenStopped = true
-                cell.activityIndicator.startAnimating()
-                cell.userPicture.addSubview(cell.activityIndicator)
-            }
-            cell.setupAddUserButton(isFriend: FriendDataManager.shared.hasFriend(withId: id))
+            let user = userInfo[indexPath.row]
+            cell.usernameLabel.text = user.login
+            let url = "https://cdn.intra.42.fr/users/small_\(user.login).jpg"
+            cell.userPicture.imageFrom(urlString: url, defaultImg: UIImage(named: "42_default"))
+            cell.setupAddUserButton(isFriend: FriendDataManager.shared.hasFriend(withId: user.id))
             cell.delegate = self
-            cell.userId = id
+            cell.userId = user.id
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "NoResultsCell")!

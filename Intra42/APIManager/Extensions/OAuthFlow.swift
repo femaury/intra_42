@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 import SwiftyJSON
-import SafariServices
 import WebKit
 
 extension API42Manager {
@@ -20,15 +19,17 @@ extension API42Manager {
      Otherwise opens 42's API OAuth page in safari to prompt user to login.
      */
     func startOAuth2Login() {
-        state = UUID().uuidString
-        let authPath = "https://api.intra.42.fr/oauth/authorize?client_id=\(clientId)&redirect_uri=\(redirectURI)&state=\(state)&response_type=code&scope=public+profile+projects"
-        
         if hasOAuthToken() {
             if let completionHandler = OAuthTokenCompletionHandler {
                 completionHandler(nil)
             }
             return
         }
+        
+        state = generateRandomString()
+        let authPath = "https://api.intra.42.fr/oauth/authorize?"
+            + "client_id=\(clientId)&redirect_uri=\(redirectURI)"
+            + "&state=\(state)&response_type=code&scope=public+profile+projects"
                 
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let controller = storyboard.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController {
@@ -37,6 +38,12 @@ extension API42Manager {
             controller.load(authPath)
             getTopViewController()?.present(controller, animated: true, completion: nil)
         }
+    }
+    
+    fileprivate func generateRandomString() -> String {
+        let length = Int.random(in: 43...128)
+        let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        return String((0..<length).map { _ in letters.randomElement()! })
     }
     
     /**
@@ -119,9 +126,6 @@ extension API42Manager {
                 self.OAuthAccessToken = accessToken
                 self.OAuthRefreshToken = refreshToken
             
-                self.keychain.set(accessToken, forKey: self.keychainAccessKey)
-                self.keychain.set(refreshToken, forKey: self.keychainRefreshKey)
-            
                 self.setupAPIData()
                 self.webViewController?.performSegue(withIdentifier: "loginSegue", sender: nil)
             }
@@ -187,9 +191,6 @@ extension API42Manager {
                 
                 self.OAuthAccessToken = accessToken
                 self.OAuthRefreshToken = refreshToken
-                
-                self.keychain.set(accessToken, forKey: self.keychainAccessKey)
-                self.keychain.set(refreshToken, forKey: self.keychainRefreshKey)
                 
                 completionHandler(true)
             }

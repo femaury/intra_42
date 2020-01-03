@@ -52,9 +52,27 @@ class API42Manager {
     /// Controller handling OAuth
     var webViewController: WebViewController?
     /// Access token received by API after OAuth
-    var OAuthAccessToken: String?
+    var OAuthAccessToken: String? {
+        get { keychain.get(keychainAccessKey) }
+        set {
+            if let value = newValue {
+                keychain.set(value, forKey: keychainAccessKey)
+            } else {
+                keychain.delete(keychainAccessKey)
+            }
+        }
+    }
     /// Refresh token received by API after OAuth
-    var OAuthRefreshToken: String?
+    var OAuthRefreshToken: String? {
+        get { keychain.get(keychainRefreshKey) }
+        set {
+            if let value = newValue {
+                keychain.set(value, forKey: keychainRefreshKey)
+            } else {
+                keychain.delete(keychainRefreshKey)
+            }
+        }
+    }
     /// Closure called after completion of the OAuth flow
     var OAuthTokenCompletionHandler: ((CustomError?) -> Void)?
     /// Closure called once the logged in user's coalition color is obtained
@@ -94,9 +112,6 @@ class API42Manager {
     
     /// Default initialization checks if user is logged in to get all required data for the API
     init() {
-        OAuthAccessToken = keychain.get(keychainAccessKey)
-        OAuthRefreshToken = keychain.get(keychainRefreshKey)
-        
         if hasOAuthToken() {
             setupAPIData()
         }
@@ -132,7 +147,7 @@ class API42Manager {
     
     /// Checks if instance has an access token for the API
     func hasOAuthToken() -> Bool {
-        guard let token = self.OAuthAccessToken else { return false }
+        guard let token = OAuthAccessToken else { return false }
         return !token.isEmpty
     }
     
@@ -140,8 +155,6 @@ class API42Manager {
     func clearTokenKeys() {
         OAuthAccessToken = nil
         OAuthRefreshToken = nil
-        keychain.delete(keychainAccessKey)
-        keychain.delete(keychainRefreshKey)
     }
     
     func clearIntraSessionCookies() {

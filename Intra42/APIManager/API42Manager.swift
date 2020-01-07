@@ -227,14 +227,16 @@ class API42Manager {
      - Parameter url: URL to make the request to
      - Parameter completionHandler: Closure returning `JSON` on success, or `nil` on error
      */
-    func request(url: String, completionHandler: @escaping ((JSON?) -> Void)) {
+    func request(url: String, cachePolicy: URLRequest.CachePolicy = .useProtocolCachePolicy, completionHandler: @escaping ((JSON?) -> Void)) {
         if hasOAuthToken(),
             let token = OAuthAccessToken,
             let encodedURL = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
             let realURL = URL(string: encodedURL) {
             
             var request = URLRequest(url: realURL)
+            request.cachePolicy = cachePolicy
             request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+            
             URLSession.shared.dataTask(with: request) { (data, response, error) in
                 DispatchQueue.main.async {
                     if let error = error {

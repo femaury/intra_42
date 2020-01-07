@@ -85,27 +85,8 @@ extension SideMenuController: UITableViewDelegate, UITableViewDataSource {
         case 3:
             performSegue(withIdentifier: "AchievementsSegue", sender: self)
         case 4:
-            var projectNames: [String] = []
-            
-            func getProjectNames(page: Int) {
-                let url = API42Manager.shared.baseURL + "cursus/21/projects?page[size]=100&page[number]=\(page)&filter[exam]=false"
-                
-                API42Manager.shared.request(url: url) { (data) in
-                    guard let projects = data?.array else {
-                        return
-                    }
-                    projectNames.append(contentsOf: projects.map { $0["name"].stringValue })
-                    if projects.count == 100 {
-                        getProjectNames(page: page + 1)
-                    } else {
-                        print(projectNames)
-                        print(projectNames.count)
-                    }
-                }
-            }
-            
-            getProjectNames(page: 0)
-//            performSegue(withIdentifier: "PeerSegue", sender: self)
+//            URLCache.shared.removeAllCachedResponses()
+            performSegue(withIdentifier: "PeerSegue", sender: self)
         case 5:
             performSegue(withIdentifier: "AboutSegue", sender: self)
         case 6:

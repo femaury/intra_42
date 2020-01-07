@@ -44,6 +44,7 @@
                         <segue destination="EXR-kY-yaD" kind="show" identifier="SettingsSegue" id="gzr-iD-LVe"/>
                         <segue destination="LHb-1I-22f" kind="show" identifier="CoalitionsSegue" id="mQL-hj-lR7"/>
                         <segue destination="bCE-GP-nGX" kind="show" identifier="ProjectsSegue" id="Qt6-hG-ioe"/>
+                        <segue destination="M61-rd-6eF" kind="show" identifier="PeerSegue" id="F3L-Wf-9ye"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QyE-HB-quV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -619,6 +620,75 @@ Cheers 😉</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="We6-Rf-Bs6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5292.753623188406" y="2784.375"/>
+        </scene>
+        <!--Peer Finder-->
+        <scene sceneID="vQx-NO-MHc">
+            <objects>
+                <tableViewController title="Peer Finder" id="M61-rd-6eF" customClass="PeerFinderViewController" customModule="Intra42" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Yab-ij-zWf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchButtonCell" id="axt-sx-bqi" customClass="SearchButtonCell" customModule="Intra42" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="55.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="axt-sx-bqi" id="sTw-VO-Vfs">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AmK-CN-KIo">
+                                            <rect key="frame" x="156.5" y="-0.5" width="101" height="44.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <inset key="contentEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
+                                            <state key="normal" title="Search"/>
+                                            <connections>
+                                                <action selector="pressSearch:" destination="axt-sx-bqi" eventType="touchUpInside" id="ItR-LE-rHE"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="AmK-CN-KIo" firstAttribute="centerY" secondItem="sTw-VO-Vfs" secondAttribute="centerY" id="PVS-KY-OBU"/>
+                                        <constraint firstItem="AmK-CN-KIo" firstAttribute="centerX" secondItem="sTw-VO-Vfs" secondAttribute="centerX" id="Vdo-91-zMh"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="searchButton" destination="AmK-CN-KIo" id="FND-LF-94P"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="M61-rd-6eF" id="bBP-GO-QTz"/>
+                            <outlet property="delegate" destination="M61-rd-6eF" id="wxa-TB-gYh"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="QbQ-9z-HIB"/>
+                    <connections>
+                        <segue destination="SxS-Iy-az8" kind="show" identifier="PeerListSegue" id="f4b-hb-lzk"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IsM-t3-i5A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6160" y="2778"/>
+        </scene>
+        <!--Peer List Controller-->
+        <scene sceneID="Z1A-0e-H7M">
+            <objects>
+                <tableViewController modalPresentationStyle="fullScreen" id="SxS-Iy-az8" customClass="PeerListController" customModule="Intra42" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="K8J-xE-aum">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="SxS-Iy-az8" id="dim-fo-1gA"/>
+                            <outlet property="delegate" destination="SxS-Iy-az8" id="yU5-QA-pcI"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Mh9-oA-WPS"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Om9-EG-VmY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6159" y="3477"/>
         </scene>
         <!--Videos-->
         <scene sceneID="H3g-L6-2fN">

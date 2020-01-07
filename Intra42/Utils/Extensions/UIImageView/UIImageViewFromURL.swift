@@ -14,39 +14,31 @@ extension UIImageView {
             image = defaultImg
             return
         }
-        let urlCache = URLCache.shared
         let request = URLRequest(url: url)
         
         image = nil
-        if let data = urlCache.cachedResponse(for: request)?.data {
-            self.image = UIImage(data: data) ?? defaultImg
-        } else {
-            let activityIndicator = UIActivityIndicatorView()
-            if withIndicator {
-                activityIndicator.center = convert(center, from: superview)
-                activityIndicator.hidesWhenStopped = true
-                activityIndicator.startAnimating()
-                addSubview(activityIndicator)
-            }
-            
-            URLSession.shared.dataTask(with: request) { (data, response, error) in
-                guard error == nil, let imgData = data else {
-                    print("Error downloading image.")
-                    DispatchQueue.main.async {
-                        activityIndicator.stopAnimating()
-                        self.image = defaultImg
-                    }
-                    return
-                }
-                if let response = response {
-                    let cachedData = CachedURLResponse(response: response, data: imgData)
-                    urlCache.storeCachedResponse(cachedData, for: request)
-                }
+        let activityIndicator = UIActivityIndicatorView()
+        if withIndicator {
+            activityIndicator.center = convert(center, from: superview)
+            activityIndicator.hidesWhenStopped = true
+            activityIndicator.startAnimating()
+            addSubview(activityIndicator)
+        }
+        
+        URLSession.shared.dataTask(with: request) { (data, _, error) in
+            guard error == nil, let data = data else {
+                print("Error downloading image.")
                 DispatchQueue.main.async {
                     activityIndicator.stopAnimating()
-                    self.image = UIImage(data: imgData) ?? defaultImg
+                    self.image = defaultImg
                 }
-            }.resume()
-        }
+                return
+            }
+
+            DispatchQueue.main.async {
+                activityIndicator.stopAnimating()
+                self.image = UIImage(data: data) ?? defaultImg
+            }
+        }.resume()
     }
 }

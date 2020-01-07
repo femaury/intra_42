@@ -13,8 +13,6 @@ class FriendDataManager {
     
     static let shared = FriendDataManager()
     
-    let coreData = CoreDataManager()
-    
     var friends: [Friend] = []
     
     init() {
@@ -36,9 +34,9 @@ class FriendDataManager {
     }
     
     func saveNewFriend(_ newFriend: Friend) {
-        guard hasFriend(withId: newFriend.id) == false else { return }
+        guard hasFriend(withId: newFriend.id) == false, let app = UIApplication.shared.delegate as? AppDelegate else { return }
         
-        let managedContext = coreData.persistentContainer.viewContext
+        let managedContext = app.coreData.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: "Friends", in: managedContext)!
         let friend = NSManagedObject(entity: entity, insertInto: managedContext)
         friend.setValue(newFriend.username, forKeyPath: "username")
@@ -57,7 +55,8 @@ class FriendDataManager {
     }
     
     func fetchFriends() {
-        let managedContext = coreData.persistentContainer.viewContext
+        guard let app = UIApplication.shared.delegate as? AppDelegate else { return }
+        let managedContext = app.coreData.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Friends")
         
         var requestResult: [NSManagedObject] = []
@@ -80,7 +79,8 @@ class FriendDataManager {
     }
     
     func deleteFriend(withId id: Int) {
-        let managedContext = coreData.persistentContainer.viewContext
+        guard let app = UIApplication.shared.delegate as? AppDelegate else { return }
+        let managedContext = app.coreData.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Friends")
         fetchRequest.predicate = NSPredicate(format: "id == %@", NSNumber(value: id))
         

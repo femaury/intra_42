@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		57C59F236D19DC9927C4603D /* Pods_Intra42.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48725963EC9F9A653537E021 /* Pods_Intra42.framework */; };
+		D04122C823C4D48A004D0A5E /* PeerFinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04122C723C4D48A004D0A5E /* PeerFinderViewController.swift */; };
+		D04122CA23C4E353004D0A5E /* SearchButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04122C923C4E353004D0A5E /* SearchButtonCell.swift */; };
+		D04122CC23C4EA79004D0A5E /* PeerListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04122CB23C4EA79004D0A5E /* PeerListController.swift */; };
+		D04122CE23C512F6004D0A5E /* Cursus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04122CD23C512F6004D0A5E /* Cursus.swift */; };
+		D04122D023C51D4E004D0A5E /* SelectableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04122CF23C51D4E004D0A5E /* SelectableTableViewCell.swift */; };
 		DC0D7B2A2230466A00A30B9F /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DC0D7B282230466A00A30B9F /* CoreData.xcdatamodeld */; };
 		DC0D7B2E223059B300A30B9F /* FriendDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0D7B2D223059B300A30B9F /* FriendDataManager.swift */; };
 		DC0D7B3022305DDC00A30B9F /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0D7B2F22305DDC00A30B9F /* CoreDataManager.swift */; };
@@ -119,6 +124,11 @@
 		917A90B6D439C0D11C718DD0 /* Pods_Swifty_Companion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swifty_Companion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE01040A1B46C0C1CFDBEFA1 /* Pods-Swifty Companion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swifty Companion.debug.xcconfig"; path = "Target Support Files/Pods-Swifty Companion/Pods-Swifty Companion.debug.xcconfig"; sourceTree = "<group>"; };
 		BEC019405A130A92CB98302E /* Pods-Intra42.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Intra42.debug.xcconfig"; path = "Target Support Files/Pods-Intra42/Pods-Intra42.debug.xcconfig"; sourceTree = "<group>"; };
+		D04122C723C4D48A004D0A5E /* PeerFinderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerFinderViewController.swift; sourceTree = "<group>"; };
+		D04122C923C4E353004D0A5E /* SearchButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButtonCell.swift; sourceTree = "<group>"; };
+		D04122CB23C4EA79004D0A5E /* PeerListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerListController.swift; sourceTree = "<group>"; };
+		D04122CD23C512F6004D0A5E /* Cursus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cursus.swift; sourceTree = "<group>"; };
+		D04122CF23C51D4E004D0A5E /* SelectableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableTableViewCell.swift; sourceTree = "<group>"; };
 		DC0D7B292230466A00A30B9F /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		DC0D7B2D223059B300A30B9F /* FriendDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDataManager.swift; sourceTree = "<group>"; };
 		DC0D7B2F22305DDC00A30B9F /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
@@ -414,6 +424,8 @@
 				DC89994C2247CBDD00F47EEF /* Search */,
 				DC0D7B31223064E800A30B9F /* UserProfile */,
 				DC77CE0F238832A00017BF4F /* LoadingCell.swift */,
+				D04122C923C4E353004D0A5E /* SearchButtonCell.swift */,
+				D04122CF23C51D4E004D0A5E /* SelectableTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -491,6 +503,8 @@
 				DC41485B22D0BED70005FCB1 /* SettingsViewController.swift */,
 				DC4F1DF223918D89000F4BF9 /* HolyGraphViewController.swift */,
 				DCF30D562396BE660000EC7C /* ProjectInfoViewController.swift */,
+				D04122C723C4D48A004D0A5E /* PeerFinderViewController.swift */,
+				D04122CB23C4EA79004D0A5E /* PeerListController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -567,6 +581,7 @@
 				DC4834FC230C3453007D0F8D /* EventsUsers.swift */,
 				DC4F1DF423944108000F4BF9 /* HolyGraph.swift */,
 				DCF30D582396C6EA0000EC7C /* Projects.swift */,
+				D04122CD23C512F6004D0A5E /* Cursus.swift */,
 				DC77F0222399338B00957887 /* ProjectsUsers.swift */,
 			);
 			path = Extensions;
@@ -806,9 +821,11 @@
 				DC21EB9922C92FAA00E1288B /* CoalitionView.swift in Sources */,
 				DC0D7B33223076DE00A30B9F /* FriendCell.swift in Sources */,
 				DC21EB9322C917C700E1288B /* AnimatedLabel.swift in Sources */,
+				D04122D023C51D4E004D0A5E /* SelectableTableViewCell.swift in Sources */,
 				DC4834FD230C3453007D0F8D /* EventsUsers.swift in Sources */,
 				DC21EB9022C90DAD00E1288B /* Pentagone.swift in Sources */,
 				DCF1A4DE229977ED00AA2653 /* Correction.swift in Sources */,
+				D04122C823C4D48A004D0A5E /* PeerFinderViewController.swift in Sources */,
 				DCCE05A62229822500906ECD /* UIImageViewFromURL.swift in Sources */,
 				DC4F1DF523944108000F4BF9 /* HolyGraph.swift in Sources */,
 				DCCE05902227010E00906ECD /* HomeViewController.swift in Sources */,
@@ -825,8 +842,10 @@
 				DCF1A4E62299949900AA2653 /* Achievements.swift in Sources */,
 				DC0D7B3B223408BE00A30B9F /* EventCell.swift in Sources */,
 				DC0D7B39223321CF00A30B9F /* LogsTableCell.swift in Sources */,
+				D04122CC23C4EA79004D0A5E /* PeerListController.swift in Sources */,
 				DC0D7B352231768A00A30B9F /* StringShortMonth.swift in Sources */,
 				DC27FD9922AE773D00E3E560 /* Teams.swift in Sources */,
+				D04122CE23C512F6004D0A5E /* Cursus.swift in Sources */,
 				DC4F1DF723944B66000F4BF9 /* HolyGraphView.swift in Sources */,
 				DC89993822452F4E00F47EEF /* ProfileTableCells.swift in Sources */,
 				DC955E02222CBC7F003B70BC /* UserResultCell.swift in Sources */,
@@ -856,6 +875,7 @@
 				DC955DEE222C4E88003B70BC /* ProjectCell.swift in Sources */,
 				DCCE0598222847CC00906ECD /* UserProfile.swift in Sources */,
 				DCCE05962228451500906ECD /* FriendsViewController.swift in Sources */,
+				D04122CA23C4E353004D0A5E /* SearchButtonCell.swift in Sources */,
 				DCABB86B22C12C1F00711C4A /* AboutViewController.swift in Sources */,
 				DC41485C22D0BED70005FCB1 /* SettingsViewController.swift in Sources */,
 				DC89993622451EB200F47EEF /* UserProfileDataSource.swift in Sources */,

@@ -13,6 +13,8 @@
 		D04122CC23C4EA79004D0A5E /* PeerListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04122CB23C4EA79004D0A5E /* PeerListController.swift */; };
 		D04122CE23C512F6004D0A5E /* Cursus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04122CD23C512F6004D0A5E /* Cursus.swift */; };
 		D04122D023C51D4E004D0A5E /* SelectableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04122CF23C51D4E004D0A5E /* SelectableTableViewCell.swift */; };
+		D0643F8323CE1B7A0032DCEB /* Campus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0643F8223CE1B7A0032DCEB /* Campus.swift */; };
+		D08BF44223C5F2D300359A17 /* SegmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08BF44123C5F2D300359A17 /* SegmentTableViewCell.swift */; };
 		DC0D7B2A2230466A00A30B9F /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DC0D7B282230466A00A30B9F /* CoreData.xcdatamodeld */; };
 		DC0D7B2E223059B300A30B9F /* FriendDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0D7B2D223059B300A30B9F /* FriendDataManager.swift */; };
 		DC0D7B3022305DDC00A30B9F /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0D7B2F22305DDC00A30B9F /* CoreDataManager.swift */; };
@@ -129,6 +131,8 @@
 		D04122CB23C4EA79004D0A5E /* PeerListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerListController.swift; sourceTree = "<group>"; };
 		D04122CD23C512F6004D0A5E /* Cursus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cursus.swift; sourceTree = "<group>"; };
 		D04122CF23C51D4E004D0A5E /* SelectableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableTableViewCell.swift; sourceTree = "<group>"; };
+		D0643F8223CE1B7A0032DCEB /* Campus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Campus.swift; sourceTree = "<group>"; };
+		D08BF44123C5F2D300359A17 /* SegmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentTableViewCell.swift; sourceTree = "<group>"; };
 		DC0D7B292230466A00A30B9F /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		DC0D7B2D223059B300A30B9F /* FriendDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDataManager.swift; sourceTree = "<group>"; };
 		DC0D7B2F22305DDC00A30B9F /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
@@ -269,6 +273,16 @@
 				48725963EC9F9A653537E021 /* Pods_Intra42.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D08BF44023C5F25D00359A17 /* PeerFinder */ = {
+			isa = PBXGroup;
+			children = (
+				D04122CF23C51D4E004D0A5E /* SelectableTableViewCell.swift */,
+				D04122C923C4E353004D0A5E /* SearchButtonCell.swift */,
+				D08BF44123C5F2D300359A17 /* SegmentTableViewCell.swift */,
+			);
+			path = PeerFinder;
 			sourceTree = "<group>";
 		};
 		DC0D7B272230464A00A30B9F /* CoreData */ = {
@@ -423,9 +437,8 @@
 				DC89994D2247CC2000F47EEF /* Achievements */,
 				DC89994C2247CBDD00F47EEF /* Search */,
 				DC0D7B31223064E800A30B9F /* UserProfile */,
+				D08BF44023C5F25D00359A17 /* PeerFinder */,
 				DC77CE0F238832A00017BF4F /* LoadingCell.swift */,
-				D04122C923C4E353004D0A5E /* SearchButtonCell.swift */,
-				D04122CF23C51D4E004D0A5E /* SelectableTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -582,6 +595,7 @@
 				DC4F1DF423944108000F4BF9 /* HolyGraph.swift */,
 				DCF30D582396C6EA0000EC7C /* Projects.swift */,
 				D04122CD23C512F6004D0A5E /* Cursus.swift */,
+				D0643F8223CE1B7A0032DCEB /* Campus.swift */,
 				DC77F0222399338B00957887 /* ProjectsUsers.swift */,
 			);
 			path = Extensions;
@@ -804,6 +818,7 @@
 			files = (
 				DC8999412245731000F47EEF /* NotificationViewController.swift in Sources */,
 				DCCE05A4222971AB00906ECD /* EventsViewController.swift in Sources */,
+				D08BF44223C5F2D300359A17 /* SegmentTableViewCell.swift in Sources */,
 				DC0D7B3D22340AFD00A30B9F /* Event.swift in Sources */,
 				DCF1A4EE2299957800AA2653 /* Coalitions.swift in Sources */,
 				DC955E0B222F1242003B70BC /* AchievementCell.swift in Sources */,
@@ -833,6 +848,7 @@
 				DCCE05A222296DC100906ECD /* ClustersViewController.swift in Sources */,
 				DC955DF0222C5192003B70BC /* DateTimeInterval.swift in Sources */,
 				DCF1A4E02299781900AA2653 /* Friend.swift in Sources */,
+				D0643F8323CE1B7A0032DCEB /* Campus.swift in Sources */,
 				DCCE058E2226F0FF00906ECD /* CustomError.swift in Sources */,
 				DC77CE5A238F030B0017BF4F /* WebViewController.swift in Sources */,
 				DC955E0D222FF623003B70BC /* SideMenuController.swift in Sources */,

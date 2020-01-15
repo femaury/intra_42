@@ -16,7 +16,7 @@ extension API42Manager {
         var projects: [ProjectItem] = []
         
         func getProjects(page: Int) {
-            let url = API42Manager.shared.baseURL + "cursus/\(id)/projects?page[size]=100&page[number]=\(page)&filter[exam]=false&sort=name"
+            let url = API42Manager.shared.baseURL + "cursus/\(id)/projects?filter[exam]=false&sort=name&page[size]=100&page[number]=\(page)"
             
             API42Manager.shared.request(url: url) { (data) in
                 guard let data = data?.array else {
@@ -24,9 +24,10 @@ extension API42Manager {
                     completionHandler(projects)
                     return
                 }
+                print("PROJECTS \(data.count)")
                 let parsed = data.map { ProjectItem(name: $0["name"].stringValue, slug: $0["slug"].stringValue, id: $0["id"].intValue) }
                 projects.append(contentsOf: parsed)
-                if projects.count == 100 {
+                if data.count == 100 {
                     getProjects(page: page + 1)
                 } else {
                     self._saveProjects(projects: projects, cursusId: id)
@@ -35,54 +36,14 @@ extension API42Manager {
             }
         }
         if refresh {
-            getProjects(page: 0)
+            getProjects(page: 1)
         } else {
             let projects = _retrieveProjects(cursusId: id)
             if projects.isEmpty {
-                getProjects(page: 0)
+                getProjects(page: 1)
             } else {
                 completionHandler(projects)
             }
-        }
-    }
-    
-    fileprivate func _retrieveProjects(cursusId id: Int) -> [ProjectItem] {
-        guard let app = UIApplication.shared.delegate as? AppDelegate else { return [] }
-        
-        let managedContext = app.coreData.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Projects")
-        fetchRequest.predicate = NSPredicate(format: "cursusId == %@", NSNumber(value: id))
-        
-        do {
-            let projects = try managedContext.fetch(fetchRequest)
-            return projects.map { ProjectItem(name: $0.value(forKey: "name") as! String,
-                                              slug: $0.value(forKey: "slug") as! String,
-                                              id: $0.value(forKey: "id") as! Int) }
-        } catch let error as NSError {
-            print("Could not retrieve projects. \(error), \(error.userInfo)")
-            return []
-        }
-    }
-    
-    fileprivate func _saveProjects(projects: [ProjectItem], cursusId id: Int) {
-        guard let app = UIApplication.shared.delegate as? AppDelegate, !projects.isEmpty else { return }
-        
-        let managedContext = app.coreData.persistentContainer.viewContext
-        managedContext.mergePolicy = NSMergeByPropertyStoreTrumpMergePolicy
-        guard let entity = NSEntityDescription.entity(forEntityName: "Projects", in: managedContext) else { return }
-        for project in projects {
-            let projectObj = NSManagedObject(entity: entity, insertInto: managedContext)
-            projectObj.setValue(project.name, forKeyPath: "name")
-            projectObj.setValue(project.id, forKey: "id")
-            projectObj.setValue(project.slug, forKey: "slug")
-            projectObj.setValue(id, forKey: "cursusId")
-        }
-        
-        do {
-            try managedContext.save()
-        } catch let error as NSError {
-            print("Could not save new projects. \(error), \(error.userInfo)")
-            return
         }
     }
 
@@ -146,6 +107,52 @@ extension API42Manager {
         
         request(url: projectURL) { (data) in
             completionHandler(data)
+        }
+    }
+}
+
+// CoreData Helpers to save loading time by caching server data
+extension API42Manager {
+    fileprivate func _retrieveProjects(cursusId id: Int) -> [ProjectItem] {
+        guard let app = UIApplication.shared.delegate as? AppDelegate else { return [] }
+        
+        let managedContext = app.coreData.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Projects")
+        fetchRequest.predicate = NSPredicate(format: "cursusId == %@", NSNumber(value: id))
+        let sort = NSSortDescriptor(key: "name", ascending: true, selector: #selector(NSString.caseInsensitiveCompare))
+        
+        fetchRequest.sortDescriptors = [sort]
+        
+        do {
+            let projects = try managedContext.fetch(fetchRequest)
+            return projects.map { ProjectItem(name: $0.value(forKey: "name") as! String,
+                                              slug: $0.value(forKey: "slug") as! String,
+                                              id: $0.value(forKey: "id") as! Int) }
+        } catch let error as NSError {
+            print("Could not retrieve projects. \(error), \(error.userInfo)")
+            return []
+        }
+    }
+    
+    fileprivate func _saveProjects(projects: [ProjectItem], cursusId id: Int) {
+        guard let app = UIApplication.shared.delegate as? AppDelegate, !projects.isEmpty else { return }
+        
+        let managedContext = app.coreData.persistentContainer.viewContext
+        managedContext.mergePolicy = NSMergeByPropertyStoreTrumpMergePolicy
+        guard let entity = NSEntityDescription.entity(forEntityName: "Projects", in: managedContext) else { return }
+        for project in projects {
+            let projectObj = NSManagedObject(entity: entity, insertInto: managedContext)
+            projectObj.setValue(project.name, forKeyPath: "name")
+            projectObj.setValue(project.id, forKey: "id")
+            projectObj.setValue(project.slug, forKey: "slug")
+            projectObj.setValue(id, forKey: "cursusId")
+        }
+        
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Could not save new projects. \(error), \(error.userInfo)")
+            return
         }
     }
 }

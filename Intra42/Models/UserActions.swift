@@ -61,8 +61,8 @@ class UserActions {
         // Email Actions
         
         let emailAction = UIAlertAction(title: "Send email", style: .default) { (_) in
-            guard let phoneNumber = self.email.title else { return }
-            if phoneNumber.isPhoneNumber, let mailURL = URL(string: "mailto:\(phoneNumber)") {
+            guard let mailAddress = self.email.title else { return }
+            if let mailURL = URL(string: "mailto:\(mailAddress)") {
                 if UIApplication.shared.canOpenURL(mailURL) {
                     UIApplication.shared.open(mailURL)
                 }

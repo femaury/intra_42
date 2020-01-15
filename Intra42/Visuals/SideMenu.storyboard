@@ -630,30 +630,60 @@ Cheers 😉</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchButtonCell" id="axt-sx-bqi" customClass="SearchButtonCell" customModule="Intra42" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="55.5" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FilterSegmentCell" id="axt-sx-bqi" customClass="SegmentTableViewCell" customModule="Intra42" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="55.5" width="414" height="31.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="axt-sx-bqi" id="sTw-VO-Vfs">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="31.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="gVk-Tk-DhM">
+                                            <rect key="frame" x="20" y="0.0" width="374" height="32.5"/>
+                                            <segments>
+                                                <segment title="Looking"/>
+                                                <segment title="In Progress"/>
+                                                <segment title="Validated"/>
+                                            </segments>
+                                            <connections>
+                                                <action selector="changeSections:" destination="axt-sx-bqi" eventType="valueChanged" id="Rj6-Hd-cx5"/>
+                                            </connections>
+                                        </segmentedControl>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="gVk-Tk-DhM" secondAttribute="bottom" id="339-o6-bEf"/>
+                                        <constraint firstItem="gVk-Tk-DhM" firstAttribute="top" secondItem="sTw-VO-Vfs" secondAttribute="top" id="QSC-HI-f6T"/>
+                                        <constraint firstItem="gVk-Tk-DhM" firstAttribute="leading" secondItem="sTw-VO-Vfs" secondAttribute="leading" constant="20" symbolic="YES" id="dYE-hA-cY9"/>
+                                        <constraint firstAttribute="trailing" secondItem="gVk-Tk-DhM" secondAttribute="trailing" constant="20" symbolic="YES" id="uPS-j7-K5s"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="segmentControl" destination="gVk-Tk-DhM" id="H69-9b-aJb"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchButtonCell" id="9jL-N8-Hdu" customClass="SearchButtonCell" customModule="Intra42" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="87" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9jL-N8-Hdu" id="Hxq-io-Jvx">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AmK-CN-KIo">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q7F-5x-heq">
                                             <rect key="frame" x="156.5" y="-0.5" width="101" height="44.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <inset key="contentEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
                                             <state key="normal" title="Search"/>
                                             <connections>
-                                                <action selector="pressSearch:" destination="axt-sx-bqi" eventType="touchUpInside" id="ItR-LE-rHE"/>
+                                                <action selector="pressSearch:" destination="9jL-N8-Hdu" eventType="touchUpInside" id="fDo-9y-lA0"/>
                                             </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="AmK-CN-KIo" firstAttribute="centerY" secondItem="sTw-VO-Vfs" secondAttribute="centerY" id="PVS-KY-OBU"/>
-                                        <constraint firstItem="AmK-CN-KIo" firstAttribute="centerX" secondItem="sTw-VO-Vfs" secondAttribute="centerX" id="Vdo-91-zMh"/>
+                                        <constraint firstItem="Q7F-5x-heq" firstAttribute="centerY" secondItem="Hxq-io-Jvx" secondAttribute="centerY" id="6hE-uA-HSQ"/>
+                                        <constraint firstItem="Q7F-5x-heq" firstAttribute="centerX" secondItem="Hxq-io-Jvx" secondAttribute="centerX" id="VWc-R4-YWR"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="searchButton" destination="AmK-CN-KIo" id="FND-LF-94P"/>
+                                    <outlet property="searchButton" destination="Q7F-5x-heq" id="TBB-3C-qZO"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -724,7 +754,7 @@ Cheers 😉</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="efH-Zs-Cvs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7047" y="2792"/>
+            <point key="canvasLocation" x="7046" y="2778"/>
         </scene>
         <!--Side Menu Navigation Controller-->
         <scene sceneID="Oeu-T3-St5">

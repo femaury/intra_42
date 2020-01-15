@@ -9,16 +9,16 @@
 import UIKit
 
 enum PeerListType {
+    case campus
     case cursus
     case project
-    case filter
 }
 
 class PeerListController: UITableViewController {
     
-    let filters = ["Validated", "Looking for Team", "In Progress"]
     weak var delegate: PeerFinderViewController?
     var type: PeerListType = .cursus
+    var campus: [(id: Int, name: String)] = []
     var cursus: [(id: Int, name: String)] = []
     var projects: [ProjectItem] = []
     var isLoading = true
@@ -34,13 +34,19 @@ class PeerListController: UITableViewController {
         }
         
         tableView.separatorStyle = .none
-        tableView.allowsMultipleSelection = type == .filter ? true : false
         let refreshControl = UIRefreshControl()
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.addTarget(self, action: #selector(refreshTable), for: .valueChanged)
         tableView.refreshControl = refreshControl
 
-        if type == .cursus {
+        if type == .campus {
+            API42Manager.shared.getAllCampus { (campus) in
+                self.campus = campus
+                self.isLoading = false
+                self.tableView.separatorStyle = .singleLine
+                self.tableView.reloadData()
+            }
+        } else if type == .cursus {
             API42Manager.shared.getAllCursus { (cursus) in
                 self.cursus = cursus
                 self.isLoading = false
@@ -61,7 +67,13 @@ class PeerListController: UITableViewController {
     }
     
     @objc func refreshTable(_ sender: Any) {
-        if type == .cursus {
+        if type == .campus {
+            API42Manager.shared.getAllCursus(refresh: true) { (campus) in
+                self.campus = campus
+                self.tableView.refreshControl?.endRefreshing()
+                self.tableView.reloadData()
+            }
+        } else if type == .cursus {
             API42Manager.shared.getAllCursus(refresh: true) { (cursus) in
                 self.cursus = cursus
                 self.tableView.refreshControl?.endRefreshing()
@@ -86,18 +98,21 @@ class PeerListController: UITableViewController {
         if isLoading { return 1 }
         
         switch type {
+        case .campus:
+            return campus.count
         case .cursus:
             return cursus.count
         case .project:
             return projects.count
-        case .filter:
-            return filters.count
         }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let delegate = delegate else { return }
         switch type {
+        case .campus:
+            delegate.selectedCampus = campus[indexPath.row]
+            self.navigationController?.popViewController(animated: true)
         case .cursus:
             delegate.selectedCursus = cursus[indexPath.row]
             self.navigationController?.popViewController(animated: true)
@@ -105,9 +120,6 @@ class PeerListController: UITableViewController {
             delegate.selectedProject = projects[indexPath.row]
             delegate.searchButtonEnabled = true
             self.navigationController?.popViewController(animated: true)
-        case .filter:
-            break
-
         }
     }
 
@@ -127,6 +139,10 @@ class PeerListController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") ?? UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
 
         switch type {
+        case .campus:
+            let name = campus[indexPath.row].name
+            cell.textLabel?.text = name
+            cell.accessoryType = name == delegate?.selectedCampus.name ? .checkmark : .none
         case .cursus:
             let name = cursus[indexPath.row].name
             cell.textLabel?.text = name
@@ -136,18 +152,6 @@ class PeerListController: UITableViewController {
             cell.textLabel?.text = project.name
             cell.detailTextLabel?.text = project.slug
             cell.accessoryType = project.name == delegate?.selectedProject.name ? .checkmark : .none
-        case .filter:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "filterCell") as? SelectableTableViewCell
-                ?? SelectableTableViewCell(style: .value1, reuseIdentifier: "filterCell")
-            cell.textLabel?.text = filters[indexPath.row]
-            cell.delegate = delegate
-            cell.indexPath = indexPath
-            if let del = delegate, del.selectedFilters.contains(indexPath.row) {
-                cell.accessoryType = .checkmark
-            } else {
-                cell.accessoryType = .none
-            }
-            return cell
         }
         return cell
     }

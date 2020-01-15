@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19C57" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Campus" representedClassName="Campus" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="name"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
     <entity name="Cursus" representedClassName="Cursus" syncable="YES" codeGenerationType="class">
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
@@ -22,7 +31,7 @@
         <attribute name="slug" optional="YES" attributeType="String"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
-                <constraint value="name"/>
+                <constraint value="slug"/>
             </uniquenessConstraint>
         </uniquenessConstraints>
     </entity>
@@ -30,5 +39,6 @@
         <element name="Cursus" positionX="-45" positionY="27" width="128" height="73"/>
         <element name="Friends" positionX="-54" positionY="-9" width="128" height="103"/>
         <element name="Projects" positionX="-54" positionY="18" width="128" height="103"/>
+        <element name="Campus" positionX="-45" positionY="36" width="128" height="73"/>
     </elements>
 </model>

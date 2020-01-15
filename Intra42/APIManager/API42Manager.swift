@@ -232,7 +232,7 @@ class API42Manager {
             let token = OAuthAccessToken,
             let encodedURL = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
             let realURL = URL(string: encodedURL) {
-            
+            print("CALLING \(realURL)")
             var request = URLRequest(url: realURL)
             request.cachePolicy = cachePolicy
             request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
@@ -284,6 +284,11 @@ class API42Manager {
 //                        self.showErrorAlert(message: "There was a problem with 42's API...")
                         completionHandler(nil)
                         return
+                    }
+                    
+                    if let res = response as? HTTPURLResponse {
+                        let headers = res.allHeaderFields
+                        print(headers["Link"])
                     }
                     completionHandler(valueJSON)
                 }

@@ -14,6 +14,6 @@ class SearchButtonCell: UITableViewCell {
     @IBOutlet weak var searchButton: UIButton!
     
     @IBAction func pressSearch(_ sender: Any) {
-        
+        delegate?.searchUsers()
     }
 }

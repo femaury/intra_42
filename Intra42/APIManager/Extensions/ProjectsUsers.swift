@@ -10,6 +10,10 @@ import Foundation
 
 extension API42Manager {
     
+    func getProjectUsers(forProjectId id: Int, completionHandler: @escaping (Int?) -> Void) {
+        
+    }
+    
     func getProjectUserId(forProjectId id: Int, userId: Int, completionHandler: @escaping (Int?) -> Void) {
         let url = baseURL + "users/\(userId)/projects_users?filter[project_id]=\(id)"
         

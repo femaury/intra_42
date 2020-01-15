@@ -16,12 +16,20 @@ enum PeerListType {
 
 class PeerListController: UITableViewController {
     
+    let searchController = UISearchController(searchResultsController: nil)
+    
     weak var delegate: PeerFinderViewController?
     var type: PeerListType = .cursus
-    var campus: [(id: Int, name: String)] = []
-    var cursus: [(id: Int, name: String)] = []
-    var projects: [ProjectItem] = []
     var isLoading = true
+    
+    var campus: [(id: Int, name: String)] = []
+    var filteredCampus: [(id: Int, name: String)] = []
+    
+    var cursus: [(id: Int, name: String)] = []
+    var filteredCursus: [(id: Int, name: String)] = []
+    
+    var projects: [ProjectItem] = []
+    var filteredProjects: [ProjectItem] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,8 +46,16 @@ class PeerListController: UITableViewController {
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.addTarget(self, action: #selector(refreshTable), for: .valueChanged)
         tableView.refreshControl = refreshControl
+        
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.hidesNavigationBarDuringPresentation = false
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        definesPresentationContext = true
 
         if type == .campus {
+            searchController.searchBar.placeholder = "Search campus..."
             API42Manager.shared.getAllCampus { (campus) in
                 self.campus = campus
                 self.isLoading = false
@@ -47,6 +63,7 @@ class PeerListController: UITableViewController {
                 self.tableView.reloadData()
             }
         } else if type == .cursus {
+            searchController.searchBar.placeholder = "Search cursus..."
             API42Manager.shared.getAllCursus { (cursus) in
                 self.cursus = cursus
                 self.isLoading = false
@@ -54,6 +71,7 @@ class PeerListController: UITableViewController {
                 self.tableView.reloadData()
             }
         } else if type == .project, let id = delegate?.selectedCursus.id {
+            searchController.searchBar.placeholder = "Search project..."
             API42Manager.shared.getAllProjects(forCursus: id) { (projects) in
                 self.projects = projects
                 self.isLoading = false
@@ -99,11 +117,11 @@ class PeerListController: UITableViewController {
         
         switch type {
         case .campus:
-            return campus.count
+            return isFiltering() ? filteredCampus.count : campus.count
         case .cursus:
-            return cursus.count
+            return isFiltering() ? filteredCursus.count : cursus.count
         case .project:
-            return projects.count
+            return isFiltering() ? filteredProjects.count : projects.count
         }
     }
     
@@ -111,13 +129,13 @@ class PeerListController: UITableViewController {
         guard let delegate = delegate else { return }
         switch type {
         case .campus:
-            delegate.selectedCampus = campus[indexPath.row]
+            delegate.selectedCampus = isFiltering() ? filteredCampus[indexPath.row] : campus[indexPath.row]
             self.navigationController?.popViewController(animated: true)
         case .cursus:
-            delegate.selectedCursus = cursus[indexPath.row]
+            delegate.selectedCursus = isFiltering() ? filteredCursus[indexPath.row] : cursus[indexPath.row]
             self.navigationController?.popViewController(animated: true)
         case .project:
-            delegate.selectedProject = projects[indexPath.row]
+            delegate.selectedProject = isFiltering() ? filteredProjects[indexPath.row] : projects[indexPath.row]
             delegate.searchButtonEnabled = true
             self.navigationController?.popViewController(animated: true)
         }
@@ -140,19 +158,58 @@ class PeerListController: UITableViewController {
 
         switch type {
         case .campus:
-            let name = campus[indexPath.row].name
+            let name = isFiltering() ? filteredCampus[indexPath.row].name : campus[indexPath.row].name
             cell.textLabel?.text = name
             cell.accessoryType = name == delegate?.selectedCampus.name ? .checkmark : .none
         case .cursus:
-            let name = cursus[indexPath.row].name
+            let name = isFiltering() ? filteredCursus[indexPath.row].name : cursus[indexPath.row].name
             cell.textLabel?.text = name
             cell.accessoryType = name == delegate?.selectedCursus.name ? .checkmark : .none
         case .project:
-            let project = projects[indexPath.row]
+            let project = isFiltering() ? filteredProjects[indexPath.row] : projects[indexPath.row]
             cell.textLabel?.text = project.name
             cell.detailTextLabel?.text = project.slug
             cell.accessoryType = project.name == delegate?.selectedProject.name ? .checkmark : .none
         }
         return cell
+    }
+}
+
+// MARK: - Search Results Updating
+extension PeerListController: UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        if let searchText = searchBar.text {
+            filterTable(forSearch: searchText)
+        }
+    }
+    
+    func filterTable(forSearch search: String) {
+        switch type {
+        case .campus:
+            filteredCampus = campus.filter({ (item) -> Bool in
+                return item.name.lowercased().contains(search.lowercased())
+            })
+        case .cursus:
+            filteredCursus = cursus.filter({ (item) -> Bool in
+                return item.name.lowercased().contains(search.lowercased())
+            })
+        case .project:
+            filteredProjects = projects.filter({ (item) -> Bool in
+                return item.name.lowercased().contains(search.lowercased())
+            })
+        }
+        tableView.reloadData()
+    }
+    
+    func isFiltering() -> Bool {
+        let searchBarScopeIsFiltering = searchController.searchBar.selectedScopeButtonIndex != 0
+        
+        return searchController.isActive && (!searchBarIsEmpty() || searchBarScopeIsFiltering)
+    }
+    
+    func searchBarIsEmpty() -> Bool {
+        return searchController.searchBar.text?.isEmpty ?? true
     }
 }

@@ -11,14 +11,14 @@ import UIKit
 class PeerFinderViewController: UITableViewController {
 
     enum Filter {
-        case looking
-        case inProgress
         case validated
+        case inProgress
+        case all
     }
     var selectedCampus: (id: Int, name: String) = (0, "None")
     var selectedCursus: (id: Int, name: String) = (0, "None")
     var selectedProject: ProjectItem = ProjectItem(name: "None", slug: "", id: 0)
-    var selectedFilter: Filter = .looking
+    var selectedFilter: Filter = .all
     var selectedType: PeerListType?
     var searchButtonEnabled = false { didSet { tableView.reloadData() } }
     
@@ -44,6 +44,8 @@ class PeerFinderViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        tableView.setNeedsLayout()
+        tableView.layoutIfNeeded()
         tableView.reloadData()
     }
     
@@ -59,11 +61,11 @@ class PeerFinderViewController: UITableViewController {
     func selectFilter(_ index: Int) {
         switch index {
         case 0:
-            selectedFilter = .looking
+            selectedFilter = .validated
         case 1:
             selectedFilter = .inProgress
         case 2:
-            selectedFilter = .validated
+            selectedFilter = .all
         default:
             return
         }
@@ -72,7 +74,16 @@ class PeerFinderViewController: UITableViewController {
     func searchUsers() {
         let projectId = selectedProject.id
         let campusId = selectedCampus.id
-        let url = API42Manager.shared.baseURL + "projects/\(projectId)/projects_users?filter[campus]=\(campusId)&page[size]=100"
+        var filter: String
+        switch selectedFilter {
+        case .validated:
+            filter = "&filter[marked]=true"
+        case .inProgress:
+            filter = "&filter[marked]=false"
+        case .all:
+            filter = ""
+        }
+        let url = API42Manager.shared.baseURL + "projects/\(projectId)/projects_users?filter[campus]=\(campusId)\(filter)&page[size]=100"
         API42Manager.shared.request(url: url) { (data) in
             print("PROJECT USERS \(data?.arrayValue.count)")
             print(data)
@@ -138,11 +149,13 @@ class PeerFinderViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 3, let cell = tableView.dequeueReusableCell(withIdentifier: "SearchButtonCell", for: indexPath) as? SearchButtonCell {
             cell.searchButton.isEnabled = searchButtonEnabled
+            cell.searchButton.tintColor = API42Manager.shared.preferedPrimaryColor
             cell.delegate = self
             cell.backgroundColor = nil
             return cell
         }
 
+        let borderWidth = 1.0 / UIScreen.main.scale
         switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "campusCell")
@@ -151,13 +164,30 @@ class PeerFinderViewController: UITableViewController {
             if indexPath.row == 0 {
                 cell.textLabel?.text = "Campus"
                 cell.detailTextLabel?.text = selectedCampus.name
+                
+                for sub in cell.subviews where sub.frame.height == borderWidth {
+                    sub.removeFromSuperview()
+                }
+                let borderTop = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: borderWidth))
+                borderTop.backgroundColor = UIColor(named: "SelectedCellBackground")
+                cell.addSubview(borderTop)
+                let posX = tableView.separatorInset.left
+                let borderBottom = UIView(frame: CGRect(x: posX, y: cell.frame.height, width: tableView.frame.width - posX, height: borderWidth))
+                borderBottom.backgroundColor = UIColor(named: "SelectedCellBackground")
+                cell.addSubview(borderBottom)
             } else {
                 cell.textLabel?.text = "Cursus"
                 cell.detailTextLabel?.text = selectedCursus.name
+                
+                for sub in cell.subviews where sub.frame.height == borderWidth {
+                    sub.removeFromSuperview()
+                }
+                let borderBottom = UIView(frame: CGRect(x: 0, y: cell.frame.height, width: tableView.frame.width, height: borderWidth))
+                borderBottom.backgroundColor = UIColor(named: "SelectedCellBackground")
+                cell.addSubview(borderBottom)
             }
             cell.accessoryType = .disclosureIndicator
-            cell.layer.borderWidth = 1.0 / UIScreen.main.scale
-            cell.layer.borderColor = UIColor(named: "SelectedCellBackground")?.cgColor
+            
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "projectCell")
@@ -166,13 +196,24 @@ class PeerFinderViewController: UITableViewController {
             cell.textLabel?.text = selectedProject.name
             cell.detailTextLabel?.text = selectedProject.slug
             cell.accessoryType = .disclosureIndicator
-            cell.layer.borderWidth = 1.0 / UIScreen.main.scale
-            cell.layer.borderColor = UIColor(named: "SelectedCellBackground")?.cgColor
+            
+            for sub in cell.subviews where sub.frame.height == borderWidth {
+                sub.removeFromSuperview()
+            }
+            cell.updateConstraintsIfNeeded()
+            let borderTop = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: borderWidth))
+            borderTop.backgroundColor = UIColor(named: "SelectedCellBackground")
+            cell.addSubview(borderTop)
+            
+            let borderBottom = UIView(frame: CGRect(x: 0, y: cell.frame.height, width: tableView.frame.width, height: borderWidth))
+            borderBottom.backgroundColor = UIColor(named: "SelectedCellBackground")
+            cell.addSubview(borderBottom)
             
             return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "FilterSegmentCell", for: indexPath) as! SegmentTableViewCell
             cell.segmentCallback = selectFilter
+            cell.backgroundColor = nil
             return cell
         default:
             return UITableViewCell()

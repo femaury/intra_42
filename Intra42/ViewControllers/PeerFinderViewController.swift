@@ -18,16 +18,16 @@ class PeerFinderViewController: UITableViewController {
     var selectedCampus: (id: Int, name: String) = (0, "None")
     var selectedCursus: (id: Int, name: String) = (0, "None")
     var selectedProject: ProjectItem = ProjectItem(name: "None", slug: "", id: 0)
-    var selectedFilter: Filter = .all
+    var selectedFilter: Filter = .validated
     var selectedType: PeerListType?
     var searchButtonEnabled = false { didSet { tableView.reloadData() } }
+    var peerResultsController: PeerResultsController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         if let id = API42Manager.shared.userProfile?.mainCampusId, let name = API42Manager.shared.userProfile?.mainCampusName {
             selectedCampus = (id, name)
-            print("TTOTOTO")
         }
         
         if #available(iOS 13.0, *) {
@@ -74,20 +74,18 @@ class PeerFinderViewController: UITableViewController {
     func searchUsers() {
         let projectId = selectedProject.id
         let campusId = selectedCampus.id
-        var filter: String
-        switch selectedFilter {
-        case .validated:
-            filter = "&filter[marked]=true"
-        case .inProgress:
-            filter = "&filter[marked]=false"
-        case .all:
-            filter = ""
+        let filter = selectedFilter
+        let id = "\(projectId)\(campusId)\(filter)"
+        
+        if peerResultsController == nil || peerResultsController?.controllerId != id {
+            let storyboard = UIStoryboard(name: "SideMenu", bundle: nil)
+            peerResultsController = storyboard.instantiateViewController(withIdentifier: "PeerResultsController") as? PeerResultsController
+            peerResultsController?.modalPresentationStyle = .fullScreen
+            _ = peerResultsController?.view
+            peerResultsController?.loadProjectUsers(forProjectId: projectId, campusId: campusId, filter: selectedFilter)
         }
-        let url = API42Manager.shared.baseURL + "projects/\(projectId)/projects_users?filter[campus]=\(campusId)\(filter)&page[size]=100"
-        API42Manager.shared.request(url: url) { (data) in
-            print("PROJECT USERS \(data?.arrayValue.count)")
-            print(data)
-        }
+        guard let destination = peerResultsController else { return }
+        navigationController?.pushViewController(destination, animated: true)
     }
     
     // MARK: - Table view data source

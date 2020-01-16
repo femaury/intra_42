@@ -23,7 +23,7 @@ class CorrectionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Fixes navbar background color bug in iOS 13
+        // Keeps navbar background color black in iOS 13
         if #available(iOS 13.0, *) {
             let appearance = UINavigationBarAppearance()
             appearance.backgroundColor = .systemBackground

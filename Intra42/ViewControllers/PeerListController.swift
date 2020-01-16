@@ -34,6 +34,7 @@ class PeerListController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Keeps navbar background color black in iOS 13
         if #available(iOS 13.0, *) {
             let appearance = UINavigationBarAppearance()
             appearance.backgroundColor = .systemBackground

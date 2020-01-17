@@ -29,6 +29,8 @@ class API42Manager {
     static let shared = API42Manager()
     /// Base URL for API
     let baseURL = "https://api.intra.42.fr/v2/"
+    /// URL for API OAuth flow
+    let oAuthURL = "https://api.intra.42.fr/oauth/token"
     /// API app ID key
     let clientId = "YOUR_42_API_APP_UID"
     /// API app secret key
@@ -51,8 +53,8 @@ class API42Manager {
     var requestsTimer: Timer?
     /// Controller handling OAuth
     var webViewController: WebViewController?
-    /// Access token received by API after OAuth
-    var OAuthAccessToken: String? {
+    /// Access token received from API after OAuth
+    var oAuthAccessToken: String? {
         get { keychain.get(keychainAccessKey) }
         set {
             if let value = newValue {
@@ -62,8 +64,8 @@ class API42Manager {
             }
         }
     }
-    /// Refresh token received by API after OAuth
-    var OAuthRefreshToken: String? {
+    /// Refresh token received from API after OAuth
+    var oAuthRefreshToken: String? {
         get { keychain.get(keychainRefreshKey) }
         set {
             if let value = newValue {
@@ -74,7 +76,7 @@ class API42Manager {
         }
     }
     /// Closure called after completion of the OAuth flow
-    var OAuthTokenCompletionHandler: ((CustomError?) -> Void)?
+    var oAuthTokenCompletionHandler: ((CustomError?) -> Void)?
     /// Closure called once the logged in user's coalition color is obtained
     var coalitionColorCompletionHandler: ((UIColor?) -> Void)?
     /// Closure called once the logged in user's information is obtained
@@ -147,14 +149,14 @@ class API42Manager {
     
     /// Checks if instance has an access token for the API
     func hasOAuthToken() -> Bool {
-        guard let token = OAuthAccessToken else { return false }
+        guard let token = oAuthAccessToken else { return false }
         return !token.isEmpty
     }
     
     /// Completely removes all references of API tokens from the app and keychain storage (log out)
     func clearTokenKeys() {
-        OAuthAccessToken = nil
-        OAuthRefreshToken = nil
+        oAuthAccessToken = nil
+        oAuthRefreshToken = nil
     }
     
     func clearIntraSessionCookies() {
@@ -229,7 +231,7 @@ class API42Manager {
      */
     func request(url: String, cachePolicy: URLRequest.CachePolicy = .useProtocolCachePolicy, completionHandler: @escaping ((JSON?) -> Void)) {
         if hasOAuthToken(),
-            let token = OAuthAccessToken,
+            let token = oAuthAccessToken,
             let encodedURL = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
             let realURL = URL(string: encodedURL) {
             

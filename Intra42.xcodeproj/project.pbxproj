@@ -135,7 +135,6 @@
 		D04122CB23C4EA79004D0A5E /* PeerListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerListController.swift; sourceTree = "<group>"; };
 		D04122CD23C512F6004D0A5E /* Cursus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cursus.swift; sourceTree = "<group>"; };
 		D04122CF23C51D4E004D0A5E /* SelectableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableTableViewCell.swift; sourceTree = "<group>"; };
-		D0558FB523D0CA6400D26AFC /* Intra42.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Intra42.entitlements; sourceTree = "<group>"; };
 		D0558FB623D0CC8700D26AFC /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		D0643F8223CE1B7A0032DCEB /* Campus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Campus.swift; sourceTree = "<group>"; };
 		D08BF44123C5F2D300359A17 /* SegmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentTableViewCell.swift; sourceTree = "<group>"; };
@@ -493,7 +492,6 @@
 		DCCE0578222591F400906ECD /* Intra42 */ = {
 			isa = PBXGroup;
 			children = (
-				D0558FB523D0CA6400D26AFC /* Intra42.entitlements */,
 				DCCE0579222591F400906ECD /* AppDelegate.swift */,
 				DCCE05A0222873DE00906ECD /* API Manager */,
 				DCCE059D2228739F00906ECD /* ViewControllers */,
@@ -1064,9 +1062,8 @@
 			baseConfigurationReference = BEC019405A130A92CB98302E /* Pods-Intra42.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Intra42/Intra42.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 16;
+				CURRENT_PROJECT_VERSION = 17;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J2YFW87U3N;
 				INFOPLIST_FILE = Intra42/Info.plist;
@@ -1075,7 +1072,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.4.7;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.femaury.Intra42;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1088,9 +1085,8 @@
 			baseConfigurationReference = F422FD8B1CF774E3F050397F /* Pods-Intra42.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Intra42/Intra42.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 16;
+				CURRENT_PROJECT_VERSION = 17;
 				DEVELOPMENT_TEAM = J2YFW87U3N;
 				INFOPLIST_FILE = Intra42/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1098,7 +1094,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.4.7;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.femaury.Intra42;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

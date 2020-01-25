@@ -85,7 +85,6 @@ extension SideMenuController: UITableViewDelegate, UITableViewDataSource {
         case 3:
             performSegue(withIdentifier: "AchievementsSegue", sender: self)
         case 4:
-//            URLCache.shared.removeAllCachedResponses()
             performSegue(withIdentifier: "PeerSegue", sender: self)
         case 5:
             performSegue(withIdentifier: "AboutSegue", sender: self)

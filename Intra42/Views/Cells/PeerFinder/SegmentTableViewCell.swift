@@ -1,18 +1,16 @@
 //
-//  SegmentHeaderCell.swift
-//  Intra 42
+//  SegmentTableViewCell.swift
+//  Intra42
 //
-//  Created by Felix Maury on 2019-03-03.
-//  Copyright © 2019 Felix Maury. All rights reserved.
+//  Created by Felix Maury on 08/01/2020.
+//  Copyright © 2020 Felix Maury. All rights reserved.
 //
 
 import UIKit
 
-class SegmentHeaderCell: UITableViewCell {
+class SegmentTableViewCell: UITableViewCell {
 
     @IBOutlet weak var segmentControl: UISegmentedControl!
-    @IBOutlet weak var topLine: UIView!
-    @IBOutlet weak var bottomLine: UIView!
     
     var segmentCallback: ((Int) -> Void)?
     

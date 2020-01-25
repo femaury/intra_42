@@ -47,7 +47,7 @@ extension API42Manager {
     }
     
     private func _modifyEvent(url: String, method: HTTPMethod, completiondHandler: @escaping (Bool) -> Void) {
-        if hasOAuthToken(), let token = OAuthAccessToken, let url = URL(string: url) {
+        if hasOAuthToken(), let token = oAuthAccessToken, let url = URL(string: url) {
             var request = URLRequest(url: url)
             request.httpMethod = method.rawValue
             request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")

@@ -28,6 +28,12 @@ struct ProjectInfo {
     var objectives: [String]
 }
 
+struct ProjectItem {
+    var name: String
+    var slug: String
+    var id: Int
+}
+
 struct Project {
     var name: String
     var id: Int

@@ -18,7 +18,7 @@ class LoginViewController: UIViewController, WKNavigationDelegate {
         super.viewDidLoad()
         
         errorLabel.isHidden = true
-        API42Manager.shared.OAuthTokenCompletionHandler = { error in
+        API42Manager.shared.oAuthTokenCompletionHandler = { error in
             if let err = error {
                 print(err)
                 self.errorMessage = "Couldn't login with OAuth..."

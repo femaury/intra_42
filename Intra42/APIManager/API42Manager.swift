@@ -29,6 +29,8 @@ class API42Manager {
     static let shared = API42Manager()
     /// Base URL for API
     let baseURL = "https://api.intra.42.fr/v2/"
+    /// URL for API OAuth flow
+    let oAuthURL = "https://api.intra.42.fr/oauth/token"
     /// API app ID key
     let clientId = "YOUR_42_API_APP_UID"
     /// API app secret key
@@ -51,12 +53,30 @@ class API42Manager {
     var requestsTimer: Timer?
     /// Controller handling OAuth
     var webViewController: WebViewController?
-    /// Access token received by API after OAuth
-    var OAuthAccessToken: String?
-    /// Refresh token received by API after OAuth
-    var OAuthRefreshToken: String?
+    /// Access token received from API after OAuth
+    var oAuthAccessToken: String? {
+        get { keychain.get(keychainAccessKey) }
+        set {
+            if let value = newValue {
+                keychain.set(value, forKey: keychainAccessKey)
+            } else {
+                keychain.delete(keychainAccessKey)
+            }
+        }
+    }
+    /// Refresh token received from API after OAuth
+    var oAuthRefreshToken: String? {
+        get { keychain.get(keychainRefreshKey) }
+        set {
+            if let value = newValue {
+                keychain.set(value, forKey: keychainRefreshKey)
+            } else {
+                keychain.delete(keychainRefreshKey)
+            }
+        }
+    }
     /// Closure called after completion of the OAuth flow
-    var OAuthTokenCompletionHandler: ((CustomError?) -> Void)?
+    var oAuthTokenCompletionHandler: ((CustomError?) -> Void)?
     /// Closure called once the logged in user's coalition color is obtained
     var coalitionColorCompletionHandler: ((UIColor?) -> Void)?
     /// Closure called once the logged in user's information is obtained
@@ -94,9 +114,6 @@ class API42Manager {
     
     /// Default initialization checks if user is logged in to get all required data for the API
     init() {
-        OAuthAccessToken = keychain.get(keychainAccessKey)
-        OAuthRefreshToken = keychain.get(keychainRefreshKey)
-        
         if hasOAuthToken() {
             setupAPIData()
         }
@@ -132,16 +149,14 @@ class API42Manager {
     
     /// Checks if instance has an access token for the API
     func hasOAuthToken() -> Bool {
-        guard let token = self.OAuthAccessToken else { return false }
+        guard let token = oAuthAccessToken else { return false }
         return !token.isEmpty
     }
     
     /// Completely removes all references of API tokens from the app and keychain storage (log out)
     func clearTokenKeys() {
-        OAuthAccessToken = nil
-        OAuthRefreshToken = nil
-        keychain.delete(keychainAccessKey)
-        keychain.delete(keychainRefreshKey)
+        oAuthAccessToken = nil
+        oAuthRefreshToken = nil
     }
     
     func clearIntraSessionCookies() {
@@ -214,14 +229,16 @@ class API42Manager {
      - Parameter url: URL to make the request to
      - Parameter completionHandler: Closure returning `JSON` on success, or `nil` on error
      */
-    func request(url: String, completionHandler: @escaping ((JSON?) -> Void)) {
+    func request(url: String, cachePolicy: URLRequest.CachePolicy = .useProtocolCachePolicy, completionHandler: @escaping ((JSON?) -> Void)) {
         if hasOAuthToken(),
-            let token = OAuthAccessToken,
+            let token = oAuthAccessToken,
             let encodedURL = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
             let realURL = URL(string: encodedURL) {
             
             var request = URLRequest(url: realURL)
+            request.cachePolicy = cachePolicy
             request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+            
             URLSession.shared.dataTask(with: request) { (data, response, error) in
                 DispatchQueue.main.async {
                     if let error = error {
@@ -270,6 +287,11 @@ class API42Manager {
                         completionHandler(nil)
                         return
                     }
+                    
+//                    if let res = response as? HTTPURLResponse {
+//                        let headers = res.allHeaderFields
+//                        print(headers["Link"])
+//                    }
                     completionHandler(valueJSON)
                 }
             }.resume()

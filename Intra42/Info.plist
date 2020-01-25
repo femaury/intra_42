@@ -98,6 +98,8 @@
 			</dict>
 		</array>
 	</dict>
+	<key>LSApplicationQueriesSchemes</key>
+	<array/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCalendarsUsageDescription</key>

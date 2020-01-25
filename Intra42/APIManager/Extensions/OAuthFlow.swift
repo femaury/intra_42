@@ -9,26 +9,27 @@
 import Foundation
 import UIKit
 import SwiftyJSON
-import SafariServices
 import WebKit
 
 extension API42Manager {
     /**
      Starts OAuth login flow
      
-     If user already has a token, calls `OAuthTokenCompletionHandler` with `nil`.
+     If user already has a token, calls `oAuthTokenCompletionHandler` with `nil`.
      Otherwise opens 42's API OAuth page in safari to prompt user to login.
      */
     func startOAuth2Login() {
-        state = UUID().uuidString
-        let authPath = "https://api.intra.42.fr/oauth/authorize?client_id=\(clientId)&redirect_uri=\(redirectURI)&state=\(state)&response_type=code&scope=public+profile+projects"
-        
         if hasOAuthToken() {
-            if let completionHandler = OAuthTokenCompletionHandler {
+            if let completionHandler = oAuthTokenCompletionHandler {
                 completionHandler(nil)
             }
             return
         }
+        
+        state = generateRandomString()
+        let authPath = "https://api.intra.42.fr/oauth/authorize?"
+            + "client_id=\(clientId)&redirect_uri=\(redirectURI)"
+            + "&state=\(state)&response_type=code&scope=public+profile+projects"
                 
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let controller = storyboard.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController {
@@ -39,6 +40,12 @@ extension API42Manager {
         }
     }
     
+    fileprivate func generateRandomString() -> String {
+        let length = Int.random(in: 43...128)
+        let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        return String((0..<length).map { _ in letters.randomElement()! })
+    }
+    
     /**
      Processes OAuth's login response.
      
@@ -47,7 +54,7 @@ extension API42Manager {
      Stores the access and refresh tokens in the KeyChain, then gets all data about logged
      in user.
      
-     If error, calls `OAuthTokenCompletionHandler` with `CustomError`.
+     If error, calls `oAuthTokenCompletionHandler` with `CustomError`.
      Otherwise calls the handler with `nil`.
      
      - Parameter url: URL used to open the app. Should be `redirectURI`
@@ -66,7 +73,7 @@ extension API42Manager {
             } else if item.name.lowercased() == "state" {
                 if item.value != state { return }
             } else if item.name.lowercased() == "error" {
-                if let completionHandler = self.OAuthTokenCompletionHandler {
+                if let completionHandler = self.oAuthTokenCompletionHandler {
                     let customError = CustomError(title: "API Authorization", description: "You did not authorize this app.", code: -1)
                     completionHandler(customError)
                 }
@@ -79,7 +86,7 @@ extension API42Manager {
             return
         }
         
-        let url = URL(string: "https://api.intra.42.fr/oauth/token")!
+        let url = URL(string: oAuthURL)!
         let tokenParams = [
             "grant_type": "authorization_code",
             "client_id": clientId,
@@ -100,28 +107,25 @@ extension API42Manager {
                     if let error = error {
                         print("OAuth Response Error: \(error)")
                     }
-                    if let completionHandler = self.OAuthTokenCompletionHandler {
+                    if let completionHandler = self.oAuthTokenCompletionHandler {
                         let customError = CustomError(title: "Get Token Error", description: "Couldn't get access token from 42's API", code: -1)
                         completionHandler(customError)
                     }
                     self.webViewController?.dismiss(animated: true, completion: nil)
                     return
                 }
-            
+                
                 guard valueJSON["token_type"].string == "bearer",
                     let accessToken = valueJSON["access_token"].string,
                     let refreshToken = valueJSON["refresh_token"].string
-                else {
-                    self.webViewController?.dismiss(animated: true, completion: nil)
-                    return
+                    else {
+                        self.webViewController?.dismiss(animated: true, completion: nil)
+                        return
                 }
-            
-                self.OAuthAccessToken = accessToken
-                self.OAuthRefreshToken = refreshToken
-            
-                self.keychain.set(accessToken, forKey: self.keychainAccessKey)
-                self.keychain.set(refreshToken, forKey: self.keychainRefreshKey)
-            
+                
+                self.oAuthAccessToken = accessToken
+                self.oAuthRefreshToken = refreshToken
+                
                 self.setupAPIData()
                 self.webViewController?.performSegue(withIdentifier: "loginSegue", sender: nil)
             }
@@ -129,7 +133,7 @@ extension API42Manager {
     }
     
     /**
-     Attempts to refresh the user's tokens with `OAuthRefreshToken`
+     Attempts to refresh the user's tokens with `oAuthRefreshToken`
      
      Removes current access token from keychain and if there is no refresh token,
      retries the OAuth login. Otherwise calls the API to received a new
@@ -140,13 +144,13 @@ extension API42Manager {
     func refreshOAuthToken(completionHandler: @escaping ((Bool) -> Void)) {
         keychain.delete(keychainAccessKey)
         
-        guard let refreshToken = OAuthRefreshToken else {
+        guard let refreshToken = oAuthRefreshToken else {
             startOAuth2Login()
             return
         }
         print("Refreshing token with: \(refreshToken)")
         
-        let url = URL(string: "https://api.intra.42.fr/oauth/token")!
+        let url = URL(string: oAuthURL)!
         let tokenParams = [
             "grant_type": "refresh_token",
             "client_id": clientId,
@@ -185,11 +189,8 @@ extension API42Manager {
                         return
                 }
                 
-                self.OAuthAccessToken = accessToken
-                self.OAuthRefreshToken = refreshToken
-                
-                self.keychain.set(accessToken, forKey: self.keychainAccessKey)
-                self.keychain.set(refreshToken, forKey: self.keychainRefreshKey)
+                self.oAuthAccessToken = accessToken
+                self.oAuthRefreshToken = refreshToken
                 
                 completionHandler(true)
             }

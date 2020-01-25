@@ -46,7 +46,7 @@ extension API42Manager {
             completionHandler([])
             return
         }
-        print(teams)
+        
         var projectTeams: [ProjectTeam] = []
         for team in teams {
             let id = team["id"].intValue
@@ -121,8 +121,7 @@ extension API42Manager {
                                           evaluations: evaluations)
             projectTeams.append(projectTeam)
         }
-        print("PROJECT TEAMS")
-        print(projectTeams)
+
         completionHandler(projectTeams)
     }
 }

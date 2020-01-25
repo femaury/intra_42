@@ -16,9 +16,6 @@ class UserResultCell: UITableViewCell, UserProfileCell {
             userPicture.roundFrame()
             userPicture.layer.borderWidth = 1
             userPicture.layer.borderColor = UIColor.black.cgColor
-            if userPicture.image != nil {
-                activityIndicator.stopAnimating()
-            }
         }
     }
     @IBOutlet weak var usernameLabel: UILabel!
@@ -33,7 +30,6 @@ class UserResultCell: UITableViewCell, UserProfileCell {
     
     var userId: Int = 0
     weak var delegate: SearchResultsController?
-    let activityIndicator = UIActivityIndicatorView()
     
     func setupAddUserButton(isFriend: Bool) {
         if isFriend {

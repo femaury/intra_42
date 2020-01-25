@@ -21,6 +21,7 @@ class SideMenuController: UIViewController {
         ("Forums", UIImage(named: "collaboration")),
         ("Coalitions", UIImage(named: "bookmark_ribbon")),
         ("Achievements", UIImage(named: "trophy")),
+        ("Peer Finder", UIImage(named: "meeting")),
         ("About", UIImage(named: "info")),
         ("Settings", UIImage(named: "settings")),
         ("Logout", UIImage(named: "shutdown"))
@@ -29,7 +30,7 @@ class SideMenuController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Fixes navbar background color bug in iOS 13
+        // Keeps navbar background color black in iOS 13
         if #available(iOS 13.0, *) {
             let appearance = UINavigationBarAppearance()
             appearance.backgroundColor = .systemBackground
@@ -84,10 +85,12 @@ extension SideMenuController: UITableViewDelegate, UITableViewDataSource {
         case 3:
             performSegue(withIdentifier: "AchievementsSegue", sender: self)
         case 4:
-            performSegue(withIdentifier: "AboutSegue", sender: self)
+            performSegue(withIdentifier: "PeerSegue", sender: self)
         case 5:
-            performSegue(withIdentifier: "SettingsSegue", sender: self)
+            performSegue(withIdentifier: "AboutSegue", sender: self)
         case 6:
+            performSegue(withIdentifier: "SettingsSegue", sender: self)
+        case 7:
             API42Manager.shared.logoutUser()
         default:
             return
@@ -109,7 +112,7 @@ extension SideMenuController: UITableViewDelegate, UITableViewDataSource {
         }
         cell?.imageView?.image = items[indexPath.row].image
         cell?.textLabel?.text = items[indexPath.row].title
-        if indexPath.row == 3 {
+        if indexPath.row == 4 {
             let borderBottom = UIView(frame: CGRect(x: 0, y: 49, width: tableView.frame.width, height: 1))
             borderBottom.backgroundColor = .black
             if #available(iOS 13.0, *) {

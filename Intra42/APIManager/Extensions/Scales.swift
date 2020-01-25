@@ -28,6 +28,7 @@ extension API42Manager {
                 return
             }
             for scale in data.reversed() {
+                // TODO: Find way to get project ID when team unavailable (not correctee and pre 15 minutes details)
                 let team = scale["team"]
                 let members = team["users"].arrayValue
                 let projectId = team["project_id"].intValue

@@ -9,10 +9,10 @@
 import UIKit
 
 extension UIImageView {
-    public func imageFrom(urlString: String, withIndicator: Bool = true, defaultImg: UIImage? = nil) {
+    public func imageFrom(urlString: String, withIndicator: Bool = true, defaultImg: UIImage? = nil) -> URLSessionDataTask? {
         guard let url = URL(string: urlString) else {
             image = defaultImg
-            return
+            return nil
         }
         let request = URLRequest(url: url)
         
@@ -25,12 +25,17 @@ extension UIImageView {
             addSubview(activityIndicator)
         }
         
-        URLSession.shared.dataTask(with: request) { (data, _, error) in
+        let session = URLSession.shared.dataTask(with: request) { (data, _, error) in
             guard error == nil, let data = data else {
                 print("Error downloading image.")
+                var image = defaultImg
+                if let error = error as NSError?, error.code == NSURLErrorCancelled {
+                    print("Image loading cancelled.")
+                    image = nil
+                }
                 DispatchQueue.main.async {
                     activityIndicator.stopAnimating()
-                    self.image = defaultImg
+                    self.image = image
                 }
                 return
             }
@@ -39,6 +44,8 @@ extension UIImageView {
                 activityIndicator.stopAnimating()
                 self.image = UIImage(data: data) ?? defaultImg
             }
-        }.resume()
+        }
+        session.resume()
+        return session
     }
 }

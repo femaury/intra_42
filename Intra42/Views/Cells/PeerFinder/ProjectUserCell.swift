@@ -17,6 +17,7 @@ class ProjectUserCell: UITableViewCell, UserProfileCell {
     @IBOutlet weak var markedLabel: UILabel!
     @IBOutlet weak var gradeLabel: UILabel!
     
+    var imageSession: URLSessionDataTask?
     var userId: Int = 0
     var user: ProjectUser? {
         didSet {
@@ -29,7 +30,7 @@ class ProjectUserCell: UITableViewCell, UserProfileCell {
             
             profilePicture.roundFrame()
             let url = "https://cdn.intra.42.fr/users/small_\(user.login).jpg"
-            profilePicture.imageFrom(urlString: url)
+            imageSession = profilePicture.imageFrom(urlString: url, defaultImg: UIImage(named: "42_default"))
             
             onlineView.layer.cornerRadius = onlineView.frame.height / 2
             onlineView.clipsToBounds = true
@@ -53,5 +54,11 @@ class ProjectUserCell: UITableViewCell, UserProfileCell {
                 gradeLabel.isHidden = true
             }
         }
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        profilePicture.image = nil
+        imageSession?.cancel()
     }
 }

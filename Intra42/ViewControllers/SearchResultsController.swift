@@ -213,7 +213,7 @@ extension SearchResultsController {
             let user = userInfo[indexPath.row]
             cell.usernameLabel.text = user.login
             let url = "https://cdn.intra.42.fr/users/small_\(user.login).jpg"
-            cell.userPicture.imageFrom(urlString: url, defaultImg: UIImage(named: "42_default"))
+            cell.imageSession = cell.userPicture.imageFrom(urlString: url, defaultImg: UIImage(named: "42_default"))
             cell.setupAddUserButton(isFriend: FriendDataManager.shared.hasFriend(withId: user.id))
             cell.delegate = self
             cell.userId = user.id

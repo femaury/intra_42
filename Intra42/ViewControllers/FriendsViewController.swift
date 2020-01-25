@@ -269,9 +269,6 @@ extension FriendsViewController: UITableViewDelegate, UITableViewDataSource {
             let id = friend.id
             let cell = tableView.dequeueReusableCell(withIdentifier: "FriendCell") as! FriendCell
             cell.friend = friend
-            cell.profilePicture.image = nil
-            let url = "https://cdn.intra.42.fr/users/small_\(friend.username).jpg"
-            cell.profilePicture.imageFrom(urlString: url, defaultImg: UIImage(named: "42_default"))
             cell.indexPath = indexPath
             cell.delegate = self
             if let location = friendLocations[id], !location.isEmpty {

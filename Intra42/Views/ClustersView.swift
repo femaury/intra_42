@@ -185,7 +185,7 @@ class ClustersView: UIView {
     }
     
     func setUserImageOn(view: UIImageView, login: String, id: Int) {
-        let urlString = "https://cdn.intra.42.fr/users/medium_\(login).jpg"
+        let urlString = "https://cdn.intra.42.fr/users/small_\(login).jpg"
         if let url = URL(string: urlString) {
             let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
                 if error == nil, let imgData = data, let image = UIImage(data: imgData) {

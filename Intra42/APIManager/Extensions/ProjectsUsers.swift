@@ -11,59 +11,73 @@ import Foundation
 extension API42Manager {
     
     func getProjectUsers(forProjectId id: Int, campusId: Int, filter: PeerFinderViewController.Filter, completionHandler: @escaping ([ProjectUser], Bool) -> Bool) {
-        var filterStr: String
-        switch filter {
-        case .validated:
-            filterStr = "&filter[marked]=true"
-        case .inProgress:
-            filterStr = "&filter[marked]=false"
-        case .all:
-            filterStr = ""
-        }
-        
         var projectUsers: [ProjectUser] = []
-        func getUsers(page: Int) {
-            let url = API42Manager.shared.baseURL
-                + "projects/\(id)/projects_users?filter[campus]=\(campusId)"
-                + "\(filterStr)&page[size]=100&page[number]=\(page)"
-            request(url: url) { (data) in
-                guard let data = data?.arrayValue else {
-                    _ = completionHandler(projectUsers, true)
-                    return
-                }
-                
-                let isLastLoop = data.count != 100
-                let idString = data.map { $0["user"]["id"].stringValue } .joined(separator: ",")
-                let locationURL = API42Manager.shared.baseURL + "locations?filter[user_id]=\(idString)&filter[active]=true&page[size]=100"
-                self.request(url: locationURL) { (locationData) in
-                    let res = data.map { (projUser) -> ProjectUser in
-                        let user = projUser["user"]
-                        let id = user["id"].intValue
-                        var location = "Unavailable"
-                        if let locationArray = locationData?.arrayValue {
-                            location = locationArray.first { $0["user"]["id"].intValue == id }?["host"].stringValue ?? "Unavailable"
-                        }
-                        return ProjectUser(
-                            id: id,
-                            login: user["login"].stringValue,
-                            marked: projUser["marked"].boolValue,
-                            status: projUser["status"].stringValue,
-                            grade: projUser["final_mark"].intValue,
-                            validated: projUser["validated?"].boolValue,
-                            location: location)
-                    }
-                    projectUsers.append(contentsOf: res)
-                    if isLastLoop {
-                      _ = completionHandler(projectUsers, true)
-                    } else if !isLastLoop && completionHandler(projectUsers, false) {
-                        getUsers(page: page + 1)
-                    }
-                }
-                
-            }
-        }
         
-        getUsers(page: 1)
+        getOnlineUsers(forCampus: campusId) { (usersString) in
+            var filterStr: String
+            switch filter {
+            case .validated:
+                filterStr = "&filter[marked]=true"
+            case .inProgress:
+                filterStr = "&filter[marked]=false"
+            case .all:
+                filterStr = ""
+            }
+            
+            func getUsers(page: Int, isOnlinePass: Bool) {
+                var idFilterStr = ""
+                if isOnlinePass && !usersString.isEmpty {
+                    idFilterStr = "&filter[user_id]=\(usersString.joined(separator: ","))"
+                }
+                let url = self.baseURL
+                    + "projects/\(id)/projects_users?filter[campus]=\(campusId)"
+                    + "\(filterStr)\(idFilterStr)&page[size]=100&page[number]=\(page)"
+                
+                self.request(url: url) { (data) in
+                    guard let rawData = data?.arrayValue else {
+                        _ = completionHandler(projectUsers, true)
+                        return
+                    }
+                    
+                    let data = rawData.filter { !$0["user"]["login"].stringValue.contains("3b") }
+                    let isLastLoop = (!isOnlinePass && rawData.count != 100) || projectUsers.count >= 300
+                    let idString = data.map { $0["user"]["id"].stringValue } .joined(separator: ",")
+                    let locationURL = API42Manager.shared.baseURL + "locations?filter[user_id]=\(idString)&filter[active]=true&page[size]=100"
+                    self.request(url: locationURL) { (locationData) in
+                        let res = data.compactMap { (projUser) -> ProjectUser? in
+                            let user = projUser["user"]
+                            let id = user["id"].intValue
+                            if !isOnlinePass && usersString.contains(String(id)) {
+                                return nil
+                            }
+                            var location = "Unavailable"
+                            if let locationArray = locationData?.arrayValue {
+                                location = locationArray.first { $0["user"]["id"].intValue == id }?["host"].stringValue ?? "Unavailable"
+                            }
+                            
+                            return ProjectUser(
+                                id: id,
+                                login: user["login"].stringValue,
+                                marked: projUser["marked"].boolValue,
+                                status: projUser["status"].stringValue,
+                                grade: projUser["final_mark"].intValue,
+                                validated: projUser["validated?"].boolValue,
+                                location: location)
+                        }
+                        
+                        projectUsers.append(contentsOf: res)
+                        if isLastLoop {
+                            _ = completionHandler(projectUsers, true)
+                        } else if !isLastLoop && completionHandler(projectUsers, false) {
+                            getUsers(page: page + 1, isOnlinePass: false)
+                        }
+                    }
+                    
+                }
+            }
+            
+            getUsers(page: 1, isOnlinePass: true)
+        }
     }
     
     func getProjectUserId(forProjectId id: Int, userId: Int, completionHandler: @escaping (Int?) -> Void) {

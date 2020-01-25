@@ -37,17 +37,20 @@ class UserHeaderCell: UITableViewCell {
     var coalitionBgURL: String?
     var coalitionName: String?
     
+    var imageSession: URLSessionDataTask?
+    var backgroundImageSession: URLSessionDataTask?
+    
     weak var delegate: UserProfileController?
     weak var userProfile: UserProfile? {
         didSet {
             if let url = self.coalitionBgURL {
-                background.imageFrom(urlString: url, withIndicator: false)
+                backgroundImageSession = background.imageFrom(urlString: url, withIndicator: false)
             } else {
                 background.image = UIImage(named: "default_background")
             }
             background.contentMode = .scaleAspectFill
             if let data = userProfile {
-                profilePicture.imageFrom(urlString: data.imageURL)
+                imageSession = profilePicture.imageFrom(urlString: data.imageURL)
                 profilePicture.contentMode = .scaleAspectFill
                 profilePicture.layer.borderWidth = 1
                 profilePicture.layer.masksToBounds = false
@@ -115,5 +118,13 @@ class UserHeaderCell: UITableViewCell {
     @IBAction func emailUser(_ sender: UIButton) {
         guard let delegate = self.delegate else { return }
         delegate.emailUser()
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        profilePicture.image = nil
+        background.image = nil
+        imageSession?.cancel()
+        backgroundImageSession?.cancel()
     }
 }

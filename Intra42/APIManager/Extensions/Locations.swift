@@ -10,6 +10,37 @@ import Foundation
 import SwiftyJSON
 
 extension API42Manager {
+    
+    /**
+    Gets all logged in user in specified campus.
+        
+    - Parameters:
+        - id: ID of campus to check locations for
+        - completionHandler: Called with array of online users' ID Strings.
+    */
+    func getOnlineUsers(forCampus id: Int, completionHandler: @escaping ([String]) -> Void) {
+        var onlineUsers: [String] = []
+        
+        func getOnline(_ id: Int, _ page: Int) {
+            let url = baseURL + "campus/\(id)/locations?filter[active]=true&page[number]=\(page)&page[size]=100"
+            
+            request(url: url) { (data) in
+                guard let data = data?.arrayValue else {
+                    completionHandler(onlineUsers)
+                    return
+                }
+                onlineUsers.append(contentsOf: data.map { $0["user"]["id"].stringValue })
+                if data.count == 100 {
+                    getOnline(id, page + 1)
+                } else {
+                    completionHandler(onlineUsers)
+                }
+            }
+        }
+        
+        getOnline(id, 1)
+    }
+    
     /**
      Gets all logged in users and their locations for specified campus.
      

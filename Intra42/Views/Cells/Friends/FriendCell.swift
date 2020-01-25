@@ -17,6 +17,7 @@ class FriendCell: UITableViewCell, UserProfileCell {
     @IBOutlet weak var campusLabel: UILabel!
     @IBOutlet weak var isOnline: UIView!
     
+    var imageSession: URLSessionDataTask?
     weak var delegate: FriendsViewController?
     var userId: Int = 0
     var indexPath: IndexPath = IndexPath()
@@ -30,6 +31,9 @@ class FriendCell: UITableViewCell, UserProfileCell {
             usernameLabel.text = friend.username
             usernameLabel.textColor = color
             userId = friend.id
+            
+            let url = "https://cdn.intra.42.fr/users/small_\(friend.username).jpg"
+            imageSession = profilePicture.imageFrom(urlString: url, defaultImg: UIImage(named: "42_default"))
         }
         profilePicture.roundFrame()
         locationLabel.text = location
@@ -55,5 +59,11 @@ class FriendCell: UITableViewCell, UserProfileCell {
             onlineForLabel.isHidden = true
             campusLabel.isHidden = true
         }
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        profilePicture.image = nil
+        imageSession?.cancel()
     }
 }

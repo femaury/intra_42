@@ -226,16 +226,27 @@ extension FriendsViewController: UITableViewDelegate, UITableViewDataSource {
         return true
     }
     
-    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let delete = UITableViewRowAction(style: .destructive, title: "Remove") { (_, indexPath) in
-            let cell = tableView.cellForRow(at: indexPath) as! FriendCell
-            let id = cell.userId
-            self.friends.remove(at: self.friends.firstIndex(where: {$0.id == id})!)
-            self.tableView.deleteRows(at: [cell.indexPath], with: .left)
-            FriendDataManager.shared.deleteFriend(withId: id)
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        return nil
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (_, _, complete) in
+            if let cell = tableView.cellForRow(at: indexPath) as? FriendCell {
+                let id = cell.userId
+                if let index = self.friends.firstIndex(where: {$0.id == id}) {
+                    self.friends.remove(at: index)
+                    self.tableView.deleteRows(at: [cell.indexPath], with: .left)
+                    FriendDataManager.shared.deleteFriend(withId: id)
+                    complete(true)
+                    return
+                }
+            }
+            complete(false)
         }
-        
-        return [delete]
+        let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
+        configuration.performsFirstActionWithFullSwipe = false
+        return configuration
     }
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {

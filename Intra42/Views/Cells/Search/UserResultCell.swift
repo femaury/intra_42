@@ -30,6 +30,7 @@ class UserResultCell: UITableViewCell, UserProfileCell {
     
     var userId: Int = 0
     weak var delegate: SearchResultsController?
+    var imageSession: URLSessionDataTask?
     
     func setupAddUserButton(isFriend: Bool) {
         if isFriend {
@@ -69,5 +70,11 @@ class UserResultCell: UITableViewCell, UserProfileCell {
             self.addUserButton.setImage(UIImage(named: "ok"), for: .normal)
             self.addUserButton.tintColor = Colors.Grades.valid
         }
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        userPicture.image = nil
+        imageSession?.cancel()
     }
 }

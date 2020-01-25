@@ -58,7 +58,7 @@ class CoalitionsViewController: UIViewController {
                 let coverURL = coa["cover_url"].stringValue
                 let colorHex = coa["color"].stringValue
                 let coalitionView = CoalitionView(frame: CGRect(x: 0, y: 0, width: safeSelf.view.frame.width, height: 200.0))
-                coalitionView.backgroundImage.imageFrom(urlString: coverURL)
+                _ = coalitionView.backgroundImage.imageFrom(urlString: coverURL)
                 coalitionView.name.text = coa["name"].stringValue
                 coalitionView.scoreLabel.countFromZero(to: coa["score"].floatValue, duration: .brisk)
                 coalitionView.name.textColor = UIColor(hexRGB: colorHex)

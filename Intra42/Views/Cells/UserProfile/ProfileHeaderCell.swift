@@ -29,16 +29,19 @@ class ProfileHeaderCell: UITableViewCell {
     @IBOutlet weak var walletLabel: UILabel!
     @IBOutlet weak var walletNumberLabel: UILabel!
     
+    var imageSession: URLSessionDataTask?
+    var backgroundImageSession: URLSessionDataTask?
+    
     var userProfile: UserProfile? {
         didSet {
             if let url = API42Manager.shared.coalitionBgURL {
-                background.imageFrom(urlString: url, withIndicator: false)
+                backgroundImageSession = background.imageFrom(urlString: url, withIndicator: false)
             } else {
                 background.image = UIImage(named: "default_background")
             }
             background.contentMode = .scaleAspectFill
             if let data = userProfile {
-                profilePicture.imageFrom(urlString: data.imageURL)
+                imageSession = profilePicture.imageFrom(urlString: data.imageURL)
                 profilePicture.contentMode = .scaleAspectFill
                 profilePicture.roundFrame()
                 profilePicture.layer.borderWidth = 1
@@ -84,5 +87,13 @@ class ProfileHeaderCell: UITableViewCell {
                 }
             }
         }
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        profilePicture.image = nil
+        background.image = nil
+        imageSession?.cancel()
+        backgroundImageSession?.cancel()
     }
 }

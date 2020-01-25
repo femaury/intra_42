@@ -12,6 +12,7 @@ class ProjectTeamUsersCell: UITableViewCell {
 
     @IBOutlet weak var userPicturesStack: UIStackView!
     weak var delegate: UserProjectController?
+    var imageSessions: [URLSessionDataTask] = []
     
     func setupView(with users: [User]) {
         var index = 0
@@ -25,7 +26,9 @@ class ProjectTeamUsersCell: UITableViewCell {
                     picture.roundFrame()
                 }
                 let url = "https://cdn.intra.42.fr/users/small_\(user.login).jpg"
-                picture.imageFrom(urlString: url, defaultImg: UIImage(named: "42_default"))
+                if let session = picture.imageFrom(urlString: url, defaultImg: UIImage(named: "42_default")) {
+                    imageSessions.append(session)
+                }
                 picture.roundFrame()
                 picture.tag = user.id
                 
@@ -42,6 +45,16 @@ class ProjectTeamUsersCell: UITableViewCell {
     @objc func imageTapped(gesture: UIGestureRecognizer) {
         if let imageView = gesture.view as? UIImageView {
             delegate?.showCorrectorProfile(withId: imageView.tag)
+        }
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        for case let picture as UIImageView in userPicturesStack.arrangedSubviews {
+            picture.image = nil
+        }
+        for session in imageSessions {
+            session.cancel()
         }
     }
 }

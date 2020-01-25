@@ -22,6 +22,7 @@ class ProjectTeamEvaluationCell: UITableViewCell {
     @IBOutlet weak var commentLabel: UILabel!
     @IBOutlet weak var feedbackLabel: UILabel!
     
+    var imageSession: URLSessionDataTask?
     weak var delegate: UserProjectController?
     var correctorId: Int?
     
@@ -30,7 +31,7 @@ class ProjectTeamEvaluationCell: UITableViewCell {
         correctorName.setTitle(evaluation.corrector.login.uppercased(), for: .normal)
 
         let url = "https://cdn.intra.42.fr/users/small_\(evaluation.corrector.login).jpg"
-        correctorPicture.imageFrom(urlString: url, defaultImg: UIImage(named: "42_default"))
+        imageSession = correctorPicture.imageFrom(urlString: url, defaultImg: UIImage(named: "42_default"))
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
         correctorPicture.addGestureRecognizer(tapGesture)
         correctorPicture.isUserInteractionEnabled = true
@@ -54,5 +55,11 @@ class ProjectTeamEvaluationCell: UITableViewCell {
     @objc func imageTapped(gesture: UIGestureRecognizer?) {
         guard let id = correctorId else { return }
         delegate?.showCorrectorProfile(withId: id)
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        correctorPicture.image = nil
+        imageSession?.cancel()
     }
 }

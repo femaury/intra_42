@@ -87,8 +87,8 @@ extension API42Manager {
             }
             var evaluations: [Evaluation] = []
             for evaluation in team["scale_teams"].arrayValue.reversed() {
-                guard evaluation["corrector"].string == nil else { continue }
-                let grade = evaluation["final_mark"].intValue
+                guard evaluation["corrector"].string == nil, let grade = evaluation["final_mark"].int else { continue }
+                
                 let isValidated = grade >= 60 ? true : false
                 let correcorName = evaluation["corrector"]["login"].stringValue
                 let correctorId = evaluation["corrector"]["id"].intValue

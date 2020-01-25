@@ -31,7 +31,7 @@ extension API42Manager {
                 // TODO: Find way to get project ID when team unavailable (not correctee and pre 15 minutes details)
                 let team = scale["team"]
                 let members = team["users"].arrayValue
-                let projectId = team["project_id"].intValue
+                let projectId = team["project_id"].int
                 let repoURL = team["repo_url"].stringValue
                 let teamName = team["name"].stringValue
                 let teamId = team["id"].intValue
@@ -62,25 +62,40 @@ extension API42Manager {
                 dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
                 let date = dateFormatter.date(from: dateString) ?? Date()
                 
-                self.getProject(withId: projectId, completionHandler: { (projData) in
-                    var name = "Unknown Project"
-                    if let projData = projData, let projName = projData["name"].string {
-                        name = projName.capitalized
-                    }
-                    
+                if let id = projectId {
+                    self.getProject(withId: id, completionHandler: { (projData) in
+                        var name = "Unknown Project"
+                        if let projData = projData, let projName = projData["name"].string {
+                            name = projName.capitalized
+                        }
+                        
+                        let correction = Correction(
+                            name: name,
+                            team: (teamId, teamName),
+                            projectId: id,
+                            repoURL: repoURL,
+                            isCorrector: isCorrector,
+                            corrector: corrector,
+                            correctees: correctees,
+                            startDate: date)
+                        
+                        corrections.append(correction)
+                        completionHandler(corrections)
+                    })
+                } else {
                     let correction = Correction(
-                        name: name,
+                        name: "Unknown Project",
                         team: (teamId, teamName),
-                        projectId: projectId,
+                        projectId: -1,
                         repoURL: repoURL,
                         isCorrector: isCorrector,
                         corrector: corrector,
                         correctees: correctees,
                         startDate: date)
-                    corrections.append(correction)
                     
+                    corrections.append(correction)
                     completionHandler(corrections)
-                })
+                }
             }
         }
     }

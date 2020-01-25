@@ -122,6 +122,13 @@ You will also need to install [SwiftLint](https://github.com/realm/SwiftLint).
   <li>Link to Stackoverflow 42 forums</li>
   </ul>
   </details>
+  <details><summary>Peer finder</summary>
+  <ul>
+  <li>Search refined by campus, cursus, project and user status</li>
+  <li>Lists are searchable</li>
+  <li>Shows online users first, and always ordered by project grade</li>
+  </ul>
+  </details>
   
   ## Contact Me
   

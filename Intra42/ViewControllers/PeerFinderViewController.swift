@@ -124,6 +124,7 @@ class PeerFinderViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         if indexPath.section == 1 && selectedCursus.id == 0 {
+            tableView.selectRow(at: IndexPath(row: 1, section: 0), animated: true, scrollPosition: .none)
             return nil
         }
         if indexPath.section == 2 {

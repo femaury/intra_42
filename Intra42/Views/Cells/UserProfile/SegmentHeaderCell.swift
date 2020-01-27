@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SegmentHeaderCell: UITableViewCell {
+class SegmentHeaderView: UITableViewHeaderFooterView {
 
     @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var topLine: UIView!

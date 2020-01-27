@@ -110,9 +110,10 @@ class PeerFinderViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         switch section {
         case 0:
-            return "The projects list is based on selected cursus."
+            return "You must select a cursus to see its projects."
         case 1:
-            return "Projects are saved locally, swipe down in the list to check if they are up to date."
+            return "Projects are saved locally so it might take time to download them the first time."
+                + " Swipe down in the list to check if they are up to date."
         default:
             return nil
         }

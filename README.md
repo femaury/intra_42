@@ -4,12 +4,14 @@
 ![Top Language](https://img.shields.io/github/languages/top/femaury/Intra_42.svg)
 ![Platform](https://img.shields.io/badge/platform-iOS%2011.0%2B-green.svg)
 
+#### [Currently live on the App Store!](https://apps.apple.com/fr/app/intra-42/id1475507162)
+
 <img src="https://github.com/femaury/intra_42/raw/master/Screenshots/intra_42_main_screens_white.png"
      title="Intra 42 by Felix Maury" width="800">
      
 ### Swift app for 42's intranet
 
-This is a swift learning project for myself. I started it to give native access to the intranet to 42's iOS users, as there were no such apps on the App Store. I plan on publishing it for free.  
+This is a swift learning project for myself. I started it to give native access to the intranet to 42's iOS users, as there were no such apps on the App Store.  
 Feel free to create issues or pull requests to contribute!  
 
 #### Known issues [Live Build]

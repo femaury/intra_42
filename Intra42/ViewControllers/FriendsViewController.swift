@@ -267,28 +267,36 @@ extension FriendsViewController: UITableViewDelegate, UITableViewDataSource {
         return friends.count > 0 ? 75 : tableView.frame.height
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        if friends.count > 0 {
+            tableView.backgroundView = nil
+        } else {
+            let noDataFrame = CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height)
+            let noData: UILabel = UILabel(frame: noDataFrame)
+            noData.text = "Use the search bar to add friends!"
+            noData.textAlignment = .center
+            tableView.backgroundView = noData
+        }
+        return 1
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return friends.count > 0 ? friends.count : 1
+        return friends.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if friends.count == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "NoFriendCell")!
-            return cell
+        let friend = friends[indexPath.row]
+        let id = friend.id
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FriendCell") as! FriendCell
+        cell.friend = friend
+        cell.indexPath = indexPath
+        cell.delegate = self
+        if let location = friendLocations[id], !location.isEmpty {
+            cell.info = friendsInfo[id]
+            cell.setupCell(location: location)
         } else {
-            let friend = friends[indexPath.row]
-            let id = friend.id
-            let cell = tableView.dequeueReusableCell(withIdentifier: "FriendCell") as! FriendCell
-            cell.friend = friend
-            cell.indexPath = indexPath
-            cell.delegate = self
-            if let location = friendLocations[id], !location.isEmpty {
-                cell.info = friendsInfo[id]
-                cell.setupCell(location: location)
-            } else {
-                cell.setupCell(location: "Unavailable")
-            }
-            return cell
+            cell.setupCell(location: "Unavailable")
         }
+        return cell
     }
 }

@@ -20,7 +20,9 @@ extension API42Manager {
      - Parameter completionHandler: Closure called with all achievements. Empty on errors.
      */
     func getAllAchievements(completionHandler: @escaping ([String: Achievement]) -> Void) {
-        let achievementsURL = baseURL + "achievements?sort=name&page[size]=100"
+        let achievementsURL = baseURL
+            + "/cursus/" + String(userProfile?.mainCursusId ?? 1)
+            + "/achievements?sort=name&page[size]=100"
         
         request(url: achievementsURL) { (data) in
             guard let data = data else {
@@ -33,23 +35,22 @@ extension API42Manager {
                 
                 self.request(url: page2URL, completionHandler: { (data) in
                     guard let data = data else {
-                        self.parseAchievementsData(achievementsData, completionHandler)
+                        self._parseAchievementsData(achievementsData, completionHandler)
                         return
                     }
                     achievementsData += data.arrayValue
-                    self.parseAchievementsData(achievementsData, completionHandler)
+                    self._parseAchievementsData(achievementsData, completionHandler)
                 })
             } else {
-                self.parseAchievementsData(achievementsData, completionHandler)
+                self._parseAchievementsData(achievementsData, completionHandler)
             }
         }
     }
     
-    fileprivate func parseAchievementsData(_ data: [JSON], _ completionHandler: ([String: Achievement]) -> Void) {
+    fileprivate func _parseAchievementsData(_ data: [JSON], _ completionHandler: ([String: Achievement]) -> Void) {
         var achievements: [String: Achievement] = [:]
         
         for achievement in data {
-            if Achievement.MoscowAchievementIds.contains(achievement["id"].intValue) { continue }
             let newAchievement = Achievement(achievement: achievement)
             let name = newAchievement.name
             if let parent = achievements[name] {

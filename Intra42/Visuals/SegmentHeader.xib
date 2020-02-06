@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SegmentHeaderView" customModule="Intra42" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="410" height="28"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wns-1c-FLu">
+                    <rect key="frame" x="0.0" y="0.0" width="410" height="28"/>
+                    <subviews>
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="pbe-TE-g9E">
+                            <rect key="frame" x="-1" y="0.0" width="412" height="29"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <segments>
+                                <segment title="Cursus"/>
+                                <segment title="Projects"/>
+                                <segment title="Logs"/>
+                                <segment title="Achievements"/>
+                            </segments>
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="changeSections:" destination="-2" eventType="valueChanged" id="sHX-JR-Ocd"/>
+                            </connections>
+                        </segmentedControl>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WL8-MN-V77">
+                            <rect key="frame" x="0.0" y="27" width="410" height="1"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="fSa-b3-nxx"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cvE-Aa-XaN">
+                            <rect key="frame" x="0.0" y="0.0" width="410" height="1"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="LMO-Z8-QRc"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="pbe-TE-g9E" secondAttribute="trailing" constant="-1" id="0iz-xc-ccb"/>
+                        <constraint firstItem="cvE-Aa-XaN" firstAttribute="leading" secondItem="wns-1c-FLu" secondAttribute="leading" id="Bg1-Fi-YqB"/>
+                        <constraint firstItem="pbe-TE-g9E" firstAttribute="leading" secondItem="wns-1c-FLu" secondAttribute="leading" constant="-1" id="IaT-Zp-BWm"/>
+                        <constraint firstItem="cvE-Aa-XaN" firstAttribute="top" secondItem="wns-1c-FLu" secondAttribute="top" id="Lrq-ho-HXv"/>
+                        <constraint firstAttribute="trailing" secondItem="WL8-MN-V77" secondAttribute="trailing" id="Mc9-wS-cbl"/>
+                        <constraint firstItem="pbe-TE-g9E" firstAttribute="centerY" secondItem="wns-1c-FLu" secondAttribute="centerY" id="ZT6-WV-EY3"/>
+                        <constraint firstAttribute="trailing" secondItem="cvE-Aa-XaN" secondAttribute="trailing" id="fR6-eN-eYj"/>
+                        <constraint firstAttribute="bottom" secondItem="WL8-MN-V77" secondAttribute="bottom" id="ikc-L0-Z5D"/>
+                        <constraint firstItem="WL8-MN-V77" firstAttribute="leading" secondItem="wns-1c-FLu" secondAttribute="leading" id="tLo-XQ-qh5"/>
+                        <constraint firstAttribute="bottom" secondItem="pbe-TE-g9E" secondAttribute="bottom" id="z1u-OK-7hP"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="wns-1c-FLu" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="V45-fX-cjH"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="wns-1c-FLu" secondAttribute="trailing" id="ZLy-Di-ttS"/>
+                <constraint firstAttribute="bottom" secondItem="wns-1c-FLu" secondAttribute="bottom" id="g4A-va-s5m"/>
+                <constraint firstItem="wns-1c-FLu" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="pQD-9w-gEr"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="bottomLine" destination="WL8-MN-V77" id="afU-yT-OtD"/>
+                <outlet property="segmentControl" destination="pbe-TE-g9E" id="y8s-kv-bVw"/>
+                <outlet property="topLine" destination="cvE-Aa-XaN" id="aDe-xb-qse"/>
+            </connections>
+            <point key="canvasLocation" x="134.78260869565219" y="-150"/>
+        </view>
+    </objects>
+</document>

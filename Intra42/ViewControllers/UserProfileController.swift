@@ -47,6 +47,7 @@ class UserProfileController: UITableViewController {
         refreshControl.addTarget(self, action: #selector(refreshTable), for: .valueChanged)
         tableView.refreshControl = refreshControl
         tableView.register(LogsTableCell.self, forCellReuseIdentifier: "LogsTableCell")
+        tableView.register(UINib(nibName: "SegmentHeader", bundle: nil), forHeaderFooterViewReuseIdentifier: "SegmentHeaderView")
         
         let removeClosure: (UIAlertAction) -> Void = { [weak self] (action) in
             guard let self = self, let id = self.userProfile?.userId else { return }
@@ -224,7 +225,7 @@ extension UserProfileController {
             view.delegate = self
             return view
         } else {
-            let view = tableView.dequeueReusableCell(withIdentifier: "SegmentHeaderCell") as! SegmentHeaderCell
+            let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "SegmentHeaderView") as! SegmentHeaderView
             view.segmentControl.selectedSegmentIndex = sectionToDisplay.rawValue
             view.segmentControl.tintColor = coalitionColor
             if #available(iOS 13.0, *) {
@@ -235,7 +236,7 @@ extension UserProfileController {
             view.segmentCallback = { [weak self] (section) in
                 guard let self = self, let section = ProfileSection(rawValue: section) else { return }
                 self.sectionToDisplay = section
-                self.tableView.reloadData()
+                self.tableView.reloadSections(IndexSet(integersIn: 1...1), with: .automatic)
             }
             return view
         }

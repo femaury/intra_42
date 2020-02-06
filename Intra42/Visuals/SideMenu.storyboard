@@ -475,8 +475,8 @@ Cheers 😉</string>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mGc-Vt-lmo">
                                                             <rect key="frame" x="0.0" y="0.0" width="374" height="20"/>
                                                         </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/108" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="TkE-SZ-5fP">
-                                                            <rect key="frame" x="167.5" y="1.5" width="39" height="17"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/110" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="TkE-SZ-5fP">
+                                                            <rect key="frame" x="169" y="1.5" width="36" height="17"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -940,7 +940,7 @@ Cheers 😉</string>
         <image name="icon_fed" width="60" height="60"/>
         <image name="icon_ord" width="60" height="60"/>
         <namedColor name="IntraTeal">
-            <color red="0.0" green="0.72899997234344482" blue="0.7369999885559082" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.72549019607843135" blue="0.73333333333333328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="intraTeal">
             <color red="0.0" green="0.72899997234344482" blue="0.7369999885559082" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

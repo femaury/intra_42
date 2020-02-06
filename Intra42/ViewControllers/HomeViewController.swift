@@ -99,6 +99,7 @@ class HomeViewController: UIViewController {
         tableView.refreshControl = refreshControl
         tableView.keyboardDismissMode = .onDrag
         tableView.register(LogsTableCell.self, forCellReuseIdentifier: "LogsTableCell")
+        tableView.register(UINib(nibName: "SegmentHeader", bundle: nil), forHeaderFooterViewReuseIdentifier: "SegmentHeaderView")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -228,7 +229,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             view.userProfile = userProfile
             return view
         } else {
-            let view = tableView.dequeueReusableCell(withIdentifier: "SegmentHeaderCell") as! SegmentHeaderCell
+            let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "SegmentHeaderView") as! SegmentHeaderView
             view.segmentControl.selectedSegmentIndex = sectionToDisplay.rawValue
             view.segmentControl.tintColor = API42Manager.shared.preferedPrimaryColor
             if #available(iOS 13.0, *) {
@@ -239,7 +240,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             view.segmentCallback = { section in
                 guard let section = ProfileSection(rawValue: section) else { return }
                 self.sectionToDisplay = section
-                self.tableView.reloadData()
+                self.tableView.reloadSections(IndexSet(integersIn: 1...1), with: .automatic)
             }
             return view
         }

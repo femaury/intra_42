@@ -8,6 +8,7 @@
 
 import UIKit
 import SafariServices
+import StoreKit
 
 class AboutViewController: UIViewController {
 
@@ -60,8 +61,8 @@ class AboutViewController: UIViewController {
         openSafariController(withURL: "https://github.com/femaury/intra_42")
     }
     
-    @IBAction func openPaypalLink(_ sender: UIButton) {
-        openSafariController(withURL: "https://paypal.me/femaurydev")
+    @IBAction func openReviewLink(_ sender: UIButton) {
+        SKStoreReviewController.requestReview()
     }
 
     @IBAction func openSwiftyJSONLink(_ sender: UIButton) {

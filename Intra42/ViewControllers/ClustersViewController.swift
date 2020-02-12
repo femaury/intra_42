@@ -81,7 +81,7 @@ class ClustersViewController: UIViewController {
             activityIndicator.style = .medium
         }
         topStackView.addArrangedSubview(activityIndicator)
-        loadClusterLocations(floor: 1)
+        loadClusterLocations()
         
         if #available(iOS 13.0, *) {
             segmentedControl.selectedSegmentTintColor = API42Manager.shared.preferedPrimaryColor
@@ -109,7 +109,7 @@ class ClustersViewController: UIViewController {
         navigationController?.view.layoutIfNeeded() // to fix height of the navigation bar
     }
     
-    func loadClusterLocations(floor: Int) {
+    func loadClusterLocations() {
         API42Manager.shared.getLocations(forCampusId: 1, page: 1) { (data) in
             var clusters: [String: ClusterPerson] = [:]
             self.floorOneCount = 0
@@ -140,7 +140,7 @@ class ClustersViewController: UIViewController {
                 clusters.updateValue(ClusterPerson(id: id, name: name), forKey: host)
             }
             self.clusters = clusters
-            self.clustersView.setupCluster(floor: floor, cluster: clusters)
+            self.clustersView.setupCluster(floor: self.segmentedControl.selectedSegmentIndex + 1, cluster: clusters)
             self.setupClusterInfo()
             self.navigationItem.rightBarButtonItems![0].isEnabled = true
             self.activityIndicator.stopAnimating()
@@ -191,7 +191,7 @@ class ClustersViewController: UIViewController {
         activityIndicator.startAnimating()
         navigationItem.rightBarButtonItems![0].isEnabled = false
         clustersView.clearUserImages()
-        loadClusterLocations(floor: segmentedControl.selectedSegmentIndex + 1)
+        loadClusterLocations()
     }
 }
 

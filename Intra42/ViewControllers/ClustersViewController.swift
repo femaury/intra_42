@@ -10,7 +10,12 @@ import UIKit
 import SwiftyJSON
 
 class ClustersViewController: UIViewController {
-
+    
+    private let availableCursusIDs = [1]
+    let noClusterLabel = UILabel()
+    let noClusterView = UIView()
+    
+    var selectedCampus: (id: Int, name: String) = (0, "") //Campus
     var selectedCell: UserProfileCell?
     var floorOneCount: Int = 0 // Max: 271
     var floorOneFriends: Int = 0
@@ -24,6 +29,7 @@ class ClustersViewController: UIViewController {
     lazy var searchBar = UISearchBar()
     lazy var clustersView = ClustersView(frame: CGRect(x: 0, y: 0, width: 985, height: 755))
     lazy var activityIndicator = UIActivityIndicatorView(style: .gray)
+    @IBOutlet weak var campusLabel: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var topStackView: UIStackView!
@@ -49,25 +55,44 @@ class ClustersViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Keeps navbar background color black in iOS 13
+        noClusterView.backgroundColor = .white
         if #available(iOS 13.0, *) {
             let appearance = UINavigationBarAppearance()
             appearance.backgroundColor = .systemBackground
             navigationItem.standardAppearance = appearance
             navigationItem.scrollEdgeAppearance = appearance
+            
+            noClusterView.backgroundColor = .systemBackground
         }
         
-        setupSearchBar()
-        searchBar.delegate = self
-        navigationItem.titleView = searchBar
+        noClusterView.frame = view.frame
+        noClusterLabel.frame = CGRect(x: 0, y: 0, width: view.frame.width - 40, height: 200)
+        noClusterLabel.text = "\n\nSorry, this campus' map is not available yet... Feel free to open an issue on github to help speed up the process!"
+        noClusterLabel.textAlignment = .center
+        noClusterLabel.numberOfLines = 0
+        noClusterView.addSubview(noClusterLabel)
+        noClusterLabel.center = noClusterView.convert(noClusterView.center, from: noClusterLabel)
+        view.addSubview(noClusterView)
+        
+        if let id = API42Manager.shared.userProfile?.mainCampusId, let name = API42Manager.shared.userProfile?.mainCampusName {
+            selectedCampus = (id, name)
+            title = name
+            noClusterView.isHidden = availableCursusIDs.contains(id)
+            noClusterLabel.text = name + (noClusterLabel.text ?? "")
+        }
+        
+        campusLabel.isHidden = true
+//        setupSearchBar()
+//        searchBar.delegate = self
+//        navigationItem.titleView = searchBar
         
         clustersView.delegate = self
         clustersView.clearUserImages()
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapHandler))
-        tapGesture.cancelsTouchesInView = false
-        view.addGestureRecognizer(tapGesture)
-        
+//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapHandler))
+//        tapGesture.cancelsTouchesInView = false
+//        view.addGestureRecognizer(tapGesture)
+
         minZoomScale = UIScreen.main.bounds.width / clustersView.frame.width
         scrollView.addSubview(clustersView)
         scrollView.contentSize = clustersView.frame.size
@@ -178,20 +203,42 @@ class ClustersViewController: UIViewController {
         backBar.layer.borderColor = API42Manager.shared.preferedPrimaryColor?.cgColor
     }
     
-    @objc func tapHandler(gesture: UIGestureRecognizer) {
-        self.searchBar.resignFirstResponder()
-    }
+//    @objc func tapHandler(gesture: UIGestureRecognizer) {
+//        self.searchBar.resignFirstResponder()
+//    }
     
     @IBAction func clusterFloorChanged(_ sender: UISegmentedControl) {
         clustersView.clearUserImages()
         clustersView.setupCluster(floor: sender.selectedSegmentIndex + 1, cluster: clusters)
     }
     
-    @IBAction func refreshClusters(_ sender: UIBarButtonItem) {
+    func refreshClusters() {
         activityIndicator.startAnimating()
         navigationItem.rightBarButtonItems![0].isEnabled = false
         clustersView.clearUserImages()
         loadClusterLocations()
+    }
+    
+    @IBAction func showOptions(_ sender: Any) {
+        let optionsAction = UIAlertController(title: "Options", message: nil, preferredStyle: .actionSheet)
+        let changeCampus = UIAlertAction(title: "Change campus", style: .default) { [weak self] (_) in
+            guard let self = self else { return }
+            let campusController = TablePickerController()
+            campusController.modalPresentationStyle = .fullScreen
+            campusController.delegate = self
+            campusController.selectedItem = self.selectedCampus
+            campusController.dataSource = API42Manager.shared.getAllCampus
+            _ = campusController.view
+            self.navigationController?.pushViewController(campusController, animated: true)
+        }
+        let refresh = UIAlertAction(title: "Refresh", style: .destructive) { [weak self] (_) in
+            self?.refreshClusters()
+        }
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+        optionsAction.addAction(changeCampus)
+        optionsAction.addAction(refresh)
+        optionsAction.addAction(cancel)
+        present(optionsAction, animated: true, completion: nil)
     }
 }
 
@@ -209,6 +256,19 @@ extension ClustersViewController: UserProfileDataSource, SearchResultsDataSource
                 showUserProfileController(atDestination: destination)
             }
         }
+    }
+}
+
+// MARK: - Table Picker Delegate
+
+extension ClustersViewController: TablePickerDelegate {
+    
+    func selectItem(_ item: TablePickerItem) {
+        selectedCampus = item
+        title = item.name
+        noClusterView.isHidden = availableCursusIDs.contains(item.id)
+        noClusterLabel.text = item.name
+            + "\n\nSorry, this campus' map is not available yet... Feel free to open an issue on github to help speed up the process!"
     }
 }
 
@@ -233,12 +293,12 @@ extension ClustersViewController: UIScrollViewDelegate {
 
 // MARK: - Search Bar Delegate
 
-extension ClustersViewController: UISearchBarDelegate {
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        if searchBar.text != nil {
-            performSegue(withIdentifier: "SearchResultsSegue", sender: self)
-        }
-        searchBar.resignFirstResponder()
-    }
-}
+//extension ClustersViewController: UISearchBarDelegate {
+//
+//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+//        if searchBar.text != nil {
+//            performSegue(withIdentifier: "SearchResultsSegue", sender: self)
+//        }
+//        searchBar.resignFirstResponder()
+//    }
+//}

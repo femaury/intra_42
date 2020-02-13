@@ -20,6 +20,7 @@
 		D09FA79523CF6B5500B0CA87 /* PeerResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09FA79423CF6B5500B0CA87 /* PeerResultsController.swift */; };
 		D09FA79723CF6DE600B0CA87 /* ProjectUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09FA79623CF6DE600B0CA87 /* ProjectUserCell.swift */; };
 		D09FA79923CF72E200B0CA87 /* ProjectUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09FA79823CF72E200B0CA87 /* ProjectUser.swift */; };
+		D0C21B6623F54E9700A7C318 /* TablePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C21B6523F54E9700A7C318 /* TablePickerController.swift */; };
 		DC0D7B2A2230466A00A30B9F /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DC0D7B282230466A00A30B9F /* CoreData.xcdatamodeld */; };
 		DC0D7B2E223059B300A30B9F /* FriendDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0D7B2D223059B300A30B9F /* FriendDataManager.swift */; };
 		DC0D7B3022305DDC00A30B9F /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0D7B2F22305DDC00A30B9F /* CoreDataManager.swift */; };
@@ -143,6 +144,7 @@
 		D09FA79423CF6B5500B0CA87 /* PeerResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerResultsController.swift; sourceTree = "<group>"; };
 		D09FA79623CF6DE600B0CA87 /* ProjectUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectUserCell.swift; sourceTree = "<group>"; };
 		D09FA79823CF72E200B0CA87 /* ProjectUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectUser.swift; sourceTree = "<group>"; };
+		D0C21B6523F54E9700A7C318 /* TablePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TablePickerController.swift; sourceTree = "<group>"; };
 		DC0D7B292230466A00A30B9F /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		DC0D7B2D223059B300A30B9F /* FriendDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDataManager.swift; sourceTree = "<group>"; };
 		DC0D7B2F22305DDC00A30B9F /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
@@ -519,6 +521,7 @@
 				DCCE05932228450A00906ECD /* CorrectionsViewController.swift */,
 				DCCE05A3222971AB00906ECD /* EventsViewController.swift */,
 				DCCE05A122296DC100906ECD /* ClustersViewController.swift */,
+				D0C21B6523F54E9700A7C318 /* TablePickerController.swift */,
 				DCCE05952228451500906ECD /* FriendsViewController.swift */,
 				DC1988C122369846009E3A55 /* EventDetailController.swift */,
 				DC8999402245731000F47EEF /* NotificationViewController.swift */,
@@ -865,6 +868,7 @@
 				DCF1A4D8229976A500AA2653 /* AchievementData.swift in Sources */,
 				DCCE05A222296DC100906ECD /* ClustersViewController.swift in Sources */,
 				DC955DF0222C5192003B70BC /* DateTimeInterval.swift in Sources */,
+				D0C21B6623F54E9700A7C318 /* TablePickerController.swift in Sources */,
 				DCF1A4E02299781900AA2653 /* Friend.swift in Sources */,
 				D0643F8323CE1B7A0032DCEB /* Campus.swift in Sources */,
 				DCCE058E2226F0FF00906ECD /* CustomError.swift in Sources */,

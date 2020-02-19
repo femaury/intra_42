@@ -21,6 +21,11 @@
 		D09FA79723CF6DE600B0CA87 /* ProjectUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09FA79623CF6DE600B0CA87 /* ProjectUserCell.swift */; };
 		D09FA79923CF72E200B0CA87 /* ProjectUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09FA79823CF72E200B0CA87 /* ProjectUser.swift */; };
 		D0C21B6623F54E9700A7C318 /* TablePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C21B6523F54E9700A7C318 /* TablePickerController.swift */; };
+		D0F4AE6623FD6802003DFB81 /* ClustersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F4AE6523FD6802003DFB81 /* ClustersViewController.swift */; };
+		D0F4AE6923FD68CF003DFB81 /* ClusterInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0F4AE6823FD68CF003DFB81 /* ClusterInfo.xib */; };
+		D0F4AE6B23FD6BEE003DFB81 /* ClusterInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F4AE6A23FD6BEE003DFB81 /* ClusterInfoView.swift */; };
+		D0F4AE6D23FD77BB003DFB81 /* ClustersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F4AE6C23FD77BB003DFB81 /* ClustersView.swift */; };
+		D0F4AE6F23FD7C4F003DFB81 /* cluster_map_campus_1.json in Resources */ = {isa = PBXBuildFile; fileRef = D0F4AE6E23FD7C4F003DFB81 /* cluster_map_campus_1.json */; };
 		DC0D7B2A2230466A00A30B9F /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DC0D7B282230466A00A30B9F /* CoreData.xcdatamodeld */; };
 		DC0D7B2E223059B300A30B9F /* FriendDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0D7B2D223059B300A30B9F /* FriendDataManager.swift */; };
 		DC0D7B3022305DDC00A30B9F /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0D7B2F22305DDC00A30B9F /* CoreDataManager.swift */; };
@@ -33,7 +38,7 @@
 		DC1988C02236970F009E3A55 /* StringHTMLToAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1988BF2236970F009E3A55 /* StringHTMLToAttributedString.swift */; };
 		DC1988C222369846009E3A55 /* EventDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1988C122369846009E3A55 /* EventDetailController.swift */; };
 		DC1988C42236BCFE009E3A55 /* UIViewPinBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1988C32236BCFE009E3A55 /* UIViewPinBackground.swift */; };
-		DC1988C82236FA53009E3A55 /* ClustersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1988C72236FA53009E3A55 /* ClustersView.swift */; };
+		DC1988C82236FA53009E3A55 /* ClustersViewParis.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1988C72236FA53009E3A55 /* ClustersViewParis.swift */; };
 		DC1988CC22395588009E3A55 /* ClusterPost.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC1988CB22395588009E3A55 /* ClusterPost.xib */; };
 		DC1988CE2239567B009E3A55 /* Cluster.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC1988CD2239567B009E3A55 /* Cluster.xib */; };
 		DC1988D02239680D009E3A55 /* ClusterPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1988CF2239680D009E3A55 /* ClusterPost.swift */; };
@@ -99,7 +104,7 @@
 		DCCE0598222847CC00906ECD /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCE0597222847CC00906ECD /* UserProfile.swift */; };
 		DCCE059A22284B0000906ECD /* UIColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCE059922284B0000906ECD /* UIColorHex.swift */; };
 		DCCE059C22286EC800906ECD /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCE059B22286EC800906ECD /* Colors.swift */; };
-		DCCE05A222296DC100906ECD /* ClustersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCE05A122296DC100906ECD /* ClustersViewController.swift */; };
+		DCCE05A222296DC100906ECD /* OldClustersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCE05A122296DC100906ECD /* OldClustersViewController.swift */; };
 		DCCE05A4222971AB00906ECD /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCE05A3222971AB00906ECD /* EventsViewController.swift */; };
 		DCCE05A62229822500906ECD /* UIImageViewFromURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCE05A52229822500906ECD /* UIImageViewFromURL.swift */; };
 		DCCE05A8222994EB00906ECD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCCE05A7222994EB00906ECD /* Main.storyboard */; };
@@ -145,6 +150,11 @@
 		D09FA79623CF6DE600B0CA87 /* ProjectUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectUserCell.swift; sourceTree = "<group>"; };
 		D09FA79823CF72E200B0CA87 /* ProjectUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectUser.swift; sourceTree = "<group>"; };
 		D0C21B6523F54E9700A7C318 /* TablePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TablePickerController.swift; sourceTree = "<group>"; };
+		D0F4AE6523FD6802003DFB81 /* ClustersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClustersViewController.swift; sourceTree = "<group>"; };
+		D0F4AE6823FD68CF003DFB81 /* ClusterInfo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClusterInfo.xib; sourceTree = "<group>"; };
+		D0F4AE6A23FD6BEE003DFB81 /* ClusterInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusterInfoView.swift; sourceTree = "<group>"; };
+		D0F4AE6C23FD77BB003DFB81 /* ClustersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClustersView.swift; sourceTree = "<group>"; };
+		D0F4AE6E23FD7C4F003DFB81 /* cluster_map_campus_1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cluster_map_campus_1.json; sourceTree = "<group>"; };
 		DC0D7B292230466A00A30B9F /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		DC0D7B2D223059B300A30B9F /* FriendDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDataManager.swift; sourceTree = "<group>"; };
 		DC0D7B2F22305DDC00A30B9F /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
@@ -157,7 +167,7 @@
 		DC1988BF2236970F009E3A55 /* StringHTMLToAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringHTMLToAttributedString.swift; sourceTree = "<group>"; };
 		DC1988C122369846009E3A55 /* EventDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailController.swift; sourceTree = "<group>"; };
 		DC1988C32236BCFE009E3A55 /* UIViewPinBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewPinBackground.swift; sourceTree = "<group>"; };
-		DC1988C72236FA53009E3A55 /* ClustersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClustersView.swift; sourceTree = "<group>"; };
+		DC1988C72236FA53009E3A55 /* ClustersViewParis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClustersViewParis.swift; sourceTree = "<group>"; };
 		DC1988CB22395588009E3A55 /* ClusterPost.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClusterPost.xib; sourceTree = "<group>"; };
 		DC1988CD2239567B009E3A55 /* Cluster.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Cluster.xib; sourceTree = "<group>"; };
 		DC1988CF2239680D009E3A55 /* ClusterPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusterPost.swift; sourceTree = "<group>"; };
@@ -226,7 +236,7 @@
 		DCCE0597222847CC00906ECD /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		DCCE059922284B0000906ECD /* UIColorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorHex.swift; sourceTree = "<group>"; };
 		DCCE059B22286EC800906ECD /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		DCCE05A122296DC100906ECD /* ClustersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClustersViewController.swift; sourceTree = "<group>"; };
+		DCCE05A122296DC100906ECD /* OldClustersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldClustersViewController.swift; sourceTree = "<group>"; };
 		DCCE05A3222971AB00906ECD /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		DCCE05A52229822500906ECD /* UIImageViewFromURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewFromURL.swift; sourceTree = "<group>"; };
 		DCCE05A7222994EB00906ECD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -298,6 +308,24 @@
 				D09FA79623CF6DE600B0CA87 /* ProjectUserCell.swift */,
 			);
 			path = PeerFinder;
+			sourceTree = "<group>";
+		};
+		D0F4AE6723FD68B1003DFB81 /* Clusters */ = {
+			isa = PBXGroup;
+			children = (
+				DC1988CB22395588009E3A55 /* ClusterPost.xib */,
+				DC1988CD2239567B009E3A55 /* Cluster.xib */,
+				D0F4AE6823FD68CF003DFB81 /* ClusterInfo.xib */,
+			);
+			path = Clusters;
+			sourceTree = "<group>";
+		};
+		D0F4AE7023FD8373003DFB81 /* JSON Data */ = {
+			isa = PBXGroup;
+			children = (
+				D0F4AE6E23FD7C4F003DFB81 /* cluster_map_campus_1.json */,
+			);
+			path = "JSON Data";
 			sourceTree = "<group>";
 		};
 		DC0D7B272230464A00A30B9F /* CoreData */ = {
@@ -401,7 +429,9 @@
 			isa = PBXGroup;
 			children = (
 				DC21EB9822C92FAA00E1288B /* CoalitionView.swift */,
-				DC1988C72236FA53009E3A55 /* ClustersView.swift */,
+				D0F4AE6C23FD77BB003DFB81 /* ClustersView.swift */,
+				DC1988C72236FA53009E3A55 /* ClustersViewParis.swift */,
+				D0F4AE6A23FD6BEE003DFB81 /* ClusterInfoView.swift */,
 				DC1988CF2239680D009E3A55 /* ClusterPost.swift */,
 				DC4F1DF623944B66000F4BF9 /* HolyGraphView.swift */,
 				DC8C39DF229999F100DD1924 /* Cells */,
@@ -505,6 +535,7 @@
 				DCCE059F222873C600906ECD /* Utils */,
 				DCCE059E222873AB00906ECD /* Visuals */,
 				DCCE0585222591F500906ECD /* Info.plist */,
+				D0F4AE7023FD8373003DFB81 /* JSON Data */,
 			);
 			path = Intra42;
 			sourceTree = "<group>";
@@ -520,7 +551,8 @@
 				DC955DFF222CBBD6003B70BC /* SearchResultsController.swift */,
 				DCCE05932228450A00906ECD /* CorrectionsViewController.swift */,
 				DCCE05A3222971AB00906ECD /* EventsViewController.swift */,
-				DCCE05A122296DC100906ECD /* ClustersViewController.swift */,
+				DCCE05A122296DC100906ECD /* OldClustersViewController.swift */,
+				D0F4AE6523FD6802003DFB81 /* ClustersViewController.swift */,
 				D0C21B6523F54E9700A7C318 /* TablePickerController.swift */,
 				DCCE05952228451500906ECD /* FriendsViewController.swift */,
 				DC1988C122369846009E3A55 /* EventDetailController.swift */,
@@ -542,13 +574,12 @@
 		DCCE059E222873AB00906ECD /* Visuals */ = {
 			isa = PBXGroup;
 			children = (
+				D0F4AE6723FD68B1003DFB81 /* Clusters */,
 				DC92AB8022D0B45E00A34B88 /* AltAppIcons */,
 				DCCE05A7222994EB00906ECD /* Main.storyboard */,
 				DC49297F22F724CB004024C3 /* SideMenu.storyboard */,
 				D07B28F523DF227C00609E2D /* SegmentHeader.xib */,
 				DCF70AFB229AE7B200B29DCC /* ProjectEvaluation.xib */,
-				DC1988CD2239567B009E3A55 /* Cluster.xib */,
-				DC1988CB22395588009E3A55 /* ClusterPost.xib */,
 				DC21EB9622C92EE200E1288B /* Coalition.xib */,
 				DCCE0580222591F500906ECD /* Assets.xcassets */,
 				DCCE0582222591F500906ECD /* LaunchScreen.storyboard */,
@@ -712,10 +743,12 @@
 				DC41485522D0B50A0005FCB1 /* icon_ord@3x.png in Resources */,
 				D07B28F623DF227C00609E2D /* SegmentHeader.xib in Resources */,
 				DC1988CC22395588009E3A55 /* ClusterPost.xib in Resources */,
+				D0F4AE6F23FD7C4F003DFB81 /* cluster_map_campus_1.json in Resources */,
 				DC49298022F724CB004024C3 /* SideMenu.storyboard in Resources */,
 				DC41485822D0B50A0005FCB1 /* icon_ass@3x.png in Resources */,
 				DC49298222F7315E004024C3 /* icon_default@2x.png in Resources */,
 				DC8999452247C23E00F47EEF /* Default-568h@2x.png in Resources */,
+				D0F4AE6923FD68CF003DFB81 /* ClusterInfo.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -839,6 +872,7 @@
 				DC8999412245731000F47EEF /* NotificationViewController.swift in Sources */,
 				DCCE05A4222971AB00906ECD /* EventsViewController.swift in Sources */,
 				D09FA79723CF6DE600B0CA87 /* ProjectUserCell.swift in Sources */,
+				D0F4AE6B23FD6BEE003DFB81 /* ClusterInfoView.swift in Sources */,
 				D08BF44223C5F2D300359A17 /* SegmentTableViewCell.swift in Sources */,
 				DC0D7B3D22340AFD00A30B9F /* Event.swift in Sources */,
 				DCF1A4EE2299957800AA2653 /* Coalitions.swift in Sources */,
@@ -866,7 +900,7 @@
 				DC4F1DF523944108000F4BF9 /* HolyGraph.swift in Sources */,
 				DCCE05902227010E00906ECD /* HomeViewController.swift in Sources */,
 				DCF1A4D8229976A500AA2653 /* AchievementData.swift in Sources */,
-				DCCE05A222296DC100906ECD /* ClustersViewController.swift in Sources */,
+				DCCE05A222296DC100906ECD /* OldClustersViewController.swift in Sources */,
 				DC955DF0222C5192003B70BC /* DateTimeInterval.swift in Sources */,
 				D0C21B6623F54E9700A7C318 /* TablePickerController.swift in Sources */,
 				DCF1A4E02299781900AA2653 /* Friend.swift in Sources */,
@@ -914,11 +948,12 @@
 				DC955DEE222C4E88003B70BC /* ProjectCell.swift in Sources */,
 				DCCE0598222847CC00906ECD /* UserProfile.swift in Sources */,
 				DCCE05962228451500906ECD /* FriendsViewController.swift in Sources */,
+				D0F4AE6623FD6802003DFB81 /* ClustersViewController.swift in Sources */,
 				D04122CA23C4E353004D0A5E /* SearchButtonCell.swift in Sources */,
 				DCABB86B22C12C1F00711C4A /* AboutViewController.swift in Sources */,
 				DC41485C22D0BED70005FCB1 /* SettingsViewController.swift in Sources */,
 				DC89993622451EB200F47EEF /* UserProfileDataSource.swift in Sources */,
-				DC1988C82236FA53009E3A55 /* ClustersView.swift in Sources */,
+				DC1988C82236FA53009E3A55 /* ClustersViewParis.swift in Sources */,
 				DCCE05942228450B00906ECD /* CorrectionsViewController.swift in Sources */,
 				DC0D7B2A2230466A00A30B9F /* CoreData.xcdatamodeld in Sources */,
 				DCF1A4EA2299951900AA2653 /* Events.swift in Sources */,
@@ -931,6 +966,7 @@
 				DCF30D592396C6EA0000EC7C /* Projects.swift in Sources */,
 				DCCE057A222591F400906ECD /* AppDelegate.swift in Sources */,
 				DC89993022427A1500F47EEF /* AchievementsController.swift in Sources */,
+				D0F4AE6D23FD77BB003DFB81 /* ClustersView.swift in Sources */,
 				D09FA79923CF72E200B0CA87 /* ProjectUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,7 +16,7 @@ class ClusterPost: UIView, UserProfileCell {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var numberLabel: UILabel!
     
-    weak var delegate: ClustersViewController?
+    weak var delegate: ClustersViewDelegate?
     var userId: Int = 0
     var userName: String?
     

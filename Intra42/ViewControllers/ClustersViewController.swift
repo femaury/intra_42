@@ -1,130 +1,107 @@
 //
 //  ClustersViewController.swift
-//  Intra 42
+//  Intra42
 //
-//  Created by Felix Maury on 2019-03-01.
-//  Copyright © 2019 Felix Maury. All rights reserved.
+//  Created by Felix Maury on 19/02/2020.
+//  Copyright © 2020 Felix Maury. All rights reserved.
 //
 
 import UIKit
-import SwiftyJSON
 
-class ClustersViewController: UIViewController {
+struct ClusterPostInfo: Decodable {
+    let kind: String
+    let host: String
+}
+
+struct ClusterData: Decodable {
+    let position:   Int
+    let campusId:   Int
+    let name:       String
+    let nameShort:  String
+    let hostPrefix: String
+    let map:        [[ClusterPostInfo]]
     
-    private let availableCursusIDs = [1]
+    var capacity: Int {
+        var count = 0
+        for column in map {
+            count += column.filter { $0.kind == "USER" }.count
+        }
+        return count
+    }
+}
+
+class ClustersViewController: UIViewController, ClustersViewDelegate {
+
+    private let availableCampusIDs = [1]
     let noClusterLabel = UILabel()
     let noClusterView = UIView()
+    let activityIndicator = UIActivityIndicatorView(style: .gray)
     
+    var scrollView: UIScrollView?
+    var clustersData: [ClusterData] = []
+    var clustersView: ClustersView?
+    var clusters: [String: ClusterPerson] = [:]
     var selectedCampus: (id: Int, name: String) = (0, "") //Campus
     var selectedCell: UserProfileCell?
-    var floorOneCount: Int = 0 // Max: 271
-    var floorOneFriends: Int = 0
-    var floorTwoCount: Int = 0 // Max: 270
-    var floorTwoFriends: Int = 0
-    var floorThreeCount: Int = 0 // Max: 270
-    var floorThreeFriends: Int = 0
     var minZoomScale: CGFloat = 0.5
     
-    lazy var clusters: [String: ClusterPerson] = [:]
-    lazy var searchBar = UISearchBar()
-    lazy var clustersView = ClustersView(frame: CGRect(x: 0, y: 0, width: 985, height: 755))
-    lazy var activityIndicator = UIActivityIndicatorView(style: .gray)
-    @IBOutlet weak var campusLabel: UILabel!
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var segmentedControl: UISegmentedControl!
-    @IBOutlet weak var topStackView: UIStackView!
+    @IBOutlet weak var headerStackView: UIStackView!
+    @IBOutlet weak var headerSegment: UISegmentedControl!
     
-    @IBOutlet weak var bottomStackView: UIStackView!
-    @IBOutlet weak var infoView: UIView!
-    
-    @IBOutlet weak var floorOneFriendsLabel: UILabel!
-    @IBOutlet weak var floorOneUsers: UIView!
-    @IBOutlet weak var floorOneUsersProgress: UIView!
-    @IBOutlet weak var floorOneUsersLabel: UILabel!
-    
-    @IBOutlet weak var floorTwoFriendsLabel: UILabel!
-    @IBOutlet weak var floorTwoUsers: UIView!
-    @IBOutlet weak var floorTwoUsersProgress: UIView!
-    @IBOutlet weak var floorTwoUsersLabel: UILabel!
-
-    @IBOutlet weak var floorThreeFriendsLabel: UILabel!
-    @IBOutlet weak var floorThreeUsers: UIView!
-    @IBOutlet weak var floorThreeUsersProgress: UIView!
-    @IBOutlet weak var floorThreeUsersLabel: UILabel!
+    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var infoStackView: UIStackView!
+    // Array corresponding to infoStackView subviews containing user and friend count of cluster
+    var occupancy: [(users: Int, friends: Int)] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Cluster Maps"
         noClusterView.backgroundColor = .white
+        headerSegment.tintColor = API42Manager.shared.preferedPrimaryColor
         if #available(iOS 13.0, *) {
             let appearance = UINavigationBarAppearance()
             appearance.backgroundColor = .systemBackground
             navigationItem.standardAppearance = appearance
             navigationItem.scrollEdgeAppearance = appearance
             
+            activityIndicator.style = .medium
             noClusterView.backgroundColor = .systemBackground
+            headerSegment.selectedSegmentTintColor = API42Manager.shared.preferedPrimaryColor
         }
         
         noClusterView.frame = view.frame
         noClusterLabel.frame = CGRect(x: 0, y: 0, width: view.frame.width - 40, height: 200)
-        noClusterLabel.text = "\n\nSorry, this campus' map is not available yet... Feel free to open an issue on github to help speed up the process!"
+        noClusterLabel.text = "\n\nSorry, this campus' map is not available yet... Feel free to open an issue on github or contact me to help speed up the process!"
         noClusterLabel.textAlignment = .center
         noClusterLabel.numberOfLines = 0
         noClusterView.addSubview(noClusterLabel)
         noClusterLabel.center = noClusterView.convert(noClusterView.center, from: noClusterLabel)
         view.addSubview(noClusterView)
         
+        
         if let id = API42Manager.shared.userProfile?.mainCampusId, let name = API42Manager.shared.userProfile?.mainCampusName {
             selectedCampus = (id, name)
             title = name
-            noClusterView.isHidden = availableCursusIDs.contains(id)
             noClusterLabel.text = name + (noClusterLabel.text ?? "")
-        }
-        
-        campusLabel.isHidden = true
-//        setupSearchBar()
-//        searchBar.delegate = self
-//        navigationItem.titleView = searchBar
-        
-        clustersView.delegate = self
-        clustersView.clearUserImages()
-        
-//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapHandler))
-//        tapGesture.cancelsTouchesInView = false
-//        view.addGestureRecognizer(tapGesture)
-
-        minZoomScale = UIScreen.main.bounds.width / clustersView.frame.width
-        scrollView.addSubview(clustersView)
-        scrollView.contentSize = clustersView.frame.size
-        scrollView.minimumZoomScale = minZoomScale
-        scrollView.maximumZoomScale = 5.0
-        scrollView.zoomScale = minZoomScale
-        
-        activityIndicator.hidesWhenStopped = true
-        activityIndicator.startAnimating()
-        if #available(iOS 13.0, *) {
-            activityIndicator.style = .medium
-        }
-        topStackView.addArrangedSubview(activityIndicator)
-        loadClusterLocations()
-        
-        if #available(iOS 13.0, *) {
-            segmentedControl.selectedSegmentTintColor = API42Manager.shared.preferedPrimaryColor
-        } else {
-            segmentedControl.tintColor = API42Manager.shared.preferedPrimaryColor
+            if availableCampusIDs.contains(selectedCampus.id) {
+                addNewClusterView()
+            }
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        segmentedControl.tintColor = API42Manager.shared.preferedPrimaryColor
-        floorOneUsers.layer.borderColor = API42Manager.shared.preferedPrimaryColor?.cgColor
-        floorTwoUsers.layer.borderColor = API42Manager.shared.preferedPrimaryColor?.cgColor
-        floorThreeUsers.layer.borderColor = API42Manager.shared.preferedPrimaryColor?.cgColor
-        floorOneUsersProgress.backgroundColor = API42Manager.shared.preferedPrimaryColor
-        floorTwoUsersProgress.backgroundColor = API42Manager.shared.preferedPrimaryColor
-        floorThreeUsersProgress.backgroundColor = API42Manager.shared.preferedPrimaryColor
+        if #available(iOS 13.0, *) {
+            headerSegment.selectedSegmentTintColor = API42Manager.shared.preferedPrimaryColor
+        } else {
+            headerSegment.tintColor = API42Manager.shared.preferedPrimaryColor
+        }
+        for case let infoView as ClusterInfoView in infoStackView.arrangedSubviews {
+            infoView.outerProgressBar.layer.borderColor = API42Manager.shared.preferedPrimaryColor?.cgColor
+            infoView.innerProgressBar.backgroundColor = API42Manager.shared.preferedPrimaryColor
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -134,38 +111,79 @@ class ClustersViewController: UIViewController {
         navigationController?.view.layoutIfNeeded() // to fix height of the navigation bar
     }
     
+    func addNewClusterView() {
+        let id = selectedCampus.id
+        if getClustersData(forCampus: id) {
+            let clustersView = ClustersView(withData: clustersData)
+            self.clustersView = clustersView
+            clustersView.delegate = self
+            //  clustersView?.clearUserImages()
+            
+            minZoomScale = UIScreen.main.bounds.width / clustersView.frame.width
+            scrollView?.removeFromSuperview()
+            let newScrollView = UIScrollView()
+            scrollView = newScrollView
+            newScrollView.addSubview(clustersView)
+            newScrollView.contentSize = clustersView.frame.size
+            newScrollView.minimumZoomScale = minZoomScale
+            newScrollView.maximumZoomScale = 5.0
+            newScrollView.zoomScale = minZoomScale
+            contentView.insertSubview(newScrollView, at: 0)
+            
+            activityIndicator.hidesWhenStopped = true
+            activityIndicator.startAnimating()
+            headerStackView.addArrangedSubview(activityIndicator)
+            loadClusterLocations()
+        }
+    }
+    
+    func getClustersData(forCampus id: Int) -> Bool {
+        if availableCampusIDs.contains(id) {
+            let name = "cluster_map_campus_\(id)"
+            if let path = Bundle.main.path(forResource: name, ofType: "json") {
+                do {
+                    let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
+                    clustersData = try JSONDecoder().decode([ClusterData].self, from: data)
+                    print("jsonData: \(clustersData)")
+                    if clustersData.count < 2 {
+                        headerSegment.isHidden = true
+                    }
+                    headerSegment.removeAllSegments()
+                    for (index, cluster) in clustersData.enumerated() {
+                        headerSegment.insertSegment(withTitle: cluster.nameShort, at: index, animated: false)
+                        occupancy.append((0, 0))
+                    }
+                    return true
+                } catch let error {
+                    print("ERROR: json parsing - \(error.localizedDescription)")
+                }
+            }
+        }
+        noClusterView.isHidden = false
+        return false
+    }
+    
     func loadClusterLocations() {
         API42Manager.shared.getLocations(forCampusId: 1, page: 1) { (data) in
             var clusters: [String: ClusterPerson] = [:]
-            self.floorOneCount = 0
-            self.floorOneFriends = 0
-            self.floorTwoCount = 0
-            self.floorTwoFriends = 0
-            self.floorThreeCount = 0
-            self.floorThreeFriends = 0
             
             for location in data {
                 let host = location["host"].stringValue
                 let name = location["user"]["login"].stringValue
                 let id = location["user"]["id"].intValue
                 
-                if host.contains("e1") {
-                    self.floorOneCount += 1
-                    if FriendDataManager.shared.hasFriend(withId: id) { self.floorOneFriends += 1 }
-                } else if host.contains("e2") {
-                    self.floorTwoCount += 1
-                    if FriendDataManager.shared.hasFriend(withId: id) { self.floorTwoFriends += 1 }
-                } else if host.contains("e3") {
-                    self.floorThreeCount += 1
-                    if FriendDataManager.shared.hasFriend(withId: id) { self.floorThreeFriends += 1 }
-                } else {
-                    continue
+                for (index, cluster) in self.clustersData.enumerated() {
+                    if host.contains(cluster.hostPrefix) {
+                        self.occupancy[index].users += 1
+                        if FriendDataManager.shared.hasFriend(withId: id) {
+                            self.occupancy[index].friends += 1
+                        }
+                    }
                 }
-                
                 clusters.updateValue(ClusterPerson(id: id, name: name), forKey: host)
             }
             self.clusters = clusters
-            self.clustersView.setupCluster(floor: self.segmentedControl.selectedSegmentIndex + 1, cluster: clusters)
+            self.clustersView?.setupCluster(withUsers: clusters)
             self.setupClusterInfo()
             self.navigationItem.rightBarButtonItems![0].isEnabled = true
             self.activityIndicator.stopAnimating()
@@ -173,27 +191,26 @@ class ClustersViewController: UIViewController {
     }
     
     func setupClusterInfo() {
-        let floorOneString = "\(floorOneFriends) friend\(floorOneFriends == 1 ? "" : "s")"
-        floorOneFriendsLabel.text = floorOneString
-        let floorTwoString = "\(floorTwoFriends) friend\(floorTwoFriends == 1 ? "" : "s")"
-        floorTwoFriendsLabel.text = floorTwoString
-        let floorThreeString = "\(floorThreeFriends) friend\(floorThreeFriends == 1 ? "" : "s")"
-        floorThreeFriendsLabel.text = floorThreeString
-        
-        let floorOneTotal = "\(floorOneCount)/271"
-        floorOneUsersLabel.text = floorOneTotal
-        let floorTwoTotal = "\(floorTwoCount)/270"
-        floorTwoUsersLabel.text = floorTwoTotal
-        let floorThreeTotal = "\(floorThreeCount)/270"
-        floorThreeUsersLabel.text = floorThreeTotal
-        
-        setClusterOccupancy(backBar: floorOneUsers, progressBar: floorOneUsersProgress, users: floorOneCount)
-        setClusterOccupancy(backBar: floorTwoUsers, progressBar: floorTwoUsersProgress, users: floorTwoCount)
-        setClusterOccupancy(backBar: floorThreeUsers, progressBar: floorThreeUsersProgress, users: floorThreeCount)
+        var index = 0
+        for case let infoView as ClusterInfoView in infoStackView.arrangedSubviews {
+            let friends = occupancy[index].friends
+            let friendText = "\(friends) friend\(friends == 1 ? "" : "s")"
+            let users = occupancy[index].users
+            let total = clustersData[index].capacity
+            let progText = "\(users)/\(total)"
+            infoView.friendsLabel.text = friendText
+            infoView.nameLabel.text = clustersData[index].name
+            infoView.progressLabel.text = progText
+            setClusterOccupancy(
+                backBar: infoView.outerProgressBar,
+                progressBar: infoView.innerProgressBar,
+                percentage: Double(users) / Double(total)
+            )
+            index += 1
+        }
     }
     
-    func setClusterOccupancy(backBar: UIView, progressBar: UIView, users: Int) {
-        let percentage = Double(users) / 271.0
+    func setClusterOccupancy(backBar: UIView, progressBar: UIView, percentage: Double) {
         let progress = percentage * Double(backBar.frame.width)
         progressBar.frame = CGRect(x: 0, y: 0, width: progress, height: Double(backBar.frame.height))
         progressBar.roundCorners(corners: [.topLeft, .bottomLeft], radius: 5.0)
@@ -203,19 +220,15 @@ class ClustersViewController: UIViewController {
         backBar.layer.borderColor = API42Manager.shared.preferedPrimaryColor?.cgColor
     }
     
-//    @objc func tapHandler(gesture: UIGestureRecognizer) {
-//        self.searchBar.resignFirstResponder()
-//    }
-    
     @IBAction func clusterFloorChanged(_ sender: UISegmentedControl) {
-        clustersView.clearUserImages()
-        clustersView.setupCluster(floor: sender.selectedSegmentIndex + 1, cluster: clusters)
+//        clustersView.clearUserImages()
+//        clustersView?.setupCluster(withUsers: <#T##[String : ClusterPerson]#>)
     }
     
     func refreshClusters() {
         activityIndicator.startAnimating()
         navigationItem.rightBarButtonItems![0].isEnabled = false
-        clustersView.clearUserImages()
+//        clustersView.clearUserImages()
         loadClusterLocations()
     }
     
@@ -244,14 +257,10 @@ class ClustersViewController: UIViewController {
 
 // MARK: - Prepare for segue
 
-extension ClustersViewController: UserProfileDataSource, SearchResultsDataSource {
+extension ClustersViewController: UserProfileDataSource {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "SearchResultsSegue" {
-            if let destination = segue.destination as? SearchResultsController {
-                showSearchResultsController(atDestination: destination)
-            }
-        } else if segue.identifier == "UserProfileSegue" {
+        if segue.identifier == "UserProfileSegue" {
             if let destination = segue.destination as? UserProfileController {
                 showUserProfileController(atDestination: destination)
             }
@@ -266,7 +275,7 @@ extension ClustersViewController: TablePickerDelegate {
     func selectItem(_ item: TablePickerItem) {
         selectedCampus = item
         title = item.name
-        noClusterView.isHidden = availableCursusIDs.contains(item.id)
+        noClusterView.isHidden = availableCampusIDs.contains(item.id)
         noClusterLabel.text = item.name
             + "\n\nSorry, this campus' map is not available yet... Feel free to open an issue on github to help speed up the process!"
     }
@@ -281,24 +290,12 @@ extension ClustersViewController: UIScrollViewDelegate {
     }
     
     func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) {
-        infoView.isHidden = true
+        infoStackView.isHidden = true
     }
     
     func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
         if scale == minZoomScale {
-            infoView.isHidden = false
+            infoStackView.isHidden = false
         }
     }
 }
-
-// MARK: - Search Bar Delegate
-
-//extension ClustersViewController: UISearchBarDelegate {
-//
-//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-//        if searchBar.text != nil {
-//            performSegue(withIdentifier: "SearchResultsSegue", sender: self)
-//        }
-//        searchBar.resignFirstResponder()
-//    }
-//}

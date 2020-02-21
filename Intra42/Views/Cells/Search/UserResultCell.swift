@@ -74,7 +74,7 @@ class UserResultCell: UITableViewCell, UserProfileCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        userPicture.image = nil
+        userPicture?.image = nil
         imageSession?.cancel()
     }
 }

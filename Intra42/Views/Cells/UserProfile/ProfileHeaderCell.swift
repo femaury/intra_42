@@ -91,8 +91,8 @@ class ProfileHeaderCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        profilePicture.image = nil
-        background.image = nil
+        profilePicture?.image = nil
+        background?.image = nil
         imageSession?.cancel()
         backgroundImageSession?.cancel()
     }

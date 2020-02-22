@@ -313,8 +313,8 @@
 		D0F4AE6723FD68B1003DFB81 /* Clusters */ = {
 			isa = PBXGroup;
 			children = (
-				DC1988CB22395588009E3A55 /* ClusterPost.xib */,
 				DC1988CD2239567B009E3A55 /* Cluster.xib */,
+				DC1988CB22395588009E3A55 /* ClusterPost.xib */,
 				D0F4AE6823FD68CF003DFB81 /* ClusterInfo.xib */,
 			);
 			path = Clusters;

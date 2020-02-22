@@ -16,6 +16,8 @@ class ClusterPost: UIView, UserProfileCell {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var numberLabel: UILabel!
     
+    let textLabel = UILabel()
+    
     weak var delegate: ClustersViewDelegate?
     var userId: Int = 0
     var userName: String?
@@ -50,6 +52,11 @@ class ClusterPost: UIView, UserProfileCell {
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showUser))
         addGestureRecognizer(tapGesture)
+        
+        textLabel.frame = frame
+        textLabel.isHidden = true
+        textLabel.textAlignment = .center
+        addSubview(textLabel)
     }
 
     @objc func showUser(_ sender: UIGestureRecognizer) {
@@ -65,5 +72,35 @@ class ClusterPost: UIView, UserProfileCell {
         showUserAction.addAction(cancel)
         
         delegate?.present(showUserAction, animated: true, completion: nil)
+    }
+    
+    func setAsEmpty() {
+        imageView.isHidden = true
+        textLabel.isHidden = true
+        numberLabel.isHidden = true
+    }
+    
+    func setAsUser(withPos pos: String?) {
+        textLabel.isHidden = true
+        numberLabel.isHidden = false
+        numberLabel.text = pos
+        imageView.backgroundColor = nil
+        imageView.image = UIImage(named: "monitor")
+    }
+    
+    func setAsLabel(withText text: String?) {
+        textLabel.text = text
+        textLabel.isHidden = false
+    }
+    
+    func setAsWall() {
+        textLabel.isHidden = true
+        numberLabel.isHidden = true
+        if #available(iOS 13.0, *) {
+            imageView.backgroundColor = .label
+        } else {
+            imageView.backgroundColor = .black
+        }
+        imageView.image = nil
     }
 }

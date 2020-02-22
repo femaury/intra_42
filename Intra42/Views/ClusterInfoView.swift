@@ -35,7 +35,7 @@ class ClusterInfoView: UIView {
     }
     
     private func commonInit() {
-        Bundle.main.loadNibNamed("ClusterInfo", owner: self, options: nil)
+        Bundle(for: ClusterInfoView.self).loadNibNamed("ClusterInfo", owner: self, options: nil)
         contentView.fixInView(self)
     }
 }

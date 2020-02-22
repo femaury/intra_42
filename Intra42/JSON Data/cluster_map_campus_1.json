@@ -2,2259 +2,1330 @@
     {
         "position": 1,
         "campusId": 1,
-        "width": 25,
-        "height": 13,
         "hostPrefix": "e1",
         "isReadyToPublish": true,
         "name": "e1 - Metropolis",
         "nameShort": "e1",
-        "slug": "1_e1",
-        "comment": "",
         "map": [
             [
                 {
-                    "angle": 0,
                     "host": "e1r13p1",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r12p1",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r11p1",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r10p1",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
-                    "kind": "WALL",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "WALL"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r8p1",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r7p1",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r6p1",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r5p1",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r4p1",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r3p1",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r2p1",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r1p1",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
-                }],
+                    "kind": "USER"
+                }
+            ],
             [
                 {
-                    "angle": 0,
                     "host": "e1r13p2",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r12p2",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r11p2",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r10p2",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r9p2",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r8p2",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r7p2",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r6p2",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r5p2",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r4p2",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r3p2",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r2p2",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r1p2",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
-                }],
+                    "kind": "USER"
+                }
+            ],
             [
                 {
-                    "angle": 0,
                     "host": "e1r13p3",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r12p3",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r11p3",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r10p3",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r9p3",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r8p3",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r7p3",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r6p3",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r5p3",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r4p3",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r3p3",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r2p3",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r1p3",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
-                }],
+                    "kind": "USER"
+                }
+            ],
             [
                 {
-                    "angle": 0,
                     "host": "e1r13p4",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r12p4",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r11p4",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r10p4",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r9p4",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r8p4",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r7p4",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r6p4",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r5p4",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r4p4",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r3p4",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r2p4",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r1p4",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
-                }],
+                    "kind": "USER"
+                }
+            ],
             [
                 {
-                    "angle": 0,
                     "host": "e1r13p5",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r12p5",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r11p5",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r10p5",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r9p5",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r8p5",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r7p5",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r6p5",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r5p5",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r4p5",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r3p5",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r2p5",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r1p5",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
-                }],
+                    "kind": "USER"
+                }
+            ],
             [
                 {
-                    "angle": 0,
                     "host": "e1r13p6",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r12p6",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r11p6",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r10p6",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r9p6",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r8p6",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r7p6",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r6p6",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r5p6",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r4p6",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r3p6",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r2p6",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r1p6",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
-                }],
+                    "kind": "USER"
+                }
+            ],
             [
                 {
-                    "angle": 0,
                     "host": "e1r13p7",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r12p7",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r11p7",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r10p7",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
-                    "kind": "CORRIDOR",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "CORRIDOR"
                 },
                 {
-                    "angle": 0,
-                    "kind": "CORRIDOR",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "CORRIDOR"
                 },
                 {
-                    "angle": 0,
-                    "kind": "CORRIDOR",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "CORRIDOR"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r6p7",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r5p7",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r4p7",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r3p7",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r2p7",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r1p7",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
-                }],
+                    "kind": "USER"
+                }
+            ],
             [
                 {
-                    "angle": 0,
-                    "kind": "CORRIDOR",
-                    "sizeX": 0.5,
-                    "sizeY": 1
+                    "kind": "LABEL",
+                    "label": "R13"
                 },
                 {
-                    "angle": 0,
-                    "kind": "CORRIDOR",
-                    "sizeX": 0.5,
-                    "sizeY": 1
+                    "kind": "LABEL",
+                    "label": "R12"
                 },
                 {
-                    "angle": 0,
-                    "kind": "CORRIDOR",
-                    "sizeX": 0.5,
-                    "sizeY": 1
+                    "kind": "LABEL",
+                    "label": "R11"
                 },
                 {
-                    "angle": 0,
-                    "kind": "CORRIDOR",
-                    "sizeX": 0.5,
-                    "sizeY": 1
+                    "kind": "LABEL",
+                    "label": "R10"
                 },
                 {
-                    "angle": 0,
-                    "kind": "CORRIDOR",
-                    "sizeX": 0.5,
-                    "sizeY": 1
+                    "kind": "LABEL",
+                    "label": "R9"
                 },
                 {
-                    "angle": 0,
-                    "kind": "CORRIDOR",
-                    "sizeX": 0.5,
-                    "sizeY": 1
+                    "kind": "LABEL",
+                    "label": "R8"
                 },
                 {
-                    "angle": 0,
-                    "kind": "CORRIDOR",
-                    "sizeX": 0.5,
-                    "sizeY": 1
+                    "kind": "LABEL",
+                    "label": "R7"
                 },
                 {
-                    "angle": 0,
-                    "kind": "CORRIDOR",
-                    "sizeX": 0.5,
-                    "sizeY": 1
+                    "kind": "LABEL",
+                    "label": "R6"
                 },
                 {
-                    "angle": 0,
-                    "kind": "CORRIDOR",
-                    "sizeX": 0.5,
-                    "sizeY": 1
+                    "kind": "LABEL",
+                    "label": "R5"
                 },
                 {
-                    "angle": 0,
-                    "kind": "CORRIDOR",
-                    "sizeX": 0.5,
-                    "sizeY": 1
+                    "kind": "LABEL",
+                    "label": "R4"
                 },
                 {
-                    "angle": 0,
-                    "kind": "CORRIDOR",
-                    "sizeX": 0.5,
-                    "sizeY": 1
+                    "kind": "LABEL",
+                    "label": "R3"
                 },
                 {
-                    "angle": 0,
-                    "kind": "CORRIDOR",
-                    "sizeX": 0.5,
-                    "sizeY": 1
+                    "kind": "LABEL",
+                    "label": "R2"
                 },
                 {
-                    "angle": 0,
-                    "kind": "CORRIDOR",
-                    "sizeX": 0.5,
-                    "sizeY": 1
-                }],
+                    "kind": "LABEL",
+                    "label": "R1"
+                }
+            ],
             [
                 {
-                    "angle": 0,
-                    "kind": "CORRIDOR",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "CORRIDOR"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r12p8",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r11p8",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r10p8",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
-                    "kind": "WALL",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "WALL"
                 },
                 {
-                    "angle": 0,
-                    "kind": "WALL",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "WALL"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r7p7",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
-                    "kind": "WALL",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "WALL"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r5p8",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r4p8",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
-                    "kind": "WALL",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "WALL"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r2p8",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
-                    "kind": "CORRIDOR",
-                    "sizeX": 1,
-                    "sizeY": 1
-                }],
+                    "kind": "CORRIDOR"
+                }
+            ],
             [
                 {
-                    "angle": 0,
-                    "kind": "CORRIDOR",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "CORRIDOR"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r12p9",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r11p9",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r10p9",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r9p7",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r8p7",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r7p8",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r6p8",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r5p9",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r4p9",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r3p8",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r2p9",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
-                    "kind": "CORRIDOR",
-                    "sizeX": 1,
-                    "sizeY": 1
-                }],
+                    "kind": "CORRIDOR"
+                }
+            ],
             [
                 {
-                    "angle": 0,
-                    "kind": "CORRIDOR",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "CORRIDOR"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r12p10",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r11p10",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r10p10",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r9p8",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r8p8",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r7p9",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r6p9",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r5p10",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r4p10",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r3p9",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r2p10",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
-                    "kind": "CORRIDOR",
-                    "sizeX": 1,
-                    "sizeY": 1
-                }],
+                    "kind": "CORRIDOR"
+                }
+            ],
             [
                 {
-                    "angle": 0,
-                    "kind": "CORRIDOR",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "CORRIDOR"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r12p11",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r11p11",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r10p11",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r9p9",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r8p9",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r7p10",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r6p10",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r5p11",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r4p11",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r3p10",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r2p11",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
-                    "kind": "CORRIDOR",
-                    "sizeX": 1,
-                    "sizeY": 1
-                }],
+                    "kind": "CORRIDOR"
+                }
+            ],
             [
                 {
-                    "angle": 0,
-                    "kind": "CORRIDOR",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "CORRIDOR"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r12p12",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r11p12",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r10p12",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r9p10",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r8p10",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r7p11",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r6p11",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r5p12",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r4p12",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r3p11",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r2p12",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
-                    "kind": "CORRIDOR",
-                    "sizeX": 1,
-                    "sizeY": 1
-                }],
+                    "kind": "CORRIDOR"
+                }
+            ],
             [
                 {
-                    "angle": 0,
-                    "kind": "CORRIDOR",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "CORRIDOR"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r12p13",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r11p13",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r10p13",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r9p11",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r8p11",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r7p12",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r6p12",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r5p13",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r4p13",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r3p12",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r2p13",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
-                    "kind": "CORRIDOR",
-                    "sizeX": 1,
-                    "sizeY": 1
-                }],
+                    "kind": "CORRIDOR"
+                }
+            ],
             [
                 {
-                    "angle": 0,
-                    "kind": "CORRIDOR",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "CORRIDOR"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r12p14",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r11p14",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r10p14",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r9p12",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r8p12",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r7p13",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r6p13",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r5p14",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r4p14",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r3p13",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r2p14",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
-                    "kind": "CORRIDOR",
-                    "sizeX": 1,
-                    "sizeY": 1
-                }],
+                    "kind": "CORRIDOR"
+                }
+            ],
             [
                 {
-                    "angle": 0,
-                    "kind": "CORRIDOR",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "CORRIDOR"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r12p15",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r11p15",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r10p15",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r9p13",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r8p13",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r7p14",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r6p14",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r5p15",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r4p15",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r3p14",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r2p15",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
-                    "kind": "CORRIDOR",
-                    "sizeX": 1,
-                    "sizeY": 1
-                }],
+                    "kind": "CORRIDOR"
+                }
+            ],
             [
                 {
-                    "angle": 0,
-                    "kind": "CORRIDOR",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "CORRIDOR"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r12p16",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r11p16",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r10p16",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
-                    "kind": "WALL",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "WALL"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r8p14",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r7p15",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
-                    "kind": "WALL",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "WALL"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r5p16",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r4p16",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
-                    "kind": "WALL",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "WALL"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r2p16",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
-                    "kind": "CORRIDOR",
-                    "sizeX": 1,
-                    "sizeY": 1
-                }],
+                    "kind": "CORRIDOR"
+                }
+            ],
             [
                 {
-                    "angle": 0,
-                    "kind": "CORRIDOR",
-                    "sizeX": 0.5,
-                    "sizeY": 1
+                    "kind": "LABEL",
+                    "label": "R13"
                 },
                 {
-                    "angle": 0,
-                    "kind": "CORRIDOR",
-                    "sizeX": 0.5,
-                    "sizeY": 1
+                    "kind": "LABEL",
+                    "label": "R12"
                 },
                 {
-                    "angle": 0,
-                    "kind": "CORRIDOR",
-                    "sizeX": 0.5,
-                    "sizeY": 1
+                    "kind": "LABEL",
+                    "label": "R11"
                 },
                 {
-                    "angle": 0,
-                    "kind": "CORRIDOR",
-                    "sizeX": 0.5,
-                    "sizeY": 1
+                    "kind": "LABEL",
+                    "label": "R10"
                 },
                 {
-                    "angle": 0,
-                    "kind": "CORRIDOR",
-                    "sizeX": 0.5,
-                    "sizeY": 1
+                    "kind": "LABEL",
+                    "label": "R9"
                 },
                 {
-                    "angle": 0,
-                    "kind": "CORRIDOR",
-                    "sizeX": 0.5,
-                    "sizeY": 1
+                    "kind": "LABEL",
+                    "label": "R8"
                 },
                 {
-                    "angle": 0,
-                    "kind": "CORRIDOR",
-                    "sizeX": 0.5,
-                    "sizeY": 1
+                    "kind": "LABEL",
+                    "label": "R7"
                 },
                 {
-                    "angle": 0,
-                    "kind": "CORRIDOR",
-                    "sizeX": 0.5,
-                    "sizeY": 1
+                    "kind": "LABEL",
+                    "label": "R6"
                 },
                 {
-                    "angle": 0,
-                    "kind": "CORRIDOR",
-                    "sizeX": 0.5,
-                    "sizeY": 1
+                    "kind": "LABEL",
+                    "label": "R5"
                 },
                 {
-                    "angle": 0,
-                    "kind": "CORRIDOR",
-                    "sizeX": 0.5,
-                    "sizeY": 1
+                    "kind": "LABEL",
+                    "label": "R4"
                 },
                 {
-                    "angle": 0,
-                    "kind": "CORRIDOR",
-                    "sizeX": 0.5,
-                    "sizeY": 1
+                    "kind": "LABEL",
+                    "label": "R3"
                 },
                 {
-                    "angle": 0,
-                    "kind": "CORRIDOR",
-                    "sizeX": 0.5,
-                    "sizeY": 1
+                    "kind": "LABEL",
+                    "label": "R2"
                 },
                 {
-                    "angle": 0,
-                    "kind": "CORRIDOR",
-                    "sizeX": 0.5,
-                    "sizeY": 1
-                }],
+                    "kind": "LABEL",
+                    "label": "R1"
+                }
+            ],
             [
                 {
-                    "angle": 0,
                     "host": "e1r13p8",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r12p17",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r11p17",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r10p17",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r9p14",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r8p15",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r7p16",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r6p15",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r5p17",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r4p17",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r3p15",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r2p17",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r1p8",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
-                }],
+                    "kind": "USER"
+                }
+            ],
             [
                 {
-                    "angle": 0,
                     "host": "e1r13p9",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r12p18",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r11p18",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r10p18",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r9p15",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r8p16",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r7p17",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r6p16",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r5p18",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r4p18",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r3p16",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r2p18",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r1p9",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
-                }],
+                    "kind": "USER"
+                }
+            ],
             [
                 {
-                    "angle": 0,
                     "host": "e1r13p10",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r12p19",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r11p19",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r10p19",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r9p16",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r8p17",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r7p18",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r6p17",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r5p19",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r4p19",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r3p17",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r2p19",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r1p10",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
-                }],
+                    "kind": "USER"
+                }
+            ],
             [
                 {
-                    "angle": 0,
                     "host": "e1r13p11",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r12p20",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r11p20",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r10p20",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r9p17",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r8p18",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r7p19",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r6p18",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r5p20",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r4p20",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r3p18",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r2p20",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r1p11",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
-                }],
+                    "kind": "USER"
+                }
+            ],
             [
                 {
-                    "angle": 0,
                     "host": "e1r13p12",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r12p21",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r11p21",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r10p21",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r9p18",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r8p19",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r7p20",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r6p19",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r5p21",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r4p21",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r3p19",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r2p21",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r1p12",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
-                }],
+                    "kind": "USER"
+                }
+            ],
             [
                 {
-                    "angle": 0,
                     "host": "e1r13p13",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r12p22",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r11p22",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r10p22",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r9p19",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r8p20",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r7p21",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r6p20",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r5p22",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r4p22",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r3p20",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r2p22",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r1p13",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
-                }],
+                    "kind": "USER"
+                }
+            ],
             [
                 {
-                    "angle": 0,
                     "host": "e1r13p14",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r12p23",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r11p23",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r10p23",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r9p20",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r8p21",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r7p22",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r6p21",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r5p23",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r4p23",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r3p21",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r2p23",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 },
                 {
-                    "angle": 0,
                     "host": "e1r1p14",
-                    "kind": "USER",
-                    "sizeX": 1,
-                    "sizeY": 1
+                    "kind": "USER"
                 }
             ]
         ]

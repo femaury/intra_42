@@ -1824,7 +1824,9 @@
         <!--SideMenu-->
         <scene sceneID="G8d-wi-O4r">
             <objects>
-                <viewControllerPlaceholder storyboardName="SideMenu" referencedIdentifier="SideMenu" id="i3U-We-se7" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="SideMenu" referencedIdentifier="SideMenu" id="i3U-We-se7" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="ITu-Wp-YCA"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fI2-yS-ibJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4791" y="998"/>
@@ -2299,7 +2301,11 @@
                         <viewLayoutGuide key="safeArea" id="TUY-87-jjS"/>
                     </view>
                     <navigationItem key="navigationItem" title="Campus" id="Mt3-b8-IVQ">
-                        <barButtonItem key="leftBarButtonItem" image="menu" id="487-Mu-YeP"/>
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="487-Mu-YeP">
+                            <connections>
+                                <segue destination="i3U-We-se7" kind="presentation" id="8ZR-3v-hPk"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="dots" id="ATu-3y-fdz"/>
                     </navigationItem>
                     <connections>
@@ -2846,7 +2852,7 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hch-cR-doW"/>
+        <segue reference="8ZR-3v-hPk"/>
         <segue reference="ujx-ft-g6P"/>
         <segue reference="eCy-FN-LUO"/>
         <segue reference="oJI-up-e6L"/>

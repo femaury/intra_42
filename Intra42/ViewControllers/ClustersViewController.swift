@@ -10,16 +10,17 @@ import UIKit
 
 struct ClusterPostInfo: Decodable {
     let kind: String
-    let host: String
+    let host: String?
+    let label: String?
 }
 
 struct ClusterData: Decodable {
-    let position:   Int
-    let campusId:   Int
-    let name:       String
-    let nameShort:  String
+    let position: Int
+    let campusId: Int
+    let name: String
+    let nameShort: String
     let hostPrefix: String
-    let map:        [[ClusterPostInfo]]
+    let map: [[ClusterPostInfo]]
     
     var capacity: Int {
         var count = 0
@@ -72,19 +73,24 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
         
         noClusterView.frame = view.frame
         noClusterLabel.frame = CGRect(x: 0, y: 0, width: view.frame.width - 40, height: 200)
-        noClusterLabel.text = "\n\nSorry, this campus' map is not available yet... Feel free to open an issue on github or contact me to help speed up the process!"
+        noClusterLabel.text = """
+        
+        Sorry, this campus' map is not available yet...
+        
+        Feel free to open an issue on github or contact me to help speed up the process!
+        """
         noClusterLabel.textAlignment = .center
         noClusterLabel.numberOfLines = 0
         noClusterView.addSubview(noClusterLabel)
         noClusterLabel.center = noClusterView.convert(noClusterView.center, from: noClusterLabel)
         view.addSubview(noClusterView)
         
-        
         if let id = API42Manager.shared.userProfile?.mainCampusId, let name = API42Manager.shared.userProfile?.mainCampusName {
             selectedCampus = (id, name)
             title = name
             noClusterLabel.text = name + (noClusterLabel.text ?? "")
             if availableCampusIDs.contains(selectedCampus.id) {
+                noClusterView.isHidden = true
                 addNewClusterView()
             }
         }
@@ -114,10 +120,11 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
     func addNewClusterView() {
         let id = selectedCampus.id
         if getClustersData(forCampus: id) {
-            let clustersView = ClustersView(withData: clustersData)
+            var pos = headerSegment.selectedSegmentIndex
+            if pos < 0 { pos = 0 }
+            let clustersView = ClustersView(withData: clustersData, forPos: pos)
             self.clustersView = clustersView
             clustersView.delegate = self
-            //  clustersView?.clearUserImages()
             
             minZoomScale = UIScreen.main.bounds.width / clustersView.frame.width
             scrollView?.removeFromSuperview()
@@ -183,7 +190,7 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
                 clusters.updateValue(ClusterPerson(id: id, name: name), forKey: host)
             }
             self.clusters = clusters
-            self.clustersView?.setupCluster(withUsers: clusters)
+            self.clustersView?.setupLocations(withUsers: clusters)
             self.setupClusterInfo()
             self.navigationItem.rightBarButtonItems![0].isEnabled = true
             self.activityIndicator.stopAnimating()
@@ -191,8 +198,7 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
     }
     
     func setupClusterInfo() {
-        var index = 0
-        for case let infoView as ClusterInfoView in infoStackView.arrangedSubviews {
+        for case let (index, infoView as ClusterInfoView) in infoStackView.arrangedSubviews.enumerated() {
             let friends = occupancy[index].friends
             let friendText = "\(friends) friend\(friends == 1 ? "" : "s")"
             let users = occupancy[index].users
@@ -206,7 +212,6 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
                 progressBar: infoView.innerProgressBar,
                 percentage: Double(users) / Double(total)
             )
-            index += 1
         }
     }
     
@@ -221,14 +226,14 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
     }
     
     @IBAction func clusterFloorChanged(_ sender: UISegmentedControl) {
-//        clustersView.clearUserImages()
-//        clustersView?.setupCluster(withUsers: <#T##[String : ClusterPerson]#>)
+        clustersView?.clearUserImages()
+        clustersView?.changePosition(to: sender.selectedSegmentIndex)
     }
     
     func refreshClusters() {
         activityIndicator.startAnimating()
         navigationItem.rightBarButtonItems![0].isEnabled = false
-//        clustersView.clearUserImages()
+        clustersView?.clearUserImages()
         loadClusterLocations()
     }
     
@@ -275,9 +280,14 @@ extension ClustersViewController: TablePickerDelegate {
     func selectItem(_ item: TablePickerItem) {
         selectedCampus = item
         title = item.name
-        noClusterView.isHidden = availableCampusIDs.contains(item.id)
-        noClusterLabel.text = item.name
-            + "\n\nSorry, this campus' map is not available yet... Feel free to open an issue on github to help speed up the process!"
+        if availableCampusIDs.contains(item.id) {
+            noClusterView.isHidden = true
+            addNewClusterView()
+        } else {
+            noClusterView.isHidden = false
+            noClusterLabel.text = item.name
+                + "\n\nSorry, this campus' map is not available yet... Feel free to open an issue on github to help speed up the process!"
+        }
     }
 }
 

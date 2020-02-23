@@ -67,7 +67,7 @@ class ClustersViewController: UIViewController {
         
         noClusterView.frame = view.frame
         noClusterLabel.frame = CGRect(x: 0, y: 0, width: view.frame.width - 40, height: 200)
-        noClusterLabel.text = "\n\nSorry, this campus' map is not available yet... Feel free to open an issue on github to help speed up the process!"
+        noClusterLabel.text = "Sorry, this campus' map is not available yet... Feel free to open an issue on github to help speed up the process!"
         noClusterLabel.textAlignment = .center
         noClusterLabel.numberOfLines = 0
         noClusterView.addSubview(noClusterLabel)
@@ -76,9 +76,21 @@ class ClustersViewController: UIViewController {
         
         if let id = API42Manager.shared.userProfile?.mainCampusId, let name = API42Manager.shared.userProfile?.mainCampusName {
             selectedCampus = (id, name)
-            title = name
+            navigationItem.title = name
             noClusterView.isHidden = availableCampusIDs.contains(id)
-            noClusterLabel.text = name + (noClusterLabel.text ?? "")
+        } else {
+            noClusterView.isHidden = true
+            activityIndicator.startAnimating()
+            API42Manager.shared.userProfileCompletionHandler.append({ userProfile in
+                if let id = userProfile?.mainCampusId, let name = userProfile?.mainCampusName {
+                    self.selectedCampus = (id, name)
+                    self.navigationItem.title = name
+                    self.noClusterView.isHidden = self.availableCampusIDs.contains(id)
+                } else {
+                    self.noClusterView.isHidden = false
+                }
+                self.activityIndicator.stopAnimating()
+            })
         }
         
         campusLabel.isHidden = true
@@ -266,10 +278,9 @@ extension ClustersViewController: TablePickerDelegate {
     
     func selectItem(_ item: TablePickerItem) {
         selectedCampus = item
-        title = item.name
+        navigationItem.title = item.name
         noClusterView.isHidden = availableCampusIDs.contains(item.id)
-        noClusterLabel.text = item.name
-            + "\n\nSorry, this campus' map is not available yet... Feel free to open an issue on github to help speed up the process!"
+        noClusterLabel.text = "Sorry, this campus' map is not available yet... Feel free to open an issue on github to help speed up the process!"
     }
 }
 

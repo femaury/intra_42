@@ -11,7 +11,7 @@ import SwiftyJSON
 
 class ClustersViewController: UIViewController {
     
-    private let availableCursusIDs = [1]
+    private let availableCampusIDs = [1]
     let noClusterLabel = UILabel()
     let noClusterView = UIView()
     
@@ -77,7 +77,7 @@ class ClustersViewController: UIViewController {
         if let id = API42Manager.shared.userProfile?.mainCampusId, let name = API42Manager.shared.userProfile?.mainCampusName {
             selectedCampus = (id, name)
             title = name
-            noClusterView.isHidden = availableCursusIDs.contains(id)
+            noClusterView.isHidden = availableCampusIDs.contains(id)
             noClusterLabel.text = name + (noClusterLabel.text ?? "")
         }
         
@@ -213,6 +213,7 @@ class ClustersViewController: UIViewController {
     }
     
     func refreshClusters() {
+        guard availableCampusIDs.contains(selectedCampus.id) else { return }
         activityIndicator.startAnimating()
         navigationItem.rightBarButtonItems![0].isEnabled = false
         clustersView.clearUserImages()
@@ -266,7 +267,7 @@ extension ClustersViewController: TablePickerDelegate {
     func selectItem(_ item: TablePickerItem) {
         selectedCampus = item
         title = item.name
-        noClusterView.isHidden = availableCursusIDs.contains(item.id)
+        noClusterView.isHidden = availableCampusIDs.contains(item.id)
         noClusterLabel.text = item.name
             + "\n\nSorry, this campus' map is not available yet... Feel free to open an issue on github to help speed up the process!"
     }

@@ -25,7 +25,7 @@ class EventDetailController: UIViewController {
     
     @IBOutlet weak var addToCalendarButton: UIBarButtonItem!
     
-    var event: Event!
+    var event: Event?
     weak var delegate: EventsViewController?
     
     override func viewDidLoad() {
@@ -44,22 +44,24 @@ class EventDetailController: UIViewController {
         dateFormatter.dateFormat = "MMMM d, YYYY 'at' HH:mm"
         
         let view = UIView()
-        view.backgroundColor = event.color.pale
+        view.backgroundColor = event?.color.pale
         view.translatesAutoresizingMaskIntoConstraints = false
         topColorView.insertSubview(view, at: 0)
         view.pin(to: topColorView)
 
-        navigationItem.title = event.kind.rawValue.capitalized
-        nameLabel.text = event.name
-        dateLabel.text = dateFormatter.string(from: event.begin)
-        
-        bottomColorView.backgroundColor = event.color.reg
-        durationLabel.text = event.duration
-        locationLabel.text = event.location
-        capacityLabel.text = "\(event.currentUsers)/\(event.maxUsers)"
-        
-        descriptionText.text = event.description
-        descriptionText.textContainerInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        if let event = event {
+            navigationItem.title = event.kind.rawValue.capitalized
+            nameLabel.text = event.name
+            dateLabel.text = dateFormatter.string(from: event.begin)
+            
+            bottomColorView.backgroundColor = event.color.reg
+            durationLabel.text = event.duration
+            locationLabel.text = event.location
+            capacityLabel.text = "\(event.currentUsers)/\(event.maxUsers)"
+            
+            descriptionText.text = event.description
+            descriptionText.textContainerInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -83,11 +85,11 @@ class EventDetailController: UIViewController {
     }
     
     @IBAction func syncCalendar(_ sender: UIBarButtonItem) {
-        guard let myEvents = delegate?.myEvents else { return }
+        guard let myEvents = delegate?.myEvents, let event = event else { return }
         
         let calendarAction = UIAlertController(title: event.name, message: nil, preferredStyle: .actionSheet)
         let subAction = UIAlertAction(title: "Subscribe", style: .default) { [weak self] (_) in
-            guard let id = self?.event.id else { return }
+            guard let id = self?.event?.id else { return }
             API42Manager.shared.modifyEvent(withId: id, method: .post) { [weak self] success in
                 if success, let event = self?.event {
                     guard let delegate = self?.delegate else { return }
@@ -99,8 +101,9 @@ class EventDetailController: UIViewController {
                 }
             }
         }
+        
         let unsubAction = UIAlertAction(title: "Unsubscribe", style: .destructive) { [weak self] (_) in
-            guard let id = self?.event.id else { return }
+            guard let id = self?.event?.id else { return }
             API42Manager.shared.modifyEvent(withId: id, method: .delete) { [weak self] success in
                 if success, let event = self?.event {
                     guard let delegate = self?.delegate else { return }
@@ -114,26 +117,62 @@ class EventDetailController: UIViewController {
                 }
             }
         }
-        let syncAction = UIAlertAction(title: "Add to calendar", style: .default) { (_) in
+        
+        let syncAction = UIAlertAction(title: "Add to calendar", style: .default) { [weak self] (_) in
+            func presentAlert(title: String, message: String, preferredStyle style: UIAlertController.Style) {
+                let alert = UIAlertController(
+                    title: title,
+                    message: message,
+                    preferredStyle: style
+                )
+                alert.addAction(UIAlertAction(title: "Close", style: .default, handler: nil))
+                DispatchQueue.main.async {
+                    self?.present(alert, animated: true, completion: nil)
+                }
+            }
+            
             let eventStore = EKEventStore()
             eventStore.requestAccess(to: .event) { (granted, error) in
                 
                 if (granted) && (error == nil) {
                     let newEvent = EKEvent(eventStore: eventStore)
                     
-                    newEvent.title = self.event.name
-                    newEvent.startDate = self.event.begin
-                    newEvent.endDate = self.event.end
-                    newEvent.notes = "\(self.event.kind.rawValue.capitalized) event at 42"
-                    newEvent.structuredLocation = EKStructuredLocation(title: self.event.location)
+                    newEvent.title = event.name
+                    newEvent.startDate = event.begin
+                    newEvent.endDate = event.end
+                    newEvent.notes = "\(event.kind.rawValue.capitalized) event at 42"
+                    newEvent.structuredLocation = EKStructuredLocation(title: event.location)
                     newEvent.calendar = eventStore.defaultCalendarForNewEvents
                     let dayBeforeAlarm = EKAlarm(relativeOffset: -3600 * 24)
                     newEvent.addAlarm(dayBeforeAlarm)
-                    do {
-                        try eventStore.save(newEvent, span: .thisEvent)
-                        self.addToCalendarButton.isEnabled = false
-                    } catch let error as NSError {
-                        print("Failed to save event: \(error)")
+                    
+                    let predicate = eventStore.predicateForEvents(withStart: event.begin, end: event.end, calendars: nil)
+                    let existingEvents = eventStore.events(matching: predicate)
+
+                    let eventAlreadyExists = existingEvents.contains {
+                        $0.title == event.name && $0.startDate == event.begin && $0.endDate == event.end
+                    }
+
+                    if eventAlreadyExists {
+                        presentAlert(
+                            title: "Event Already Exists",
+                            message: "You have already saved this event!",
+                            preferredStyle: .alert
+                        )
+                    } else {
+                        do {
+                            try eventStore.save(newEvent, span: .thisEvent)
+                            DispatchQueue.main.async {
+                                self?.notifySubscription(with: "Added!")
+                            }
+                        } catch let error as NSError {
+                            print("Failed to save event: \(error)")
+                            presentAlert(
+                                title: "Failed to saved event.",
+                                message: "There was an error saving this event to your calendar...",
+                                preferredStyle: .alert
+                            )
+                        }
                     }
                 } else {
                     if let err = error {
@@ -141,15 +180,22 @@ class EventDetailController: UIViewController {
                     } else {
                         print("Error: Event store access not granted")
                     }
+                    presentAlert(
+                        title: "Failed to access Calendar.",
+                        message: "You need to give Intra 42 access to your calendar to save events",
+                        preferredStyle: .alert
+                    )
                 }
             }
         }
+        
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
         if myEvents.contains(event) {
             calendarAction.addAction(unsubAction)
         } else {
             calendarAction.addAction(subAction)
         }
+        
         calendarAction.addAction(syncAction)
         calendarAction.addAction(cancelAction)
         present(calendarAction, animated: true)

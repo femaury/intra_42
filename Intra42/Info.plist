@@ -103,7 +103,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCalendarsUsageDescription</key>
-	<string>$(PRODUCT_NAME) calendar events</string>
+	<string>$(PRODUCT_NAME) needs access to your calendar in order to save events.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

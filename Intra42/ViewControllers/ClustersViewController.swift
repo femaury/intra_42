@@ -39,7 +39,6 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
     let activityIndicator = UIActivityIndicatorView(style: .gray)
     let scrollViewContent = UIView()
     
-//    var scrollView: UIScrollView?
     var clustersData: [ClusterData] = []
     var clustersView: ClustersView?
     var clusters: [String: ClusterPerson] = [:]
@@ -52,7 +51,6 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
     
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
-//    @IBOutlet weak var scrollViewContent: UIView!
     @IBOutlet weak var infoStackView: UIStackView!
     // Array corresponding to infoStackView subviews containing user and friend count of cluster
     var occupancy: [(users: Int, friends: Int)] = []
@@ -179,6 +177,7 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
                         headerSegment.insertSegment(withTitle: cluster.nameShort, at: index, animated: false)
                         occupancy.append((0, 0))
                     }
+                    headerSegment.selectedSegmentIndex = 0
                     return true
                 } catch let error {
                     print("ERROR: json parsing - \(error.localizedDescription)")

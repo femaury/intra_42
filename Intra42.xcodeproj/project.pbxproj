@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		57C59F236D19DC9927C4603D /* Pods_Intra42.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48725963EC9F9A653537E021 /* Pods_Intra42.framework */; };
+		D022341A2416D3BD00F5CE41 /* cluster_map_campus_21.json in Resources */ = {isa = PBXBuildFile; fileRef = D02234122416D3BD00F5CE41 /* cluster_map_campus_21.json */; };
+		D022341B2416D3BD00F5CE41 /* cluster_map_campus_5.json in Resources */ = {isa = PBXBuildFile; fileRef = D02234132416D3BD00F5CE41 /* cluster_map_campus_5.json */; };
+		D022341C2416D3BD00F5CE41 /* cluster_map_campus_7.json in Resources */ = {isa = PBXBuildFile; fileRef = D02234142416D3BD00F5CE41 /* cluster_map_campus_7.json */; };
+		D022341D2416D3BD00F5CE41 /* cluster_map_campus_9.json in Resources */ = {isa = PBXBuildFile; fileRef = D02234152416D3BD00F5CE41 /* cluster_map_campus_9.json */; };
+		D022341E2416D3BD00F5CE41 /* cluster_map_campus_16.json in Resources */ = {isa = PBXBuildFile; fileRef = D02234162416D3BD00F5CE41 /* cluster_map_campus_16.json */; };
+		D022341F2416D3BD00F5CE41 /* cluster_map_campus_17.json in Resources */ = {isa = PBXBuildFile; fileRef = D02234172416D3BD00F5CE41 /* cluster_map_campus_17.json */; };
+		D02234202416D3BD00F5CE41 /* cluster_map_campus_12.json in Resources */ = {isa = PBXBuildFile; fileRef = D02234182416D3BD00F5CE41 /* cluster_map_campus_12.json */; };
+		D02234212416D3BD00F5CE41 /* cluster_map_campus_8.json in Resources */ = {isa = PBXBuildFile; fileRef = D02234192416D3BD00F5CE41 /* cluster_map_campus_8.json */; };
+		D02234232416D77300F5CE41 /* cluster_map_campus_1.json in Resources */ = {isa = PBXBuildFile; fileRef = D02234222416D77300F5CE41 /* cluster_map_campus_1.json */; };
 		D04122C823C4D48A004D0A5E /* PeerFinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04122C723C4D48A004D0A5E /* PeerFinderViewController.swift */; };
 		D04122CA23C4E353004D0A5E /* SearchButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04122C923C4E353004D0A5E /* SearchButtonCell.swift */; };
 		D04122CC23C4EA79004D0A5E /* PeerListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04122CB23C4EA79004D0A5E /* PeerListController.swift */; };
@@ -25,7 +34,6 @@
 		D0F4AE6923FD68CF003DFB81 /* ClusterInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0F4AE6823FD68CF003DFB81 /* ClusterInfo.xib */; };
 		D0F4AE6B23FD6BEE003DFB81 /* ClusterInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F4AE6A23FD6BEE003DFB81 /* ClusterInfoView.swift */; };
 		D0F4AE6D23FD77BB003DFB81 /* ClustersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F4AE6C23FD77BB003DFB81 /* ClustersView.swift */; };
-		D0F4AE6F23FD7C4F003DFB81 /* cluster_map_campus_1.json in Resources */ = {isa = PBXBuildFile; fileRef = D0F4AE6E23FD7C4F003DFB81 /* cluster_map_campus_1.json */; };
 		DC0D7B2A2230466A00A30B9F /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DC0D7B282230466A00A30B9F /* CoreData.xcdatamodeld */; };
 		DC0D7B2E223059B300A30B9F /* FriendDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0D7B2D223059B300A30B9F /* FriendDataManager.swift */; };
 		DC0D7B3022305DDC00A30B9F /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0D7B2F22305DDC00A30B9F /* CoreDataManager.swift */; };
@@ -137,6 +145,15 @@
 		917A90B6D439C0D11C718DD0 /* Pods_Swifty_Companion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swifty_Companion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE01040A1B46C0C1CFDBEFA1 /* Pods-Swifty Companion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swifty Companion.debug.xcconfig"; path = "Target Support Files/Pods-Swifty Companion/Pods-Swifty Companion.debug.xcconfig"; sourceTree = "<group>"; };
 		BEC019405A130A92CB98302E /* Pods-Intra42.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Intra42.debug.xcconfig"; path = "Target Support Files/Pods-Intra42/Pods-Intra42.debug.xcconfig"; sourceTree = "<group>"; };
+		D02234122416D3BD00F5CE41 /* cluster_map_campus_21.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cluster_map_campus_21.json; sourceTree = "<group>"; };
+		D02234132416D3BD00F5CE41 /* cluster_map_campus_5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cluster_map_campus_5.json; sourceTree = "<group>"; };
+		D02234142416D3BD00F5CE41 /* cluster_map_campus_7.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cluster_map_campus_7.json; sourceTree = "<group>"; };
+		D02234152416D3BD00F5CE41 /* cluster_map_campus_9.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cluster_map_campus_9.json; sourceTree = "<group>"; };
+		D02234162416D3BD00F5CE41 /* cluster_map_campus_16.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cluster_map_campus_16.json; sourceTree = "<group>"; };
+		D02234172416D3BD00F5CE41 /* cluster_map_campus_17.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cluster_map_campus_17.json; sourceTree = "<group>"; };
+		D02234182416D3BD00F5CE41 /* cluster_map_campus_12.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cluster_map_campus_12.json; sourceTree = "<group>"; };
+		D02234192416D3BD00F5CE41 /* cluster_map_campus_8.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cluster_map_campus_8.json; sourceTree = "<group>"; };
+		D02234222416D77300F5CE41 /* cluster_map_campus_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cluster_map_campus_1.json; sourceTree = "<group>"; };
 		D04122C723C4D48A004D0A5E /* PeerFinderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerFinderViewController.swift; sourceTree = "<group>"; };
 		D04122C923C4E353004D0A5E /* SearchButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButtonCell.swift; sourceTree = "<group>"; };
 		D04122CB23C4EA79004D0A5E /* PeerListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerListController.swift; sourceTree = "<group>"; };
@@ -154,7 +171,6 @@
 		D0F4AE6823FD68CF003DFB81 /* ClusterInfo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClusterInfo.xib; sourceTree = "<group>"; };
 		D0F4AE6A23FD6BEE003DFB81 /* ClusterInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusterInfoView.swift; sourceTree = "<group>"; };
 		D0F4AE6C23FD77BB003DFB81 /* ClustersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClustersView.swift; sourceTree = "<group>"; };
-		D0F4AE6E23FD7C4F003DFB81 /* cluster_map_campus_1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cluster_map_campus_1.json; sourceTree = "<group>"; };
 		DC0D7B292230466A00A30B9F /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		DC0D7B2D223059B300A30B9F /* FriendDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDataManager.swift; sourceTree = "<group>"; };
 		DC0D7B2F22305DDC00A30B9F /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
@@ -323,7 +339,15 @@
 		D0F4AE7023FD8373003DFB81 /* JSON Data */ = {
 			isa = PBXGroup;
 			children = (
-				D0F4AE6E23FD7C4F003DFB81 /* cluster_map_campus_1.json */,
+				D02234222416D77300F5CE41 /* cluster_map_campus_1.json */,
+				D02234132416D3BD00F5CE41 /* cluster_map_campus_5.json */,
+				D02234142416D3BD00F5CE41 /* cluster_map_campus_7.json */,
+				D02234192416D3BD00F5CE41 /* cluster_map_campus_8.json */,
+				D02234152416D3BD00F5CE41 /* cluster_map_campus_9.json */,
+				D02234182416D3BD00F5CE41 /* cluster_map_campus_12.json */,
+				D02234162416D3BD00F5CE41 /* cluster_map_campus_16.json */,
+				D02234172416D3BD00F5CE41 /* cluster_map_campus_17.json */,
+				D02234122416D3BD00F5CE41 /* cluster_map_campus_21.json */,
 			);
 			path = "JSON Data";
 			sourceTree = "<group>";
@@ -730,25 +754,33 @@
 				DC21EB9722C92EE200E1288B /* Coalition.xib in Resources */,
 				DC41485422D0B50A0005FCB1 /* icon_ass@2x.png in Resources */,
 				DC1988CE2239567B009E3A55 /* Cluster.xib in Resources */,
+				D02234212416D3BD00F5CE41 /* cluster_map_campus_8.json in Resources */,
+				D02234202416D3BD00F5CE41 /* cluster_map_campus_12.json in Resources */,
 				DCCE05A8222994EB00906ECD /* Main.storyboard in Resources */,
 				DC41485A22D0B50A0005FCB1 /* icon_fed@3x.png in Resources */,
 				DC41485922D0B50A0005FCB1 /* icon_fed@2x.png in Resources */,
 				DC41485322D0B50A0005FCB1 /* icon_all@2x.png in Resources */,
 				DCF70AFC229AE7B200B29DCC /* ProjectEvaluation.xib in Resources */,
+				D022341C2416D3BD00F5CE41 /* cluster_map_campus_7.json in Resources */,
 				DC41485622D0B50A0005FCB1 /* icon_all@3x.png in Resources */,
+				D022341D2416D3BD00F5CE41 /* cluster_map_campus_9.json in Resources */,
 				DC49298422F73166004024C3 /* icon_default@3x.png in Resources */,
 				DCCE0584222591F500906ECD /* LaunchScreen.storyboard in Resources */,
 				DCCE0581222591F500906ECD /* Assets.xcassets in Resources */,
+				D022341B2416D3BD00F5CE41 /* cluster_map_campus_5.json in Resources */,
 				DC41485722D0B50A0005FCB1 /* icon_ord@2x.png in Resources */,
+				D02234232416D77300F5CE41 /* cluster_map_campus_1.json in Resources */,
 				DC41485522D0B50A0005FCB1 /* icon_ord@3x.png in Resources */,
+				D022341E2416D3BD00F5CE41 /* cluster_map_campus_16.json in Resources */,
 				D07B28F623DF227C00609E2D /* SegmentHeader.xib in Resources */,
 				DC1988CC22395588009E3A55 /* ClusterPost.xib in Resources */,
-				D0F4AE6F23FD7C4F003DFB81 /* cluster_map_campus_1.json in Resources */,
 				DC49298022F724CB004024C3 /* SideMenu.storyboard in Resources */,
 				DC41485822D0B50A0005FCB1 /* icon_ass@3x.png in Resources */,
 				DC49298222F7315E004024C3 /* icon_default@2x.png in Resources */,
+				D022341F2416D3BD00F5CE41 /* cluster_map_campus_17.json in Resources */,
 				DC8999452247C23E00F47EEF /* Default-568h@2x.png in Resources */,
 				D0F4AE6923FD68CF003DFB81 /* ClusterInfo.xib in Resources */,
+				D022341A2416D3BD00F5CE41 /* cluster_map_campus_21.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

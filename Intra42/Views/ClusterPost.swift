@@ -34,20 +34,6 @@ class ClusterPost: UIView, UserProfileCell {
     
     private func commonInit() {
         Bundle.main.loadNibNamed("ClusterPost", owner: self, options: nil)
-        NSLayoutConstraint(item: self,
-                           attribute: .width,
-                           relatedBy: .equal,
-                           toItem: nil,
-                           attribute: .width,
-                           multiplier: 1.0,
-                           constant: 35).isActive = true
-        NSLayoutConstraint(item: self,
-                           attribute: .height,
-                           relatedBy: .equal,
-                           toItem: nil,
-                           attribute: .height,
-                           multiplier: 1.0,
-                           constant: 55).isActive = true
         contentView.fixInView(self)
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showUser))
@@ -56,6 +42,7 @@ class ClusterPost: UIView, UserProfileCell {
         textLabel.frame = frame
         textLabel.isHidden = true
         textLabel.textAlignment = .center
+        textLabel.textColor = .darkGray
         addSubview(textLabel)
     }
 
@@ -91,16 +78,13 @@ class ClusterPost: UIView, UserProfileCell {
     func setAsLabel(withText text: String?) {
         textLabel.text = text
         textLabel.isHidden = false
+        imageView.isHidden = true
     }
     
     func setAsWall() {
         textLabel.isHidden = true
         numberLabel.isHidden = true
-        if #available(iOS 13.0, *) {
-            imageView.backgroundColor = .label
-        } else {
-            imageView.backgroundColor = .black
-        }
+        imageView.backgroundColor = UIColor(named: "ClusterWall")
         imageView.image = nil
     }
 }

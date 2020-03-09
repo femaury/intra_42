@@ -10,7 +10,7 @@ import UIKit
 
 class ClusterInfoView: UIView {
 
-    @IBOutlet var contentView: ClusterInfoView!
+    @IBOutlet var contentView: UIView!
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var friendsLabel: UILabel!

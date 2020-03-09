@@ -21,17 +21,31 @@ class ClustersView: UIView {
     var locations: [String: ClusterPerson]?
     var data: [ClusterData] = []
     
-    init(withData data: [ClusterData], forPos pos: Int) {
-        super.init(frame: CGRect(x: 0, y: 0, width: 400, height: 55))
+    let stackPosX: UIStackView
+    
+    init(withData data: [ClusterData], forPos pos: Int, width: Int, height: Int) {
+        let frame = CGRect(x: 0, y: 0, width: width, height: height)
+        stackPosX = UIStackView(frame: frame)
+        stackPosX.axis = .horizontal
+        stackPosX.alignment = .fill
+        stackPosX.distribution = .fillEqually
+        super.init(frame: frame)
         self.data = data
+        addSubview(stackPosX)
         _setupCluster(forPos: pos)
     }
     
     override init(frame: CGRect) {
+        stackPosX = UIStackView(frame: frame)
+        stackPosX.axis = .horizontal
+        stackPosX.alignment = .fill
+        stackPosX.distribution = .fillEqually
         super.init(frame: frame)
+        addSubview(stackPosX)
     }
     
     required init?(coder aDecoder: NSCoder) {
+        stackPosX = UIStackView()
         super.init(coder: aDecoder)
     }
     
@@ -42,18 +56,19 @@ class ClustersView: UIView {
     }
     
     private func _setupCluster(forPos pos: Int) {
-        for sub in subviews {
+        for sub in stackPosX.arrangedSubviews {
             sub.removeFromSuperview()
         }
         guard data.count > pos else { return }
-        let stackPosX = UIStackView()
-        stackPosX.axis = .horizontal
         
         let cluster = data[pos]
         let map = cluster.map
         for column in map {
             let stackPosY = UIStackView()
             stackPosY.axis = .vertical
+            stackPosY.alignment = .fill
+            stackPosY.distribution = .fillEqually
+            
             for post in column {
                 let view = ClusterPost()
                 view.isUserInteractionEnabled = false
@@ -73,7 +88,9 @@ class ClustersView: UIView {
             }
             stackPosX.addArrangedSubview(stackPosY)
         }
-        addSubview(stackPosX)
+        
+        setNeedsLayout()
+        layoutIfNeeded()
     }
     
     func changePosition(to pos: Int) {
@@ -88,7 +105,6 @@ class ClustersView: UIView {
     }
     
     func clearUserImages() {
-        guard let stackPosX = subviews.last as? UIStackView else { return }
         for case let stackPosY as UIStackView in stackPosX.arrangedSubviews {
             for case let post as ClusterPost in stackPosY.arrangedSubviews {
                 post.imageView.image = nil

@@ -37,8 +37,9 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
     let noClusterLabel = UILabel()
     let noClusterView = UIView()
     let activityIndicator = UIActivityIndicatorView(style: .gray)
+    let scrollViewContent = UIView()
     
-    var scrollView: UIScrollView?
+//    var scrollView: UIScrollView?
     var clustersData: [ClusterData] = []
     var clustersView: ClustersView?
     var clusters: [String: ClusterPerson] = [:]
@@ -50,6 +51,8 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
     @IBOutlet weak var headerSegment: UISegmentedControl!
     
     @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var scrollView: UIScrollView!
+//    @IBOutlet weak var scrollViewContent: UIView!
     @IBOutlet weak var infoStackView: UIStackView!
     // Array corresponding to infoStackView subviews containing user and friend count of cluster
     var occupancy: [(users: Int, friends: Int)] = []
@@ -120,22 +123,38 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
     func addNewClusterView() {
         let id = selectedCampus.id
         if getClustersData(forCampus: id) {
+            for sub in scrollViewContent.subviews {
+                sub.removeFromSuperview()
+            }
+            for sub in scrollView.subviews {
+                sub.removeFromSuperview()
+            }
+            
             var pos = headerSegment.selectedSegmentIndex
             if pos < 0 { pos = 0 }
-            let clustersView = ClustersView(withData: clustersData, forPos: pos)
+            
+            let data = clustersData[pos]
+            var highestCol = 0
+            for col in data.map {
+                highestCol = col.count > highestCol ? col.count : highestCol
+            }
+            let height = highestCol * 60
+            let width = data.map.count * 40
+            
+            let clustersView = ClustersView(withData: clustersData, forPos: pos, width: width, height: height)
             self.clustersView = clustersView
             clustersView.delegate = self
             
-            minZoomScale = UIScreen.main.bounds.width / clustersView.frame.width
-            scrollView?.removeFromSuperview()
-            let newScrollView = UIScrollView()
-            scrollView = newScrollView
-            newScrollView.addSubview(clustersView)
-            newScrollView.contentSize = clustersView.frame.size
-            newScrollView.minimumZoomScale = minZoomScale
-            newScrollView.maximumZoomScale = 5.0
-            newScrollView.zoomScale = minZoomScale
-            contentView.insertSubview(newScrollView, at: 0)
+            minZoomScale = UIScreen.main.bounds.width / CGFloat(width)
+            
+            scrollViewContent.frame = clustersView.frame
+            scrollViewContent.addSubview(clustersView)
+            
+            scrollView.contentSize = scrollViewContent.frame.size
+            scrollView.addSubview(scrollViewContent)
+            scrollView.minimumZoomScale = minZoomScale
+            scrollView.maximumZoomScale = 4.0
+            scrollView.zoomScale = minZoomScale
             
             activityIndicator.hidesWhenStopped = true
             activityIndicator.startAnimating()
@@ -198,25 +217,30 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
     }
     
     func setupClusterInfo() {
-        for case let (index, infoView as ClusterInfoView) in infoStackView.arrangedSubviews.enumerated() {
+        for sub in infoStackView.arrangedSubviews {
+            sub.removeFromSuperview()
+        }
+        for case let (index, cluster) in clustersData.enumerated() {
+            let infoView = ClusterInfoView()
             let friends = occupancy[index].friends
             let friendText = "\(friends) friend\(friends == 1 ? "" : "s")"
             let users = occupancy[index].users
-            let total = clustersData[index].capacity
+            let total = cluster.capacity
             let progText = "\(users)/\(total)"
             infoView.friendsLabel.text = friendText
-            infoView.nameLabel.text = clustersData[index].name
+            infoView.nameLabel.text = cluster.name
             infoView.progressLabel.text = progText
+            let progress = (Double(users) / Double(total) * Double(infoStackView.frame.width))
             setClusterOccupancy(
                 backBar: infoView.outerProgressBar,
                 progressBar: infoView.innerProgressBar,
-                percentage: Double(users) / Double(total)
+                progress: progress
             )
+            infoStackView.addArrangedSubview(infoView)
         }
     }
     
-    func setClusterOccupancy(backBar: UIView, progressBar: UIView, percentage: Double) {
-        let progress = percentage * Double(backBar.frame.width)
+    func setClusterOccupancy(backBar: UIView, progressBar: UIView, progress: Double) {
         progressBar.frame = CGRect(x: 0, y: 0, width: progress, height: Double(backBar.frame.height))
         progressBar.roundCorners(corners: [.topLeft, .bottomLeft], radius: 5.0)
         progressBar.backgroundColor = API42Manager.shared.preferedPrimaryColor
@@ -296,7 +320,7 @@ extension ClustersViewController: TablePickerDelegate {
 extension ClustersViewController: UIScrollViewDelegate {
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        return clustersView
+        return scrollViewContent
     }
     
     func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) {

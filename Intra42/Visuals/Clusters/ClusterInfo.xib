@@ -61,15 +61,15 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="WA8-Pj-Qgo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="9gh-58-AC8"/>
                 <constraint firstAttribute="bottom" secondItem="KiA-No-ZlH" secondAttribute="bottom" id="SRo-Mc-w8z"/>
+                <constraint firstItem="KiA-No-ZlH" firstAttribute="top" secondItem="WA8-Pj-Qgo" secondAttribute="bottom" constant="3" id="bcj-bB-GMt"/>
                 <constraint firstItem="KiA-No-ZlH" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="dYm-Js-Fue"/>
+                <constraint firstItem="WA8-Pj-Qgo" firstAttribute="leading" secondItem="KiA-No-ZlH" secondAttribute="leading" id="gbb-tM-ldH"/>
                 <constraint firstItem="Ibo-kb-kXC" firstAttribute="leading" secondItem="WA8-Pj-Qgo" secondAttribute="trailing" constant="8" id="hSA-bC-6nq"/>
                 <constraint firstItem="Ibo-kb-kXC" firstAttribute="firstBaseline" secondItem="WA8-Pj-Qgo" secondAttribute="firstBaseline" id="hxG-DF-fYk"/>
                 <constraint firstAttribute="trailing" secondItem="KiA-No-ZlH" secondAttribute="trailing" id="izD-KL-D20"/>
-                <constraint firstItem="WA8-Pj-Qgo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="xmb-Cc-qgs"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>

@@ -4,6 +4,7 @@
         "comment": "Cath├®drale",
         "height": 9,
         "hostPrefix": "z1",
+        "hostSuffix": ".le-101.fr",
         "isReadyToPublish": true,
         "map": [
             [
@@ -441,6 +442,7 @@
         "comment": "",
         "height": 7,
         "hostPrefix": "z2",
+        "hostSuffix": ".le-101.fr",
         "isReadyToPublish": true,
         "map": [
             [
@@ -633,6 +635,7 @@
         "comment": "",
         "height": 8,
         "hostPrefix": "z4",
+        "hostSuffix": ".le-101.fr",
         "isReadyToPublish": true,
         "map": [
             [

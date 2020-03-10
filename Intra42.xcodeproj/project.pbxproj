@@ -17,6 +17,7 @@
 		D02234202416D3BD00F5CE41 /* cluster_map_campus_12.json in Resources */ = {isa = PBXBuildFile; fileRef = D02234182416D3BD00F5CE41 /* cluster_map_campus_12.json */; };
 		D02234212416D3BD00F5CE41 /* cluster_map_campus_8.json in Resources */ = {isa = PBXBuildFile; fileRef = D02234192416D3BD00F5CE41 /* cluster_map_campus_8.json */; };
 		D02234232416D77300F5CE41 /* cluster_map_campus_1.json in Resources */ = {isa = PBXBuildFile; fileRef = D02234222416D77300F5CE41 /* cluster_map_campus_1.json */; };
+		D02234252417E16400F5CE41 /* Clusters.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02234242417E16400F5CE41 /* Clusters.swift */; };
 		D04122C823C4D48A004D0A5E /* PeerFinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04122C723C4D48A004D0A5E /* PeerFinderViewController.swift */; };
 		D04122CA23C4E353004D0A5E /* SearchButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04122C923C4E353004D0A5E /* SearchButtonCell.swift */; };
 		D04122CC23C4EA79004D0A5E /* PeerListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04122CB23C4EA79004D0A5E /* PeerListController.swift */; };
@@ -46,7 +47,6 @@
 		DC1988C02236970F009E3A55 /* StringHTMLToAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1988BF2236970F009E3A55 /* StringHTMLToAttributedString.swift */; };
 		DC1988C222369846009E3A55 /* EventDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1988C122369846009E3A55 /* EventDetailController.swift */; };
 		DC1988C42236BCFE009E3A55 /* UIViewPinBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1988C32236BCFE009E3A55 /* UIViewPinBackground.swift */; };
-		DC1988C82236FA53009E3A55 /* ClustersViewParis.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1988C72236FA53009E3A55 /* ClustersViewParis.swift */; };
 		DC1988CC22395588009E3A55 /* ClusterPost.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC1988CB22395588009E3A55 /* ClusterPost.xib */; };
 		DC1988CE2239567B009E3A55 /* Cluster.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC1988CD2239567B009E3A55 /* Cluster.xib */; };
 		DC1988D02239680D009E3A55 /* ClusterPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1988CF2239680D009E3A55 /* ClusterPost.swift */; };
@@ -112,7 +112,6 @@
 		DCCE0598222847CC00906ECD /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCE0597222847CC00906ECD /* UserProfile.swift */; };
 		DCCE059A22284B0000906ECD /* UIColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCE059922284B0000906ECD /* UIColorHex.swift */; };
 		DCCE059C22286EC800906ECD /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCE059B22286EC800906ECD /* Colors.swift */; };
-		DCCE05A222296DC100906ECD /* OldClustersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCE05A122296DC100906ECD /* OldClustersViewController.swift */; };
 		DCCE05A4222971AB00906ECD /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCE05A3222971AB00906ECD /* EventsViewController.swift */; };
 		DCCE05A62229822500906ECD /* UIImageViewFromURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCE05A52229822500906ECD /* UIImageViewFromURL.swift */; };
 		DCCE05A8222994EB00906ECD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCCE05A7222994EB00906ECD /* Main.storyboard */; };
@@ -154,6 +153,7 @@
 		D02234182416D3BD00F5CE41 /* cluster_map_campus_12.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cluster_map_campus_12.json; sourceTree = "<group>"; };
 		D02234192416D3BD00F5CE41 /* cluster_map_campus_8.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cluster_map_campus_8.json; sourceTree = "<group>"; };
 		D02234222416D77300F5CE41 /* cluster_map_campus_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cluster_map_campus_1.json; sourceTree = "<group>"; };
+		D02234242417E16400F5CE41 /* Clusters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clusters.swift; sourceTree = "<group>"; };
 		D04122C723C4D48A004D0A5E /* PeerFinderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerFinderViewController.swift; sourceTree = "<group>"; };
 		D04122C923C4E353004D0A5E /* SearchButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButtonCell.swift; sourceTree = "<group>"; };
 		D04122CB23C4EA79004D0A5E /* PeerListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerListController.swift; sourceTree = "<group>"; };
@@ -183,7 +183,6 @@
 		DC1988BF2236970F009E3A55 /* StringHTMLToAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringHTMLToAttributedString.swift; sourceTree = "<group>"; };
 		DC1988C122369846009E3A55 /* EventDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailController.swift; sourceTree = "<group>"; };
 		DC1988C32236BCFE009E3A55 /* UIViewPinBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewPinBackground.swift; sourceTree = "<group>"; };
-		DC1988C72236FA53009E3A55 /* ClustersViewParis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClustersViewParis.swift; sourceTree = "<group>"; };
 		DC1988CB22395588009E3A55 /* ClusterPost.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClusterPost.xib; sourceTree = "<group>"; };
 		DC1988CD2239567B009E3A55 /* Cluster.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Cluster.xib; sourceTree = "<group>"; };
 		DC1988CF2239680D009E3A55 /* ClusterPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusterPost.swift; sourceTree = "<group>"; };
@@ -252,7 +251,6 @@
 		DCCE0597222847CC00906ECD /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		DCCE059922284B0000906ECD /* UIColorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorHex.swift; sourceTree = "<group>"; };
 		DCCE059B22286EC800906ECD /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		DCCE05A122296DC100906ECD /* OldClustersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldClustersViewController.swift; sourceTree = "<group>"; };
 		DCCE05A3222971AB00906ECD /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		DCCE05A52229822500906ECD /* UIImageViewFromURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewFromURL.swift; sourceTree = "<group>"; };
 		DCCE05A7222994EB00906ECD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -454,7 +452,6 @@
 			children = (
 				DC21EB9822C92FAA00E1288B /* CoalitionView.swift */,
 				D0F4AE6C23FD77BB003DFB81 /* ClustersView.swift */,
-				DC1988C72236FA53009E3A55 /* ClustersViewParis.swift */,
 				D0F4AE6A23FD6BEE003DFB81 /* ClusterInfoView.swift */,
 				DC1988CF2239680D009E3A55 /* ClusterPost.swift */,
 				DC4F1DF623944B66000F4BF9 /* HolyGraphView.swift */,
@@ -575,7 +572,6 @@
 				DC955DFF222CBBD6003B70BC /* SearchResultsController.swift */,
 				DCCE05932228450A00906ECD /* CorrectionsViewController.swift */,
 				DCCE05A3222971AB00906ECD /* EventsViewController.swift */,
-				DCCE05A122296DC100906ECD /* OldClustersViewController.swift */,
 				D0F4AE6523FD6802003DFB81 /* ClustersViewController.swift */,
 				D0C21B6523F54E9700A7C318 /* TablePickerController.swift */,
 				DCCE05952228451500906ECD /* FriendsViewController.swift */,
@@ -650,6 +646,7 @@
 				DCF1A4DF2299781900AA2653 /* Friend.swift */,
 				DC27FD9622AE66EE00E3E560 /* ProjectTeam.swift */,
 				D09FA79823CF72E200B0CA87 /* ProjectUser.swift */,
+				D02234242417E16400F5CE41 /* Clusters.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -932,7 +929,6 @@
 				DC4F1DF523944108000F4BF9 /* HolyGraph.swift in Sources */,
 				DCCE05902227010E00906ECD /* HomeViewController.swift in Sources */,
 				DCF1A4D8229976A500AA2653 /* AchievementData.swift in Sources */,
-				DCCE05A222296DC100906ECD /* OldClustersViewController.swift in Sources */,
 				DC955DF0222C5192003B70BC /* DateTimeInterval.swift in Sources */,
 				D0C21B6623F54E9700A7C318 /* TablePickerController.swift in Sources */,
 				DCF1A4E02299781900AA2653 /* Friend.swift in Sources */,
@@ -962,6 +958,7 @@
 				DCF1A4DA2299777100AA2653 /* UIViewFixInView.swift in Sources */,
 				DC1988C42236BCFE009E3A55 /* UIViewPinBackground.swift in Sources */,
 				DCF1A4F0229995B700AA2653 /* Locations.swift in Sources */,
+				D02234252417E16400F5CE41 /* Clusters.swift in Sources */,
 				DC1988C222369846009E3A55 /* EventDetailController.swift in Sources */,
 				DCF1A4DC229977C400AA2653 /* Project.swift in Sources */,
 				DCF1A4F2229995DA00AA2653 /* Users.swift in Sources */,
@@ -985,7 +982,6 @@
 				DCABB86B22C12C1F00711C4A /* AboutViewController.swift in Sources */,
 				DC41485C22D0BED70005FCB1 /* SettingsViewController.swift in Sources */,
 				DC89993622451EB200F47EEF /* UserProfileDataSource.swift in Sources */,
-				DC1988C82236FA53009E3A55 /* ClustersViewParis.swift in Sources */,
 				DCCE05942228450B00906ECD /* CorrectionsViewController.swift in Sources */,
 				DC0D7B2A2230466A00A30B9F /* CoreData.xcdatamodeld in Sources */,
 				DCF1A4EA2299951900AA2653 /* Events.swift in Sources */,

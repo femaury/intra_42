@@ -17,11 +17,14 @@ protocol ClustersViewDelegate: class {
 }
 
 class ClustersView: UIView {
+    let stackPosX: UIStackView
+    
     weak var delegate: ClustersViewDelegate?
     var locations: [String: ClusterPerson]?
     var data: [ClusterData] = []
-    
-    let stackPosX: UIStackView
+    var userImages: [Int: UIImage] = [:]
+    var imageTasks: [URLSessionDataTask] = []
+    var currentPos: Int = 0
     
     init(withData data: [ClusterData], forPos pos: Int, width: Int, height: Int) {
         let frame = CGRect(x: 0, y: 0, width: width, height: height)
@@ -60,6 +63,7 @@ class ClustersView: UIView {
             sub.removeFromSuperview()
         }
         guard data.count > pos else { return }
+        currentPos = pos
         
         let cluster = data[pos]
         let map = cluster.map
@@ -72,6 +76,8 @@ class ClustersView: UIView {
             for post in column {
                 let view = ClusterPost()
                 view.isUserInteractionEnabled = false
+                let host = "\(post.host ?? "")\(cluster.hostSuffix ?? "")"
+                view.host = host
                 switch post.kind {
                 case "USER":
                     view.isUserInteractionEnabled = true
@@ -93,22 +99,73 @@ class ClustersView: UIView {
         layoutIfNeeded()
     }
     
-    func changePosition(to pos: Int) {
-        _setupCluster(forPos: pos)
-        if let users = locations {
-            setupLocations(withUsers: users)
+    private func _setClusterPostOn(post: ClusterPost, withPerson person: ClusterPerson) {
+        let id = person.id
+        let name = person.name
+        
+        post.delegate = delegate
+        post.userId = id
+        post.userName = name
+        post.imageView.layer.masksToBounds = false
+        post.imageView.layer.cornerRadius = 15
+        post.imageView.clipsToBounds = true
+        if let image = userImages[id] {
+            post.imageView.image = image
+        } else {
+            _setUserImageOn(view: post.imageView, login: name, id: id)
+        }
+        if FriendDataManager.shared.hasFriend(withId: id) {
+            post.contentView.backgroundColor = UIColor.green
+        } else if id == API42Manager.shared.userProfile?.userId {
+            post.contentView.backgroundColor = UIColor.orange
         }
     }
     
-    func setupLocations(withUsers users: [String: ClusterPerson]) {
-        locations = users
+    private func _setUserImageOn(view: UIImageView, login: String, id: Int) {
+        let urlString = "https://cdn.intra.42.fr/users/small_\(login).jpg"
+        if let url = URL(string: urlString) {
+            let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+                if error == nil, let imgData = data, let image = UIImage(data: imgData) {
+                    DispatchQueue.main.async {
+                        view.image = image
+                        self.userImages.updateValue(image, forKey: id)
+                    }
+                } else if response != nil {
+                    if let err = error {
+                        print("Image Error: \(err)")
+                    }
+                    DispatchQueue.main.async {
+                        if let image = UIImage(named: "42_default") {
+                            view.image = image
+                            self.userImages.updateValue(image, forKey: id)
+                        }
+                    }
+                }
+            }
+            task.resume()
+            self.imageTasks.append(task)
+        }
+    }
+    
+    func changePosition(to pos: Int) {
+        _setupCluster(forPos: pos)
+        setupLocations()
+    }
+    
+    func setupLocations() {
+        if let users = locations {
+            for case let stackPosY as UIStackView in stackPosX.arrangedSubviews {
+                for case let post as ClusterPost in stackPosY.arrangedSubviews {
+                    let location = post.host
+                    if let user = users[location] {
+                        _setClusterPostOn(post: post, withPerson: user)
+                    }
+                }
+            }
+        }
     }
     
     func clearUserImages() {
-        for case let stackPosY as UIStackView in stackPosX.arrangedSubviews {
-            for case let post as ClusterPost in stackPosY.arrangedSubviews {
-                post.imageView.image = nil
-            }
-        }
+        _setupCluster(forPos: currentPos)
     }
 }

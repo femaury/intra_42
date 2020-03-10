@@ -21,6 +21,7 @@ class ClusterPost: UIView, UserProfileCell {
     weak var delegate: ClustersViewDelegate?
     var userId: Int = 0
     var userName: String?
+    var host: String = ""
     
     init() {
         super.init(frame: CGRect(x: 0, y: 0, width: 35, height: 55))

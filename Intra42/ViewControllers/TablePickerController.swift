@@ -12,7 +12,7 @@ typealias TablePickerItem = (id: Int, name: String)
 typealias TablePickerDataSource = (Bool, @escaping ([TablePickerItem]) -> Void) -> Void
 
 protocol TablePickerDelegate: class {
-    func selectItem(_ item: TablePickerItem) -> Void
+    func selectItem(_ item: TablePickerItem)
 }
 
 class TablePickerController: UITableViewController {

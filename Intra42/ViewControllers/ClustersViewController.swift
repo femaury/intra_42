@@ -113,7 +113,7 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
             self.clustersView = clustersView
             clustersView.delegate = self
             
-            minZoomScale = UIScreen.main.bounds.width / CGFloat(max(width, height))
+            minZoomScale = (UIScreen.main.bounds.width / CGFloat(max(width, height))) * 0.95
             
             scrollView.contentSize = clustersView.frame.size
             scrollView.addSubview(clustersView)

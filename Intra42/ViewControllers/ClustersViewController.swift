@@ -102,6 +102,9 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
             
             let data = clustersData[pos]
             let height = (data.map.first?.count ?? 0) * 60
+//            for (index, col) in data.map.enumerated() {
+//                print("COL \(index): \(col.count)")
+//            }
             let width = data.map.count * 40
     
             clustersView?.removeFromSuperview()
@@ -134,7 +137,13 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
             print("Getting map: \(name)")
             if let path = Bundle.main.path(forResource: name, ofType: "json") {
                 do {
+//                    let nsRange = NSRange(location: 125067, length: 70)
                     let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
+//                    if let string = String(data: data, encoding: .utf8) {
+//                        if let swiftRange = Range(nsRange, in: string) {
+//                            print("JSON ERROR: \(string[swiftRange])")
+//                        }
+//                    }
                     clustersData = try JSONDecoder().decode([ClusterData].self, from: data)
 
                     headerSegment.isHidden = clustersData.count < 2
@@ -228,6 +237,7 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
         backBar.layer.cornerRadius = 5.0
         backBar.layer.borderWidth = 1.0
         backBar.layer.borderColor = API42Manager.shared.preferedPrimaryColor?.cgColor
+        backBar.clipsToBounds = true
     }
     
     @IBAction func clusterFloorChanged(_ sender: UISegmentedControl) {

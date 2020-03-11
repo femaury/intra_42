@@ -24,6 +24,7 @@ class UserHeaderCell: UITableViewCell {
     @IBOutlet weak var progressView: UIView!
     @IBOutlet weak var levelLabel: UILabel!
     
+    @IBOutlet weak var pointsStackView: UIStackView!
     @IBOutlet weak var walletLabel: UILabel!
     @IBOutlet weak var walletNumberLabel: UILabel!
     @IBOutlet weak var correctionLabel: UILabel!
@@ -126,5 +127,12 @@ class UserHeaderCell: UITableViewCell {
         background.image = nil
         imageSession?.cancel()
         backgroundImageSession?.cancel()
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        for (index, view) in pointsStackView.arrangedSubviews.enumerated() where index == 1 {
+            pointsStackView.setCustomSpacing(10, after: view)
+        }
     }
 }

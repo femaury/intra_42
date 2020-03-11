@@ -96,4 +96,11 @@ class ProfileHeaderCell: UITableViewCell {
         imageSession?.cancel()
         backgroundImageSession?.cancel()
     }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        for (index, view) in walletStackview.arrangedSubviews.enumerated() where index == 1 {
+            walletStackview.setCustomSpacing(10, after: view)
+        }
+    }
 }

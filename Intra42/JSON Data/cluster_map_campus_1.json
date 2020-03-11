@@ -24,7 +24,8 @@
                     "kind": "USER"
                 },
                 {
-                    "kind": "WALL"
+                    "host": "e1r9p1",
+                    "kind": "USER"
                 },
                 {
                     "host": "e1r8p1",

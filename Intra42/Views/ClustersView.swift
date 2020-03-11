@@ -166,6 +166,10 @@ class ClustersView: UIView {
     }
     
     func clearUserImages() {
-        _setupCluster(forPos: currentPos)
+        for case let stackPosY as UIStackView in stackPosX.arrangedSubviews {
+            for case let post as ClusterPost in stackPosY.arrangedSubviews where post.userId != 0 {
+                post.imageView.image = UIImage(named: "monitor")
+            }
+        }
     }
 }

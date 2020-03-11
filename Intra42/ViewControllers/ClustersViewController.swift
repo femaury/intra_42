@@ -13,7 +13,7 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
     private let availableCampusIDs = [1, 5, 7, 8, 9, 12, 16, 17, 21]
     let noClusterLabel = UILabel()
     let noClusterView = UIView()
-    let activityIndicator = UIActivityIndicatorView(style: .gray)
+    var activityIndicator = UIActivityIndicatorView(style: .gray)
     
     var clustersData: [ClusterData] = []
     var clustersView: ClustersView?
@@ -105,6 +105,7 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
             let width = data.map.count * 40
     
             clustersView?.removeFromSuperview()
+            
             let clustersView = ClustersView(withData: clustersData, forPos: pos, width: width, height: height)
             self.clustersView = clustersView
             clustersView.delegate = self
@@ -231,15 +232,19 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
     
     @IBAction func clusterFloorChanged(_ sender: UISegmentedControl) {
         stackView.insertArrangedSubview(activityIndicator, at: 0)
-        clustersView?.clearUserImages()
-        addNewClusterView(firstCampusLoad: false)
+        self.clustersView?.clearUserImages()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            self.addNewClusterView(firstCampusLoad: false)
+        }
     }
     
     func refreshClusters() {
         stackView.insertArrangedSubview(activityIndicator, at: 0)
-        clustersView?.clearUserImages()
         self.navigationItem.rightBarButtonItems![0].isEnabled = false
-        loadClusterLocations(forCampus: selectedCampus.id)
+        self.clustersView?.clearUserImages()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            self.loadClusterLocations(forCampus: self.selectedCampus.id)
+        }
     }
     
     @IBAction func showOptions(_ sender: Any) {

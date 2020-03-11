@@ -8,56 +8,6 @@
         "map": [
             [
                 {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                }
-            ],
-            [
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
                     "host": "e1r1p1",
                     "kind": "USER"                    
                 },
@@ -111,9 +61,6 @@
                 }
             ],
             [
-                {
-                    "kind": "CORRIDOR"
-                },
                 {
                     "host": "e1r1p2",
                     "kind": "USER"                    
@@ -169,9 +116,6 @@
             ],
             [
                 {
-                    "kind": "CORRIDOR"
-                },
-                {
                     "host": "e1r1p3",
                     "kind": "USER"                    
                 },
@@ -225,9 +169,6 @@
                 }
             ],
             [
-                {
-                    "kind": "CORRIDOR"
-                },
                 {
                     "host": "e1r1p4",
                     "kind": "USER"                    
@@ -283,9 +224,6 @@
             ],
             [
                 {
-                    "kind": "CORRIDOR"
-                },
-                {
                     "host": "e1r1p5",
                     "kind": "USER"                    
                 },
@@ -339,9 +277,6 @@
                 }
             ],
             [
-                {
-                    "kind": "CORRIDOR"
-                },
                 {
                     "host": "e1r1p6",
                     "kind": "USER"                    
@@ -422,11 +357,21 @@
                 },
                 {
                     "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
                 }
             ],
             [
-                {
-                },
                 {
                     "host": "e1r1p7",
                     "kind": "USER"                    
@@ -481,8 +426,6 @@
             ],
             [
                 {
-                },
-                {
                     "host": "e1r1p8",
                     "kind": "USER"                    
                 },
@@ -536,8 +479,6 @@
             ],
             [
                 {
-                },
-                {
                     "host": "e1r1p9",
                     "kind": "USER"                    
                 },
@@ -561,7 +502,9 @@
                     "host": "e1r6p9",
                     "kind": "USER"                    
                 },
-                null,
+                {
+                    "kind": "CORRIDOR"
+                },
                 {
                     "host": "e1r8p9",
                     "kind": "USER"                    
@@ -589,8 +532,6 @@
             ],
             [
                 {
-                },
-                {
                     "host": "e1r1p10",
                     "kind": "USER"                    
                 },
@@ -614,7 +555,9 @@
                     "host": "e1r6p10",
                     "kind": "USER"                    
                 },
-                null,
+                {
+                    "kind": "CORRIDOR"
+                },
                 {
                     "host": "e1r8p10",
                     "kind": "USER"                    
@@ -642,8 +585,6 @@
             ],
             [
                 {
-                },
-                {
                     "host": "e1r1p11",
                     "kind": "USER"                    
                 },
@@ -667,7 +608,9 @@
                     "host": "e1r6p11",
                     "kind": "USER"                    
                 },
-                null,
+                {
+                    "kind": "CORRIDOR"
+                },
                 {
                     "host": "e1r8p11",
                     "kind": "USER"                    
@@ -695,8 +638,6 @@
             ],
             [
                 {
-                },
-                {
                     "host": "e1r1p12",
                     "kind": "USER"                    
                 },
@@ -720,7 +661,9 @@
                     "host": "e1r6p12",
                     "kind": "USER"                    
                 },
-                null,
+                {
+                    "kind": "CORRIDOR"
+                },
                 {
                     "host": "e1r8p12",
                     "kind": "USER"                    
@@ -747,7 +690,7 @@
                 }
             ]
         ],
-        "name": "stage 1",
+        "name": "Stage 1",
         "nameShort": "e1",
         "position": 1,
         "slug": "21_e2_1566494938817",
@@ -760,9 +703,7 @@
         "hostPrefix": "e2",
         "isReadyToPublish": true,
         "map": [
-            null,
             [
-                null,
                 {
                     "host": "e2r13p12",
                     "kind": "USER"                    
@@ -816,7 +757,6 @@
                 }
             ],
             [
-                null,
                 {
                     "host": "e2r13p11",
                     "kind": "USER"                    
@@ -870,7 +810,6 @@
                 }
             ],
             [
-                null,
                 {
                     "host": "e2r13p10",
                     "kind": "USER"                    
@@ -924,7 +863,6 @@
                 }
             ],
             [
-                null,
                 {
                     "host": "e2r13p9",
                     "kind": "USER"                    
@@ -978,7 +916,6 @@
                 }
             ],
             [
-                null,
                 {
                     "host": "e2r13p8",
                     "kind": "USER"                    
@@ -1032,7 +969,6 @@
                 }
             ],
             [
-                null,
                 {
                     "host": "e2r13p7",
                     "kind": "USER"                    
@@ -1086,11 +1022,17 @@
                 }
             ],
             [
-                null,
-                null,
-                null,
-                null,
                 {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -1121,7 +1063,6 @@
                 }
             ],
             [
-                null,
                 {
                     "host": "e2r13p6",
                     "kind": "USER"                    
@@ -1176,7 +1117,6 @@
                 }
             ],
             [
-                null,
                 {
                     "host": "e2r13p5",
                     "kind": "USER"                    
@@ -1231,7 +1171,6 @@
                 }
             ],
             [
-                null,
                 {
                     "host": "e2r13p4",
                     "kind": "USER"                    
@@ -1286,7 +1225,6 @@
                 }
             ],
             [
-                null,
                 {
                     "host": "e2r13p3",
                     "kind": "USER"                    
@@ -1341,7 +1279,6 @@
                 }
             ],
             [
-                null,
                 {
                     "host": "e2r13p2",
                     "kind": "USER"                    
@@ -1396,7 +1333,6 @@
                 }
             ],
             [
-                null,
                 {
                     "host": "e2r13p1",
                     "kind": "USER"                    
@@ -1451,7 +1387,7 @@
                 }
             ]
         ],
-        "name": "stage 2",
+        "name": "Stage 2",
         "nameShort": "e2",
         "position": 2,
         "slug": "21_e2_1554308982457",

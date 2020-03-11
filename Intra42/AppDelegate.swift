@@ -18,7 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let coreData = CoreDataManager()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        Fabric.with([Crashlytics.self])
+        #if !DEBUG
+            Fabric.with([Crashlytics.self])
+        #endif
         
         let color = API42Manager.shared.preferedPrimaryColor
 

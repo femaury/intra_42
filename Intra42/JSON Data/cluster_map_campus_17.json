@@ -9,257 +9,270 @@
             [
                 {
                     "host": "ilr1p1",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr2p1",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr3p1",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr4p1",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr5p1",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr6p1",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr7p1",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr8p1",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr9p1",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr10p1",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr11p1",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 }
             ],
             [
                 {
                     "host": "ilr1p2",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr2p2",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr3p2",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr4p2",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr5p2",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr6p2",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr7p2",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr8p2",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr9p2",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr10p2",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr11p2",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 }
             ],
             [
                 {
                     "host": "ilr1p3",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr2p3",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr3p3",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr4p3",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr5p3",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr6p3",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr7p3",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr8p3",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr9p3",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr10p3",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr11p3",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 }
             ],
             [
-                null,
+                {
+                    "kind": "CORRIDOR"
+                },
                 {
                     "host": "ilr2p4",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr3p4",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr4p4",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr5p4",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr6p4",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr7p4",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr8p4",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr9p4",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr10p4",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr11p4",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 }
             ],
             [
-                null,
-                null,
                 {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
                 },
                 {
                     "host": "ilr4p5",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr5p5",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr6p5",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr7p5",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr8p5",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr9p5",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr10p5",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr11p5",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 }
             ],
             [
-                null,
-                null,
-                null,
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
                 {
                     "host": "ilr4p6",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr5p6",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr6p6",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr7p6",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr8p6",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr9p6",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr10p6",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "ilr11p6",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 }
             ]
         ],
@@ -322,7 +335,9 @@
                 {
                     "kind": "WALL"
                 },
-                null,
+                {
+                    "kind": "CORRIDOR"
+                },
                 {
                     "kind": "WALL"
                 }
@@ -331,21 +346,51 @@
                 {
                     "kind": "WALL"
                 },
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
                 {
                     "kind": "WALL"
                 }
@@ -359,57 +404,59 @@
                 },
                 {
                     "host": "oa-b1",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar3p6",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar4p6",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar5p6",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar6p6",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar7p6",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar8p6",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar9p6",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar10p6",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar11p6",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar12p6",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oa-m1",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar14p6",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
-                null,
+                {
+                    "kind": "CORRIDOR"
+                },
                 {
                     "kind": "WALL"
                 }
@@ -420,61 +467,63 @@
                 },
                 {
                     "host": "oa-a1",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar2p5",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar3p5",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar4p5",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar5p5",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar6p5",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar7p5",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar8p5",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar9p5",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar10p5",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar11p5",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar12p5",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar13p5",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar14p5",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
-                null,
+                {
+                    "kind": "CORRIDOR"
+                },
                 {
                     "kind": "WALL"
                 }
@@ -485,63 +534,63 @@
                 },
                 {
                     "host": "oar1p4",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar2p4",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar3p4",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar4p4",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar5p4",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar6p4",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar7p4",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar8p4",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar9p4",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar10p4",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar11p4",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar12p4",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar13p4",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar14p4",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar15p4",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "kind": "WALL"
@@ -553,63 +602,63 @@
                 },
                 {
                     "host": "oar1p3",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar2p3",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar3p3",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar4p3",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar5p3",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar6p3",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar7p3",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar8p3",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar9p3",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar10p3",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar11p3",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar12p3",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oa-m4",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar14p3",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar15p3",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "kind": "WALL"
@@ -621,63 +670,63 @@
                 },
                 {
                     "host": "oar1p2",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar2p2",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar3p2",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar4p2",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar5p2",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar6p2",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar7p2",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar8p2",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar9p2",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar10p2",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar11p2",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar12p2",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar13p2",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar14p2",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar15p2",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "kind": "WALL"
@@ -689,63 +738,63 @@
                 },
                 {
                     "host": "oar1p1",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar2p1",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar3p1",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar4p1",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar5p1",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar6p1",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar7p1",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar8p1",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar9p1",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar10p1",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar11p1",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar12p1",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oa-m6",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar14p1",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "oar15p1",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "kind": "WALL"
@@ -821,397 +870,432 @@
             [
                 {
                     "host": "e4r15p1",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r14p1",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r13p1",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r12p1",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r11p1",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r10p1",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r9p1",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r8p1",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r7p1",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r6p1",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r5p1",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r4p1",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r3p1",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r2p1",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r1p1",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 }
             ],
             [
                 {
                     "host": "e4r15p2",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r14p2",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r13p2",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r12p2",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r11p2",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r10p2",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r9p2",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r8p2",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r7p2",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r6p2",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r5p2",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r4p2",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r3p2",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r2p2",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r1p2",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 }
             ],
             [
                 {
                     "host": "e4r15p3",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r14p3",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r13p3",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r12p3",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r11p3",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r10p3",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r9p3",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r8p3",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r7p3",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r6p3",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r5p3",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r4p3",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r3p3",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r2p3",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r1p3",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 }
             ],
             [
                 {
                     "host": "e4r15p4",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r14p4",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r13p4",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r12p4",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r11p4",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r10p4",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r9p4",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r8p4",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r7p4",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r6p4",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r5p4",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r4p4",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r3p4",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r2p4",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r1p4",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 }
             ],
             [
                 {
                     "host": "e4r15p5",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r14p5",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r13p5",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r12p5",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r11p5",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r10p5",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r9p5",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r8p5",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r7p5",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r6p5",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r5p5",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r4p5",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r3p5",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r2p5",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r1p5",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 }
             ],
             [
                 {
                     "host": "e4r15p6",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r14p6",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r13p6",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r12p6",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r11p6",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r10p6",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r9p6",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r8p6",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r7p6",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r6p6",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r5p6",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r4p6",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r3p6",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r2p6",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r1p6",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 }
             ],
             [
                 {
+                    "kind": "CORRIDOR"
                 },
                 {
                     "kind": "CORRIDOR"
                 },
                 {
+                    "kind": "CORRIDOR"
                 },
                 {
+                    "kind": "CORRIDOR"
                 },
                 {
+                    "kind": "CORRIDOR"
                 },
                 {
+                    "kind": "CORRIDOR"
                 },
                 {
+                    "kind": "CORRIDOR"
                 },
                 {
+                    "kind": "CORRIDOR"
                 },
                 {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
                 }
             ],
             [
+                {
+                    "kind": "WALL"
+                },
                 {
                     "kind": "WALL"
                 },
@@ -1220,35 +1304,35 @@
                 },
                 {
                     "host": "e4r13p7",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r12p7",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r11p7",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r10p7",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r9p7",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r8p7",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r7p7",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4w1",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "kind": "WALL"
@@ -1267,208 +1351,218 @@
                 }
             ],
             [
-                null,
+                {
+                    "kind": "CORRIDOR"
+                },
                 {
                     "kind": "WALL"
                 },
                 {
                     "host": "e4r13p8",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r12p8",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r11p8",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r10p8",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r9p8",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r8p8",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r7p8",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r6p8",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "kind": "WALL"
                 }
             ],
             [
-                null,
+                {
+                    "kind": "CORRIDOR"
+                },
                 {
                     "kind": "WALL"
                 },
                 {
                     "host": "e4r13p9",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r12p9",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r11p9",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r10p9",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r9p9",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r8p9",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r7p9",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r6p9",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "kind": "WALL"
                 }
             ],
             [
-                null,
+                {
+                    "kind": "CORRIDOR"
+                },
                 {
                     "kind": "WALL"
                 },
                 {
                     "host": "e4r13p10",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r12p10",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r11p10",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r10p10",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r9p10",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r8p10",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r7p10",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r6p10",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "kind": "WALL"
                 }
             ],
             [
-                null,
+                {
+                    "kind": "CORRIDOR"
+                },
                 {
                     "kind": "WALL"
                 },
                 {
                     "host": "e4r13p11",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r12p11",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r11p11",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r10p11",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r9p11",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r8p11",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r7p11",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r6p11",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "kind": "WALL"
                 }
             ],
             [
-                null,
+                {
+                    "kind": "CORRIDOR"
+                },
                 {
                     "kind": "WALL"
                 },
                 {
                     "host": "e4r13p12",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r12p12",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r11p12",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r10p12",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r9p12",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r8p12",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r7p12",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
                     "host": "e4r6p12",
-                    "kind": "USER"                    
+                    "kind": "USER"
                 },
                 {
-                    "kind": "WALL"                    
+                    "kind": "WALL"
                 }
             ]
         ],

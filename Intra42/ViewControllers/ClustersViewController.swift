@@ -32,7 +32,7 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Cluster Maps"
+        navigationItem.title = "Cluster Maps"
         noClusterView.backgroundColor = .white
         headerSegment.tintColor = API42Manager.shared.preferedPrimaryColor
         if #available(iOS 13.0, *) {
@@ -65,7 +65,7 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
         
         if let id = API42Manager.shared.userProfile?.mainCampusId, let name = API42Manager.shared.userProfile?.mainCampusName {
             selectedCampus = (id, name)
-            title = name
+            navigationItem.title = name
             if availableCampusIDs.contains(selectedCampus.id) {
                 noClusterView.isHidden = true
                 addNewClusterView()
@@ -303,7 +303,7 @@ extension ClustersViewController: TablePickerDelegate {
     
     func selectItem(_ item: TablePickerItem) {
         selectedCampus = item
-        title = item.name
+        navigationItem.title = item.name
         if availableCampusIDs.contains(item.id) {
             noClusterView.isHidden = true
             addNewClusterView()

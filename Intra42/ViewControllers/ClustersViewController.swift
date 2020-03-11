@@ -102,9 +102,6 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
             
             let data = clustersData[pos]
             let height = (data.map.first?.count ?? 0) * 60
-//            for (index, col) in data.map.enumerated() {
-//                print("COL \(index): \(col.count)")
-//            }
             let width = data.map.count * 40
     
             clustersView?.removeFromSuperview()
@@ -137,13 +134,7 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
             print("Getting map: \(name)")
             if let path = Bundle.main.path(forResource: name, ofType: "json") {
                 do {
-//                    let nsRange = NSRange(location: 125067, length: 70)
                     let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
-//                    if let string = String(data: data, encoding: .utf8) {
-//                        if let swiftRange = Range(nsRange, in: string) {
-//                            print("JSON ERROR: \(string[swiftRange])")
-//                        }
-//                    }
                     clustersData = try JSONDecoder().decode([ClusterData].self, from: data)
 
                     headerSegment.isHidden = clustersData.count < 2
@@ -242,18 +233,23 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
     
     @IBAction func clusterFloorChanged(_ sender: UISegmentedControl) {
         stackView.insertArrangedSubview(activityIndicator, at: 0)
-        self.clustersView?.clearUserImages()
+        scrollView.setZoomScale(minZoomScale, animated: true)
+        clustersView?.clearUserImages()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.addNewClusterView(firstCampusLoad: false)
+            for case let infoView as ClusterInfoView in self.stackView.arrangedSubviews {
+                infoView.isHidden = false
+            }
         }
     }
     
     func refreshClusters() {
         stackView.insertArrangedSubview(activityIndicator, at: 0)
-        self.navigationItem.rightBarButtonItems![0].isEnabled = false
-        self.clustersView?.clearUserImages()
+        navigationItem.rightBarButtonItems![0].isEnabled = false
+        clustersView?.clearUserImages()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.loadClusterLocations(forCampus: self.selectedCampus.id)
+            self.scrollView.setZoomScale(self.minZoomScale, animated: true)
         }
     }
     

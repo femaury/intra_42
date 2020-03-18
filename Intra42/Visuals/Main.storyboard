@@ -1111,7 +1111,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvh-lv-N1P">
-                                            <rect key="frame" x="364" y="22.666666666666671" width="30" height="30"/>
+                                            <rect key="frame" x="334" y="7.6666666666666643" width="60" height="59.999999999999993"/>
                                             <color key="tintColor" red="0.0" green="0.72941176470000002" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" image="add_user_male"/>
                                             <connections>
@@ -1119,7 +1119,7 @@
                                             </connections>
                                         </button>
                                         <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="uTZ-dk-0wd">
-                                            <rect key="frame" x="369" y="27.666666666666671" width="20" height="20"/>
+                                            <rect key="frame" x="354" y="27.666666666666671" width="20" height="20"/>
                                         </activityIndicatorView>
                                     </subviews>
                                     <constraints>
@@ -1967,45 +1967,62 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="wWB-1s-Cng">
-                                <rect key="frame" x="0.0" y="20" width="414" height="685"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jwr-r8-JR1">
+                                <rect key="frame" x="0.0" y="20" width="414" height="725"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mxh-0n-FPt">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="wWB-1s-Cng">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                                         <subviews>
-                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3Wa-Iz-czX">
-                                                <rect key="frame" x="14" y="9.6666666666666714" width="383" height="32"/>
-                                                <segments>
-                                                    <segment title="First"/>
-                                                    <segment title="Second"/>
-                                                </segments>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mxh-0n-FPt">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                                <subviews>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3Wa-Iz-czX">
+                                                        <rect key="frame" x="20" y="9.6666666666666714" width="374" height="32"/>
+                                                        <segments>
+                                                            <segment title="First"/>
+                                                            <segment title="Second"/>
+                                                        </segments>
+                                                        <connections>
+                                                            <action selector="clusterFloorChanged:" destination="osr-v2-xWd" eventType="valueChanged" id="4PD-mv-y9R"/>
+                                                        </connections>
+                                                    </segmentedControl>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="EJt-E7-RY0"/>
+                                                    <constraint firstItem="3Wa-Iz-czX" firstAttribute="centerY" secondItem="mxh-0n-FPt" secondAttribute="centerY" id="HHU-jv-94G"/>
+                                                    <constraint firstItem="3Wa-Iz-czX" firstAttribute="leading" secondItem="mxh-0n-FPt" secondAttribute="leading" constant="20" id="fdq-B0-WGA"/>
+                                                    <constraint firstAttribute="trailing" secondItem="3Wa-Iz-czX" secondAttribute="trailing" constant="20" id="sdw-0F-XJP"/>
+                                                </constraints>
+                                            </view>
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="infinite" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="bD3-fA-AM2">
+                                                <rect key="frame" x="0.0" y="55" width="414" height="670"/>
                                                 <connections>
-                                                    <action selector="clusterFloorChanged:" destination="osr-v2-xWd" eventType="valueChanged" id="4PD-mv-y9R"/>
+                                                    <outlet property="delegate" destination="osr-v2-xWd" id="Ncl-hJ-OhZ"/>
                                                 </connections>
-                                            </segmentedControl>
+                                            </scrollView>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="EJt-E7-RY0"/>
-                                            <constraint firstItem="3Wa-Iz-czX" firstAttribute="centerY" secondItem="mxh-0n-FPt" secondAttribute="centerY" id="HHU-jv-94G"/>
-                                            <constraint firstItem="3Wa-Iz-czX" firstAttribute="leading" secondItem="mxh-0n-FPt" secondAttribute="leading" constant="14" id="fdq-B0-WGA"/>
-                                            <constraint firstAttribute="trailing" secondItem="3Wa-Iz-czX" secondAttribute="trailing" constant="17" id="sdw-0F-XJP"/>
-                                        </constraints>
-                                    </view>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="infinite" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="bD3-fA-AM2">
-                                        <rect key="frame" x="0.0" y="55" width="414" height="630"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="osr-v2-xWd" id="Ncl-hJ-OhZ"/>
-                                        </connections>
-                                    </scrollView>
+                                    </stackView>
                                 </subviews>
-                            </stackView>
+                                <constraints>
+                                    <constraint firstItem="wWB-1s-Cng" firstAttribute="leading" secondItem="Jwr-r8-JR1" secondAttribute="leading" id="WnC-sL-mPh"/>
+                                    <constraint firstItem="wWB-1s-Cng" firstAttribute="top" secondItem="Jwr-r8-JR1" secondAttribute="top" id="gad-K2-1Vf"/>
+                                    <constraint firstAttribute="bottom" secondItem="wWB-1s-Cng" secondAttribute="bottom" priority="250" id="pz1-vi-fku"/>
+                                    <constraint firstAttribute="trailing" secondItem="wWB-1s-Cng" secondAttribute="trailing" id="riG-1G-GYr"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="osr-v2-xWd" id="9oh-zW-cT6"/>
+                                </connections>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="TUY-87-jjS" firstAttribute="trailing" secondItem="wWB-1s-Cng" secondAttribute="trailing" id="4Jf-I6-OL3"/>
-                            <constraint firstItem="wWB-1s-Cng" firstAttribute="top" secondItem="TUY-87-jjS" secondAttribute="top" constant="20" id="O7Y-A7-et1"/>
-                            <constraint firstItem="TUY-87-jjS" firstAttribute="bottom" secondItem="wWB-1s-Cng" secondAttribute="bottom" constant="20" id="ftA-I2-P5y"/>
-                            <constraint firstItem="wWB-1s-Cng" firstAttribute="leading" secondItem="TUY-87-jjS" secondAttribute="leading" id="n7c-GA-4XY"/>
+                            <constraint firstItem="Jwr-r8-JR1" firstAttribute="leading" secondItem="nJ0-bW-aDQ" secondAttribute="leading" id="69R-0M-TT7"/>
+                            <constraint firstItem="Jwr-r8-JR1" firstAttribute="bottom" secondItem="TUY-87-jjS" secondAttribute="bottom" constant="20" id="AfF-We-v4C"/>
+                            <constraint firstAttribute="trailing" secondItem="Jwr-r8-JR1" secondAttribute="trailing" id="RDm-03-hNN"/>
+                            <constraint firstItem="wWB-1s-Cng" firstAttribute="width" secondItem="TUY-87-jjS" secondAttribute="width" id="Tme-Fe-R7c"/>
+                            <constraint firstItem="wWB-1s-Cng" firstAttribute="height" secondItem="TUY-87-jjS" secondAttribute="height" priority="250" id="h2t-On-CUw"/>
+                            <constraint firstItem="bD3-fA-AM2" firstAttribute="height" relation="greaterThanOrEqual" secondItem="TUY-87-jjS" secondAttribute="height" multiplier="0.55" id="kiB-0e-7YR"/>
+                            <constraint firstItem="Jwr-r8-JR1" firstAttribute="top" secondItem="TUY-87-jjS" secondAttribute="top" constant="20" id="x7b-Jr-9KO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TUY-87-jjS"/>
                     </view>
@@ -2023,6 +2040,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="headerSegment" destination="3Wa-Iz-czX" id="kN7-B4-nTL"/>
+                        <outlet property="mainScrollView" destination="Jwr-r8-JR1" id="1I8-bS-Bc3"/>
                         <outlet property="scrollView" destination="bD3-fA-AM2" id="kXe-4H-Prn"/>
                         <outlet property="stackView" destination="wWB-1s-Cng" id="L1Q-h2-1sP"/>
                         <segue destination="sWC-1A-sDE" kind="show" identifier="UserProfileSegue" id="CDq-Hl-0B6"/>
@@ -2565,9 +2583,9 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="CZ3-PM-lFF"/>
+        <segue reference="8ZR-3v-hPk"/>
         <segue reference="CDq-Hl-0B6"/>
-        <segue reference="s4V-tz-R5t"/>
+        <segue reference="0QS-t1-7Go"/>
         <segue reference="oJI-up-e6L"/>
         <segue reference="qfm-KR-H0N"/>
     </inferredMetricsTieBreakers>

@@ -24,6 +24,7 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
     
     @IBOutlet weak var headerSegment: UISegmentedControl!
     
+    @IBOutlet weak var mainScrollView: UIScrollView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var stackView: UIStackView!
     // Array corresponding to infoStackView subviews containing user and friend count of cluster
@@ -94,6 +95,18 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
         navigationController?.view.layoutIfNeeded() // to fix height of the navigation bar
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        print(view.frame.size)
+        print("LAYOUT SUBVIEWS: \(stackView.frame.size)")
+        print(scrollView.frame.size)
+        print(scrollView.bounds.size)
+        let extra = CGFloat((clustersData.count * 55) + 50)
+        let size = CGSize(width: stackView.frame.width, height: scrollView.frame.height + extra)
+        mainScrollView.contentSize = size
+    }
+    
     func addNewClusterView(firstCampusLoad load: Bool = true) {
         let id = selectedCampus.id
         if !load || getClustersData(forCampus: id) {
@@ -117,6 +130,8 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
             scrollView.minimumZoomScale = minZoomScale
             scrollView.maximumZoomScale = 4.0
             scrollView.zoomScale = minZoomScale
+            
+            print("NEW CLUSTER: \(stackView.frame.size)")
             
             if load {
                 loadClusterLocations(forCampus: id)
@@ -202,6 +217,11 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
             infoView.removeFromSuperview()
         }
         for case let (index, cluster) in clustersData.enumerated() {
+//            if index == 3 {
+//                let view = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: 40))
+//                
+//                break
+//            }
             
             let infoView = ClusterInfoView()
             let friends = occupancy[index].friends
@@ -220,6 +240,8 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
             )
             stackView.addArrangedSubview(infoView)
         }
+        print("SETUP INFO: \(stackView.frame.size)")
+//        mainScrollView.contentSize = stackView.frame.size
     }
     
     func setClusterOccupancy(backBar: UIView, progressBar: UIView, progress: Double) {
@@ -304,6 +326,9 @@ extension ClustersViewController: TablePickerDelegate {
         if availableCampusIDs.contains(item.id) {
             stackView.insertArrangedSubview(activityIndicator, at: 0)
             noClusterView.isHidden = true
+            for case let infoView as ClusterInfoView in stackView.arrangedSubviews {
+                infoView.removeFromSuperview()
+            }
             addNewClusterView()
         } else {
             noClusterView.isHidden = false
@@ -316,16 +341,23 @@ extension ClustersViewController: TablePickerDelegate {
 extension ClustersViewController: UIScrollViewDelegate {
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        if scrollView.tag == 1 {
+            return stackView
+        }
         return clustersView
     }
     
     func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) {
+        guard scrollView.tag != 1 else { return }
+        
         for case let infoView as ClusterInfoView in stackView.arrangedSubviews {
             infoView.isHidden = true
         }
     }
     
     func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
+        guard scrollView.tag != 1 else { return }
+        
         if scale == minZoomScale {
             for case let infoView as ClusterInfoView in stackView.arrangedSubviews {
                 infoView.isHidden = false
@@ -334,6 +366,8 @@ extension ClustersViewController: UIScrollViewDelegate {
     }
     
     func scrollViewDidZoom(_ scrollView: UIScrollView) {
+        guard scrollView.tag != 1 else { return }
+        
         let offsetX = max((scrollView.bounds.width - scrollView.contentSize.width) * 0.5, 0)
         scrollView.contentInset = UIEdgeInsets(top: 0, left: offsetX, bottom: 0, right: 0)
     }

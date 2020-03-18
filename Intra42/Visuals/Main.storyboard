@@ -1232,13 +1232,13 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unavailable" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7D8-cz-oD9">
-                                            <rect key="frame" x="136.66666666666669" y="283" width="140.66666666666669" height="36"/>
+                                            <rect key="frame" x="136.66666666666669" y="313" width="140.66666666666669" height="36"/>
                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E92-uL-Mph">
-                                            <rect key="frame" x="57" y="363.33333333333331" width="300" height="20"/>
+                                            <rect key="frame" x="57" y="393.33333333333331" width="300" height="20"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NHd-Qk-yCf">
                                                     <rect key="frame" x="0.0" y="0.0" width="300" height="20"/>
@@ -1264,7 +1264,7 @@
                                             </constraints>
                                         </view>
                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="7w7-cg-fpr">
-                                            <rect key="frame" x="103" y="334" width="208" height="19.333333333333314"/>
+                                            <rect key="frame" x="103" y="364" width="208" height="19.333333333333314"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wallet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AGR-XU-lMG">
                                                     <rect key="frame" x="0.0" y="0.0" width="46" height="19.333333333333332"/>
@@ -1299,17 +1299,17 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4RV-Ju-ebq">
-                                            <rect key="frame" x="167" y="238" width="80" height="30"/>
+                                            <rect key="frame" x="137" y="238" width="140" height="60"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ReB-sR-ruF">
-                                                    <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                                     <state key="normal" image="phone_white"/>
                                                     <connections>
                                                         <action selector="callUser:" destination="gs9-qM-kx2" eventType="touchUpInside" id="E7b-Qk-QBv"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ukX-nO-4gq">
-                                                    <rect key="frame" x="50" y="0.0" width="30" height="30"/>
+                                                    <rect key="frame" x="80" y="0.0" width="60" height="60"/>
                                                     <state key="normal" image="message_white"/>
                                                     <connections>
                                                         <action selector="emailUser:" destination="gs9-qM-kx2" eventType="touchUpInside" id="v7x-0W-48e"/>
@@ -1967,62 +1967,90 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jwr-r8-JR1">
-                                <rect key="frame" x="0.0" y="20" width="414" height="725"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="wWB-1s-Cng">
+                                <rect key="frame" x="0.0" y="20" width="414" height="520"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="wWB-1s-Cng">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mxh-0n-FPt">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mxh-0n-FPt">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                                <subviews>
-                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3Wa-Iz-czX">
-                                                        <rect key="frame" x="20" y="9.6666666666666714" width="374" height="32"/>
-                                                        <segments>
-                                                            <segment title="First"/>
-                                                            <segment title="Second"/>
-                                                        </segments>
-                                                        <connections>
-                                                            <action selector="clusterFloorChanged:" destination="osr-v2-xWd" eventType="valueChanged" id="4PD-mv-y9R"/>
-                                                        </connections>
-                                                    </segmentedControl>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="EJt-E7-RY0"/>
-                                                    <constraint firstItem="3Wa-Iz-czX" firstAttribute="centerY" secondItem="mxh-0n-FPt" secondAttribute="centerY" id="HHU-jv-94G"/>
-                                                    <constraint firstItem="3Wa-Iz-czX" firstAttribute="leading" secondItem="mxh-0n-FPt" secondAttribute="leading" constant="20" id="fdq-B0-WGA"/>
-                                                    <constraint firstAttribute="trailing" secondItem="3Wa-Iz-czX" secondAttribute="trailing" constant="20" id="sdw-0F-XJP"/>
-                                                </constraints>
-                                            </view>
-                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="infinite" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="bD3-fA-AM2">
-                                                <rect key="frame" x="0.0" y="55" width="414" height="670"/>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3Wa-Iz-czX">
+                                                <rect key="frame" x="20" y="9.6666666666666714" width="374" height="32"/>
+                                                <segments>
+                                                    <segment title="First"/>
+                                                    <segment title="Second"/>
+                                                </segments>
                                                 <connections>
-                                                    <outlet property="delegate" destination="osr-v2-xWd" id="Ncl-hJ-OhZ"/>
+                                                    <action selector="clusterFloorChanged:" destination="osr-v2-xWd" eventType="valueChanged" id="4PD-mv-y9R"/>
                                                 </connections>
-                                            </scrollView>
+                                            </segmentedControl>
                                         </subviews>
-                                    </stackView>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="EJt-E7-RY0"/>
+                                            <constraint firstItem="3Wa-Iz-czX" firstAttribute="centerY" secondItem="mxh-0n-FPt" secondAttribute="centerY" id="HHU-jv-94G"/>
+                                            <constraint firstItem="3Wa-Iz-czX" firstAttribute="leading" secondItem="mxh-0n-FPt" secondAttribute="leading" constant="20" id="fdq-B0-WGA"/>
+                                            <constraint firstAttribute="trailing" secondItem="3Wa-Iz-czX" secondAttribute="trailing" constant="20" id="sdw-0F-XJP"/>
+                                        </constraints>
+                                    </view>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="infinite" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="bD3-fA-AM2">
+                                        <rect key="frame" x="0.0" y="55" width="414" height="465"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="osr-v2-xWd" id="Ncl-hJ-OhZ"/>
+                                        </connections>
+                                    </scrollView>
                                 </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sk6-CY-XMM">
+                                <rect key="frame" x="0.0" y="540" width="414" height="185"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q6w-CY-abu">
+                                        <rect key="frame" x="165.66666666666666" y="5" width="82.666666666666657" height="4"/>
+                                        <color key="backgroundColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="4" id="nao-mn-oLC"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="jYU-fO-89v" appends="YES" id="UQL-NT-K7b"/>
+                                        </connections>
+                                    </view>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rgy-3R-GAj">
+                                        <rect key="frame" x="0.0" y="15" width="414" height="170"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="166" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="MMq-sI-2jv">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="166"/>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="MMq-sI-2jv" firstAttribute="leading" secondItem="rgy-3R-GAj" secondAttribute="leading" id="9v8-zQ-TOi"/>
+                                            <constraint firstAttribute="trailing" secondItem="MMq-sI-2jv" secondAttribute="trailing" id="Tqc-23-OAc"/>
+                                            <constraint firstAttribute="bottom" secondItem="MMq-sI-2jv" secondAttribute="bottom" id="mVP-7Q-Zjy"/>
+                                            <constraint firstItem="MMq-sI-2jv" firstAttribute="top" secondItem="rgy-3R-GAj" secondAttribute="top" id="rAd-BS-pTe"/>
+                                        </constraints>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" name="SelectedCellBackground"/>
                                 <constraints>
-                                    <constraint firstItem="wWB-1s-Cng" firstAttribute="leading" secondItem="Jwr-r8-JR1" secondAttribute="leading" id="WnC-sL-mPh"/>
-                                    <constraint firstItem="wWB-1s-Cng" firstAttribute="top" secondItem="Jwr-r8-JR1" secondAttribute="top" id="gad-K2-1Vf"/>
-                                    <constraint firstAttribute="bottom" secondItem="wWB-1s-Cng" secondAttribute="bottom" priority="250" id="pz1-vi-fku"/>
-                                    <constraint firstAttribute="trailing" secondItem="wWB-1s-Cng" secondAttribute="trailing" id="riG-1G-GYr"/>
+                                    <constraint firstItem="MMq-sI-2jv" firstAttribute="width" secondItem="sk6-CY-XMM" secondAttribute="width" id="20i-00-98s"/>
+                                    <constraint firstAttribute="trailing" secondItem="rgy-3R-GAj" secondAttribute="trailing" id="LEP-XA-WBl"/>
+                                    <constraint firstItem="Q6w-CY-abu" firstAttribute="top" secondItem="sk6-CY-XMM" secondAttribute="top" constant="5" id="ZgF-71-P4Q"/>
+                                    <constraint firstItem="Q6w-CY-abu" firstAttribute="centerX" secondItem="sk6-CY-XMM" secondAttribute="centerX" id="aAV-Qa-MK5"/>
+                                    <constraint firstAttribute="bottom" secondItem="rgy-3R-GAj" secondAttribute="bottom" id="m8T-Nr-Evr"/>
+                                    <constraint firstItem="rgy-3R-GAj" firstAttribute="top" secondItem="Q6w-CY-abu" secondAttribute="top" constant="10" id="mkt-p5-x3a"/>
+                                    <constraint firstItem="rgy-3R-GAj" firstAttribute="leading" secondItem="sk6-CY-XMM" secondAttribute="leading" id="p4Q-nd-pMW"/>
+                                    <constraint firstAttribute="height" constant="185" id="x6b-FE-quY"/>
+                                    <constraint firstItem="Q6w-CY-abu" firstAttribute="width" secondItem="sk6-CY-XMM" secondAttribute="width" multiplier="0.2" id="yfA-mK-xUz"/>
                                 </constraints>
-                                <connections>
-                                    <outlet property="delegate" destination="osr-v2-xWd" id="9oh-zW-cT6"/>
-                                </connections>
-                            </scrollView>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Jwr-r8-JR1" firstAttribute="leading" secondItem="nJ0-bW-aDQ" secondAttribute="leading" id="69R-0M-TT7"/>
-                            <constraint firstItem="Jwr-r8-JR1" firstAttribute="bottom" secondItem="TUY-87-jjS" secondAttribute="bottom" constant="20" id="AfF-We-v4C"/>
-                            <constraint firstAttribute="trailing" secondItem="Jwr-r8-JR1" secondAttribute="trailing" id="RDm-03-hNN"/>
-                            <constraint firstItem="wWB-1s-Cng" firstAttribute="width" secondItem="TUY-87-jjS" secondAttribute="width" id="Tme-Fe-R7c"/>
-                            <constraint firstItem="wWB-1s-Cng" firstAttribute="height" secondItem="TUY-87-jjS" secondAttribute="height" priority="250" id="h2t-On-CUw"/>
-                            <constraint firstItem="bD3-fA-AM2" firstAttribute="height" relation="greaterThanOrEqual" secondItem="TUY-87-jjS" secondAttribute="height" multiplier="0.55" id="kiB-0e-7YR"/>
-                            <constraint firstItem="Jwr-r8-JR1" firstAttribute="top" secondItem="TUY-87-jjS" secondAttribute="top" constant="20" id="x7b-Jr-9KO"/>
+                            <constraint firstItem="wWB-1s-Cng" firstAttribute="leading" secondItem="TUY-87-jjS" secondAttribute="leading" id="7C4-GG-M5d"/>
+                            <constraint firstItem="TUY-87-jjS" firstAttribute="trailing" secondItem="sk6-CY-XMM" secondAttribute="trailing" id="ReJ-K7-jFv"/>
+                            <constraint firstItem="sk6-CY-XMM" firstAttribute="leading" secondItem="TUY-87-jjS" secondAttribute="leading" id="Sib-UP-B59"/>
+                            <constraint firstAttribute="bottom" secondItem="sk6-CY-XMM" secondAttribute="bottom" id="ckW-mI-tPZ"/>
+                            <constraint firstItem="wWB-1s-Cng" firstAttribute="top" secondItem="TUY-87-jjS" secondAttribute="top" constant="20" id="s2b-Hg-guN"/>
+                            <constraint firstItem="wWB-1s-Cng" firstAttribute="trailing" secondItem="TUY-87-jjS" secondAttribute="trailing" id="uTZ-sJ-vZ4"/>
+                            <constraint firstItem="TUY-87-jjS" firstAttribute="bottom" secondItem="wWB-1s-Cng" secondAttribute="bottom" constant="185" id="w52-Ve-vuW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TUY-87-jjS"/>
                     </view>
@@ -2040,13 +2068,23 @@
                     </navigationItem>
                     <connections>
                         <outlet property="headerSegment" destination="3Wa-Iz-czX" id="kN7-B4-nTL"/>
-                        <outlet property="mainScrollView" destination="Jwr-r8-JR1" id="1I8-bS-Bc3"/>
+                        <outlet property="infoDragIndicator" destination="Q6w-CY-abu" id="hNx-eY-p3U"/>
+                        <outlet property="infoScrollview" destination="rgy-3R-GAj" id="JLg-P6-HBy"/>
+                        <outlet property="infoStackview" destination="MMq-sI-2jv" id="1DH-nU-uH6"/>
+                        <outlet property="infoView" destination="sk6-CY-XMM" id="Cvg-GS-Ljy"/>
+                        <outlet property="infoViewHeight" destination="x6b-FE-quY" id="0iS-rl-Y3S"/>
                         <outlet property="scrollView" destination="bD3-fA-AM2" id="kXe-4H-Prn"/>
                         <outlet property="stackView" destination="wWB-1s-Cng" id="L1Q-h2-1sP"/>
                         <segue destination="sWC-1A-sDE" kind="show" identifier="UserProfileSegue" id="CDq-Hl-0B6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GYw-BW-7cr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="jYU-fO-89v">
+                    <connections>
+                        <action selector="panInfoView:" destination="osr-v2-xWd" id="RBJ-Fz-nu6"/>
+                        <outlet property="delegate" destination="osr-v2-xWd" id="Eiv-yt-QRt"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2782.608695652174" y="997.76785714285711"/>
         </scene>
@@ -2578,6 +2616,9 @@
         <image name="people" width="30" height="30"/>
         <image name="phone_white" width="30" height="30"/>
         <image name="user_male" width="30" height="30"/>
+        <namedColor name="SelectedCellBackground">
+            <color red="0.81568627450980391" green="0.81568627450980391" blue="0.83529411764705885" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <namedColor name="lightTextBackground">
             <color red="0.89800000190734863" green="0.89800000190734863" blue="0.89800000190734863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

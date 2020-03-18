@@ -46,7 +46,7 @@
                 {
                     "kind": "LABEL",
                     "label": "j"
-                },
+                }
             ],
             [
                 {
@@ -121,7 +121,7 @@
                 {
                     "kind": "USER",
                     "host": "at-j6"
-                },
+                }
             ],
             [
                 {
@@ -163,7 +163,7 @@
                 {
                     "kind": "USER",
                     "host": "at-j5"
-                },
+                }
             ],
             [
                 {
@@ -203,7 +203,7 @@
                 {
                     "kind": "USER",
                     "host": "at-j4"
-                },
+                }
             ],
             [
                 {
@@ -242,7 +242,7 @@
                 {
                     "kind": "USER",
                     "host": "at-j3"
-                },
+                }
             ],
             [
                 {
@@ -281,7 +281,7 @@
                 {
                     "kind": "USER",
                     "host": "at-j2"
-                },
+                }
             ],
             [
                 {
@@ -320,7 +320,7 @@
                 {
                     "kind": "USER",
                     "host": "at-j1"
-                },
+                }
             ],
             [
                 {
@@ -352,7 +352,7 @@
                 },
                 {
                     "kind": "CORRIDOR"
-                },
+                }
             ],
             [
                 {
@@ -392,7 +392,7 @@
                 {
                     "kind": "USER",
                     "host": "at-r1"
-                },
+                }
             ],
             [
                 {
@@ -432,7 +432,7 @@
                 {
                     "kind": "USER",
                     "host": "at-r2"
-                },
+                }
             ],
             [
                 {
@@ -472,7 +472,7 @@
                 {
                     "kind": "USER",
                     "host": "at-r3"
-                },
+                }
             ],
             [
                 {
@@ -512,7 +512,7 @@
                 {
                     "kind": "USER",
                     "host": "at-r4"
-                },
+                }
             ],
             [
                 {
@@ -552,7 +552,7 @@
                 {
                     "kind": "USER",
                     "host": "at-r5"
-                },
+                }
             ],
             [
                 {
@@ -592,7 +592,7 @@
                 {
                     "kind": "USER",
                     "host": "at-r6"
-                },
+                }
             ],
             [
                 {
@@ -632,7 +632,7 @@
                 {
                     "kind": "USER",
                     "host": "at-r7"
-                },
+                }
             ],
             [
                 {
@@ -672,7 +672,7 @@
                 {
                     "kind": "USER",
                     "host": "at-r8"
-                },
+                }
             ],
             [
                 {
@@ -708,7 +708,7 @@
                 },
                 {
                     "kind": "CORRIDOR"
-                },
+                }
             ],
             [
                 {
@@ -748,8 +748,8 @@
                 {
                     "kind": "LABEL",
                     "label": "r"
-                },
-            ],
+                }
+            ]
         ],
         "name": "Atlantis",
         "nameShort": "at",
@@ -759,855 +759,439 @@
     {
         "campusId": 17,
         "comment": "",
-        "height": 11,
-        "hostPrefix": "il",
-        "isReadyToPublish": true,
-        "map": [
-            [
-                {
-                    "host": "ilr1p1",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr2p1",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr3p1",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr4p1",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr5p1",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr6p1",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr7p1",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr8p1",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr9p1",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr10p1",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr11p1",
-                    "kind": "USER"
-                }
-            ],
-            [
-                {
-                    "host": "ilr1p2",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr2p2",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr3p2",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr4p2",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr5p2",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr6p2",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr7p2",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr8p2",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr9p2",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr10p2",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr11p2",
-                    "kind": "USER"
-                }
-            ],
-            [
-                {
-                    "host": "ilr1p3",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr2p3",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr3p3",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr4p3",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr5p3",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr6p3",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr7p3",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr8p3",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr9p3",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr10p3",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr11p3",
-                    "kind": "USER"
-                }
-            ],
-            [
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "host": "ilr2p4",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr3p4",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr4p4",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr5p4",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr6p4",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr7p4",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr8p4",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr9p4",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr10p4",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr11p4",
-                    "kind": "USER"
-                }
-            ],
-            [
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "host": "ilr4p5",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr5p5",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr6p5",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr7p5",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr8p5",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr9p5",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr10p5",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr11p5",
-                    "kind": "USER"
-                }
-            ],
-            [
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "host": "ilr4p6",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr5p6",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr6p6",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr7p6",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr8p6",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr9p6",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr10p6",
-                    "kind": "USER"
-                },
-                {
-                    "host": "ilr11p6",
-                    "kind": "USER"
-                }
-            ]
-        ],
-        "name": "Illusion",
-        "nameShort": "il",
-        "position": 1,
-        "slug": "7_e_1538349073951",
-        "width": 10
-    },
-    {
-        "campusId": 17,
-        "comment": "",
         "height": 17,
-        "hostPrefix": "oa",
+        "hostPrefix": "oa-",
         "isReadyToPublish": true,
         "map": [
             [
                 {
-                    "kind": "WALL"
+                    "kind": "LABEL",
+                    "label": "a"
                 },
                 {
-                    "kind": "WALL"
+                    "kind": "LABEL",
+                    "label": "b"
                 },
                 {
-                    "kind": "WALL"
+                    "kind": "LABEL",
+                    "label": "c"
                 },
                 {
-                    "kind": "WALL"
+                    "kind": "LABEL",
+                    "label": "d"
                 },
                 {
-                    "kind": "WALL"
+                    "kind": "LABEL",
+                    "label": "e"
                 },
                 {
-                    "kind": "CORRIDOR"
+                    "kind": "LABEL",
+                    "label": "f"
                 },
                 {
-                    "kind": "WALL"
+                    "kind": "LABEL",
+                    "label": "g"
                 },
                 {
-                    "kind": "WALL"
+                    "kind": "LABEL",
+                    "label": "h"
                 },
                 {
-                    "kind": "WALL"
+                    "kind": "LABEL",
+                    "label": "i"
                 },
                 {
-                    "kind": "WALL"
+                    "kind": "LABEL",
+                    "label": "j"
                 },
                 {
-                    "kind": "WALL"
+                    "kind": "LABEL",
+                    "label": "k"
                 },
                 {
-                    "kind": "CORRIDOR"
+                    "kind": "LABEL",
+                    "label": "l"
                 },
                 {
-                    "kind": "WALL"
+                    "kind": "LABEL",
+                    "label": "m"
                 },
                 {
-                    "kind": "WALL"
+                    "kind": "LABEL",
+                    "label": "n"
                 },
                 {
-                    "kind": "WALL"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "WALL"
+                    "kind": "LABEL",
+                    "label": "o"
                 }
             ],
             [
                 {
-                    "kind": "WALL"
-                },
-                {
                     "kind": "CORRIDOR"
                 },
                 {
-                    "kind": "CORRIDOR"
+                    "kind": "USER",
+                    "host": "oa-b1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "oa-c1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "oa-d1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "oa-e1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "oa-f1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "oa-g1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "oa-h1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "oa-i1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "oa-j1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "oa-k1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "oa-l1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "oa-m1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "oa-n1"
                 },
                 {
                     "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "WALL"
                 }
             ],
             [
                 {
-                    "kind": "WALL"
+                    "kind": "USER",
+                    "host": "oa-a1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "oa-b2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "oa-c2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "oa-d2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "oa-e2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "oa-f2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "oa-g2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "oa-h2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "oa-i2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "oa-j2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "oa-k2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "oa-l2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "oa-m2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "oa-n2"
                 },
                 {
                     "kind": "CORRIDOR"
-                },
-                {
-                    "host": "oa-b1",
-                    "kind": "USER"
-                },
-                {
-                    "host": "oar3p6",
-                    "kind": "USER"
-                },
-                {
-                    "host": "oar4p6",
-                    "kind": "USER"
-                },
-                {
-                    "host": "oar5p6",
-                    "kind": "USER"
-                },
-                {
-                    "host": "oar6p6",
-                    "kind": "USER"
-                },
-                {
-                    "host": "oar7p6",
-                    "kind": "USER"
-                },
-                {
-                    "host": "oar8p6",
-                    "kind": "USER"
-                },
-                {
-                    "host": "oar9p6",
-                    "kind": "USER"
-                },
-                {
-                    "host": "oar10p6",
-                    "kind": "USER"
-                },
-                {
-                    "host": "oar11p6",
-                    "kind": "USER"
-                },
-                {
-                    "host": "oar12p6",
-                    "kind": "USER"
-                },
-                {
-                    "host": "oa-m1",
-                    "kind": "USER"
-                },
-                {
-                    "host": "oar14p6",
-                    "kind": "USER"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "WALL"
                 }
             ],
             [
                 {
-                    "kind": "WALL"
+                    "kind": "USER",
+                    "host": "oa-a2"
                 },
                 {
-                    "host": "oa-a1",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "oa-b3"
                 },
                 {
-                    "host": "oar2p5",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "oa-c3"
                 },
                 {
-                    "host": "oar3p5",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "oa-d3"
                 },
                 {
-                    "host": "oar4p5",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "oa-e3"
                 },
                 {
-                    "host": "oar5p5",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "oa-f3"
                 },
                 {
-                    "host": "oar6p5",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "oa-g3"
                 },
                 {
-                    "host": "oar7p5",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "oa-h3"
                 },
                 {
-                    "host": "oar8p5",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "oa-i3"
                 },
                 {
-                    "host": "oar9p5",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "oa-j3"
                 },
                 {
-                    "host": "oar10p5",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "oa-k3"
                 },
                 {
-                    "host": "oar11p5",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "oa-l3"
                 },
                 {
-                    "host": "oar12p5",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "oa-m3"
                 },
                 {
-                    "host": "oar13p5",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "oa-n3"
                 },
                 {
-                    "host": "oar14p5",
-                    "kind": "USER"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "WALL"
+                    "kind": "USER",
+                    "host": "oa-o1"
                 }
             ],
             [
                 {
-                    "kind": "WALL"
+                    "kind": "USER",
+                    "host": "oa-a3"
                 },
                 {
-                    "host": "oar1p4",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "oa-b4"
                 },
                 {
-                    "host": "oar2p4",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "oa-c4"
                 },
                 {
-                    "host": "oar3p4",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "oa-d4"
                 },
                 {
-                    "host": "oar4p4",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "oa-e4"
                 },
                 {
-                    "host": "oar5p4",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "oa-f4"
                 },
                 {
-                    "host": "oar6p4",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "oa-g4"
                 },
                 {
-                    "host": "oar7p4",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "oa-h4"
                 },
                 {
-                    "host": "oar8p4",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "oa-i4"
                 },
                 {
-                    "host": "oar9p4",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "oa-j4"
                 },
                 {
-                    "host": "oar10p4",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "oa-k4"
                 },
                 {
-                    "host": "oar11p4",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "oa-l4"
                 },
                 {
-                    "host": "oar12p4",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "oa-m4"
                 },
                 {
-                    "host": "oar13p4",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "oa-n4"
                 },
                 {
-                    "host": "oar14p4",
-                    "kind": "USER"
-                },
-                {
-                    "host": "oar15p4",
-                    "kind": "USER"
-                },
-                {
-                    "kind": "WALL"
+                    "kind": "USER",
+                    "host": "oa-o2"
                 }
             ],
             [
                 {
-                    "kind": "WALL"
+                    "kind": "USER",
+                    "host": "oa-a4"
                 },
                 {
-                    "host": "oar1p3",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "oa-b5"
                 },
                 {
-                    "host": "oar2p3",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "oa-c5"
                 },
                 {
-                    "host": "oar3p3",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "oa-d5"
                 },
                 {
-                    "host": "oar4p3",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "oa-e5"
                 },
                 {
-                    "host": "oar5p3",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "oa-f5"
                 },
                 {
-                    "host": "oar6p3",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "oa-g5"
                 },
                 {
-                    "host": "oar7p3",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "oa-h5"
                 },
                 {
-                    "host": "oar8p3",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "oa-i5"
                 },
                 {
-                    "host": "oar9p3",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "oa-j5"
                 },
                 {
-                    "host": "oar10p3",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "oa-k5"
                 },
                 {
-                    "host": "oar11p3",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "oa-l5"
                 },
                 {
-                    "host": "oar12p3",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "oa-m5"
                 },
                 {
-                    "host": "oa-m4",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "oa-n5"
                 },
                 {
-                    "host": "oar14p3",
-                    "kind": "USER"
-                },
-                {
-                    "host": "oar15p3",
-                    "kind": "USER"
-                },
-                {
-                    "kind": "WALL"
+                    "kind": "USER",
+                    "host": "oa-o3"
                 }
             ],
             [
                 {
-                    "kind": "WALL"
+                    "kind": "USER",
+                    "host": "oa-a5"
                 },
                 {
-                    "host": "oar1p2",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "oa-b6"
                 },
                 {
-                    "host": "oar2p2",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "oa-c6"
                 },
                 {
-                    "host": "oar3p2",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "oa-d6"
                 },
                 {
-                    "host": "oar4p2",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "oa-e6"
                 },
                 {
-                    "host": "oar5p2",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "oa-f6"
                 },
                 {
-                    "host": "oar6p2",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "oa-g6"
                 },
                 {
-                    "host": "oar7p2",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "oa-h6"
                 },
                 {
-                    "host": "oar8p2",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "oa-i6"
                 },
                 {
-                    "host": "oar9p2",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "oa-j6"
                 },
                 {
-                    "host": "oar10p2",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "oa-k6"
                 },
                 {
-                    "host": "oar11p2",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "oa-l6"
                 },
                 {
-                    "host": "oar12p2",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "oa-m6"
                 },
                 {
-                    "host": "oar13p2",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "oa-n6"
                 },
                 {
-                    "host": "oar14p2",
-                    "kind": "USER"
-                },
-                {
-                    "host": "oar15p2",
-                    "kind": "USER"
-                },
-                {
-                    "kind": "WALL"
-                }
-            ],
-            [
-                {
-                    "kind": "WALL"
-                },
-                {
-                    "host": "oar1p1",
-                    "kind": "USER"
-                },
-                {
-                    "host": "oar2p1",
-                    "kind": "USER"
-                },
-                {
-                    "host": "oar3p1",
-                    "kind": "USER"
-                },
-                {
-                    "host": "oar4p1",
-                    "kind": "USER"
-                },
-                {
-                    "host": "oar5p1",
-                    "kind": "USER"
-                },
-                {
-                    "host": "oar6p1",
-                    "kind": "USER"
-                },
-                {
-                    "host": "oar7p1",
-                    "kind": "USER"
-                },
-                {
-                    "host": "oar8p1",
-                    "kind": "USER"
-                },
-                {
-                    "host": "oar9p1",
-                    "kind": "USER"
-                },
-                {
-                    "host": "oar10p1",
-                    "kind": "USER"
-                },
-                {
-                    "host": "oar11p1",
-                    "kind": "USER"
-                },
-                {
-                    "host": "oar12p1",
-                    "kind": "USER"
-                },
-                {
-                    "host": "oa-m6",
-                    "kind": "USER"
-                },
-                {
-                    "host": "oar14p1",
-                    "kind": "USER"
-                },
-                {
-                    "host": "oar15p1",
-                    "kind": "USER"
-                },
-                {
-                    "kind": "WALL"
-                }
-            ],
-            [
-                {
-                    "kind": "WALL"
-                },
-                {
-                    "kind": "WALL"
-                },
-                {
-                    "kind": "WALL"
-                },
-                {
-                    "kind": "WALL"
-                },
-                {
-                    "kind": "WALL"
-                },
-                {
-                    "kind": "WALL"
-                },
-                {
-                    "kind": "WALL"
-                },
-                {
-                    "kind": "WALL"
-                },
-                {
-                    "kind": "WALL"
-                },
-                {
-                    "kind": "WALL"
-                },
-                {
-                    "kind": "WALL"
-                },
-                {
-                    "kind": "WALL"
-                },
-                {
-                    "kind": "WALL"
-                },
-                {
-                    "kind": "WALL"
-                },
-                {
-                    "kind": "WALL"
-                },
-                {
-                    "kind": "WALL"
-                },
-                {
-                    "kind": "WALL"
+                    "kind": "USER",
+                    "host": "oa-o4"
                 }
             ]
         ],
@@ -1620,380 +1204,234 @@
     {
         "campusId": 17,
         "comment": "",
-        "height": 15,
-        "hostPrefix": "e4",
+        "height": 11,
+        "hostPrefix": "il",
         "isReadyToPublish": true,
         "map": [
             [
                 {
-                    "host": "e4r15p1",
-                    "kind": "USER"
+                    "kind": "CORRIDOR"
                 },
                 {
-                    "host": "e4r14p1",
-                    "kind": "USER"
+                    "kind": "CORRIDOR"
                 },
                 {
-                    "host": "e4r13p1",
-                    "kind": "USER"
+                    "kind": "CORRIDOR"
                 },
                 {
-                    "host": "e4r12p1",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "il-d6"
                 },
                 {
-                    "host": "e4r11p1",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "il-e6"
                 },
                 {
-                    "host": "e4r10p1",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "il-f6"
                 },
                 {
-                    "host": "e4r9p1",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "il-g6"
                 },
                 {
-                    "host": "e4r8p1",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "il-h6"
                 },
                 {
-                    "host": "e4r7p1",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "il-i6"
                 },
                 {
-                    "host": "e4r6p1",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "il-j6"
                 },
                 {
-                    "host": "e4r5p1",
-                    "kind": "USER"
-                },
-                {
-                    "host": "e4r4p1",
-                    "kind": "USER"
-                },
-                {
-                    "host": "e4r3p1",
-                    "kind": "USER"
-                },
-                {
-                    "host": "e4r2p1",
-                    "kind": "USER"
-                },
-                {
-                    "host": "e4r1p1",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "il-k6"
                 }
             ],
             [
                 {
-                    "host": "e4r15p2",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "il-a3"
                 },
                 {
-                    "host": "e4r14p2",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "il-b4"
                 },
                 {
-                    "host": "e4r13p2",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "il-c4"
                 },
                 {
-                    "host": "e4r12p2",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "il-d5"
                 },
                 {
-                    "host": "e4r11p2",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "il-e5"
                 },
                 {
-                    "host": "e4r10p2",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "il-f5"
                 },
                 {
-                    "host": "e4r9p2",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "il-g5"
                 },
                 {
-                    "host": "e4r8p2",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "il-h5"
                 },
                 {
-                    "host": "e4r7p2",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "il-i5"
                 },
                 {
-                    "host": "e4r6p2",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "il-j5"
                 },
                 {
-                    "host": "e4r5p2",
-                    "kind": "USER"
-                },
-                {
-                    "host": "e4r4p2",
-                    "kind": "USER"
-                },
-                {
-                    "host": "e4r3p2",
-                    "kind": "USER"
-                },
-                {
-                    "host": "e4r2p2",
-                    "kind": "USER"
-                },
-                {
-                    "host": "e4r1p2",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "il-k5"
                 }
             ],
             [
                 {
-                    "host": "e4r15p3",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "il-a2"
                 },
                 {
-                    "host": "e4r14p3",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "il-b3"
                 },
                 {
-                    "host": "e4r13p3",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "il-c3"
                 },
                 {
-                    "host": "e4r12p3",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "il-d4"
                 },
                 {
-                    "host": "e4r11p3",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "il-e4"
                 },
                 {
-                    "host": "e4r10p3",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "il-f4"
                 },
                 {
-                    "host": "e4r9p3",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "il-g4"
                 },
                 {
-                    "host": "e4r8p3",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "il-h4"
                 },
                 {
-                    "host": "e4r7p3",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "il-i4"
                 },
                 {
-                    "host": "e4r6p3",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "il-j4"
                 },
                 {
-                    "host": "e4r5p3",
-                    "kind": "USER"
-                },
-                {
-                    "host": "e4r4p3",
-                    "kind": "USER"
-                },
-                {
-                    "host": "e4r3p3",
-                    "kind": "USER"
-                },
-                {
-                    "host": "e4r2p3",
-                    "kind": "USER"
-                },
-                {
-                    "host": "e4r1p3",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "il-k4"
                 }
             ],
             [
                 {
-                    "host": "e4r15p4",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "il-a1"
                 },
                 {
-                    "host": "e4r14p4",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "il-b2"
                 },
                 {
-                    "host": "e4r13p4",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "il-c2"
                 },
                 {
-                    "host": "e4r12p4",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "il-d3"
                 },
                 {
-                    "host": "e4r11p4",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "il-e3"
                 },
                 {
-                    "host": "e4r10p4",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "il-f3"
                 },
                 {
-                    "host": "e4r9p4",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "il-g3"
                 },
                 {
-                    "host": "e4r8p4",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "il-h3"
                 },
                 {
-                    "host": "e4r7p4",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "il-i3"
                 },
                 {
-                    "host": "e4r6p4",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "il-j3"
                 },
                 {
-                    "host": "e4r5p4",
-                    "kind": "USER"
-                },
-                {
-                    "host": "e4r4p4",
-                    "kind": "USER"
-                },
-                {
-                    "host": "e4r3p4",
-                    "kind": "USER"
-                },
-                {
-                    "host": "e4r2p4",
-                    "kind": "USER"
-                },
-                {
-                    "host": "e4r1p4",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "il-k3"
                 }
             ],
             [
                 {
-                    "host": "e4r15p5",
-                    "kind": "USER"
+                    "kind": "CORRIDOR"
                 },
                 {
-                    "host": "e4r14p5",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "il-b1"
                 },
                 {
-                    "host": "e4r13p5",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "il-c1"
                 },
                 {
-                    "host": "e4r12p5",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "il-d2"
                 },
                 {
-                    "host": "e4r11p5",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "il-e2"
                 },
                 {
-                    "host": "e4r10p5",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "il-f2"
                 },
                 {
-                    "host": "e4r9p5",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "il-g2"
                 },
                 {
-                    "host": "e4r8p5",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "il-h2"
                 },
                 {
-                    "host": "e4r7p5",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "il-i2"
                 },
                 {
-                    "host": "e4r6p5",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "il-j2"
                 },
                 {
-                    "host": "e4r5p5",
-                    "kind": "USER"
-                },
-                {
-                    "host": "e4r4p5",
-                    "kind": "USER"
-                },
-                {
-                    "host": "e4r3p5",
-                    "kind": "USER"
-                },
-                {
-                    "host": "e4r2p5",
-                    "kind": "USER"
-                },
-                {
-                    "host": "e4r1p5",
-                    "kind": "USER"
-                }
-            ],
-            [
-                {
-                    "host": "e4r15p6",
-                    "kind": "USER"
-                },
-                {
-                    "host": "e4r14p6",
-                    "kind": "USER"
-                },
-                {
-                    "host": "e4r13p6",
-                    "kind": "USER"
-                },
-                {
-                    "host": "e4r12p6",
-                    "kind": "USER"
-                },
-                {
-                    "host": "e4r11p6",
-                    "kind": "USER"
-                },
-                {
-                    "host": "e4r10p6",
-                    "kind": "USER"
-                },
-                {
-                    "host": "e4r9p6",
-                    "kind": "USER"
-                },
-                {
-                    "host": "e4r8p6",
-                    "kind": "USER"
-                },
-                {
-                    "host": "e4r7p6",
-                    "kind": "USER"
-                },
-                {
-                    "host": "e4r6p6",
-                    "kind": "USER"
-                },
-                {
-                    "host": "e4r5p6",
-                    "kind": "USER"
-                },
-                {
-                    "host": "e4r4p6",
-                    "kind": "USER"
-                },
-                {
-                    "host": "e4r3p6",
-                    "kind": "USER"
-                },
-                {
-                    "host": "e4r2p6",
-                    "kind": "USER"
-                },
-                {
-                    "host": "e4r1p6",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "il-k2"
                 }
             ],
             [
@@ -2007,6 +1445,537 @@
                     "kind": "CORRIDOR"
                 },
                 {
+                    "kind": "USER",
+                    "host": "il-d1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "il-e1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "il-f1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "il-g1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "il-h1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "il-i1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "il-j1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "il-k1"
+                }
+            ],
+            [
+                {
+                    "kind": "LABEL",
+                    "label": "a"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "b"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "c"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "d"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "e"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "f"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "g"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "h"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "i"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "j"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "k"
+                }
+            ]
+        ],
+        "name": "Illusion",
+        "nameShort": "il",
+        "position": 1,
+        "slug": "7_e_1538349073951",
+        "width": 10
+    },
+    {
+        "campusId": 17,
+        "comment": "",
+        "height": 15,
+        "hostPrefix": "mi",
+        "isReadyToPublish": true,
+        "map": [
+            [
+                {
+                    "kind": "LABEL",
+                    "label": "a"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "b"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "c"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "d"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "e"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "f"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "g"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "h"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "i"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "j"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "k"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "l"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "m"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "n"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "o"
+                }
+            ],
+            [
+                {
+                    "kind": "USER",
+                    "host": "mi-a6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-b6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-c6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-d6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-e6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-f6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-g6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-h6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-i6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-j6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-k6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-l6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-m6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-n6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-o6"
+                }
+            ],
+            [
+                {
+                    "kind": "USER",
+                    "host": "mi-a5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-b5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-c5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-d5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-e5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-f5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-g5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-h5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-i5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-j5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-k5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-l5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-m5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-n5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-o5"
+                }
+            ],
+            [
+                {
+                    "kind": "USER",
+                    "host": "mi-a4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-b4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-c4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-d4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-e4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-f4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-g4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-h4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-i4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-j4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-k4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-l4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-m4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-n4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-o4"
+                }
+            ],
+            [
+                {
+                    "kind": "USER",
+                    "host": "mi-a3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-b3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-c3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-d3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-e3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-f3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-g3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-h3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-i3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-j3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-k3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-l3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-m3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-n3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-o3"
+                }
+            ],
+            [
+                {
+                    "kind": "USER",
+                    "host": "mi-a2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-b2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-c2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-d2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-e2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-f2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-g2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-h2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-i2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-j2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-k2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-l2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-m2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-n2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-o2"
+                }
+            ],
+            [
+                {
+                    "kind": "USER",
+                    "host": "mi-a1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-b1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-c1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-d1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-e1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-f1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-g1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-h1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-i1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-j1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-k1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-l1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-m1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-n1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "mi-o1"
+                }
+            ],
+            [
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
                     "kind": "CORRIDOR"
                 },
                 {
@@ -2051,60 +2020,57 @@
             ],
             [
                 {
-                    "kind": "WALL"
+                    "kind": "CORRIDOR"
                 },
                 {
-                    "kind": "WALL"
+                    "kind": "CORRIDOR"
                 },
                 {
-                    "kind": "WALL"
+                    "kind": "USER",
+                    "host": "mi-p1"
                 },
                 {
-                    "host": "e4r13p7",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "mi-q1"
                 },
                 {
-                    "host": "e4r12p7",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "mi-r1"
                 },
                 {
-                    "host": "e4r11p7",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "mi-s1"
                 },
                 {
-                    "host": "e4r10p7",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "mi-t1"
                 },
                 {
-                    "host": "e4r9p7",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "mi-u1"
                 },
                 {
-                    "host": "e4r8p7",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "mi-v1"
                 },
                 {
-                    "host": "e4r7p7",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "mi-w1"
                 },
                 {
-                    "host": "e4w1",
-                    "kind": "USER"
+                    "kind": "CORRIDOR"
                 },
                 {
-                    "kind": "WALL"
+                    "kind": "CORRIDOR"
                 },
                 {
-                    "kind": "WALL"
+                    "kind": "CORRIDOR"
                 },
                 {
-                    "kind": "WALL"
+                    "kind": "CORRIDOR"
                 },
                 {
-                    "kind": "WALL"
-                },
-                {
-                    "kind": "WALL"
+                    "kind": "CORRIDOR"
                 }
             ],
             [
@@ -2112,42 +2078,54 @@
                     "kind": "CORRIDOR"
                 },
                 {
-                    "kind": "WALL"
+                    "kind": "CORRIDOR"
                 },
                 {
-                    "host": "e4r13p8",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "mi-p2"
                 },
                 {
-                    "host": "e4r12p8",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "mi-q2"
                 },
                 {
-                    "host": "e4r11p8",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "mi-r2"
                 },
                 {
-                    "host": "e4r10p8",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "mi-s2"
                 },
                 {
-                    "host": "e4r9p8",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "mi-t2"
                 },
                 {
-                    "host": "e4r8p8",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "mi-u2"
                 },
                 {
-                    "host": "e4r7p8",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "mi-v2"
                 },
                 {
-                    "host": "e4r6p8",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "mi-w2"
                 },
                 {
-                    "kind": "WALL"
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
                 }
             ],
             [
@@ -2155,42 +2133,54 @@
                     "kind": "CORRIDOR"
                 },
                 {
-                    "kind": "WALL"
+                    "kind": "CORRIDOR"
                 },
                 {
-                    "host": "e4r13p9",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "mi-p3"
                 },
                 {
-                    "host": "e4r12p9",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "mi-q3"
                 },
                 {
-                    "host": "e4r11p9",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "mi-r3"
                 },
                 {
-                    "host": "e4r10p9",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "mi-s3"
                 },
                 {
-                    "host": "e4r9p9",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "mi-t3"
                 },
                 {
-                    "host": "e4r8p9",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "mi-u3"
                 },
                 {
-                    "host": "e4r7p9",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "mi-v3"
                 },
                 {
-                    "host": "e4r6p9",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "mi-w3"
                 },
                 {
-                    "kind": "WALL"
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
                 }
             ],
             [
@@ -2198,42 +2188,54 @@
                     "kind": "CORRIDOR"
                 },
                 {
-                    "kind": "WALL"
+                    "kind": "CORRIDOR"
                 },
                 {
-                    "host": "e4r13p10",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "mi-p4"
                 },
                 {
-                    "host": "e4r12p10",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "mi-q4"
                 },
                 {
-                    "host": "e4r11p10",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "mi-r4"
                 },
                 {
-                    "host": "e4r10p10",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "mi-s4"
                 },
                 {
-                    "host": "e4r9p10",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "mi-t4"
                 },
                 {
-                    "host": "e4r8p10",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "mi-u4"
                 },
                 {
-                    "host": "e4r7p10",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "mi-v4"
                 },
                 {
-                    "host": "e4r6p10",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "mi-w4"
                 },
                 {
-                    "kind": "WALL"
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
                 }
             ],
             [
@@ -2241,42 +2243,54 @@
                     "kind": "CORRIDOR"
                 },
                 {
-                    "kind": "WALL"
+                    "kind": "CORRIDOR"
                 },
                 {
-                    "host": "e4r13p11",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "mi-p5"
                 },
                 {
-                    "host": "e4r12p11",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "mi-q5"
                 },
                 {
-                    "host": "e4r11p11",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "mi-r5"
                 },
                 {
-                    "host": "e4r10p11",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "mi-s5"
                 },
                 {
-                    "host": "e4r9p11",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "mi-t5"
                 },
                 {
-                    "host": "e4r8p11",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "mi-u5"
                 },
                 {
-                    "host": "e4r7p11",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "mi-v5"
                 },
                 {
-                    "host": "e4r6p11",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "mi-w5"
                 },
                 {
-                    "kind": "WALL"
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
                 }
             ],
             [
@@ -2284,49 +2298,2468 @@
                     "kind": "CORRIDOR"
                 },
                 {
-                    "kind": "WALL"
+                    "kind": "CORRIDOR"
                 },
                 {
-                    "host": "e4r13p12",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "mi-p6"
                 },
                 {
-                    "host": "e4r12p12",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "mi-q6"
                 },
                 {
-                    "host": "e4r11p12",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "mi-r6"
                 },
                 {
-                    "host": "e4r10p12",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "mi-s6"
                 },
                 {
-                    "host": "e4r9p12",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "mi-t6"
                 },
                 {
-                    "host": "e4r8p12",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "mi-u6"
                 },
                 {
-                    "host": "e4r7p12",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "mi-v6"
                 },
                 {
-                    "host": "e4r6p12",
-                    "kind": "USER"
+                    "kind": "USER",
+                    "host": "mi-w6"
                 },
                 {
-                    "kind": "WALL"
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                }
+            ],
+            [
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "p"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "q"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "r"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "s"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "t"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "u"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "v"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "w"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
                 }
             ]
         ],
         "name": "Mirage",
-        "nameShort": "e4",
+        "nameShort": "mi",
         "position": 4,
         "slug": "17_e_1538349641891",
         "width": 13
+    },
+    {
+        "campusId": 17,
+        "comment": "",
+        "height": 10,
+        "hostPrefix": "su",
+        "isReadyToPublish": true,
+        "map": [
+            [
+                {
+                    "kind": "LABEL",
+                    "label": "a"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "b"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "c"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "d"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "e"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "f"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "g"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "h"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "i"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "j"
+                }
+            ],
+            [
+                {
+                    "kind": "USER",
+                    "host": "su-a4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "su-b4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "su-c4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "su-d6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "su-e6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "su-f6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "su-g6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "su-h1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "su-i6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "su-j6"
+                }
+            ],
+            [
+                {
+                    "kind": "USER",
+                    "host": "su-a3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "su-b3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "su-c3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "su-d5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "su-e5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "su-f5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "su-g5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "su-h5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "su-i5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "su-j5"
+                }
+            ],
+            [
+                {
+                    "kind": "USER",
+                    "host": "su-a2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "su-b2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "su-c2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "su-d4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "su-e4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "su-f4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "su-g4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "su-h4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "su-i4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "su-j4"
+                }
+            ],
+            [
+                {
+                    "kind": "USER",
+                    "host": "su-a1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "su-b1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "su-c1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "su-d3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "su-e3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "su-f3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "su-g3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "su-h3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "su-i3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "su-j3"
+                }
+            ],
+            [
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "su-d2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "su-e2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "su-f2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "su-g2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "su-h2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "su-i2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "su-j2"
+                }
+            ],
+            [
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "su-d1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "su-e1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "su-f1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "su-g1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "su-h1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "su-i1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "su-j1"
+                }
+            ]
+        ],
+        "name": "Supernova",
+        "nameShort": "su",
+        "position": 5,
+        "slug": "17_e_1538349641891",
+        "width": 7
+    },
+    {
+        "campusId": 17,
+        "comment": "",
+        "height": 14,
+        "hostPrefix": "ga",
+        "isReadyToPublish": true,
+        "map": [
+            [
+                {
+                    "kind": "LABEL",
+                    "label": "a"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "b"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "c"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "d"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "e"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "f"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "g"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "h"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "i"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "j"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "k"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "l"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "m"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "n"
+                }
+            ],
+            [
+                {
+                    "kind": "USER",
+                    "host": "ga-a4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-b4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-c6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-d6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-e6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-f6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-g6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-h6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-i6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-j6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-k6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-l6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-m6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-n6"
+                }
+            ],
+            [
+                {
+                    "kind": "USER",
+                    "host": "ga-a3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-b3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-c5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-d5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-e5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-f5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-g5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-h5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-i5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-j5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-k5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-l5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-m5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-n5"
+                }
+            ],
+            [
+                {
+                    "kind": "USER",
+                    "host": "ga-a2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-b2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-c4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-d4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-e4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-f4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-g4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-h4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-i4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-j4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-k4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-l4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-m4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-n4"
+                }
+            ],
+            [
+                {
+                    "kind": "USER",
+                    "host": "ga-a1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-b1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-c3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-d3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-e3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-f3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-g3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-h3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-i3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-j3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-k3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-l3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-m3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-n3"
+                }
+            ],
+            [
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-c2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-d2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-e2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-f2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-g2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-h2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-i2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-j2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-k2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-l2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-m2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-n2"
+                }
+            ],
+            [
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-c1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-d1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-e1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-f1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-g1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-h1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-i1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-j1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-k1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-l1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-m1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-n1"
+                }
+            ],
+            [
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                }
+            ],
+            [
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-o1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-p1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-q1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-r1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-s1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-t1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-u1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-v1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-w1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-x1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-y1"
+                },
+                {
+                    "kind": "CORRIDOR"
+                }
+            ],
+            [
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-o2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-p2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-q2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-r2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-s2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-t2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-u2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-v2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-w2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-x2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-y2"
+                },
+                {
+                    "kind": "CORRIDOR"
+                }
+            ],
+            [
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-o3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-p3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-q3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-r3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-s3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-t3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-u3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-v3"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                }
+            ],
+            [
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-o4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-p4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-q4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-r4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-s4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-t4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-u4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-v4"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                }
+            ],
+            [
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-o5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-p5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-q5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-r5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-s5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-t5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-u5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-v5"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                }
+            ],
+            [
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-o6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-p6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-q6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-r6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-s6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-t6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-u6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ga-v6"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                }
+            ],
+            [
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "o"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "p"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "q"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "r"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "s"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "t"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "u"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "v"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "w"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "x"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "y"
+                },
+                {
+                    "kind": "CORRIDOR"
+                }
+            ]
+        ],
+        "name": "Galaxy",
+        "nameShort": "ga",
+        "position": 6,
+        "slug": "17_e_1538349641891",
+        "width": 15
+    },
+    {
+        "campusId": 17,
+        "comment": "",
+        "height": 12,
+        "hostPrefix": "vo",
+        "isReadyToPublish": true,
+        "map": [
+            [
+                {
+                    "kind": "LABEL",
+                    "label": "a"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "b"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "c"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "d"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "e"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "f"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "g"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "h"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "i"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "j"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "k"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "l"
+                },
+            ],
+            [
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "vo-k7"
+                },
+                {
+                    "kind": "USER",
+                    "host": "vo-l7"
+                },
+            ],
+            [
+                {
+                    "kind": "USER",
+                    "host": "vo-a2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "vo-b2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "vo-c2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "vo-d4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "vo-e4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "vo-f4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "vo-g4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "vo-h4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "vo-i6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "vo-j6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "vo-k6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "vo-l6"
+                },
+            ],
+            [
+                {
+                    "kind": "USER",
+                    "host": "vo-a1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "vo-b1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "vo-c1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "vo-d3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "vo-e3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "vo-f3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "vo-g3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "vo-h3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "vo-i5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "vo-j5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "vo-k5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "vo-l5"
+                },
+            ],
+            [
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "vo-d2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "vo-e2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "vo-f2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "vo-g2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "vo-h2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "vo-i4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "vo-j4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "vo-k4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "vo-l4"
+                },
+            ],
+            [
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "vo-d1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "vo-e1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "vo-f1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "vo-g1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "vo-h1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "vo-i3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "vo-j3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "vo-k3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "vo-l3"
+                },
+            ],
+            [
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "vo-i2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "vo-j2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "vo-k2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "vo-l2"
+                },
+            ],
+            [
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "vo-i1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "vo-j1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "vo-k1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "vo-l1"
+                }
+            ]
+        ],
+        "name": "Void",
+        "nameShort": "vo",
+        "position": 6,
+        "slug": "17_e_1538349641891",
+        "width": 8
+    },
+    {
+        "campusId": 17,
+        "comment": "",
+        "height": 12,
+        "hostPrefix": "vo",
+        "isReadyToPublish": true,
+        "map": [
+            [
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "o"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "p"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "q"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "r"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "s"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "t"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "u"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "v"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "w"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                }
+            ],
+            [
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-o1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-p1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-q1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-r1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-s1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-t1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-u1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-v1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-w1"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                }
+            ],
+            [
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-o2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-p2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-q2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-r2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-s2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-t2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-u2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-v2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-w2"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                }
+            ],
+            [
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-o3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-p3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-q3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-r3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-s3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-t3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-u3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-v3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-w3"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                }
+            ],
+            [
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-o4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-p4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-q4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-r4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-s4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-t4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-u4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-v4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-w4"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                }
+            ],
+            [
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-o5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-p5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-q5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-r5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-s5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-t5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-u5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-v5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-w5"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                }
+            ],
+            [
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-o6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-p6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-q6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-r6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-s6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-t6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-u6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-v6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-w6"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                }
+            ],
+            [
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                }
+            ],
+            [
+                {
+                    "kind": "USER",
+                    "host": "ox-a1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-b1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-c1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-d1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-e1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-f1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-g1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-h1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-i1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-j1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-k1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-l1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-m1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-n1"
+                }
+            ],
+            [
+                {
+                    "kind": "USER",
+                    "host": "ox-a2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-b2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-c2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-d2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-e2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-f2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-g2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-h2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-i2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-j2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-k2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-l2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-m2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-n2"
+                }
+            ],
+            [
+                {
+                    "kind": "USER",
+                    "host": "ox-a3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-b3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-c3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-d3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-e3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-f3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-g3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-h3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-i3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-j3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-k3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-l3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-m3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-n3"
+                }
+            ],
+            [
+                {
+                    "kind": "USER",
+                    "host": "ox-a4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-b4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-c4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-d4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-e4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-f4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-g4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-h4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-i4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-j4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-k4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-l4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-m4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-n4"
+                }
+            ],
+            [
+                {
+                    "kind": "USER",
+                    "host": "ox-a5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-b5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-c5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-d5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-e5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-f5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-g5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-h5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-i5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-j5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-k5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-l5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-m5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-n5"
+                }
+            ],
+            [
+                {
+                    "kind": "USER",
+                    "host": "ox-a6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-b6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-c6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-d6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-e6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-f6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-g6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-h6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-i6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-j6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-k6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-l6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-m6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "ox-n6"
+                }
+            ],
+            [
+                {
+                    "kind": "LABEL",
+                    "label": "a"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "b"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "c"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "d"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "e"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "f"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "g"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "h"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "i"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "j"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "k"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "l"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "m"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "n"
+                }
+            ]
+        ],
+        "name": "Oxygen",
+        "nameShort": "ox",
+        "position": 6,
+        "slug": "17_e_1538349641891",
+        "width": 8
     }
 ]

@@ -202,6 +202,7 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
             infoView.removeFromSuperview()
         }
         for case let (index, cluster) in clustersData.enumerated() {
+            
             let infoView = ClusterInfoView()
             let friends = occupancy[index].friends
             let friendText = "\(friends) friend\(friends == 1 ? "" : "s")"
@@ -301,6 +302,7 @@ extension ClustersViewController: TablePickerDelegate {
         selectedCampus = item
         navigationItem.title = item.name
         if availableCampusIDs.contains(item.id) {
+            stackView.insertArrangedSubview(activityIndicator, at: 0)
             noClusterView.isHidden = true
             addNewClusterView()
         } else {

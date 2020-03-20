@@ -26,12 +26,18 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var stackViewBottom: NSLayoutConstraint!
     
     @IBOutlet weak var infoView: UIView!
     @IBOutlet weak var infoViewHeight: NSLayoutConstraint!
     @IBOutlet weak var infoScrollview: UIScrollView!
     @IBOutlet weak var infoDragIndicator: UIView!
     @IBOutlet weak var infoStackview: UIStackView!
+    private let minInfoContentHeight: CGFloat = 29
+    private var infoContentHeight: CGFloat {
+        CGFloat(clustersData.count * 55) + minInfoContentHeight
+    }
+    private var maxInfoContentHeight: CGFloat = 0
     private var startPosition: CGPoint!
     private var originalHeight: CGFloat = 0
     
@@ -105,48 +111,6 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
         navigationController?.view.setNeedsLayout() // force update layout
         navigationController?.view.layoutIfNeeded() // to fix height of the navigation bar
     }
-
-    @IBAction func panInfoView(_ gesture: UIPanGestureRecognizer) {
-        let translation = gesture.translation(in: self.view)
-        let endPosition = gesture.location(in: self.view)
-        print("PANNING")
-        print(translation)
-        print(endPosition)
-        if gesture.state == .began {
-            startPosition = gesture.location(in: self.view)
-            originalHeight = infoViewHeight.constant
-            print("STARTING \(startPosition!) AND \(originalHeight)")
-        }
-
-        if gesture.state == .changed {
-            let difference = endPosition.y - startPosition.y
-            var newHeight = originalHeight - difference
-            
-            print("------------")
-            print(difference)
-            print(newHeight)
-            print("------------")
-            if endPosition.y > view.bounds.height {
-                newHeight = 19
-            } else if endPosition.y < 100 {
-                newHeight = view.bounds.height - 100
-            }
-//            if view.bounds.height - newHeight < self.view.bounds.height {
-//                newHeight = view.bounds.height - topSafeArea - backButtonSafeArea
-//            } else if newHeight < routeDetailsHeaderView.bounds.height + bottomSafeArea {
-//                newHeight = routeDetailsHeaderView.bounds.height
-//            }
-            infoViewHeight.constant = newHeight
-            infoView.backgroundColor = .lightGray
-            gesture.setTranslation(.zero, in: self.view)
-        }
-        
-        if gesture.state == .ended || gesture.state == .cancelled {
-            let contentHeight = clustersData.count * 55 + 19
-            print("ENDING \(contentHeight)")
-            //Do Something if interested when dragging ended.
-        }
-    }
     
     func addNewClusterView(firstCampusLoad load: Bool = true) {
         let id = selectedCampus.id
@@ -172,6 +136,12 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
             scrollView.maximumZoomScale = 4.0
             scrollView.zoomScale = minZoomScale
             
+            let clusterHeight = CGFloat(max(width, height)) * minZoomScale
+            maxInfoContentHeight = view.bounds.height - (clusterHeight + 60)
+            if infoViewHeight.constant != minInfoContentHeight {
+                showInfoView()
+            }
+
             if load {
                 loadClusterLocations(forCampus: id)
             } else {
@@ -260,12 +230,6 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
             return
         }
         for case let (index, cluster) in clustersData.enumerated() {
-//            if index == 3 {
-//                let view = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: 40))
-//                
-//                break
-//            }
-            
             let infoView = ClusterInfoView()
             let friends = occupancy[index].friends
             let friendText = "\(friends) friend\(friends == 1 ? "" : "s")"
@@ -295,6 +259,66 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
         backBar.clipsToBounds = true
     }
     
+    @IBAction func panInfoView(_ gesture: UIPanGestureRecognizer) {
+        let endPosition = gesture.location(in: self.view)
+        let velocity = gesture.velocity(in: self.view)
+        if gesture.state == .began {
+            startPosition = gesture.location(in: self.view)
+            originalHeight = infoViewHeight.constant
+            scrollView.isScrollEnabled = false
+        }
+
+        if gesture.state == .changed {
+            let difference = endPosition.y - startPosition.y
+            var newHeight = originalHeight - difference
+            
+            if endPosition.y > view.bounds.height - minInfoContentHeight {
+                newHeight = minInfoContentHeight
+                gesture.isEnabled = false
+                gesture.isEnabled = true
+            } else if endPosition.y < view.bounds.height - infoContentHeight {
+                scrollView.isScrollEnabled = true
+                var extra = newHeight - infoContentHeight
+                if extra == 0 { extra = 0.1 }
+                newHeight = infoContentHeight + (extra / log(extra))
+            } else if endPosition.y < 100 {
+                let maxHeight = view.bounds.height - 100
+                var extra = newHeight - maxHeight
+                if extra == 0 { extra = 0.1 }
+                newHeight = maxHeight + (extra / log(extra))
+            }
+
+            infoViewHeight.constant = newHeight
+        }
+        
+        if gesture.state == .ended || gesture.state == .cancelled {
+            if velocity.y > 1500.0 {
+                let timeNeeded = Double((view.bounds.height - endPosition.y) / velocity.y)
+                hideInfoView(withDuration: timeNeeded)
+            } else if velocity.y < -1500.0 || endPosition.y < view.bounds.height - infoContentHeight {
+                if infoViewHeight.constant < maxInfoContentHeight {
+                    let timeNeeded = Double((endPosition.y - maxInfoContentHeight) / velocity.y)
+                    showInfoView(withDuration: timeNeeded)
+                } else {
+                    print("GO UP: \(view.bounds.height) \(infoContentHeight)")
+                    infoViewHeight.constant = min(view.bounds.height - 100, infoContentHeight)
+                    let timeNeeded = Double(endPosition.y / velocity.y)
+                    UIView.animate(withDuration: timeNeeded) {
+                        self.infoView.superview?.layoutIfNeeded()
+                    }
+                }
+            } else if endPosition.y < 100 {
+                infoViewHeight.constant = view.bounds.height - 100
+                let timeNeeded = Double(endPosition.y / velocity.y)
+                UIView.animate(withDuration: timeNeeded) {
+                    self.infoView.superview?.layoutIfNeeded()
+                }
+            }
+        }
+        infoView.backgroundColor = .yellow
+        gesture.setTranslation(.zero, in: self.view)
+    }
+
     @IBAction func clusterFloorChanged(_ sender: UISegmentedControl) {
         stackView.insertArrangedSubview(activityIndicator, at: 0)
         scrollView.setZoomScale(minZoomScale, animated: true)
@@ -308,6 +332,7 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
     }
     
     func refreshClusters() {
+        hideInfoView()
         stackView.insertArrangedSubview(activityIndicator, at: 0)
         navigationItem.rightBarButtonItems![0].isEnabled = false
         clustersView?.clearUserImages()
@@ -341,6 +366,39 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
         optionsAction.addAction(refresh)
         optionsAction.addAction(cancel)
         present(optionsAction, animated: true, completion: nil)
+    }
+    
+    @IBAction func tapInfoView(_ sender: UITapGestureRecognizer) {
+        if infoViewHeight.constant == minInfoContentHeight {
+            showInfoView()
+        }
+    }
+    
+    private func showInfoView(withDuration duration: Double = 0.5) {
+        print("SHOWING INFO")
+        print("\(duration)s")
+        print("MAX Height: \(maxInfoContentHeight)")
+        print("MIN Height: \(minInfoContentHeight)")
+        print("Height: \(infoContentHeight)")
+        if infoContentHeight <= minInfoContentHeight {
+            infoViewHeight.constant = minInfoContentHeight
+        } else if infoContentHeight > maxInfoContentHeight {
+            infoViewHeight.constant = maxInfoContentHeight - 20
+        } else {
+            infoViewHeight.constant = infoContentHeight
+        }
+        stackViewBottom.constant = infoViewHeight.constant
+        UIView.animate(withDuration: duration) {
+            self.infoView.superview?.layoutIfNeeded()
+        }
+    }
+    
+    private func hideInfoView(withDuration duration: Double = 0.5) {
+        self.stackViewBottom.constant = minInfoContentHeight
+        self.infoViewHeight.constant = minInfoContentHeight
+        UIView.animate(withDuration: duration) {
+            self.infoView.superview?.layoutIfNeeded()
+        }
     }
 }
 
@@ -386,16 +444,12 @@ extension ClustersViewController: UIScrollViewDelegate {
     }
     
     func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) {
-        for case let infoView as ClusterInfoView in stackView.arrangedSubviews {
-            infoView.isHidden = true
-        }
+        hideInfoView()
     }
     
     func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
         if scale == minZoomScale {
-            for case let infoView as ClusterInfoView in stackView.arrangedSubviews {
-                infoView.isHidden = false
-            }
+            showInfoView()
         }
     }
     

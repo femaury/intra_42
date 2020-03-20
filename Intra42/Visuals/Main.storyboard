@@ -1967,8 +1967,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="wWB-1s-Cng">
-                                <rect key="frame" x="0.0" y="20" width="414" height="520"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wWB-1s-Cng">
+                                <rect key="frame" x="0.0" y="20" width="414" height="510"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mxh-0n-FPt">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
@@ -1992,7 +1992,7 @@
                                         </constraints>
                                     </view>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="infinite" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="bD3-fA-AM2">
-                                        <rect key="frame" x="0.0" y="55" width="414" height="465"/>
+                                        <rect key="frame" x="0.0" y="60" width="414" height="450"/>
                                         <connections>
                                             <outlet property="delegate" destination="osr-v2-xWd" id="Ncl-hJ-OhZ"/>
                                         </connections>
@@ -2000,7 +2000,7 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sk6-CY-XMM">
-                                <rect key="frame" x="0.0" y="540" width="414" height="185"/>
+                                <rect key="frame" x="0.0" y="505" width="414" height="220"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q6w-CY-abu">
                                         <rect key="frame" x="165.66666666666666" y="5" width="82.666666666666657" height="4"/>
@@ -2009,37 +2009,43 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="4" id="nao-mn-oLC"/>
                                         </constraints>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="jYU-fO-89v" appends="YES" id="UQL-NT-K7b"/>
-                                        </connections>
                                     </view>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rgy-3R-GAj">
-                                        <rect key="frame" x="0.0" y="15" width="414" height="170"/>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rgy-3R-GAj">
+                                        <rect key="frame" x="0.0" y="25" width="414" height="195"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="166" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="MMq-sI-2jv">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="166"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="MMq-sI-2jv">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="249"/>
+                                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="10" right="0.0"/>
                                             </stackView>
                                         </subviews>
+                                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="MMq-sI-2jv" firstAttribute="leading" secondItem="rgy-3R-GAj" secondAttribute="leading" id="9v8-zQ-TOi"/>
                                             <constraint firstAttribute="trailing" secondItem="MMq-sI-2jv" secondAttribute="trailing" id="Tqc-23-OAc"/>
-                                            <constraint firstAttribute="bottom" secondItem="MMq-sI-2jv" secondAttribute="bottom" id="mVP-7Q-Zjy"/>
+                                            <constraint firstAttribute="bottom" secondItem="MMq-sI-2jv" secondAttribute="bottom" priority="250" id="mVP-7Q-Zjy"/>
                                             <constraint firstItem="MMq-sI-2jv" firstAttribute="top" secondItem="rgy-3R-GAj" secondAttribute="top" id="rAd-BS-pTe"/>
                                         </constraints>
                                     </scrollView>
                                 </subviews>
-                                <color key="backgroundColor" name="SelectedCellBackground"/>
+                                <color key="backgroundColor" name="IntraTeal"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="MMq-sI-2jv" firstAttribute="width" secondItem="sk6-CY-XMM" secondAttribute="width" id="20i-00-98s"/>
                                     <constraint firstAttribute="trailing" secondItem="rgy-3R-GAj" secondAttribute="trailing" id="LEP-XA-WBl"/>
                                     <constraint firstItem="Q6w-CY-abu" firstAttribute="top" secondItem="sk6-CY-XMM" secondAttribute="top" constant="5" id="ZgF-71-P4Q"/>
                                     <constraint firstItem="Q6w-CY-abu" firstAttribute="centerX" secondItem="sk6-CY-XMM" secondAttribute="centerX" id="aAV-Qa-MK5"/>
                                     <constraint firstAttribute="bottom" secondItem="rgy-3R-GAj" secondAttribute="bottom" id="m8T-Nr-Evr"/>
-                                    <constraint firstItem="rgy-3R-GAj" firstAttribute="top" secondItem="Q6w-CY-abu" secondAttribute="top" constant="10" id="mkt-p5-x3a"/>
+                                    <constraint firstItem="rgy-3R-GAj" firstAttribute="top" secondItem="Q6w-CY-abu" secondAttribute="top" constant="20" id="mkt-p5-x3a"/>
+                                    <constraint firstItem="MMq-sI-2jv" firstAttribute="height" secondItem="sk6-CY-XMM" secondAttribute="height" priority="250" constant="29" id="oNV-zE-qDX"/>
                                     <constraint firstItem="rgy-3R-GAj" firstAttribute="leading" secondItem="sk6-CY-XMM" secondAttribute="leading" id="p4Q-nd-pMW"/>
-                                    <constraint firstAttribute="height" constant="185" id="x6b-FE-quY"/>
+                                    <constraint firstAttribute="height" constant="220" id="x6b-FE-quY"/>
                                     <constraint firstItem="Q6w-CY-abu" firstAttribute="width" secondItem="sk6-CY-XMM" secondAttribute="width" multiplier="0.2" id="yfA-mK-xUz"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="DsF-J7-ELc" appends="YES" id="hF0-Pq-JN6"/>
+                                    <outletCollection property="gestureRecognizers" destination="Vi1-JZ-0NH" appends="YES" id="MrC-3P-4Dt"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -2050,7 +2056,7 @@
                             <constraint firstAttribute="bottom" secondItem="sk6-CY-XMM" secondAttribute="bottom" id="ckW-mI-tPZ"/>
                             <constraint firstItem="wWB-1s-Cng" firstAttribute="top" secondItem="TUY-87-jjS" secondAttribute="top" constant="20" id="s2b-Hg-guN"/>
                             <constraint firstItem="wWB-1s-Cng" firstAttribute="trailing" secondItem="TUY-87-jjS" secondAttribute="trailing" id="uTZ-sJ-vZ4"/>
-                            <constraint firstItem="TUY-87-jjS" firstAttribute="bottom" secondItem="wWB-1s-Cng" secondAttribute="bottom" constant="185" id="w52-Ve-vuW"/>
+                            <constraint firstItem="TUY-87-jjS" firstAttribute="bottom" secondItem="wWB-1s-Cng" secondAttribute="bottom" constant="195" id="w52-Ve-vuW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TUY-87-jjS"/>
                     </view>
@@ -2075,16 +2081,22 @@
                         <outlet property="infoViewHeight" destination="x6b-FE-quY" id="0iS-rl-Y3S"/>
                         <outlet property="scrollView" destination="bD3-fA-AM2" id="kXe-4H-Prn"/>
                         <outlet property="stackView" destination="wWB-1s-Cng" id="L1Q-h2-1sP"/>
+                        <outlet property="stackViewBottom" destination="w52-Ve-vuW" id="gmc-B8-ERY"/>
                         <segue destination="sWC-1A-sDE" kind="show" identifier="UserProfileSegue" id="CDq-Hl-0B6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GYw-BW-7cr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="jYU-fO-89v">
+                <panGestureRecognizer minimumNumberOfTouches="1" id="DsF-J7-ELc">
                     <connections>
-                        <action selector="panInfoView:" destination="osr-v2-xWd" id="RBJ-Fz-nu6"/>
-                        <outlet property="delegate" destination="osr-v2-xWd" id="Eiv-yt-QRt"/>
+                        <action selector="panInfoView:" destination="osr-v2-xWd" id="ugx-Bt-mf3"/>
+                        <outlet property="delegate" destination="osr-v2-xWd" id="hfS-Ch-vIb"/>
                     </connections>
                 </panGestureRecognizer>
+                <tapGestureRecognizer id="Vi1-JZ-0NH">
+                    <connections>
+                        <action selector="tapInfoView:" destination="osr-v2-xWd" id="bx5-yT-cas"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2782.608695652174" y="997.76785714285711"/>
         </scene>
@@ -2616,8 +2628,8 @@
         <image name="people" width="30" height="30"/>
         <image name="phone_white" width="30" height="30"/>
         <image name="user_male" width="30" height="30"/>
-        <namedColor name="SelectedCellBackground">
-            <color red="0.81568627450980391" green="0.81568627450980391" blue="0.83529411764705885" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        <namedColor name="IntraTeal">
+            <color red="0.0" green="0.72549019607843135" blue="0.73333333333333328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="lightTextBackground">
             <color red="0.89800000190734863" green="0.89800000190734863" blue="0.89800000190734863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

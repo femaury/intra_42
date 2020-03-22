@@ -38,8 +38,7 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
         CGFloat(clustersData.count * 55) + minInfoContentHeight
     }
     private var maxInfoContentHeight: CGFloat = 0
-    private var startPosition: CGPoint!
-    private var originalHeight: CGFloat = 0
+    private var originalContentHeight: CGFloat = 0
     
     // Array corresponding to infoStackView subviews containing user and friend count of cluster
     var occupancy: [(users: Int, friends: Int)] = []
@@ -260,63 +259,41 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
     }
     
     @IBAction func panInfoView(_ gesture: UIPanGestureRecognizer) {
-        let endPosition = gesture.location(in: self.view)
-        let velocity = gesture.velocity(in: self.view)
-        if gesture.state == .began {
-            startPosition = gesture.location(in: self.view)
-            originalHeight = infoViewHeight.constant
-            scrollView.isScrollEnabled = false
-        }
-
-        if gesture.state == .changed {
-            let difference = endPosition.y - startPosition.y
-            var newHeight = originalHeight - difference
-            
-            if endPosition.y > view.bounds.height - minInfoContentHeight {
-                newHeight = minInfoContentHeight
-                gesture.isEnabled = false
-                gesture.isEnabled = true
-            } else if endPosition.y < view.bounds.height - infoContentHeight {
-                scrollView.isScrollEnabled = true
-                var extra = newHeight - infoContentHeight
-                if extra == 0 { extra = 0.1 }
-                newHeight = infoContentHeight + (extra / log(extra))
-            } else if endPosition.y < 100 {
-                let maxHeight = view.bounds.height - 100
-                var extra = newHeight - maxHeight
-                if extra == 0 { extra = 0.1 }
-                newHeight = maxHeight + (extra / log(extra))
-            }
-
-            infoViewHeight.constant = newHeight
-        }
+        let translation = gesture.translation(in: self.view).y
+        let velocity = gesture.velocity(in: self.view).y
         
-        if gesture.state == .ended || gesture.state == .cancelled {
-            if velocity.y > 1500.0 {
-                let timeNeeded = Double((view.bounds.height - endPosition.y) / velocity.y)
-                hideInfoView(withDuration: timeNeeded)
-            } else if velocity.y < -1500.0 || endPosition.y < view.bounds.height - infoContentHeight {
-                if infoViewHeight.constant < maxInfoContentHeight {
-                    let timeNeeded = Double((endPosition.y - maxInfoContentHeight) / velocity.y)
-                    showInfoView(withDuration: timeNeeded)
+        switch gesture.state {
+        case .began:
+            originalContentHeight = infoViewHeight.constant
+            scrollView.isScrollEnabled = false
+        case .changed:
+            let newHeight = originalContentHeight - translation
+            
+            if newHeight < view.bounds.height - 100 && newHeight > minInfoContentHeight {
+                if newHeight > infoContentHeight {
+                    let extra = newHeight - infoContentHeight
+                    infoViewHeight.constant = infoContentHeight + (extra / log(extra))
                 } else {
-                    print("GO UP: \(view.bounds.height) \(infoContentHeight)")
-                    infoViewHeight.constant = min(view.bounds.height - 100, infoContentHeight)
-                    let timeNeeded = Double(endPosition.y / velocity.y)
-                    UIView.animate(withDuration: timeNeeded) {
-                        self.infoView.superview?.layoutIfNeeded()
-                    }
+                    infoViewHeight.constant = newHeight
                 }
-            } else if endPosition.y < 100 {
-                infoViewHeight.constant = view.bounds.height - 100
-                let timeNeeded = Double(endPosition.y / velocity.y)
+            }
+        case .ended, .cancelled:
+            if infoViewHeight.constant > view.bounds.height - 150 || velocity < -3000.0 {
+                let newHeight = min(view.bounds.height - 100, infoContentHeight)
+                let timeNeeded = Double(abs(newHeight - infoViewHeight.constant) / velocity)
+                infoViewHeight.constant = newHeight
                 UIView.animate(withDuration: timeNeeded) {
                     self.infoView.superview?.layoutIfNeeded()
                 }
+            } else if infoViewHeight.constant > 100 && velocity < 3000.0 {
+                showInfoView()
+            } else {
+                let timeNeeded = Double(infoViewHeight.constant / velocity)
+                hideInfoView(withDuration: timeNeeded)
             }
+        default:
+            break
         }
-        infoView.backgroundColor = .yellow
-        gesture.setTranslation(.zero, in: self.view)
     }
 
     @IBAction func clusterFloorChanged(_ sender: UISegmentedControl) {

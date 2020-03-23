@@ -29,16 +29,35 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
     @IBOutlet weak var stackViewBottom: NSLayoutConstraint!
     
     @IBOutlet weak var infoView: UIView!
-    @IBOutlet weak var infoViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var infoViewTop: NSLayoutConstraint!
     @IBOutlet weak var infoScrollview: UIScrollView!
     @IBOutlet weak var infoDragIndicator: UIView!
     @IBOutlet weak var infoStackview: UIStackView!
-    private let minInfoContentHeight: CGFloat = 29
+    
+    enum InfoViewState {
+        case hidden
+        case half
+        case full
+    }
+    private var currentInfoViewState: InfoViewState = .half
+    private var halfInfoContentHeight: CGFloat = 0
+    private let minInfoContentHeight: CGFloat = 30
+    private var maxInfoViewTop: CGFloat {
+        max(100, safeAreaHeight - infoContentHeight)
+    }
+    private var halfInfoViewTop: CGFloat {
+        safeAreaHeight - (halfInfoContentHeight + 20)
+    }
+    private var minInfoViewTop: CGFloat {
+        safeAreaHeight - minInfoContentHeight
+    }
     private var infoContentHeight: CGFloat {
         CGFloat(clustersData.count * 55) + minInfoContentHeight
     }
-    private var maxInfoContentHeight: CGFloat = 0
-    private var originalContentHeight: CGFloat = 0
+    private var originalInfoViewTop: CGFloat = 0
+    private var safeAreaHeight: CGFloat {
+        infoView.frame.height + 100
+    }
     
     // Array corresponding to infoStackView subviews containing user and friend count of cluster
     var occupancy: [(users: Int, friends: Int)] = []
@@ -60,7 +79,7 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
             headerSegment.selectedSegmentTintColor = API42Manager.shared.preferedPrimaryColor
         }
         
-        infoView.roundCorners(corners: [.topLeft, .topRight], radius: 20.0)
+        infoScrollview.roundCorners(corners: [.topLeft, .topRight], radius: 20.0)
         infoDragIndicator.roundCorners(corners: .allCorners, radius: 2.0)
         
         activityIndicator.startAnimating()
@@ -135,10 +154,10 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
             scrollView.maximumZoomScale = 4.0
             scrollView.zoomScale = minZoomScale
             
-            let clusterHeight = CGFloat(max(width, height)) * minZoomScale
-            maxInfoContentHeight = view.bounds.height - (clusterHeight + 60)
-            if infoViewHeight.constant != minInfoContentHeight {
-                showInfoView()
+            let clusterHeight = CGFloat(height) * minZoomScale
+            halfInfoContentHeight = safeAreaHeight - (clusterHeight + 100)
+            if infoViewTop.constant != minInfoViewTop {
+                showInfoView(withState: .half)
             }
 
             if load {
@@ -257,44 +276,6 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
         backBar.layer.borderColor = API42Manager.shared.preferedPrimaryColor?.cgColor
         backBar.clipsToBounds = true
     }
-    
-    @IBAction func panInfoView(_ gesture: UIPanGestureRecognizer) {
-        let translation = gesture.translation(in: self.view).y
-        let velocity = gesture.velocity(in: self.view).y
-        
-        switch gesture.state {
-        case .began:
-            originalContentHeight = infoViewHeight.constant
-            scrollView.isScrollEnabled = false
-        case .changed:
-            let newHeight = originalContentHeight - translation
-            
-            if newHeight < view.bounds.height - 100 && newHeight > minInfoContentHeight {
-                if newHeight > infoContentHeight {
-                    let extra = newHeight - infoContentHeight
-                    infoViewHeight.constant = infoContentHeight + (extra / log(extra))
-                } else {
-                    infoViewHeight.constant = newHeight
-                }
-            }
-        case .ended, .cancelled:
-            if infoViewHeight.constant > view.bounds.height - 150 || velocity < -3000.0 {
-                let newHeight = min(view.bounds.height - 100, infoContentHeight)
-                let timeNeeded = Double(abs(newHeight - infoViewHeight.constant) / velocity)
-                infoViewHeight.constant = newHeight
-                UIView.animate(withDuration: timeNeeded) {
-                    self.infoView.superview?.layoutIfNeeded()
-                }
-            } else if infoViewHeight.constant > 100 && velocity < 3000.0 {
-                showInfoView()
-            } else {
-                let timeNeeded = Double(infoViewHeight.constant / velocity)
-                hideInfoView(withDuration: timeNeeded)
-            }
-        default:
-            break
-        }
-    }
 
     @IBAction func clusterFloorChanged(_ sender: UISegmentedControl) {
         stackView.insertArrangedSubview(activityIndicator, at: 0)
@@ -344,40 +325,107 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
         optionsAction.addAction(cancel)
         present(optionsAction, animated: true, completion: nil)
     }
-    
-    @IBAction func tapInfoView(_ sender: UITapGestureRecognizer) {
-        if infoViewHeight.constant == minInfoContentHeight {
-            showInfoView()
+}
+
+// MARK: - Draggable Info View Methods
+
+extension ClustersViewController {
+    @IBAction func panInfoView(_ gesture: UIPanGestureRecognizer) {
+        let translation = gesture.translation(in: self.view).y
+        let velocity = gesture.velocity(in: self.view).y
+        
+        switch gesture.state {
+        case .began:
+            originalInfoViewTop = infoViewTop.constant
+            
+            print("BEGAN")
+            print("Content height: \(infoContentHeight)")
+            print("Current top: \(infoViewTop.constant)")
+            print("MAX top: \(maxInfoViewTop)")
+            print("HALF top: \(halfInfoViewTop)")
+            print("MIN top: \(minInfoViewTop)")
+        case .changed:
+            let newTop = originalInfoViewTop + translation
+            print("new top: \(newTop)")
+            if newTop > 100 && newTop < minInfoViewTop {
+                if newTop < safeAreaHeight - infoContentHeight {
+                    print("-------- changing above content height")
+                    let infoContentTop = safeAreaHeight - infoContentHeight
+                    print(infoContentTop)
+                    let extra = infoContentTop - newTop
+                    print(extra)
+                    infoViewTop.constant = infoContentTop - (extra / log(extra))
+                } else {
+                    print("-------- changing below content height")
+                    infoViewTop.constant = newTop
+                }
+            }
+        case .ended, .cancelled:
+            print("ENDED")
+            let infoViewHeight = safeAreaHeight - infoViewTop.constant
+            print(infoViewTop.constant)
+            print(halfInfoViewTop)
+            if infoViewTop.constant < maxInfoViewTop + 75 || velocity < -2000.0
+                || infoViewTop.constant < halfInfoViewTop - 100 {
+                let newHeight = safeAreaHeight - maxInfoViewTop
+                print("full")
+                let timeNeeded = Double(abs(newHeight - infoViewHeight) / velocity)
+                showInfoView(withState: .full, withDuration: timeNeeded)
+            } else if infoViewTop.constant < safeAreaHeight - 100 && velocity < 2000.0 {
+                print("show")
+                print(halfInfoViewTop)
+                var diff = abs(halfInfoViewTop - infoViewHeight)
+                print(diff)
+                if diff == 0 { diff = 0.1 }
+                let timeNeeded = Double(diff / velocity)
+                print(timeNeeded)
+                showInfoView(withState: .half, withDuration: timeNeeded)
+            } else {
+                print("hide")
+                let timeNeeded = Double(infoViewHeight / velocity)
+                hideInfoView(withDuration: timeNeeded)
+            }
+        default:
+            break
         }
     }
     
-    private func showInfoView(withDuration duration: Double = 0.5) {
-        print("SHOWING INFO")
-        print("\(duration)s")
-        print("MAX Height: \(maxInfoContentHeight)")
-        print("MIN Height: \(minInfoContentHeight)")
-        print("Height: \(infoContentHeight)")
-        if infoContentHeight <= minInfoContentHeight {
-            infoViewHeight.constant = minInfoContentHeight
-        } else if infoContentHeight > maxInfoContentHeight {
-            infoViewHeight.constant = maxInfoContentHeight - 20
-        } else {
-            infoViewHeight.constant = infoContentHeight
+    @IBAction func tapInfoView(_ sender: UITapGestureRecognizer) {
+        if infoViewTop.constant == minInfoViewTop {
+            showInfoView(withState: .half)
         }
-        stackViewBottom.constant = infoViewHeight.constant
+    }
+    
+    private func showInfoView(withState state: InfoViewState, withDuration duration: Double = 0.5) {
+        switch state {
+        case .half:
+            if halfInfoViewTop > safeAreaHeight - infoContentHeight {
+                infoViewTop.constant = halfInfoViewTop
+            } else {
+                fallthrough
+            }
+        case .full:
+            infoViewTop.constant = maxInfoViewTop
+        case .hidden:
+            return
+        }
+        let duration = duration > 0.6 ? 0.6 : duration
         UIView.animate(withDuration: duration) {
             self.infoView.superview?.layoutIfNeeded()
         }
     }
     
     private func hideInfoView(withDuration duration: Double = 0.5) {
-        self.stackViewBottom.constant = minInfoContentHeight
-        self.infoViewHeight.constant = minInfoContentHeight
+        stackViewBottom.constant = minInfoContentHeight
+        infoViewTop.constant = minInfoViewTop
+        let duration = duration > 0.6 ? 0.6 : duration
         UIView.animate(withDuration: duration) {
             self.infoView.superview?.layoutIfNeeded()
         }
+        currentInfoViewState = .hidden
     }
 }
+
 
 // MARK: - Prepare for segue
 
@@ -426,7 +474,7 @@ extension ClustersViewController: UIScrollViewDelegate {
     
     func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
         if scale == minZoomScale {
-            showInfoView()
+            showInfoView(withState: .half)
         }
     }
     

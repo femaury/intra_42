@@ -1968,7 +1968,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wWB-1s-Cng">
-                                <rect key="frame" x="0.0" y="20" width="414" height="510"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="610"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mxh-0n-FPt">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
@@ -1992,7 +1992,7 @@
                                         </constraints>
                                     </view>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="infinite" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="bD3-fA-AM2">
-                                        <rect key="frame" x="0.0" y="60" width="414" height="450"/>
+                                        <rect key="frame" x="0.0" y="60" width="414" height="550"/>
                                         <connections>
                                             <outlet property="delegate" destination="osr-v2-xWd" id="Ncl-hJ-OhZ"/>
                                         </connections>
@@ -2000,26 +2000,25 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sk6-CY-XMM">
-                                <rect key="frame" x="0.0" y="505" width="414" height="220"/>
+                                <rect key="frame" x="0.0" y="600" width="414" height="625"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q6w-CY-abu">
-                                        <rect key="frame" x="165.66666666666666" y="5" width="82.666666666666657" height="4"/>
+                                        <rect key="frame" x="186.33333333333334" y="16" width="41.333333333333343" height="4"/>
                                         <color key="backgroundColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="4" id="nao-mn-oLC"/>
                                         </constraints>
                                     </view>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rgy-3R-GAj">
-                                        <rect key="frame" x="0.0" y="25" width="414" height="195"/>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rgy-3R-GAj">
+                                        <rect key="frame" x="0.0" y="26" width="414" height="599"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="MMq-sI-2jv">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="249"/>
-                                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="654"/>
                                                 <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="10" right="0.0"/>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" name="InfoViewBackground"/>
                                         <constraints>
                                             <constraint firstItem="MMq-sI-2jv" firstAttribute="leading" secondItem="rgy-3R-GAj" secondAttribute="leading" id="9v8-zQ-TOi"/>
                                             <constraint firstAttribute="trailing" secondItem="MMq-sI-2jv" secondAttribute="trailing" id="Tqc-23-OAc"/>
@@ -2028,19 +2027,17 @@
                                         </constraints>
                                     </scrollView>
                                 </subviews>
-                                <color key="backgroundColor" name="IntraTeal"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="MMq-sI-2jv" firstAttribute="width" secondItem="sk6-CY-XMM" secondAttribute="width" id="20i-00-98s"/>
                                     <constraint firstAttribute="trailing" secondItem="rgy-3R-GAj" secondAttribute="trailing" id="LEP-XA-WBl"/>
-                                    <constraint firstItem="Q6w-CY-abu" firstAttribute="top" secondItem="sk6-CY-XMM" secondAttribute="top" constant="5" id="ZgF-71-P4Q"/>
+                                    <constraint firstItem="Q6w-CY-abu" firstAttribute="top" secondItem="sk6-CY-XMM" secondAttribute="top" constant="16" id="ZgF-71-P4Q"/>
                                     <constraint firstItem="Q6w-CY-abu" firstAttribute="centerX" secondItem="sk6-CY-XMM" secondAttribute="centerX" id="aAV-Qa-MK5"/>
                                     <constraint firstAttribute="bottom" secondItem="rgy-3R-GAj" secondAttribute="bottom" id="m8T-Nr-Evr"/>
-                                    <constraint firstItem="rgy-3R-GAj" firstAttribute="top" secondItem="Q6w-CY-abu" secondAttribute="top" constant="20" id="mkt-p5-x3a"/>
+                                    <constraint firstItem="rgy-3R-GAj" firstAttribute="top" secondItem="Q6w-CY-abu" secondAttribute="top" constant="10" id="mkt-p5-x3a"/>
                                     <constraint firstItem="MMq-sI-2jv" firstAttribute="height" secondItem="sk6-CY-XMM" secondAttribute="height" priority="250" constant="29" id="oNV-zE-qDX"/>
                                     <constraint firstItem="rgy-3R-GAj" firstAttribute="leading" secondItem="sk6-CY-XMM" secondAttribute="leading" id="p4Q-nd-pMW"/>
-                                    <constraint firstAttribute="height" constant="220" id="x6b-FE-quY"/>
-                                    <constraint firstItem="Q6w-CY-abu" firstAttribute="width" secondItem="sk6-CY-XMM" secondAttribute="width" multiplier="0.2" id="yfA-mK-xUz"/>
+                                    <constraint firstItem="Q6w-CY-abu" firstAttribute="width" secondItem="sk6-CY-XMM" secondAttribute="width" multiplier="0.1" id="yfA-mK-xUz"/>
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="DsF-J7-ELc" appends="YES" id="hF0-Pq-JN6"/>
@@ -2053,10 +2050,11 @@
                             <constraint firstItem="wWB-1s-Cng" firstAttribute="leading" secondItem="TUY-87-jjS" secondAttribute="leading" id="7C4-GG-M5d"/>
                             <constraint firstItem="TUY-87-jjS" firstAttribute="trailing" secondItem="sk6-CY-XMM" secondAttribute="trailing" id="ReJ-K7-jFv"/>
                             <constraint firstItem="sk6-CY-XMM" firstAttribute="leading" secondItem="TUY-87-jjS" secondAttribute="leading" id="Sib-UP-B59"/>
-                            <constraint firstAttribute="bottom" secondItem="sk6-CY-XMM" secondAttribute="bottom" id="ckW-mI-tPZ"/>
+                            <constraint firstItem="sk6-CY-XMM" firstAttribute="height" secondItem="TUY-87-jjS" secondAttribute="height" constant="-100" id="bGd-mU-X62"/>
                             <constraint firstItem="wWB-1s-Cng" firstAttribute="top" secondItem="TUY-87-jjS" secondAttribute="top" constant="20" id="s2b-Hg-guN"/>
                             <constraint firstItem="wWB-1s-Cng" firstAttribute="trailing" secondItem="TUY-87-jjS" secondAttribute="trailing" id="uTZ-sJ-vZ4"/>
-                            <constraint firstItem="TUY-87-jjS" firstAttribute="bottom" secondItem="wWB-1s-Cng" secondAttribute="bottom" constant="195" id="w52-Ve-vuW"/>
+                            <constraint firstItem="TUY-87-jjS" firstAttribute="bottom" secondItem="wWB-1s-Cng" secondAttribute="bottom" constant="95" id="w52-Ve-vuW"/>
+                            <constraint firstItem="sk6-CY-XMM" firstAttribute="top" secondItem="TUY-87-jjS" secondAttribute="top" constant="600" id="yFB-Pc-wiZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TUY-87-jjS"/>
                     </view>
@@ -2078,7 +2076,7 @@
                         <outlet property="infoScrollview" destination="rgy-3R-GAj" id="JLg-P6-HBy"/>
                         <outlet property="infoStackview" destination="MMq-sI-2jv" id="1DH-nU-uH6"/>
                         <outlet property="infoView" destination="sk6-CY-XMM" id="Cvg-GS-Ljy"/>
-                        <outlet property="infoViewHeight" destination="x6b-FE-quY" id="0iS-rl-Y3S"/>
+                        <outlet property="infoViewTop" destination="yFB-Pc-wiZ" id="dij-ha-3ck"/>
                         <outlet property="scrollView" destination="bD3-fA-AM2" id="kXe-4H-Prn"/>
                         <outlet property="stackView" destination="wWB-1s-Cng" id="L1Q-h2-1sP"/>
                         <outlet property="stackViewBottom" destination="w52-Ve-vuW" id="gmc-B8-ERY"/>
@@ -2628,8 +2626,8 @@
         <image name="people" width="30" height="30"/>
         <image name="phone_white" width="30" height="30"/>
         <image name="user_male" width="30" height="30"/>
-        <namedColor name="IntraTeal">
-            <color red="0.0" green="0.72549019607843135" blue="0.73333333333333328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="InfoViewBackground">
+            <color red="0.81599998474121094" green="0.81599998474121094" blue="0.83499997854232788" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="lightTextBackground">
             <color red="0.89800000190734863" green="0.89800000190734863" blue="0.89800000190734863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

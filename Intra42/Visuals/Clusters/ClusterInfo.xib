@@ -41,7 +41,6 @@
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6EZ-e1-FsD">
                             <rect key="frame" x="0.0" y="0.0" width="476" height="20"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TTi-DJ-xyE">
                             <rect key="frame" x="220" y="2" width="36" height="16"/>
@@ -50,7 +49,6 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
                         <constraint firstItem="6EZ-e1-FsD" firstAttribute="top" secondItem="KiA-No-ZlH" secondAttribute="top" id="2f5-cq-Gc8"/>
                         <constraint firstAttribute="bottom" secondItem="6EZ-e1-FsD" secondAttribute="bottom" id="KwQ-z7-1gk"/>
@@ -81,7 +79,7 @@
     </objects>
     <resources>
         <namedColor name="FriendsInfoLabel">
-            <color red="0.24868442357512954" green="0.24868442357512954" blue="0.24868442357512954" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.24899999797344208" green="0.24899999797344208" blue="0.24899999797344208" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>

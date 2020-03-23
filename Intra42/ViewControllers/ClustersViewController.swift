@@ -13,12 +13,11 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
     private let availableCampusIDs = [1, 5, 7, 8, 9, 12, 16, 17, 21]
     let noClusterLabel = UILabel()
     let noClusterView = UIView()
-    var activityIndicator = UIActivityIndicatorView(style: .gray)
     
     var clustersData: [ClusterData] = []
     var clustersView: ClustersView?
     var clusters: [String: ClusterPerson] = [:]
-    var selectedCampus: (id: Int, name: String) = (0, "") //Campus
+    var selectedCampus: (id: Int, name: String) = (0, "Cluster Maps") //Campus
     var selectedCell: UserProfileCell?
     var minZoomScale: CGFloat = 0.5
     
@@ -74,7 +73,6 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
             navigationItem.standardAppearance = appearance
             navigationItem.scrollEdgeAppearance = appearance
             
-            activityIndicator.style = .medium
             noClusterView.backgroundColor = .systemBackground
             headerSegment.selectedSegmentTintColor = API42Manager.shared.preferedPrimaryColor
         }
@@ -82,8 +80,7 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
         infoScrollview.roundCorners(corners: [.topLeft, .topRight], radius: 20.0)
         infoDragIndicator.roundCorners(corners: .allCorners, radius: 2.0)
         
-        activityIndicator.startAnimating()
-        stackView.insertArrangedSubview(activityIndicator, at: 0)
+        showAcivityIndicator()
         
         noClusterView.frame = view.frame
         noClusterLabel.frame = CGRect(x: 0, y: 0, width: view.frame.width - 40, height: 200)
@@ -165,7 +162,7 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
             } else {
                 self.clustersView?.locations = self.clusters
                 self.clustersView?.setupLocations()
-                activityIndicator.removeFromSuperview()
+                hideAcivityIndicator()
             }
         }
     }
@@ -235,7 +232,7 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
             self.clustersView?.setupLocations()
             self.setupClusterInfo()
             self.navigationItem.rightBarButtonItems![0].isEnabled = true
-            self.activityIndicator.removeFromSuperview()
+            self.hideAcivityIndicator()
         }
     }
     
@@ -278,7 +275,7 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
     }
 
     @IBAction func clusterFloorChanged(_ sender: UISegmentedControl) {
-        stackView.insertArrangedSubview(activityIndicator, at: 0)
+        showAcivityIndicator()
         scrollView.setZoomScale(minZoomScale, animated: true)
         clustersView?.clearUserImages()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
@@ -290,8 +287,8 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
     }
     
     func refreshClusters() {
+        showAcivityIndicator()
         hideInfoView()
-        stackView.insertArrangedSubview(activityIndicator, at: 0)
         navigationItem.rightBarButtonItems![0].isEnabled = false
         clustersView?.clearUserImages()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
@@ -327,9 +324,28 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
     }
 }
 
+// MARK: - Activity Indicator
+
+extension ClustersViewController {
+    
+    private func showAcivityIndicator() {
+        let activityIndicatorView = UIActivityIndicatorView(style: .gray)
+        if #available(iOS 13.0, *) {
+            activityIndicatorView.style = .medium
+        }
+        activityIndicatorView.startAnimating()
+        navigationItem.titleView = activityIndicatorView
+    }
+    
+    private func hideAcivityIndicator() {
+        navigationItem.titleView = nil
+    }
+}
+
 // MARK: - Draggable Info View Methods
 
 extension ClustersViewController {
+    
     @IBAction func panInfoView(_ gesture: UIPanGestureRecognizer) {
         let translation = gesture.translation(in: self.view).y
         let velocity = gesture.velocity(in: self.view).y
@@ -337,13 +353,6 @@ extension ClustersViewController {
         switch gesture.state {
         case .began:
             originalInfoViewTop = infoViewTop.constant
-            
-            print("BEGAN")
-            print("Content height: \(infoContentHeight)")
-            print("Current top: \(infoViewTop.constant)")
-            print("MAX top: \(maxInfoViewTop)")
-            print("HALF top: \(halfInfoViewTop)")
-            print("MIN top: \(minInfoViewTop)")
         case .changed:
             let newTop = originalInfoViewTop + translation
             print("new top: \(newTop)")
@@ -361,27 +370,18 @@ extension ClustersViewController {
                 }
             }
         case .ended, .cancelled:
-            print("ENDED")
             let infoViewHeight = safeAreaHeight - infoViewTop.constant
-            print(infoViewTop.constant)
-            print(halfInfoViewTop)
             if infoViewTop.constant < maxInfoViewTop + 75 || velocity < -2000.0
                 || infoViewTop.constant < halfInfoViewTop - 100 {
                 let newHeight = safeAreaHeight - maxInfoViewTop
-                print("full")
                 let timeNeeded = Double(abs(newHeight - infoViewHeight) / velocity)
                 showInfoView(withState: .full, withDuration: timeNeeded)
             } else if infoViewTop.constant < safeAreaHeight - 100 && velocity < 2000.0 {
-                print("show")
-                print(halfInfoViewTop)
                 var diff = abs(halfInfoViewTop - infoViewHeight)
-                print(diff)
                 if diff == 0 { diff = 0.1 }
                 let timeNeeded = Double(diff / velocity)
-                print(timeNeeded)
                 showInfoView(withState: .half, withDuration: timeNeeded)
             } else {
-                print("hide")
                 let timeNeeded = Double(infoViewHeight / velocity)
                 hideInfoView(withDuration: timeNeeded)
             }
@@ -426,7 +426,6 @@ extension ClustersViewController {
     }
 }
 
-
 // MARK: - Prepare for segue
 
 extension ClustersViewController: UserProfileDataSource {
@@ -448,7 +447,7 @@ extension ClustersViewController: TablePickerDelegate {
         selectedCampus = item
         navigationItem.title = item.name
         if availableCampusIDs.contains(item.id) {
-            stackView.insertArrangedSubview(activityIndicator, at: 0)
+            showAcivityIndicator()
             noClusterView.isHidden = true
             for case let infoView as ClusterInfoView in infoStackview.arrangedSubviews {
                 infoView.removeFromSuperview()

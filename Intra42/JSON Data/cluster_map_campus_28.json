@@ -2,7 +2,7 @@
     {
         "campusId": 28,
         "comment": "",
-        "height": 0,
+        "height": 10,
         "hostPrefix": "8a",
         "isReadyToPublish": true,
         "map": [
@@ -221,12 +221,12 @@
         "nameShort": "8a",
         "position": 1,
         "slug": "",
-        "width": 0
+        "width": 5
     },
     {
         "campusId": 28,
         "comment": "",
-        "height": 0,
+        "height": 13,
         "hostPrefix": "7b",
         "isReadyToPublish": true,
         "map": [
@@ -558,12 +558,12 @@
         "nameShort": "7b",
         "position": 1,
         "slug": "",
-        "width": 0
+        "width": 6
     },
     {
         "campusId": 28,
         "comment": "",
-        "height": 0,
+        "height": 12,
         "hostPrefix": "7a",
         "isReadyToPublish": true,
         "map": [
@@ -922,6 +922,6 @@
         "nameShort": "7a",
         "position": 3,
         "slug": "",
-        "width": 0
+        "width": 7
     }
 ]

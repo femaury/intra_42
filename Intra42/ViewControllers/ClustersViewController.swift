@@ -294,6 +294,7 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.loadClusterLocations(forCampus: self.selectedCampus.id)
             self.scrollView.setZoomScale(self.minZoomScale, animated: true)
+            self.showInfoView(withState: .half)
         }
     }
     

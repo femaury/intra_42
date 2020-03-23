@@ -27,6 +27,7 @@
 		D0643F8323CE1B7A0032DCEB /* Campus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0643F8223CE1B7A0032DCEB /* Campus.swift */; };
 		D07B28F623DF227C00609E2D /* SegmentHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = D07B28F523DF227C00609E2D /* SegmentHeader.xib */; };
 		D087C17F2428F0340043CEA5 /* cluster_map_campus_28.json in Resources */ = {isa = PBXBuildFile; fileRef = D087C17E2428F0340043CEA5 /* cluster_map_campus_28.json */; };
+		D087C181242909800043CEA5 /* cluster_map_campus_14.json in Resources */ = {isa = PBXBuildFile; fileRef = D087C180242909800043CEA5 /* cluster_map_campus_14.json */; };
 		D08BF44223C5F2D300359A17 /* SegmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08BF44123C5F2D300359A17 /* SegmentTableViewCell.swift */; };
 		D09FA79523CF6B5500B0CA87 /* PeerResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09FA79423CF6B5500B0CA87 /* PeerResultsController.swift */; };
 		D09FA79723CF6DE600B0CA87 /* ProjectUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09FA79623CF6DE600B0CA87 /* ProjectUserCell.swift */; };
@@ -164,6 +165,7 @@
 		D0643F8223CE1B7A0032DCEB /* Campus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Campus.swift; sourceTree = "<group>"; };
 		D07B28F523DF227C00609E2D /* SegmentHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SegmentHeader.xib; sourceTree = "<group>"; };
 		D087C17E2428F0340043CEA5 /* cluster_map_campus_28.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cluster_map_campus_28.json; sourceTree = "<group>"; };
+		D087C180242909800043CEA5 /* cluster_map_campus_14.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cluster_map_campus_14.json; sourceTree = "<group>"; };
 		D08BF44123C5F2D300359A17 /* SegmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentTableViewCell.swift; sourceTree = "<group>"; };
 		D09FA79423CF6B5500B0CA87 /* PeerResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerResultsController.swift; sourceTree = "<group>"; };
 		D09FA79623CF6DE600B0CA87 /* ProjectUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectUserCell.swift; sourceTree = "<group>"; };
@@ -345,6 +347,7 @@
 				D02234192416D3BD00F5CE41 /* cluster_map_campus_8.json */,
 				D02234152416D3BD00F5CE41 /* cluster_map_campus_9.json */,
 				D02234182416D3BD00F5CE41 /* cluster_map_campus_12.json */,
+				D087C180242909800043CEA5 /* cluster_map_campus_14.json */,
 				D02234162416D3BD00F5CE41 /* cluster_map_campus_16.json */,
 				D02234172416D3BD00F5CE41 /* cluster_map_campus_17.json */,
 				D02234122416D3BD00F5CE41 /* cluster_map_campus_21.json */,
@@ -764,6 +767,7 @@
 				D022341C2416D3BD00F5CE41 /* cluster_map_campus_7.json in Resources */,
 				DC41485622D0B50A0005FCB1 /* icon_all@3x.png in Resources */,
 				D022341D2416D3BD00F5CE41 /* cluster_map_campus_9.json in Resources */,
+				D087C181242909800043CEA5 /* cluster_map_campus_14.json in Resources */,
 				DC49298422F73166004024C3 /* icon_default@3x.png in Resources */,
 				DCCE0584222591F500906ECD /* LaunchScreen.storyboard in Resources */,
 				DCCE0581222591F500906ECD /* Assets.xcassets in Resources */,

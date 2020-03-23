@@ -10,7 +10,7 @@ import UIKit
 
 class ClustersViewController: UIViewController, ClustersViewDelegate {
 
-    private let availableCampusIDs = [1, 5, 7, 8, 9, 12, 16, 17, 21]
+    private let availableCampusIDs = [1, 5, 7, 8, 9, 12, 16, 17, 21, 28]
     let noClusterLabel = UILabel()
     let noClusterView = UIView()
     
@@ -201,6 +201,7 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
                 }
             }
         }
+        hideAcivityIndicator()
         noClusterView.isHidden = false
         return false
     }

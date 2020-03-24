@@ -203,7 +203,7 @@ extension UserProfileController {
             return 0
         }
         if section == 0 {
-            return 400
+            return 350
         } else {
             return 35
         }

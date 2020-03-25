@@ -96,13 +96,35 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
         noClusterLabel.center = noClusterView.convert(noClusterView.center, from: noClusterLabel)
         view.addSubview(noClusterView)
         
-        if let id = API42Manager.shared.userProfile?.mainCampusId, let name = API42Manager.shared.userProfile?.mainCampusName {
+        func loadClusters(forId id: Int, name: String) {
             selectedCampus = (id, name)
             navigationItem.title = name
             if availableCampusIDs.contains(selectedCampus.id) {
                 noClusterView.isHidden = true
                 addNewClusterView()
+            } else {
+                hideAcivityIndicator()
             }
+        }
+        
+        if let id = API42Manager.shared.userProfile?.mainCampusId, let name = API42Manager.shared.userProfile?.mainCampusName {
+            loadClusters(forId: id, name: name)
+        } else {
+            let coverView = UIView(frame: view.frame)
+            coverView.backgroundColor = .white
+            if #available(iOS 13.0, *) {
+                coverView.backgroundColor = .systemBackground
+            }
+            view.addSubview(coverView)
+            API42Manager.shared.userProfileCompletionHandlers.append({ profile in
+                coverView.removeFromSuperview()
+                guard let profile = profile else {
+                    self.hideAcivityIndicator()
+                    return
+                }
+                let id = profile.mainCampusId, name = profile.mainCampusName
+                loadClusters(forId: id, name: name)
+            })
         }
     }
     

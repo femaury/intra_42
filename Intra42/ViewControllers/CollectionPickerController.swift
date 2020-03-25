@@ -32,6 +32,8 @@ class CollectionPickerController: UICollectionViewController {
         if #available(iOS 13.0, *) {
             activityView.style = .large
         }
+        self.edgesForExtendedLayout = []
+        
         view.addSubview(activityView)
         activityView.hidesWhenStopped = true
         activityView.center = view.center
@@ -42,7 +44,6 @@ class CollectionPickerController: UICollectionViewController {
         layout.minimumInteritemSpacing = 20
         layout.minimumLineSpacing = 20
         collectionView.collectionViewLayout = layout
-        self.edgesForExtendedLayout = []
         loadCollectionPickerItems()
     }
     

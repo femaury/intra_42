@@ -63,14 +63,14 @@ class HomeViewController: UIViewController {
             navigationItem.scrollEdgeAppearance = appearance
         }
 
-        API42Manager.shared.userProfileCompletionHandler = { userProfile in
+        API42Manager.shared.userProfileCompletionHandlers.append({ userProfile in
             guard let userProfile = userProfile else { return }
             self.isLoadingData = false
             self.userProfile = userProfile
             self.currentCursusId = userProfile.mainCursusId
             self.tableView.refreshControl?.endRefreshing()
             self.tableView.reloadData()
-        }
+        })
         
         API42Manager.shared.coalitionColorCompletionHandler = { color in
             

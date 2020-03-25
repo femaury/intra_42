@@ -215,7 +215,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return 0
         }
         if section == 0 {
-            return 350
+            let frameW = tableView.frame.width
+            let fullHeight = frameW * 0.35 + 15 + 38 + 30 + 51 + 30 + 30
+            return fullHeight
         } else {
             return 35
         }

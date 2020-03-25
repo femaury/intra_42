@@ -43,7 +43,6 @@ class ProfileHeaderCell: UITableViewCell {
             if let data = userProfile {
                 imageSession = profilePicture.imageFrom(urlString: data.imageURL)
                 profilePicture.contentMode = .scaleAspectFill
-                profilePicture.roundFrame()
                 profilePicture.layer.borderWidth = 1
                 profilePicture.layer.borderColor = UIColor.black.cgColor
 

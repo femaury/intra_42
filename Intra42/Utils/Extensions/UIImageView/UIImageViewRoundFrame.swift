@@ -8,10 +8,18 @@
 
 import UIKit
 
+class UIImageViewRounded: UIImageView {
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        self.roundFrame()
+    }
+}
+
 extension UIImageView {
     public func roundFrame() {
-        layer.masksToBounds = false
-        layer.cornerRadius = frame.height / 2
+        layer.masksToBounds = true
+        layer.cornerRadius = frame.width / 2
         clipsToBounds = true
     }
 }

@@ -52,10 +52,7 @@ class UserHeaderCell: UITableViewCell {
                 imageSession = profilePicture.imageFrom(urlString: data.imageURL)
                 profilePicture.contentMode = .scaleAspectFill
                 profilePicture.layer.borderWidth = 1
-                profilePicture.layer.masksToBounds = false
                 profilePicture.layer.borderColor = UIColor.black.cgColor
-                profilePicture.layer.cornerRadius = profilePicture.frame.height / 2
-                profilePicture.clipsToBounds = true
                 
                 let levelRounded = data.level.rounded(.down)
                 let levelPercentage = (data.level - levelRounded) * 100

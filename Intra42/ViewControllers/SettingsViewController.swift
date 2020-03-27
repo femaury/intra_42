@@ -19,6 +19,7 @@ class SettingsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationItem.title = "Settings"
     }
 
     // MARK: - Table view data source

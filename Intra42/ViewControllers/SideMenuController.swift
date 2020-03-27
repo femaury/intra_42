@@ -45,6 +45,9 @@ class SideMenuController: UIViewController {
         tapGesture.cancelsTouchesInView = false
         dimmerView.addGestureRecognizer(tapGesture)
         
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)
+        
         // Hide menu at first
         dimmerView.alpha = 0.0
         if let safeAreaWidth = UIApplication.shared.keyWindow?.safeAreaLayoutGuide.layoutFrame.size.width {
@@ -101,6 +104,10 @@ class SideMenuController: UIViewController {
     // MARK: - Actions
     
     @objc func tapHandler(gesture: UIGestureRecognizer) {
+        dismissMenu()
+    }
+    
+    @objc func appMovedToBackground() {
         dismissMenu()
     }
     

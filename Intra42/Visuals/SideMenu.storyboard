@@ -29,7 +29,7 @@
                                 <rect key="frame" x="0.5" y="0.0" width="227.5" height="896"/>
                                 <subviews>
                                     <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tXL-aU-gls">
-                                        <rect key="frame" x="0.0" y="44" width="227" height="44"/>
+                                        <rect key="frame" x="0.0" y="44" width="227.5" height="44"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <items>
                                             <navigationItem title="Intra 42" id="gLK-D5-Q5Q"/>
@@ -592,9 +592,9 @@ Cheers 😉</string>
         <!--Peer Finder-->
         <scene sceneID="vQx-NO-MHc">
             <objects>
-                <tableViewController storyboardIdentifier="PeerFinderViewController" title="Peer Finder" id="M61-rd-6eF" customClass="PeerFinderViewController" customModule="Intra42" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="PeerFinderViewController" title="Peer Finder" modalPresentationStyle="fullScreen" id="M61-rd-6eF" customClass="PeerFinderViewController" customModule="Intra42" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Yab-ij-zWf">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
@@ -683,9 +683,9 @@ Cheers 😉</string>
         <!--Peer Results Controller-->
         <scene sceneID="2Il-d5-XeK">
             <objects>
-                <tableViewController storyboardIdentifier="PeerResultsController" id="tlq-Ls-taV" customClass="PeerResultsController" customModule="Intra42" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="PeerResultsController" modalPresentationStyle="fullScreen" id="tlq-Ls-taV" customClass="PeerResultsController" customModule="Intra42" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="a3K-Az-h1b">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>

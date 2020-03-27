@@ -6,7 +6,6 @@ PODS:
     - Fabric (~> 1.10.2)
   - Fabric (1.10.2)
   - KeychainSwift (18.0.0)
-  - SideMenu (6.4.7)
   - SVGKit (2.1.1):
     - CocoaLumberjack (~> 3.0)
   - SwiftyJSON (5.0.0)
@@ -15,17 +14,15 @@ DEPENDENCIES:
   - Crashlytics
   - Fabric
   - KeychainSwift
-  - SideMenu (~> 6.0)
   - SVGKit
   - SwiftyJSON
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - CocoaLumberjack
     - Crashlytics
     - Fabric
     - KeychainSwift
-    - SideMenu
     - SVGKit
     - SwiftyJSON
 
@@ -34,10 +31,9 @@ SPEC CHECKSUMS:
   Crashlytics: 540b7e5f5da5a042647227a5e3ac51d85eed06df
   Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
   KeychainSwift: c46e1438d121e47459fb304ac88c5e058a2a91ed
-  SideMenu: 928a015669c3afc201e1fe3a87f1b0bc8993a664
   SVGKit: 652cdf7bef8bec8564d04a8511d3ab50c7595fac
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 28e06682543ca1646884191bb5f9601dd8cc160e
+PODFILE CHECKSUM: 8a9e3d3d56b1b86b007481e666ad5e9143b168c2
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.9.1

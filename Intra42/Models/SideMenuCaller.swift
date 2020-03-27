@@ -23,7 +23,7 @@ extension SideMenuCaller {
                 return
         }
         UIApplication.shared.keyWindow?.endEditing(true)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
             sideMenuVC.menuNavigationController = self.navigationController
             sideMenuVC.snapshotForBackground = self.tabBarController?.view.asImage()
             sideMenuVC.modalPresentationStyle = .fullScreen

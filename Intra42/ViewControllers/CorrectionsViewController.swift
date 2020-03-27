@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CorrectionsViewController: UIViewController {
+class CorrectionsViewController: UIViewController, SideMenuCaller {
 
     lazy var searchBar = UISearchBar()
     @IBOutlet weak var tableView: UITableView!
@@ -135,6 +135,10 @@ extension CorrectionsViewController: SearchResultsDataSource {
                 }
             }
         }
+    }
+    
+    @IBAction func showSideMenu(_ sender: Any) {
+        showSideMenu()
     }
 }
 

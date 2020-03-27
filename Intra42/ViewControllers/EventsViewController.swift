@@ -9,7 +9,7 @@
 import UIKit
 
 // TODO: Fix buggy refresh control / content inset after refresh...
-class EventsViewController: UIViewController {
+class EventsViewController: UIViewController, SideMenuCaller {
 
     @IBOutlet weak var tableView: UITableView!
     lazy var segmentedControl = UISegmentedControl(items: ["All Events", "My Events"])
@@ -121,6 +121,10 @@ class EventsViewController: UIViewController {
         } else {
             populateMyEventsTable()
         }
+    }
+    
+    @IBAction func showSideMenu(_ sender: Any) {
+        showSideMenu()
     }
 }
 

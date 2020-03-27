@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ClustersViewController: UIViewController, ClustersViewDelegate {
+class ClustersViewController: UIViewController, ClustersViewDelegate, SideMenuCaller {
 
     private let availableCampusIDs = [1, 5, 7, 8, 9, 12, 14, 16, 17, 21, 28]
     let noClusterLabel = UILabel()
@@ -345,6 +345,10 @@ class ClustersViewController: UIViewController, ClustersViewDelegate {
         optionsAction.addAction(refresh)
         optionsAction.addAction(cancel)
         present(optionsAction, animated: true, completion: nil)
+    }
+    
+    @IBAction func showSideMenu(_ sender: Any) {
+        showSideMenu()
     }
 }
 

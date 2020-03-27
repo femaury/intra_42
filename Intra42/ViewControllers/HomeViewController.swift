@@ -15,7 +15,7 @@ enum ProfileSection: Int {
     case achievements = 3
 }
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, SideMenuCaller {
     
     lazy var searchBar = UISearchBar()
     @IBOutlet var tableView: UITableView!
@@ -108,7 +108,7 @@ class HomeViewController: UIViewController {
         if let indexPath = tableView.indexPathForSelectedRow {
             tableView.deselectRow(at: indexPath, animated: true)
         }
-        tableView.reloadData()
+//        tableView.reloadData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -124,6 +124,10 @@ class HomeViewController: UIViewController {
     
     @objc func refreshTable(_ sender: Any) {
         API42Manager.shared.setupAPIData()
+    }
+    
+    @IBAction func showSideMenu(_ sender: Any) {
+        showSideMenu()
     }
 }
 

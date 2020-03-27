@@ -347,7 +347,7 @@
                     <navigationItem key="navigationItem" title="Evaluations" id="Mky-st-uHi">
                         <barButtonItem key="leftBarButtonItem" title="Side Menu" image="menu" id="e0q-pZ-XlA">
                             <connections>
-                                <segue destination="i3U-We-se7" kind="presentation" id="PL9-98-KTQ"/>
+                                <action selector="showSideMenu:" destination="eHO-dy-Bdf" id="UI2-63-Upq"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -668,7 +668,7 @@
                     <navigationItem key="navigationItem" title="Profile" id="rxn-9v-QFJ">
                         <barButtonItem key="leftBarButtonItem" title="Side Menu" image="menu" id="7v4-7q-siO">
                             <connections>
-                                <segue destination="i3U-We-se7" kind="presentation" id="CZ3-PM-lFF"/>
+                                <action selector="showSideMenu:" destination="Oqj-zy-ZZf" id="sIX-U5-Y7x"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1759,7 +1759,7 @@
                     <navigationItem key="navigationItem" title="Friends" id="aej-GY-kPr">
                         <barButtonItem key="leftBarButtonItem" title="Side Menu" image="menu" id="7Ek-56-Dqe">
                             <connections>
-                                <segue destination="i3U-We-se7" kind="presentation" id="Og1-Wg-B0Q"/>
+                                <action selector="showSideMenu:" destination="2ja-e8-xot" id="8qq-Mp-qBC"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1773,16 +1773,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4aO-1A-08W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2783" y="355"/>
-        </scene>
-        <!--SideMenu-->
-        <scene sceneID="G8d-wi-O4r">
-            <objects>
-                <viewControllerPlaceholder storyboardName="SideMenu" referencedIdentifier="SideMenu" id="i3U-We-se7" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="ITu-Wp-YCA"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fI2-yS-ibJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4791" y="998"/>
         </scene>
         <!--Project Info-->
         <scene sceneID="jEO-NQ-U78">
@@ -2039,7 +2029,7 @@
                     <navigationItem key="navigationItem" title="Campus" id="Mt3-b8-IVQ">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="487-Mu-YeP">
                             <connections>
-                                <segue destination="i3U-We-se7" kind="presentation" id="8ZR-3v-hPk"/>
+                                <action selector="showSideMenu:" destination="osr-v2-xWd" id="WKb-EJ-szp"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="dots" id="ATu-3y-fdz">
@@ -2296,7 +2286,7 @@
                     <navigationItem key="navigationItem" title="Events" id="G9J-Uy-dEP">
                         <barButtonItem key="leftBarButtonItem" title="Side Menu" image="menu" id="keO-qo-bnx">
                             <connections>
-                                <segue destination="i3U-We-se7" kind="presentation" id="mDc-hD-TjO"/>
+                                <action selector="showSideMenu:" destination="bAz-Fy-y2k" id="OuR-QO-Mle"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -2610,10 +2600,9 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="CZ3-PM-lFF"/>
         <segue reference="CDq-Hl-0B6"/>
-        <segue reference="s4V-tz-R5t"/>
+        <segue reference="0QS-t1-7Go"/>
         <segue reference="oJI-up-e6L"/>
-        <segue reference="IZG-qr-rub"/>
+        <segue reference="8g0-iF-zM1"/>
     </inferredMetricsTieBreakers>
 </document>

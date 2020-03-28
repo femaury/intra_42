@@ -309,9 +309,9 @@ Cheers 😉</string>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OHS-he-7pN">
-                                                <rect key="frame" x="20" y="874" width="137" height="33"/>
+                                                <rect key="frame" x="20" y="874" width="155" height="33"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                <state key="normal" title="Fabric Crashlytics">
+                                                <state key="normal" title="Firebase Crashlytics">
                                                     <color key="titleColor" name="intraTeal"/>
                                                 </state>
                                                 <connections>

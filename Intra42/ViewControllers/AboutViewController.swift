@@ -80,6 +80,6 @@ class AboutViewController: UIViewController {
     }
 
     @IBAction func openCrashlyticsLink(_ sender: UIButton) {
-        openSafariController(withURL: "https://get.fabric.io/")
+        openSafariController(withURL: "https://github.com/firebase/firebase-ios-sdk/tree/master/Crashlytics")
     }
 }

@@ -71,10 +71,6 @@ class AboutViewController: UIViewController {
         openSafariController(withURL: "https://github.com/SwiftyJSON/SwiftyJSON")
     }
 
-    @IBAction func openSideMenuLink(_ sender: UIButton) {
-        openSafariController(withURL: "https://github.com/jonkykong/SideMenu")
-    }
-
     @IBAction func openSVGKitLink(_ sender: UIButton) {
         openSafariController(withURL: "https://github.com/SVGKit/SVGKit")
     }

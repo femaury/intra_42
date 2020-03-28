@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -32,6 +32,7 @@
 		D078AA8F242CD303005552FA /* SideMenuCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = D078AA8E242CD303005552FA /* SideMenuCaller.swift */; };
 		D078AA91242CD59D005552FA /* SideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D078AA90242CD59D005552FA /* SideMenuController.swift */; };
 		D078AA93242CD68D005552FA /* UIViewAsImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D078AA92242CD68D005552FA /* UIViewAsImage.swift */; };
+		D078AA97242F7554005552FA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D078AA96242F7554005552FA /* GoogleService-Info.plist */; };
 		D07B28F623DF227C00609E2D /* SegmentHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = D07B28F523DF227C00609E2D /* SegmentHeader.xib */; };
 		D087C17F2428F0340043CEA5 /* cluster_map_campus_28.json in Resources */ = {isa = PBXBuildFile; fileRef = D087C17E2428F0340043CEA5 /* cluster_map_campus_28.json */; };
 		D087C181242909800043CEA5 /* cluster_map_campus_14.json in Resources */ = {isa = PBXBuildFile; fileRef = D087C180242909800043CEA5 /* cluster_map_campus_14.json */; };
@@ -176,6 +177,7 @@
 		D078AA8E242CD303005552FA /* SideMenuCaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCaller.swift; sourceTree = "<group>"; };
 		D078AA90242CD59D005552FA /* SideMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuController.swift; sourceTree = "<group>"; };
 		D078AA92242CD68D005552FA /* UIViewAsImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewAsImage.swift; sourceTree = "<group>"; };
+		D078AA96242F7554005552FA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D07B28F523DF227C00609E2D /* SegmentHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SegmentHeader.xib; sourceTree = "<group>"; };
 		D087C17E2428F0340043CEA5 /* cluster_map_campus_28.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cluster_map_campus_28.json; sourceTree = "<group>"; };
 		D087C180242909800043CEA5 /* cluster_map_campus_14.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cluster_map_campus_14.json; sourceTree = "<group>"; };
@@ -586,6 +588,7 @@
 				DCCE059F222873C600906ECD /* Utils */,
 				DCCE059E222873AB00906ECD /* Visuals */,
 				DCCE0585222591F500906ECD /* Info.plist */,
+				D078AA96242F7554005552FA /* GoogleService-Info.plist */,
 				D0F4AE7023FD8373003DFB81 /* JSON Data */,
 			);
 			path = Intra42;
@@ -788,6 +791,7 @@
 				DCCE05A8222994EB00906ECD /* Main.storyboard in Resources */,
 				DC41485A22D0B50A0005FCB1 /* icon_fed@3x.png in Resources */,
 				DC41485922D0B50A0005FCB1 /* icon_fed@2x.png in Resources */,
+				D078AA97242F7554005552FA /* GoogleService-Info.plist in Resources */,
 				DC41485322D0B50A0005FCB1 /* icon_all@2x.png in Resources */,
 				DCF70AFC229AE7B200B29DCC /* ProjectEvaluation.xib in Resources */,
 				D022341C2416D3BD00F5CE41 /* cluster_map_campus_7.json in Resources */,
@@ -857,7 +861,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" 828d3e5cc0969c29e5f01efb1352841cc9eac839 9dbd7ccfc93022c0b6a6285e46a35f35ba9348e0ada5ac2f64dbc73d0f88e783\n";
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};
 		DCEC411623181B7C00FEE0EC /* App Version on Splash */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1162,7 +1166,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 23;
+				CURRENT_PROJECT_VERSION = 24;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J2YFW87U3N;
 				INFOPLIST_FILE = Intra42/Info.plist;
@@ -1171,7 +1175,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 2.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.femaury.Intra42;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1185,7 +1189,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 23;
+				CURRENT_PROJECT_VERSION = 24;
 				DEVELOPMENT_TEAM = J2YFW87U3N;
 				INFOPLIST_FILE = Intra42/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1193,7 +1197,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 2.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.femaury.Intra42;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

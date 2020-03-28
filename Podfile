@@ -9,6 +9,5 @@ target 'Intra42' do
   pod 'KeychainSwift'
   pod 'SwiftyJSON'
   pod 'SVGKit'
-  pod 'Fabric'
-  pod 'Crashlytics'
+  pod 'Firebase/Crashlytics'
 end

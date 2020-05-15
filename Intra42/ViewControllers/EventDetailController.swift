@@ -42,14 +42,14 @@ class EventDetailController: UIViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = TimeZone.current
         dateFormatter.dateFormat = "MMMM d, YYYY 'at' HH:mm"
-        
-        let view = UIView()
-        view.backgroundColor = event?.color.pale
-        view.translatesAutoresizingMaskIntoConstraints = false
-        topColorView.insertSubview(view, at: 0)
-        view.pin(to: topColorView)
 
         if let event = event {
+            let view = UIView()
+            view.backgroundColor = event.color.pale
+            view.translatesAutoresizingMaskIntoConstraints = false
+            topColorView.insertSubview(view, at: 0)
+            view.pin(to: topColorView)
+            
             navigationItem.title = event.kind.rawValue.capitalized
             nameLabel.text = event.name
             dateLabel.text = dateFormatter.string(from: event.begin)

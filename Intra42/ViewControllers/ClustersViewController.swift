@@ -175,12 +175,10 @@ class ClustersViewController: UIViewController, ClustersViewDelegate, SideMenuCa
             
             let clusterHeight = CGFloat(height) * minZoomScale
             halfInfoContentHeight = safeAreaHeight - (clusterHeight + 100)
-            if infoViewTop.constant != minInfoViewTop {
-                showInfoView(withState: .half)
-            }
 
             if load {
                 loadClusterLocations(forCampus: id)
+                showInfoView(withState: .half)
             } else {
                 self.clustersView?.locations = self.clusters
                 self.clustersView?.setupLocations()
@@ -384,14 +382,14 @@ extension ClustersViewController {
         case .changed:
             let newTop = originalInfoViewTop + translation
             print("new top: \(newTop)")
-            if newTop > 100 && newTop < minInfoViewTop {
+            if newTop > -100 && newTop < minInfoViewTop {
                 if newTop < safeAreaHeight - infoContentHeight {
                     print("-------- changing above content height")
                     let infoContentTop = safeAreaHeight - infoContentHeight
                     print(infoContentTop)
                     let extra = infoContentTop - newTop
                     print(extra)
-                    infoViewTop.constant = infoContentTop - (extra / log(extra))
+                    infoViewTop.constant = extra == 1.0 ? newTop - 1 : infoContentTop - (extra / log(extra))
                 } else {
                     print("-------- changing below content height")
                     infoViewTop.constant = newTop

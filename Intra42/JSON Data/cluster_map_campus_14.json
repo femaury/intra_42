@@ -9,7 +9,7 @@
             [
                 {
                     "kind": "USER",
-                    "host": "f0r4s26"
+                    "host": "f0r4s26.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -25,7 +25,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r6s13"
+                    "host": "f0r6s13.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -38,36 +38,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r6s12"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f0r6s7"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f0r6s6"
+                    "host": "f0r6s12.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -83,7 +54,36 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r6s1"
+                    "host": "f0r6s7.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f0r6s6.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f0r6s1.codam.nl"
                 },
                 {
                     "kind": "LABEL",
@@ -93,7 +93,7 @@
             [
                 {
                     "kind": "USER",
-                    "host": "f0r4s25"
+                    "host": "f0r4s25.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -106,36 +106,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r6s14"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f0r6s11"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f0r6s8"
+                    "host": "f0r6s14.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -154,7 +125,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r6s5"
+                    "host": "f0r6s11.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -164,7 +135,36 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r6s2"
+                    "host": "f0r6s8.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f0r6s5.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f0r6s2.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -176,7 +176,7 @@
             [
                 {
                     "kind": "USER",
-                    "host": "f0r4s24"
+                    "host": "f0r4s24.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -186,7 +186,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r6s15"
+                    "host": "f0r6s15.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -196,28 +196,14 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r5s16"
+                    "host": "f0r5s16.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r5s15"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f0r6s10"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f0r6s9"
+                    "host": "f0r5s15.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -227,14 +213,28 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r5s8"
+                    "host": "f0r6s10.codam.nl"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f0r6s9.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
                 },
                 {
                     "kind": "CORRIDOR"
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r5s7"
+                    "host": "f0r5s8.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f0r5s7.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -244,11 +244,11 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r6s4"
+                    "host": "f0r6s4.codam.nl"
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r6s3"
+                    "host": "f0r6s3.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -264,7 +264,7 @@
             [
                 {
                     "kind": "USER",
-                    "host": "f0r4s23"
+                    "host": "f0r4s23.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -280,7 +280,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r5s17"
+                    "host": "f0r5s17.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -293,36 +293,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r5s14"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f0r5s9"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f0r5s6"
+                    "host": "f0r5s14.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -338,7 +309,36 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r5s1"
+                    "host": "f0r5s9.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f0r5s6.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f0r5s1.codam.nl"
                 },
                 {
                     "kind": "LABEL",
@@ -348,7 +348,7 @@
             [
                 {
                     "kind": "USER",
-                    "host": "f0r4s22"
+                    "host": "f0r4s22.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -361,36 +361,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r5s18"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f0r5s13"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f0r5s10"
+                    "host": "f0r5s18.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -409,7 +380,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r5s5"
+                    "host": "f0r5s13.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -419,7 +390,36 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r5s2"
+                    "host": "f0r5s10.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f0r5s5.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f0r5s2.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -440,7 +440,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r5s19"
+                    "host": "f0r5s19.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -450,28 +450,14 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r4s16"
+                    "host": "f0r4s16.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r4s15"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f0r5s12"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f0r5s11"
+                    "host": "f0r4s15.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -481,14 +467,28 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r4s8"
+                    "host": "f0r5s12.codam.nl"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f0r5s11.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
                 },
                 {
                     "kind": "CORRIDOR"
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r4s7"
+                    "host": "f0r4s8.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f0r4s7.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -498,11 +498,11 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r5s4"
+                    "host": "f0r5s4.codam.nl"
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r5s3"
+                    "host": "f0r5s3.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -532,7 +532,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r4s17"
+                    "host": "f0r4s17.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -545,36 +545,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r4s14"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f0r4s9"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f0r4s6"
+                    "host": "f0r4s14.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -590,7 +561,36 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r4s1"
+                    "host": "f0r4s9.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f0r4s6.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f0r4s1.codam.nl"
                 },
                 {
                     "kind": "LABEL",
@@ -603,7 +603,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r4s21"
+                    "host": "f0r4s21.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -613,36 +613,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r4s18"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f0r4s13"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f0r4s10"
+                    "host": "f0r4s18.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -661,7 +632,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r4s5"
+                    "host": "f0r4s13.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -671,7 +642,36 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r4s2"
+                    "host": "f0r4s10.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f0r4s5.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f0r4s2.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -689,40 +689,11 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r4s20"
+                    "host": "f0r4s20.codam.nl"
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r4s19"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f0r4s12"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f0r4s11"
+                    "host": "f0r4s19.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -747,25 +718,11 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r4s4"
+                    "host": "f0r4s12.codam.nl"
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r4s3"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                }
-            ],
-            [
-                {
-                    "kind": "CORRIDOR"
+                    "host": "f0r4s11.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -789,46 +746,12 @@
                     "kind": "CORRIDOR"
                 },
                 {
-                    "kind": "CORRIDOR"
+                    "kind": "USER",
+                    "host": "f0r4s4.codam.nl"
                 },
                 {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
+                    "kind": "USER",
+                    "host": "f0r4s3.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -925,41 +848,89 @@
                     "kind": "CORRIDOR"
                 },
                 {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                }
+            ],
+            [
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
                     "kind": "USER",
-                    "host": "f0r3s20"
+                    "host": "f0r3s20.codam.nl"
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r3s19"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f0r3s12"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f0r3s11"
+                    "host": "f0r3s19.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -984,11 +955,40 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r3s4"
+                    "host": "f0r3s12.codam.nl"
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r3s3"
+                    "host": "f0r3s11.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f0r3s4.codam.nl"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f0r3s3.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -1006,7 +1006,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r3s21"
+                    "host": "f0r3s21.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -1016,36 +1016,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r3s18"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f0r3s13"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f0r3s10"
+                    "host": "f0r3s18.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -1064,7 +1035,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r3s5"
+                    "host": "f0r3s13.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -1074,7 +1045,36 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r3s2"
+                    "host": "f0r3s10.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f0r3s5.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f0r3s2.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -1101,7 +1101,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r3s17"
+                    "host": "f0r3s17.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -1114,36 +1114,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r3s14"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f0r3s9"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f0r3s6"
+                    "host": "f0r3s14.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -1159,7 +1130,36 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r3s1"
+                    "host": "f0r3s9.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f0r3s6.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f0r3s1.codam.nl"
                 },
                 {
                     "kind": "LABEL",
@@ -1178,7 +1178,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r2s19"
+                    "host": "f0r2s19.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -1188,28 +1188,14 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r3s16"
+                    "host": "f0r3s16.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r3s15"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f0r2s12"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f0r2s11"
+                    "host": "f0r3s15.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -1219,14 +1205,28 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r3s8"
+                    "host": "f0r2s12.codam.nl"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f0r2s11.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
                 },
                 {
                     "kind": "CORRIDOR"
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r3s7"
+                    "host": "f0r3s8.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f0r3s7.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -1236,11 +1236,11 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r2s4"
+                    "host": "f0r2s4.codam.nl"
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r2s3"
+                    "host": "f0r2s3.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -1255,7 +1255,7 @@
             [
                 {
                     "kind": "USER",
-                    "host": "f0r3s22"
+                    "host": "f0r3s22.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -1268,36 +1268,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r2s18"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f0r2s13"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f0r2s10"
+                    "host": "f0r2s18.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -1316,7 +1287,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r2s5"
+                    "host": "f0r2s13.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -1326,7 +1297,36 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r2s2"
+                    "host": "f0r2s10.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f0r2s5.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f0r2s2.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -1338,7 +1338,7 @@
             [
                 {
                     "kind": "USER",
-                    "host": "f0r3s23"
+                    "host": "f0r3s23.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -1354,7 +1354,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r2s17"
+                    "host": "f0r2s17.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -1367,36 +1367,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r2s14"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f0r2s9"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f0r2s6"
+                    "host": "f0r2s14.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -1412,7 +1383,36 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r2s1"
+                    "host": "f0r2s9.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f0r2s6.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f0r2s1.codam.nl"
                 },
                 {
                     "kind": "LABEL",
@@ -1422,7 +1422,7 @@
             [
                 {
                     "kind": "USER",
-                    "host": "f0r3s24"
+                    "host": "f0r3s24.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -1432,7 +1432,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r1s15"
+                    "host": "f0r1s15.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -1442,28 +1442,14 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r2s16"
+                    "host": "f0r2s16.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r2s15"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f0r1s10"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f0r1s9"
+                    "host": "f0r2s15.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -1473,14 +1459,28 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r2s8"
+                    "host": "f0r1s10.codam.nl"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f0r1s9.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
                 },
                 {
                     "kind": "CORRIDOR"
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r2s7"
+                    "host": "f0r2s8.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f0r2s7.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -1490,11 +1490,11 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r1s4"
+                    "host": "f0r1s4.codam.nl"
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r1s3"
+                    "host": "f0r1s3.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -1509,7 +1509,7 @@
             [
                 {
                     "kind": "USER",
-                    "host": "f0r3s25"
+                    "host": "f0r3s25.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -1522,36 +1522,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r1s14"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f0r1s11"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f0r1s8"
+                    "host": "f0r1s14.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -1570,7 +1541,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r1s5"
+                    "host": "f0r1s11.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -1580,7 +1551,36 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r1s2"
+                    "host": "f0r1s8.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f0r1s5.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f0r1s2.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -1592,7 +1592,7 @@
             [
                 {
                     "kind": "USER",
-                    "host": "f0r3s26"
+                    "host": "f0r3s26.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -1608,7 +1608,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r1s13"
+                    "host": "f0r1s13.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -1621,36 +1621,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r1s12"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f0r1s7"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f0r1s6"
+                    "host": "f0r1s12.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -1666,7 +1637,36 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f0r1s1"
+                    "host": "f0r1s7.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f0r1s6.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f0r1s1.codam.nl"
                 },
                 {
                     "kind": "LABEL",
@@ -1705,7 +1705,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r6s15"
+                    "host": "f1r6s15.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -1715,14 +1715,14 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r6s14"
+                    "host": "f1r6s14.codam.nl"
                 },
                 {
                     "kind": "WALL"
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r6s13"
+                    "host": "f1r6s13.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -1738,21 +1738,21 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r6s8"
+                    "host": "f1r6s8.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r6s7"
+                    "host": "f1r6s7.codam.nl"
                 },
                 {
                     "kind": "WALL"
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r6s6"
+                    "host": "f1r6s6.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -1768,7 +1768,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r6s1"
+                    "host": "f1r6s1.codam.nl"
                 },
                 {
                     "kind": "LABEL",
@@ -1781,7 +1781,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r6s19"
+                    "host": "f1r6s19.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -1791,39 +1791,10 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r6s16"
+                    "host": "f1r6s16.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f1r6s12"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f1r6s9"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -1842,7 +1813,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r6s5"
+                    "host": "f1r6s12.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -1852,7 +1823,36 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r6s2"
+                    "host": "f1r6s9.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f1r6s5.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f1r6s2.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -1870,21 +1870,11 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r6s18"
+                    "host": "f1r6s18.codam.nl"
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r6s17"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f1r5s16"
+                    "host": "f1r6s17.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -1894,7 +1884,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r5s15"
+                    "host": "f1r5s16.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -1904,11 +1894,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r6s11"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f1r6s10"
+                    "host": "f1r5s15.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -1918,14 +1904,28 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r5s8"
+                    "host": "f1r6s11.codam.nl"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f1r6s10.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
                 },
                 {
                     "kind": "CORRIDOR"
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r5s7"
+                    "host": "f1r5s8.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f1r5s7.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -1935,11 +1935,11 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r6s4"
+                    "host": "f1r6s4.codam.nl"
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r6s3"
+                    "host": "f1r6s3.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -1969,7 +1969,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r5s17"
+                    "host": "f1r5s17.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -1985,7 +1985,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r5s14"
+                    "host": "f1r5s14.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -2001,7 +2001,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r5s9"
+                    "host": "f1r5s9.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -2014,7 +2014,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r5s6"
+                    "host": "f1r5s6.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -2030,7 +2030,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r5s1"
+                    "host": "f1r5s1.codam.nl"
                 },
                 {
                     "kind": "LABEL",
@@ -2043,7 +2043,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r5s21"
+                    "host": "f1r5s21.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -2053,39 +2053,10 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r5s18"
+                    "host": "f1r5s18.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f1r5s13"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f1r5s10"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -2104,7 +2075,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r5s5"
+                    "host": "f1r5s13.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -2114,7 +2085,36 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r5s2"
+                    "host": "f1r5s10.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f1r5s5.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f1r5s2.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -2132,43 +2132,14 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r5s20"
+                    "host": "f1r5s20.codam.nl"
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r5s19"
+                    "host": "f1r5s19.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f1r5s12"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f1r5s11"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -2193,11 +2164,11 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r5s4"
+                    "host": "f1r5s12.codam.nl"
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r5s3"
+                    "host": "f1r5s11.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -2205,11 +2176,6 @@
                 {
                     "kind": "CORRIDOR"
                 },
-                {
-                    "kind": "CORRIDOR"
-                }
-            ],
-            [
                 {
                     "kind": "CORRIDOR"
                 },
@@ -2227,59 +2193,11 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r4s15"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
+                    "host": "f1r5s4.codam.nl"
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r4s14"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
+                    "host": "f1r5s3.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -2305,14 +2223,11 @@
                     "kind": "CORRIDOR"
                 },
                 {
+                    "kind": "CORRIDOR"
+                },
+                {
                     "kind": "USER",
-                    "host": "f1r4s16"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
+                    "host": "f1r4s15.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -2322,7 +2237,10 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r4s13"
+                    "host": "f1r4s14.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -2384,30 +2302,11 @@
                     "kind": "CORRIDOR"
                 },
                 {
-                    "kind": "USER",
-                    "host": "f1r4s17"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
                     "kind": "CORRIDOR"
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r4s12"
-                },
-                {
-                    "kind": "CORRIDOR"
+                    "host": "f1r4s16.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -2423,15 +2322,116 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r3s8"
+                    "host": "f1r4s13.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                }
+            ],
+            [
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r3s9"
+                    "host": "f1r4s17.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r3s10"
+                    "host": "f1r4s12.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f1r3s8.codam.nl"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f1r3s9.codam.nl"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f1r3s10.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -2441,15 +2441,15 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r3s11"
+                    "host": "f1r3s11.codam.nl"
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r3s12"
+                    "host": "f1r3s12.codam.nl"
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r3s13"
+                    "host": "f1r3s13.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -2471,7 +2471,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r4s18"
+                    "host": "f1r4s18.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -2493,7 +2493,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r4s11"
+                    "host": "f1r4s11.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -2509,7 +2509,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r3s7"
+                    "host": "f1r3s7.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -2537,7 +2537,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r3s14"
+                    "host": "f1r3s14.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -2567,7 +2567,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r4s20"
+                    "host": "f1r4s20.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -2589,7 +2589,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r3s6"
+                    "host": "f1r3s6.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -2623,7 +2623,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r3s15"
+                    "host": "f1r3s15.codam.nl"
                 },
                 {
                     "kind": "LABEL",
@@ -2651,7 +2651,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r4s19"
+                    "host": "f1r4s19.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -2673,7 +2673,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r3s5"
+                    "host": "f1r3s5.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -2707,7 +2707,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r3s16"
+                    "host": "f1r3s16.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -2719,55 +2719,11 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r4s2"
+                    "host": "f1r4s2.codam.nl"
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r4s3"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f1r4s10"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f1r3s4"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
+                    "host": "f1r4s3.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -2789,7 +2745,51 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r3s17"
+                    "host": "f1r4s10.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f1r3s4.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f1r3s17.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -2801,7 +2801,7 @@
             [
                 {
                     "kind": "USER",
-                    "host": "f1r4s1"
+                    "host": "f1r4s1.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -2811,26 +2811,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r4s4"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f1r4s9"
+                    "host": "f1r4s4.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -2849,60 +2830,10 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r3s3"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f1r3s2"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f1r3s1"
+                    "host": "f1r4s9.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f1r3s20"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f1r3s19"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f1r3s18"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                }
-            ],
-            [
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f1r4s5"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -2918,7 +2849,15 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r4s8"
+                    "host": "f1r3s3.codam.nl"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f1r3s2.codam.nl"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f1r3s1.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -2927,37 +2866,16 @@
                     "kind": "CORRIDOR"
                 },
                 {
-                    "kind": "CORRIDOR"
+                    "kind": "USER",
+                    "host": "f1r3s20.codam.nl"
                 },
                 {
-                    "kind": "CORRIDOR"
+                    "kind": "USER",
+                    "host": "f1r3s19.codam.nl"
                 },
                 {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
+                    "kind": "USER",
+                    "host": "f1r3s18.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -2983,24 +2901,24 @@
                     "kind": "CORRIDOR"
                 },
                 {
+                    "kind": "USER",
+                    "host": "f1r4s5.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
                     "kind": "CORRIDOR"
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r4s6"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f1r4s7"
-                },
-                {
-                    "kind": "CORRIDOR"
+                    "host": "f1r4s8.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -3059,29 +2977,6 @@
                     "kind": "CORRIDOR"
                 },
                 {
-                    "kind": "USER",
-                    "host": "f1r2s20"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f1r2s19"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
                     "kind": "CORRIDOR"
                 },
                 {
@@ -3092,26 +2987,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r2s12"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f1r2s11"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
+                    "host": "f1r4s6.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -3121,11 +2997,135 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r2s4"
+                    "host": "f1r4s7.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                }
+            ],
+            [
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r2s3"
+                    "host": "f1r2s20.codam.nl"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f1r2s19.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f1r2s12.codam.nl"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f1r2s11.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f1r2s4.codam.nl"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f1r2s3.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -3143,7 +3143,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r2s21"
+                    "host": "f1r2s21.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -3153,39 +3153,10 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r2s18"
+                    "host": "f1r2s18.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f1r2s13"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f1r2s10"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -3204,7 +3175,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r2s5"
+                    "host": "f1r2s13.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -3214,7 +3185,36 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r2s2"
+                    "host": "f1r2s10.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f1r2s5.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f1r2s2.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -3241,7 +3241,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r2s17"
+                    "host": "f1r2s17.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -3257,7 +3257,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r2s14"
+                    "host": "f1r2s14.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -3273,7 +3273,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r2s9"
+                    "host": "f1r2s9.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -3286,7 +3286,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r2s6"
+                    "host": "f1r2s6.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -3302,7 +3302,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r2s1"
+                    "host": "f1r2s1.codam.nl"
                 },
                 {
                     "kind": "LABEL",
@@ -3318,21 +3318,11 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r1s18"
+                    "host": "f1r1s18.codam.nl"
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r1s17"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f1r2s16"
+                    "host": "f1r1s17.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -3342,7 +3332,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r2s15"
+                    "host": "f1r2s16.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -3352,11 +3342,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r1s11"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f1r1s10"
+                    "host": "f1r2s15.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -3366,14 +3352,28 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r2s8"
+                    "host": "f1r1s11.codam.nl"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f1r1s10.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
                 },
                 {
                     "kind": "CORRIDOR"
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r2s7"
+                    "host": "f1r2s8.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f1r2s7.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -3383,11 +3383,11 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r1s4"
+                    "host": "f1r1s4.codam.nl"
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r1s3"
+                    "host": "f1r1s3.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -3405,7 +3405,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r1s19"
+                    "host": "f1r1s19.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -3415,39 +3415,10 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r1s16"
+                    "host": "f1r1s16.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f1r1s12"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "CORRIDOR"
-                },
-                {
-                    "kind": "USER",
-                    "host": "f1r1s9"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -3466,7 +3437,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r1s5"
+                    "host": "f1r1s12.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -3476,7 +3447,36 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r1s2"
+                    "host": "f1r1s9.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f1r1s5.codam.nl"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "f1r1s2.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -3503,7 +3503,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r1s15"
+                    "host": "f1r1s15.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -3513,14 +3513,14 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r1s14"
+                    "host": "f1r1s14.codam.nl"
                 },
                 {
                     "kind": "WALL"
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r1s13"
+                    "host": "f1r1s13.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -3536,21 +3536,21 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r1s8"
+                    "host": "f1r1s8.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r1s7"
+                    "host": "f1r1s7.codam.nl"
                 },
                 {
                     "kind": "WALL"
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r1s6"
+                    "host": "f1r1s6.codam.nl"
                 },
                 {
                     "kind": "CORRIDOR"
@@ -3566,7 +3566,7 @@
                 },
                 {
                     "kind": "USER",
-                    "host": "f1r1s1"
+                    "host": "f1r1s1.codam.nl"
                 },
                 {
                     "kind": "LABEL",

@@ -6,7 +6,7 @@
 
 #### [Currently live on the App Store!](https://apps.apple.com/fr/app/intra-42/id1475507162)
 
-<img src="https://github.com/femaury/intra_42/raw/master/Screenshots/intra_42_main_screens_white.png"
+<img src="https://github.com/femaury/intra_42/raw/master/Screenshots/intra_42_main_screens_white.jpg"
      title="Intra 42 by Felix Maury" width="800">
      
 ### Swift app for 42's intranet

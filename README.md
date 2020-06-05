@@ -4,18 +4,19 @@
 ![Top Language](https://img.shields.io/github/languages/top/femaury/Intra_42.svg)
 ![Platform](https://img.shields.io/badge/platform-iOS%2011.0%2B-green.svg)
 
-<img src="https://github.com/femaury/intra_42/raw/master/Screenshots/intra_42_main_screens_white.jpg"
+#### [Currently live on the App Store!](https://apps.apple.com/fr/app/intra-42/id1475507162)
+
+<img src="https://github.com/femaury/intra_42/raw/master/Screenshots/intra_42_main_screens_white.png"
      title="Intra 42 by Felix Maury" width="800">
      
 ### Swift app for 42's intranet
 
-This is a swift learning project for myself. I started it to give native access to the intranet to 42's iOS users, as there were no such apps on the App Store. I plan on publishing it for free.  
+This is a swift learning project for myself. I started it to give native access to the intranet to 42's iOS users, as there were no such apps on the App Store.  
 Feel free to create issues or pull requests to contribute!  
 
-#### Known issues v0.4.2 (10)
+#### Known issues [Live Build]
 
-- Navigation bar doesn't go all the way up on non bezel-less screens.
-- The number label for E1R7P1 says 7 instead of 1 after changing clusters.
+- [Negative content inset when refreshing a tableview with a search controller imbeded in the navbar.](https://github.com/femaury/intra_42/issues/3)
 
 ## Contributing
 To run the app, you will first need to [create an app for 42's api](https://profile.intra.42.fr/oauth/applications/new) with the following redirection URI: `com.femaury.swifty://oauth2callback`. Then use the keys your are given inside `Intra42/APIManager/API42Manager.swift`:
@@ -30,7 +31,6 @@ You will also need to install [SwiftLint](https://github.com/realm/SwiftLint).
   <li>Get unlimited official API key</li>
   <li>Comment/Document source code</li>
   <li>Better looking achievement cells</li>
-  <li>Create cluster maps for other campuses</li>
   <li>Feel free to pitch in!</li>
 </ul>
 
@@ -69,7 +69,7 @@ You will also need to install [SwiftLint](https://github.com/realm/SwiftLint).
   </details>
   <details><summary>Cluster Map</summary>
     <ul>
-      <li>Zoomable map of all 3 Paris Clusters (a la Stud42)</li>
+      <li>Zoomable map of Clusters from 11 campuses (a la Stud42)</li>
       <li>Info on how many people per cluster (x/271)</li>
       <li>Info on how many friends per cluster</li>
       <li>All connected user profiles can be shown</li>
@@ -120,6 +120,13 @@ You will also need to install [SwiftLint](https://github.com/realm/SwiftLint).
   <details><summary>Forums</summary>
   <ul>
   <li>Link to Stackoverflow 42 forums</li>
+  </ul>
+  </details>
+  <details><summary>Peer finder</summary>
+  <ul>
+  <li>Search refined by campus, cursus, project and user status</li>
+  <li>Lists are searchable</li>
+  <li>Shows online users first, and always ordered by project grade</li>
   </ul>
   </details>
   

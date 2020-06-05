@@ -54,7 +54,7 @@ class ClustersView: UIView {
     
     private func _getPostNumber(forHost host: String?) -> String? {
         guard let host = host else { return nil }
-        let numbers = host.components(separatedBy: CharacterSet.decimalDigits.inverted)
+        let numbers = host.components(separatedBy: CharacterSet.decimalDigits.inverted).filter { !$0.isEmpty }
         return numbers.last
     }
     

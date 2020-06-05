@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import SideMenu
-import Fabric
-import Crashlytics
+import Firebase
+import FirebaseCrashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,7 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let coreData = CoreDataManager()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        Fabric.with([Crashlytics.self])
+        #if !DEBUG
+            FirebaseApp.configure()
+        #endif
         
         let color = API42Manager.shared.preferedPrimaryColor
 

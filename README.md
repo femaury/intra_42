@@ -16,7 +16,6 @@ Feel free to create issues or pull requests to contribute!
 
 #### Known issues [Live Build]
 
-- [The number label for E1R7P1 says 7 instead of 1 after changing clusters.](https://github.com/femaury/intra_42/issues/2)
 - [Negative content inset when refreshing a tableview with a search controller imbeded in the navbar.](https://github.com/femaury/intra_42/issues/3)
 
 ## Contributing
@@ -32,7 +31,6 @@ You will also need to install [SwiftLint](https://github.com/realm/SwiftLint).
   <li>Get unlimited official API key</li>
   <li>Comment/Document source code</li>
   <li>Better looking achievement cells</li>
-  <li>Create cluster maps for other campuses</li>
   <li>Feel free to pitch in!</li>
 </ul>
 
@@ -71,7 +69,7 @@ You will also need to install [SwiftLint](https://github.com/realm/SwiftLint).
   </details>
   <details><summary>Cluster Map</summary>
     <ul>
-      <li>Zoomable map of all 3 Paris Clusters (a la Stud42)</li>
+      <li>Zoomable map of Clusters from 11 campuses (a la Stud42)</li>
       <li>Info on how many people per cluster (x/271)</li>
       <li>Info on how many friends per cluster</li>
       <li>All connected user profiles can be shown</li>

@@ -28,6 +28,8 @@ class HolyGraphViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.title = "Holy Graph"
+        
         // Keeps navbar background color black in iOS 13
         if #available(iOS 13.0, *) {
             let appearance = UINavigationBarAppearance()

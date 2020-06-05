@@ -1,0 +1,927 @@
+[
+    {
+        "campusId": 28,
+        "comment": "",
+        "height": 10,
+        "hostPrefix": "8a",
+        "isReadyToPublish": true,
+        "map": [
+            [
+                {
+                    "kind": "USER",
+                    "host": "8a-r10p1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "8a-r9p1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "8a-r8p1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "8a-r7p1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "8a-r6p1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "8a-r5p1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "8a-r4p1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "8a-r3p1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "8a-r2p1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "8a-r1p1"
+                }
+            ],
+            [
+                {
+                    "kind": "USER",
+                    "host": "8a-r10p2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "8a-r9p2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "8a-r8p2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "8a-r7p2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "8a-r6p2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "8a-r5p2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "8a-r4p2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "8a-r3p2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "8a-r2p2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "8a-r1p2"
+                }
+            ],
+            [
+                {
+                    "kind": "USER",
+                    "host": "8a-r10p3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "8a-r9p3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "8a-r8p3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "8a-r7p3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "8a-r6p3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "8a-r5p3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "8a-r4p3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "8a-r3p3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "8a-r2p3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "8a-r1p3"
+                }
+            ],
+            [
+                {
+                    "kind": "USER",
+                    "host": "8a-r10p4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "8a-r9p4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "8a-r8p4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "8a-r7p4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "8a-r6p4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "8a-r5p4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "8a-r4p4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "8a-r3p4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "8a-r2p4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "8a-r1p4"
+                }
+            ],
+            [
+                {
+                    "kind": "LABEL",
+                    "label": "R10"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "R9"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "R8"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "R7"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "R6"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "R5"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "R4"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "R3"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "R2"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "R1"
+                }
+            ]
+        ],
+        "name": "Nave 8a",
+        "nameShort": "8a",
+        "position": 1,
+        "slug": "",
+        "width": 5
+    },
+    {
+        "campusId": 28,
+        "comment": "",
+        "height": 13,
+        "hostPrefix": "7b",
+        "isReadyToPublish": true,
+        "map": [
+            [
+                {
+                    "kind": "USER",
+                    "host": "7b-r13p1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r12p1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r11p1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r10p1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r9p1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r8p1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r7p1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r6p1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r5p1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r4p1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r3p1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r2p1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r1p1"
+                }
+            ],
+            [
+                {
+                    "kind": "USER",
+                    "host": "7b-r13p2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r12p2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r11p2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r10p2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r9p2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r8p2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r7p2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r6p2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r5p2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r4p2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r3p2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r2p2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r1p2"
+                }
+            ],
+            [
+                {
+                    "kind": "USER",
+                    "host": "7b-r13p3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r12p3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r11p2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r10p3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r9p3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r8p3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r7p3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r6p3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r5p3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r4p3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r3p3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r2p3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r1p3"
+                }
+            ],
+            [
+                {
+                    "kind": "USER",
+                    "host": "7b-r13p4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r12p4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r11p4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r10p4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r9p4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r8p4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r7p4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r6p4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r5p4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r4p4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r3p4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r2p4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r1p4"
+                }
+            ],
+            [
+                {
+                    "kind": "USER",
+                    "host": "7b-r13p5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r12p5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r11p5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r10p5"
+                },
+                {
+                    "kind": "CORRIDOR"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r8p5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r7p5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r6p5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r5p5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r4p5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r3p5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r2p5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7b-r1p5"
+                }
+            ],
+            [
+                {
+                    "kind": "LABEL",
+                    "label": "R13"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "R12"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "R11"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "R10"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "R9"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "R8"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "R7"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "R6"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "R5"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "R4"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "R3"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "R2"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "R1"
+                }
+            ]
+        ],
+        "name": "Nave 7b",
+        "nameShort": "7b",
+        "position": 1,
+        "slug": "",
+        "width": 6
+    },
+    {
+        "campusId": 28,
+        "comment": "",
+        "height": 12,
+        "hostPrefix": "7a",
+        "isReadyToPublish": true,
+        "map": [
+            [
+                {
+                    "kind": "USER",
+                    "host": "7a-r12p1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r11p1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r10p1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r9p1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r8p1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r7p1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r6p1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r5p1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r4p1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r3p1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r2p1"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r1p1"
+                }
+            ],
+            [
+                {
+                    "kind": "USER",
+                    "host": "7a-r12p2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r11p2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r10p2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r9p2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r8p2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r7p2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r6p2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r5p2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r4p2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r3p2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r2p2"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r1p2"
+                }
+            ],
+            [
+                {
+                    "kind": "USER",
+                    "host": "7a-r12p3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r11p3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r10p3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r9p3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r8p3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r7p3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r6p3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r5p3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r4p3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r3p3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r2p3"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r1p3"
+                }
+            ],
+            [
+                {
+                    "kind": "USER",
+                    "host": "7a-r12p4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r11p4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r10p4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r9p4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r8p4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r7p4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r6p4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r5p4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r4p4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r3p4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r2p4"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r1p4"
+                }
+            ],
+            [
+                {
+                    "kind": "USER",
+                    "host": "7a-r12p5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r11p5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r10p5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r9p5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r8p5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r7p5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r6p5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r5p5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r4p5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r3p5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r2p5"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r1p5"
+                }
+            ],
+            [
+                {
+                    "kind": "USER",
+                    "host": "7a-r12p6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r11p6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r10p6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r9p6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r8p6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r7p6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r6p6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r5p6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r4p6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r3p6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r2p6"
+                },
+                {
+                    "kind": "USER",
+                    "host": "7a-r1p6"
+                }
+            ],
+            [
+                {
+                    "kind": "LABEL",
+                    "label": "R12"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "R11"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "R10"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "R9"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "R8"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "R7"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "R6"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "R5"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "R4"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "R3"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "R2"
+                },
+                {
+                    "kind": "LABEL",
+                    "label": "R1"
+                }
+            ]
+        ],
+        "name": "Nave 7a",
+        "nameShort": "7a",
+        "position": 3,
+        "slug": "",
+        "width": 7
+    }
+]

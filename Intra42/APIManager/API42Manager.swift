@@ -80,7 +80,7 @@ class API42Manager {
     /// Closure called once the logged in user's coalition color is obtained
     var coalitionColorCompletionHandler: ((UIColor?) -> Void)?
     /// Closure called once the logged in user's information is obtained
-    var userProfileCompletionHandler: [((UserProfile?) -> Void)] = []
+    var userProfileCompletionHandlers: [((UserProfile?) -> Void)] = []
     
     /// Contains all the information about the logged in user
     var userProfile: UserProfile?
@@ -137,7 +137,7 @@ class API42Manager {
                 self.coalitionColor = color
                 self.coalitionBgURL = bgURL
                 
-                for finishHandler in self.userProfileCompletionHandler {
+                for finishHandler in self.userProfileCompletionHandlers {
                     finishHandler(self.userProfile)
                 }
                 if let colorFinishHandler = self.coalitionColorCompletionHandler {

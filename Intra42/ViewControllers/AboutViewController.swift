@@ -20,6 +20,8 @@ class AboutViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.title = "About"
+        
         // Keeps navbar background color black in iOS 13
         if #available(iOS 13.0, *) {
             let appearance = UINavigationBarAppearance()
@@ -69,10 +71,6 @@ class AboutViewController: UIViewController {
         openSafariController(withURL: "https://github.com/SwiftyJSON/SwiftyJSON")
     }
 
-    @IBAction func openSideMenuLink(_ sender: UIButton) {
-        openSafariController(withURL: "https://github.com/jonkykong/SideMenu")
-    }
-
     @IBAction func openSVGKitLink(_ sender: UIButton) {
         openSafariController(withURL: "https://github.com/SVGKit/SVGKit")
     }
@@ -82,6 +80,6 @@ class AboutViewController: UIViewController {
     }
 
     @IBAction func openCrashlyticsLink(_ sender: UIButton) {
-        openSafariController(withURL: "https://get.fabric.io/")
+        openSafariController(withURL: "https://github.com/firebase/firebase-ios-sdk/tree/master/Crashlytics")
     }
 }

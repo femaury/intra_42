@@ -28,6 +28,8 @@ class AchievementsController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.title = "Achivements"
 
         // Fixes navbar color bug when extended for search controller
         if #available(iOS 13.0, *) {

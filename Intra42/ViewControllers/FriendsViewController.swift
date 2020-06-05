@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-class FriendsViewController: UIViewController {
+class FriendsViewController: UIViewController, SideMenuCaller {
 
     lazy var searchBar = UISearchBar()
     var userActions: UserActions?
@@ -163,6 +163,10 @@ class FriendsViewController: UIViewController {
         }
         newFriendList += friends
         friends = newFriendList
+    }
+    
+    @IBAction func showSideMenu(_ sender: Any) {
+        showSideMenu()
     }
 }
 

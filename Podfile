@@ -8,8 +8,6 @@ target 'Intra42' do
   # Pods for Intra 42
   pod 'KeychainSwift'
   pod 'SwiftyJSON'
-  pod 'SideMenu', '~> 6.0'
   pod 'SVGKit'
-  pod 'Fabric'
-  pod 'Crashlytics'
+  pod 'Firebase/Crashlytics'
 end

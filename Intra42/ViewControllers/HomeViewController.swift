@@ -15,7 +15,7 @@ enum ProfileSection: Int {
     case achievements = 3
 }
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, SideMenuCaller {
     
     lazy var searchBar = UISearchBar()
     @IBOutlet var tableView: UITableView!
@@ -63,7 +63,7 @@ class HomeViewController: UIViewController {
             navigationItem.scrollEdgeAppearance = appearance
         }
 
-        API42Manager.shared.userProfileCompletionHandler.append({ userProfile in
+        API42Manager.shared.userProfileCompletionHandlers.append({ userProfile in
             guard let userProfile = userProfile else { return }
             self.isLoadingData = false
             self.userProfile = userProfile
@@ -108,7 +108,7 @@ class HomeViewController: UIViewController {
         if let indexPath = tableView.indexPathForSelectedRow {
             tableView.deselectRow(at: indexPath, animated: true)
         }
-        tableView.reloadData()
+//        tableView.reloadData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -124,6 +124,10 @@ class HomeViewController: UIViewController {
     
     @objc func refreshTable(_ sender: Any) {
         API42Manager.shared.setupAPIData()
+    }
+    
+    @IBAction func showSideMenu(_ sender: Any) {
+        showSideMenu()
     }
 }
 
@@ -215,7 +219,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return 0
         }
         if section == 0 {
-            return 350
+            let frameW = tableView.frame.width
+            let fullHeight = frameW * 0.35 + 15 + 38 + 30 + 51 + 30 + 30
+            return fullHeight
         } else {
             return 35
         }

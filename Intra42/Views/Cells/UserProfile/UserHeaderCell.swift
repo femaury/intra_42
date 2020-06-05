@@ -17,13 +17,12 @@ class UserHeaderCell: UITableViewCell {
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var campusLabel: UILabel!
     @IBOutlet weak var piscineLabel: UILabel!
-    @IBOutlet weak var phoneButton: UIButton!
-    @IBOutlet weak var mailButton: UIButton!
     
     @IBOutlet weak var levelView: UIView!
     @IBOutlet weak var progressView: UIView!
     @IBOutlet weak var levelLabel: UILabel!
     
+    @IBOutlet weak var pointsStackView: UIStackView!
     @IBOutlet weak var walletLabel: UILabel!
     @IBOutlet weak var walletNumberLabel: UILabel!
     @IBOutlet weak var correctionLabel: UILabel!
@@ -53,10 +52,7 @@ class UserHeaderCell: UITableViewCell {
                 imageSession = profilePicture.imageFrom(urlString: data.imageURL)
                 profilePicture.contentMode = .scaleAspectFill
                 profilePicture.layer.borderWidth = 1
-                profilePicture.layer.masksToBounds = false
                 profilePicture.layer.borderColor = UIColor.black.cgColor
-                profilePicture.layer.cornerRadius = profilePicture.frame.height / 2
-                profilePicture.clipsToBounds = true
                 
                 let levelRounded = data.level.rounded(.down)
                 let levelPercentage = (data.level - levelRounded) * 100
@@ -81,12 +77,6 @@ class UserHeaderCell: UITableViewCell {
                 userId = data.userId
                 phoneNumber = data.phoneNumber
                 
-                if phoneNumber == "hidden" {
-                    phoneButton.isEnabled = false
-                } else {
-                    phoneButton.isEnabled = true
-                }
-                
                 emailAddress = data.email
                 
                 if let location = data.location {
@@ -110,21 +100,18 @@ class UserHeaderCell: UITableViewCell {
         }
     }
     
-    @IBAction func callUser(_ sender: UIButton) {
-        guard let delegate = self.delegate else { return }
-        delegate.callUser()
-    }
-    
-    @IBAction func emailUser(_ sender: UIButton) {
-        guard let delegate = self.delegate else { return }
-        delegate.emailUser()
-    }
-    
     override func prepareForReuse() {
         super.prepareForReuse()
         profilePicture?.image = nil
         background?.image = nil
         imageSession?.cancel()
         backgroundImageSession?.cancel()
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        for (index, view) in pointsStackView.arrangedSubviews.enumerated() where index == 1 {
+            pointsStackView.setCustomSpacing(10, after: view)
+        }
     }
 }

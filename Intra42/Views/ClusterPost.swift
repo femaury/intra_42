@@ -16,9 +16,12 @@ class ClusterPost: UIView, UserProfileCell {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var numberLabel: UILabel!
     
-    weak var delegate: ClustersViewController?
+    let textLabel = UILabel()
+    
+    weak var delegate: ClustersViewDelegate?
     var userId: Int = 0
     var userName: String?
+    var host: String = ""
     
     init() {
         super.init(frame: CGRect(x: 0, y: 0, width: 35, height: 55))
@@ -32,24 +35,16 @@ class ClusterPost: UIView, UserProfileCell {
     
     private func commonInit() {
         Bundle.main.loadNibNamed("ClusterPost", owner: self, options: nil)
-        NSLayoutConstraint(item: self,
-                           attribute: .width,
-                           relatedBy: .equal,
-                           toItem: nil,
-                           attribute: .width,
-                           multiplier: 1.0,
-                           constant: 35).isActive = true
-        NSLayoutConstraint(item: self,
-                           attribute: .height,
-                           relatedBy: .equal,
-                           toItem: nil,
-                           attribute: .height,
-                           multiplier: 1.0,
-                           constant: 55).isActive = true
         contentView.fixInView(self)
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showUser))
         addGestureRecognizer(tapGesture)
+        
+        textLabel.frame = frame
+        textLabel.isHidden = true
+        textLabel.textAlignment = .center
+        textLabel.textColor = .darkGray
+        addSubview(textLabel)
     }
 
     @objc func showUser(_ sender: UIGestureRecognizer) {
@@ -65,5 +60,32 @@ class ClusterPost: UIView, UserProfileCell {
         showUserAction.addAction(cancel)
         
         delegate?.present(showUserAction, animated: true, completion: nil)
+    }
+    
+    func setAsEmpty() {
+        imageView.isHidden = true
+        textLabel.isHidden = true
+        numberLabel.isHidden = true
+    }
+    
+    func setAsUser(withPos pos: String?) {
+        textLabel.isHidden = true
+        numberLabel.isHidden = false
+        numberLabel.text = pos
+        imageView.backgroundColor = nil
+        imageView.image = UIImage(named: "monitor")
+    }
+    
+    func setAsLabel(withText text: String?) {
+        textLabel.text = text
+        textLabel.isHidden = false
+        imageView.isHidden = true
+    }
+    
+    func setAsWall() {
+        textLabel.isHidden = true
+        numberLabel.isHidden = true
+        imageView.backgroundColor = UIColor(named: "ClusterWall")
+        imageView.image = nil
     }
 }

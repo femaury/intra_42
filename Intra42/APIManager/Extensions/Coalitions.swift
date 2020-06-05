@@ -47,4 +47,26 @@ extension API42Manager {
         }
     }
     
+    func getAllCoalitions(completionHandler: @escaping ([JSON]) -> Void) {
+        var coalitions: [JSON] = []
+        
+        func getCoas(page: Int) {
+            let url = API42Manager.shared.baseURL + "coalitions?sort=id&page[size]=100&page[number]=\(page)"
+            
+            API42Manager.shared.request(url: url) { (data) in
+                guard let data = data?.array else {
+                    
+                    completionHandler(coalitions)
+                    return
+                }
+                coalitions.append(contentsOf: data)
+                if data.count == 100 {
+                    getCoas(page: page + 1)
+                } else {
+                    completionHandler(coalitions)
+                }
+            }
+        }
+        getCoas(page: 1)
+    }
 }

@@ -43,7 +43,6 @@ class ProfileHeaderCell: UITableViewCell {
             if let data = userProfile {
                 imageSession = profilePicture.imageFrom(urlString: data.imageURL)
                 profilePicture.contentMode = .scaleAspectFill
-                profilePicture.roundFrame()
                 profilePicture.layer.borderWidth = 1
                 profilePicture.layer.borderColor = UIColor.black.cgColor
 
@@ -95,5 +94,12 @@ class ProfileHeaderCell: UITableViewCell {
         background?.image = nil
         imageSession?.cancel()
         backgroundImageSession?.cancel()
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        for (index, view) in walletStackview.arrangedSubviews.enumerated() where index == 1 {
+            walletStackview.setCustomSpacing(10, after: view)
+        }
     }
 }

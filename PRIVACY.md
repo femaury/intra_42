@@ -6,7 +6,7 @@ Felix Maury built the Intra 42 app as an Open Source app. This SERVICE is provid
 
 This page is used to inform visitors regarding my policies with the collection, use, and disclosure of Personal Information if anyone decided to use my Service.
 
-I do not collect any information about you. All information used for this Service is stored locally on your phone and will be permanently destroyed if you delete the application. The only information that is collected is by third party services (Fabric Crashlytics - see below) to ensure the service provided to you works as intended and improve it when possible.
+I do not collect any information about you. All information used for this Service is stored locally on your phone and will be permanently destroyed if you delete the application. The only information that is collected is by third party services (Google Crashlytics - see below) to ensure the service provided to you works as intended and improve it when possible.
 
 Contact email address: femaury@student.42.fr
 
@@ -22,7 +22,7 @@ These services, in a case of an error in the app, collect data and information o
 
 ### Third Party Services I use:
 
-[**Fabric**](https://docs.fabric.io/apple/fabric/data-privacy.html) — for the capture and collection of crash logs to help me identify bugs in my Service.\
+[**Google Crashlytics**](https://docs.fabric.io/apple/fabric/data-privacy.html) — for the capture and collection of crash logs to help me identify bugs in my Service.\
 [**Apple Analytics**](https://support.apple.com/en-us/HT202100) — (if enabled by user) for the collection of anonymous analytical data to help me better understand how users use my Service.
 
 ### Third Party API's (Application Programming Interface):
@@ -57,6 +57,6 @@ I may update our Privacy Policy from time to time. Thus, you are advised to revi
 
 If you have any questions regarding this Privacy Policy, please contact me at femaury@student.42.fr
 
-This privacy policy was last updated on 5th August 2019.
+This privacy policy was last updated on March 28, 2020.
 
 

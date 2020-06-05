@@ -17,6 +17,8 @@ class CoalitionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.title = "Coalitions"
+        
         // Keeps navbar background color black in iOS 13
         if #available(iOS 13.0, *) {
             let appearance = UINavigationBarAppearance()

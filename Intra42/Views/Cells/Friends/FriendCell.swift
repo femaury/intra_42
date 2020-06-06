@@ -63,7 +63,7 @@ class FriendCell: UITableViewCell, UserProfileCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        profilePicture.image = nil
+        profilePicture?.image = nil
         imageSession?.cancel()
     }
 }

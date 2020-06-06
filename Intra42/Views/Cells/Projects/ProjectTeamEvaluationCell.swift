@@ -59,7 +59,7 @@ class ProjectTeamEvaluationCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        correctorPicture.image = nil
+        correctorPicture?.image = nil
         imageSession?.cancel()
     }
 }

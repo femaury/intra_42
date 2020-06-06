@@ -15,5 +15,6 @@ class ProjectCell: UITableViewCell {
     @IBOutlet weak var gradeLabel: UILabel!
     
     @IBAction func clickOnProjectName(_ sender: UIButton) {
+        // - TODO: Add segue to project info page
     }
 }

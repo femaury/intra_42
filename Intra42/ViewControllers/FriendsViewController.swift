@@ -239,10 +239,12 @@ extension FriendsViewController: UITableViewDelegate, UITableViewDataSource {
             if let cell = tableView.cellForRow(at: indexPath) as? FriendCell {
                 let id = cell.userId
                 if let index = self.friends.firstIndex(where: {$0.id == id}) {
-                    self.friends.remove(at: index)
-                    self.tableView.deleteRows(at: [cell.indexPath], with: .left)
-                    FriendDataManager.shared.deleteFriend(withId: id)
-                    complete(true)
+                    self.tableView.performBatchUpdates({
+                        self.friends.remove(at: index)
+                        FriendDataManager.shared.deleteFriend(withId: id)
+                        self.tableView.deleteRows(at: [indexPath], with: .left)
+                        complete(true)
+                    })
                     return
                 }
             }

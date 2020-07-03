@@ -131,19 +131,28 @@ class ClustersView: UIView {
                         self.userImages.updateValue(image, forKey: id)
                     }
                 } else if response != nil {
-                    if let err = error {
-                        print("Image Error: \(err)")
-                    }
-                    DispatchQueue.main.async {
-                        if let image = UIImage(named: "42_default") {
-                            view.image = image
-                            self.userImages.updateValue(image, forKey: id)
+                    let urlString = "https://cdn.intra.42.fr/users/small_\(login).png"
+                    if let url = URL(string: urlString) {
+                        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+                            if error == nil, let imgData = data, let image = UIImage(data: imgData) {
+                                DispatchQueue.main.async {
+                                    view.image = image
+                                    self.userImages.updateValue(image, forKey: id)
+                                }
+                            } else if response != nil {
+                                DispatchQueue.main.async {
+                                    if let image = UIImage(named: "42_default") {
+                                        view.image = image
+                                        self.userImages.updateValue(image, forKey: id)
+                                    }
+                                }
+                            }
                         }
+                        task.resume()
                     }
                 }
             }
             task.resume()
-            self.imageTasks.append(task)
         }
     }
     

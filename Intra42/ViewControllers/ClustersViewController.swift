@@ -10,7 +10,7 @@ import UIKit
 
 class ClustersViewController: UIViewController, ClustersViewDelegate, SideMenuCaller {
 
-    private let availableCampusIDs = [1, 5, 7, 8, 9, 12, 14, 16, 17, 21, 28]
+    private let availableCampusIDs = [1, 5, 7, 8, 9, 12, 14, 16, 17, 21, 28, 29]
     let noClusterLabel = UILabel()
     let noClusterView = UIView()
     

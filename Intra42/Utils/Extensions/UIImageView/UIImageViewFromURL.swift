@@ -32,6 +32,10 @@ extension UIImageView {
                 if let error = error as NSError?, error.code == NSURLErrorCancelled {
                     print("Image loading cancelled.")
                     image = nil
+                } else if urlString.contains("https://cdn.intra.42.fr/users/small_") && urlString.contains(".jpg") {
+                    let newUrl = urlString.replacingOccurrences(of: ".jpg", with: ".png")
+                    _ = self.imageFrom(urlString: newUrl, withIndicator: withIndicator, defaultImg: defaultImg)
+                    return
                 }
                 DispatchQueue.main.async {
                     activityIndicator.stopAnimating()

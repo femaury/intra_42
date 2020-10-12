@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		57C59F236D19DC9927C4603D /* Pods_Intra42.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48725963EC9F9A653537E021 /* Pods_Intra42.framework */; };
+		6FD9431BA767C2FB3655B910 /* Pods_Intra42.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B66F3A67ED5E8AB1A0EA50E /* Pods_Intra42.framework */; };
 		D022341A2416D3BD00F5CE41 /* cluster_map_campus_21.json in Resources */ = {isa = PBXBuildFile; fileRef = D02234122416D3BD00F5CE41 /* cluster_map_campus_21.json */; };
 		D022341B2416D3BD00F5CE41 /* cluster_map_campus_5.json in Resources */ = {isa = PBXBuildFile; fileRef = D02234132416D3BD00F5CE41 /* cluster_map_campus_5.json */; };
 		D022341C2416D3BD00F5CE41 /* cluster_map_campus_7.json in Resources */ = {isa = PBXBuildFile; fileRef = D02234142416D3BD00F5CE41 /* cluster_map_campus_7.json */; };
@@ -150,10 +150,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		48725963EC9F9A653537E021 /* Pods_Intra42.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Intra42.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		917A90B6D439C0D11C718DD0 /* Pods_Swifty_Companion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swifty_Companion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AE01040A1B46C0C1CFDBEFA1 /* Pods-Swifty Companion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swifty Companion.debug.xcconfig"; path = "Target Support Files/Pods-Swifty Companion/Pods-Swifty Companion.debug.xcconfig"; sourceTree = "<group>"; };
-		BEC019405A130A92CB98302E /* Pods-Intra42.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Intra42.debug.xcconfig"; path = "Target Support Files/Pods-Intra42/Pods-Intra42.debug.xcconfig"; sourceTree = "<group>"; };
+		48EBE06CEDCC42AE4543C337 /* Pods-Intra42.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Intra42.debug.xcconfig"; path = "Target Support Files/Pods-Intra42/Pods-Intra42.debug.xcconfig"; sourceTree = "<group>"; };
+		5B66F3A67ED5E8AB1A0EA50E /* Pods_Intra42.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Intra42.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D02234122416D3BD00F5CE41 /* cluster_map_campus_21.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cluster_map_campus_21.json; sourceTree = "<group>"; };
 		D02234132416D3BD00F5CE41 /* cluster_map_campus_5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cluster_map_campus_5.json; sourceTree = "<group>"; };
 		D02234142416D3BD00F5CE41 /* cluster_map_campus_7.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cluster_map_campus_7.json; sourceTree = "<group>"; };
@@ -246,7 +244,6 @@
 		DC89993D2245559200F47EEF /* UIImageViewRoundFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewRoundFrame.swift; sourceTree = "<group>"; };
 		DC8999402245731000F47EEF /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		DC8999442247C23D00F47EEF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		DC8A6FA7577F9B3254D7A271 /* Pods-Swifty Companion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swifty Companion.release.xcconfig"; path = "Target Support Files/Pods-Swifty Companion/Pods-Swifty Companion.release.xcconfig"; sourceTree = "<group>"; };
 		DC955DE9222BE9EE003B70BC /* UIViewRoundCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewRoundCorners.swift; sourceTree = "<group>"; };
 		DC955DEB222C12AC003B70BC /* SegmentHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentHeaderCell.swift; sourceTree = "<group>"; };
 		DC955DED222C4E88003B70BC /* ProjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCell.swift; sourceTree = "<group>"; };
@@ -296,7 +293,7 @@
 		DCF70B04229AF13700B29DCC /* ProjectTeamUsersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTeamUsersCell.swift; sourceTree = "<group>"; };
 		DCF70B06229AF14A00B29DCC /* ProjectTeamEvaluationHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTeamEvaluationHeaderCell.swift; sourceTree = "<group>"; };
 		DCF70B08229AF30900B29DCC /* UserProjectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProjectController.swift; sourceTree = "<group>"; };
-		F422FD8B1CF774E3F050397F /* Pods-Intra42.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Intra42.release.xcconfig"; path = "Target Support Files/Pods-Intra42/Pods-Intra42.release.xcconfig"; sourceTree = "<group>"; };
+		F878CCD7C290130EBA7C65D4 /* Pods-Intra42.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Intra42.release.xcconfig"; path = "Target Support Files/Pods-Intra42/Pods-Intra42.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -304,8 +301,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57C59F236D19DC9927C4603D /* Pods_Intra42.framework in Frameworks */,
 				D0558FB723D0CC8700D26AFC /* CloudKit.framework in Frameworks */,
+				6FD9431BA767C2FB3655B910 /* Pods_Intra42.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,10 +312,8 @@
 		8A1DDBFD4AB87F959C94426B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				AE01040A1B46C0C1CFDBEFA1 /* Pods-Swifty Companion.debug.xcconfig */,
-				DC8A6FA7577F9B3254D7A271 /* Pods-Swifty Companion.release.xcconfig */,
-				BEC019405A130A92CB98302E /* Pods-Intra42.debug.xcconfig */,
-				F422FD8B1CF774E3F050397F /* Pods-Intra42.release.xcconfig */,
+				48EBE06CEDCC42AE4543C337 /* Pods-Intra42.debug.xcconfig */,
+				F878CCD7C290130EBA7C65D4 /* Pods-Intra42.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -327,8 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				D0558FB623D0CC8700D26AFC /* CloudKit.framework */,
-				917A90B6D439C0D11C718DD0 /* Pods_Swifty_Companion.framework */,
-				48725963EC9F9A653537E021 /* Pods_Intra42.framework */,
+				5B66F3A67ED5E8AB1A0EA50E /* Pods_Intra42.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -729,14 +723,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DCCE0588222591F500906ECD /* Build configuration list for PBXNativeTarget "Intra42" */;
 			buildPhases = (
-				06728159E6CDA138A3F754F2 /* [CP] Check Pods Manifest.lock */,
+				B91B2330D78935812AC01DF5 /* [CP] Check Pods Manifest.lock */,
 				DCCE0572222591F400906ECD /* Sources */,
 				DCCE0573222591F400906ECD /* Frameworks */,
 				DCEC411623181B7C00FEE0EC /* App Version on Splash */,
 				DCCE0574222591F400906ECD /* Resources */,
-				E895706BA2B3871B2BCE68B0 /* [CP] Embed Pods Frameworks */,
 				DCF1A4E122997AB300AA2653 /* Swift Lint */,
 				DCABB86922BD3C3200711C4A /* Crashlytics */,
+				AA72E69706F6FCF67F67E894 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -754,7 +748,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Felix Maury";
 				TargetAttributes = {
 					DCCE0575222591F400906ECD = {
@@ -826,7 +820,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		06728159E6CDA138A3F754F2 /* [CP] Check Pods Manifest.lock */ = {
+		AA72E69706F6FCF67F67E894 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Intra42/Pods-Intra42-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Intra42/Pods-Intra42-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Intra42/Pods-Intra42-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B91B2330D78935812AC01DF5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -902,23 +913,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-		E895706BA2B3871B2BCE68B0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Intra42/Pods-Intra42-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Intra42/Pods-Intra42-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Intra42/Pods-Intra42-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1074,6 +1068,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1099,7 +1094,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1135,6 +1130,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1154,7 +1150,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1166,20 +1162,20 @@
 		};
 		DCCE0589222591F500906ECD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BEC019405A130A92CB98302E /* Pods-Intra42.debug.xcconfig */;
+			baseConfigurationReference = 48EBE06CEDCC42AE4543C337 /* Pods-Intra42.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 29;
+				CURRENT_PROJECT_VERSION = 30;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J2YFW87U3N;
 				INFOPLIST_FILE = Intra42/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1.2;
+				MARKETING_VERSION = 2.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.femaury.Intra42;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1189,19 +1185,19 @@
 		};
 		DCCE058A222591F500906ECD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F422FD8B1CF774E3F050397F /* Pods-Intra42.release.xcconfig */;
+			baseConfigurationReference = F878CCD7C290130EBA7C65D4 /* Pods-Intra42.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 29;
+				CURRENT_PROJECT_VERSION = 30;
 				DEVELOPMENT_TEAM = J2YFW87U3N;
 				INFOPLIST_FILE = Intra42/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1.2;
+				MARKETING_VERSION = 2.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.femaury.Intra42;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

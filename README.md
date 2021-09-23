@@ -1,3 +1,6 @@
+**THIS REPOSITORY IS NO LONGER MAINTAINED**  
+I have also stopped spending 100 euros every year to keep it up on the AppStore. Hopefully someone will take on the flame one day...
+
 # Intra 42
 ![Release](https://img.shields.io/github/release/femaury/Intra_42.svg)
 ![License](https://img.shields.io/github/license/femaury/Intra_42.svg?color=green)
